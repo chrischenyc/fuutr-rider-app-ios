@@ -12,6 +12,11 @@
 		A0CFE7A021747BF000BA3F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE79E21747BF000BA3F6D /* Main.storyboard */; };
 		A0CFE7A221747BF500BA3F6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A121747BF500BA3F6D /* Assets.xcassets */; };
 		A0CFE7A521747BF500BA3F6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */; };
+		A0CFE7AE21747D2B00BA3F6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* ViewController.swift */; };
+		A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
+		A0CFE7B221747D2B00BA3F6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */; };
+		A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A121747BF500BA3F6D /* Assets.xcassets */; };
+		A0CFE7B421747D2B00BA3F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE79E21747BF000BA3F6D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +27,19 @@
 		A0CFE7A121747BF500BA3F6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CFE7A421747BF500BA3F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0CFE7A621747BF500BA3F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0CFE7B821747D2B00BA3F6D /* OTGRider-staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTGRider-staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0CFE7B921747D2C00BA3F6D /* Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Staging-Info.plist"; path = "/Users/chris.chen/Dev/OTG/OTGRider/OTGRider/Staging-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A0CFE79421747BF000BA3F6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0CFE7B021747D2B00BA3F6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				A0CFE79721747BF000BA3F6D /* OTGRider.app */,
+				A0CFE7B821747D2B00BA3F6D /* OTGRider-staging.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +75,7 @@
 				A0CFE7A121747BF500BA3F6D /* Assets.xcassets */,
 				A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */,
 				A0CFE7A621747BF500BA3F6D /* Info.plist */,
+				A0CFE7B921747D2C00BA3F6D /* Staging-Info.plist */,
 			);
 			path = OTGRider;
 			sourceTree = "<group>";
@@ -82,6 +98,23 @@
 			name = OTGRider;
 			productName = OTGRider;
 			productReference = A0CFE79721747BF000BA3F6D /* OTGRider.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A0CFE7AC21747D2B00BA3F6D /* OTGRider-staging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0CFE7B521747D2B00BA3F6D /* Build configuration list for PBXNativeTarget "OTGRider-staging" */;
+			buildPhases = (
+				A0CFE7AD21747D2B00BA3F6D /* Sources */,
+				A0CFE7B021747D2B00BA3F6D /* Frameworks */,
+				A0CFE7B121747D2B00BA3F6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OTGRider-staging";
+			productName = OTGRider;
+			productReference = A0CFE7B821747D2B00BA3F6D /* OTGRider-staging.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -113,6 +146,7 @@
 			projectRoot = "";
 			targets = (
 				A0CFE79621747BF000BA3F6D /* OTGRider */,
+				A0CFE7AC21747D2B00BA3F6D /* OTGRider-staging */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +162,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0CFE7B121747D2B00BA3F6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0CFE7B221747D2B00BA3F6D /* LaunchScreen.storyboard in Resources */,
+				A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */,
+				A0CFE7B421747D2B00BA3F6D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,6 +181,15 @@
 			files = (
 				A0CFE79D21747BF000BA3F6D /* ViewController.swift in Sources */,
 				A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0CFE7AD21747D2B00BA3F6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0CFE7AE21747D2B00BA3F6D /* ViewController.swift in Sources */,
+				A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -268,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,10 +342,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.OTGRider;
+				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.ios.rider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,10 +360,46 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.OTGRider;
+				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.ios.rider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A0CFE7B621747D2B00BA3F6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQXKH8T8SZ;
+				INFOPLIST_FILE = "$(SRCROOT)/OTGRider/Staging-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.ios.rider.staging;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A0CFE7B721747D2B00BA3F6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQXKH8T8SZ;
+				INFOPLIST_FILE = "$(SRCROOT)/OTGRider/Staging-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.ios.rider.staging;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -331,6 +420,15 @@
 			buildConfigurations = (
 				A0CFE7AA21747BF500BA3F6D /* Debug */,
 				A0CFE7AB21747BF500BA3F6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0CFE7B521747D2B00BA3F6D /* Build configuration list for PBXNativeTarget "OTGRider-staging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0CFE7B621747D2B00BA3F6D /* Debug */,
+				A0CFE7B721747D2B00BA3F6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
