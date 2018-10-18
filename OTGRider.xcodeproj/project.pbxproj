@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		81E8C84519DD630C24B9B6DC /* Pods_Project_OTGRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81CF8CCF05B3983496167E9 /* Pods_Project_OTGRider.framework */; };
 		A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
-		A0CFE79D21747BF000BA3F6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* ViewController.swift */; };
+		A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
 		A0CFE7A021747BF000BA3F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE79E21747BF000BA3F6D /* Main.storyboard */; };
 		A0CFE7A221747BF500BA3F6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A121747BF500BA3F6D /* Assets.xcassets */; };
 		A0CFE7A521747BF500BA3F6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */; };
-		A0CFE7AE21747D2B00BA3F6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* ViewController.swift */; };
+		A0CFE7AE21747D2B00BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
 		A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
 		A0CFE7B221747D2B00BA3F6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */; };
 		A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A121747BF500BA3F6D /* Assets.xcassets */; };
 		A0CFE7B421747D2B00BA3F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE79E21747BF000BA3F6D /* Main.storyboard */; };
+		A0CFE7BC21773C0200BA3F6D /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */; };
+		A0CFE7BD21773C0200BA3F6D /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */; };
 		F92173AEFB39765B42B5470F /* Pods_Project_OTGRider_staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DA4D11423EE5032D0FBB72 /* Pods_Project_OTGRider_staging.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,13 +27,14 @@
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		A0CFE79721747BF000BA3F6D /* OTGRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTGRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0CFE79C21747BF000BA3F6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A0CFE79C21747BF000BA3F6D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A0CFE79F21747BF000BA3F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0CFE7A121747BF500BA3F6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CFE7A421747BF500BA3F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0CFE7A621747BF500BA3F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0CFE7B821747D2B00BA3F6D /* OTGRider-staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTGRider-staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE7B921747D2C00BA3F6D /* Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Staging-Info.plist"; path = "/Users/chris.chen/Dev/OTG/OTGRider/OTGRider/Staging-Info.plist"; sourceTree = "<absolute>"; };
+		A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		C7D5E790534A2BF2E5A055CA /* Pods-Project-OTGRider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.release.xcconfig"; sourceTree = "<group>"; };
 		CDB8458ABF4555A18A854D54 /* Pods-Project-OTGRider-staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-staging.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-staging/Pods-Project-OTGRider-staging.release.xcconfig"; sourceTree = "<group>"; };
 		D4CD78A99E31FADB2BDC1666 /* Pods-Project-OTGRider-staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-staging.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-staging/Pods-Project-OTGRider-staging.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +73,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A028C00221780F68004BC38E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A0CFE78E21747BF000BA3F6D = {
 			isa = PBXGroup;
 			children = (
@@ -93,7 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */,
-				A0CFE79C21747BF000BA3F6D /* ViewController.swift */,
+				A0CFE7BA21773B7B00BA3F6D /* Controller */,
+				A028C00221780F68004BC38E /* Helper */,
 				A0CFE79E21747BF000BA3F6D /* Main.storyboard */,
 				A0CFE7A121747BF500BA3F6D /* Assets.xcassets */,
 				A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */,
@@ -101,6 +112,15 @@
 				A0CFE7B921747D2C00BA3F6D /* Staging-Info.plist */,
 			);
 			path = OTGRider;
+			sourceTree = "<group>";
+		};
+		A0CFE7BA21773B7B00BA3F6D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0CFE79C21747BF000BA3F6D /* MapViewController.swift */,
+				A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		F39279E41308C0B2F4A73AC0 /* Frameworks */ = {
@@ -310,7 +330,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0CFE79D21747BF000BA3F6D /* ViewController.swift in Sources */,
+				A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */,
+				A0CFE7BC21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0CFE7AE21747D2B00BA3F6D /* ViewController.swift in Sources */,
+				A0CFE7AE21747D2B00BA3F6D /* MapViewController.swift in Sources */,
+				A0CFE7BD21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
