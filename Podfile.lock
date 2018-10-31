@@ -4,25 +4,37 @@ PODS:
   - GoogleMaps/Base (2.7.0)
   - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - SideMenu (5.0.2)
   - SwiftyUserDefaults (4.0.0-alpha.1)
+  - XCGLogger (6.1.0):
+    - XCGLogger/Core (= 6.1.0)
+  - XCGLogger/Core (6.1.0):
+    - ObjcExceptionBridging
 
 DEPENDENCIES:
   - GoogleMaps
   - SideMenu
   - SwiftyUserDefaults (= 4.0.0-alpha.1)
+  - XCGLogger
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GoogleMaps
+    - ObjcExceptionBridging
     - SideMenu
     - SwiftyUserDefaults
+    - XCGLogger
 
 SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
+  XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 7988c200f5ad09c87f015e5a4457216a5b7a0e50
+PODFILE CHECKSUM: eff5e8d9a1b64434f4ae0fb20923c5f03d5d9ea1
 
 COCOAPODS: 1.5.3

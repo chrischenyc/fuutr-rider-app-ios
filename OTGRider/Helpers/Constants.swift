@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 import CoreLocation
+import XCGLogger
+
+let log = XCGLogger.default
 
 struct Constants {
     struct Keys {
