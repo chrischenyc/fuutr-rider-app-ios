@@ -9,7 +9,6 @@ abstract_target 'Project' do
   # third-party services
   pod 'GoogleMaps'
   
-
   # UI
   pod 'SideMenu'
   
@@ -17,6 +16,8 @@ abstract_target 'Project' do
   pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
   pod 'XCGLogger'
   pod 'SwiftGen'
+  pod 'BartyCrouch'
+  
 
   target 'OTGRider' do
 

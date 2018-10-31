@@ -1,4 +1,5 @@
 PODS:
+  - BartyCrouch (3.13.0)
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
   - GoogleMaps/Base (2.7.0)
@@ -16,6 +17,7 @@ PODS:
     - ObjcExceptionBridging
 
 DEPENDENCIES:
+  - BartyCrouch
   - GoogleMaps
   - SideMenu
   - SwiftGen
@@ -24,6 +26,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BartyCrouch
     - GoogleMaps
     - ObjcExceptionBridging
     - SideMenu
@@ -32,6 +35,7 @@ SPEC REPOS:
     - XCGLogger
 
 SPEC CHECKSUMS:
+  BartyCrouch: 69e5e6ec67e77951dc1c22aa48abbf05d175b81c
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
@@ -39,6 +43,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 140846ee93e16bd31112c1dbe9b61812ad9c0d29
+PODFILE CHECKSUM: 708a327efbc040cb9d4a6464ca1d37eb6185a18c
 
 COCOAPODS: 1.5.3

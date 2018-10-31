@@ -210,6 +210,8 @@
 			buildConfigurationList = A0CFE7A921747BF500BA3F6D /* Build configuration list for PBXNativeTarget "OTGRider" */;
 			buildPhases = (
 				707BD31321A77514E1E6DFB4 /* [CP] Check Pods Manifest.lock */,
+				6B8731D3218A418900CC2651 /* Run Script - bartycrouch */,
+				6B8731D4218A41A800CC2651 /* Run Script - swiftgen */,
 				A0CFE79321747BF000BA3F6D /* Sources */,
 				A0CFE79421747BF000BA3F6D /* Frameworks */,
 				A0CFE79521747BF000BA3F6D /* Resources */,
@@ -230,7 +232,8 @@
 			buildConfigurationList = A0CFE7B521747D2B00BA3F6D /* Build configuration list for PBXNativeTarget "OTGRider-staging" */;
 			buildPhases = (
 				E43CD957A6499CF142FF20F8 /* [CP] Check Pods Manifest.lock */,
-				6B8731BA2189BB2500CC2651 /* ShellScript */,
+				6B8731D2218A3EE300CC2651 /* Run Script - bartycrouch */,
+				6B8731BA2189BB2500CC2651 /* Run Script - swiftgen */,
 				A0CFE7AD21747D2B00BA3F6D /* Sources */,
 				A0CFE7B021747D2B00BA3F6D /* Frameworks */,
 				A0CFE7B121747D2B00BA3F6D /* Resources */,
@@ -376,12 +379,67 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6B8731BA2189BB2500CC2651 /* ShellScript */ = {
+		6B8731BA2189BB2500CC2651 /* Run Script - swiftgen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+			);
+			name = "Run Script - swiftgen";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
+		6B8731D2218A3EE300CC2651 /* Run Script - bartycrouch */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - bartycrouch";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Incrementally update all Storyboards/XIBs strings files\n$PODS_ROOT/bartycrouch/bartycrouch interfaces -p \"$PROJECT_DIR/OTGRider\"\n\n# Add new keys to Localizable.strings files from NSLocalizedString in code\n$PODS_ROOT/bartycrouch/bartycrouch code -p \"$PROJECT_DIR/OTGRider\" -l \"$PROJECT_DIR\" -a -s\n\n# Warns if Strings files contain duplicate keys or removes duplicates automatically if values are equal\n$PODS_ROOT/bartycrouch/bartycrouch normalize -p \"$PROJECT_DIR/OTGRider\" -l en -d\n";
+		};
+		6B8731D3218A418900CC2651 /* Run Script - bartycrouch */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - bartycrouch";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Incrementally update all Storyboards/XIBs strings files\n$PODS_ROOT/bartycrouch/bartycrouch interfaces -p \"$PROJECT_DIR/OTGRider\"\n\n# Add new keys to Localizable.strings files from NSLocalizedString in code\n$PODS_ROOT/bartycrouch/bartycrouch code -p \"$PROJECT_DIR/OTGRider\" -l \"$PROJECT_DIR\" -a -s\n\n# Warns if Strings files contain duplicate keys or removes duplicates automatically if values are equal\n$PODS_ROOT/bartycrouch/bartycrouch normalize -p \"$PROJECT_DIR/OTGRider\" -l en -d\n";
+		};
+		6B8731D4218A41A800CC2651 /* Run Script - swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - swiftgen";
+			outputFileListPaths = (
 			);
 			outputPaths = (
 			);

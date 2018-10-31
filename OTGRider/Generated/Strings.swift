@@ -11,6 +11,12 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
+  /// Sending verification code ...
+  internal static let kSendingVerificationCode = L10n.tr("Localizable", "kSendingVerificationCode")
+  /// Verified!
+  internal static let kVerified = L10n.tr("Localizable", "kVerified")
+  /// Verifying ...
+  internal static let kVerifying = L10n.tr("Localizable", "kVerifying")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

@@ -134,6 +134,7 @@
                     </view>
                     <connections>
                         <outlet property="codeTextField" destination="yRP-CC-xt6" id="shy-v2-JU5"/>
+                        <outlet property="infoLabel" destination="80i-dC-5ZA" id="YEh-IF-yZR"/>
                         <outlet property="nextButton" destination="4rl-h5-i2B" id="2aZ-Od-NZW"/>
                         <segue destination="KAD-4P-JWO" kind="show" identifier="showOnboard" id="Q5s-yY-tXW"/>
                     </connections>

@@ -31,7 +31,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func mobileNextTapped(_ sender: Any) {
         mobileNextButton.isEnabled = false
-        mobileVerifyInfoLabel.text = NSLocalizedString("kSendingMobileVerificationCode", comment: "")
+        mobileVerifyInfoLabel.text = NSLocalizedString("kSendingVerificationCode", comment: "")
         
         // TODO: call API to get verificaiton code
         

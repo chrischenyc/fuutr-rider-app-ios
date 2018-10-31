@@ -11,6 +11,7 @@ import SwiftyUserDefaults
 
 class VerificationCodeViewController: UIViewController {
     
+    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
@@ -31,9 +32,11 @@ class VerificationCodeViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         nextButton.isEnabled = false
+        infoLabel.text = NSLocalizedString("kVerifying", comment: "")
         
         // TODO: call API
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            self.infoLabel.text = NSLocalizedString("kVerified", comment: "")
             Defaults[.userSignedIn] = true
             
             self.perform(segue: StoryboardSegue.SignIn.showOnboard, sender: nil)
