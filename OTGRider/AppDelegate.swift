@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 import SideMenu
 
 @UIApplicationMain
@@ -16,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        GMSServices.provideAPIKey("AIzaSyA2kZ3cVDtKRB9U3WkThBh1fBn0IBGa-VE")
         
         SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
         SideMenuManager.defaultManager.menuFadeStatusBar = false

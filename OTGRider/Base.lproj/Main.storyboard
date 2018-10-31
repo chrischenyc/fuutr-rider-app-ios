@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -168,19 +168,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dDe-g2-1FU">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfL-KJ-ZTo" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </mapView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-Ss-nph">
                                 <rect key="frame" x="132" y="621" width="111" height="30"/>
                                 <state key="normal" title="SCAN QR CODE"/>
                                 <connections>
                                     <segue destination="AEo-CN-GcX" kind="presentation" id="J0z-3R-eza"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Io8-yG-Hwd">
-                                <rect key="frame" x="329" y="621" width="30" height="30"/>
-                                <state key="normal" title="gps"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIl-Eu-kKl">
                                 <rect key="frame" x="16" y="621" width="49" height="30"/>
@@ -204,23 +201,22 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CfQ-ca-FN2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0eL-Jy-g3V"/>
-                            <constraint firstItem="dDe-g2-1FU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1hg-kQ-BqI"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="centerY" secondItem="CfQ-ca-FN2" secondAttribute="centerY" id="2Fz-Sl-i9y"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6X2-wB-VND"/>
+                            <constraint firstItem="lfL-KJ-ZTo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AnA-aF-8Me"/>
+                            <constraint firstItem="lfL-KJ-ZTo" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Dhw-Xp-dVT"/>
                             <constraint firstItem="uIl-Eu-kKl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HE2-XK-UeH"/>
                             <constraint firstItem="uIl-Eu-kKl" firstAttribute="centerY" secondItem="1MR-Ss-nph" secondAttribute="centerY" id="J03-YE-dR4"/>
-                            <constraint firstItem="dDe-g2-1FU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vko-SH-wQh"/>
+                            <constraint firstItem="lfL-KJ-ZTo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQh-9I-Jzz"/>
+                            <constraint firstItem="lfL-KJ-ZTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf3-O6-CJt"/>
                             <constraint firstItem="1MR-Ss-nph" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W8J-2H-ygM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1MR-Ss-nph" secondAttribute="bottom" constant="16" id="X0Q-RH-dS9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Io8-yG-Hwd" secondAttribute="trailing" constant="16" id="fEG-1e-3OR"/>
-                            <constraint firstItem="dDe-g2-1FU" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="gXf-R4-nFg"/>
-                            <constraint firstItem="dDe-g2-1FU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="v96-ax-h6M"/>
-                            <constraint firstItem="Io8-yG-Hwd" firstAttribute="centerY" secondItem="1MR-Ss-nph" secondAttribute="centerY" id="wEt-Iv-RwX"/>
                             <constraint firstItem="CfQ-ca-FN2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOs-O4-oXO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
                         <segue destination="YjV-do-QWr" kind="showDetail" identifier="showHistory" id="RLF-ho-hra"/>
                         <segue destination="HZ5-CD-UgK" kind="showDetail" identifier="showWallet" id="xc1-3B-BD7"/>
                         <segue destination="L7g-mz-zAH" kind="showDetail" identifier="showJuice" id="FET-ra-UmO"/>
@@ -230,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2234" y="1590"/>
+            <point key="canvasLocation" x="-2234.4000000000001" y="1589.9550224887557"/>
         </scene>
         <!--How to ride-->
         <scene sceneID="bJq-JS-Lnq">

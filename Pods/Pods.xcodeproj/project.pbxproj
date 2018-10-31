@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		069F3471B80B2FBADCC75BC1EF57A1EC /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4F5E4E267C03BAC23C64C2DEC825B6 /* UISideMenuNavigationController.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		3B960C8B25D2673ADB5578EA33ADCAF0 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A697DF2FCE66AA6D825AB2713FAFD4E /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		069F3471B80B2FBADCC75BC1EF57A1EC /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975FFD6111A2C7A9D24BCF1D193E594 /* UISideMenuNavigationController.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3B960C8B25D2673ADB5578EA33ADCAF0 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C946957907129CCF545B6D108A1B3F87 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D5C44CFE9ECDA822BBAD30D6D02CB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		719235543DAA600DEB6DF50EA7B0BD23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		8D9E99876B96B7EEB3DA7BA5B167F177 /* Pods-Project-OTGRider-staging-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C7681C56EDDC485BDD1B1F26482AC2 /* Pods-Project-OTGRider-staging-dummy.m */; };
-		A3BE15BE303969E89C05F024E76666B7 /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DB323BB3B2B0A52D555C01DBCD0305 /* SideMenuTransition.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		A6320BF5D356EAC694B841FDC7EAFE2D /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF13F0BB1AB42B2F1C6A72A59BD82F /* UITableViewVibrantCell.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A3BE15BE303969E89C05F024E76666B7 /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A73AB302B47B9A60EA02E7617267A /* SideMenuTransition.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A6320BF5D356EAC694B841FDC7EAFE2D /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B9F1E4A407C734AC105A670773D59 /* UITableViewVibrantCell.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A7075CE29DFEFC4C08D63FE66E72FF5D /* Pods-Project-OTGRider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 789EDF803B8B6B5873C84A67B1A60D04 /* Pods-Project-OTGRider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B61BB03D2F1C8B9DDEED66004A04580B /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0049F4BA49D06E8F4C1A0DF192A1FB11 /* SideMenuManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BADF8D3CA9E7843E08B8626EF83ED402 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFF7ED29543D1E78DEE7A6BB17CADE /* SideMenu-dummy.m */; };
+		B61BB03D2F1C8B9DDEED66004A04580B /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDDDA7183BE3266D651F484BD795356 /* SideMenuManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BADF8D3CA9E7843E08B8626EF83ED402 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 091B5CC1B4D76E4255982FB16575AEE5 /* SideMenu-dummy.m */; };
 		C1A055B1DB4FD43B94DA70D1A8D6C7F5 /* Pods-Project-OTGRider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C79B2F6BE7105407DB3FDFE0C5D991D2 /* Pods-Project-OTGRider-dummy.m */; };
 		C6D7743BD7FCACEE5ECE31801D601C96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		E2D0E02DAE29997BAFC7E6E790F92704 /* Pods-Project-OTGRider-staging-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA1329B9F02340FD47CE1E2BE26C71B5 /* Pods-Project-OTGRider-staging-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,41 +40,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0049F4BA49D06E8F4C1A0DF192A1FB11 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
-		0AC3F6E2B85B64D7AED49071CEB17CA8 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
+		091B5CC1B4D76E4255982FB16575AEE5 /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
 		19833A1D4E0F176EFEC93A1D972524CC /* Pods-Project-OTGRider-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Project-OTGRider-frameworks.sh"; sourceTree = "<group>"; };
-		1FEFF7ED29543D1E78DEE7A6BB17CADE /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		1FDDDA7183BE3266D651F484BD795356 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
 		29B2D667349DF4213FE9A125B36DD77E /* Pods-Project-OTGRider-staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project-OTGRider-staging.debug.xcconfig"; sourceTree = "<group>"; };
 		2BB0257331B1D86194E86625A15E9D54 /* Pods-Project-OTGRider-staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project-OTGRider-staging.release.xcconfig"; sourceTree = "<group>"; };
 		326B7F9391DD76230CBEAC2971E801F1 /* Pods-Project-OTGRider-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Project-OTGRider-acknowledgements.plist"; sourceTree = "<group>"; };
 		3395F4E52279D4F4FA325C3B85BA61F1 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38FF13F0BB1AB42B2F1C6A72A59BD82F /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
 		391D378F9E19A077D89429D1412EE056 /* Pods-Project-OTGRider-staging-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Project-OTGRider-staging-frameworks.sh"; sourceTree = "<group>"; };
+		3AD39358D64B00411B6929169585326F /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		42C7681C56EDDC485BDD1B1F26482AC2 /* Pods-Project-OTGRider-staging-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Project-OTGRider-staging-dummy.m"; sourceTree = "<group>"; };
+		467A73AB302B47B9A60EA02E7617267A /* SideMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransition.swift; path = Pod/Classes/SideMenuTransition.swift; sourceTree = "<group>"; };
+		57D62F510AA072CB15659B117AA8A3C0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5D02BD0A0AA240CFBF65372345BA7776 /* Pods-Project-OTGRider-staging.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Project-OTGRider-staging.modulemap"; sourceTree = "<group>"; };
-		606BD2B50ED98151BB84DE476A541232 /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
 		617C39EC6FE7FF67D27AA9FCCF8E833E /* Pods_Project_OTGRider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Project_OTGRider.framework; path = "Pods-Project-OTGRider.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6975FFD6111A2C7A9D24BCF1D193E594 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISideMenuNavigationController.swift; path = Pod/Classes/UISideMenuNavigationController.swift; sourceTree = "<group>"; };
+		6BC8C7E64B1DE2E439CD5D39B0FB9BF8 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
+		703ABF6AEE7518E11554D5B2EA61262D /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
 		7897194E2408B5CCF8E4288352E0A888 /* Pods-Project-OTGRider-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Project-OTGRider-acknowledgements.markdown"; sourceTree = "<group>"; };
 		789EDF803B8B6B5873C84A67B1A60D04 /* Pods-Project-OTGRider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Project-OTGRider-umbrella.h"; sourceTree = "<group>"; };
-		7A697DF2FCE66AA6D825AB2713FAFD4E /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
 		7ABB5119868F06E91B2E4D10D035FD6E /* Pods-Project-OTGRider-staging-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Project-OTGRider-staging-acknowledgements.plist"; sourceTree = "<group>"; };
 		81A7DD3A87D263B50328EEBD5B9FA897 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A089C92754DE9E1A4E4F9C0A42F8F07 /* Pods-Project-OTGRider-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Project-OTGRider-resources.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9C6F85B219E1707346C5C86BA32D985D /* Pods-Project-OTGRider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project-OTGRider.release.xcconfig"; sourceTree = "<group>"; };
 		9C79BA1A6257C28C069D3306AF355BE1 /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
-		A9DB323BB3B2B0A52D555C01DBCD0305 /* SideMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransition.swift; path = Pod/Classes/SideMenuTransition.swift; sourceTree = "<group>"; };
+		9FB0A2FAF1838E7995EC53B401237AAD /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		B8D8A451642638E48D7CDDA8A27FC4E8 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		C484259F454285757843949C99BDD444 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		C68B9F1E4A407C734AC105A670773D59 /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
 		C79B2F6BE7105407DB3FDFE0C5D991D2 /* Pods-Project-OTGRider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Project-OTGRider-dummy.m"; sourceTree = "<group>"; };
+		C946957907129CCF545B6D108A1B3F87 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
 		D960198E6442ABE0CD250794D3E19C84 /* Pods_Project_OTGRider_staging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Project_OTGRider_staging.framework; path = "Pods-Project-OTGRider-staging.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1329B9F02340FD47CE1E2BE26C71B5 /* Pods-Project-OTGRider-staging-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Project-OTGRider-staging-umbrella.h"; sourceTree = "<group>"; };
 		E4C28BDFDAB5D49D6F65FB6C20879BAB /* Pods-Project-OTGRider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Project-OTGRider.modulemap"; sourceTree = "<group>"; };
 		E7C89230F05BB38EE2E502FF59B5E2F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA4F5E4E267C03BAC23C64C2DEC825B6 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISideMenuNavigationController.swift; path = Pod/Classes/UISideMenuNavigationController.swift; sourceTree = "<group>"; };
+		E924D67297735FFA876B63F61DB7FE5F /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
 		EE2F17D1DB94ABE901945E6AF32F1538 /* Pods-Project-OTGRider-staging-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Project-OTGRider-staging-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EEAAA6BFA12D55FE654249B89D709200 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F247A5E82A1EF619F0B2B4B9E2C7D374 /* Pods-Project-OTGRider-staging-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Project-OTGRider-staging-resources.sh"; sourceTree = "<group>"; };
-		F6A324E319F34D41C7D0ED3E277A50CD /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,18 +109,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0588B462469020386FC4A4F5450A2C47 /* Support Files */ = {
+		022F04CC5FD661076295CD73CAF78BF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EEAAA6BFA12D55FE654249B89D709200 /* Info.plist */,
-				606BD2B50ED98151BB84DE476A541232 /* SideMenu.modulemap */,
-				F6A324E319F34D41C7D0ED3E277A50CD /* SideMenu.xcconfig */,
-				1FEFF7ED29543D1E78DEE7A6BB17CADE /* SideMenu-dummy.m */,
-				0AC3F6E2B85B64D7AED49071CEB17CA8 /* SideMenu-prefix.pch */,
-				7A697DF2FCE66AA6D825AB2713FAFD4E /* SideMenu-umbrella.h */,
+				9FB0A2FAF1838E7995EC53B401237AAD /* GoogleMaps.framework */,
+				C484259F454285757843949C99BDD444 /* GoogleMapsCore.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SideMenu";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2C32845A5CE038A44BD6055D0CC90D61 /* Targets Support Files */ = {
@@ -138,6 +137,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3E2B37894FAE7626683FA43E575ADB23 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1FDDDA7183BE3266D651F484BD795356 /* SideMenuManager.swift */,
+				467A73AB302B47B9A60EA02E7617267A /* SideMenuTransition.swift */,
+				6975FFD6111A2C7A9D24BCF1D193E594 /* UISideMenuNavigationController.swift */,
+				C68B9F1E4A407C734AC105A670773D59 /* UITableViewVibrantCell.swift */,
+				BACF3B592369E7C8966ECE2A7B03A4A7 /* Support Files */,
+			);
+			name = SideMenu;
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		468EFC019B911917B3BEB03F2E8E9798 /* Pods-Project-OTGRider */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,12 +168,12 @@
 			path = "Target Support Files/Pods-Project-OTGRider";
 			sourceTree = "<group>";
 		};
-		4C7DECB9505A3661801AB8D77F9249EF /* Pods */ = {
+		5C20D0C6DFA07ECAA2E5B5D2519B46DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6139AD2A3B1702A32298B3F55914EA43 /* SideMenu */,
+				3AD39358D64B00411B6929169585326F /* GoogleMapsBase.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
@@ -172,17 +184,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		6139AD2A3B1702A32298B3F55914EA43 /* SideMenu */ = {
+		6742A47212427D6ADC801A665263301D /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				0049F4BA49D06E8F4C1A0DF192A1FB11 /* SideMenuManager.swift */,
-				A9DB323BB3B2B0A52D555C01DBCD0305 /* SideMenuTransition.swift */,
-				EA4F5E4E267C03BAC23C64C2DEC825B6 /* UISideMenuNavigationController.swift */,
-				38FF13F0BB1AB42B2F1C6A72A59BD82F /* UITableViewVibrantCell.swift */,
-				0588B462469020386FC4A4F5450A2C47 /* Support Files */,
+				022F04CC5FD661076295CD73CAF78BF0 /* Frameworks */,
+				7F8943EBEF63A6FF958E3FCB4BE2AA6C /* Resources */,
 			);
-			name = SideMenu;
-			path = SideMenu;
+			name = Maps;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -190,10 +198,32 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				4C7DECB9505A3661801AB8D77F9249EF /* Pods */,
+				E2CC2DD37E749C38F0A81BA3AF5B3392 /* Pods */,
 				3100DCE650047291C31DCC8F0AC62CDD /* Products */,
 				2C32845A5CE038A44BD6055D0CC90D61 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		7F8943EBEF63A6FF958E3FCB4BE2AA6C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B8D8A451642638E48D7CDDA8A27FC4E8 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BACF3B592369E7C8966ECE2A7B03A4A7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				57D62F510AA072CB15659B117AA8A3C0 /* Info.plist */,
+				703ABF6AEE7518E11554D5B2EA61262D /* SideMenu.modulemap */,
+				E924D67297735FFA876B63F61DB7FE5F /* SideMenu.xcconfig */,
+				091B5CC1B4D76E4255982FB16575AEE5 /* SideMenu-dummy.m */,
+				6BC8C7E64B1DE2E439CD5D39B0FB9BF8 /* SideMenu-prefix.pch */,
+				C946957907129CCF545B6D108A1B3F87 /* SideMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SideMenu";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -202,6 +232,33 @@
 				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFD0B75F4DCEE8AAB7E69B9ACDDA6813 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5C20D0C6DFA07ECAA2E5B5D2519B46DF /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		E0A5616DB87CDBCC7B074B81013ED66A /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				DFD0B75F4DCEE8AAB7E69B9ACDDA6813 /* Base */,
+				6742A47212427D6ADC801A665263301D /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		E2CC2DD37E749C38F0A81BA3AF5B3392 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0A5616DB87CDBCC7B074B81013ED66A /* GoogleMaps */,
+				3E2B37894FAE7626683FA43E575ADB23 /* SideMenu */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		EB3655CE95F22715ED564CCEB8E2EE1C /* Pods-Project-OTGRider-staging */ = {
@@ -663,7 +720,7 @@
 		};
 		719F2E7D9AA3728E7E8A10FFB10E73AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6A324E319F34D41C7D0ED3E277A50CD /* SideMenu.xcconfig */;
+			baseConfigurationReference = E924D67297735FFA876B63F61DB7FE5F /* SideMenu.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -700,7 +757,7 @@
 		};
 		D0A6442765395E5EEC6468446F81B9F6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6A324E319F34D41C7D0ED3E277A50CD /* SideMenu.xcconfig */;
+			baseConfigurationReference = E924D67297735FFA876B63F61DB7FE5F /* SideMenu.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";

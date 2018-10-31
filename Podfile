@@ -7,6 +7,7 @@ use_frameworks!
 abstract_target 'Project' do
 
   # third-party services
+  pod 'GoogleMaps'
   
 
   # UI libs

@@ -24,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B87319E2189643800CC2651 /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
+		6B8731A0218968E000CC2651 /* Melbourne.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Melbourne.gpx; sourceTree = "<group>"; };
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		A0CFE79721747BF000BA3F6D /* OTGRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTGRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +35,6 @@
 		A0CFE7A421747BF500BA3F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0CFE7A621747BF500BA3F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0CFE7B821747D2B00BA3F6D /* OTGRider-staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTGRider-staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0CFE7B921747D2C00BA3F6D /* Staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Staging-Info.plist"; path = "/Users/chris.chen/Dev/OTG/OTGRider/OTGRider/Staging-Info.plist"; sourceTree = "<absolute>"; };
 		A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		C7D5E790534A2BF2E5A055CA /* Pods-Project-OTGRider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.release.xcconfig"; sourceTree = "<group>"; };
 		CDB8458ABF4555A18A854D54 /* Pods-Project-OTGRider-staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-staging.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-staging/Pods-Project-OTGRider-staging.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,13 +74,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A028C00221780F68004BC38E /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		A0CFE78E21747BF000BA3F6D = {
 			isa = PBXGroup;
 			children = (
@@ -104,12 +98,12 @@
 			children = (
 				A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */,
 				A0CFE7BA21773B7B00BA3F6D /* Controller */,
-				A028C00221780F68004BC38E /* Helper */,
 				A0CFE79E21747BF000BA3F6D /* Main.storyboard */,
 				A0CFE7A121747BF500BA3F6D /* Assets.xcassets */,
 				A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */,
 				A0CFE7A621747BF500BA3F6D /* Info.plist */,
-				A0CFE7B921747D2C00BA3F6D /* Staging-Info.plist */,
+				6B87319E2189643800CC2651 /* Staging-Info.plist */,
+				6B8731A0218968E000CC2651 /* Melbourne.gpx */,
 			);
 			path = OTGRider;
 			sourceTree = "<group>";
@@ -144,6 +138,7 @@
 				A0CFE79421747BF000BA3F6D /* Frameworks */,
 				A0CFE79521747BF000BA3F6D /* Resources */,
 				63D5FC4FF668E2EF6A31964F /* [CP] Embed Pods Frameworks */,
+				4DA355E8F60E063C489CBA53 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,6 +158,7 @@
 				A0CFE7B021747D2B00BA3F6D /* Frameworks */,
 				A0CFE7B121747D2B00BA3F6D /* Resources */,
 				60FE65C59D3BA395F0FCE61E /* [CP] Embed Pods Frameworks */,
+				CAD76B0E74731C1E07EFC9FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +227,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4DA355E8F60E063C489CBA53 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		60FE65C59D3BA395F0FCE61E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +297,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAD76B0E74731C1E07EFC9FB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Project-OTGRider-staging/Pods-Project-OTGRider-staging-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-OTGRider-staging/Pods-Project-OTGRider-staging-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E43CD957A6499CF142FF20F8 /* [CP] Check Pods Manifest.lock */ = {
