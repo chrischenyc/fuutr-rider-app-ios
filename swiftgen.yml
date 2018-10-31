@@ -1,0 +1,20 @@
+# https://github.com/SwiftGen/SwiftGen
+
+strings:
+  inputs: OTGRider/Base.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift4
+      output: OTGRider/Generated/Strings.swift
+
+xcassets:
+  inputs:
+    - OTGRider/Assets.xcassets
+  outputs:
+    - templateName: swift4
+      output: OTGRider/Generated/Assets.swift
+
+ib:
+  inputs: OTGRider/Base.lproj/Main.storyboard
+  outputs:
+    - templateName: segues-swift4
+      output: OTGRider/Generated/StoryboardSegues.swift

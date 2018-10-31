@@ -17,6 +17,7 @@ abstract_target 'Project' do
   # helpers
   pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
   pod 'XCGLogger'
+  pod 'SwiftGen'
 
   target 'OTGRider' do
 

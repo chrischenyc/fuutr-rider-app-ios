@@ -44,15 +44,15 @@ class MapViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 switch selectedMenuItem {
                 case .wallet:
-                    self.performSegue(withIdentifier: "showWallet", sender: nil)
+                    self.perform(segue: StoryboardSegue.Main.showWallet)
                 case .history:
-                    self.performSegue(withIdentifier: "showHistory", sender: nil)
+                    self.perform(segue: StoryboardSegue.Main.showHistory)
                 case .juice:
-                    self.performSegue(withIdentifier: "showJuice", sender: nil)
+                    self.perform(segue: StoryboardSegue.Main.showJuice)
                 case .settings:
-                    self.performSegue(withIdentifier: "showSettings", sender: nil)
+                    self.perform(segue: StoryboardSegue.Main.showSettings)
                 case .help:
-                    self.performSegue(withIdentifier: "showHelp", sender: nil)
+                    self.perform(segue: StoryboardSegue.Main.showHelp)
                 }
                 
             })
