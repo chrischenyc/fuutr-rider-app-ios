@@ -12,9 +12,9 @@ import GoogleMaps
 class MapViewController: UIViewController {
     
     private let locationManager = CLLocationManager()
-    var currentLocation: CLLocation?
-    var countryZoomLevel: Float = 3.6
-    var streetZoomLevel: Float = 15.0
+    private let countryZoomLevel: Float = 3.6
+    private let streetZoomLevel: Float = 15.0
+    private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
     
     @IBOutlet weak var mapView: GMSMapView!
     
@@ -23,7 +23,9 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         // init Google Map with default view
-        let camera = GMSCameraPosition.camera(withLatitude: -26.0, longitude: 133.5, zoom: countryZoomLevel)
+        let camera = GMSCameraPosition.camera(withLatitude: defaultCoordinate.latitude,
+                                              longitude: defaultCoordinate.longitude,
+                                              zoom: countryZoomLevel)
         mapView.camera = camera
         mapView.delegate = self
         
