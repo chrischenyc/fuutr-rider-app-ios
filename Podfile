@@ -11,7 +11,6 @@ abstract_target 'Project' do
 
   # UI libs
   pod 'SideMenu'
-  pod 'SVProgressHUD'
   
   
   # helpers

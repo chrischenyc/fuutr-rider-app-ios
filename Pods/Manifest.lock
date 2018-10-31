@@ -1,20 +1,16 @@
 PODS:
   - SideMenu (5.0.2)
-  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - SideMenu
-  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SideMenu
-    - SVProgressHUD
 
 SPEC CHECKSUMS:
   SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 0254df45c895f4c401dcdd1fa1062ccbc001c9c4
+PODFILE CHECKSUM: 1dcfb8ba1557736faf92bfa753d3a7e4edb77e98
 
 COCOAPODS: 1.5.3
