@@ -5,20 +5,24 @@ PODS:
   - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
   - SideMenu (5.0.2)
+  - SwiftyUserDefaults (4.0.0-alpha.1)
 
 DEPENDENCIES:
   - GoogleMaps
   - SideMenu
+  - SwiftyUserDefaults (= 4.0.0-alpha.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GoogleMaps
     - SideMenu
+    - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
+  SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
 
-PODFILE CHECKSUM: b016c51bb7b6b563cdfde3912df1b02b8256a4ac
+PODFILE CHECKSUM: 7988c200f5ad09c87f015e5a4457216a5b7a0e50
 
 COCOAPODS: 1.5.3
