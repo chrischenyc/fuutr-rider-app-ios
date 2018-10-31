@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ive-ph-I79">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Enable Location View Controller-->
+        <scene sceneID="gaY-ZW-amW">
+            <objects>
+                <viewController id="ive-ph-I79" customClass="EnableLocationViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bAP-Ab-FOh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hdl-qy-EzQ">
+                                <rect key="frame" x="92" y="584.5" width="191.5" height="50.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Location Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHA-gQ-2tE">
+                                        <rect key="frame" x="0.0" y="0.0" width="191.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-uP-0gR">
+                                        <rect key="frame" x="0.0" y="20.5" width="191.5" height="30"/>
+                                        <state key="normal" title="Enable"/>
+                                        <connections>
+                                            <action selector="enableLocationTapped:" destination="ive-ph-I79" eventType="touchUpInside" id="Ew0-q2-6xt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hdl-qy-EzQ" firstAttribute="centerX" secondItem="bAP-Ab-FOh" secondAttribute="centerX" id="53B-GP-yN0"/>
+                            <constraint firstItem="7bP-6v-NZI" firstAttribute="bottom" secondItem="hdl-qy-EzQ" secondAttribute="bottom" constant="32" id="Rjg-Ty-N6L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7bP-6v-NZI"/>
+                    </view>
+                    <connections>
+                        <segue destination="qzt-tc-SDj" kind="show" identifier="showEnableNotification" id="mgF-Gk-yaG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FCt-fc-crM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-273" y="163"/>
+        </scene>
+        <!--Enable Notification View Controller-->
+        <scene sceneID="bYf-OB-Srn">
+            <objects>
+                <viewController id="qzt-tc-SDj" customClass="EnableNotificationViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cH-By-grx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2WG-AW-7rd">
+                                <rect key="frame" x="94.5" y="584.5" width="186.5" height="50.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Push Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eo-0m-2Ze">
+                                        <rect key="frame" x="0.0" y="0.0" width="186.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qf4-8J-dcC">
+                                        <rect key="frame" x="0.0" y="20.5" width="186.5" height="30"/>
+                                        <state key="normal" title="Enable"/>
+                                        <connections>
+                                            <action selector="enableNotificationTapped:" destination="qzt-tc-SDj" eventType="touchUpInside" id="bjC-6a-ugO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="adh-WU-x6o" firstAttribute="bottom" secondItem="2WG-AW-7rd" secondAttribute="bottom" constant="32" id="Ipc-xA-6bp"/>
+                            <constraint firstItem="2WG-AW-7rd" firstAttribute="centerX" secondItem="6cH-By-grx" secondAttribute="centerX" id="Kbc-h5-sdM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="adh-WU-x6o"/>
+                    </view>
+                    <connections>
+                        <segue destination="sTK-FS-clb" kind="show" identifier="showMain" id="muN-Ht-7rg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oSI-ME-IES" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="524" y="162"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="xaB-0V-UDf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="sTK-FS-clb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lCc-Yk-g6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1162" y="161"/>
+        </scene>
+    </scenes>
+</document>

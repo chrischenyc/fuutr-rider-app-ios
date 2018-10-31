@@ -38,14 +38,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   writeToFile: nil,
                   fileLevel: nil)
         
-        log.debug("userSignedIn \(Defaults[.userSignedIn])")
-        
         // third-party services init
         GMSServices.provideAPIKey(Constants.Keys.googleMapKey)
         
         // UI init
         SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
         SideMenuManager.defaultManager.menuFadeStatusBar = false
+        
+        // load initial screen depending on user signed-in status
+        if !Defaults[.userSignedIn] {
+            self.window?.rootViewController = UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController()
+        } else if !Defaults[.userOnboarded] {
+            self.window?.rootViewController = UIStoryboard(name: "Onboard", bundle: nil).instantiateInitialViewController()
+        } else {
+            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        }
         
         return true
     }

@@ -19,6 +19,20 @@
 		6B8731B32189BA8D00CC2651 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731AF2189BA8D00CC2651 /* Assets.swift */; };
 		6B8731B62189BAC400CC2651 /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731B42189BAC400CC2651 /* StoryboardSegues.swift */; };
 		6B8731B72189BAC400CC2651 /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731B42189BAC400CC2651 /* StoryboardSegues.swift */; };
+		6B8731BD2189C2B900CC2651 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731BB2189C2B900CC2651 /* SignIn.storyboard */; };
+		6B8731BE2189C2B900CC2651 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731BB2189C2B900CC2651 /* SignIn.storyboard */; };
+		6B8731C02189C7FA00CC2651 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */; };
+		6B8731C12189C7FA00CC2651 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */; };
+		6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C22189CA0400CC2651 /* String+Validate.swift */; };
+		6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C22189CA0400CC2651 /* String+Validate.swift */; };
+		6B8731C62189D69800CC2651 /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C52189D69800CC2651 /* VerificationCodeViewController.swift */; };
+		6B8731C72189D69800CC2651 /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C52189D69800CC2651 /* VerificationCodeViewController.swift */; };
+		6B8731CA2189D86600CC2651 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731C82189D86600CC2651 /* Onboard.storyboard */; };
+		6B8731CB2189D86600CC2651 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731C82189D86600CC2651 /* Onboard.storyboard */; };
+		6B8731CD2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */; };
+		6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */; };
+		6B8731D02189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */; };
+		6B8731D12189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */; };
 		81E8C84519DD630C24B9B6DC /* Pods_Project_OTGRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81CF8CCF05B3983496167E9 /* Pods_Project_OTGRider.framework */; };
 		A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
 		A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
@@ -44,6 +58,13 @@
 		6B8731AE2189BA8D00CC2651 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		6B8731AF2189BA8D00CC2651 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		6B8731B42189BAC400CC2651 /* StoryboardSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSegues.swift; sourceTree = "<group>"; };
+		6B8731BC2189C2B900CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignIn.storyboard; sourceTree = "<group>"; };
+		6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		6B8731C22189CA0400CC2651 /* String+Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validate.swift"; sourceTree = "<group>"; };
+		6B8731C52189D69800CC2651 /* VerificationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeViewController.swift; sourceTree = "<group>"; };
+		6B8731C92189D86600CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboard.storyboard; sourceTree = "<group>"; };
+		6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableLocationViewController.swift; sourceTree = "<group>"; };
+		6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableNotificationViewController.swift; sourceTree = "<group>"; };
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		A0CFE79721747BF000BA3F6D /* OTGRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTGRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				6B8731A2218997B600CC2651 /* Constants.swift */,
+				6B8731C22189CA0400CC2651 /* String+Validate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -146,6 +168,8 @@
 				6B8731A1218997A000CC2651 /* Helpers */,
 				A0CFE7BA21773B7B00BA3F6D /* Controller */,
 				A0CFE79E21747BF000BA3F6D /* Main.storyboard */,
+				6B8731BB2189C2B900CC2651 /* SignIn.storyboard */,
+				6B8731C82189D86600CC2651 /* Onboard.storyboard */,
 				A0CFE7A121747BF500BA3F6D /* Assets.xcassets */,
 				A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */,
 				A0CFE7A621747BF500BA3F6D /* Info.plist */,
@@ -161,6 +185,10 @@
 			children = (
 				A0CFE79C21747BF000BA3F6D /* MapViewController.swift */,
 				A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */,
+				6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */,
+				6B8731C52189D69800CC2651 /* VerificationCodeViewController.swift */,
+				6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */,
+				6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,8 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0CFE7A521747BF500BA3F6D /* LaunchScreen.storyboard in Resources */,
+				6B8731BD2189C2B900CC2651 /* SignIn.storyboard in Resources */,
 				6B8731AB2189B9A500CC2651 /* Localizable.strings in Resources */,
 				A0CFE7A221747BF500BA3F6D /* Assets.xcassets in Resources */,
+				6B8731CA2189D86600CC2651 /* Onboard.storyboard in Resources */,
 				A0CFE7A021747BF000BA3F6D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,8 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0CFE7B221747D2B00BA3F6D /* LaunchScreen.storyboard in Resources */,
+				6B8731BE2189C2B900CC2651 /* SignIn.storyboard in Resources */,
 				6B8731AC2189B9A500CC2651 /* Localizable.strings in Resources */,
 				A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */,
+				6B8731CB2189D86600CC2651 /* Onboard.storyboard in Resources */,
 				A0CFE7B421747D2B00BA3F6D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,11 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -424,12 +452,17 @@
 			files = (
 				A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */,
 				6B8731B22189BA8D00CC2651 /* Assets.swift in Sources */,
+				6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */,
 				6B8731A72189A70600CC2651 /* UserDefaults.swift in Sources */,
 				A0CFE7BC21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */,
+				6B8731C02189C7FA00CC2651 /* SignInViewController.swift in Sources */,
 				6B8731B02189BA8D00CC2651 /* Strings.swift in Sources */,
+				6B8731CD2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
+				6B8731C62189D69800CC2651 /* VerificationCodeViewController.swift in Sources */,
 				6B8731B62189BAC400CC2651 /* StoryboardSegues.swift in Sources */,
 				6B8731A3218997B600CC2651 /* Constants.swift in Sources */,
+				6B8731D02189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,12 +472,17 @@
 			files = (
 				A0CFE7AE21747D2B00BA3F6D /* MapViewController.swift in Sources */,
 				6B8731B32189BA8D00CC2651 /* Assets.swift in Sources */,
+				6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */,
 				6B8731A82189A70600CC2651 /* UserDefaults.swift in Sources */,
 				A0CFE7BD21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */,
+				6B8731C12189C7FA00CC2651 /* SignInViewController.swift in Sources */,
 				6B8731B12189BA8D00CC2651 /* Strings.swift in Sources */,
+				6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
+				6B8731C72189D69800CC2651 /* VerificationCodeViewController.swift in Sources */,
 				6B8731B72189BAC400CC2651 /* StoryboardSegues.swift in Sources */,
 				6B8731A4218997B600CC2651 /* Constants.swift in Sources */,
+				6B8731D12189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +495,22 @@
 				6B8731AA2189B9A500CC2651 /* Base */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		6B8731BB2189C2B900CC2651 /* SignIn.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B8731BC2189C2B900CC2651 /* Base */,
+			);
+			name = SignIn.storyboard;
+			sourceTree = "<group>";
+		};
+		6B8731C82189D86600CC2651 /* Onboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B8731C92189D86600CC2651 /* Base */,
+			);
+			name = Onboard.storyboard;
 			sourceTree = "<group>";
 		};
 		A0CFE79E21747BF000BA3F6D /* Main.storyboard */ = {

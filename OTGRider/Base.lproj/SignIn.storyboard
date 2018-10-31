@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Yg-X6-IMj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign In View Controller-->
+        <scene sceneID="QWo-Qz-k4l">
+            <objects>
+                <viewController id="9Yg-X6-IMj" customClass="SignInViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oh0-Wf-n3X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Riding Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGx-Om-xx5">
+                                <rect key="frame" x="123" y="259" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0412 345 678" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-Xn-7Sm">
+                                <rect key="frame" x="32" y="296" width="311" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                <connections>
+                                    <action selector="mobileChanged:" destination="9Yg-X6-IMj" eventType="editingChanged" id="27x-dJ-0my"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpl-lZ-PkQ">
+                                <rect key="frame" x="168" y="334" width="39" height="30"/>
+                                <state key="normal" title="NEXT"/>
+                                <connections>
+                                    <action selector="mobileNextTapped:" destination="9Yg-X6-IMj" eventType="touchUpInside" id="NMt-G8-hgV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll send a text to verify your number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msX-BP-P0T">
+                                <rect key="frame" x="41" y="372" width="293" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NGA-pj-TOa" firstAttribute="trailing" secondItem="7bk-Xn-7Sm" secondAttribute="trailing" constant="32" id="0es-FE-BaX"/>
+                            <constraint firstItem="Vpl-lZ-PkQ" firstAttribute="centerX" secondItem="oh0-Wf-n3X" secondAttribute="centerX" id="3E3-4p-Qiz"/>
+                            <constraint firstItem="7bk-Xn-7Sm" firstAttribute="top" secondItem="WGx-Om-xx5" secondAttribute="bottom" constant="16" id="9Op-yA-Ukn"/>
+                            <constraint firstItem="WGx-Om-xx5" firstAttribute="centerX" secondItem="oh0-Wf-n3X" secondAttribute="centerX" id="brb-NR-GMO"/>
+                            <constraint firstItem="7bk-Xn-7Sm" firstAttribute="leading" secondItem="NGA-pj-TOa" secondAttribute="leading" constant="32" id="l5p-gR-FMX"/>
+                            <constraint firstItem="Vpl-lZ-PkQ" firstAttribute="top" secondItem="7bk-Xn-7Sm" secondAttribute="bottom" constant="8" id="lPb-rG-MGQ"/>
+                            <constraint firstItem="msX-BP-P0T" firstAttribute="centerX" secondItem="oh0-Wf-n3X" secondAttribute="centerX" id="tFU-ar-bwF"/>
+                            <constraint firstItem="WGx-Om-xx5" firstAttribute="centerY" secondItem="oh0-Wf-n3X" secondAttribute="centerY" constant="-64" id="taB-dR-O5I"/>
+                            <constraint firstItem="msX-BP-P0T" firstAttribute="top" secondItem="Vpl-lZ-PkQ" secondAttribute="bottom" constant="8" id="y1c-PX-ZfH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NGA-pj-TOa"/>
+                    </view>
+                    <connections>
+                        <outlet property="mobileNextButton" destination="Vpl-lZ-PkQ" id="fbU-aB-Kn6"/>
+                        <outlet property="mobileTextField" destination="7bk-Xn-7Sm" id="cUF-wD-t1T"/>
+                        <outlet property="mobileVerifyInfoLabel" destination="msX-BP-P0T" id="ood-R3-l0g"/>
+                        <segue destination="1D3-y9-qLq" kind="show" identifier="showMobileVerificationCode" id="sNF-jv-BJH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOq-lO-7Fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-374" y="173"/>
+        </scene>
+        <!--Verification Code View Controller-->
+        <scene sceneID="PzC-pd-mNv">
+            <objects>
+                <viewController id="1D3-y9-qLq" customClass="VerificationCodeViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wKD-Pj-K1z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CJx-qI-FHs">
+                                <rect key="frame" x="32" y="222.5" width="311" height="158.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 4-digit code sent to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80i-dC-5ZA">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRP-CC-xt6">
+                                        <rect key="frame" x="0.0" y="36.5" width="311" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                        <connections>
+                                            <action selector="codeChanged:" destination="1D3-y9-qLq" eventType="editingChanged" id="TA7-ga-8So"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rl-h5-i2B">
+                                        <rect key="frame" x="0.0" y="82.5" width="311" height="30"/>
+                                        <state key="normal" title="NEXT"/>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="1D3-y9-qLq" eventType="touchUpInside" id="2IX-WQ-9lm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2E-aY-TFs">
+                                        <rect key="frame" x="0.0" y="128.5" width="311" height="30"/>
+                                        <state key="normal" title="Resend Code"/>
+                                        <connections>
+                                            <action selector="resendButtonTapped:" destination="1D3-y9-qLq" eventType="touchUpInside" id="gvX-N2-Kly"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rsc-Va-wC7">
+                                <rect key="frame" x="16" y="44" width="34" height="30"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="OPR-SQ-TBD" kind="unwind" unwindAction="unwindToSignIn:" id="VVK-k4-7UQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rsc-Va-wC7" firstAttribute="leading" secondItem="Gne-8l-oXr" secondAttribute="leading" constant="16" id="2Li-BY-jHe"/>
+                            <constraint firstItem="CJx-qI-FHs" firstAttribute="leading" secondItem="Gne-8l-oXr" secondAttribute="leading" constant="32" id="9No-xG-yLr"/>
+                            <constraint firstItem="Rsc-Va-wC7" firstAttribute="top" secondItem="Gne-8l-oXr" secondAttribute="top" constant="24" id="L8h-dC-24U"/>
+                            <constraint firstItem="CJx-qI-FHs" firstAttribute="centerY" secondItem="wKD-Pj-K1z" secondAttribute="centerY" constant="-32" id="lcE-CT-NOJ"/>
+                            <constraint firstItem="Gne-8l-oXr" firstAttribute="trailing" secondItem="CJx-qI-FHs" secondAttribute="trailing" constant="32" id="mGh-8x-kpK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gne-8l-oXr"/>
+                    </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="yRP-CC-xt6" id="shy-v2-JU5"/>
+                        <outlet property="nextButton" destination="4rl-h5-i2B" id="2aZ-Od-NZW"/>
+                        <segue destination="KAD-4P-JWO" kind="show" identifier="showOnboard" id="Q5s-yY-tXW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juU-q2-mQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OPR-SQ-TBD" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="172"/>
+        </scene>
+        <!--Onboard-->
+        <scene sceneID="ACV-qL-Ci8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Onboard" id="KAD-4P-JWO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fud-lt-t0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="172"/>
+        </scene>
+    </scenes>
+</document>

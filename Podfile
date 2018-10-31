@@ -10,9 +10,8 @@ abstract_target 'Project' do
   pod 'GoogleMaps'
   
 
-  # UI libs
+  # UI
   pod 'SideMenu'
-  
   
   # helpers
   pod 'SwiftyUserDefaults', '4.0.0-alpha.1'

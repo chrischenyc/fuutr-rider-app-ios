@@ -14,7 +14,10 @@ xcassets:
       output: OTGRider/Generated/Assets.swift
 
 ib:
-  inputs: OTGRider/Base.lproj/Main.storyboard
+  inputs:
+    - OTGRider/Base.lproj/Main.storyboard
+    - OTGRider/Base.lproj/SignIn.storyboard
+    - OTGRider/Base.lproj/Onboard.storyboard
   outputs:
     - templateName: segues-swift4
       output: OTGRider/Generated/StoryboardSegues.swift

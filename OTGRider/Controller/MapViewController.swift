@@ -30,6 +30,7 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         
         // get user location
+        // TODO: check if permission granted
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
     }
