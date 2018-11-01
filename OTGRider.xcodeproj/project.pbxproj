@@ -35,6 +35,8 @@
 		6B8731D12189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */; };
 		6B8731D9218A909400CC2651 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731D7218A909400CC2651 /* SideMenu.storyboard */; };
 		6B8731DA218A909400CC2651 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731D7218A909400CC2651 /* SideMenu.storyboard */; };
+		6B8731DE218A962D00CC2651 /* HowToRide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731DC218A962D00CC2651 /* HowToRide.storyboard */; };
+		6B8731DF218A962D00CC2651 /* HowToRide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731DC218A962D00CC2651 /* HowToRide.storyboard */; };
 		81E8C84519DD630C24B9B6DC /* Pods_Project_OTGRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81CF8CCF05B3983496167E9 /* Pods_Project_OTGRider.framework */; };
 		A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
 		A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
@@ -70,6 +72,7 @@
 		6B8731D5218A816000CC2651 /* OTGRider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OTGRider.entitlements; sourceTree = "<group>"; };
 		6B8731D6218A852900CC2651 /* OTGRider-staging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OTGRider-staging.entitlements"; sourceTree = "<group>"; };
 		6B8731D8218A909400CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SideMenu.storyboard; sourceTree = "<group>"; };
+		6B8731DD218A962D00CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HowToRide.storyboard; sourceTree = "<group>"; };
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		A0CFE79721747BF000BA3F6D /* OTGRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTGRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				A0CFE79E21747BF000BA3F6D /* Main.storyboard */,
+				6B8731DC218A962D00CC2651 /* HowToRide.storyboard */,
 				6B8731D7218A909400CC2651 /* SideMenu.storyboard */,
 				6B8731BB2189C2B900CC2651 /* SignIn.storyboard */,
 				6B8731C82189D86600CC2651 /* Onboard.storyboard */,
@@ -316,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8731DE218A962D00CC2651 /* HowToRide.storyboard in Resources */,
 				A0CFE7A521747BF500BA3F6D /* LaunchScreen.storyboard in Resources */,
 				6B8731BD2189C2B900CC2651 /* SignIn.storyboard in Resources */,
 				6B8731AB2189B9A500CC2651 /* Localizable.strings in Resources */,
@@ -330,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8731DF218A962D00CC2651 /* HowToRide.storyboard in Resources */,
 				A0CFE7B221747D2B00BA3F6D /* LaunchScreen.storyboard in Resources */,
 				6B8731BE2189C2B900CC2651 /* SignIn.storyboard in Resources */,
 				6B8731AC2189B9A500CC2651 /* Localizable.strings in Resources */,
@@ -607,6 +613,14 @@
 				6B8731D8218A909400CC2651 /* Base */,
 			);
 			name = SideMenu.storyboard;
+			sourceTree = "<group>";
+		};
+		6B8731DC218A962D00CC2651 /* HowToRide.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B8731DD218A962D00CC2651 /* Base */,
+			);
+			name = HowToRide.storyboard;
 			sourceTree = "<group>";
 		};
 		A0CFE79E21747BF000BA3F6D /* Main.storyboard */ = {

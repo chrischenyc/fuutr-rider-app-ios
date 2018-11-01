@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--HowToRide-->
+        <scene sceneID="z1h-e8-WzL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HowToRide" id="eZ1-0M-OEE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ba1-Xz-ijz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2173" y="1563"/>
+        </scene>
         <!--SideMenu-->
         <scene sceneID="XBb-yg-UA7">
             <objects>
@@ -45,7 +53,7 @@
                                 <rect key="frame" x="144" y="20" width="87" height="30"/>
                                 <state key="normal" title="Learn to ride"/>
                                 <connections>
-                                    <segue destination="G6U-fV-iXp" kind="presentation" id="GW7-qU-KAA"/>
+                                    <segue destination="eZ1-0M-OEE" kind="presentation" id="ndE-UW-B0n"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-gN-jng">
@@ -84,47 +92,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2796" y="1589"/>
-        </scene>
-        <!--How to ride-->
-        <scene sceneID="bJq-JS-Lnq">
-            <objects>
-                <viewController id="hIA-ou-AiR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CVV-fd-BX6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ELr-zP-7WF"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="How to ride" id="Mff-ym-Esl">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="cLd-xg-sBw">
-                            <connections>
-                                <segue destination="Kj0-it-iQd" kind="unwind" unwindAction="unwindToHome:" id="z9I-37-FDU"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bfv-hI-j24" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Kj0-it-iQd" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="990" y="169"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="bRV-Yo-RWs">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G6U-fV-iXp" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XAf-UA-Zz9">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hIA-ou-AiR" kind="relationship" relationship="rootViewController" id="H4f-bC-gcb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wMp-Io-4dn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="190" y="169"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4r1-XR-RWj">
