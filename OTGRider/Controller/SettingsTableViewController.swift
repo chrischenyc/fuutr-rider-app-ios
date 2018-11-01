@@ -11,25 +11,31 @@ import SwiftyUserDefaults
 import FBSDKLoginKit
 
 class SettingsTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
         tableView.tableFooterView = UIView(frame: .zero)
     }
-
     
-
-    @IBAction func signOutTapped(_ sender: Any) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 3 {
+            signOut()
+        }
+    }
+    
+    private func signOut() {
         // TODO: call API maybe?
-        FBSDKLoginManager().logOut()
+        
         Defaults[.userSignedIn] = false
+        // TODO: purge other user info in NSUserDefaults
+        
+        if FBSDKAccessToken.current() != nil {
+            FBSDKLoginManager().logOut()
+        }
+        
+        
         perform(segue: StoryboardSegue.Settings.settingsToSignIn)
     }
-
+    
 }
