@@ -44,6 +44,8 @@ class MapViewController: UIViewController {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 switch selectedMenuItem {
+                case .greeting:
+                    break
                 case .wallet:
                     self.perform(segue: StoryboardSegue.Main.showWallet)
                 case .history:
