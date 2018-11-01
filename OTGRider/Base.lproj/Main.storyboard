@@ -77,7 +77,6 @@
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
                         <segue destination="YjV-do-QWr" kind="showDetail" identifier="showHistory" id="RLF-ho-hra"/>
                         <segue destination="HZ5-CD-UgK" kind="showDetail" identifier="showWallet" id="xc1-3B-BD7"/>
-                        <segue destination="L7g-mz-zAH" kind="showDetail" identifier="showJuice" id="FET-ra-UmO"/>
                         <segue destination="OkL-vt-Cl1" kind="showDetail" identifier="showSettings" id="rqN-cc-rQp"/>
                         <segue destination="wbe-sA-fi2" kind="showDetail" identifier="showHelp" id="ud1-jC-qcF"/>
                     </connections>
@@ -337,47 +336,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3Q-Oi-Ib2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="190" y="2381"/>
-        </scene>
-        <!--Juice & Earn-->
-        <scene sceneID="rbN-a0-Edx">
-            <objects>
-                <viewController id="78K-K6-Cet" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XAv-Sc-d4n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="YE3-pk-9jI"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Juice &amp; Earn" id="UVp-qj-ey1">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="IbE-VY-bwv">
-                            <connections>
-                                <segue destination="ySV-Z9-d5d" kind="unwind" unwindAction="unwindToHome:" id="QJa-J5-GOT"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GIY-vT-7tg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="ySV-Z9-d5d" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1022" y="3072"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TNj-95-T02">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L7g-mz-zAH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uqA-x0-yVg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="78K-K6-Cet" kind="relationship" relationship="rootViewController" id="8cz-4e-fFZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ehL-F6-77M" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="190" y="3072"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Y9f-Yl-hDo">

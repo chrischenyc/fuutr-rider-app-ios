@@ -12,7 +12,6 @@ enum SideMenuItem {
     case greeting
     case history
     case wallet
-    case juice
     case settings
     case help
 }
@@ -36,12 +35,9 @@ class SideMenuViewController: UITableViewController {
             selectedMenuItem = .wallet
             performSegue(withIdentifier: "unwindToHome", sender: nil)
         case 3:
-            selectedMenuItem = .juice
-            performSegue(withIdentifier: "unwindToHome", sender: nil)
-        case 4:
             selectedMenuItem = .settings
             performSegue(withIdentifier: "unwindToHome", sender: nil)
-        case 5:
+        case 4:
             selectedMenuItem = .help
             performSegue(withIdentifier: "unwindToHome", sender: nil)
         default:

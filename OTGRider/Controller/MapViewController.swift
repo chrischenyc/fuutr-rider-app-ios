@@ -50,8 +50,6 @@ class MapViewController: UIViewController {
                     self.perform(segue: StoryboardSegue.Main.showWallet)
                 case .history:
                     self.perform(segue: StoryboardSegue.Main.showHistory)
-                case .juice:
-                    self.perform(segue: StoryboardSegue.Main.showJuice)
                 case .settings:
                     self.perform(segue: StoryboardSegue.Main.showSettings)
                 case .help:

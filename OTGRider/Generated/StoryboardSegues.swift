@@ -16,7 +16,6 @@ internal enum StoryboardSegue {
   internal enum Main: String, SegueType {
     case showHelp
     case showHistory
-    case showJuice
     case showSettings
     case showWallet
   }
