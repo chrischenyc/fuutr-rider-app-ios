@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMaps
+import FBSDKCoreKit
+import FBSDKLoginKit
 import SideMenu
 import XCGLogger
 import SwiftyUserDefaults
@@ -40,10 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // third-party services init
         GMSServices.provideAPIKey(Constants.Keys.googleMapKey)
+        FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         // UI init
         SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
         SideMenuManager.defaultManager.menuFadeStatusBar = false
+        
+        // TODO: custom facebook button https://developers.facebook.com/docs/facebook-login/ios/advanced#custom-login-button
+        // Override point for customization after application launch.
+        // [FBSDKLoginButton class];
         
         // load initial screen depending on user signed-in status
         if !Defaults[.userSignedIn] {
@@ -79,6 +86,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if url.scheme == "fb",
+            let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String {
+            return FBSDKApplicationDelegate.sharedInstance().application(app,
+                                                                         open: url,
+                                                                         sourceApplication: sourceApplication,
+                                                                         annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        }
+        
+        return false
+    }
     
 }
 

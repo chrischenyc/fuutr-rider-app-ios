@@ -1,5 +1,15 @@
 PODS:
   - BartyCrouch (3.13.0)
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - FBSDKCoreKit (4.38.0):
+    - Bolts (~> 1.9)
+  - FBSDKLoginKit (4.38.0):
+    - FBSDKCoreKit
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
   - GoogleMaps/Base (2.7.0)
@@ -18,6 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - BartyCrouch
+  - FBSDKLoginKit
   - GoogleMaps
   - SideMenu
   - SwiftGen
@@ -27,6 +38,9 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BartyCrouch
+    - Bolts
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - GoogleMaps
     - ObjcExceptionBridging
     - SideMenu
@@ -36,6 +50,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   BartyCrouch: 69e5e6ec67e77951dc1c22aa48abbf05d175b81c
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  FBSDKCoreKit: 2ab7fdbf600dc6b628ba7a49aa29d357a7b4c74e
+  FBSDKLoginKit: 634fa27e72e33620eb6389253337342c03d4a407
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
@@ -43,6 +60,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 708a327efbc040cb9d4a6464ca1d37eb6185a18c
+PODFILE CHECKSUM: 7fd4c45ee6f91295c44c716f372b7dff36e0ac3c
 
 COCOAPODS: 1.5.3

@@ -43,10 +43,27 @@
 	<array>
 		<string>googlechromes</string>
 		<string>comgooglemaps</string>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>$(PRODUCT_NAME) will use your location to look for scooters near you and track your ride</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>$(PRODUCT_NAME) will use your location to look for scooters near you and track your ride</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb705713809806889</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>705713809806889</string>
+	<key>FacebookDisplayName</key>
+	<string>OTG Rider</string>
 </dict>
 </plist>

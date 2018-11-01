@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--Delegate-->
         <scene sceneID="QWo-Qz-k4l">
             <objects>
                 <viewController id="9Yg-X6-IMj" customClass="SignInViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,54 +18,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Riding Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGx-Om-xx5">
-                                <rect key="frame" x="123" y="259" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0412 345 678" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-Xn-7Sm">
-                                <rect key="frame" x="32" y="296" width="311" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
-                                <connections>
-                                    <action selector="mobileChanged:" destination="9Yg-X6-IMj" eventType="editingChanged" id="27x-dJ-0my"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpl-lZ-PkQ">
-                                <rect key="frame" x="168" y="334" width="39" height="30"/>
-                                <state key="normal" title="NEXT"/>
-                                <connections>
-                                    <action selector="mobileNextTapped:" destination="9Yg-X6-IMj" eventType="touchUpInside" id="NMt-G8-hgV"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll send a text to verify your number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msX-BP-P0T">
-                                <rect key="frame" x="41" y="372" width="293" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SGR-gA-Me6">
+                                <rect key="frame" x="41" y="164" width="293" height="231.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Riding Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGx-Om-xx5">
+                                        <rect key="frame" x="82" y="0.0" width="129" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0412 345 678" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-Xn-7Sm">
+                                        <rect key="frame" x="8" y="36.5" width="277" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                        <connections>
+                                            <action selector="mobileChanged:" destination="9Yg-X6-IMj" eventType="editingChanged" id="27x-dJ-0my"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpl-lZ-PkQ">
+                                        <rect key="frame" x="8" y="82.5" width="277" height="30"/>
+                                        <state key="normal" title="NEXT"/>
+                                        <connections>
+                                            <action selector="mobileNextTapped:" destination="9Yg-X6-IMj" eventType="touchUpInside" id="NMt-G8-hgV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll send a text to verify your number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msX-BP-P0T">
+                                        <rect key="frame" x="0.0" y="128.5" width="293" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuF-1m-Vvq">
+                                        <rect key="frame" x="138.5" y="165" width="16" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2D-h8-K4D" customClass="FBSDKLoginButton">
+                                        <rect key="frame" x="8" y="201.5" width="277" height="30"/>
+                                        <state key="normal" title="facebook"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9Yg-X6-IMj" id="148-Wh-M1S"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7bk-Xn-7Sm" firstAttribute="leading" secondItem="SGR-gA-Me6" secondAttribute="leading" constant="8" id="Em5-5T-1Ra"/>
+                                    <constraint firstItem="M2D-h8-K4D" firstAttribute="leading" secondItem="SGR-gA-Me6" secondAttribute="leading" constant="8" id="Lye-fs-PFu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vpl-lZ-PkQ" secondAttribute="trailing" constant="8" id="QI2-ib-d0l"/>
+                                    <constraint firstAttribute="trailing" secondItem="M2D-h8-K4D" secondAttribute="trailing" constant="8" id="XtF-4D-H18"/>
+                                    <constraint firstAttribute="trailing" secondItem="7bk-Xn-7Sm" secondAttribute="trailing" constant="8" id="hx2-O8-nnI"/>
+                                    <constraint firstItem="Vpl-lZ-PkQ" firstAttribute="leading" secondItem="SGR-gA-Me6" secondAttribute="leading" constant="8" id="jN3-7t-wZ5"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NGA-pj-TOa" firstAttribute="trailing" secondItem="7bk-Xn-7Sm" secondAttribute="trailing" constant="32" id="0es-FE-BaX"/>
-                            <constraint firstItem="Vpl-lZ-PkQ" firstAttribute="centerX" secondItem="oh0-Wf-n3X" secondAttribute="centerX" id="3E3-4p-Qiz"/>
-                            <constraint firstItem="7bk-Xn-7Sm" firstAttribute="top" secondItem="WGx-Om-xx5" secondAttribute="bottom" constant="16" id="9Op-yA-Ukn"/>
-                            <constraint firstItem="WGx-Om-xx5" firstAttribute="centerX" secondItem="oh0-Wf-n3X" secondAttribute="centerX" id="brb-NR-GMO"/>
-                            <constraint firstItem="7bk-Xn-7Sm" firstAttribute="leading" secondItem="NGA-pj-TOa" secondAttribute="leading" constant="32" id="l5p-gR-FMX"/>
-                            <constraint firstItem="Vpl-lZ-PkQ" firstAttribute="top" secondItem="7bk-Xn-7Sm" secondAttribute="bottom" constant="8" id="lPb-rG-MGQ"/>
-                            <constraint firstItem="msX-BP-P0T" firstAttribute="centerX" secondItem="oh0-Wf-n3X" secondAttribute="centerX" id="tFU-ar-bwF"/>
-                            <constraint firstItem="WGx-Om-xx5" firstAttribute="centerY" secondItem="oh0-Wf-n3X" secondAttribute="centerY" constant="-64" id="taB-dR-O5I"/>
-                            <constraint firstItem="msX-BP-P0T" firstAttribute="top" secondItem="Vpl-lZ-PkQ" secondAttribute="bottom" constant="8" id="y1c-PX-ZfH"/>
+                            <constraint firstItem="SGR-gA-Me6" firstAttribute="centerY" secondItem="oh0-Wf-n3X" secondAttribute="centerY" constant="-54" id="7Ai-JE-aCx"/>
+                            <constraint firstItem="SGR-gA-Me6" firstAttribute="centerX" secondItem="oh0-Wf-n3X" secondAttribute="centerX" id="A87-fW-ci0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NGA-pj-TOa"/>
                     </view>
                     <connections>
+                        <outlet property="facebookLoginButton" destination="M2D-h8-K4D" id="HB5-il-maV"/>
                         <outlet property="mobileNextButton" destination="Vpl-lZ-PkQ" id="fbU-aB-Kn6"/>
                         <outlet property="mobileTextField" destination="7bk-Xn-7Sm" id="cUF-wD-t1T"/>
                         <outlet property="mobileVerifyInfoLabel" destination="msX-BP-P0T" id="ood-R3-l0g"/>
                         <segue destination="1D3-y9-qLq" kind="show" identifier="showMobileVerificationCode" id="sNF-jv-BJH"/>
+                        <segue destination="KAD-4P-JWO" kind="show" identifier="fromSignInToOnboard" id="NYh-wd-6MW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOq-lO-7Fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,7 +157,7 @@
                         <outlet property="codeTextField" destination="yRP-CC-xt6" id="shy-v2-JU5"/>
                         <outlet property="infoLabel" destination="80i-dC-5ZA" id="YEh-IF-yZR"/>
                         <outlet property="nextButton" destination="4rl-h5-i2B" id="2aZ-Od-NZW"/>
-                        <segue destination="KAD-4P-JWO" kind="show" identifier="showOnboard" id="Q5s-yY-tXW"/>
+                        <segue destination="KAD-4P-JWO" kind="show" identifier="fromVerficationCodeToOnboard" id="Q5s-yY-tXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juU-q2-mQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,7 +171,10 @@
                 <viewControllerPlaceholder storyboardName="Onboard" id="KAD-4P-JWO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fud-lt-t0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="172"/>
+            <point key="canvasLocation" x="22" y="628"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NYh-wd-6MW"/>
+    </inferredMetricsTieBreakers>
 </document>

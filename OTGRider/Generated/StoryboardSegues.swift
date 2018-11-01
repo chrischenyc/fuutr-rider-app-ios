@@ -25,8 +25,9 @@ internal enum StoryboardSegue {
     case showMain
   }
   internal enum SignIn: String, SegueType {
+    case fromSignInToOnboard
+    case fromVerficationCodeToOnboard
     case showMobileVerificationCode
-    case showOnboard
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name

@@ -39,7 +39,7 @@ class VerificationCodeViewController: UIViewController {
             self.infoLabel.text = NSLocalizedString("kVerified", comment: "")
             Defaults[.userSignedIn] = true
             
-            self.perform(segue: StoryboardSegue.SignIn.showOnboard, sender: nil)
+            self.perform(segue: StoryboardSegue.SignIn.fromVerficationCodeToOnboard, sender: nil)
         })
     }
     

@@ -8,6 +8,7 @@ abstract_target 'Project' do
 
   # third-party services
   pod 'GoogleMaps'
+  pod 'FBSDKLoginKit'
   
   # UI
   pod 'SideMenu'
