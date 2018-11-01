@@ -26,4 +26,9 @@ class EnableNotificationViewController: UIViewController {
         perform(segue: StoryboardSegue.Onboard.showMain, sender: nil)
     }
     
+    @IBAction func laterTapped(_ sender: Any) {
+        Defaults[.userOnboarded] = true
+        
+        perform(segue: StoryboardSegue.Onboard.showMain, sender: nil)
+    }
 }
