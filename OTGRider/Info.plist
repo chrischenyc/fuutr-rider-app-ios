@@ -65,5 +65,7 @@
 	<string>705713809806889</string>
 	<key>FacebookDisplayName</key>
 	<string>OTG Rider</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>
