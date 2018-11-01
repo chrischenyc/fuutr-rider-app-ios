@@ -15,11 +15,16 @@ xcassets:
 
 ib:
   inputs:
-    - OTGRider/Views/Base.lproj/Main.storyboard
     - OTGRider/Views/Base.lproj/SignIn.storyboard
     - OTGRider/Views/Base.lproj/Onboard.storyboard
+    - OTGRider/Views/Base.lproj/Main.storyboard
     - OTGRider/Views/Base.lproj/SideMenu.storyboard
     - OTGRider/Views/Base.lproj/HowToRide.storyboard
+    - OTGRider/Views/Base.lproj/History.storyboard
+    - OTGRider/Views/Base.lproj/Wallet.storyboard
+    - OTGRider/Views/Base.lproj/Settings.storyboard
+    - OTGRider/Views/Base.lproj/Help.storyboard
+    - OTGRider/Views/Base.lproj/Unlock.storyboard
   outputs:
     - templateName: segues-swift4
       output: OTGRider/Generated/StoryboardSegues.swift
