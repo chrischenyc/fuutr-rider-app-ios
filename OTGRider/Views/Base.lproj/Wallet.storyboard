@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ok9-qt-dsj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QTG-uw-Q5I">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Wallet View Controller-->
+        <!--Wallet-->
         <scene sceneID="LEj-Dz-Ibb">
             <objects>
                 <viewController id="Ok9-qt-dsj" customClass="WalletViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uJ-kp-5pI">
-                                <rect key="frame" x="16" y="20" width="37" height="30"/>
-                                <state key="normal" title="close"/>
-                                <connections>
-                                    <segue destination="N5g-Sj-Cck" kind="unwind" unwindAction="unwindToHome:" id="EXx-h8-n3k"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-7n-Wv0">
                                 <rect key="frame" x="130.5" y="218" width="114" height="103"/>
                                 <subviews>
@@ -44,35 +37,36 @@
                                         <rect key="frame" x="0.0" y="73" width="50" height="30"/>
                                         <state key="normal" title="Top Up"/>
                                         <connections>
-                                            <segue destination="zb8-2E-qsg" kind="show" id="sP9-uT-YSB"/>
+                                            <segue destination="zb8-2E-qsg" kind="presentation" id="sP9-uT-YSB"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddb-aI-tRI">
-                                <rect key="frame" x="299" y="20" width="60" height="30"/>
-                                <state key="normal" title="Payment"/>
-                                <connections>
-                                    <segue destination="lZv-BN-LnH" kind="show" id="LHk-r9-tLd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qMw-7n-Wv0" firstAttribute="centerY" secondItem="kf1-bm-zse" secondAttribute="centerY" constant="-64" id="5Jl-gy-cJc"/>
-                            <constraint firstItem="9uJ-kp-5pI" firstAttribute="leading" secondItem="cAl-fr-Sfd" secondAttribute="leading" constant="16" id="7Z3-zk-H98"/>
-                            <constraint firstItem="9uJ-kp-5pI" firstAttribute="top" secondItem="cAl-fr-Sfd" secondAttribute="top" id="Hgs-fr-ffQ"/>
-                            <constraint firstItem="Ddb-aI-tRI" firstAttribute="top" secondItem="cAl-fr-Sfd" secondAttribute="top" id="aRd-VC-OEd"/>
                             <constraint firstItem="qMw-7n-Wv0" firstAttribute="centerX" secondItem="kf1-bm-zse" secondAttribute="centerX" id="q84-2Z-PL2"/>
-                            <constraint firstItem="cAl-fr-Sfd" firstAttribute="trailing" secondItem="Ddb-aI-tRI" secondAttribute="trailing" constant="16" id="va8-Ao-9KE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cAl-fr-Sfd"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Wallet" id="2hA-tQ-BGy">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0il-1b-TfY">
+                            <connections>
+                                <segue destination="N5g-Sj-Cck" kind="unwind" unwindAction="unwindToHome:" id="yJN-4E-IC6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Payment" id="Yxc-WE-ceU">
+                            <connections>
+                                <segue destination="lZv-BN-LnH" kind="presentation" id="OA9-vq-zJm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2iC-bc-oUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="N5g-Sj-Cck" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-274" y="155"/>
+            <point key="canvasLocation" x="664.79999999999995" y="154.27286356821591"/>
         </scene>
         <!--Top Up Balance-->
         <scene sceneID="eJ4-rU-9Q6">
@@ -116,7 +110,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edv-bb-WPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ayk-st-og7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="545" y="880"/>
+            <point key="canvasLocation" x="1484" y="896"/>
         </scene>
         <!--Payment Method-->
         <scene sceneID="FLn-Xb-yeI">
@@ -157,7 +151,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cH5-MU-OzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="GZU-Qm-y35" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1361" y="154"/>
+            <point key="canvasLocation" x="2300" y="153.37331334332833"/>
         </scene>
         <!--Add Card-->
         <scene sceneID="B5a-0F-4cQ">
@@ -181,7 +175,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SI1-DN-aJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LVL-Hx-O6n" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3084" y="153.37331334332833"/>
+            <point key="canvasLocation" x="4023.1999999999998" y="152.47376311844079"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aXt-zN-ZnB">
@@ -199,7 +193,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4c7-RE-755" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="154"/>
+            <point key="canvasLocation" x="1484" y="153.37331334332833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b2t-I5-HWU">
@@ -217,7 +211,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71W-ap-duS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2144.8000000000002" y="153.37331334332833"/>
+            <point key="canvasLocation" x="3084" y="152.47376311844079"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ozF-hY-1lu">
@@ -235,7 +229,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="re1-VD-xDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274.39999999999998" y="880.20989505247383"/>
+            <point key="canvasLocation" x="665" y="896"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rir-Pf-oev">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QTG-uw-Q5I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yyl-5B-xiI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ok9-qt-dsj" kind="relationship" relationship="rootViewController" id="vkM-iW-Tob"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bmL-cJ-uPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-274.39999999999998" y="154.27286356821591"/>
         </scene>
     </scenes>
 </document>
