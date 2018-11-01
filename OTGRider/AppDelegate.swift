@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if DEBUG
         let logLevel: XCGLogger.Level = .debug
         #else
-        let loggerLevel: XCGLogger.Level = .error
+        let logLevel: XCGLogger.Level = .error
         #endif
         
         log.setup(level: logLevel,
