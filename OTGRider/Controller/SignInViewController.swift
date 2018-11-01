@@ -69,9 +69,9 @@ extension SignInViewController: FBSDKLoginButtonDelegate {
                         log.debug(profile["id"])
                         log.debug(profile["name"])
                         log.debug(profile["email"])
-                        log.debug()
+                        log.debug(result.token)
                         
-                        // TODO: call API with result.token
+                        // TODO: call API
                         
                         // MOCK: remove this
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
