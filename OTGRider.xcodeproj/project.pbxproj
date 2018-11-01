@@ -144,6 +144,18 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		6B8731DB218A957400CC2651 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0CFE79E21747BF000BA3F6D /* Main.storyboard */,
+				6B8731D7218A909400CC2651 /* SideMenu.storyboard */,
+				6B8731BB2189C2B900CC2651 /* SignIn.storyboard */,
+				6B8731C82189D86600CC2651 /* Onboard.storyboard */,
+				A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A0CFE78E21747BF000BA3F6D = {
 			isa = PBXGroup;
 			children = (
@@ -174,12 +186,8 @@
 				6B8731A52189A6EC00CC2651 /* Models */,
 				6B8731A1218997A000CC2651 /* Helpers */,
 				A0CFE7BA21773B7B00BA3F6D /* Controller */,
-				A0CFE79E21747BF000BA3F6D /* Main.storyboard */,
-				6B8731D7218A909400CC2651 /* SideMenu.storyboard */,
-				6B8731BB2189C2B900CC2651 /* SignIn.storyboard */,
-				6B8731C82189D86600CC2651 /* Onboard.storyboard */,
+				6B8731DB218A957400CC2651 /* Views */,
 				A0CFE7A121747BF500BA3F6D /* Assets.xcassets */,
-				A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */,
 				A0CFE7A621747BF500BA3F6D /* Info.plist */,
 				6B87319E2189643800CC2651 /* Staging-Info.plist */,
 				6B8731A0218968E000CC2651 /* Melbourne.gpx */,
