@@ -130,14 +130,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="version code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwv-2w-fnp">
-                                                    <rect key="frame" x="34" y="12" width="83" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwv-2w-fnp">
+                                                    <rect key="frame" x="32" y="13.5" width="311" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bwv-2w-fnp" firstAttribute="centerY" secondItem="Ibc-4G-2Eu" secondAttribute="centerY" id="fpD-AD-bS7"/>
+                                                <constraint firstItem="bwv-2w-fnp" firstAttribute="leading" secondItem="Ibc-4G-2Eu" secondAttribute="leadingMargin" constant="16" id="iFt-iU-9E9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bwv-2w-fnp" secondAttribute="trailing" constant="16" id="v88-3p-At4"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -150,6 +154,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="HQ3-xc-8wm"/>
                     <connections>
+                        <outlet property="versionLabel" destination="bwv-2w-fnp" id="oz7-xN-U1P"/>
                         <segue destination="vqp-it-PCn" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="FuD-MS-09h"/>
                     </connections>
                 </tableViewController>
