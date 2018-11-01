@@ -18,6 +18,7 @@ ib:
     - OTGRider/Base.lproj/Main.storyboard
     - OTGRider/Base.lproj/SignIn.storyboard
     - OTGRider/Base.lproj/Onboard.storyboard
+    - OTGRider/Base.lproj/SideMenu.storyboard
   outputs:
     - templateName: segues-swift4
       output: OTGRider/Generated/StoryboardSegues.swift

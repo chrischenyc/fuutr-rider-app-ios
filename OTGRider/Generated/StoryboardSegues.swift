@@ -3,6 +3,7 @@
 
 // swiftlint:disable sorted_imports
 import Foundation
+import SideMenu
 import UIKit
 
 // swiftlint:disable superfluous_disable_command
@@ -18,11 +19,13 @@ internal enum StoryboardSegue {
     case showJuice
     case showSettings
     case showWallet
-    case unwindToHome
   }
   internal enum Onboard: String, SegueType {
     case showEnableNotification
     case showMain
+  }
+  internal enum SideMenu: String, SegueType {
+    case unwindToHome
   }
   internal enum SignIn: String, SegueType {
     case fromSignInToOnboard

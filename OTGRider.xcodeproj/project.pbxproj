@@ -33,6 +33,8 @@
 		6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */; };
 		6B8731D02189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */; };
 		6B8731D12189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */; };
+		6B8731D9218A909400CC2651 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731D7218A909400CC2651 /* SideMenu.storyboard */; };
+		6B8731DA218A909400CC2651 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731D7218A909400CC2651 /* SideMenu.storyboard */; };
 		81E8C84519DD630C24B9B6DC /* Pods_Project_OTGRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81CF8CCF05B3983496167E9 /* Pods_Project_OTGRider.framework */; };
 		A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
 		A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
@@ -67,6 +69,7 @@
 		6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableNotificationViewController.swift; sourceTree = "<group>"; };
 		6B8731D5218A816000CC2651 /* OTGRider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OTGRider.entitlements; sourceTree = "<group>"; };
 		6B8731D6218A852900CC2651 /* OTGRider-staging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OTGRider-staging.entitlements"; sourceTree = "<group>"; };
+		6B8731D8218A909400CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SideMenu.storyboard; sourceTree = "<group>"; };
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		A0CFE79721747BF000BA3F6D /* OTGRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTGRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +175,7 @@
 				6B8731A1218997A000CC2651 /* Helpers */,
 				A0CFE7BA21773B7B00BA3F6D /* Controller */,
 				A0CFE79E21747BF000BA3F6D /* Main.storyboard */,
+				6B8731D7218A909400CC2651 /* SideMenu.storyboard */,
 				6B8731BB2189C2B900CC2651 /* SignIn.storyboard */,
 				6B8731C82189D86600CC2651 /* Onboard.storyboard */,
 				A0CFE7A121747BF500BA3F6D /* Assets.xcassets */,
@@ -310,6 +314,7 @@
 				A0CFE7A221747BF500BA3F6D /* Assets.xcassets in Resources */,
 				6B8731CA2189D86600CC2651 /* Onboard.storyboard in Resources */,
 				A0CFE7A021747BF000BA3F6D /* Main.storyboard in Resources */,
+				6B8731D9218A909400CC2651 /* SideMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +328,7 @@
 				A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */,
 				6B8731CB2189D86600CC2651 /* Onboard.storyboard in Resources */,
 				A0CFE7B421747D2B00BA3F6D /* Main.storyboard in Resources */,
+				6B8731DA218A909400CC2651 /* SideMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +591,14 @@
 				6B8731C92189D86600CC2651 /* Base */,
 			);
 			name = Onboard.storyboard;
+			sourceTree = "<group>";
+		};
+		6B8731D7218A909400CC2651 /* SideMenu.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B8731D8218A909400CC2651 /* Base */,
+			);
+			name = SideMenu.storyboard;
 			sourceTree = "<group>";
 		};
 		A0CFE79E21747BF000BA3F6D /* Main.storyboard */ = {
