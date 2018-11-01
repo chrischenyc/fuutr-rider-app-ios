@@ -87,6 +87,7 @@
                         <outlet property="mobileVerifyInfoLabel" destination="msX-BP-P0T" id="ood-R3-l0g"/>
                         <segue destination="1D3-y9-qLq" kind="show" identifier="showMobileVerificationCode" id="sNF-jv-BJH"/>
                         <segue destination="KAD-4P-JWO" kind="show" identifier="fromSignInToOnboard" id="NYh-wd-6MW"/>
+                        <segue destination="7z4-bW-Wae" kind="show" identifier="fromSignInToHome" id="uxi-sZ-NDa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOq-lO-7Fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,6 +159,7 @@
                         <outlet property="infoLabel" destination="80i-dC-5ZA" id="YEh-IF-yZR"/>
                         <outlet property="nextButton" destination="4rl-h5-i2B" id="2aZ-Od-NZW"/>
                         <segue destination="KAD-4P-JWO" kind="show" identifier="fromVerficationCodeToOnboard" id="Q5s-yY-tXW"/>
+                        <segue destination="7z4-bW-Wae" kind="show" identifier="fromVerficationCodeToHome" id="AL8-Zq-xC4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juU-q2-mQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,8 +175,17 @@
             </objects>
             <point key="canvasLocation" x="22" y="628"/>
         </scene>
+        <!--Main-->
+        <scene sceneID="HTX-vP-WT2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="7z4-bW-Wae" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RQK-tf-mZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="790"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NYh-wd-6MW"/>
+        <segue reference="AL8-Zq-xC4"/>
+        <segue reference="Q5s-yY-tXW"/>
     </inferredMetricsTieBreakers>
 </document>

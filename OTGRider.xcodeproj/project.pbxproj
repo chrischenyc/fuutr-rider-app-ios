@@ -53,6 +53,8 @@
 		6B8731FF218AA53100CC2651 /* PaymentMethodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731FD218AA53100CC2651 /* PaymentMethodTableViewController.swift */; };
 		6B873201218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */; };
 		6B873202218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */; };
+		6B87320A218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */; };
+		6B87320B218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */; };
 		81E8C84519DD630C24B9B6DC /* Pods_Project_OTGRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81CF8CCF05B3983496167E9 /* Pods_Project_OTGRider.framework */; };
 		A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
 		A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
@@ -97,6 +99,7 @@
 		6B8731F7218AA4AF00CC2651 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		6B8731FD218AA53100CC2651 /* PaymentMethodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodTableViewController.swift; sourceTree = "<group>"; };
 		6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockByScanViewController.swift; sourceTree = "<group>"; };
+		6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		A0CFE79721747BF000BA3F6D /* OTGRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTGRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +244,7 @@
 				6B8731F7218AA4AF00CC2651 /* WalletViewController.swift */,
 				6B8731FD218AA53100CC2651 /* PaymentMethodTableViewController.swift */,
 				6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */,
+				6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -594,6 +598,7 @@
 				A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */,
 				6B8731C02189C7FA00CC2651 /* SignInViewController.swift in Sources */,
 				6B8731B02189BA8D00CC2651 /* Strings.swift in Sources */,
+				6B87320A218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */,
 				6B8731CD2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B8731F8218AA4AF00CC2651 /* WalletViewController.swift in Sources */,
 				6B8731C62189D69800CC2651 /* VerificationCodeViewController.swift in Sources */,
@@ -617,6 +622,7 @@
 				A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */,
 				6B8731C12189C7FA00CC2651 /* SignInViewController.swift in Sources */,
 				6B8731B12189BA8D00CC2651 /* Strings.swift in Sources */,
+				6B87320B218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */,
 				6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B8731F9218AA4AF00CC2651 /* WalletViewController.swift in Sources */,
 				6B8731C72189D69800CC2651 /* VerificationCodeViewController.swift in Sources */,

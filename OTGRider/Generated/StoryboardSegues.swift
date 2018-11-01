@@ -23,11 +23,16 @@ internal enum StoryboardSegue {
     case showEnableNotification
     case showMain
   }
+  internal enum Settings: String, SegueType {
+    case settingsToSignIn
+  }
   internal enum SideMenu: String, SegueType {
     case unwindToHome
   }
   internal enum SignIn: String, SegueType {
+    case fromSignInToHome
     case fromSignInToOnboard
+    case fromVerficationCodeToHome
     case fromVerficationCodeToOnboard
     case showMobileVerificationCode
   }

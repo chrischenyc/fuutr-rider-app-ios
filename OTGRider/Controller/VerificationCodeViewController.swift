@@ -15,10 +15,10 @@ class VerificationCodeViewController: UIViewController {
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -39,7 +39,12 @@ class VerificationCodeViewController: UIViewController {
             self.infoLabel.text = NSLocalizedString("kVerified", comment: "")
             Defaults[.userSignedIn] = true
             
-            self.perform(segue: StoryboardSegue.SignIn.fromVerficationCodeToOnboard, sender: nil)
+            if Defaults[.userOnboarded] {
+                self.perform(segue: StoryboardSegue.SignIn.fromVerficationCodeToHome, sender: nil)
+            }
+            else {
+                self.perform(segue: StoryboardSegue.SignIn.fromVerficationCodeToOnboard, sender: nil)
+            }
         })
     }
     

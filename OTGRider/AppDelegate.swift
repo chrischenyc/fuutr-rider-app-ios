@@ -88,7 +88,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        if url.scheme == "fb",
+        if let scheme = url.scheme,
+            scheme.hasPrefix("fb"),
             let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String {
             return FBSDKApplicationDelegate.sharedInstance().application(app,
                                                                          open: url,

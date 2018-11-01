@@ -30,10 +30,15 @@
                         <viewLayoutGuide key="safeArea" id="cAl-fr-Sfd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="sfD-j3-Fxx">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JYg-wY-3L6"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JYg-wY-3L6">
+                            <connections>
+                                <segue destination="N5g-Sj-Cck" kind="unwind" unwindAction="unwindToHome:" id="ZnC-wd-lya"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2iC-bc-oUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="N5g-Sj-Cck" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="664.79999999999995" y="154.27286356821591"/>
         </scene>

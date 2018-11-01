@@ -76,7 +76,13 @@ extension SignInViewController: FBSDKLoginButtonDelegate {
                         // MOCK: remove this
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                             Defaults[.userSignedIn] = true
-                            self.perform(segue: StoryboardSegue.SignIn.fromSignInToOnboard, sender: nil)
+                            
+                            if Defaults[.userOnboarded] {
+                                self.perform(segue: StoryboardSegue.SignIn.fromSignInToHome, sender: nil)
+                            }
+                            else {
+                                self.perform(segue: StoryboardSegue.SignIn.fromSignInToOnboard, sender: nil)
+                            }
                         })
                     }
                 })
