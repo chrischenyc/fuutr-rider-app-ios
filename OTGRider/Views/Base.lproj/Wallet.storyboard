@@ -19,22 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-7n-Wv0">
-                                <rect key="frame" x="130.5" y="218" width="114" height="103"/>
+                                <rect key="frame" x="130.5" y="236.5" width="114" height="66.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjQ-3V-0VN">
-                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: 23.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOz-Wu-H2n">
-                                        <rect key="frame" x="0.0" y="36.5" width="114" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPA-cp-IjL">
-                                        <rect key="frame" x="0.0" y="73" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="36.5" width="50" height="30"/>
                                         <state key="normal" title="Top Up"/>
                                         <connections>
                                             <segue destination="zb8-2E-qsg" kind="presentation" id="sP9-uT-YSB"/>
