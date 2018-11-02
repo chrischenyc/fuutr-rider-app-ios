@@ -94,6 +94,7 @@
 		6BDE9152218C3073003F976B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9150218C3073003F976B /* APIClient.swift */; };
 		6BDE9153218C3073003F976B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9150218C3073003F976B /* APIClient.swift */; };
 		6BDE9157218C35B7003F976B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BDE9156218C35B7003F976B /* GoogleService-Info.plist */; };
+		6BDE915A218C4E62003F976B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BDE9159218C4E62003F976B /* GoogleService-Info.plist */; };
 		81E8C84519DD630C24B9B6DC /* Pods_Project_OTGRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81CF8CCF05B3983496167E9 /* Pods_Project_OTGRider.framework */; };
 		A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
 		A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
@@ -147,6 +148,7 @@
 		6BDE914B218C1DBB003F976B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6BDE9150218C3073003F976B /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		6BDE9156218C35B7003F976B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6BDE9159218C4E62003F976B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "staging/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		86B2C7CC09C21C83C016544C /* Pods-Project-OTGRider-dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-dev/Pods-Project-OTGRider-dev.debug.xcconfig"; sourceTree = "<group>"; };
 		A0CFE79721747BF000BA3F6D /* OTGRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTGRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +302,7 @@
 				6B8731D5218A816000CC2651 /* OTGRider.entitlements */,
 				6BDE911A218C1983003F976B /* OTGRider-staging.entitlements */,
 				6BDE914A218C1A84003F976B /* OTGRider-dev.entitlements */,
+				6BDE9159218C4E62003F976B /* GoogleService-Info.plist */,
 				6BDE9156218C35B7003F976B /* GoogleService-Info.plist */,
 			);
 			path = OTGRider;
@@ -392,6 +395,7 @@
 				A0CFE7B121747D2B00BA3F6D /* Resources */,
 				60FE65C59D3BA395F0FCE61E /* [CP] Embed Pods Frameworks */,
 				CAD76B0E74731C1E07EFC9FB /* [CP] Copy Pods Resources */,
+				6BDE915B218C4E91003F976B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -515,6 +519,7 @@
 				A0CFE7B421747D2B00BA3F6D /* Main.storyboard in Resources */,
 				6B8731DA218A909400CC2651 /* SideMenu.storyboard in Resources */,
 				6B8731E3218A97BF00CC2651 /* History.storyboard in Resources */,
+				6BDE915A218C4E62003F976B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,6 +795,24 @@
 				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			name = "Run Script - fabric";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
+		6BDE915B218C4E91003F976B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -1226,6 +1249,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.ios.rider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1266,6 +1290,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.ios.rider.staging;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
