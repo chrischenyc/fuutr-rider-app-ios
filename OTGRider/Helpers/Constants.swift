@@ -11,10 +11,14 @@ import UIKit
 import CoreLocation
 import XCGLogger
 
+// global variables
 let log = XCGLogger.default
+var configuration = Configuration()
 
 struct Constants {
-    struct Keys {
-        static let googleMapKey = "AIzaSyA2kZ3cVDtKRB9U3WkThBh1fBn0IBGa-VE"
+    struct UI {
+        struct Color {
+            static let primary = UIColor(red: 100, green: 100, blue: 100, alpha: 1)
+        }
     }
 }

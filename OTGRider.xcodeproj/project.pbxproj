@@ -55,6 +55,40 @@
 		6B873202218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */; };
 		6B87320A218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */; };
 		6B87320B218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */; };
+		6BDE9120218C19DF003F976B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
+		6BDE9121218C19DF003F976B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731AF2189BA8D00CC2651 /* Assets.swift */; };
+		6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C22189CA0400CC2651 /* String+Validate.swift */; };
+		6BDE9123218C19DF003F976B /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A62189A70600CC2651 /* UserDefaults.swift */; };
+		6BDE9124218C19DF003F976B /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */; };
+		6BDE9125218C19DF003F976B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
+		6BDE9126218C19DF003F976B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */; };
+		6BDE9127218C19DF003F976B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731AE2189BA8D00CC2651 /* Strings.swift */; };
+		6BDE9128218C19DF003F976B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */; };
+		6BDE9129218C19DF003F976B /* EnableLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */; };
+		6BDE912A218C19DF003F976B /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731F7218AA4AF00CC2651 /* WalletViewController.swift */; };
+		6BDE912B218C19DF003F976B /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C52189D69800CC2651 /* VerificationCodeViewController.swift */; };
+		6BDE912C218C19DF003F976B /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731B42189BAC400CC2651 /* StoryboardSegues.swift */; };
+		6BDE912D218C19DF003F976B /* UnlockByScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */; };
+		6BDE912E218C19DF003F976B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A2218997B600CC2651 /* Constants.swift */; };
+		6BDE912F218C19DF003F976B /* PaymentMethodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731FD218AA53100CC2651 /* PaymentMethodTableViewController.swift */; };
+		6BDE9130218C19DF003F976B /* EnableNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */; };
+		6BDE9132218C19DF003F976B /* Pods_Project_OTGRider_staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DA4D11423EE5032D0FBB72 /* Pods_Project_OTGRider_staging.framework */; };
+		6BDE9134218C19DF003F976B /* HowToRide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731DC218A962D00CC2651 /* HowToRide.storyboard */; };
+		6BDE9135218C19DF003F976B /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731E4218A986200CC2651 /* Wallet.storyboard */; };
+		6BDE9136218C19DF003F976B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */; };
+		6BDE9137218C19DF003F976B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731EA218A98EE00CC2651 /* Settings.storyboard */; };
+		6BDE9138218C19DF003F976B /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731E8218A98EE00CC2651 /* Help.storyboard */; };
+		6BDE9139218C19DF003F976B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731BB2189C2B900CC2651 /* SignIn.storyboard */; };
+		6BDE913A218C19DF003F976B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731A92189B9A500CC2651 /* Localizable.strings */; };
+		6BDE913B218C19DF003F976B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A121747BF500BA3F6D /* Assets.xcassets */; };
+		6BDE913C218C19DF003F976B /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731C82189D86600CC2651 /* Onboard.storyboard */; };
+		6BDE913D218C19DF003F976B /* Unlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731F3218A9A9000CC2651 /* Unlock.storyboard */; };
+		6BDE913E218C19DF003F976B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE79E21747BF000BA3F6D /* Main.storyboard */; };
+		6BDE913F218C19DF003F976B /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731D7218A909400CC2651 /* SideMenu.storyboard */; };
+		6BDE9140218C19DF003F976B /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731E0218A97BF00CC2651 /* History.storyboard */; };
+		6BDE914C218C1DBB003F976B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE914B218C1DBB003F976B /* Configuration.swift */; };
+		6BDE914D218C1DBB003F976B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE914B218C1DBB003F976B /* Configuration.swift */; };
+		6BDE914E218C1DBB003F976B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE914B218C1DBB003F976B /* Configuration.swift */; };
 		81E8C84519DD630C24B9B6DC /* Pods_Project_OTGRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81CF8CCF05B3983496167E9 /* Pods_Project_OTGRider.framework */; };
 		A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
 		A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
@@ -88,7 +122,6 @@
 		6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableLocationViewController.swift; sourceTree = "<group>"; };
 		6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableNotificationViewController.swift; sourceTree = "<group>"; };
 		6B8731D5218A816000CC2651 /* OTGRider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OTGRider.entitlements; sourceTree = "<group>"; };
-		6B8731D6218A852900CC2651 /* OTGRider-staging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OTGRider-staging.entitlements"; sourceTree = "<group>"; };
 		6B8731D8218A909400CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SideMenu.storyboard; sourceTree = "<group>"; };
 		6B8731DD218A962D00CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HowToRide.storyboard; sourceTree = "<group>"; };
 		6B8731E1218A97BF00CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/History.storyboard; sourceTree = "<group>"; };
@@ -100,6 +133,11 @@
 		6B8731FD218AA53100CC2651 /* PaymentMethodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodTableViewController.swift; sourceTree = "<group>"; };
 		6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockByScanViewController.swift; sourceTree = "<group>"; };
 		6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		6BDE911A218C1983003F976B /* OTGRider-staging.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "OTGRider-staging.entitlements"; sourceTree = "<group>"; };
+		6BDE9146218C19DF003F976B /* OTGRider-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTGRider-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BDE9148218C1A30003F976B /* Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dev-Info.plist"; sourceTree = "<group>"; };
+		6BDE914A218C1A84003F976B /* OTGRider-dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OTGRider-dev.entitlements"; sourceTree = "<group>"; };
+		6BDE914B218C1DBB003F976B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		A0CFE79721747BF000BA3F6D /* OTGRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTGRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +156,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6BDE9131218C19DF003F976B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BDE9132218C19DF003F976B /* Pods_Project_OTGRider_staging.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0CFE79421747BF000BA3F6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				6B8731A2218997B600CC2651 /* Constants.swift */,
+				6BDE914B218C1DBB003F976B /* Configuration.swift */,
 				6B8731C22189CA0400CC2651 /* String+Validate.swift */,
 			);
 			path = Helpers;
@@ -195,7 +242,6 @@
 		A0CFE78E21747BF000BA3F6D = {
 			isa = PBXGroup;
 			children = (
-				6B8731D6218A852900CC2651 /* OTGRider-staging.entitlements */,
 				A0CFE79921747BF000BA3F6D /* OTGRider */,
 				A0CFE79821747BF000BA3F6D /* Products */,
 				43F92B2007DBC13F8C59318F /* Pods */,
@@ -208,6 +254,7 @@
 			children = (
 				A0CFE79721747BF000BA3F6D /* OTGRider.app */,
 				A0CFE7B821747D2B00BA3F6D /* OTGRider-staging.app */,
+				6BDE9146218C19DF003F976B /* OTGRider-dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,19 +262,22 @@
 		A0CFE79921747BF000BA3F6D /* OTGRider */ = {
 			isa = PBXGroup;
 			children = (
-				6B8731D5218A816000CC2651 /* OTGRider.entitlements */,
 				A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */,
 				6B8731A62189A70600CC2651 /* UserDefaults.swift */,
-				6B8731AD2189BA6B00CC2651 /* Generated */,
 				6B8731A52189A6EC00CC2651 /* Models */,
-				6B8731A1218997A000CC2651 /* Helpers */,
-				A0CFE7BA21773B7B00BA3F6D /* Controller */,
 				6B8731DB218A957400CC2651 /* Views */,
+				A0CFE7BA21773B7B00BA3F6D /* Controller */,
+				6B8731A1218997A000CC2651 /* Helpers */,
+				6B8731AD2189BA6B00CC2651 /* Generated */,
 				A0CFE7A121747BF500BA3F6D /* Assets.xcassets */,
+				6B8731A92189B9A500CC2651 /* Localizable.strings */,
 				A0CFE7A621747BF500BA3F6D /* Info.plist */,
 				6B87319E2189643800CC2651 /* Staging-Info.plist */,
+				6BDE9148218C1A30003F976B /* Dev-Info.plist */,
 				6B8731A0218968E000CC2651 /* Melbourne.gpx */,
-				6B8731A92189B9A500CC2651 /* Localizable.strings */,
+				6B8731D5218A816000CC2651 /* OTGRider.entitlements */,
+				6BDE911A218C1983003F976B /* OTGRider-staging.entitlements */,
+				6BDE914A218C1A84003F976B /* OTGRider-dev.entitlements */,
 			);
 			path = OTGRider;
 			sourceTree = "<group>";
@@ -261,6 +311,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6BDE911B218C19DF003F976B /* OTGRider-dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BDE9143218C19DF003F976B /* Build configuration list for PBXNativeTarget "OTGRider-dev" */;
+			buildPhases = (
+				6BDE911C218C19DF003F976B /* [CP] Check Pods Manifest.lock */,
+				6BDE911D218C19DF003F976B /* Run Script - bartycrouch */,
+				6BDE911E218C19DF003F976B /* Run Script - swiftgen */,
+				6BDE911F218C19DF003F976B /* Sources */,
+				6BDE9131218C19DF003F976B /* Frameworks */,
+				6BDE9133218C19DF003F976B /* Resources */,
+				6BDE9141218C19DF003F976B /* [CP] Embed Pods Frameworks */,
+				6BDE9142218C19DF003F976B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OTGRider-dev";
+			productName = OTGRider;
+			productReference = 6BDE9146218C19DF003F976B /* OTGRider-dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A0CFE79621747BF000BA3F6D /* OTGRider */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0CFE7A921747BF500BA3F6D /* Build configuration list for PBXNativeTarget "OTGRider" */;
@@ -315,6 +387,13 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = OTGRide;
 				TargetAttributes = {
+					6BDE911B218C19DF003F976B = {
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
 					A0CFE79621747BF000BA3F6D = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
@@ -347,11 +426,32 @@
 			targets = (
 				A0CFE79621747BF000BA3F6D /* OTGRider */,
 				A0CFE7AC21747D2B00BA3F6D /* OTGRider-staging */,
+				6BDE911B218C19DF003F976B /* OTGRider-dev */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6BDE9133218C19DF003F976B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BDE9134218C19DF003F976B /* HowToRide.storyboard in Resources */,
+				6BDE9135218C19DF003F976B /* Wallet.storyboard in Resources */,
+				6BDE9136218C19DF003F976B /* LaunchScreen.storyboard in Resources */,
+				6BDE9137218C19DF003F976B /* Settings.storyboard in Resources */,
+				6BDE9138218C19DF003F976B /* Help.storyboard in Resources */,
+				6BDE9139218C19DF003F976B /* SignIn.storyboard in Resources */,
+				6BDE913A218C19DF003F976B /* Localizable.strings in Resources */,
+				6BDE913B218C19DF003F976B /* Assets.xcassets in Resources */,
+				6BDE913C218C19DF003F976B /* Onboard.storyboard in Resources */,
+				6BDE913D218C19DF003F976B /* Unlock.storyboard in Resources */,
+				6BDE913E218C19DF003F976B /* Main.storyboard in Resources */,
+				6BDE913F218C19DF003F976B /* SideMenu.storyboard in Resources */,
+				6BDE9140218C19DF003F976B /* History.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0CFE79521747BF000BA3F6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -529,6 +629,100 @@
 			shellPath = /bin/sh;
 			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
 		};
+		6BDE911C218C19DF003F976B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project-OTGRider-staging-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BDE911D218C19DF003F976B /* Run Script - bartycrouch */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - bartycrouch";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Incrementally update all Storyboards/XIBs strings files\n$PODS_ROOT/bartycrouch/bartycrouch interfaces -p \"$PROJECT_DIR/OTGRider\"\n\n# Add new keys to Localizable.strings files from NSLocalizedString in code\n$PODS_ROOT/bartycrouch/bartycrouch code -p \"$PROJECT_DIR/OTGRider\" -l \"$PROJECT_DIR\" -a -s\n\n# Warns if Strings files contain duplicate keys or removes duplicates automatically if values are equal\n$PODS_ROOT/bartycrouch/bartycrouch normalize -p \"$PROJECT_DIR/OTGRider\" -l en -d\n";
+		};
+		6BDE911E218C19DF003F976B /* Run Script - swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - swiftgen";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
+		6BDE9141218C19DF003F976B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Project-OTGRider-staging/Pods-Project-OTGRider-staging-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-OTGRider-staging/Pods-Project-OTGRider-staging-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BDE9142218C19DF003F976B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Project-OTGRider-staging/Pods-Project-OTGRider-staging-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-OTGRider-staging/Pods-Project-OTGRider-staging-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		707BD31321A77514E1E6DFB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +780,31 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6BDE911F218C19DF003F976B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BDE9120218C19DF003F976B /* MapViewController.swift in Sources */,
+				6BDE9121218C19DF003F976B /* Assets.swift in Sources */,
+				6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */,
+				6BDE9123218C19DF003F976B /* UserDefaults.swift in Sources */,
+				6BDE9124218C19DF003F976B /* SideMenuViewController.swift in Sources */,
+				6BDE9125218C19DF003F976B /* AppDelegate.swift in Sources */,
+				6BDE9126218C19DF003F976B /* SignInViewController.swift in Sources */,
+				6BDE9127218C19DF003F976B /* Strings.swift in Sources */,
+				6BDE9128218C19DF003F976B /* SettingsTableViewController.swift in Sources */,
+				6BDE9129218C19DF003F976B /* EnableLocationViewController.swift in Sources */,
+				6BDE912A218C19DF003F976B /* WalletViewController.swift in Sources */,
+				6BDE912B218C19DF003F976B /* VerificationCodeViewController.swift in Sources */,
+				6BDE912C218C19DF003F976B /* StoryboardSegues.swift in Sources */,
+				6BDE914E218C1DBB003F976B /* Configuration.swift in Sources */,
+				6BDE912D218C19DF003F976B /* UnlockByScanViewController.swift in Sources */,
+				6BDE912E218C19DF003F976B /* Constants.swift in Sources */,
+				6BDE912F218C19DF003F976B /* PaymentMethodTableViewController.swift in Sources */,
+				6BDE9130218C19DF003F976B /* EnableNotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0CFE79321747BF000BA3F6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,6 +822,7 @@
 				6B8731F8218AA4AF00CC2651 /* WalletViewController.swift in Sources */,
 				6B8731C62189D69800CC2651 /* VerificationCodeViewController.swift in Sources */,
 				6B8731B62189BAC400CC2651 /* StoryboardSegues.swift in Sources */,
+				6BDE914C218C1DBB003F976B /* Configuration.swift in Sources */,
 				6B873201218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */,
 				6B8731A3218997B600CC2651 /* Constants.swift in Sources */,
 				6B8731FE218AA53100CC2651 /* PaymentMethodTableViewController.swift in Sources */,
@@ -627,6 +847,7 @@
 				6B8731F9218AA4AF00CC2651 /* WalletViewController.swift in Sources */,
 				6B8731C72189D69800CC2651 /* VerificationCodeViewController.swift in Sources */,
 				6B8731B72189BAC400CC2651 /* StoryboardSegues.swift in Sources */,
+				6BDE914D218C1DBB003F976B /* Configuration.swift in Sources */,
 				6B873202218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */,
 				6B8731A4218997B600CC2651 /* Constants.swift in Sources */,
 				6B8731FF218AA53100CC2651 /* PaymentMethodTableViewController.swift in Sources */,
@@ -736,6 +957,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6BDE9144218C19DF003F976B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4CD78A99E31FADB2BDC1666 /* Pods-Project-OTGRider-staging.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "OTGRider/OTGRider-dev.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQXKH8T8SZ;
+				INFOPLIST_FILE = "$(SRCROOT)/OTGRider/Dev-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.ios.rider.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6BDE9145218C19DF003F976B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDB8458ABF4555A18A854D54 /* Pods-Project-OTGRider-staging.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "OTGRider/OTGRider-dev.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VQXKH8T8SZ;
+				INFOPLIST_FILE = "$(SRCROOT)/OTGRider/Dev-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.ios.rider.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		A0CFE7A721747BF500BA3F6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -897,7 +1158,7 @@
 			baseConfigurationReference = D4CD78A99E31FADB2BDC1666 /* Pods-Project-OTGRider-staging.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "OTGRider-staging.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "OTGRider/OTGRider-staging.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQXKH8T8SZ;
 				INFOPLIST_FILE = "$(SRCROOT)/OTGRider/Staging-Info.plist";
@@ -917,7 +1178,7 @@
 			baseConfigurationReference = CDB8458ABF4555A18A854D54 /* Pods-Project-OTGRider-staging.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "OTGRider-staging.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "OTGRider/OTGRider-staging.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQXKH8T8SZ;
 				INFOPLIST_FILE = "$(SRCROOT)/OTGRider/Staging-Info.plist";
@@ -935,6 +1196,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6BDE9143218C19DF003F976B /* Build configuration list for PBXNativeTarget "OTGRider-dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BDE9144218C19DF003F976B /* Debug */,
+				6BDE9145218C19DF003F976B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A0CFE79221747BF000BA3F6D /* Build configuration list for PBXProject "OTGRider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

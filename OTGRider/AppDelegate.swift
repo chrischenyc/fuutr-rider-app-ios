@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   fileLevel: nil)
         
         // third-party services init
-        GMSServices.provideAPIKey(Constants.Keys.googleMapKey)
+        GMSServices.provideAPIKey(configuration.environment.googleMapKey)
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         // UI init

@@ -22,7 +22,7 @@ platform :ios do
   lane :staging do
     set_info_plist_value(path: "./OTGRider/Staging-Info.plist", key: "CFBundleVersion", value: (latest_testflight_build_number + 1).to_s)
     increment_build_number_in_plist(target: 'OTGRider-staging')
-    build_app(workspace: "OTGRider.xcworkspace", scheme: "OTGRider-Staging")
+    build_app(workspace: "OTGRider.xcworkspace", scheme: "OTGRider-staging")
     upload_to_testflight(
       skip_waiting_for_build_processing: true,
       beta_app_description: "fastlane auto build"
