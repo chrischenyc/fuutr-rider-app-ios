@@ -18,6 +18,9 @@ abstract_target 'Project' do
   # UI
   pod 'SideMenu'
   
+  # Networking
+  pod 'ReachabilitySwift'
+  
   # helpers
   pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
   pod 'XCGLogger'

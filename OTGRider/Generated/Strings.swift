@@ -11,6 +11,10 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
+  /// No Internet connection
+  internal static let kNoInternetConnection = L10n.tr("Localizable", "kNoInternetConnection")
+  /// Something went wrong
+  internal static let kOtherError = L10n.tr("Localizable", "kOtherError")
   /// Sending verification code ...
   internal static let kSendingVerificationCode = L10n.tr("Localizable", "kSendingVerificationCode")
   /// Verified!
