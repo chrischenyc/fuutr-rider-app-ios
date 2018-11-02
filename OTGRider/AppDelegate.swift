@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         log.setup(level: logLevel,
                   showLogIdentifier: false,
-                  showFunctionName: true,
+                  showFunctionName: false,
                   showThreadName: false,
                   showLevel: true,
                   showFileNames: true,
