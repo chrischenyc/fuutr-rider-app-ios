@@ -41,7 +41,7 @@ class SignInViewController: UIViewController {
         // TODO: call API to get verificaiton code
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-            self.perform(segue: StoryboardSegue.SignIn.showMobileVerificationCode, sender: nil)
+            self.perform(segue: StoryboardSegue.SignIn.showMobileVerificationCode)
         })
     }
     
@@ -78,10 +78,10 @@ extension SignInViewController: FBSDKLoginButtonDelegate {
                             Defaults[.userSignedIn] = true
                             
                             if Defaults[.userOnboarded] {
-                                self.perform(segue: StoryboardSegue.SignIn.fromSignInToHome, sender: nil)
+                                self.perform(segue: StoryboardSegue.SignIn.fromSignInToHome)
                             }
                             else {
-                                self.perform(segue: StoryboardSegue.SignIn.fromSignInToOnboard, sender: nil)
+                                self.perform(segue: StoryboardSegue.SignIn.fromSignInToOnboard)
                             }
                         })
                     }

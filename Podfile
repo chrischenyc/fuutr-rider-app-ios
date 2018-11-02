@@ -11,6 +11,7 @@ abstract_target 'Project' do
   pod 'FBSDKLoginKit'
   pod 'Firebase/Core'
   pod 'Firebase/Performance'
+  pod 'Firebase/Messaging'
   pod 'Fabric'
   pod 'Crashlytics'
   

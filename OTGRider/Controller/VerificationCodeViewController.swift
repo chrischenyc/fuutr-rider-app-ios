@@ -40,10 +40,10 @@ class VerificationCodeViewController: UIViewController {
             Defaults[.userSignedIn] = true
             
             if Defaults[.userOnboarded] {
-                self.perform(segue: StoryboardSegue.SignIn.fromVerficationCodeToHome, sender: nil)
+                self.perform(segue: StoryboardSegue.SignIn.fromVerficationCodeToHome)
             }
             else {
-                self.perform(segue: StoryboardSegue.SignIn.fromVerficationCodeToOnboard, sender: nil)
+                self.perform(segue: StoryboardSegue.SignIn.fromVerficationCodeToOnboard)
             }
         })
     }

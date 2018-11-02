@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import UserNotifications
 import GoogleMaps
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import FirebaseMessaging
 import SideMenu
 import XCGLogger
 import SwiftyUserDefaults
@@ -42,9 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   fileLevel: nil)
         
         // third-party services init
-        #if !DEBUG
+//        #if !DEBUG
         FirebaseApp.configure()
-        #endif
+        Messaging.messaging().delegate = self
+//        #endif
         GMSServices.provideAPIKey(configuration.environment.googleMapKey)
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
         
@@ -52,7 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
         SideMenuManager.defaultManager.menuFadeStatusBar = false
         
-        // TODO: custom facebook button https://developers.facebook.com/docs/facebook-login/ios/advanced#custom-login-button
+        // TODO: custom facebook button
+        // https://developers.facebook.com/docs/facebook-login/ios/advanced#custom-login-button
         // Override point for customization after application launch.
         // [FBSDKLoginButton class];
         
@@ -104,6 +108,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return handled
     }
-    
 }
 
+extension AppDelegate: MessagingDelegate {
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        log.debug("Firebase registration token: \(fcmToken)")
+        
+        // TODO: If necessary send token to application server.
+        // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+}

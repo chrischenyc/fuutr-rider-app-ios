@@ -38,16 +38,16 @@ class SideMenuViewController: UITableViewController {
             break
         case 1:
             selectedMenuItem = .history
-            performSegue(withIdentifier: "unwindToHome", sender: nil)
+            perform(segue: StoryboardSegue.SideMenu.unwindToHome)
         case 2:
             selectedMenuItem = .wallet
-            performSegue(withIdentifier: "unwindToHome", sender: nil)
+            perform(segue: StoryboardSegue.SideMenu.unwindToHome)
         case 3:
             selectedMenuItem = .settings
-            performSegue(withIdentifier: "unwindToHome", sender: nil)
+            perform(segue: StoryboardSegue.SideMenu.unwindToHome)
         case 4:
             selectedMenuItem = .help
-            performSegue(withIdentifier: "unwindToHome", sender: nil)
+            perform(segue: StoryboardSegue.SideMenu.unwindToHome)
         default:
             break
         }

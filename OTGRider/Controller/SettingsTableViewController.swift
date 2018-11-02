@@ -34,8 +34,9 @@ class SettingsTableViewController: UITableViewController {
             FBSDKLoginManager().logOut()
         }
         
-        
-        perform(segue: StoryboardSegue.Settings.settingsToSignIn)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25) {
+            self.perform(segue: StoryboardSegue.Settings.settingsToSignIn)
+        }
     }
     
 }

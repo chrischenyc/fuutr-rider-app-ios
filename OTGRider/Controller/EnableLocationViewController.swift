@@ -38,7 +38,11 @@ extension EnableLocationViewController: CLLocationManagerDelegate {
             return
         }
         
-        perform(segue: StoryboardSegue.Onboard.showEnableNotification, sender: nil)
+        if UIApplication.shared.isRegisteredForRemoteNotifications {
+            perform(segue: StoryboardSegue.Onboard.showMain)
+        } else {
+            perform(segue: StoryboardSegue.Onboard.showEnableNotification)
+        }
     }
     
 }
