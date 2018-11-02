@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Firebase
 import SideMenu
 import XCGLogger
 import SwiftyUserDefaults
@@ -41,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   fileLevel: nil)
         
         // third-party services init
+        FirebaseApp.configure()
         GMSServices.provideAPIKey(configuration.environment.googleMapKey)
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
         

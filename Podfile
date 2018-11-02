@@ -9,6 +9,10 @@ abstract_target 'Project' do
   # third-party services
   pod 'GoogleMaps'
   pod 'FBSDKLoginKit'
+  pod 'Firebase/Core'
+  pod 'Firebase/Performance'
+  pod 'Fabric'
+  pod 'Crashlytics'
   
   # UI
   pod 'SideMenu'
