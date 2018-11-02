@@ -11,6 +11,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
+  /// We'll send a text to verify your number
+  internal static let kMobileVerificationPrompt = L10n.tr("Localizable", "kMobileVerificationPrompt")
   /// No Internet connection
   internal static let kNoInternetConnection = L10n.tr("Localizable", "kNoInternetConnection")
   /// Something went wrong
@@ -21,6 +23,8 @@ internal enum L10n {
   internal static let kVerified = L10n.tr("Localizable", "kVerified")
   /// Verifying ...
   internal static let kVerifying = L10n.tr("Localizable", "kVerifying")
+  /// OK
+  internal static let ok = L10n.tr("Localizable", "OK")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

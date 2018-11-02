@@ -15,6 +15,7 @@ extension String {
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
     }
     
+    // FIXME: suppoert international format +61 041 234 567 as iPhone keyboard may prompt user number
     func isAustralianMobile() -> Bool {
         let regex = try! NSRegularExpression(pattern: "^04[0-9]{8}$", options: .caseInsensitive)
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil

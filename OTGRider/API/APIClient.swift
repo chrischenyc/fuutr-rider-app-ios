@@ -35,14 +35,11 @@ final class APIClient {
     func load(path: String,
               method: RequestMethod,
               params: JSON,
-              completion: @escaping (Any?, ServiceError?) -> () ) -> URLSessionDataTask? {
+              completion: @escaping APIResponse) -> URLSessionDataTask? {
         
         // Checking internet connection availability
-        guard let reachablity = Reachability(hostname: baseURL) else {
-            completion(nil, ServiceError.noInternetConnection)
-            return nil
-        }
-        guard reachablity.connection != .none else {
+        guard let reachablity = Reachability(hostname: baseURL), reachablity.connection != .none else {
+            log.warning(ServiceError.noInternetConnection)
             completion(nil, ServiceError.noInternetConnection)
             return nil
         }
@@ -50,19 +47,32 @@ final class APIClient {
         
         // Creating the URLRequest object
         let request = URLRequest(baseUrl: baseURL, path: path, method: method, params: params)
+        log.debug(request.url?.absoluteString ?? "INVALID URL")
         
         // Sending request to the server.
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            // Parsing incoming data
-            if let data = data {
-                let json = try? JSONSerialization.jsonObject(with: data, options: [])
-                if let response = response as? HTTPURLResponse, 200..<300 ~= response.statusCode {
-                    completion(json, nil)
-                } else {
-                    let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
-                    completion(nil, error)
-                }
+            guard error == nil else {
+                log.error(error!.localizedDescription)
+                completion(nil, ServiceError.other)
+                return
             }
+            
+            guard let data = data else {
+                log.error("missing payload")
+                completion(nil, ServiceError.other)
+                return
+            }
+            
+            // Parsing incoming data
+            let json = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let response = response as? HTTPURLResponse, 200..<300 ~= response.statusCode {
+                completion(json, nil)
+            } else {
+                let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
+                log.error(error)
+                completion(nil, error)
+            }
+            
         }
         
         task.resume()
@@ -73,7 +83,7 @@ final class APIClient {
 
 
 // build the complete API URL from given parameters
-extension URL {
+fileprivate extension URL {
     init(baseUrl: String, path: String, method: RequestMethod, params: JSON) {
         // simply add the path to the base URL.
         var components = URLComponents(string: baseUrl)!
@@ -94,7 +104,7 @@ extension URL {
 }
 
 // build the instance of URLRequest from given parameters
-extension URLRequest {
+fileprivate extension URLRequest {
     init(baseUrl: String, path: String, method: RequestMethod, params: JSON) {
         let url = URL(baseUrl: baseUrl, path: path, method: method, params: params)
         

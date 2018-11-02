@@ -410,7 +410,7 @@
 				A0CFE7B121747D2B00BA3F6D /* Resources */,
 				60FE65C59D3BA395F0FCE61E /* [CP] Embed Pods Frameworks */,
 				CAD76B0E74731C1E07EFC9FB /* [CP] Copy Pods Resources */,
-				6BDE915B218C4E91003F976B /* ShellScript */,
+				6BDE915B218C4E91003F976B /* Run Script - fabric */,
 			);
 			buildRules = (
 			);
@@ -824,7 +824,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
-		6BDE915B218C4E91003F976B /* ShellScript */ = {
+		6BDE915B218C4E91003F976B /* Run Script - fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -834,6 +834,7 @@
 			inputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
+			name = "Run Script - fabric";
 			outputFileListPaths = (
 			);
 			outputPaths = (

@@ -17,9 +17,12 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var mobileVerifyInfoLabel: UILabel!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
+    var userService: URLSessionDataTask?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mobileVerifyInfoLabel.text = NSLocalizedString("kMobileVerificationPrompt", comment: "")
         mobileNextButton.isEnabled = false
         facebookLoginButton.readPermissions = ["public_profile", "email"]
         facebookLoginButton.delegate = self
@@ -27,21 +30,39 @@ class SignInViewController: UIViewController {
     
     
     @IBAction func mobileChanged(_ sender: Any) {
-        if let mobile = mobileTextField.text {
-            // TODO: format mobile number as 04xx xxx xxx
-        }
+        // TODO: format mobile number as 04xx xxx xxx
+        // if let mobile = mobileTextField.text {
+        // ...
+        // }
         
         mobileNextButton.isEnabled = mobileTextField.text?.isAustralianMobile() ?? false
     }
     
     @IBAction func mobileNextTapped(_ sender: Any) {
+        guard let mobile = mobileTextField.text, mobile.isAustralianMobile() else { return }
+        
+        // update UI
         mobileNextButton.isEnabled = false
         mobileVerifyInfoLabel.text = NSLocalizedString("kSendingVerificationCode", comment: "")
         
-        // TODO: call API to get verificaiton code
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-            self.perform(segue: StoryboardSegue.SignIn.showMobileVerificationCode)
+        // cancel previous API call
+        userService?.cancel()
+        // create a new API call
+        userService = UserService().startVerification(forMobile: mobile, completion: { [weak self] (error) in
+            DispatchQueue.main.async {
+                
+                if let error = error {
+                    // error prompt
+                    let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                    self?.present(alert, animated: true, completion: nil)
+                    
+                    self?.mobileNextButton.isEnabled = true
+                    self?.mobileVerifyInfoLabel.text = NSLocalizedString("kMobileVerificationPrompt", comment: "")
+                } else {
+                    self?.perform(segue: StoryboardSegue.SignIn.showMobileVerificationCode)
+                }
+            }
         })
     }
     

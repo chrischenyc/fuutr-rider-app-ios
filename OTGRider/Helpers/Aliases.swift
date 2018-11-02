@@ -9,3 +9,5 @@
 import Foundation
 
 typealias JSON = [String: Any]
+
+typealias APIResponse = (Any?, ServiceError?) -> ()

@@ -13,3 +13,9 @@
 
 /* No comment provided by engineer. */
 "kOtherError" = "Something went wrong";
+
+/* No comment provided by engineer. */
+"kMobileVerificationPrompt" = "We'll send a text to verify your number";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
