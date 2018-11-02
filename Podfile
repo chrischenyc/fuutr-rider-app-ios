@@ -31,5 +31,11 @@ abstract_target 'Project' do
     # Pods for OTGRider-staging
   
   end
+  
+  target 'OTGRider-dev' do
+      
+      # Pods for OTGRider-dev
+      
+  end
 end
 
