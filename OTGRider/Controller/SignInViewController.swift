@@ -52,10 +52,7 @@ class SignInViewController: UIViewController {
             DispatchQueue.main.async {
                 
                 if let error = error {
-                    // error prompt
-                    let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
-                    self?.present(alert, animated: true, completion: nil)
+                    self?.showError(error)
                     
                     self?.mobileNextButton.isEnabled = true
                     self?.mobileVerifyInfoLabel.text = NSLocalizedString("kMobileVerificationPrompt", comment: "")

@@ -12,7 +12,7 @@ final class UserService {
     
     //    @discardableResult
     func startVerification(forMobile mobile: String,
-                           completion: @escaping (ServiceError?) -> ()) -> URLSessionDataTask? {
+                           completion: @escaping (Error?) -> ()) -> URLSessionDataTask? {
         
         let params: JSON = ["mobile": mobile]
         
