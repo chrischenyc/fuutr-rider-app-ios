@@ -8,7 +8,8 @@
 
 import UIKit
 
-enum SideMenuItem {
+// arrange enums according to the order of static cells in SideMenu.storyboard
+enum SideMenuItem: Int {
     case greeting
     case history
     case wallet
@@ -33,25 +34,19 @@ class SideMenuViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
+        selectedMenuItem = SideMenuItem(rawValue: indexPath.row)
+        
+        guard let selectedMenuItem = selectedMenuItem else { return }
+        
+        switch selectedMenuItem {
+        case .greeting:
             break
-        case 1:
-            selectedMenuItem = .history
-            perform(segue: StoryboardSegue.SideMenu.unwindToHome)
-        case 2:
-            selectedMenuItem = .wallet
-            perform(segue: StoryboardSegue.SideMenu.unwindToHome)
-        case 3:
-            selectedMenuItem = .settings
-            perform(segue: StoryboardSegue.SideMenu.unwindToHome)
-        case 4:
-            selectedMenuItem = .help
-            perform(segue: StoryboardSegue.SideMenu.unwindToHome)
-        default:
-            break
+        case .history,
+             .settings,
+             .wallet,
+             .help:
+            perform(segue: StoryboardSegue.SideMenu.showMain)
         }
     }
-    
     
 }

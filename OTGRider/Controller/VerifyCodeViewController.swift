@@ -1,5 +1,5 @@
 //
-//  VerificationCodeViewController.swift
+//  VerifyCodeViewController.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 31/10/18.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyUserDefaults
 
-class VerificationCodeViewController: UIViewController {
+class VerifyCodeViewController: UIViewController {
     
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var codeTextField: UITextField!
@@ -40,10 +40,10 @@ class VerificationCodeViewController: UIViewController {
             Defaults[.userSignedIn] = true
             
             if Defaults[.userOnboarded] {
-                self.perform(segue: StoryboardSegue.SignIn.fromVerficationCodeToHome)
+                self.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToMain)
             }
             else {
-                self.perform(segue: StoryboardSegue.SignIn.fromVerficationCodeToOnboard)
+                self.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToOnboard)
             }
         })
     }

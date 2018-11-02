@@ -18,7 +18,7 @@ class UnlockByScanViewController: UIViewController {
     
 
     @IBAction func unwindToUnlockByScan(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source
+        // let sourceViewController = unwindSegue.source
         // Use data from the view controller which initiated the unwind segue
     }
 

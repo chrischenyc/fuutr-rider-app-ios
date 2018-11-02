@@ -85,19 +85,19 @@
                         <outlet property="mobileNextButton" destination="Vpl-lZ-PkQ" id="fbU-aB-Kn6"/>
                         <outlet property="mobileTextField" destination="7bk-Xn-7Sm" id="cUF-wD-t1T"/>
                         <outlet property="mobileVerifyInfoLabel" destination="msX-BP-P0T" id="ood-R3-l0g"/>
-                        <segue destination="1D3-y9-qLq" kind="show" identifier="showMobileVerificationCode" id="sNF-jv-BJH"/>
+                        <segue destination="1D3-y9-qLq" kind="show" identifier="showVerifyCode" id="sNF-jv-BJH"/>
                         <segue destination="KAD-4P-JWO" kind="show" identifier="fromSignInToOnboard" id="NYh-wd-6MW"/>
-                        <segue destination="7z4-bW-Wae" kind="show" identifier="fromSignInToHome" id="uxi-sZ-NDa"/>
+                        <segue destination="7z4-bW-Wae" kind="show" identifier="fromSignInToMain" id="uxi-sZ-NDa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOq-lO-7Fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-374" y="173"/>
         </scene>
-        <!--Verification Code View Controller-->
+        <!--Verify Code View Controller-->
         <scene sceneID="PzC-pd-mNv">
             <objects>
-                <viewController id="1D3-y9-qLq" customClass="VerificationCodeViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1D3-y9-qLq" customClass="VerifyCodeViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wKD-Pj-K1z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,7 +137,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rsc-Va-wC7">
-                                <rect key="frame" x="16" y="44" width="34" height="30"/>
+                                <rect key="frame" x="16" y="36" width="34" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="aBs-qY-pbP"/>
+                                </constraints>
                                 <state key="normal" title="back"/>
                                 <connections>
                                     <segue destination="OPR-SQ-TBD" kind="unwind" unwindAction="unwindToSignIn:" id="VVK-k4-7UQ"/>
@@ -148,7 +151,7 @@
                         <constraints>
                             <constraint firstItem="Rsc-Va-wC7" firstAttribute="leading" secondItem="Gne-8l-oXr" secondAttribute="leading" constant="16" id="2Li-BY-jHe"/>
                             <constraint firstItem="CJx-qI-FHs" firstAttribute="leading" secondItem="Gne-8l-oXr" secondAttribute="leading" constant="32" id="9No-xG-yLr"/>
-                            <constraint firstItem="Rsc-Va-wC7" firstAttribute="top" secondItem="Gne-8l-oXr" secondAttribute="top" constant="24" id="L8h-dC-24U"/>
+                            <constraint firstItem="Rsc-Va-wC7" firstAttribute="top" secondItem="Gne-8l-oXr" secondAttribute="top" constant="16" id="L8h-dC-24U"/>
                             <constraint firstItem="CJx-qI-FHs" firstAttribute="centerY" secondItem="wKD-Pj-K1z" secondAttribute="centerY" constant="-32" id="lcE-CT-NOJ"/>
                             <constraint firstItem="Gne-8l-oXr" firstAttribute="trailing" secondItem="CJx-qI-FHs" secondAttribute="trailing" constant="32" id="mGh-8x-kpK"/>
                         </constraints>
@@ -158,8 +161,8 @@
                         <outlet property="codeTextField" destination="yRP-CC-xt6" id="shy-v2-JU5"/>
                         <outlet property="infoLabel" destination="80i-dC-5ZA" id="YEh-IF-yZR"/>
                         <outlet property="nextButton" destination="4rl-h5-i2B" id="2aZ-Od-NZW"/>
-                        <segue destination="KAD-4P-JWO" kind="show" identifier="fromVerficationCodeToOnboard" id="Q5s-yY-tXW"/>
-                        <segue destination="7z4-bW-Wae" kind="show" identifier="fromVerficationCodeToHome" id="AL8-Zq-xC4"/>
+                        <segue destination="KAD-4P-JWO" kind="show" identifier="fromVerifyCodeToOnboard" id="Q5s-yY-tXW"/>
+                        <segue destination="7z4-bW-Wae" kind="show" identifier="fromVerifyCodeToMain" id="AL8-Zq-xC4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juU-q2-mQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,7 +188,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uxi-sZ-NDa"/>
-        <segue reference="NYh-wd-6MW"/>
+        <segue reference="AL8-Zq-xC4"/>
+        <segue reference="Q5s-yY-tXW"/>
     </inferredMetricsTieBreakers>
 </document>

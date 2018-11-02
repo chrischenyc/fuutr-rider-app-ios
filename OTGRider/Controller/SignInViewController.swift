@@ -60,7 +60,7 @@ class SignInViewController: UIViewController {
                     self?.mobileNextButton.isEnabled = true
                     self?.mobileVerifyInfoLabel.text = NSLocalizedString("kMobileVerificationPrompt", comment: "")
                 } else {
-                    self?.perform(segue: StoryboardSegue.SignIn.showMobileVerificationCode)
+                    self?.perform(segue: StoryboardSegue.SignIn.showVerifyCode)
                 }
             }
         })
@@ -99,7 +99,7 @@ extension SignInViewController: FBSDKLoginButtonDelegate {
                             Defaults[.userSignedIn] = true
                             
                             if Defaults[.userOnboarded] {
-                                self.perform(segue: StoryboardSegue.SignIn.fromSignInToHome)
+                                self.perform(segue: StoryboardSegue.SignIn.fromSignInToMain)
                             }
                             else {
                                 self.perform(segue: StoryboardSegue.SignIn.fromSignInToOnboard)

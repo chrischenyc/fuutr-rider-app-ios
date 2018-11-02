@@ -24,17 +24,17 @@ internal enum StoryboardSegue {
     case showMain
   }
   internal enum Settings: String, SegueType {
-    case settingsToSignIn
+    case showSignIn
   }
   internal enum SideMenu: String, SegueType {
-    case unwindToHome
+    case showMain
   }
   internal enum SignIn: String, SegueType {
-    case fromSignInToHome
+    case fromSignInToMain
     case fromSignInToOnboard
-    case fromVerficationCodeToHome
-    case fromVerficationCodeToOnboard
-    case showMobileVerificationCode
+    case fromVerifyCodeToMain
+    case fromVerifyCodeToOnboard
+    case showVerifyCode
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name

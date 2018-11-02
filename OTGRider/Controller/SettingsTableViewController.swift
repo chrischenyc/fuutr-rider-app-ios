@@ -35,7 +35,7 @@ class SettingsTableViewController: UITableViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25) {
-            self.perform(segue: StoryboardSegue.Settings.settingsToSignIn)
+            self.perform(segue: StoryboardSegue.Settings.showSignIn)
         }
     }
     
