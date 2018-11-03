@@ -90,8 +90,6 @@ extension SignInViewController: FBSDKLoginButtonDelegate {
                         log.debug(result.token)
                         
                         // TODO: call API
-                        
-                        // MOCK: remove this
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                             Defaults[.userSignedIn] = true
                             

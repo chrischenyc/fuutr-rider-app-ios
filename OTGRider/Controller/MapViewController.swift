@@ -40,9 +40,10 @@ class MapViewController: UIViewController {
         let sourceViewController = unwindSegue.source
         
         if let sideMenuViewController = sourceViewController as? SideMenuViewController,
-            let selectedMenuItem = sideMenuViewController.selectedMenuItem {
+            let selectedMenuItem = sideMenuViewController.selectedMenuItem,
+            let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            unwindSegueWithCompletion.completion = {
                 switch selectedMenuItem {
                 case .greeting:
                     break
@@ -56,7 +57,7 @@ class MapViewController: UIViewController {
                     self.perform(segue: StoryboardSegue.Main.showHelp)
                 }
                 
-            })
+            }
         }
     }
     

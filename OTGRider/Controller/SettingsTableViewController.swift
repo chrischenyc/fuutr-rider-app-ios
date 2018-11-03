@@ -25,17 +25,14 @@ class SettingsTableViewController: UITableViewController {
     }
     
     private func signOut() {
-        // TODO: call API maybe?
+        self.perform(segue: StoryboardSegue.Settings.showSignIn)
+        
         
         Defaults[.userSignedIn] = false
         // TODO: purge other user info in NSUserDefaults
         
         if FBSDKAccessToken.current() != nil {
             FBSDKLoginManager().logOut()
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25) {
-            self.perform(segue: StoryboardSegue.Settings.showSignIn)
         }
     }
     

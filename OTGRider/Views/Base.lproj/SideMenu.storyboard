@@ -175,7 +175,7 @@
                     <navigationItem key="navigationItem" id="HQ3-xc-8wm"/>
                     <connections>
                         <outlet property="versionLabel" destination="bwv-2w-fnp" id="oz7-xN-U1P"/>
-                        <segue destination="vqp-it-PCn" kind="unwind" identifier="showMain" unwindAction="unwindToHome:" id="FuD-MS-09h"/>
+                        <segue destination="vqp-it-PCn" kind="unwind" identifier="showMain" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="FuD-MS-09h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wU-Yv-zkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
