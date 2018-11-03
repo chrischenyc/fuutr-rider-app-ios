@@ -35,7 +35,7 @@ final class APIClient {
     func load(path: String,
               method: RequestMethod,
               params: JSON,
-              completion: @escaping APIResponse) -> URLSessionDataTask? {
+              completion: @escaping (Any?, Error?) -> ()) -> URLSessionDataTask? {
         
         // Checking internet connection availability
         guard let reachablity = Reachability(hostname: baseURL), reachablity.connection != .none else {
@@ -53,7 +53,7 @@ final class APIClient {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
                 log.error(error!.localizedDescription)
-                completion(nil, ServiceError.other)
+                completion(nil, error)
                 return
             }
             
