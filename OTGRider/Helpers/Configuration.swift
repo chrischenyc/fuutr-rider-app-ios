@@ -26,9 +26,9 @@ enum Environment: String {
     
     var baseURL: String {
         switch self {
-        case .Development: return "http://localhost:3000/api"
+        case .Development: return "http://localhost:4040/api"
         case .Staging: return "http://ec2-13-239-12-227.ap-southeast-2.compute.amazonaws.com/api"
-        case .Production: return "http://localhost:3000/api"
+        case .Production: return "http://localhost:4040/api"
         }
     }
     

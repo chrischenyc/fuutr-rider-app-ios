@@ -50,12 +50,11 @@ class SignInViewController: UIViewController {
         // create a new API call
         userService = UserService().startVerification(forMobile: mobile, completion: { [weak self] (error) in
             DispatchQueue.main.async {
+                self?.mobileNextButton.isEnabled = true
+                self?.mobileVerifyInfoLabel.text = NSLocalizedString("kMobileVerificationPrompt", comment: "")
                 
                 if let error = error {
                     self?.showError(error)
-                    
-                    self?.mobileNextButton.isEnabled = true
-                    self?.mobileVerifyInfoLabel.text = NSLocalizedString("kMobileVerificationPrompt", comment: "")
                 } else {
                     self?.perform(segue: StoryboardSegue.SignIn.showVerifyCode)
                 }
