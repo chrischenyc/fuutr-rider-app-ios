@@ -30,7 +30,7 @@ extension ServiceError: LocalizedError {
 //  transform the server JSON data into an error object
 extension ServiceError {
     init(json: JSON) {
-        if let message = json["message"] as? String {
+        if let message = json["error"] as? String {
             self = .custom(message)
         } else {
             self = .other

@@ -1,5 +1,5 @@
 //
-//  UserService.swift
+//  AuthService.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 3/11/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class UserService {
+final class AuthService {
     
     //    @discardableResult
     func startVerification(forMobile mobile: String,
@@ -16,7 +16,7 @@ final class UserService {
         
         let params: JSON = ["mobile": mobile]
         
-        return APIClient.shared.load(path: "/phones/verification/start",
+        return APIClient.shared.load(path: "/auth/phone-verification/start",
                                      method: .get,
                                      params: params,
                                      completion: { (result, error) in

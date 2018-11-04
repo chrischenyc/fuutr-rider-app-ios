@@ -48,7 +48,7 @@ class SignInViewController: UIViewController {
         // cancel previous API call
         userService?.cancel()
         // create a new API call
-        userService = UserService().startVerification(forMobile: mobile, completion: { [weak self] (error) in
+        userService = AuthService().startVerification(forMobile: mobile, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 self?.mobileNextButton.isEnabled = true
                 self?.mobileVerifyInfoLabel.text = NSLocalizedString("kMobileVerificationPrompt", comment: "")
