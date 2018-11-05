@@ -26,11 +26,11 @@ class SideMenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String,
-            let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String {
-            versionLabel.text = "\(appName) v\(appVersion)"
+        if let appName = Bundle.main.infoDictionary!["CFBundleDisplayName"] as? String,
+            let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String,
+            let buildNumber = Bundle.main.infoDictionary!["CFBundleVersion"] as? String {
+            versionLabel.text = "\(appName) \(appVersion)(\(buildNumber))"
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
