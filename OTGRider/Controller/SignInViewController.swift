@@ -17,12 +17,12 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var mobileVerifyInfoLabel: UILabel!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
-    var userService: URLSessionDataTask?
+    var authServiceTask: URLSessionDataTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mobileVerifyInfoLabel.text = NSLocalizedString("kMobileVerificationPrompt", comment: "")
+        mobileVerifyInfoLabel.text = L10n.kMobileVerificationPrompt
         mobileNextButton.isEnabled = false
         facebookLoginButton.readPermissions = ["public_profile", "email"]
         facebookLoginButton.delegate = self
@@ -41,25 +41,39 @@ class SignInViewController: UIViewController {
     @IBAction func mobileNextTapped(_ sender: Any) {
         guard let mobile = mobileTextField.text, mobile.isAustralianMobile() else { return }
         
-        // update UI
+        // update UI before calling API
+        mobileVerifyInfoLabel.text = L10n.kSendingVerificationCode
+        mobileTextField.resignFirstResponder()
+        mobileTextField.isEnabled = false
         mobileNextButton.isEnabled = false
-        mobileVerifyInfoLabel.text = NSLocalizedString("kSendingVerificationCode", comment: "")
+        facebookLoginButton.isEnabled = false
         
         // cancel previous API call
-        userService?.cancel()
+        authServiceTask?.cancel()
+        
         // create a new API call
-        userService = AuthService().startVerification(forMobile: mobile, completion: { [weak self] (error) in
+        authServiceTask = AuthService().startVerification(forMobile: mobile, completion: { [weak self] (error) in
             DispatchQueue.main.async {
-                self?.mobileNextButton.isEnabled = true
-                self?.mobileVerifyInfoLabel.text = NSLocalizedString("kMobileVerificationPrompt", comment: "")
-                
                 if let error = error {
                     self?.showError(error)
                 } else {
                     self?.perform(segue: StoryboardSegue.SignIn.showVerifyCode)
+                    self?.mobileTextField.text = ""
                 }
+                
+                self?.mobileVerifyInfoLabel.text = L10n.kMobileVerificationPrompt
+                self?.mobileNextButton.isEnabled = true
+                self?.mobileTextField.isEnabled = true
+                self?.mobileNextButton.isEnabled = true
+                self?.facebookLoginButton.isEnabled = true
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let verifyCodeViewController = segue.destination as? VerifyCodeViewController {
+            verifyCodeViewController.mobile = mobileTextField.text
+        }
     }
     
     @IBAction func unwindToSignIn(_ unwindSegue: UIStoryboardSegue) {

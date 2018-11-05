@@ -14,7 +14,7 @@ import UIKit
 extension UIViewController {
     func showError(_ error: Error) {
         let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: L10n.kErrorConfirm, style: .default, handler: nil))
         
         present(alert, animated: true, completion: nil)
     }

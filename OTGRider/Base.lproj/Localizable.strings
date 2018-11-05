@@ -3,9 +3,6 @@
 "kSendingVerificationCode" = "Sending verification code ...";
 
 /* No comment provided by engineer. */
-"kVerified" = "Verified!";
-
-/* No comment provided by engineer. */
 "kVerifying" = "Verifying ...";
 
 /* No comment provided by engineer. */
@@ -18,4 +15,7 @@
 "kMobileVerificationPrompt" = "We'll send a text to verify your number";
 
 /* No comment provided by engineer. */
-"OK" = "OK";
+"kEnterVerificationCode" = "Enter the 4-digit code sent to your phone";
+
+/* No comment provided by engineer. */
+"kErrorConfirm" = "Okay";

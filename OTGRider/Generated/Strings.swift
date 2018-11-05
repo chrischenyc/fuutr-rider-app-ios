@@ -11,6 +11,10 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
+  /// Enter the 4-digit code sent to your phone
+  internal static let kEnterVerificationCode = L10n.tr("Localizable", "kEnterVerificationCode")
+  /// Okay
+  internal static let kErrorConfirm = L10n.tr("Localizable", "kErrorConfirm")
   /// We'll send a text to verify your number
   internal static let kMobileVerificationPrompt = L10n.tr("Localizable", "kMobileVerificationPrompt")
   /// No Internet connection
@@ -19,12 +23,8 @@ internal enum L10n {
   internal static let kOtherError = L10n.tr("Localizable", "kOtherError")
   /// Sending verification code ...
   internal static let kSendingVerificationCode = L10n.tr("Localizable", "kSendingVerificationCode")
-  /// Verified!
-  internal static let kVerified = L10n.tr("Localizable", "kVerified")
   /// Verifying ...
   internal static let kVerifying = L10n.tr("Localizable", "kVerifying")
-  /// OK
-  internal static let ok = L10n.tr("Localizable", "OK")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

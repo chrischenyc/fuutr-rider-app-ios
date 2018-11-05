@@ -18,11 +18,11 @@ extension ServiceError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noInternetConnection:
-            return NSLocalizedString("kNoInternetConnection", comment: "")
+            return L10n.kNoInternetConnection
         case .custom(let message):
             return message
         case .other:
-            return NSLocalizedString("kOtherError", comment: "")
+            return L10n.kOtherError
         }
     }
 }
