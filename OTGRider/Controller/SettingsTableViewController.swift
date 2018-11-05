@@ -19,21 +19,22 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if indexPath.row == 3 {
             signOut()
         }
     }
     
     private func signOut() {
-        self.perform(segue: StoryboardSegue.Settings.showSignIn)
-        
-        
         Defaults[.userSignedIn] = false
         // TODO: purge other user info in NSUserDefaults
         
         if FBSDKAccessToken.current() != nil {
             FBSDKLoginManager().logOut()
         }
+        
+        self.perform(segue: StoryboardSegue.Settings.showSignIn)
     }
     
 }

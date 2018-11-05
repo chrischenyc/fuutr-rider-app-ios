@@ -165,7 +165,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="uLy-MK-5nj" kind="unwind" identifier="showSignIn" unwindAction="unwindToSignIn:" id="J30-lO-YJy"/>
+                        <segue destination="uLy-MK-5nj" kind="unwind" identifier="showSignIn" animates="NO" unwindAction="unwindToSignIn:" id="J30-lO-YJy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqp-WA-GlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
