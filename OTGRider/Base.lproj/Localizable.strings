@@ -12,7 +12,7 @@
 "kOtherError" = "Something went wrong";
 
 /* No comment provided by engineer. */
-"kMobileVerificationPrompt" = "We'll send a text to verify your number";
+"kPhoneNumberVerificationPrompt" = "We'll send a text to verify your number";
 
 /* No comment provided by engineer. */
 "kEnterVerificationCode" = "Enter the 4-digit code sent to your phone";

@@ -98,9 +98,9 @@
 		6BDE9161218C833E003F976B /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9160218C833E003F976B /* Aliases.swift */; };
 		6BDE9162218C833E003F976B /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9160218C833E003F976B /* Aliases.swift */; };
 		6BDE9163218C833E003F976B /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9160218C833E003F976B /* Aliases.swift */; };
-		6BDE9165218C8FBB003F976B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9164218C8FBB003F976B /* AuthService.swift */; };
-		6BDE9166218C8FBB003F976B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9164218C8FBB003F976B /* AuthService.swift */; };
-		6BDE9167218C8FBB003F976B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9164218C8FBB003F976B /* AuthService.swift */; };
+		6BDE9165218C8FBB003F976B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9164218C8FBB003F976B /* UserService.swift */; };
+		6BDE9166218C8FBB003F976B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9164218C8FBB003F976B /* UserService.swift */; };
+		6BDE9167218C8FBB003F976B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9164218C8FBB003F976B /* UserService.swift */; };
 		6BDE9169218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */; };
 		6BDE916A218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */; };
 		6BDE916B218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */; };
@@ -165,7 +165,7 @@
 		6BDE9159218C4E62003F976B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "staging/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6BDE915C218C79C1003F976B /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		6BDE9160218C833E003F976B /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
-		6BDE9164218C8FBB003F976B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		6BDE9164218C8FBB003F976B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
 		6BDE916C218CFBF9003F976B /* UIViewControoler+ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControoler+ErrorHandling.swift"; sourceTree = "<group>"; };
 		6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueWithCompletion.swift; sourceTree = "<group>"; };
@@ -282,7 +282,7 @@
 			children = (
 				6BDE9150218C3073003F976B /* APIClient.swift */,
 				6BDE915C218C79C1003F976B /* ServiceError.swift */,
-				6BDE9164218C8FBB003F976B /* AuthService.swift */,
+				6BDE9164218C8FBB003F976B /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -927,7 +927,7 @@
 				6BDE9123218C19DF003F976B /* UserDefaults.swift in Sources */,
 				6BDE9124218C19DF003F976B /* SideMenuViewController.swift in Sources */,
 				6BDE916B218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
-				6BDE9167218C8FBB003F976B /* AuthService.swift in Sources */,
+				6BDE9167218C8FBB003F976B /* UserService.swift in Sources */,
 				6BDE9125218C19DF003F976B /* AppDelegate.swift in Sources */,
 				6BDE916F218CFBF9003F976B /* UIViewControoler+ErrorHandling.swift in Sources */,
 				6BDE9153218C3073003F976B /* APIClient.swift in Sources */,
@@ -958,7 +958,7 @@
 				6B8731A72189A70600CC2651 /* UserDefaults.swift in Sources */,
 				A0CFE7BC21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				6BDE9169218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
-				6BDE9165218C8FBB003F976B /* AuthService.swift in Sources */,
+				6BDE9165218C8FBB003F976B /* UserService.swift in Sources */,
 				A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */,
 				6BDE916D218CFBF9003F976B /* UIViewControoler+ErrorHandling.swift in Sources */,
 				6BDE9151218C3073003F976B /* APIClient.swift in Sources */,
@@ -989,7 +989,7 @@
 				6B8731A82189A70600CC2651 /* UserDefaults.swift in Sources */,
 				A0CFE7BD21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				6BDE916A218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
-				6BDE9166218C8FBB003F976B /* AuthService.swift in Sources */,
+				6BDE9166218C8FBB003F976B /* UserService.swift in Sources */,
 				A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */,
 				6BDE916E218CFBF9003F976B /* UIViewControoler+ErrorHandling.swift in Sources */,
 				6BDE9152218C3073003F976B /* APIClient.swift in Sources */,

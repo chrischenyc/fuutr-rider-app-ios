@@ -12,9 +12,9 @@ import SwiftyUserDefaults
 
 class SignInViewController: UIViewController {
     
-    @IBOutlet weak var mobileTextField: UITextField!
-    @IBOutlet weak var mobileNextButton: UIButton!
-    @IBOutlet weak var mobileVerifyInfoLabel: UILabel!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var phoneNumberVerifyButton: UIButton!
+    @IBOutlet weak var phoneNumberVerifyInfoLabel: UILabel!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     var authServiceTask: URLSessionDataTask?
@@ -22,57 +22,60 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mobileVerifyInfoLabel.text = L10n.kMobileVerificationPrompt
-        mobileNextButton.isEnabled = false
+        phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
+        phoneNumberVerifyButton.isEnabled = false
         facebookLoginButton.readPermissions = ["public_profile", "email"]
         facebookLoginButton.delegate = self
     }
     
     
-    @IBAction func mobileChanged(_ sender: Any) {
-        // TODO: format mobile number as 04xx xxx xxx
-        // if let mobile = mobileTextField.text {
+    @IBAction func phoneNumberChanged(_ sender: Any) {
+        // TODO: format phone number as 04xx xxx xxx
+        // if let phoneNumber = phoneNumberTextField.text {
         // ...
         // }
         
-        mobileNextButton.isEnabled = mobileTextField.text?.isAustralianMobile() ?? false
+        phoneNumberVerifyButton.isEnabled = phoneNumberTextField.text?.isAustralianMobile() ?? false
     }
     
-    @IBAction func mobileNextTapped(_ sender: Any) {
-        guard let mobile = mobileTextField.text, mobile.isAustralianMobile() else { return }
+    @IBAction func phoneNumberVerifyTapped(_ sender: Any) {
+        guard let phoneNumber = phoneNumberTextField.text, phoneNumber.isAustralianMobile() else { return }
         
         // update UI before calling API
-        mobileVerifyInfoLabel.text = L10n.kSendingVerificationCode
-        mobileTextField.resignFirstResponder()
-        mobileTextField.isEnabled = false
-        mobileNextButton.isEnabled = false
+        phoneNumberVerifyInfoLabel.text = L10n.kSendingVerificationCode
+        phoneNumberTextField.resignFirstResponder()
+        phoneNumberTextField.isEnabled = false
+        phoneNumberVerifyButton.isEnabled = false
         facebookLoginButton.isEnabled = false
         
         // cancel previous API call
         authServiceTask?.cancel()
         
         // create a new API call
-        authServiceTask = AuthService().startVerification(forMobile: mobile, completion: { [weak self] (error) in
+        authServiceTask = UserService().startVerification(forPhoneNumber: phoneNumber, countryCode: 61, completion: { [weak self] (error) in
             DispatchQueue.main.async {
+                // reset UI
+                self?.phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
+                self?.phoneNumberVerifyButton.isEnabled = true
+                self?.phoneNumberTextField.isEnabled = true
+                self?.phoneNumberVerifyButton.isEnabled = true
+                self?.facebookLoginButton.isEnabled = true
+                
+                
                 if let error = error {
                     self?.showError(error)
                 } else {
                     self?.perform(segue: StoryboardSegue.SignIn.showVerifyCode)
-                    self?.mobileTextField.text = ""
+                    self?.phoneNumberTextField.text = ""
                 }
-                
-                self?.mobileVerifyInfoLabel.text = L10n.kMobileVerificationPrompt
-                self?.mobileNextButton.isEnabled = true
-                self?.mobileTextField.isEnabled = true
-                self?.mobileNextButton.isEnabled = true
-                self?.facebookLoginButton.isEnabled = true
             }
         })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let verifyCodeViewController = segue.destination as? VerifyCodeViewController {
-            verifyCodeViewController.mobile = mobileTextField.text
+            verifyCodeViewController.phoneNumber = phoneNumberTextField.text
+            verifyCodeViewController.countryCode = 61
         }
     }
     

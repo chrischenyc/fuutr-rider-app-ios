@@ -17,7 +17,8 @@ class VerifyCodeViewController: UIViewController {
     @IBOutlet weak var resendButton: UIButton!
     
     var authServiceTask: URLSessionDataTask?
-    var mobile: String?
+    var phoneNumber: String?
+    var countryCode: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,8 @@ class VerifyCodeViewController: UIViewController {
     
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        guard let mobile = mobile else { return }
+        guard let phoneNumber = phoneNumber, phoneNumber.isAustralianMobile() else { return }
+        guard let countryCode = countryCode else { return }
         guard let verificationCode = codeTextField.text, verificationCode.isFourDigits() else { return }
         
         // update UI before calling API
@@ -50,36 +52,35 @@ class VerifyCodeViewController: UIViewController {
         authServiceTask?.cancel()
         
         // create a new API call
-        authServiceTask = AuthService()
-            .checkVerification(forMobile: mobile,
-                               verificationCode: verificationCode,
-                               completion: { [weak self] (error) in
-                                
-                                DispatchQueue.main.async {
-                                    if let error = error {
-                                        self?.showError(error)
-                                    } else {
-                                        Defaults[.userSignedIn] = true
-                                        
-                                        if Defaults[.userOnboarded] {
-                                            self?.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToMain)
-                                        }
-                                        else {
-                                            self?.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToOnboard)
-                                        }
-                                    }
-                                    
-                                    // reset UI
-                                    self?.infoLabel.text = L10n.kEnterVerificationCode
-                                    self?.codeTextField.isEnabled = true
-                                    self?.nextButton.isEnabled = true
-                                    self?.resendButton.isEnabled = true
-                                }
+        authServiceTask = UserService()
+            .signup(forPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
+                
+                DispatchQueue.main.async {
+                    if let error = error {
+                        self?.showError(error)
+                    } else {
+                        Defaults[.userSignedIn] = true
+                        
+                        if Defaults[.userOnboarded] {
+                            self?.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToMain)
+                        }
+                        else {
+                            self?.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToOnboard)
+                        }
+                    }
+                    
+                    // reset UI
+                    self?.infoLabel.text = L10n.kEnterVerificationCode
+                    self?.codeTextField.isEnabled = true
+                    self?.nextButton.isEnabled = true
+                    self?.resendButton.isEnabled = true
+                }
             })
     }
     
     @IBAction func resendButtonTapped(_ sender: Any) {
-        guard let mobile = mobile else { return }
+        guard let phoneNumber = phoneNumber, phoneNumber.isAustralianMobile() else { return }
+        guard let countryCode = countryCode else { return }
         
         // update UI before calling API
         infoLabel.text = L10n.kSendingVerificationCode
@@ -93,7 +94,8 @@ class VerifyCodeViewController: UIViewController {
         authServiceTask?.cancel()
         
         // create a new API call
-        authServiceTask = AuthService().startVerification(forMobile: mobile, completion: { [weak self] (error) in
+        authServiceTask = UserService().startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
+            
             DispatchQueue.main.async {
                 if let error = error {
                     self?.showError(error)

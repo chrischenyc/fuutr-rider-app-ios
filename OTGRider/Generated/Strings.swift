@@ -15,12 +15,12 @@ internal enum L10n {
   internal static let kEnterVerificationCode = L10n.tr("Localizable", "kEnterVerificationCode")
   /// Okay
   internal static let kErrorConfirm = L10n.tr("Localizable", "kErrorConfirm")
-  /// We'll send a text to verify your number
-  internal static let kMobileVerificationPrompt = L10n.tr("Localizable", "kMobileVerificationPrompt")
   /// No Internet connection
   internal static let kNoInternetConnection = L10n.tr("Localizable", "kNoInternetConnection")
   /// Something went wrong
   internal static let kOtherError = L10n.tr("Localizable", "kOtherError")
+  /// We'll send a text to verify your number
+  internal static let kPhoneNumberVerificationPrompt = L10n.tr("Localizable", "kPhoneNumberVerificationPrompt")
   /// Sending verification code ...
   internal static let kSendingVerificationCode = L10n.tr("Localizable", "kSendingVerificationCode")
   /// Verifying ...

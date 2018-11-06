@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Yg-X6-IMj">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,48 +11,48 @@
             <objects>
                 <viewController id="9Yg-X6-IMj" customClass="SignInViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oh0-Wf-n3X">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SGR-gA-Me6">
-                                <rect key="frame" x="24" y="164" width="327" height="231.5"/>
+                                <rect key="frame" x="24" y="130.5" width="552" height="231.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Riding Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGx-Om-xx5">
-                                        <rect key="frame" x="99" y="0.0" width="129" height="20.5"/>
+                                        <rect key="frame" x="211.5" y="0.0" width="129" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0412 345 678" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-Xn-7Sm">
-                                        <rect key="frame" x="8" y="36.5" width="311" height="30"/>
+                                        <rect key="frame" x="8" y="36.5" width="536" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                         <connections>
-                                            <action selector="mobileChanged:" destination="9Yg-X6-IMj" eventType="editingChanged" id="27x-dJ-0my"/>
+                                            <action selector="phoneNumberChanged:" destination="9Yg-X6-IMj" eventType="editingChanged" id="27x-dJ-0my"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpl-lZ-PkQ">
-                                        <rect key="frame" x="8" y="82.5" width="311" height="30"/>
+                                        <rect key="frame" x="8" y="82.5" width="536" height="30"/>
                                         <state key="normal" title="NEXT"/>
                                         <connections>
-                                            <action selector="mobileNextTapped:" destination="9Yg-X6-IMj" eventType="touchUpInside" id="NMt-G8-hgV"/>
+                                            <action selector="phoneNumberVerifyTapped:" destination="9Yg-X6-IMj" eventType="touchUpInside" id="NMt-G8-hgV"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll send a text to verify your number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msX-BP-P0T">
-                                        <rect key="frame" x="17" y="128.5" width="293" height="20.5"/>
+                                        <rect key="frame" x="129.5" y="128.5" width="293" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuF-1m-Vvq">
-                                        <rect key="frame" x="155.5" y="165" width="16" height="20.5"/>
+                                        <rect key="frame" x="268" y="165" width="16" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2D-h8-K4D" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="8" y="201.5" width="311" height="30"/>
+                                        <rect key="frame" x="8" y="201.5" width="536" height="30"/>
                                         <state key="normal" title="facebook"/>
                                         <connections>
                                             <outlet property="delegate" destination="9Yg-X6-IMj" id="148-Wh-M1S"/>
@@ -83,9 +79,9 @@
                     </view>
                     <connections>
                         <outlet property="facebookLoginButton" destination="M2D-h8-K4D" id="HB5-il-maV"/>
-                        <outlet property="mobileNextButton" destination="Vpl-lZ-PkQ" id="fbU-aB-Kn6"/>
-                        <outlet property="mobileTextField" destination="7bk-Xn-7Sm" id="cUF-wD-t1T"/>
-                        <outlet property="mobileVerifyInfoLabel" destination="msX-BP-P0T" id="ood-R3-l0g"/>
+                        <outlet property="phoneNumberTextField" destination="7bk-Xn-7Sm" id="cUF-wD-t1T"/>
+                        <outlet property="phoneNumberVerifyButton" destination="Vpl-lZ-PkQ" id="fbU-aB-Kn6"/>
+                        <outlet property="phoneNumberVerifyInfoLabel" destination="msX-BP-P0T" id="ood-R3-l0g"/>
                         <segue destination="1D3-y9-qLq" kind="show" identifier="showVerifyCode" id="sNF-jv-BJH"/>
                         <segue destination="KAD-4P-JWO" kind="show" identifier="fromSignInToOnboard" id="NYh-wd-6MW"/>
                         <segue destination="7z4-bW-Wae" kind="show" identifier="fromSignInToMain" id="uxi-sZ-NDa"/>
@@ -100,20 +96,20 @@
             <objects>
                 <viewController id="1D3-y9-qLq" customClass="VerifyCodeViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wKD-Pj-K1z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CJx-qI-FHs">
-                                <rect key="frame" x="32" y="222.5" width="311" height="158.5"/>
+                                <rect key="frame" x="32" y="189" width="536" height="158.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 4-digit code sent to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80i-dC-5ZA">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="536" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRP-CC-xt6">
-                                        <rect key="frame" x="0.0" y="36.5" width="311" height="30"/>
+                                        <rect key="frame" x="0.0" y="36.5" width="536" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
@@ -122,14 +118,14 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rl-h5-i2B">
-                                        <rect key="frame" x="0.0" y="82.5" width="311" height="30"/>
+                                        <rect key="frame" x="0.0" y="82.5" width="536" height="30"/>
                                         <state key="normal" title="NEXT"/>
                                         <connections>
                                             <action selector="nextButtonTapped:" destination="1D3-y9-qLq" eventType="touchUpInside" id="2IX-WQ-9lm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2E-aY-TFs">
-                                        <rect key="frame" x="0.0" y="128.5" width="311" height="30"/>
+                                        <rect key="frame" x="0.0" y="128.5" width="536" height="30"/>
                                         <state key="normal" title="Resend Code"/>
                                         <connections>
                                             <action selector="resendButtonTapped:" destination="1D3-y9-qLq" eventType="touchUpInside" id="gvX-N2-Kly"/>
