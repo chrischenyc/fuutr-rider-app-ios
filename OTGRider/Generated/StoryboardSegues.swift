@@ -30,8 +30,13 @@ internal enum StoryboardSegue {
     case showMain
   }
   internal enum SignIn: String, SegueType {
+    case fromEmailLogInToMain
+    case fromEmailLogInToOnboard
+    case fromEmailSignUpToMain
+    case fromEmailSignUpToOnboard
     case fromSignInToMain
     case fromSignInToOnboard
+    case fromSignUpToLogIn
     case fromVerifyCodeToMain
     case fromVerifyCodeToOnboard
     case showVerifyCode

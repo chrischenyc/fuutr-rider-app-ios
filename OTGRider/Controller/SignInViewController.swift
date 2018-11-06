@@ -17,9 +17,9 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var phoneNumberVerifyInfoLabel: UILabel!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
-    var countryCode: UInt64?
-    var phoneNumber: String?
-    var authServiceTask: URLSessionDataTask?
+    private var countryCode: UInt64?
+    private var phoneNumber: String?
+    private var userServiceTask: URLSessionDataTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +50,10 @@ class SignInViewController: UIViewController {
         facebookLoginButton.isEnabled = false
         
         // cancel previous API call
-        authServiceTask?.cancel()
+        userServiceTask?.cancel()
         
         // create a new API call
-        authServiceTask = UserService().startVerification(forPhoneNumber: phoneNumber, countryCode: 61, completion: { [weak self] (error) in
+        userServiceTask = UserService().startVerification(forPhoneNumber: phoneNumber, countryCode: 61, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 // reset UI
                 self?.phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt

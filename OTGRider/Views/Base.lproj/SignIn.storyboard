@@ -199,7 +199,7 @@
         <!--Sign Up-->
         <scene sceneID="trH-18-tag">
             <objects>
-                <viewController id="1MB-r1-E8C" customClass="EmailSignUpViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1MB-r1-E8C" customClass="EmailAuthViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w9u-tl-6pE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,16 +212,25 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                        <connections>
+                                            <action selector="emailChanged:" destination="1MB-r1-E8C" eventType="editingChanged" id="w8h-B6-xqW"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hV4-8d-PUT">
                                         <rect key="frame" x="0.0" y="46" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
+                                        <connections>
+                                            <action selector="passwordChanged:" destination="1MB-r1-E8C" eventType="editingChanged" id="4xd-3n-Jw0"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDu-fz-ddN">
                                         <rect key="frame" x="0.0" y="92" width="327" height="30"/>
                                         <state key="normal" title="Join"/>
+                                        <connections>
+                                            <action selector="submitTapped:" destination="1MB-r1-E8C" eventType="touchUpInside" id="ajI-NQ-zG8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -242,10 +251,17 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Exsiting User?" id="5x0-nL-vpa">
                             <connections>
-                                <segue destination="GXk-iU-xto" kind="show" id="aNq-1F-qTn"/>
+                                <segue destination="GXk-iU-xto" kind="show" identifier="fromSignUpToLogIn" id="aNq-1F-qTn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="OkA-26-CDQ" id="3xm-qk-0mf"/>
+                        <outlet property="passwordTextField" destination="hV4-8d-PUT" id="eKO-fM-vRO"/>
+                        <outlet property="submitButton" destination="xDu-fz-ddN" id="M6O-5Q-ViH"/>
+                        <segue destination="KAD-4P-JWO" kind="presentation" identifier="fromEmailSignUpToOnboard" id="tiw-CG-hzh"/>
+                        <segue destination="7z4-bW-Wae" kind="presentation" identifier="fromEmailSignUpToMain" id="swg-qs-j4S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXS-aY-wX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3cT-5Q-mEE" userLabel="Exit" sceneMemberID="exit"/>
@@ -291,7 +307,7 @@
         <!--Log In-->
         <scene sceneID="uDM-8D-gx7">
             <objects>
-                <viewController id="GXk-iU-xto" customClass="EmailSignUpViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GXk-iU-xto" customClass="EmailAuthViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hDr-oD-i5S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,16 +320,25 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                        <connections>
+                                            <action selector="emailChanged:" destination="GXk-iU-xto" eventType="editingChanged" id="KzQ-8K-OOw"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WY9-UR-56y">
                                         <rect key="frame" x="0.0" y="46" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
+                                        <connections>
+                                            <action selector="passwordChanged:" destination="GXk-iU-xto" eventType="editingChanged" id="CkJ-CK-XXv"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIS-SP-Iqw">
                                         <rect key="frame" x="0.0" y="92" width="327" height="30"/>
                                         <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <action selector="submitTapped:" destination="GXk-iU-xto" eventType="touchUpInside" id="cxE-Lr-Q9m"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -338,6 +363,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="UFN-OL-5vl" id="cUq-ea-3Hp"/>
+                        <outlet property="passwordTextField" destination="WY9-UR-56y" id="2pl-zG-EnM"/>
+                        <outlet property="submitButton" destination="hIS-SP-Iqw" id="ArL-Ph-nYv"/>
+                        <segue destination="KAD-4P-JWO" kind="presentation" identifier="fromEmailLogInToOnboard" id="PB7-vV-uTW"/>
+                        <segue destination="7z4-bW-Wae" kind="presentation" identifier="fromEmailLogInToMain" id="U9n-5U-fai"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbP-3i-aoc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="DW2-mO-X7f" userLabel="Exit" sceneMemberID="exit"/>
@@ -346,7 +378,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AL8-Zq-xC4"/>
-        <segue reference="Q5s-yY-tXW"/>
+        <segue reference="U9n-5U-fai"/>
+        <segue reference="PB7-vV-uTW"/>
     </inferredMetricsTieBreakers>
 </document>

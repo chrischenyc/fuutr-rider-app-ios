@@ -29,7 +29,7 @@ final class UserService {
         
     }
     
-    func signup(forPhoneNumber mobile: String,
+    func signup(withPhoneNumber mobile: String,
                 countryCode: UInt64,
                 verificationCode: String,
                 completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
@@ -100,5 +100,6 @@ final class UserService {
         guard let result = result as? [String: Any] else { return }
         
         Defaults[.userToken] = result["token"] as? String
+        Defaults[.userSignedIn] = true
     }
 }

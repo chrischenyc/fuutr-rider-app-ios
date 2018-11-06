@@ -17,6 +17,7 @@ abstract_target 'Project' do
   
   # UI
   pod 'SideMenu'
+  pod 'PKHUD'
   
   # Networking
   pod 'ReachabilitySwift'

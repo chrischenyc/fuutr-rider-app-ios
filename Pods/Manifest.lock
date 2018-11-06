@@ -118,6 +118,7 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (2.5.0)
   - PhoneNumberKit/UIKit (2.5.0):
     - PhoneNumberKit/PhoneNumberKitCore
+  - PKHUD (5.2.0)
   - Protobuf (3.6.1)
   - ReachabilitySwift (4.3.0)
   - SideMenu (5.0.3)
@@ -138,6 +139,7 @@ DEPENDENCIES:
   - Firebase/Performance
   - GoogleMaps
   - PhoneNumberKit
+  - PKHUD
   - ReachabilitySwift
   - SideMenu
   - SwiftGen
@@ -169,6 +171,7 @@ SPEC REPOS:
     - nanopb
     - ObjcExceptionBridging
     - PhoneNumberKit
+    - PKHUD
     - Protobuf
     - ReachabilitySwift
     - SideMenu
@@ -200,6 +203,7 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   PhoneNumberKit: 32a1cd1e0aa9e950feb01886a22fd7386b8cf903
+  PKHUD: dd5357ac65f26115c35c4a68e9b328053326c5fe
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
@@ -207,6 +211,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 9b001e41d972441f48365ae5ebe51072d6651d32
+PODFILE CHECKSUM: ba09565eaada352984dc656835938f9e7056f26b
 
 COCOAPODS: 1.5.3

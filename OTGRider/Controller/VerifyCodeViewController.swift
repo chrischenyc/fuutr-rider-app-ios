@@ -18,7 +18,7 @@ class VerifyCodeViewController: UIViewController {
     
     var countryCode: UInt64?
     var phoneNumber: String?
-    var authServiceTask: URLSessionDataTask?
+    var userServiceTask: URLSessionDataTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,18 +49,16 @@ class VerifyCodeViewController: UIViewController {
         resendButton.isEnabled = false
         
         // cancel previous API call
-        authServiceTask?.cancel()
+        userServiceTask?.cancel()
         
         // create a new API call
-        authServiceTask = UserService()
-            .signup(forPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
+        userServiceTask = UserService()
+            .signup(withPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
                 
                 DispatchQueue.main.async {
                     if let error = error {
                         self?.showError(error)
                     } else {
-                        Defaults[.userSignedIn] = true
-                        
                         if Defaults[.userOnboarded] {
                             self?.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToMain)
                         }
@@ -91,10 +89,10 @@ class VerifyCodeViewController: UIViewController {
         resendButton.isEnabled = false
         
         // cancel previous API call
-        authServiceTask?.cancel()
+        userServiceTask?.cancel()
         
         // create a new API call
-        authServiceTask = UserService().startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
+        userServiceTask = UserService().startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
             
             DispatchQueue.main.async {
                 if let error = error {
