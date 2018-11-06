@@ -120,7 +120,7 @@ PODS:
     - PhoneNumberKit/PhoneNumberKitCore
   - Protobuf (3.6.1)
   - ReachabilitySwift (4.3.0)
-  - SideMenu (5.0.2)
+  - SideMenu (5.0.3)
   - SwiftGen (6.0.2)
   - SwiftyUserDefaults (4.0.0-alpha.1)
   - XCGLogger (6.1.0):
@@ -202,7 +202,7 @@ SPEC CHECKSUMS:
   PhoneNumberKit: 32a1cd1e0aa9e950feb01886a22fd7386b8cf903
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
-  SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd

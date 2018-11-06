@@ -171,8 +171,8 @@
                         <outlet property="infoLabel" destination="80i-dC-5ZA" id="YEh-IF-yZR"/>
                         <outlet property="nextButton" destination="4rl-h5-i2B" id="2aZ-Od-NZW"/>
                         <outlet property="resendButton" destination="o2E-aY-TFs" id="kZu-Gq-hCl"/>
-                        <segue destination="KAD-4P-JWO" kind="show" identifier="fromVerifyCodeToOnboard" id="Q5s-yY-tXW"/>
-                        <segue destination="7z4-bW-Wae" kind="show" identifier="fromVerifyCodeToMain" id="AL8-Zq-xC4"/>
+                        <segue destination="KAD-4P-JWO" kind="presentation" identifier="fromVerifyCodeToOnboard" id="Q5s-yY-tXW"/>
+                        <segue destination="7z4-bW-Wae" kind="presentation" identifier="fromVerifyCodeToMain" id="AL8-Zq-xC4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juU-q2-mQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -346,7 +346,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uxi-sZ-NDa"/>
-        <segue reference="NYh-wd-6MW"/>
+        <segue reference="AL8-Zq-xC4"/>
+        <segue reference="Q5s-yY-tXW"/>
     </inferredMetricsTieBreakers>
 </document>

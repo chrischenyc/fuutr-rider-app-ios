@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyUserDefaults
 
 final class UserService {
     
@@ -43,9 +44,61 @@ final class UserService {
                                      method: .post,
                                      params: params,
                                      completion: { (result, error) in
+                                        if let result = result {
+                                            self.handleAuthenticationResult(result: result)
+                                        }
+                                        
                                         completion(error)
         })
         
     }
     
+    func signup(withEmail email: String,
+                password: String,
+                completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        
+        let params: JSON = [
+            "email": email,
+            "password": password
+        ]
+        
+        return APIClient.shared.load(path: "/users/email/signup",
+                                     method: .post,
+                                     params: params,
+                                     completion: { (result, error) in
+                                        if let result = result {
+                                            self.handleAuthenticationResult(result: result)
+                                        }
+                                        
+                                        completion(error)
+        })
+    }
+    
+    func login(withEmail email: String,
+               password: String,
+               completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        
+        let params: JSON = [
+            "email": email,
+            "password": password
+        ]
+        
+        return APIClient.shared.load(path: "/users/email/login",
+                                     method: .post,
+                                     params: params,
+                                     completion: { (result, error) in
+                                        if let result = result {
+                                            self.handleAuthenticationResult(result: result)
+                                        }
+                                        
+                                        completion(error)
+        })
+    }
+    
+    
+    private func handleAuthenticationResult(result: Any) {
+        guard let result = result as? [String: Any] else { return }
+        
+        Defaults[.userToken] = result["token"] as? String
+    }
 }

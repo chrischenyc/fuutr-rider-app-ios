@@ -11,5 +11,6 @@ import SwiftyUserDefaults
 
 extension DefaultsKeys {
     static let userSignedIn = DefaultsKey<Bool>("userSignedIn")
+    static let userToken = DefaultsKey<String?>("userToken")
     static let userOnboarded = DefaultsKey<Bool>("userOnboarded")
 }

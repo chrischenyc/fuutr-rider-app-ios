@@ -250,13 +250,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		6B8731A52189A6EC00CC2651 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		6B8731AD2189BA6B00CC2651 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,7 +313,6 @@
 			children = (
 				A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */,
 				6B8731A62189A70600CC2651 /* UserDefaults.swift */,
-				6B8731A52189A6EC00CC2651 /* Models */,
 				6B8731DB218A957400CC2651 /* Views */,
 				A0CFE7BA21773B7B00BA3F6D /* Controller */,
 				6BDE914F218C3055003F976B /* API */,

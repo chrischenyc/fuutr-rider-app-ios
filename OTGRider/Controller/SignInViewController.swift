@@ -74,7 +74,8 @@ class SignInViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let verifyCodeViewController = segue.destination as? VerifyCodeViewController {
+        if let navigationController = segue.destination as? UINavigationController,
+            let verifyCodeViewController = navigationController.topViewController as? VerifyCodeViewController {
             guard let countryCode = countryCode, let phoneNumber = phoneNumber else { return }
             
             verifyCodeViewController.countryCode = countryCode
