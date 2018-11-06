@@ -205,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Big-Gd-SS3">
-                                <rect key="frame" x="24" y="272.5" width="327" height="122"/>
+                                <rect key="frame" x="24" y="219.5" width="327" height="164.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OkA-26-CDQ">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
@@ -225,8 +225,14 @@
                                             <action selector="passwordChanged:" destination="1MB-r1-E8C" eventType="editingChanged" id="4xd-3n-Jw0"/>
                                         </connections>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password must be between 4-8 characters long and include at least one numeric digit." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w71-Q7-Tbx">
+                                        <rect key="frame" x="0.0" y="92" width="327" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDu-fz-ddN">
-                                        <rect key="frame" x="0.0" y="92" width="327" height="30"/>
+                                        <rect key="frame" x="0.0" y="134.5" width="327" height="30"/>
                                         <state key="normal" title="Join"/>
                                         <connections>
                                             <action selector="submitTapped:" destination="1MB-r1-E8C" eventType="touchUpInside" id="ajI-NQ-zG8"/>
@@ -238,7 +244,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FAz-45-eGV" firstAttribute="trailing" secondItem="Big-Gd-SS3" secondAttribute="trailing" constant="24" id="8wI-eF-biN"/>
-                            <constraint firstItem="Big-Gd-SS3" firstAttribute="centerY" secondItem="w9u-tl-6pE" secondAttribute="centerY" id="beo-bD-SHn"/>
+                            <constraint firstItem="Big-Gd-SS3" firstAttribute="centerY" secondItem="w9u-tl-6pE" secondAttribute="centerY" constant="-32" id="beo-bD-SHn"/>
                             <constraint firstItem="Big-Gd-SS3" firstAttribute="leading" secondItem="FAz-45-eGV" secondAttribute="leading" constant="24" id="gKc-sU-CNt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FAz-45-eGV"/>
@@ -313,7 +319,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Xwb-DW-fc7">
-                                <rect key="frame" x="24" y="272.5" width="327" height="122"/>
+                                <rect key="frame" x="24" y="219.5" width="327" height="164.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFN-OL-5vl">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
@@ -333,8 +339,14 @@
                                             <action selector="passwordChanged:" destination="GXk-iU-xto" eventType="editingChanged" id="CkJ-CK-XXv"/>
                                         </connections>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password must be between 4-8 characters long and include at least one numeric digit." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0W-Gp-4gH">
+                                        <rect key="frame" x="0.0" y="92" width="327" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIS-SP-Iqw">
-                                        <rect key="frame" x="0.0" y="92" width="327" height="30"/>
+                                        <rect key="frame" x="0.0" y="134.5" width="327" height="30"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
                                             <action selector="submitTapped:" destination="GXk-iU-xto" eventType="touchUpInside" id="cxE-Lr-Q9m"/>
@@ -347,7 +359,7 @@
                         <constraints>
                             <constraint firstItem="Xwb-DW-fc7" firstAttribute="leading" secondItem="PP0-Hj-BRY" secondAttribute="leading" constant="24" id="IPd-nr-MPb"/>
                             <constraint firstItem="PP0-Hj-BRY" firstAttribute="trailing" secondItem="Xwb-DW-fc7" secondAttribute="trailing" constant="24" id="ZCT-AZ-dZe"/>
-                            <constraint firstItem="Xwb-DW-fc7" firstAttribute="centerY" secondItem="hDr-oD-i5S" secondAttribute="centerY" id="cPb-eH-QqO"/>
+                            <constraint firstItem="Xwb-DW-fc7" firstAttribute="centerY" secondItem="hDr-oD-i5S" secondAttribute="centerY" constant="-32" id="cPb-eH-QqO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PP0-Hj-BRY"/>
                     </view>
