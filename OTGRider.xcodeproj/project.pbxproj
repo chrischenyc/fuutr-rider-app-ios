@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		470D7A8D9BA5E54FE9E79E82 /* Pods_Project_OTGRider_dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4706DCFA6C56492D699F48 /* Pods_Project_OTGRider_dev.framework */; };
+		6B341F0C21919952007615D8 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B341F0B21919952007615D8 /* EmailSignUpViewController.swift */; };
+		6B341F0D21919952007615D8 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B341F0B21919952007615D8 /* EmailSignUpViewController.swift */; };
+		6B341F0E21919952007615D8 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B341F0B21919952007615D8 /* EmailSignUpViewController.swift */; };
+		6B341F1021919961007615D8 /* EmailLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B341F0F21919961007615D8 /* EmailLogInViewController.swift */; };
+		6B341F1121919961007615D8 /* EmailLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B341F0F21919961007615D8 /* EmailLogInViewController.swift */; };
+		6B341F1221919961007615D8 /* EmailLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B341F0F21919961007615D8 /* EmailLogInViewController.swift */; };
 		6B8731A3218997B600CC2651 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A2218997B600CC2651 /* Constants.swift */; };
 		6B8731A4218997B600CC2651 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A2218997B600CC2651 /* Constants.swift */; };
 		6B8731A72189A70600CC2651 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A62189A70600CC2651 /* UserDefaults.swift */; };
@@ -129,6 +135,8 @@
 /* Begin PBXFileReference section */
 		1D4706DCFA6C56492D699F48 /* Pods_Project_OTGRider_dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_OTGRider_dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		437747352F7B2C3F6BA2A8AF /* Pods-Project-OTGRider-dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-dev/Pods-Project-OTGRider-dev.release.xcconfig"; sourceTree = "<group>"; };
+		6B341F0B21919952007615D8 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		6B341F0F21919961007615D8 /* EmailLogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLogInViewController.swift; sourceTree = "<group>"; };
 		6B87319E2189643800CC2651 /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
 		6B8731A0218968E000CC2651 /* Melbourne.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Melbourne.gpx; sourceTree = "<group>"; };
 		6B8731A2218997B600CC2651 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -346,6 +354,8 @@
 				6B8731FD218AA53100CC2651 /* PaymentMethodTableViewController.swift */,
 				6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */,
 				6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */,
+				6B341F0B21919952007615D8 /* EmailSignUpViewController.swift */,
+				6B341F0F21919961007615D8 /* EmailLogInViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -927,6 +937,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BDE915F218C79C1003F976B /* ServiceError.swift in Sources */,
+				6B341F1221919961007615D8 /* EmailLogInViewController.swift in Sources */,
 				6BDE9120218C19DF003F976B /* MapViewController.swift in Sources */,
 				6BDE9121218C19DF003F976B /* Assets.swift in Sources */,
 				6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */,
@@ -945,6 +956,7 @@
 				6BDE912C218C19DF003F976B /* StoryboardSegues.swift in Sources */,
 				6BDE914E218C1DBB003F976B /* Configuration.swift in Sources */,
 				6BDE912D218C19DF003F976B /* UnlockByScanViewController.swift in Sources */,
+				6B341F0E21919952007615D8 /* EmailSignUpViewController.swift in Sources */,
 				6BDE9163218C833E003F976B /* Aliases.swift in Sources */,
 				6BDE912E218C19DF003F976B /* Constants.swift in Sources */,
 				6BDE912F218C19DF003F976B /* PaymentMethodTableViewController.swift in Sources */,
@@ -958,6 +970,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BDE915D218C79C1003F976B /* ServiceError.swift in Sources */,
+				6B341F1021919961007615D8 /* EmailLogInViewController.swift in Sources */,
 				A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */,
 				6B8731B22189BA8D00CC2651 /* Assets.swift in Sources */,
 				6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */,
@@ -976,6 +989,7 @@
 				6B8731B62189BAC400CC2651 /* StoryboardSegues.swift in Sources */,
 				6BDE914C218C1DBB003F976B /* Configuration.swift in Sources */,
 				6B873201218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */,
+				6B341F0C21919952007615D8 /* EmailSignUpViewController.swift in Sources */,
 				6BDE9161218C833E003F976B /* Aliases.swift in Sources */,
 				6B8731A3218997B600CC2651 /* Constants.swift in Sources */,
 				6B8731FE218AA53100CC2651 /* PaymentMethodTableViewController.swift in Sources */,
@@ -989,6 +1003,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BDE915E218C79C1003F976B /* ServiceError.swift in Sources */,
+				6B341F1121919961007615D8 /* EmailLogInViewController.swift in Sources */,
 				A0CFE7AE21747D2B00BA3F6D /* MapViewController.swift in Sources */,
 				6B8731B32189BA8D00CC2651 /* Assets.swift in Sources */,
 				6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */,
@@ -1007,6 +1022,7 @@
 				6B8731B72189BAC400CC2651 /* StoryboardSegues.swift in Sources */,
 				6BDE914D218C1DBB003F976B /* Configuration.swift in Sources */,
 				6B873202218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */,
+				6B341F0D21919952007615D8 /* EmailSignUpViewController.swift in Sources */,
 				6BDE9162218C833E003F976B /* Aliases.swift in Sources */,
 				6B8731A4218997B600CC2651 /* Constants.swift in Sources */,
 				6B8731FF218AA53100CC2651 /* PaymentMethodTableViewController.swift in Sources */,
