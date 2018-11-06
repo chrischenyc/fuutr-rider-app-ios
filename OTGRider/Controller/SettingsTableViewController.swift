@@ -28,7 +28,7 @@ class SettingsTableViewController: UITableViewController {
     
     private func signOut() {
         Defaults[.userSignedIn] = false
-        Defaults[.userToken] = nil
+        Defaults[.userToken] = ""
         
         if FBSDKAccessToken.current() != nil {
             FBSDKLoginManager().logOut()
