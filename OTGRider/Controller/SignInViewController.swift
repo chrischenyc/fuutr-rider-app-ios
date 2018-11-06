@@ -17,6 +17,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var phoneNumberVerifyInfoLabel: UILabel!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
+    var countryCode: UInt64?
+    var phoneNumber: String?
     var authServiceTask: URLSessionDataTask?
     
     override func viewDidLoad() {
@@ -30,16 +32,15 @@ class SignInViewController: UIViewController {
     
     
     @IBAction func phoneNumberChanged(_ sender: Any) {
-        // TODO: format phone number as 04xx xxx xxx
-        // if let phoneNumber = phoneNumberTextField.text {
-        // ...
-        // }
-        
-        phoneNumberVerifyButton.isEnabled = phoneNumberTextField.text?.isAustralianMobile() ?? false
+        phoneNumberTextField.text?.isMobileNumber({ (isMobile, coutryCode, phoneNumber) in
+            phoneNumberVerifyButton.isEnabled = isMobile
+            self.countryCode = coutryCode
+            self.phoneNumber = phoneNumber
+        })
     }
     
     @IBAction func phoneNumberVerifyTapped(_ sender: Any) {
-        guard let phoneNumber = phoneNumberTextField.text, phoneNumber.isAustralianMobile() else { return }
+        guard let phoneNumber = phoneNumber, countryCode != nil else { return }
         
         // update UI before calling API
         phoneNumberVerifyInfoLabel.text = L10n.kSendingVerificationCode
@@ -74,8 +75,10 @@ class SignInViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let verifyCodeViewController = segue.destination as? VerifyCodeViewController {
-            verifyCodeViewController.phoneNumber = phoneNumberTextField.text
-            verifyCodeViewController.countryCode = 61
+            guard let countryCode = countryCode, let phoneNumber = phoneNumber else { return }
+            
+            verifyCodeViewController.countryCode = countryCode
+            verifyCodeViewController.phoneNumber = phoneNumber
         }
     }
     

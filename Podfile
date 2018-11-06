@@ -26,7 +26,7 @@ abstract_target 'Project' do
   pod 'XCGLogger'
   pod 'SwiftGen'
   pod 'BartyCrouch'
-  
+  pod 'PhoneNumberKit'
 
   target 'OTGRider' do
 

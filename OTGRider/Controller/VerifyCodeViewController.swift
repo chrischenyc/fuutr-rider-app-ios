@@ -16,9 +16,9 @@ class VerifyCodeViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var resendButton: UIButton!
     
-    var authServiceTask: URLSessionDataTask?
+    var countryCode: UInt64?
     var phoneNumber: String?
-    var countryCode: Int?
+    var authServiceTask: URLSessionDataTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class VerifyCodeViewController: UIViewController {
     
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        guard let phoneNumber = phoneNumber, phoneNumber.isAustralianMobile() else { return }
+        guard let phoneNumber = phoneNumber else { return }
         guard let countryCode = countryCode else { return }
         guard let verificationCode = codeTextField.text, verificationCode.isFourDigits() else { return }
         
@@ -79,7 +79,7 @@ class VerifyCodeViewController: UIViewController {
     }
     
     @IBAction func resendButtonTapped(_ sender: Any) {
-        guard let phoneNumber = phoneNumber, phoneNumber.isAustralianMobile() else { return }
+        guard let phoneNumber = phoneNumber else { return }
         guard let countryCode = countryCode else { return }
         
         // update UI before calling API

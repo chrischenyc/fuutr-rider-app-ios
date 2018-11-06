@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import PhoneNumberKit
 
 extension String {
     func isEmail() -> Bool {
@@ -15,10 +15,14 @@ extension String {
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
     }
     
-    // FIXME: suppoert international format +61 041 234 567 as iPhone keyboard may prompt user number
-    func isAustralianMobile() -> Bool {
-        let regex = try! NSRegularExpression(pattern: "^04[0-9]{8}$", options: .caseInsensitive)
-        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+    func isMobileNumber(_ completion: (Bool, UInt64?, String?) -> Void) {
+        do {
+            let phoneNumberKit = PhoneNumberKit()
+            let phoneNumber = try phoneNumberKit.parse(self)
+            completion(phoneNumber.type == .mobile, phoneNumber.countryCode, phoneNumber.numberString)
+        } catch {
+            completion(false, nil, nil)
+        }
     }
     
     func isFourDigits() -> Bool {

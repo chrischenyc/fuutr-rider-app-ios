@@ -11,8 +11,8 @@ import Foundation
 final class UserService {
     
     func startVerification(forPhoneNumber phoneNumber: String,
-                           countryCode: Int,
-                           completion: @escaping (Error?) -> ()) -> URLSessionDataTask? {
+                           countryCode: UInt64,
+                           completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         
         let params: JSON = [
             "phone_number": phoneNumber,
@@ -29,9 +29,9 @@ final class UserService {
     }
     
     func signup(forPhoneNumber mobile: String,
-                countryCode: Int,
+                countryCode: UInt64,
                 verificationCode: String,
-                completion: @escaping (Error?) -> ()) -> URLSessionDataTask? {
+                completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         
         let params: JSON = [
             "phone_number": mobile,

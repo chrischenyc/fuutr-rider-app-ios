@@ -35,7 +35,7 @@ final class APIClient {
     func load(path: String,
               method: RequestMethod,
               params: JSON,
-              completion: @escaping (Any?, Error?) -> ()) -> URLSessionDataTask? {
+              completion: @escaping (Any?, Error?) -> Void) -> URLSessionDataTask? {
         
         // Checking internet connection availability
         guard let reachablity = Reachability(hostname: baseURL), reachablity.connection != .none else {

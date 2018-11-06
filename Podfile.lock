@@ -8,7 +8,7 @@ PODS:
   - Bolts/Tasks (1.9.0)
   - Crashlytics (3.11.1):
     - Fabric (~> 1.8.1)
-  - Fabric (1.8.1)
+  - Fabric (1.8.2)
   - FBSDKCoreKit (4.38.1):
     - Bolts (~> 1.9)
   - FBSDKLoginKit (4.38.1):
@@ -112,6 +112,12 @@ PODS:
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - PhoneNumberKit (2.5.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 2.5.0)
+    - PhoneNumberKit/UIKit (= 2.5.0)
+  - PhoneNumberKit/PhoneNumberKitCore (2.5.0)
+  - PhoneNumberKit/UIKit (2.5.0):
+    - PhoneNumberKit/PhoneNumberKitCore
   - Protobuf (3.6.1)
   - ReachabilitySwift (4.3.0)
   - SideMenu (5.0.2)
@@ -131,6 +137,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/Performance
   - GoogleMaps
+  - PhoneNumberKit
   - ReachabilitySwift
   - SideMenu
   - SwiftGen
@@ -161,6 +168,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - ObjcExceptionBridging
+    - PhoneNumberKit
     - Protobuf
     - ReachabilitySwift
     - SideMenu
@@ -172,7 +180,7 @@ SPEC CHECKSUMS:
   BartyCrouch: 69e5e6ec67e77951dc1c22aa48abbf05d175b81c
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Crashlytics: ca7ab4bc304aa216bdc2e4c1a96389ee77252203
-  Fabric: 43ed7bac010f588f63ee23ab1a0276b296db5e17
+  Fabric: d2b22f443ba195d8a7cc204da230977c72733b40
   FBSDKCoreKit: 8d47857400e2f5bdea697a80daff882e91c84ef6
   FBSDKLoginKit: 4621c690d9dd8628031a4791497062183ea34b0d
   Firebase: b48f9e653da971ecce5b8c749684bc8bb2d26bd3
@@ -191,6 +199,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  PhoneNumberKit: 32a1cd1e0aa9e950feb01886a22fd7386b8cf903
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
@@ -198,6 +207,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 94c573a66b9205237bd49fd86018aa073a3f592f
+PODFILE CHECKSUM: 9b001e41d972441f48365ae5ebe51072d6651d32
 
 COCOAPODS: 1.5.3
