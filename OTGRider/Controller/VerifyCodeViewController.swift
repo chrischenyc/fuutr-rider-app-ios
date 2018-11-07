@@ -29,9 +29,6 @@ class VerifyCodeViewController: UIViewController {
     }
     
     @IBAction func codeChanged(_ sender: Any) {
-        // TODO: format 4-digit code
-        // https://github.com/mnvoh/DigitInputView
-        
         nextButton.isEnabled = codeTextField.text?.isFourDigits() ?? false
     }
     

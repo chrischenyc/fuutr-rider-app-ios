@@ -20,6 +20,7 @@ class SignInViewController: UIViewController {
     private var countryCode: UInt64?
     private var phoneNumber: String?
     private var userServiceTask: URLSessionDataTask?
+    private var fbLoginResult: FBSDKLoginManagerLoginResult?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,11 @@ class SignInViewController: UIViewController {
         facebookLoginButton.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if FBSDKAccessToken.current() != nil, let fbLoginResult = fbLoginResult {
+            authenticateWithFacebook(result: fbLoginResult)
+        }
+    }
     
     @IBAction func phoneNumberChanged(_ sender: Any) {
         phoneNumberTextField.text?.isMobileNumber({ (isMobile, coutryCode, phoneNumber) in
@@ -84,51 +90,52 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func unwindToSignIn(_ unwindSegue: UIStoryboardSegue) {
+        if unwindSegue.source is SettingsTableViewController {
+            fbLoginResult = nil
+        }
+    }
+    
+    private func authenticateWithFacebook(result: FBSDKLoginManagerLoginResult) {
+        // cancel previous API call
+        userServiceTask?.cancel()
         
+        // create a new API call
+        showLoading()
+        userServiceTask = UserService().login(withFacebookToken: result.token.tokenString, completion: { [weak self] (error) in
+            
+            DispatchQueue.main.async {
+                if let error = error {
+                    self?.dismissLoading(withMessage: error.localizedDescription)
+                }
+                else if Defaults[.userOnboarded] {
+                    self?.dismissLoading()
+                    self?.perform(segue: StoryboardSegue.SignIn.fromSignInToMain, sender: self)
+                }
+                else {
+                    self?.dismissLoading()
+                    self?.perform(segue: StoryboardSegue.SignIn.fromSignInToOnboard, sender: self)
+                }
+            }
+        })
     }
 }
 
 
 extension SignInViewController: FBSDKLoginButtonDelegate {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        guard error == nil else {
+            log.warning("Facebook error: \(error.localizedDescription)")
+            return
+        }
         
-        if error != nil
-        {
-            // Process error
-            log.error("Facebook error: \(error.localizedDescription)")
+        guard !result.isCancelled else {
+            return
         }
-        else if !result.isCancelled {
-            FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields": "id,name,email"])?
-                .start(completionHandler: { (connection, graphResult, error) in
-                    if error != nil {
-                        // TODO: error handling
-                    }
-                    else if let profile = graphResult as? [String : String] {
-                        log.debug(profile["id"])
-                        log.debug(profile["name"])
-                        log.debug(profile["email"])
-                        log.debug(result.token)
-                        
-                        // TODO: call API
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                            Defaults[.userSignedIn] = true
-                            
-                            if Defaults[.userOnboarded] {
-                                self.perform(segue: StoryboardSegue.SignIn.fromSignInToMain)
-                            }
-                            else {
-                                self.perform(segue: StoryboardSegue.SignIn.fromSignInToOnboard)
-                            }
-                        })
-                    }
-                })
-            
-        }
+        
+        fbLoginResult = result
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        // DO NOTHING???
+        fbLoginResult = nil
     }
-    
-    
 }

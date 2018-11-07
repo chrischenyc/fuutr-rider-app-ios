@@ -16,8 +16,8 @@ final class UserService {
                            completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         
         let params: JSON = [
-            "phone_number": phoneNumber,
-            "country_code": countryCode
+            "phoneNumber": phoneNumber,
+            "countryCode": countryCode
         ]
         
         return APIClient.shared.load(path: "/users/phone/start-verification",
@@ -29,15 +29,15 @@ final class UserService {
         
     }
     
-    func signup(withPhoneNumber mobile: String,
+    func signup(withPhoneNumber phoneNumber: String,
                 countryCode: UInt64,
                 verificationCode: String,
                 completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         
         let params: JSON = [
-            "phone_number": mobile,
-            "country_code": countryCode,
-            "verification_code": verificationCode
+            "phoneNumber": phoneNumber,
+            "countryCode": countryCode,
+            "verificationCode": verificationCode
         ]
         
         return APIClient.shared.load(path: "/users/phone/signup",
@@ -95,6 +95,22 @@ final class UserService {
         })
     }
     
+    func login(withFacebookToken token: String, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        let params: JSON = [
+            "access_token": token
+        ]
+        
+        return APIClient.shared.load(path: "/users/facebook/auth",
+                                     method: .post,
+                                     params: params,
+                                     completion: { (result, error) in
+                                        if let result = result {
+                                            self.handleAuthenticationResult(result: result)
+                                        }
+                                        
+                                        completion(error)
+        })
+    }
     
     private func handleAuthenticationResult(result: Any) {
         guard let result = result as? [String: Any] else { return }
