@@ -165,6 +165,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="displayNameLabel" destination="TL5-Wx-rED" id="2zF-Xy-Bw4"/>
+                        <outlet property="emailLabel" destination="cb6-Pm-Naq" id="APL-zk-VqG"/>
+                        <outlet property="phoneNumberLabel" destination="Zup-NO-kLb" id="2L9-Fy-Sp5"/>
                         <segue destination="uLy-MK-5nj" kind="unwind" identifier="showSignIn" animates="NO" unwindAction="unwindToSignIn:" id="J30-lO-YJy"/>
                     </connections>
                 </tableViewController>

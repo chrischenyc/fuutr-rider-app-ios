@@ -12,10 +12,21 @@ import FBSDKLoginKit
 
 class SettingsTableViewController: UITableViewController {
     
+    @IBOutlet weak var displayNameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    private var userServiceTask: URLSessionTask?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView(frame: .zero)
+        displayNameLabel.text = ""
+        phoneNumberLabel.text = ""
+        emailLabel.text = ""
+        
+        loadProfile()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -37,4 +48,28 @@ class SettingsTableViewController: UITableViewController {
         self.perform(segue: StoryboardSegue.Settings.showSignIn)
     }
     
+    private func loadProfile() {
+        userServiceTask?.cancel()
+        
+        showLoading()
+        
+        userServiceTask = UserService().getProfile({[weak self] (result, error) in
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    self?.dismissLoading(withMessage: L10n.kOtherError)
+                    return
+                }
+                
+                guard let profile = result as? JSON else {
+                    self?.dismissLoading(withMessage: L10n.kOtherError)
+                    return
+                }
+                
+                self?.dismissLoading()
+                self?.displayNameLabel.text = profile["displayName"] as? String ?? ""
+                self?.phoneNumberLabel.text = profile["phoneNumber"] as? String ?? ""
+                self?.emailLabel.text = profile["email"] as? String ?? ""
+            }
+        })
+    }
 }

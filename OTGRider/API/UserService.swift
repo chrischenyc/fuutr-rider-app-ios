@@ -9,26 +9,8 @@
 import Foundation
 import SwiftyUserDefaults
 
+// MARK: - authentication
 final class UserService {
-    
-    func startVerification(forPhoneNumber phoneNumber: String,
-                           countryCode: UInt64,
-                           completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
-        
-        let params: JSON = [
-            "phoneNumber": phoneNumber,
-            "countryCode": countryCode
-        ]
-        
-        return APIClient.shared.load(path: "/users/phone/start-verification",
-                                     method: .post,
-                                     params: params,
-                                     completion: { (result, error) in
-                                        completion(error)
-        })
-        
-    }
-    
     func signup(withPhoneNumber phoneNumber: String,
                 countryCode: UInt64,
                 verificationCode: String,
@@ -113,9 +95,41 @@ final class UserService {
     }
     
     private func handleAuthenticationResult(result: Any) {
-        guard let result = result as? [String: Any] else { return }
+        guard let result = result as? JSON else { return }
         
         Defaults[.userToken] = result["token"] as? String
         Defaults[.userSignedIn] = true
+    }
+}
+
+// MARK: - phone verification
+extension UserService {
+    func startVerification(forPhoneNumber phoneNumber: String,
+                           countryCode: UInt64,
+                           completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        
+        let params: JSON = [
+            "phoneNumber": phoneNumber,
+            "countryCode": countryCode
+        ]
+        
+        return APIClient.shared.load(path: "/users/phone/start-verification",
+                                     method: .post,
+                                     params: params,
+                                     completion: { (result, error) in
+                                        completion(error)
+        })
+    }
+}
+
+// MARK: - profile
+extension UserService {
+    func getProfile(_ completion: @escaping (Any?, Error?) -> Void) -> URLSessionDataTask? {
+        return APIClient.shared.load(path: "/users/me",
+                                     method: .get,
+                                     params: nil,
+                                     completion: { (result, error) in
+                                        completion(result, error)
+        })
     }
 }

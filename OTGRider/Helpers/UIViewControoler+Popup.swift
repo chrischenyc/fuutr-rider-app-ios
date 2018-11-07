@@ -33,7 +33,7 @@ extension UIViewController {
     
     func dismissLoading(withMessage message: String? = nil) {
         if let message = message {
-            HUD.flash(HUDContentType.label(message), delay: 1)
+            HUD.flash(HUDContentType.label(message), delay: 2)
         } else {
             HUD.hide()
         }

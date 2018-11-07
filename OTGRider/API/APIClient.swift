@@ -35,7 +35,7 @@ final class APIClient {
     
     func load(path: String,
               method: RequestMethod,
-              params: JSON,
+              params: JSON?,
               completion: @escaping (Any?, Error?) -> Void) -> URLSessionDataTask? {
         
         // Checking internet connection availability
@@ -85,7 +85,7 @@ final class APIClient {
 
 // build the complete API URL from given parameters
 fileprivate extension URL {
-    init(baseUrl: String, path: String, method: RequestMethod, params: JSON) {
+    init(baseUrl: String, path: String, method: RequestMethod, params: JSON?) {
         // simply add the path to the base URL.
         var components = URLComponents(string: baseUrl)!
         components.path += path
@@ -93,8 +93,10 @@ fileprivate extension URL {
         switch method {
         case .get, .delete:
             // For GET and DELETE methods, also add the query parameters to the URL string.
-            components.queryItems = params.map {
-                URLQueryItem(name: $0.key, value: String(describing: $0.value))
+            if let params = params {
+                components.queryItems = params.map {
+                    URLQueryItem(name: $0.key, value: String(describing: $0.value))
+                }
             }
         default:
             break
@@ -106,7 +108,7 @@ fileprivate extension URL {
 
 // build the instance of URLRequest from given parameters
 fileprivate extension URLRequest {
-    init(baseUrl: String, path: String, method: RequestMethod, params: JSON) {
+    init(baseUrl: String, path: String, method: RequestMethod, params: JSON?) {
         let url = URL(baseUrl: baseUrl, path: path, method: method, params: params)
         
         self.init(url: url)
@@ -132,7 +134,9 @@ fileprivate extension URLRequest {
         switch method {
         case .post, .put:
             // in case of POST or PUT HTTP methods, add parameters to the request body
-            httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+            if let params = params {
+                httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+            }
         default:
             break
         }
