@@ -8,6 +8,7 @@
 
 import Foundation
 import Reachability
+import SwiftyUserDefaults
 
 enum RequestMethod: String {
     case get = "GET"
@@ -123,8 +124,10 @@ fileprivate extension URLRequest {
             setValue(userAgent, forHTTPHeaderField: "User-Agent")
         }
         
-        // TODO: auth token if user has signed in
-        setValue("Bearer " + "token", forHTTPHeaderField: "Authorization")
+        // auth token if user has signed in
+        if let token = Defaults[.userToken], token.count > 0 {
+            setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        }
         
         switch method {
         case .post, .put:
