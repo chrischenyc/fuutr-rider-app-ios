@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyUserDefaults
+import FBSDKLoginKit
 
 final class AuthService {
     func signup(withPhoneNumber phoneNumber: String,
@@ -93,12 +94,53 @@ final class AuthService {
         })
     }
     
+    func refreshAccessToken(retryPath: String,
+                            retryMethod: RequestMethod,
+                            retryParams: JSON?,
+                            retryCompletion: @escaping (Any?, Error?) -> Void ) {
+        
+        guard let refreshToken = Defaults[.refreshToken] else {
+            AuthService.forceSignIn()
+            return
+        }
+        
+        let params: JSON = ["refreshToken": refreshToken]
+        
+        _ = APIClient.shared.load(path: "/auth/token",
+                                  method: .get,
+                                  params: params) { (result, error) in
+                                    if let result = result as? JSON,
+                                        let accessToken = result["accessToken"] as? String {
+                                        Defaults[.accessToken] = accessToken
+                                        
+                                        _ = APIClient.shared.load(path: retryPath, method: retryMethod, params: retryParams, completion: retryCompletion)
+                                    }
+                                    else {
+                                        // couldn't refresh access token, force log out
+                                        AuthService.forceSignIn()
+                                    }
+        }
+    }
+    
+    static func forceSignIn() {
+        Defaults[.userSignedIn] = false
+        Defaults[.accessToken] = ""
+        Defaults[.refreshToken] = ""
+        
+        DispatchQueue.main.async {
+            if FBSDKAccessToken.current() != nil {
+                FBSDKLoginManager().logOut()
+            }
+        }
+        
+        NotificationCenter.default.post(name: .accessTokenExpired, object: nil)
+    }
+    
     private func handleAuthenticationResult(result: Any) {
         guard let result = result as? JSON else { return }
         
         Defaults[.accessToken] = result["accessToken"] as? String
-        // TODO: jwt token refresh https://trello.com/c/JAThwebl/102-jwt-token-refresh
-        // Defaults[.refreshToken] = result["refreshToken"] as? String
+        Defaults[.refreshToken] = result["refreshToken"] as? String
         Defaults[.userSignedIn] = true
     }
 }

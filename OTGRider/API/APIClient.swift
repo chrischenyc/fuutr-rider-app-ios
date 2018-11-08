@@ -9,7 +9,6 @@
 import Foundation
 import Reachability
 import SwiftyUserDefaults
-import FBSDKLoginKit
 
 enum RequestMethod: String {
     case get = "GET"
@@ -77,26 +76,18 @@ final class APIClient {
                     
                     if error.errorDescription == "access token expired" {
                         log.warning("expired access token")
-                        
-                        // force log out
-                        Defaults[.userSignedIn] = false
-                        Defaults[.accessToken] = ""
-                        if FBSDKAccessToken.current() != nil {
-                            FBSDKLoginManager().logOut()
-                        }
-                        
-                        NotificationCenter.default.post(name: .accessTokenExpired, object: nil)
+                        AuthService().refreshAccessToken(retryPath: path, retryMethod: method, retryParams: params, retryCompletion: completion)
                     }
-                    
-                    log.error(error)
-                    completion(nil, error)
+                    else {
+                        log.error(error)
+                        completion(nil, error)
+                    }
                 }
             } else {
                 let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
                 log.error(error)
                 completion(nil, error)
             }
-            
         }
         
         task.resume()

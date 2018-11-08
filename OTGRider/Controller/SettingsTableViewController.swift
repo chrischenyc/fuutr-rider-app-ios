@@ -41,6 +41,7 @@ class SettingsTableViewController: UITableViewController {
         DispatchQueue.main.async {
             Defaults[.userSignedIn] = false
             Defaults[.accessToken] = ""
+            Defaults[.refreshToken] = ""
             
             if FBSDKAccessToken.current() != nil {
                 FBSDKLoginManager().logOut()
