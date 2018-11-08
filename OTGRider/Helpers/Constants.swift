@@ -22,3 +22,7 @@ struct Constants {
         }
     }
 }
+
+extension Notification.Name {
+    static let accessTokenExpired = Notification.Name("accessTokenExpired")
+}

@@ -69,6 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleExpiredAccessToken), name: .accessTokenExpired, object: nil)
+        
         return true
     }
     
@@ -117,5 +119,21 @@ extension AppDelegate: MessagingDelegate {
         
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+}
+
+extension AppDelegate {
+    @objc func handleExpiredAccessToken(notification: Notification) {
+        guard let signInViewController = UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController() as? SignInViewController else { return }
+        
+        DispatchQueue.main.async {
+            if let window = self.window, let rootViewController = window.rootViewController {
+                var currentController = rootViewController
+                while let presentedController = currentController.presentedViewController {
+                    currentController = presentedController
+                }
+                currentController.present(signInViewController, animated: true, completion: nil)
+            }
+        }
     }
 }

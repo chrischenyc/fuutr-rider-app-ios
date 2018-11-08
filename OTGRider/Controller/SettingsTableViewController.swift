@@ -38,14 +38,16 @@ class SettingsTableViewController: UITableViewController {
     }
     
     private func signOut() {
-        Defaults[.userSignedIn] = false
-        Defaults[.userToken] = ""
-        
-        if FBSDKAccessToken.current() != nil {
-            FBSDKLoginManager().logOut()
+        DispatchQueue.main.async {
+            Defaults[.userSignedIn] = false
+            Defaults[.accessToken] = ""
+            
+            if FBSDKAccessToken.current() != nil {
+                FBSDKLoginManager().logOut()
+            }
+            
+            self.perform(segue: StoryboardSegue.Settings.showSignIn)
         }
-        
-        self.perform(segue: StoryboardSegue.Settings.showSignIn)
     }
     
     private func loadProfile() {
@@ -56,7 +58,7 @@ class SettingsTableViewController: UITableViewController {
         userServiceTask = UserService().getProfile({[weak self] (result, error) in
             DispatchQueue.main.async {
                 guard error == nil else {
-                    self?.dismissLoading(withMessage: L10n.kOtherError)
+                    self?.dismissLoading(withMessage: error?.localizedDescription)
                     return
                 }
                 

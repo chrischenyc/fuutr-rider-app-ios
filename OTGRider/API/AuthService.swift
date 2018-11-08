@@ -96,7 +96,9 @@ final class AuthService {
     private func handleAuthenticationResult(result: Any) {
         guard let result = result as? JSON else { return }
         
-        Defaults[.userToken] = result["token"] as? String
+        Defaults[.accessToken] = result["accessToken"] as? String
+        // TODO: jwt token refresh https://trello.com/c/JAThwebl/102-jwt-token-refresh
+        // Defaults[.refreshToken] = result["refreshToken"] as? String
         Defaults[.userSignedIn] = true
     }
 }

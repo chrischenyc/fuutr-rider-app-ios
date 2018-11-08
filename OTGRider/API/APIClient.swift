@@ -9,6 +9,7 @@
 import Foundation
 import Reachability
 import SwiftyUserDefaults
+import FBSDKLoginKit
 
 enum RequestMethod: String {
     case get = "GET"
@@ -66,8 +67,30 @@ final class APIClient {
             
             // Parsing incoming data
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let response = response as? HTTPURLResponse, 200..<300 ~= response.statusCode {
-                completion(json, nil)
+            
+            if let response = response as? HTTPURLResponse {
+                if 200..<300 ~= response.statusCode {
+                    completion(json, nil)
+                }
+                else {
+                    let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
+                    
+                    if error.errorDescription == "access token expired" {
+                        log.warning("expired access token")
+                        
+                        // force log out
+                        Defaults[.userSignedIn] = false
+                        Defaults[.accessToken] = ""
+                        if FBSDKAccessToken.current() != nil {
+                            FBSDKLoginManager().logOut()
+                        }
+                        
+                        NotificationCenter.default.post(name: .accessTokenExpired, object: nil)
+                    }
+                    
+                    log.error(error)
+                    completion(nil, error)
+                }
             } else {
                 let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
                 log.error(error)
@@ -126,8 +149,8 @@ fileprivate extension URLRequest {
             setValue(userAgent, forHTTPHeaderField: "User-Agent")
         }
         
-        // auth token if user has signed in
-        if let token = Defaults[.userToken], token.count > 0 {
+        // set access token in headers if user has signed in
+        if let token = Defaults[.accessToken], token.count > 0 {
             setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         }
         
