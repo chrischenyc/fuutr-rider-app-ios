@@ -18,7 +18,7 @@ class VerifyCodeViewController: UIViewController {
     
     var countryCode: UInt64?
     var phoneNumber: String?
-    var userServiceTask: URLSessionDataTask?
+    var apiTask: URLSessionDataTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +46,10 @@ class VerifyCodeViewController: UIViewController {
         resendButton.isEnabled = false
         
         // cancel previous API call
-        userServiceTask?.cancel()
+        apiTask?.cancel()
         
         // create a new API call
-        userServiceTask = UserService()
+        apiTask = AuthService()
             .signup(withPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
                 
                 DispatchQueue.main.async {
@@ -86,10 +86,10 @@ class VerifyCodeViewController: UIViewController {
         resendButton.isEnabled = false
         
         // cancel previous API call
-        userServiceTask?.cancel()
+        apiTask?.cancel()
         
         // create a new API call
-        userServiceTask = UserService().startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
+        apiTask = PhoneService().startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
             
             DispatchQueue.main.async {
                 if let error = error {
@@ -99,6 +99,7 @@ class VerifyCodeViewController: UIViewController {
                 // reset UI
                 self?.infoLabel.text = L10n.kEnterVerificationCode
                 self?.codeTextField.isEnabled = true
+                self?.codeTextField.becomeFirstResponder()
                 self?.nextButton.isEnabled = true
                 self?.resendButton.isEnabled = true
             }

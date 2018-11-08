@@ -19,7 +19,7 @@ class SignInViewController: UIViewController {
     
     private var countryCode: UInt64?
     private var phoneNumber: String?
-    private var userServiceTask: URLSessionDataTask?
+    private var apiTask: URLSessionDataTask?
     private var fbLoginResult: FBSDKLoginManagerLoginResult?
     
     override func viewDidLoad() {
@@ -56,10 +56,10 @@ class SignInViewController: UIViewController {
         facebookLoginButton.isEnabled = false
         
         // cancel previous API call
-        userServiceTask?.cancel()
+        apiTask?.cancel()
         
         // create a new API call
-        userServiceTask = UserService().startVerification(forPhoneNumber: phoneNumber, countryCode: 61, completion: { [weak self] (error) in
+        apiTask = PhoneService().startVerification(forPhoneNumber: phoneNumber, countryCode: 61, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 // reset UI
                 self?.phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
@@ -97,11 +97,11 @@ class SignInViewController: UIViewController {
     
     private func authenticateWithFacebook(result: FBSDKLoginManagerLoginResult) {
         // cancel previous API call
-        userServiceTask?.cancel()
+        apiTask?.cancel()
         
         // create a new API call
         showLoading()
-        userServiceTask = UserService().login(withFacebookToken: result.token.tokenString, completion: { [weak self] (error) in
+        apiTask = AuthService().login(withFacebookToken: result.token.tokenString, completion: { [weak self] (error) in
             
             DispatchQueue.main.async {
                 if let error = error {

@@ -21,7 +21,7 @@ class EmailAuthViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     
     private var authType: EmailAuthType = .signUp
-    private var userServiceTask: URLSessionDataTask?
+    private var apiTask: URLSessionDataTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,17 +54,17 @@ class EmailAuthViewController: UIViewController {
         guard let passowrd = passwordTextField.text else { return }
         
         // cancel previous API call
-        userServiceTask?.cancel()
+        apiTask?.cancel()
         
         // create a new API call
         showLoading()
         
         if authType == .signUp {
-            userServiceTask = UserService().signup(withEmail: email, password: passowrd, completion: { [weak self] (error) in
+            apiTask = AuthService().signup(withEmail: email, password: passowrd, completion: { [weak self] (error) in
                 self?.handleAuthCompletion(error: error)
             })
         } else {
-            userServiceTask = UserService().login(withEmail: email, password: passowrd, completion: {[weak self] (error) in
+            apiTask = AuthService().login(withEmail: email, password: passowrd, completion: {[weak self] (error) in
                 self?.handleAuthCompletion(error: error)
             })
         }
