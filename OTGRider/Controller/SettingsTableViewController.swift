@@ -16,7 +16,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
-    private var userServiceTask: URLSessionTask?
+    private var apiTask: URLSessionTask?
     private var profile: JSON?
     
     override func viewDidLoad() {
@@ -70,11 +70,11 @@ class SettingsTableViewController: UITableViewController {
     }
     
     private func loadProfile() {
-        userServiceTask?.cancel()
+        apiTask?.cancel()
         
         showLoading()
         
-        userServiceTask = UserService().getProfile({[weak self] (result, error) in
+        apiTask = UserService().getProfile({[weak self] (result, error) in
             DispatchQueue.main.async {
                 guard error == nil else {
                     self?.dismissLoading(withMessage: error?.localizedDescription)

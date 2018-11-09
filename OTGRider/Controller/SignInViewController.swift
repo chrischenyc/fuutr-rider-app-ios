@@ -46,7 +46,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func phoneNumberVerifyTapped(_ sender: Any) {
-        guard let phoneNumber = phoneNumber, countryCode != nil else { return }
+        guard let phoneNumber = phoneNumber, let countryCode = countryCode else { return }
         
         // update UI before calling API
         phoneNumberVerifyInfoLabel.text = L10n.kSendingVerificationCode
@@ -59,7 +59,7 @@ class SignInViewController: UIViewController {
         apiTask?.cancel()
         
         // create a new API call
-        apiTask = PhoneService().startVerification(forPhoneNumber: phoneNumber, countryCode: 61, completion: { [weak self] (error) in
+        apiTask = PhoneService().startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 // reset UI
                 self?.phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt

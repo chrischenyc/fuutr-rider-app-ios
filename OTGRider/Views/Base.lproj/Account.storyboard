@@ -56,6 +56,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="balanceLabel" destination="MOz-Wu-H2n" id="fkG-j1-d7z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2iC-bc-oUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="N5g-Sj-Cck" userLabel="Exit" sceneMemberID="exit"/>
