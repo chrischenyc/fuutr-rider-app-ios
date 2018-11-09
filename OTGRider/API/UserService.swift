@@ -36,4 +36,23 @@ final class UserService {
                                         completion(error)
         })
     }
+    
+    func udpatePhoneNumber(_ phoneNumber: String,
+                           countryCode: UInt64,
+                           verificationCode: String,
+                           completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        
+        let params: JSON = [
+            "phoneNumber": phoneNumber,
+            "countryCode": countryCode,
+            "verificationCode": verificationCode
+        ]
+        
+        return APIClient.shared.load(path: "/users/me/phone",
+                                     method: .put,
+                                     params: params,
+                                     completion: { (result, error) in
+                                        completion(error)
+        })
+    }
 }

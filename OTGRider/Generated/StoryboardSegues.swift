@@ -26,6 +26,8 @@ internal enum StoryboardSegue {
   internal enum Settings: String, SegueType {
     case fromEditEmailToSettings
     case fromEditNameToSettings
+    case fromEditPhoneToVerify
+    case fromVerifyCodeToSettings
     case showSignIn
   }
   internal enum SideMenu: String, SegueType {

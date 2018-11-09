@@ -11,11 +11,17 @@ import SwiftyUserDefaults
 
 class VerifyCodeViewController: UIViewController {
     
+    enum VerifyCodeViewControllerNextStep {
+        case signUp
+        case updatePhone
+    }
+    
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var resendButton: UIButton!
     
+    var nextStep: VerifyCodeViewControllerNextStep = .signUp
     var countryCode: UInt64?
     var phoneNumber: String?
     var apiTask: URLSessionDataTask?
@@ -49,28 +55,20 @@ class VerifyCodeViewController: UIViewController {
         apiTask?.cancel()
         
         // create a new API call
-        apiTask = AuthService()
-            .signup(withPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
-                
-                DispatchQueue.main.async {
-                    if let error = error {
-                        self?.showError(error)
-                    } else {
-                        if Defaults[.userOnboarded] {
-                            self?.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToMain)
-                        }
-                        else {
-                            self?.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToOnboard)
-                        }
-                    }
+        switch nextStep {
+        case .signUp:
+            apiTask = AuthService()
+                .signup(withPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
                     
-                    // reset UI
-                    self?.infoLabel.text = L10n.kEnterVerificationCode
-                    self?.codeTextField.isEnabled = true
-                    self?.nextButton.isEnabled = true
-                    self?.resendButton.isEnabled = true
-                }
+                    self?.handleVerificationCompletion(error)
+                })
+        case .updatePhone:
+            apiTask = UserService().udpatePhoneNumber(phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
+                
+                self?.handleVerificationCompletion(error)
             })
+        }
+        
     }
     
     @IBAction func resendButtonTapped(_ sender: Any) {
@@ -106,5 +104,29 @@ class VerifyCodeViewController: UIViewController {
         })
     }
     
-    
+    private func handleVerificationCompletion(_ error: Error?) {
+        DispatchQueue.main.async {
+            if let error = error {
+                self.showError(error)
+            } else {
+                switch self.nextStep {
+                case .signUp:
+                    if Defaults[.userOnboarded] {
+                        self.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToMain)
+                    }
+                    else {
+                        self.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToOnboard)
+                    }
+                case .updatePhone:
+                    self.perform(segue: StoryboardSegue.Settings.fromVerifyCodeToSettings)
+                }
+            }
+            
+            // reset UI
+            self.infoLabel.text = L10n.kEnterVerificationCode
+            self.codeTextField.isEnabled = true
+            self.nextButton.isEnabled = true
+            self.resendButton.isEnabled = true
+        }
+    }
 }

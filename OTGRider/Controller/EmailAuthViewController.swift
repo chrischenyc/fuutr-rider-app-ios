@@ -61,11 +61,11 @@ class EmailAuthViewController: UIViewController {
         
         if authType == .signUp {
             apiTask = AuthService().signup(withEmail: email, password: passowrd, completion: { [weak self] (error) in
-                self?.handleAuthCompletion(error: error)
+                self?.handleAuthCompletion(error)
             })
         } else {
             apiTask = AuthService().login(withEmail: email, password: passowrd, completion: {[weak self] (error) in
-                self?.handleAuthCompletion(error: error)
+                self?.handleAuthCompletion(error)
             })
         }
     }
@@ -84,7 +84,7 @@ class EmailAuthViewController: UIViewController {
         submitButton.isEnabled = true
     }
     
-    private func handleAuthCompletion(error: Error?) {
+    private func handleAuthCompletion(_ error: Error?) {
         DispatchQueue.main.async {
             // reset UI
             if let error = error {

@@ -32,7 +32,6 @@ final class AuthService {
                                         
                                         completion(error)
         })
-        
     }
     
     func signup(withEmail email: String,

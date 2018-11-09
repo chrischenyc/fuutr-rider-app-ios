@@ -17,6 +17,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var emailLabel: UILabel!
     
     private var userServiceTask: URLSessionTask?
+    private var profile: JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +58,14 @@ class SettingsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editNameViewController = segue.destination as? EditNameViewController {
-            editNameViewController.displayName = displayNameLabel.text
+            editNameViewController.displayName = profile?["displayName"] as? String
         }
         else if let editEmailViewController = segue.destination as? EditEmailViewController {
-            editEmailViewController.email = emailLabel.text
+            editEmailViewController.email = profile?["email"] as? String
+        }
+        else if let editPhoneViewController = segue.destination as? EditPhoneViewController {
+            editPhoneViewController.countryCode = profile?["countryCode"] as? UInt64
+            editPhoneViewController.phoneNumber = profile?["phoneNumber"] as? String
         }
     }
     
@@ -85,6 +90,7 @@ class SettingsTableViewController: UITableViewController {
                 self?.displayNameLabel.text = profile["displayName"] as? String ?? ""
                 self?.phoneNumberLabel.text = profile["phoneNumber"] as? String ?? ""
                 self?.emailLabel.text = profile["email"] as? String ?? ""
+                self?.profile = profile
             }
         })
     }
