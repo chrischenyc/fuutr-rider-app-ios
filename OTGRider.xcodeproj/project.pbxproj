@@ -20,6 +20,12 @@
 		6B214AEC2195B66300553C3D /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AEB2195B66300553C3D /* Double+Currency.swift */; };
 		6B214AED2195B66300553C3D /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AEB2195B66300553C3D /* Double+Currency.swift */; };
 		6B214AEE2195B66300553C3D /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AEB2195B66300553C3D /* Double+Currency.swift */; };
+		6B214AF02195C77A00553C3D /* TopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AEF2195C77A00553C3D /* TopUpViewController.swift */; };
+		6B214AF12195C77A00553C3D /* TopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AEF2195C77A00553C3D /* TopUpViewController.swift */; };
+		6B214AF22195C77A00553C3D /* TopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AEF2195C77A00553C3D /* TopUpViewController.swift */; };
+		6B214AF42196416F00553C3D /* ChoosePaymentMethodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AF32196416F00553C3D /* ChoosePaymentMethodsViewController.swift */; };
+		6B214AF52196416F00553C3D /* ChoosePaymentMethodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AF32196416F00553C3D /* ChoosePaymentMethodsViewController.swift */; };
+		6B214AF62196416F00553C3D /* ChoosePaymentMethodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AF32196416F00553C3D /* ChoosePaymentMethodsViewController.swift */; };
 		6B444FE72191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B444FE62191AC2E00DFB787 /* EmailAuthViewController.swift */; };
 		6B444FE82191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B444FE62191AC2E00DFB787 /* EmailAuthViewController.swift */; };
 		6B444FE92191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B444FE62191AC2E00DFB787 /* EmailAuthViewController.swift */; };
@@ -154,6 +160,8 @@
 		6B214AE32195701C00553C3D /* EditEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		6B214AE721958ED100553C3D /* EditPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoneViewController.swift; sourceTree = "<group>"; };
 		6B214AEB2195B66300553C3D /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
+		6B214AEF2195C77A00553C3D /* TopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpViewController.swift; sourceTree = "<group>"; };
+		6B214AF32196416F00553C3D /* ChoosePaymentMethodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePaymentMethodsViewController.swift; sourceTree = "<group>"; };
 		6B444FE62191AC2E00DFB787 /* EmailAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailAuthViewController.swift; sourceTree = "<group>"; };
 		6B849D4321941EB300CD9791 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		6B849D4421941EB300CD9791 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneService.swift; sourceTree = "<group>"; };
@@ -363,6 +371,7 @@
 				6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */,
 				A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */,
 				6B8731F7218AA4AF00CC2651 /* AccountViewController.swift */,
+				6B214AEF2195C77A00553C3D /* TopUpViewController.swift */,
 				6B8731FD218AA53100CC2651 /* PaymentMethodTableViewController.swift */,
 				6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */,
 				6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */,
@@ -373,6 +382,7 @@
 				6B214ADF219564CD00553C3D /* EditNameViewController.swift */,
 				6B214AE32195701C00553C3D /* EditEmailViewController.swift */,
 				6B214AE721958ED100553C3D /* EditPhoneViewController.swift */,
+				6B214AF32196416F00553C3D /* ChoosePaymentMethodsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -969,7 +979,9 @@
 				6BDE9167218C8FBB003F976B /* UserService.swift in Sources */,
 				6BDE9125218C19DF003F976B /* AppDelegate.swift in Sources */,
 				6B214AEA21958ED100553C3D /* EditPhoneViewController.swift in Sources */,
+				6B214AF62196416F00553C3D /* ChoosePaymentMethodsViewController.swift in Sources */,
 				6BDE916F218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */,
+				6B214AF22195C77A00553C3D /* TopUpViewController.swift in Sources */,
 				6BDE9153218C3073003F976B /* APIClient.swift in Sources */,
 				6BDE9126218C19DF003F976B /* SignInViewController.swift in Sources */,
 				6BDE9127218C19DF003F976B /* Strings.swift in Sources */,
@@ -1007,7 +1019,9 @@
 				6BDE9165218C8FBB003F976B /* UserService.swift in Sources */,
 				A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */,
 				6B214AE821958ED100553C3D /* EditPhoneViewController.swift in Sources */,
+				6B214AF42196416F00553C3D /* ChoosePaymentMethodsViewController.swift in Sources */,
 				6BDE916D218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */,
+				6B214AF02195C77A00553C3D /* TopUpViewController.swift in Sources */,
 				6BDE9151218C3073003F976B /* APIClient.swift in Sources */,
 				6B8731C02189C7FA00CC2651 /* SignInViewController.swift in Sources */,
 				6B8731B02189BA8D00CC2651 /* Strings.swift in Sources */,
@@ -1045,7 +1059,9 @@
 				6BDE9166218C8FBB003F976B /* UserService.swift in Sources */,
 				A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */,
 				6B214AE921958ED100553C3D /* EditPhoneViewController.swift in Sources */,
+				6B214AF52196416F00553C3D /* ChoosePaymentMethodsViewController.swift in Sources */,
 				6BDE916E218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */,
+				6B214AF12195C77A00553C3D /* TopUpViewController.swift in Sources */,
 				6BDE9152218C3073003F976B /* APIClient.swift in Sources */,
 				6B8731C12189C7FA00CC2651 /* SignInViewController.swift in Sources */,
 				6B8731B12189BA8D00CC2651 /* Strings.swift in Sources */,
