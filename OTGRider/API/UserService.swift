@@ -27,4 +27,13 @@ final class UserService {
                                         completion(error)
         })
     }
+    
+    func updateEmail(_ email: String, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        return APIClient.shared.load(path: "/users/me/email",
+                                     method: .put,
+                                     params: ["email": email],
+                                     completion: { (result, error) in
+                                        completion(error)
+        })
+    }
 }

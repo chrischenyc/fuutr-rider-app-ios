@@ -15,10 +15,10 @@ class EditEmailViewController: UIViewController {
     
     var email: String?
     var apiTask: URLSessionTask?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         emailTextField.text = email
         emailTextField.becomeFirstResponder()
         submitButton.isEnabled = false
@@ -40,7 +40,7 @@ class EditEmailViewController: UIViewController {
         
         showLoading()
         
-        apiTask = UserService().updateProfile(["email": email], completion: { [weak self] (error) in
+        apiTask = UserService().updateEmail(email, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 guard error == nil else {
                     self?.dismissLoading(withMessage: error?.localizedDescription)
