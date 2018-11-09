@@ -34,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="-2089" y="1633"/>
         </scene>
-        <!--Wallet-->
+        <!--Account-->
         <scene sceneID="LKN-cT-zs3">
             <objects>
-                <viewControllerPlaceholder storyboardName="Wallet" id="Fr2-ny-Lh9" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Account" id="Fr2-ny-Lh9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZG0-Sq-K1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2094" y="1690"/>
@@ -124,7 +124,7 @@
                     <connections>
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
                         <segue destination="6ub-gY-uRn" kind="presentation" identifier="showHistory" id="jgO-zq-Q4p"/>
-                        <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showWallet" id="NuG-ER-BNQ"/>
+                        <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showAccount" id="NuG-ER-BNQ"/>
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>
                         <segue destination="46k-mg-UHB" kind="presentation" identifier="showHelp" id="GwS-O7-LdY"/>
                     </connections>

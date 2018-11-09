@@ -47,8 +47,8 @@ class MapViewController: UIViewController {
                 switch selectedMenuItem {
                 case .greeting:
                     break
-                case .wallet:
-                    self.perform(segue: StoryboardSegue.Main.showWallet)
+                case .accont:
+                    self.perform(segue: StoryboardSegue.Main.showAccount)
                 case .history:
                     self.perform(segue: StoryboardSegue.Main.showHistory)
                 case .settings:

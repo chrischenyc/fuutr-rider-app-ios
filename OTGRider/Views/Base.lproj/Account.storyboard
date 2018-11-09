@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Wallet-->
+        <!--Account-->
         <scene sceneID="LEj-Dz-Ibb">
             <objects>
-                <viewController id="Ok9-qt-dsj" customClass="WalletViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ok9-qt-dsj" customClass="AccountViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kf1-bm-zse">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cAl-fr-Sfd"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Wallet" id="2hA-tQ-BGy">
+                    <navigationItem key="navigationItem" title="Account" id="2hA-tQ-BGy">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0il-1b-TfY">
                             <connections>
                                 <segue destination="N5g-Sj-Cck" kind="unwind" unwindAction="unwindToHome:" id="yJN-4E-IC6"/>
@@ -96,7 +96,7 @@
                     <navigationItem key="navigationItem" title="Top Up Balance" id="7gX-fD-o2R">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Gyu-yt-WFU">
                             <connections>
-                                <segue destination="ayk-st-og7" kind="unwind" unwindAction="unwindToWallet:" id="IyD-EP-Pvz"/>
+                                <segue destination="ayk-st-og7" kind="unwind" unwindAction="unwindToAccount:" id="IyD-EP-Pvz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -132,7 +132,7 @@
                     <navigationItem key="navigationItem" title="Payment Method" id="ua8-Q0-JAi">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FLU-1A-3jZ">
                             <connections>
-                                <segue destination="GZU-Qm-y35" kind="unwind" unwindAction="unwindToWallet:" id="b4Z-JC-uxc"/>
+                                <segue destination="GZU-Qm-y35" kind="unwind" unwindAction="unwindToAccount:" id="b4Z-JC-uxc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rre-vt-8bj">

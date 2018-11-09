@@ -1,5 +1,5 @@
 //
-//  WalletViewController.swift
+//  AccountViewController.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 1/11/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WalletViewController: UIViewController {
+class AccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,7 @@ class WalletViewController: UIViewController {
     }
     
 
-    @IBAction func unwindToWallet(_ unwindSegue: UIStoryboardSegue) {
+    @IBAction func unwindToAccount(_ unwindSegue: UIStoryboardSegue) {
         // let sourceViewController = unwindSegue.source
         // Use data from the view controller which initiated the unwind segue
     }

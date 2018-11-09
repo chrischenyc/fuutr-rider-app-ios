@@ -12,7 +12,7 @@ import UIKit
 enum SideMenuItem: Int {
     case greeting
     case history
-    case wallet
+    case accont
     case settings
     case help
 }
@@ -43,7 +43,7 @@ class SideMenuViewController: UITableViewController {
             break
         case .history,
              .settings,
-             .wallet,
+             .accont,
              .help:
             perform(segue: StoryboardSegue.SideMenu.showMain)
         }
