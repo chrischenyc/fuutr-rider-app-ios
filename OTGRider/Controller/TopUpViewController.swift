@@ -10,6 +10,8 @@ import UIKit
 
 class TopUpViewController: UIViewController {
     
+    var paymentAmount: Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,16 +20,10 @@ class TopUpViewController: UIViewController {
     
     
     @IBAction func amountChoosed(_ sender: Any) {
-        perform(segue: StoryboardSegue.Account.fromTopUpToPaymentMethods, sender: sender)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let choosePaymentMethodsViewController = segue.destination as? ChoosePaymentMethodsViewController {
-            if let button = sender as? UIButton {
-                if let amountString = button.titleLabel?.text {
-                    choosePaymentMethodsViewController.paymentAmount = Double(amountString)
-                }
-            }
+        if let button = sender as? UIButton, let amountString = button.titleLabel?.text {
+            paymentAmount = Double(amountString)
         }
+        
+        perform(segue: StoryboardSegue.Account.fromTopUpToPaymentMethods, sender: sender)
     }
 }

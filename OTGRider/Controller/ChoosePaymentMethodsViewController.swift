@@ -12,7 +12,6 @@ class ChoosePaymentMethodsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var paymentAmount: Double?
     private var savedPaymentMethods: [Any] = []
 
     override func viewDidLoad() {
