@@ -48,7 +48,7 @@ final class APIClient {
         
         // Creating the URLRequest object
         let request = URLRequest(baseUrl: baseURL, path: path, method: method, params: params)
-        log.debug(request.url?.absoluteString ?? "INVALID URL")
+        log.debug("\(method) \(request.url?.absoluteString ?? "INVALID URL")")
         
         // Sending request to the server.
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

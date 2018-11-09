@@ -107,7 +107,7 @@ final class AuthService {
         let params: JSON = ["refreshToken": refreshToken]
         
         _ = APIClient.shared.load(path: "/auth/token",
-                                  method: .get,
+                                  method: .post,
                                   params: params) { (result, error) in
                                     if let result = result as? JSON,
                                         let accessToken = result["accessToken"] as? String {
