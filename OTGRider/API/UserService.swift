@@ -18,4 +18,13 @@ final class UserService {
                                         completion(result, error)
         })
     }
+    
+    func updateProfile(_ profile: JSON, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        return APIClient.shared.load(path: "/users/me",
+                                     method: .patch,
+                                     params: profile,
+                                     completion: { (result, error) in
+                                        completion(error)
+        })
+    }
 }

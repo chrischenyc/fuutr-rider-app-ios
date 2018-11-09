@@ -14,6 +14,7 @@ enum RequestMethod: String {
     case get = "GET"
     case post = "POST"
     case put = "PUT"
+    case patch = "PATCH"
     case delete = "DELETE"
 }
 
@@ -146,7 +147,7 @@ fileprivate extension URLRequest {
         }
         
         switch method {
-        case .post, .put:
+        case .post, .put, .patch:
             // in case of POST or PUT HTTP methods, add parameters to the request body
             if let params = params {
                 httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])

@@ -37,17 +37,27 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func unwindToSettings(_ unwindSegue: UIStoryboardSegue) {
+        loadProfile()
+    }
+    
     private func signOut() {
+        Defaults[.userSignedIn] = false
+        Defaults[.accessToken] = ""
+        Defaults[.refreshToken] = ""
+        
         DispatchQueue.main.async {
-            Defaults[.userSignedIn] = false
-            Defaults[.accessToken] = ""
-            Defaults[.refreshToken] = ""
-            
             if FBSDKAccessToken.current() != nil {
                 FBSDKLoginManager().logOut()
             }
             
             self.perform(segue: StoryboardSegue.Settings.showSignIn)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let editNameViewController = segue.destination as? EditNameViewController {
+            editNameViewController.displayName = displayNameLabel.text
         }
     }
     

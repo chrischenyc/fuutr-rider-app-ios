@@ -209,15 +209,49 @@
         <!--Edit Name-->
         <scene sceneID="hoP-Cx-QDp">
             <objects>
-                <viewController title="Edit Name" id="w2x-cI-JY9" sceneMemberID="viewController">
+                <viewController title="Edit Name" id="w2x-cI-JY9" customClass="EditNameViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CCZ-DT-ZZO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3I8-c2-kya">
+                                <rect key="frame" x="24" y="295.5" width="327" height="76"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-Lo-0AG">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <connections>
+                                            <action selector="nameChanged:" destination="w2x-cI-JY9" eventType="editingChanged" id="5lB-na-8fp"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0J-gQ-Jjr">
+                                        <rect key="frame" x="0.0" y="46" width="327" height="30"/>
+                                        <state key="normal" title="update"/>
+                                        <connections>
+                                            <action selector="updateTouched:" destination="w2x-cI-JY9" eventType="touchUpInside" id="JNl-so-yuA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3I8-c2-kya" firstAttribute="leading" secondItem="QbV-KT-IsS" secondAttribute="leading" constant="24" id="MXi-3N-adk"/>
+                            <constraint firstItem="QbV-KT-IsS" firstAttribute="trailing" secondItem="3I8-c2-kya" secondAttribute="trailing" constant="24" id="ZxG-y2-e8f"/>
+                            <constraint firstItem="3I8-c2-kya" firstAttribute="centerY" secondItem="CCZ-DT-ZZO" secondAttribute="centerY" id="uv0-21-E3N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QbV-KT-IsS"/>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="WsX-Lo-0AG" id="YNH-bD-XYi"/>
+                        <outlet property="submitButton" destination="Z0J-gQ-Jjr" id="ZD5-SG-WVr"/>
+                        <segue destination="vaR-u3-XbX" kind="unwind" identifier="fromEditNameToSettings" unwindAction="unwindToSettings:" id="Fzo-bX-06E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTP-dj-HQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vaR-u3-XbX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1674" y="-470"/>
         </scene>
