@@ -194,15 +194,49 @@
         <!--Edit Email-->
         <scene sceneID="81t-H6-Wyq">
             <objects>
-                <viewController title="Edit Email" id="uu8-qw-Ghd" sceneMemberID="viewController">
+                <viewController title="Edit Email" id="uu8-qw-Ghd" customClass="EditEmailViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yms-8T-4QC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="KkA-VE-Rwd">
+                                <rect key="frame" x="24" y="295.5" width="327" height="76"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-B9-SZz">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                        <connections>
+                                            <action selector="nameChanged:" destination="uu8-qw-Ghd" eventType="editingChanged" id="E8a-ff-uHf"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpx-be-fQC">
+                                        <rect key="frame" x="0.0" y="46" width="327" height="30"/>
+                                        <state key="normal" title="update"/>
+                                        <connections>
+                                            <action selector="updateTouched:" destination="uu8-qw-Ghd" eventType="touchUpInside" id="o44-Ke-X7Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KkA-VE-Rwd" firstAttribute="centerY" secondItem="yms-8T-4QC" secondAttribute="centerY" id="aMy-Ij-mfe"/>
+                            <constraint firstItem="KkA-VE-Rwd" firstAttribute="leading" secondItem="yms-8T-4QC" secondAttribute="leading" constant="24" id="dLx-UW-dTO"/>
+                            <constraint firstItem="kMb-OT-TEj" firstAttribute="trailing" secondItem="KkA-VE-Rwd" secondAttribute="trailing" constant="24" id="wFg-g7-4pK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kMb-OT-TEj"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="bGb-B9-SZz" id="0Nf-fP-OkH"/>
+                        <outlet property="submitButton" destination="gpx-be-fQC" id="9RR-C3-b6F"/>
+                        <segue destination="JlL-n6-hkC" kind="unwind" identifier="fromEditEmailToSettings" unwindAction="unwindToSettings:" id="lCm-de-8o9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDF-Hw-4cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JlL-n6-hkC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1673" y="944"/>
         </scene>

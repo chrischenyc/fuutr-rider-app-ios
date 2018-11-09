@@ -59,6 +59,9 @@ class SettingsTableViewController: UITableViewController {
         if let editNameViewController = segue.destination as? EditNameViewController {
             editNameViewController.displayName = displayNameLabel.text
         }
+        else if let editEmailViewController = segue.destination as? EditEmailViewController {
+            editEmailViewController.email = emailLabel.text
+        }
     }
     
     private func loadProfile() {

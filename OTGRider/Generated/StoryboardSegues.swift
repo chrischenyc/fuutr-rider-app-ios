@@ -24,6 +24,7 @@ internal enum StoryboardSegue {
     case showMain
   }
   internal enum Settings: String, SegueType {
+    case fromEditEmailToSettings
     case fromEditNameToSettings
     case showSignIn
   }
