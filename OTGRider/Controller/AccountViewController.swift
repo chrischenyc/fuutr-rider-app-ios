@@ -44,7 +44,8 @@ class AccountViewController: UIViewController {
                 }
                 
                 self?.dismissLoading()
-                self?.balanceLabel.text = "Balance A$ \(String(describing: profile["balance"] as! Double))"
+                let balance = profile["balance"] as! Double
+                self?.balanceLabel.text = "Balance \(balance.currencyString)"
             }
         })
     }
