@@ -14,6 +14,7 @@ abstract_target 'Project' do
   pod 'Firebase/Messaging'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Stripe'
   
   # UI
   pod 'SideMenu'

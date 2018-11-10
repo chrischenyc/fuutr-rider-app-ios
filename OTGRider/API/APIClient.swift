@@ -20,7 +20,7 @@ enum RequestMethod: String {
 
 final class APIClient {
     static let shared: APIClient = {
-        let client = APIClient(baseURL: configuration.environment.baseURL)
+        let client = APIClient(baseURL: config.env.baseURL)
         
         // Configuration
         // ...
@@ -41,7 +41,7 @@ final class APIClient {
         
         // Checking internet connection availability
         guard let reachablity = Reachability(hostname: baseURL), reachablity.connection != .none else {
-            log.warning(ServiceError.noInternetConnection)
+            logger.warning(ServiceError.noInternetConnection)
             completion(nil, ServiceError.noInternetConnection)
             return nil
         }
@@ -49,18 +49,18 @@ final class APIClient {
         
         // Creating the URLRequest object
         let request = URLRequest(baseUrl: baseURL, path: path, method: method, params: params)
-        log.debug("\(method) \(request.url?.absoluteString ?? "INVALID URL")")
+        logger.debug("\(method) \(request.url?.absoluteString ?? "INVALID URL")")
         
         // Sending request to the server.
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
-                log.error(error!.localizedDescription)
+                logger.error(error!.localizedDescription)
                 completion(nil, error)
                 return
             }
             
             guard let data = data else {
-                log.error("missing payload")
+                logger.error("missing payload")
                 completion(nil, ServiceError.other)
                 return
             }
@@ -76,17 +76,17 @@ final class APIClient {
                     let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
                     
                     if error.errorDescription == "access token expired" {
-                        log.warning("expired access token")
+                        logger.warning("expired access token")
                         AuthService().refreshAccessToken(retryPath: path, retryMethod: method, retryParams: params, retryCompletion: completion)
                     }
                     else {
-                        log.error(error)
+                        logger.error(error)
                         completion(nil, error)
                     }
                 }
             } else {
                 let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
-                log.error(error)
+                logger.error(error)
                 completion(nil, error)
             }
         }

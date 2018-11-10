@@ -35,8 +35,8 @@
 		6B849D4821941EB300CD9791 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B849D4421941EB300CD9791 /* PhoneService.swift */; };
 		6B849D4921941EB300CD9791 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B849D4421941EB300CD9791 /* PhoneService.swift */; };
 		6B849D4A21941EB300CD9791 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B849D4421941EB300CD9791 /* PhoneService.swift */; };
-		6B8731A3218997B600CC2651 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A2218997B600CC2651 /* Constants.swift */; };
-		6B8731A4218997B600CC2651 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A2218997B600CC2651 /* Constants.swift */; };
+		6B8731A3218997B600CC2651 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A2218997B600CC2651 /* Notifications.swift */; };
+		6B8731A4218997B600CC2651 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A2218997B600CC2651 /* Notifications.swift */; };
 		6B8731A72189A70600CC2651 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A62189A70600CC2651 /* UserDefaults.swift */; };
 		6B8731A82189A70600CC2651 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A62189A70600CC2651 /* UserDefaults.swift */; };
 		6B8731AB2189B9A500CC2651 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731A92189B9A500CC2651 /* Localizable.strings */; };
@@ -81,6 +81,12 @@
 		6B873202218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */; };
 		6B87320A218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */; };
 		6B87320B218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */; };
+		6BB6CB6E2196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
+		6BB6CB6F2196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
+		6BB6CB702196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
+		6BB6CB722196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
+		6BB6CB732196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
+		6BB6CB742196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
 		6BDE9120218C19DF003F976B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
 		6BDE9121218C19DF003F976B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731AF2189BA8D00CC2651 /* Assets.swift */; };
 		6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C22189CA0400CC2651 /* String+Validate.swift */; };
@@ -94,7 +100,7 @@
 		6BDE912A218C19DF003F976B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731F7218AA4AF00CC2651 /* AccountViewController.swift */; };
 		6BDE912C218C19DF003F976B /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731B42189BAC400CC2651 /* StoryboardSegues.swift */; };
 		6BDE912D218C19DF003F976B /* UnlockByScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */; };
-		6BDE912E218C19DF003F976B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A2218997B600CC2651 /* Constants.swift */; };
+		6BDE912E218C19DF003F976B /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A2218997B600CC2651 /* Notifications.swift */; };
 		6BDE912F218C19DF003F976B /* PaymentMethodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731FD218AA53100CC2651 /* PaymentMethodTableViewController.swift */; };
 		6BDE9130218C19DF003F976B /* EnableNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */; };
 		6BDE9132218C19DF003F976B /* Pods_Project_OTGRider_staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DA4D11423EE5032D0FBB72 /* Pods_Project_OTGRider_staging.framework */; };
@@ -167,7 +173,7 @@
 		6B849D4421941EB300CD9791 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneService.swift; sourceTree = "<group>"; };
 		6B87319E2189643800CC2651 /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
 		6B8731A0218968E000CC2651 /* Melbourne.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Melbourne.gpx; sourceTree = "<group>"; };
-		6B8731A2218997B600CC2651 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6B8731A2218997B600CC2651 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		6B8731A62189A70600CC2651 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		6B8731AA2189B9A500CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B8731AE2189BA8D00CC2651 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -191,6 +197,8 @@
 		6B8731FD218AA53100CC2651 /* PaymentMethodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodTableViewController.swift; sourceTree = "<group>"; };
 		6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockByScanViewController.swift; sourceTree = "<group>"; };
 		6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
+		6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		6BDE911A218C1983003F976B /* OTGRider-staging.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "OTGRider-staging.entitlements"; sourceTree = "<group>"; };
 		6BDE9146218C19DF003F976B /* OTGRider-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTGRider-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BDE9148218C1A30003F976B /* Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dev-Info.plist"; sourceTree = "<group>"; };
@@ -268,13 +276,15 @@
 		6B8731A1218997A000CC2651 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				6B8731A2218997B600CC2651 /* Constants.swift */,
+				6B8731A2218997B600CC2651 /* Notifications.swift */,
 				6BDE914B218C1DBB003F976B /* Configuration.swift */,
 				6B8731C22189CA0400CC2651 /* String+Validate.swift */,
 				6BDE9160218C833E003F976B /* Aliases.swift */,
 				6BDE916C218CFBF9003F976B /* UIViewControoler+Popup.swift */,
 				6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */,
 				6B214AEB2195B66300553C3D /* Double+Currency.swift */,
+				6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */,
+				6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -305,6 +315,24 @@
 				6B8731F3218A9A9000CC2651 /* Unlock.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		6BB6CB6C2196501C00B597B3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A0CFE7A121747BF500BA3F6D /* Assets.xcassets */,
+				6B8731A92189B9A500CC2651 /* Localizable.strings */,
+				A0CFE7A621747BF500BA3F6D /* Info.plist */,
+				6B87319E2189643800CC2651 /* Staging-Info.plist */,
+				6BDE9148218C1A30003F976B /* Dev-Info.plist */,
+				6B8731A0218968E000CC2651 /* Melbourne.gpx */,
+				6B8731D5218A816000CC2651 /* OTGRider.entitlements */,
+				6BDE911A218C1983003F976B /* OTGRider-staging.entitlements */,
+				6BDE914A218C1A84003F976B /* OTGRider-dev.entitlements */,
+				6BDE9156218C35B7003F976B /* GoogleService-Info.plist */,
+				6BDE9159218C4E62003F976B /* GoogleService-Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		6BDE914F218C3055003F976B /* API */ = {
@@ -345,26 +373,16 @@
 				A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */,
 				6B8731A62189A70600CC2651 /* UserDefaults.swift */,
 				6B8731DB218A957400CC2651 /* Views */,
-				A0CFE7BA21773B7B00BA3F6D /* Controller */,
+				A0CFE7BA21773B7B00BA3F6D /* Components */,
 				6BDE914F218C3055003F976B /* API */,
 				6B8731A1218997A000CC2651 /* Helpers */,
 				6B8731AD2189BA6B00CC2651 /* Generated */,
-				A0CFE7A121747BF500BA3F6D /* Assets.xcassets */,
-				6B8731A92189B9A500CC2651 /* Localizable.strings */,
-				A0CFE7A621747BF500BA3F6D /* Info.plist */,
-				6B87319E2189643800CC2651 /* Staging-Info.plist */,
-				6BDE9148218C1A30003F976B /* Dev-Info.plist */,
-				6B8731A0218968E000CC2651 /* Melbourne.gpx */,
-				6B8731D5218A816000CC2651 /* OTGRider.entitlements */,
-				6BDE911A218C1983003F976B /* OTGRider-staging.entitlements */,
-				6BDE914A218C1A84003F976B /* OTGRider-dev.entitlements */,
-				6BDE9159218C4E62003F976B /* GoogleService-Info.plist */,
-				6BDE9156218C35B7003F976B /* GoogleService-Info.plist */,
+				6BB6CB6C2196501C00B597B3 /* Supporting Files */,
 			);
 			path = OTGRider;
 			sourceTree = "<group>";
 		};
-		A0CFE7BA21773B7B00BA3F6D /* Controller */ = {
+		A0CFE7BA21773B7B00BA3F6D /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				A0CFE79C21747BF000BA3F6D /* MapViewController.swift */,
@@ -384,7 +402,7 @@
 				6B214AE721958ED100553C3D /* EditPhoneViewController.swift */,
 				6B214AF32196416F00553C3D /* ChoosePaymentMethodsViewController.swift */,
 			);
-			path = Controller;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		F39279E41308C0B2F4A73AC0 /* Frameworks */ = {
@@ -480,6 +498,9 @@
 				TargetAttributes = {
 					6BDE911B218C19DF003F976B = {
 						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -488,6 +509,9 @@
 					A0CFE79621747BF000BA3F6D = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -498,6 +522,9 @@
 					};
 					A0CFE7AC21747D2B00BA3F6D = {
 						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -631,6 +658,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -649,6 +677,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -677,6 +706,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -695,6 +725,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -825,6 +856,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -843,6 +875,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -976,12 +1009,14 @@
 				6BDE9123218C19DF003F976B /* UserDefaults.swift in Sources */,
 				6BDE9124218C19DF003F976B /* SideMenuViewController.swift in Sources */,
 				6BDE916B218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
+				6BB6CB702196563700B597B3 /* UIColor+Palette.swift in Sources */,
 				6BDE9167218C8FBB003F976B /* UserService.swift in Sources */,
 				6BDE9125218C19DF003F976B /* AppDelegate.swift in Sources */,
 				6B214AEA21958ED100553C3D /* EditPhoneViewController.swift in Sources */,
 				6B214AF62196416F00553C3D /* ChoosePaymentMethodsViewController.swift in Sources */,
 				6BDE916F218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */,
 				6B214AF22195C77A00553C3D /* TopUpViewController.swift in Sources */,
+				6BB6CB742196591D00B597B3 /* UIColor+Hex.swift in Sources */,
 				6BDE9153218C3073003F976B /* APIClient.swift in Sources */,
 				6BDE9126218C19DF003F976B /* SignInViewController.swift in Sources */,
 				6BDE9127218C19DF003F976B /* Strings.swift in Sources */,
@@ -998,7 +1033,7 @@
 				6B214AEE2195B66300553C3D /* Double+Currency.swift in Sources */,
 				6BDE912D218C19DF003F976B /* UnlockByScanViewController.swift in Sources */,
 				6BDE9163218C833E003F976B /* Aliases.swift in Sources */,
-				6BDE912E218C19DF003F976B /* Constants.swift in Sources */,
+				6BDE912E218C19DF003F976B /* Notifications.swift in Sources */,
 				6BDE912F218C19DF003F976B /* PaymentMethodTableViewController.swift in Sources */,
 				6BDE9173218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BDE9130218C19DF003F976B /* EnableNotificationViewController.swift in Sources */,
@@ -1016,12 +1051,14 @@
 				6B8731A72189A70600CC2651 /* UserDefaults.swift in Sources */,
 				A0CFE7BC21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				6BDE9169218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
+				6BB6CB6E2196563700B597B3 /* UIColor+Palette.swift in Sources */,
 				6BDE9165218C8FBB003F976B /* UserService.swift in Sources */,
 				A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */,
 				6B214AE821958ED100553C3D /* EditPhoneViewController.swift in Sources */,
 				6B214AF42196416F00553C3D /* ChoosePaymentMethodsViewController.swift in Sources */,
 				6BDE916D218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */,
 				6B214AF02195C77A00553C3D /* TopUpViewController.swift in Sources */,
+				6BB6CB722196591D00B597B3 /* UIColor+Hex.swift in Sources */,
 				6BDE9151218C3073003F976B /* APIClient.swift in Sources */,
 				6B8731C02189C7FA00CC2651 /* SignInViewController.swift in Sources */,
 				6B8731B02189BA8D00CC2651 /* Strings.swift in Sources */,
@@ -1038,7 +1075,7 @@
 				6B214AEC2195B66300553C3D /* Double+Currency.swift in Sources */,
 				6B873201218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */,
 				6BDE9161218C833E003F976B /* Aliases.swift in Sources */,
-				6B8731A3218997B600CC2651 /* Constants.swift in Sources */,
+				6B8731A3218997B600CC2651 /* Notifications.swift in Sources */,
 				6B8731FE218AA53100CC2651 /* PaymentMethodTableViewController.swift in Sources */,
 				6BDE9171218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6B8731D02189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,
@@ -1056,12 +1093,14 @@
 				6B8731A82189A70600CC2651 /* UserDefaults.swift in Sources */,
 				A0CFE7BD21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				6BDE916A218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
+				6BB6CB6F2196563700B597B3 /* UIColor+Palette.swift in Sources */,
 				6BDE9166218C8FBB003F976B /* UserService.swift in Sources */,
 				A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */,
 				6B214AE921958ED100553C3D /* EditPhoneViewController.swift in Sources */,
 				6B214AF52196416F00553C3D /* ChoosePaymentMethodsViewController.swift in Sources */,
 				6BDE916E218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */,
 				6B214AF12195C77A00553C3D /* TopUpViewController.swift in Sources */,
+				6BB6CB732196591D00B597B3 /* UIColor+Hex.swift in Sources */,
 				6BDE9152218C3073003F976B /* APIClient.swift in Sources */,
 				6B8731C12189C7FA00CC2651 /* SignInViewController.swift in Sources */,
 				6B8731B12189BA8D00CC2651 /* Strings.swift in Sources */,
@@ -1078,7 +1117,7 @@
 				6B214AED2195B66300553C3D /* Double+Currency.swift in Sources */,
 				6B873202218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */,
 				6BDE9162218C833E003F976B /* Aliases.swift in Sources */,
-				6B8731A4218997B600CC2651 /* Constants.swift in Sources */,
+				6B8731A4218997B600CC2651 /* Notifications.swift in Sources */,
 				6B8731FF218AA53100CC2651 /* PaymentMethodTableViewController.swift in Sources */,
 				6BDE9172218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6B8731D12189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,

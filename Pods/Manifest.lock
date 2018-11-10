@@ -122,6 +122,7 @@ PODS:
   - Protobuf (3.6.1)
   - ReachabilitySwift (4.3.0)
   - SideMenu (5.0.3)
+  - Stripe (13.2.0)
   - SwiftGen (6.0.2)
   - SwiftyUserDefaults (4.0.0-alpha.1)
   - XCGLogger (6.1.0):
@@ -142,6 +143,7 @@ DEPENDENCIES:
   - PKHUD
   - ReachabilitySwift
   - SideMenu
+  - Stripe
   - SwiftGen
   - SwiftyUserDefaults (= 4.0.0-alpha.1)
   - XCGLogger
@@ -175,6 +177,7 @@ SPEC REPOS:
     - Protobuf
     - ReachabilitySwift
     - SideMenu
+    - Stripe
     - SwiftGen
     - SwiftyUserDefaults
     - XCGLogger
@@ -207,10 +210,11 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
+  Stripe: 2c69e216061d54d9c538204bb4f58bd597ddfc5b
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: ba09565eaada352984dc656835938f9e7056f26b
+PODFILE CHECKSUM: f706d09a53617cbaa71b6e6762fc0414636d0b74
 
 COCOAPODS: 1.5.3

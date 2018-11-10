@@ -16,6 +16,11 @@ import FirebaseMessaging
 import SideMenu
 import XCGLogger
 import SwiftyUserDefaults
+import Stripe
+
+// global variables
+let logger = XCGLogger.default
+var config = Configuration()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let logLevel: XCGLogger.Level = .error
         #endif
         
-        log.setup(level: logLevel,
+        logger.setup(level: logLevel,
                   showLogIdentifier: false,
                   showFunctionName: false,
                   showThreadName: false,
@@ -48,8 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         #endif
-        GMSServices.provideAPIKey(configuration.environment.googleMapKey)
+        
+        GMSServices.provideAPIKey(config.env.googleMapKey)
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
+        configStripe()
         
         // UI init
         SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
@@ -115,7 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: MessagingDelegate {
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        log.debug("Firebase registration token: \(fcmToken)")
+        logger.debug("Firebase registration token: \(fcmToken)")
         
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
@@ -135,5 +142,26 @@ extension AppDelegate {
                 currentController.present(signInViewController, animated: true, completion: nil)
             }
         }
+    }
+}
+
+extension AppDelegate {
+    private func configStripe() {
+        // Stripe payment configuration
+        STPPaymentConfiguration.shared().companyName = NSLocalizedString("OTG Ride", comment: "company name")
+        
+        if !config.env.stripePublishableKey.isEmpty {
+            STPPaymentConfiguration.shared().publishableKey = config.env.stripePublishableKey
+        }
+        
+        if !config.env.appleMerchantIdentifier.isEmpty {
+            STPPaymentConfiguration.shared().appleMerchantIdentifier = config.env.appleMerchantIdentifier
+        }
+        
+        // Stripe theme configuration
+        STPTheme.default().primaryBackgroundColor = .otgVeryLightGrayColor
+        STPTheme.default().primaryForegroundColor = .otgDarkBlueColor
+        STPTheme.default().secondaryForegroundColor = .otgDarkGrayColor
+        STPTheme.default().accentColor = .otgGreenColor
     }
 }
