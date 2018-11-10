@@ -56,6 +56,23 @@ final class UserService: NSObject {
                                         completion(error)
         })
     }
+    
+    func topUpBalance(_ amount: Int,
+                      stripeSource: String,
+                      completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        
+        let params: JSON = [
+            "amount": amount,
+            "source": stripeSource,
+            ]
+        
+        return APIClient.shared.load(path: "/users/me/balance",
+                                     method: .put,
+                                     params: params,
+                                     completion: { (result, error) in
+                                        completion(error)
+        })
+    }
 }
 
 extension UserService: STPEphemeralKeyProvider {

@@ -16,11 +16,14 @@ class TopUpViewController: UIViewController {
     private let customerContext: STPCustomerContext
     private let paymentContext: STPPaymentContext
     
+    private var apiTask: URLSessionTask?
+    
     // MARK: Init
     
     required init?(coder aDecoder: NSCoder) {
         customerContext = STPCustomerContext(keyProvider: UserService())
         paymentContext = STPPaymentContext(customerContext: customerContext)
+        paymentContext.paymentCurrency = "aud"
         
         super.init(coder: aDecoder)
         
@@ -39,7 +42,7 @@ class TopUpViewController: UIViewController {
     @IBAction func amountChoosed(_ sender: Any) {
         if let button = sender as? UIButton, let amountString = button.titleLabel?.text {
             if let amount = Int(amountString) {
-                paymentContext.paymentAmount = amount
+                paymentContext.paymentAmount = amount * 100
             }
             
             reloadPaymentButtonContent()
@@ -91,22 +94,27 @@ extension TopUpViewController: STPPaymentContextDelegate {
         // Create charge using payment result
         let source = paymentResult.source.stripeID
         
-        // TODO: call api to process payment
-        
-        completion(nil)
+        // call api to process payment
+        apiTask?.cancel()
+        showLoading()
+        apiTask = UserService().topUpBalance(paymentContext.paymentAmount, stripeSource: source, completion: { (error) in
+            completion(error)
+        })
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
         switch status {
         case .success:
-            // TODO: rewind to account scene
-            showSuccessMessage("payment has been received")
+            showSuccessMessage("payment has been received, thank you!") { [weak self] (success) in
+                self?.perform(segue: StoryboardSegue.Account.fromTopUpToAccount)
+            }
+            
             break
         case .error:
             // Present error to user
             if let error = error {
                 logger.error(error.localizedDescription)
-                showError(error)
+                dismissLoading(withMessage: error.localizedDescription)
             }
         case .userCancellation:
             // Reset ride request state

@@ -18,17 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-7n-Wv0">
-                                <rect key="frame" x="130.5" y="236.5" width="114" height="66.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-7n-Wv0">
+                                <rect key="frame" x="24" y="221.5" width="327" height="96"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: 23.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOz-Wu-H2n">
-                                        <rect key="frame" x="0.0" y="0.0" width="114" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOz-Wu-H2n">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPA-cp-IjL">
-                                        <rect key="frame" x="0.0" y="36.5" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="66" width="327" height="30"/>
                                         <state key="normal" title="Top Up"/>
                                         <connections>
                                             <segue destination="zb8-2E-qsg" kind="presentation" id="sP9-uT-YSB"/>
@@ -40,7 +40,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qMw-7n-Wv0" firstAttribute="centerY" secondItem="kf1-bm-zse" secondAttribute="centerY" constant="-64" id="5Jl-gy-cJc"/>
-                            <constraint firstItem="qMw-7n-Wv0" firstAttribute="centerX" secondItem="kf1-bm-zse" secondAttribute="centerX" id="q84-2Z-PL2"/>
+                            <constraint firstItem="cAl-fr-Sfd" firstAttribute="trailing" secondItem="qMw-7n-Wv0" secondAttribute="trailing" constant="24" id="QFh-ty-fJl"/>
+                            <constraint firstItem="qMw-7n-Wv0" firstAttribute="leading" secondItem="cAl-fr-Sfd" secondAttribute="leading" constant="24" id="vG8-Zm-C7A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cAl-fr-Sfd"/>
                     </view>
@@ -50,11 +51,7 @@
                                 <segue destination="N5g-Sj-Cck" kind="unwind" unwindAction="unwindToHome:" id="yJN-4E-IC6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Payment" id="Yxc-WE-ceU">
-                            <connections>
-                                <segue destination="lZv-BN-LnH" kind="presentation" id="OA9-vq-zJm"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Payment" id="Yxc-WE-ceU"/>
                     </navigationItem>
                     <connections>
                         <outlet property="balanceLabel" destination="MOz-Wu-H2n" id="fkG-j1-d7z"/>
@@ -135,73 +132,20 @@
                     <navigationItem key="navigationItem" title="Top Up Balance" id="7gX-fD-o2R">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Gyu-yt-WFU">
                             <connections>
-                                <segue destination="ayk-st-og7" kind="unwind" unwindAction="unwindToAccount:" id="IyD-EP-Pvz"/>
+                                <segue destination="ayk-st-og7" kind="unwind" identifier="fromTopUpToAccount" unwindAction="unwindToAccount:" id="IyD-EP-Pvz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="payButton" destination="y1d-nn-t61" id="eKz-8X-C8e"/>
                         <outlet property="paymentMethodButton" destination="wF2-Qr-Yx2" id="xUH-qG-AVz"/>
+                        <segue destination="ayk-st-og7" kind="unwind" unwindAction="unwindToAccount:" id="x4R-Nk-2OT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edv-bb-WPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ayk-st-og7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1484" y="896"/>
-        </scene>
-        <!--Payment Method-->
-        <scene sceneID="FLn-Xb-yeI">
-            <objects>
-                <tableViewController id="y34-vw-qrR" customClass="PaymentMethodTableViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Kk-57-ZJV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentMethodCell" id="Jf2-qK-kLR">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jf2-qK-kLR" id="UaL-02-QH3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="y34-vw-qrR" id="CY0-VG-27U"/>
-                            <outlet property="delegate" destination="y34-vw-qrR" id="LYG-l5-FOt"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Payment Method" id="ua8-Q0-JAi">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FLU-1A-3jZ">
-                            <connections>
-                                <segue destination="GZU-Qm-y35" kind="unwind" unwindAction="unwindToAccount:" id="b4Z-JC-uxc"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cH5-MU-OzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="GZU-Qm-y35" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2300" y="153.37331334332833"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="aXt-zN-ZnB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lZv-BN-LnH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="07E-6o-agG">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="y34-vw-qrR" kind="relationship" relationship="rootViewController" id="MQc-87-a49"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4c7-RE-755" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1484" y="153.37331334332833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ozF-hY-1lu">

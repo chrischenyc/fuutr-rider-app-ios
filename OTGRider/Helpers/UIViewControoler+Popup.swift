@@ -31,15 +31,15 @@ extension UIViewController {
         }
     }
     
-    func dismissLoading(withMessage message: String? = nil) {
+    func dismissLoading(withMessage message: String? = nil, completion: ((Bool) -> Void)? = nil) {
         if let message = message {
-            HUD.flash(HUDContentType.label(message), delay: 2)
+            HUD.flash(HUDContentType.label(message), onView: nil, delay: 1.5, completion: completion)
         } else {
-            HUD.hide()
+            HUD.hide(completion)
         }
     }
     
-    func showSuccessMessage(_ message: String) {
-        HUD.flash(HUDContentType.labeledSuccess(title: "Success", subtitle: message), delay: 2)
+    func showSuccessMessage(_ message: String, completion: ((Bool) -> Void)? = nil) {
+        HUD.flash(HUDContentType.labeledSuccess(title: "Success", subtitle: message), onView: nil, delay: 1.5, completion: completion)
     }
 }

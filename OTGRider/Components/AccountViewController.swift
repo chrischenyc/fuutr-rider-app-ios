@@ -24,6 +24,10 @@ class AccountViewController: UIViewController {
     @IBAction func unwindToAccount(_ unwindSegue: UIStoryboardSegue) {
         // let sourceViewController = unwindSegue.source
         // Use data from the view controller which initiated the unwind segue
+        
+        if unwindSegue.identifier == StoryboardSegue.Account.fromTopUpToAccount.rawValue {
+            loadProfile()
+        }
     }
     
     private func loadProfile() {
