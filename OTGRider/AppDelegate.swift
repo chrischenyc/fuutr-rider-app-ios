@@ -148,7 +148,7 @@ extension AppDelegate {
 extension AppDelegate {
     private func configStripe() {
         // Stripe payment configuration
-        STPPaymentConfiguration.shared().companyName = NSLocalizedString("OTG Ride", comment: "company name")
+        STPPaymentConfiguration.shared().companyName = L10n.kCompanyName
         
         if !config.env.stripePublishableKey.isEmpty {
             STPPaymentConfiguration.shared().publishableKey = config.env.stripePublishableKey

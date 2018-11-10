@@ -11,6 +11,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
+  /// OTG Ride Pty Ltd
+  internal static let kCompanyName = L10n.tr("Localizable", "kCompanyName")
   /// Enter the 4-digit code sent to your phone
   internal static let kEnterVerificationCode = L10n.tr("Localizable", "kEnterVerificationCode")
   /// Okay
@@ -25,8 +27,6 @@ internal enum L10n {
   internal static let kSendingVerificationCode = L10n.tr("Localizable", "kSendingVerificationCode")
   /// Verifying ...
   internal static let kVerifying = L10n.tr("Localizable", "kVerifying")
-  /// OTG Ride Pty Ltd
-  internal static let otgRide = L10n.tr("Localizable", "OTG Ride")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name
