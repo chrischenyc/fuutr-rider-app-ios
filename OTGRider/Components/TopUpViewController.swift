@@ -7,23 +7,112 @@
 //
 
 import UIKit
+import Stripe
 
 class TopUpViewController: UIViewController {
+    @IBOutlet weak var paymentMethodButton: UIButton!
+    @IBOutlet weak var payButton: UIButton!
     
-    var paymentAmount: Double?
+    private let customerContext: STPCustomerContext
+    private let paymentContext: STPPaymentContext
+    
+    // MARK: Init
+    
+    required init?(coder aDecoder: NSCoder) {
+        customerContext = STPCustomerContext(keyProvider: UserService())
+        paymentContext = STPPaymentContext(customerContext: customerContext)
+        
+        super.init(coder: aDecoder)
+        
+        paymentContext.delegate = self
+        paymentContext.hostViewController = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        payButton.isEnabled = false
     }
     
     
     @IBAction func amountChoosed(_ sender: Any) {
         if let button = sender as? UIButton, let amountString = button.titleLabel?.text {
-            paymentAmount = Double(amountString)
+            if let amount = Int(amountString) {
+                paymentContext.paymentAmount = amount
+            }
+            
+            reloadPaymentButtonContent()
+        }
+    }
+    
+    @IBAction func paymentButtonTapped(_ sender: Any) {
+        // present Stripe UI
+        paymentContext.presentPaymentMethodsViewController()
+    }
+    
+    @IBAction func payButtonTapped(_ sender: Any) {
+        paymentContext.requestPayment()
+    }
+    
+    private func reloadPaymentButtonContent() {
+        guard paymentContext.paymentAmount > 0 else {
+            payButton.isEnabled = false
+            return
         }
         
-        perform(segue: StoryboardSegue.Account.fromTopUpToPaymentMethods, sender: sender)
+        guard let selectedPaymentMethod = paymentContext.selectedPaymentMethod else {
+            // Show default image, text, and color
+            paymentMethodButton.setTitle("Choose payment method", for: .normal)
+            paymentMethodButton.setTitleColor(.otgGrayColor, for: .normal)
+            payButton.isEnabled = false
+            return
+        }
+        
+        // Show selected payment method image, label, and darker color
+        payButton.isEnabled = true
+        paymentMethodButton.setImage(selectedPaymentMethod.image, for: .normal)
+        paymentMethodButton.setTitle("Pay with \(selectedPaymentMethod.label)", for: .normal)
+        paymentMethodButton.setTitleColor(.otgDarkBlueColor, for: .normal)
     }
+}
+
+extension TopUpViewController: STPPaymentContextDelegate {
+    func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
+        logger.error(error)
+        showError(error)
+    }
+    
+    func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
+        reloadPaymentButtonContent()
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
+        // Create charge using payment result
+        let source = paymentResult.source.stripeID
+        
+        // TODO: call api to process payment
+        
+        completion(nil)
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
+        switch status {
+        case .success:
+            // TODO: rewind to account scene
+            showSuccessMessage("payment has been received")
+            break
+        case .error:
+            // Present error to user
+            if let error = error {
+                logger.error(error.localizedDescription)
+                showError(error)
+            }
+        case .userCancellation:
+            // Reset ride request state
+            break
+        }
+    }
+    
+    
 }

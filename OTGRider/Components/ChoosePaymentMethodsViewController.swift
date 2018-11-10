@@ -47,7 +47,7 @@ extension ChoosePaymentMethodsViewController: UITableViewDelegate {
             // rewind to top up screen with selected saved card info
         }
         else {
-            perform(segue: StoryboardSegue.Account.fromChoosePaymentMethodsToNewCard)
+//            perform(segue: StoryboardSegue.Account.fromChoosePaymentMethodsToNewCard)
         }
     }
 }

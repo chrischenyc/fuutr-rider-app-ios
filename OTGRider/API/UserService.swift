@@ -8,8 +8,9 @@
 
 import Foundation
 import SwiftyUserDefaults
+import Stripe
 
-final class UserService {
+final class UserService: NSObject {
     func getProfile(_ completion: @escaping (Any?, Error?) -> Void) -> URLSessionDataTask? {
         return APIClient.shared.load(path: "/users/me",
                                      method: .get,
@@ -54,5 +55,20 @@ final class UserService {
                                      completion: { (result, error) in
                                         completion(error)
         })
+    }
+}
+
+extension UserService: STPEphemeralKeyProvider {
+    func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
+        _ = APIClient.shared.load(path: "/users/me/stripe-ephemeral-keys",
+                                  method: .post,
+                                  params: ["stripe_version": apiVersion]) { (result, error) in
+                                    guard let json = result as? [AnyHashable: Any] else {
+                                        completion(nil, error)
+                                        return
+                                    }
+                                    
+                                    completion(json, nil)
+        }
     }
 }

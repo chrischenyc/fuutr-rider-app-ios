@@ -38,4 +38,8 @@ extension UIViewController {
             HUD.hide()
         }
     }
+    
+    func showSuccessMessage(_ message: String) {
+        HUD.flash(HUDContentType.labeledSuccess(title: "Success", subtitle: message), delay: 2)
+    }
 }
