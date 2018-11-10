@@ -23,6 +23,7 @@ class TopUpViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         customerContext = STPCustomerContext(keyProvider: UserService())
         paymentContext = STPPaymentContext(customerContext: customerContext)
+        paymentContext.configuration.canDeletePaymentMethods = true
         paymentContext.paymentCurrency = "aud"
         
         super.init(coder: aDecoder)
