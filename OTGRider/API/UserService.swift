@@ -11,12 +11,17 @@ import SwiftyUserDefaults
 import Stripe
 
 final class UserService: NSObject {
-    func getProfile(_ completion: @escaping (Any?, Error?) -> Void) -> URLSessionDataTask? {
+    func getProfile(_ completion: @escaping (User?, Error?) -> Void) -> URLSessionDataTask? {
         return APIClient.shared.load(path: "/users/me",
                                      method: .get,
                                      params: nil,
                                      completion: { (result, error) in
-                                        completion(result, error)
+                                        if let json = result as? [String : Any], let user = User(JSON: json) {
+                                            completion(user, nil)
+                                        }
+                                        else {
+                                            completion(nil, error)
+                                        }
         })
     }
     

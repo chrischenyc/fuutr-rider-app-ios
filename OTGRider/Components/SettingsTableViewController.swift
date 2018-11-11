@@ -17,7 +17,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var emailLabel: UILabel!
     
     private var apiTask: URLSessionTask?
-    private var profile: JSON?
+    private var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,14 +58,14 @@ class SettingsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editNameViewController = segue.destination as? EditNameViewController {
-            editNameViewController.displayName = profile?["displayName"] as? String
+            editNameViewController.displayName = user?.displayName
         }
         else if let editEmailViewController = segue.destination as? EditEmailViewController {
-            editEmailViewController.email = profile?["email"] as? String
+            editEmailViewController.email = user?.email
         }
         else if let editPhoneViewController = segue.destination as? EditPhoneViewController {
-            editPhoneViewController.countryCode = profile?["countryCode"] as? UInt64
-            editPhoneViewController.phoneNumber = profile?["phoneNumber"] as? String
+            editPhoneViewController.countryCode = user?.countryCode
+            editPhoneViewController.phoneNumber = user?.phoneNumber
         }
     }
     
@@ -74,24 +74,29 @@ class SettingsTableViewController: UITableViewController {
         
         showLoading()
         
-        apiTask = UserService().getProfile({[weak self] (result, error) in
+        apiTask = UserService().getProfile({[weak self] (user, error) in
             DispatchQueue.main.async {
                 guard error == nil else {
                     self?.dismissLoading(withMessage: error?.localizedDescription)
                     return
                 }
                 
-                guard let profile = result as? JSON else {
+                guard let user = user else {
                     self?.dismissLoading(withMessage: L10n.kOtherError)
                     return
                 }
                 
                 self?.dismissLoading()
-                self?.displayNameLabel.text = profile["displayName"] as? String ?? ""
-                self?.phoneNumberLabel.text = profile["phoneNumber"] as? String ?? ""
-                self?.emailLabel.text = profile["email"] as? String ?? ""
-                self?.profile = profile
+                self?.loadUserContent(user)
+                
+                self?.user = user
             }
         })
+    }
+    
+    private func loadUserContent(_ user: User) {
+        self.displayNameLabel.text = user.displayName
+        self.phoneNumberLabel.text = user.phoneNumber
+        self.emailLabel.text = user.email
     }
 }

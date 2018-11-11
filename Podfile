@@ -29,6 +29,7 @@ abstract_target 'Project' do
   pod 'SwiftGen'
   pod 'BartyCrouch'
   pod 'PhoneNumberKit'
+  pod 'ObjectMapper'
 
   target 'OTGRider' do
 

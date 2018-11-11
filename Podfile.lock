@@ -112,6 +112,7 @@ PODS:
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - ObjectMapper (3.3.0)
   - PhoneNumberKit (2.5.0):
     - PhoneNumberKit/PhoneNumberKitCore (= 2.5.0)
     - PhoneNumberKit/UIKit (= 2.5.0)
@@ -139,6 +140,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/Performance
   - GoogleMaps
+  - ObjectMapper
   - PhoneNumberKit
   - PKHUD
   - ReachabilitySwift
@@ -172,6 +174,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - ObjcExceptionBridging
+    - ObjectMapper
     - PhoneNumberKit
     - PKHUD
     - Protobuf
@@ -205,6 +208,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   PhoneNumberKit: 32a1cd1e0aa9e950feb01886a22fd7386b8cf903
   PKHUD: dd5357ac65f26115c35c4a68e9b328053326c5fe
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
@@ -215,6 +219,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: f706d09a53617cbaa71b6e6762fc0414636d0b74
+PODFILE CHECKSUM: 118d9c939ef5b65f2a91a4a6fc463d0d3799ab56
 
 COCOAPODS: 1.5.3

@@ -53,23 +53,26 @@ class AccountViewController: UIViewController {
         
         showLoading()
         
-        apiTask = UserService().getProfile({[weak self] (result, error) in
+        apiTask = UserService().getProfile({[weak self] (user, error) in
             DispatchQueue.main.async {
                 guard error == nil else {
                     self?.dismissLoading(withMessage: error?.localizedDescription)
                     return
                 }
                 
-                guard let profile = result as? JSON else {
+                guard let user = user else {
                     self?.dismissLoading(withMessage: L10n.kOtherError)
                     return
                 }
                 
                 self?.dismissLoading()
-                let balance = profile["balance"] as! Double
-                self?.balanceLabel.text = "Balance \(balance.currencyString)"
+                self?.loadUserContent(user)
             }
         })
+    }
+    
+    private func loadUserContent(_ user: User) {
+        self.balanceLabel.text = "Balance \(user.balance.currencyString)"
     }
 
 }
