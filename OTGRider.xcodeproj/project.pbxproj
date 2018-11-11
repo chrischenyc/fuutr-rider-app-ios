@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		470D7A8D9BA5E54FE9E79E82 /* Pods_Project_OTGRider_dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4706DCFA6C56492D699F48 /* Pods_Project_OTGRider_dev.framework */; };
+		6B14FA0B2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
+		6B14FA0C2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
+		6B14FA0D2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
+		6B14FA0F2198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */; };
+		6B14FA102198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */; };
+		6B14FA112198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */; };
+		6B14FA132198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */; };
+		6B14FA142198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */; };
+		6B14FA152198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */; };
 		6B214AE0219564CD00553C3D /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214ADF219564CD00553C3D /* EditNameViewController.swift */; };
 		6B214AE1219564CD00553C3D /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214ADF219564CD00553C3D /* EditNameViewController.swift */; };
 		6B214AE2219564CD00553C3D /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214ADF219564CD00553C3D /* EditNameViewController.swift */; };
@@ -171,6 +180,9 @@
 /* Begin PBXFileReference section */
 		1D4706DCFA6C56492D699F48 /* Pods_Project_OTGRider_dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_OTGRider_dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		437747352F7B2C3F6BA2A8AF /* Pods-Project-OTGRider-dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-dev/Pods-Project-OTGRider-dev.release.xcconfig"; sourceTree = "<group>"; };
+		6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRequestViewController.swift; sourceTree = "<group>"; };
+		6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVerifyViewController.swift; sourceTree = "<group>"; };
+		6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSetViewController.swift; sourceTree = "<group>"; };
 		6B214ADF219564CD00553C3D /* EditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
 		6B214AE32195701C00553C3D /* EditEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		6B214AE721958ED100553C3D /* EditPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoneViewController.swift; sourceTree = "<group>"; };
@@ -364,6 +376,9 @@
 				6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */,
 				6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */,
 				6B444FE62191AC2E00DFB787 /* EmailAuthViewController.swift */,
+				6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */,
+				6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */,
+				6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -1067,8 +1082,10 @@
 				6BDE9120218C19DF003F976B /* MapViewController.swift in Sources */,
 				6BDE9121218C19DF003F976B /* Assets.swift in Sources */,
 				6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */,
+				6B14FA112198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6B31E1F12197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
 				6BDE9123218C19DF003F976B /* UserDefaults.swift in Sources */,
+				6B14FA0D2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */,
 				6B31E1ED2197F34F00CB424E /* PaymentCell.swift in Sources */,
 				6BDE9124218C19DF003F976B /* SideMenuViewController.swift in Sources */,
 				6BDE916B218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
@@ -1098,6 +1115,7 @@
 				6B214AEE2195B66300553C3D /* Double+Currency.swift in Sources */,
 				6BDE912D218C19DF003F976B /* UnlockByScanViewController.swift in Sources */,
 				6BDE9163218C833E003F976B /* Aliases.swift in Sources */,
+				6B14FA152198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */,
 				6BDE912E218C19DF003F976B /* Notifications.swift in Sources */,
 				6BDE9173218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BDE9130218C19DF003F976B /* EnableNotificationViewController.swift in Sources */,
@@ -1112,8 +1130,10 @@
 				A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */,
 				6B8731B22189BA8D00CC2651 /* Assets.swift in Sources */,
 				6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */,
+				6B14FA0F2198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6B31E1EF2197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
 				6B8731A72189A70600CC2651 /* UserDefaults.swift in Sources */,
+				6B14FA0B2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */,
 				6B31E1EB2197F34F00CB424E /* PaymentCell.swift in Sources */,
 				A0CFE7BC21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				6BDE9169218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
@@ -1143,6 +1163,7 @@
 				6B214AEC2195B66300553C3D /* Double+Currency.swift in Sources */,
 				6B873201218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */,
 				6BDE9161218C833E003F976B /* Aliases.swift in Sources */,
+				6B14FA132198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */,
 				6B8731A3218997B600CC2651 /* Notifications.swift in Sources */,
 				6BDE9171218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6B8731D02189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,
@@ -1157,8 +1178,10 @@
 				A0CFE7AE21747D2B00BA3F6D /* MapViewController.swift in Sources */,
 				6B8731B32189BA8D00CC2651 /* Assets.swift in Sources */,
 				6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */,
+				6B14FA102198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6B31E1F02197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
 				6B8731A82189A70600CC2651 /* UserDefaults.swift in Sources */,
+				6B14FA0C2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */,
 				6B31E1EC2197F34F00CB424E /* PaymentCell.swift in Sources */,
 				A0CFE7BD21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				6BDE916A218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
@@ -1188,6 +1211,7 @@
 				6B214AED2195B66300553C3D /* Double+Currency.swift in Sources */,
 				6B873202218AA9F400CC2651 /* UnlockByScanViewController.swift in Sources */,
 				6BDE9162218C833E003F976B /* Aliases.swift in Sources */,
+				6B14FA142198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */,
 				6B8731A4218997B600CC2651 /* Notifications.swift in Sources */,
 				6BDE9172218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6B8731D12189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,

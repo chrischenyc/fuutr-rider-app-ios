@@ -38,6 +38,9 @@ class EmailAuthViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindToEmailAuth(_ unwindSegue: UIStoryboardSegue) {
+    }
+    
     @IBAction func unwindToEmailSignUp(_ unwindSegue: UIStoryboardSegue) {
         authType = .signUp
     }

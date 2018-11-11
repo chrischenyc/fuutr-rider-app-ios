@@ -41,6 +41,9 @@ internal enum StoryboardSegue {
     case fromEmailLogInToOnboard
     case fromEmailSignUpToMain
     case fromEmailSignUpToOnboard
+    case fromResetPasswordSendCodeToVerifyCode
+    case fromResetPasswordVerifyCodeToSetPassword
+    case fromSetNewPasswordToLogin
     case fromSignInToMain
     case fromSignInToOnboard
     case fromSignUpToLogIn

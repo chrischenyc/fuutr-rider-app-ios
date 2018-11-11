@@ -121,7 +121,58 @@ final class AuthService {
         }
     }
     
-    static func forceSignIn() {
+    func requestPasswordResetCode(forEmail email: String,
+                                  completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        
+        let params: JSON = [
+            "email": email
+        ]
+        
+        return APIClient.shared.load(path: "/auth/reset-password-send-code",
+                                     method: .get,
+                                     params: params,
+                                     completion: { (result, error) in
+                                        completion(error)
+        })
+    }
+    
+    func verifyPasswordResetCode(forEmail email: String,
+                                 code: String,
+                                 completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        
+        let params: JSON = [
+            "email": email,
+            "code": code
+        ]
+        
+        return APIClient.shared.load(path: "/auth/reset-password-verify-code",
+                                     method: .post,
+                                     params: params,
+                                     completion: { (result, error) in
+                                        completion(error)
+        })
+    }
+    
+    func resetPassword(forEmail email: String,
+                       code: String,
+                       password: String,
+                       completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        
+        let params: JSON = [
+            "email": email,
+            "code": code,
+            "password": password
+        ]
+        
+        return APIClient.shared.load(path: "/auth/reset-password",
+                                     method: .post,
+                                     params: params,
+                                     completion: { (result, error) in
+                                        completion(error)
+        })
+    }
+    
+    private static func forceSignIn() {
         Defaults[.userSignedIn] = false
         Defaults[.accessToken] = ""
         Defaults[.refreshToken] = ""
