@@ -16,12 +16,12 @@ final class UserService: NSObject {
                                      method: .get,
                                      params: nil,
                                      completion: { (result, error) in
-                                        if let json = result as? [String : Any], let user = User(JSON: json) {
+                                        if let json = result as? JSON, let user = User(JSON: json) {
                                             completion(user, nil)
+                                            return
                                         }
-                                        else {
-                                            completion(nil, error)
-                                        }
+                                        
+                                        completion(nil, error)  
         })
     }
     
@@ -76,6 +76,20 @@ final class UserService: NSObject {
                                      params: params,
                                      completion: { (result, error) in
                                         completion(error)
+        })
+    }
+    
+    func getHistoryPayments(completion: @escaping ([Payment]?, Error?) -> Void) -> URLSessionDataTask? {
+        return APIClient.shared.load(path: "/users/me/payments",
+                                     method: .get,
+                                     params: nil,
+                                     completion: { (result, error) in
+                                        if let jsonArray = result as? [JSON] {
+                                            completion(Payment.fromJSONArray(jsonArray), nil)
+                                            return
+                                        }
+                                        
+                                        completion(nil, error)
         })
     }
 }
