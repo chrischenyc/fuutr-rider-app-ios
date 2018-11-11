@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import Stripe
 
 class AccountViewController: UIViewController {
     
     @IBOutlet weak var balanceLabel: UILabel!
     
     private var apiTask: URLSessionTask?
+    private let customerContext: STPCustomerContext
+    private let paymentContext: STPPaymentContext
+    
+    required init?(coder aDecoder: NSCoder) {
+        customerContext = STPCustomerContext(keyProvider: UserService())
+        paymentContext = STPPaymentContext(customerContext: customerContext)
+        paymentContext.configuration.canDeletePaymentMethods = true
+        
+        super.init(coder: aDecoder)
+        
+        paymentContext.hostViewController = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +41,11 @@ class AccountViewController: UIViewController {
         if unwindSegue.identifier == StoryboardSegue.Account.fromTopUpToAccount.rawValue {
             loadProfile()
         }
+    }
+    
+    @IBAction func paymentMethodsButtonTapped(_ sender: Any) {
+        // present Stripe UI
+        paymentContext.presentPaymentMethodsViewController()
     }
     
     private func loadProfile() {

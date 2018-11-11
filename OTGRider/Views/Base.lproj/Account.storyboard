@@ -21,17 +21,29 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-7n-Wv0">
                                 <rect key="frame" x="24" y="221.5" width="327" height="96"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOz-Wu-H2n">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XzM-T1-9df">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPA-cp-IjL">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOz-Wu-H2n">
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPA-cp-IjL">
+                                                <rect key="frame" x="163.5" y="0.0" width="163.5" height="50"/>
+                                                <state key="normal" title="Top Up"/>
+                                                <connections>
+                                                    <segue destination="zb8-2E-qsg" kind="presentation" id="sP9-uT-YSB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-P1-oZM">
                                         <rect key="frame" x="0.0" y="66" width="327" height="30"/>
-                                        <state key="normal" title="Top Up"/>
+                                        <state key="normal" title="Payment Methods"/>
                                         <connections>
-                                            <segue destination="zb8-2E-qsg" kind="presentation" id="sP9-uT-YSB"/>
+                                            <action selector="paymentMethodsButtonTapped:" destination="Ok9-qt-dsj" eventType="touchUpInside" id="k64-38-AUo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -51,7 +63,6 @@
                                 <segue destination="N5g-Sj-Cck" kind="unwind" unwindAction="unwindToHome:" id="yJN-4E-IC6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Payment" id="Yxc-WE-ceU"/>
                     </navigationItem>
                     <connections>
                         <outlet property="balanceLabel" destination="MOz-Wu-H2n" id="fkG-j1-d7z"/>

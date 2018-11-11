@@ -10,6 +10,6 @@ import Foundation
 
 extension Double {
     var currencyString: String {
-        return "A$\(self)"
+        return "$\(self)"
     }
 }
