@@ -26,6 +26,7 @@ class EmailAuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailTextField.becomeFirstResponder()
         submitButton.isEnabled = false
     }
     
