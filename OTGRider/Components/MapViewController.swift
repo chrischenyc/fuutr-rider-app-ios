@@ -15,9 +15,9 @@ class MapViewController: UIViewController {
     private let countryZoomLevel: Float = 3.6
     private let streetZoomLevel: Float = 15.0
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
+    private var apiTask: URLSessionTask?
     
     @IBOutlet weak var mapView: GMSMapView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,12 +93,42 @@ class MapViewController: UIViewController {
         }
     }
     
+    
+    private func searchScooters() {
+        let cameraPosition: GMSCameraPosition = mapView.camera
+        let coordinate = cameraPosition.target
+        let zoom = cameraPosition.zoom
+        
+        apiTask?.cancel()
+        apiTask = ScooterService().search(latitude: coordinate.latitude,
+                                          longitude: coordinate.longitude,
+                                          radius: 5,
+                                          completion: { [weak self] (scooters, error) in
+                                            guard error == nil else {
+                                                logger.error(error?.localizedDescription)
+                                                return
+                                            }
+                                            
+                                            guard let scooters = scooters else {
+                                                return
+                                            }
+                                            
+                                            self?.addMapMakers(forScooters: scooters)
+        })
+    }
+    
+    private func addMapMakers(forScooters scooters: [Scooter]) {
+        logger.debug(scooters)
+        // TODO: add to google map
+    }
 }
 
+// MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
     
 }
 
+// MARK: - CLLocationManagerDelegate
 extension MapViewController: CLLocationManagerDelegate {
     
     // Handle authorization for the location manager.
@@ -125,13 +155,15 @@ extension MapViewController: CLLocationManagerDelegate {
         mapView.animate(to: camera)
         
         locationManager.stopUpdatingLocation()
+        
+        searchScooters()
     }
     
     // Handle location manager errors.
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         manager.stopUpdatingLocation()
         
-        print("Error: \(error)")
+        logger.error(error.localizedDescription)
     }
 }
 
