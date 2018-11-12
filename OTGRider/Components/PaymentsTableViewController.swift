@@ -45,12 +45,12 @@ class PaymentsTableViewController: UITableViewController {
         apiTask = UserService().getHistoryPayments(completion: { [weak self] (payments, error) in
             DispatchQueue.main.async {
                 guard error == nil else {
-                    self?.dismissLoading(withMessage: error?.localizedDescription)
+                    self?.flashErrorMessage(error?.localizedDescription)
                     return
                 }
                 
                 guard let payments = payments else {
-                    self?.dismissLoading(withMessage: L10n.kOtherError)
+                    self?.flashErrorMessage(L10n.kOtherError)
                     return
                 }
                 

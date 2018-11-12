@@ -104,10 +104,12 @@ class SignInViewController: UIViewController {
         apiTask = AuthService().login(withFacebookToken: result.token.tokenString, completion: { [weak self] (error) in
             
             DispatchQueue.main.async {
-                if let error = error {
-                    self?.dismissLoading(withMessage: error.localizedDescription)
+                guard error == nil else {
+                    self?.flashErrorMessage(error?.localizedDescription)
+                    return
                 }
-                else if Defaults[.userOnboarded] {
+                
+                if Defaults[.userOnboarded] {
                     self?.dismissLoading()
                     self?.perform(segue: StoryboardSegue.SignIn.fromSignInToMain, sender: self)
                 }

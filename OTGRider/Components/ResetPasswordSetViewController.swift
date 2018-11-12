@@ -45,11 +45,11 @@ class ResetPasswordSetViewController: UIViewController {
         apiTask = AuthService().resetPassword(forEmail: email, code: code, password: password ,completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 guard error == nil else {
-                    self?.dismissLoading(withMessage: error?.localizedDescription)
+                    self?.flashErrorMessage(error?.localizedDescription)
                     return
                 }
                 
-                self?.dismissLoading(withMessage: "Done! Please log in with the new password", completion: { (finished) in
+                self?.flashSuccessMessage("Done! Please log in with the new password", completion: { (finished) in
                     if finished {
                         self?.perform(segue: StoryboardSegue.SignIn.fromSetNewPasswordToLogin)
                     }

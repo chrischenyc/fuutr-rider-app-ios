@@ -43,11 +43,11 @@ class ResetPasswordRequestViewController: UIViewController {
         apiTask = AuthService().requestPasswordResetCode(forEmail: email, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 guard error == nil else {
-                    self?.dismissLoading(withMessage: error?.localizedDescription)
+                    self?.flashErrorMessage(error?.localizedDescription)
                     return
                 }
                 
-                self?.dismissLoading(withMessage: "Code sent, please check your email", completion: { (finished) in
+                self?.flashSuccessMessage("Code sent, please check your email", completion: { (finished) in
                     self?.perform(segue: StoryboardSegue.SignIn.fromResetPasswordSendCodeToVerifyCode)
                 })
             }

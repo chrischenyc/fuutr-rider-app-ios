@@ -413,6 +413,15 @@
 			name = Account;
 			sourceTree = "<group>";
 		};
+		6BCEFBD6219960A9003FB097 /* Ride */ = {
+			isa = PBXGroup;
+			children = (
+				A0CFE79C21747BF000BA3F6D /* MapViewController.swift */,
+				6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */,
+			);
+			name = Ride;
+			sourceTree = "<group>";
+		};
 		6BDE914F218C3055003F976B /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,12 +473,11 @@
 		A0CFE7BA21773B7B00BA3F6D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6BCEFBD6219960A9003FB097 /* Ride */,
 				6BB6CB782196F89800B597B3 /* Account */,
 				6BB6CB772196F88A00B597B3 /* Settings */,
 				6BB6CB762196F87E00B597B3 /* Onboard */,
 				6BB6CB752196F86400B597B3 /* Auth */,
-				A0CFE79C21747BF000BA3F6D /* MapViewController.swift */,
-				6B873200218AA9F400CC2651 /* UnlockByScanViewController.swift */,
 				A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */,
 			);
 			path = Components;

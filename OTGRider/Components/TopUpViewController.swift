@@ -106,7 +106,7 @@ extension TopUpViewController: STPPaymentContextDelegate {
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
         switch status {
         case .success:
-            showSuccessMessage("payment has been received, thank you!") { [weak self] (success) in
+            flashSuccessMessage("payment has been received, thank you!") { [weak self] (success) in
                 self?.perform(segue: StoryboardSegue.Account.fromTopUpToAccount)
             }
             
@@ -115,7 +115,7 @@ extension TopUpViewController: STPPaymentContextDelegate {
             // Present error to user
             if let error = error {
                 logger.error(error.localizedDescription)
-                dismissLoading(withMessage: error.localizedDescription)
+                flashErrorMessage(error.localizedDescription)
             }
         case .userCancellation:
             // Reset ride request state

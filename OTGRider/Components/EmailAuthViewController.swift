@@ -97,21 +97,21 @@ class EmailAuthViewController: UIViewController {
     
     private func handleAuthCompletion(_ error: Error?) {
         DispatchQueue.main.async {
-            // reset UI
-            if let error = error {
-                self.dismissLoading(withMessage: error.localizedDescription)
-            } else {
-                self.dismissLoading()
-                if Defaults[.userOnboarded] {
-                    self.perform(segue: self.authType == .signUp ?
-                        StoryboardSegue.SignIn.fromEmailSignUpToMain :
-                        StoryboardSegue.SignIn.fromEmailLogInToMain)
-                }
-                else {
-                    self.perform(segue: self.authType == .signUp ?
-                        StoryboardSegue.SignIn.fromEmailSignUpToOnboard :
-                        StoryboardSegue.SignIn.fromEmailLogInToOnboard)
-                }
+            guard error == nil else {
+                self.flashErrorMessage(error?.localizedDescription)
+                return
+            }
+            
+            self.dismissLoading()
+            if Defaults[.userOnboarded] {
+                self.perform(segue: self.authType == .signUp ?
+                    StoryboardSegue.SignIn.fromEmailSignUpToMain :
+                    StoryboardSegue.SignIn.fromEmailLogInToMain)
+            }
+            else {
+                self.perform(segue: self.authType == .signUp ?
+                    StoryboardSegue.SignIn.fromEmailSignUpToOnboard :
+                    StoryboardSegue.SignIn.fromEmailLogInToOnboard)
             }
         }
     }

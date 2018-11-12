@@ -38,7 +38,7 @@ class EditNameViewController: UIViewController {
         apiTask = UserService().updateProfile(["displayName": displayName], completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 guard error == nil else {
-                    self?.dismissLoading(withMessage: error?.localizedDescription)
+                    self?.flashErrorMessage(error?.localizedDescription)
                     return
                 }
                 

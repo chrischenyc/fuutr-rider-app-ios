@@ -77,12 +77,12 @@ class SettingsTableViewController: UITableViewController {
         apiTask = UserService().getProfile({[weak self] (user, error) in
             DispatchQueue.main.async {
                 guard error == nil else {
-                    self?.dismissLoading(withMessage: error?.localizedDescription)
+                    self?.flashErrorMessage(error?.localizedDescription)
                     return
                 }
                 
                 guard let user = user else {
-                    self?.dismissLoading(withMessage: L10n.kOtherError)
+                    self?.flashErrorMessage(L10n.kOtherError)
                     return
                 }
                 

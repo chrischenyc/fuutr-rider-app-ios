@@ -29,10 +29,20 @@ class MapViewController: UIViewController {
         mapView.camera = camera
         mapView.delegate = self
         
-        // get user location
-        // TODO: check if permission granted
+        // request location permisison if needed
         locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
+        switch CLLocationManager.authorizationStatus() {
+        case .denied,
+             .restricted:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+                self?.promptForLocationService()
+            }
+            break
+        case .notDetermined:
+            locationManager.requestAlwaysAuthorization()
+        default:
+            break   // delegate method didChangeAuthorization will be called if permission has been authorized
+        }
     }
     
     
@@ -66,6 +76,23 @@ class MapViewController: UIViewController {
         }
     }
     
+    private func promptForLocationService() {
+        showMessage("This app needs access to the location service so it can find scooters close to you and track your rides.", actionButtonTitle: "Grant access") {
+            
+            if !CLLocationManager.locationServicesEnabled() {
+                if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
+                    // If general location settings are disabled then open general location settings
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            } else {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    // If general location settings are enabled then open location settings for the app
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+        }
+    }
+    
 }
 
 extension MapViewController: GMSMapViewDelegate {
@@ -77,7 +104,7 @@ extension MapViewController: CLLocationManagerDelegate {
     // Handle authorization for the location manager.
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard status == .authorizedAlways || status == .authorizedWhenInUse else {
-            // TODO: handle the case when user declined to grant location access
+            promptForLocationService()
             return
         }
         
