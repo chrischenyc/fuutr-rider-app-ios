@@ -20,6 +20,7 @@ class ResetPasswordSetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        passwordTextField.becomeFirstResponder()
         submitButton.isEnabled = false
     }
     

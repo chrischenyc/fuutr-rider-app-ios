@@ -20,6 +20,7 @@ class ResetPasswordVerifyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        codeTextField.becomeFirstResponder()
         submitButton.isEnabled = false
     }
     
@@ -52,7 +53,9 @@ class ResetPasswordVerifyViewController: UIViewController {
                     return
                 }
                 
-                self?.perform(segue: StoryboardSegue.SignIn.fromResetPasswordVerifyCodeToSetPassword)
+                self?.dismissLoading(withMessage: "Code looks good!", completion: { (finished) in
+                    self?.perform(segue: StoryboardSegue.SignIn.fromResetPasswordVerifyCodeToSetPassword)
+                })
             }
         })
     }
@@ -70,7 +73,9 @@ class ResetPasswordVerifyViewController: UIViewController {
                     return
                 }
                 
-                self?.dismissLoading(withMessage: "Code sent, please check your email")
+                self?.dismissLoading(withMessage: "Code sent, please check your email", completion: { (finished) in
+                    self?.codeTextField.becomeFirstResponder()
+                })
             }
         })
     }

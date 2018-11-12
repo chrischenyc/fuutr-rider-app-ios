@@ -36,9 +36,16 @@ class EmailAuthViewController: UIViewController {
                 emailAuthViewController.authType = .logIn
             }
         }
+        else if let resetPasswordRequestViewController = segue.destination as? ResetPasswordRequestViewController {
+            resetPasswordRequestViewController.email = emailTextField.text
+        }
     }
     
     @IBAction func unwindToEmailAuth(_ unwindSegue: UIStoryboardSegue) {
+        if let resetPasswordSetViewController = unwindSegue.source as? ResetPasswordSetViewController {
+            emailTextField.text = resetPasswordSetViewController.email
+            passwordTextField.text = ""
+        }
     }
     
     @IBAction func unwindToEmailSignUp(_ unwindSegue: UIStoryboardSegue) {

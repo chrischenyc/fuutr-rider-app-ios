@@ -14,12 +14,14 @@ class ResetPasswordRequestViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     
     private var apiTask: URLSessionTask?
-    
+    var email: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        submitButton.isEnabled = false
+        emailTextField.becomeFirstResponder()
+        emailTextField.text = email
+        validateInput()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,12 +31,7 @@ class ResetPasswordRequestViewController: UIViewController {
     }
     
     @IBAction func emailChanged(_ sender: Any) {
-        guard let email = emailTextField.text else {
-            submitButton.isEnabled = false
-            return
-        }
-        
-        submitButton.isEnabled = email.isEmail()
+        validateInput()
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
@@ -50,9 +47,20 @@ class ResetPasswordRequestViewController: UIViewController {
                     return
                 }
                 
-                self?.perform(segue: StoryboardSegue.SignIn.fromResetPasswordSendCodeToVerifyCode)
+                self?.dismissLoading(withMessage: "Code sent, please check your email", completion: { (finished) in
+                    self?.perform(segue: StoryboardSegue.SignIn.fromResetPasswordSendCodeToVerifyCode)
+                })
             }
         })
+    }
+    
+    private func validateInput() {
+        guard let email = emailTextField.text else {
+            submitButton.isEnabled = false
+            return
+        }
+        
+        submitButton.isEnabled = email.isEmail()
     }
     
 }

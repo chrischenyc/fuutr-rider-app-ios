@@ -411,7 +411,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="send" textContentType="email"/>
                                         <connections>
                                             <action selector="emailChanged:" destination="IDh-xS-5PR" eventType="editingChanged" id="zrl-aQ-0wL"/>
                                         </connections>
@@ -471,7 +471,7 @@
                                         <rect key="frame" x="0.0" y="36.5" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="send" textContentType="postal-code"/>
                                         <connections>
                                             <action selector="codeChanged:" destination="elZ-oQ-Gj9" eventType="editingChanged" id="1QC-tj-NrG"/>
                                         </connections>
@@ -527,7 +527,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="send" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
                                         <connections>
                                             <action selector="passwordChanged:" destination="QqQ-Gy-xzc" eventType="editingChanged" id="ywh-oP-fMY"/>
                                         </connections>

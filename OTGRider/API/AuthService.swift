@@ -172,6 +172,11 @@ final class AuthService {
         })
     }
     
+    
+}
+
+// MARK: - internal
+extension AuthService {
     private static func forceSignIn() {
         Defaults[.userSignedIn] = false
         Defaults[.accessToken] = ""
