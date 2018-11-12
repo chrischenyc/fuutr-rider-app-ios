@@ -54,7 +54,12 @@ class MapViewController: UIViewController {
                 case .settings:
                     self.perform(segue: StoryboardSegue.Main.showSettings)
                 case .help:
-                    self.perform(segue: StoryboardSegue.Main.showHelp)
+                    if let url = URL(string: config.env.helpURL), UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                    
+                    // in case we need to integrate and present help desk page in app
+                    // self.perform(segue: StoryboardSegue.Main.showHelp)
                 }
                 
             }

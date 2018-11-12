@@ -55,4 +55,12 @@ enum Environment: String {
         case .Production: return ""
         }
     }
+    
+    var helpURL: String {
+        switch self {
+        case .Development: return "https://www.otgride.com/how-it-works"
+        case .Staging: return "https://www.otgride.com/how-it-works"
+        case .Production: return "https://www.otgride.com/how-it-works"
+        }
+    }
 }
