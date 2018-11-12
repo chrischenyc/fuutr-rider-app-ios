@@ -46,14 +46,11 @@ class SettingsTableViewController: UITableViewController {
         Defaults[.userSignedIn] = false
         Defaults[.accessToken] = ""
         Defaults[.refreshToken] = ""
-        
-        DispatchQueue.main.async {
-            if FBSDKAccessToken.current() != nil {
-                FBSDKLoginManager().logOut()
-            }
-            
-            self.perform(segue: StoryboardSegue.Settings.showSignIn)
+        if FBSDKAccessToken.current() != nil {
+            FBSDKLoginManager().logOut()
         }
+        
+        NotificationCenter.default.post(name: .userSignedOut, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleExpiredAccessToken), name: .accessTokenExpired, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleUserSignedOut), name: .userSignedOut, object: nil)
         
         return true
     }
@@ -130,7 +130,7 @@ extension AppDelegate: MessagingDelegate {
 }
 
 extension AppDelegate {
-    @objc func handleExpiredAccessToken(notification: Notification) {
+    @objc func handleUserSignedOut(notification: Notification) {
         guard let signInViewController = UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController() as? SignInViewController else { return }
         
         DispatchQueue.main.async {

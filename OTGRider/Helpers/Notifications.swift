@@ -9,5 +9,5 @@
 import Foundation
 
 extension Notification.Name {
-    static let accessTokenExpired = Notification.Name("accessTokenExpired")
+    static let userSignedOut = Notification.Name("com.otgride.userSignedOut")
 }

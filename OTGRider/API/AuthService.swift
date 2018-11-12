@@ -188,7 +188,7 @@ extension AuthService {
             }
         }
         
-        NotificationCenter.default.post(name: .accessTokenExpired, object: nil)
+        NotificationCenter.default.post(name: .userSignedOut, object: nil)
     }
     
     private func handleAuthenticationResult(result: Any) {
