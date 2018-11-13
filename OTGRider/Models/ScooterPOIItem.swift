@@ -13,11 +13,13 @@ class ScooterPOIItem: NSObject, GMUClusterItem {
     var iotCode: String?
     var vehicleCode: String?
     var powerPercent: Int?
+    var remainderRange: Int?
     
     init(scooter: Scooter) {
         self.position = CLLocationCoordinate2DMake(scooter.latitude!, scooter.longitude!)
         self.iotCode = scooter.iotCode
         self.vehicleCode = scooter.vehicleCode
         self.powerPercent = scooter.powerPercent
+        self.remainderRange = scooter.remainderRange
     }
 }

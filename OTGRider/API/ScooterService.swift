@@ -9,27 +9,6 @@
 import Foundation
 
 final class ScooterService {
-    func searchInRadius(latitude: Double, longitude: Double, radius: Double, completion: @escaping ([Scooter]?, Error?) -> Void) -> URLSessionDataTask? {
-        
-        let params: JSON = [
-            "latitude": latitude,
-            "longitude": longitude,
-            "radius": radius
-        ]
-        
-        return APIClient.shared.load(path: "/scooters/search-in-radius",
-                                     method: .get,
-                                     params: params,
-                                     completion: { (result, error) in
-                                        if let jsonArray = result as? [JSON] {
-                                            completion(Scooter.fromJSONArray(jsonArray), nil)
-                                            return
-                                        }
-                                        
-                                        completion(nil, error)
-        })
-    }
-    
     func searchInBound(minLatitude: Double, minLongitude: Double, maxLatitude: Double, maxLongitude: Double, completion: @escaping ([Scooter]?, Error?) -> Void) -> URLSessionDataTask? {
         
         let params: JSON = [

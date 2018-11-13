@@ -205,7 +205,7 @@ extension MapViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        scheduledSearchTimer?.invalidate()
+        
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
@@ -220,9 +220,8 @@ extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let poiItem = marker.userData as? ScooterPOIItem {
-            logger.debug("Did tap marker for cluster item \(String(describing: poiItem.vehicleCode))")
-        } else {
-            logger.debug("Did tap a normal marker")
+            logger.debug("Did tap a normal marker for scooter item \(String(describing: poiItem.vehicleCode))")
+            // TODO: show annotation label for the selected scooter and a pop up
         }
         
         return false

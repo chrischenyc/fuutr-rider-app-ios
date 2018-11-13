@@ -13,6 +13,7 @@ struct Scooter: Mappable {
     var iotCode: String?
     var vehicleCode: String?
     var powerPercent: Int?
+    var remainderRange: Int?
     var latitude: Double?
     var longitude: Double?
     
@@ -24,6 +25,7 @@ struct Scooter: Mappable {
         iotCode         <- map["iotCode"]
         vehicleCode     <- map["vehicleCode"]
         powerPercent    <- map["powerPercent"]
+        remainderRange  <- map["remainderRange"]
         latitude        <- map["latitude"]
         longitude       <- map["longitude"]
     }
