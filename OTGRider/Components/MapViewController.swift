@@ -18,6 +18,7 @@ class MapViewController: UIViewController {
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
     private var searchAPITask: URLSessionTask?
     private var userLocationFound = false
+    private var scheduledSearchTimer: Timer?
     
     @IBOutlet weak var mapView: GMSMapView!
     
@@ -111,8 +112,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    
-    private func searchScooters() {
+    @objc private func searchScooters() {
         let coordinate = mapView.camera.target
         /// TODO: zoom level to radius
         //        let zoom = cameraPosition.zoom
@@ -190,18 +190,23 @@ extension MapViewController: CLLocationManagerDelegate {
 // MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        scheduledSearchTimer?.invalidate()
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        
+        scheduledSearchTimer?.invalidate()
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         guard userLocationFound == true else { return }
         
-        // TODO: start a time which will fire a new search api call unless the time gets invalidates
+        scheduledSearchTimer?.invalidate()
         
-        searchScooters()
+        scheduledSearchTimer = Timer.scheduledTimer(timeInterval: 3,
+                                                    target: self,
+                                                    selector: #selector(searchScooters),
+                                                    userInfo: nil,
+                                                    repeats: false)
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -234,6 +239,15 @@ extension MapViewController: GMUClusterRendererDelegate {
         
         let powerPercent = scooter.powerPercent ?? 0
         
-        marker.icon = Asset.scooter.image
+        if 80...100 ~= powerPercent {
+            marker.icon = Asset.scooterGreen.image
+        } else if 60..<80 ~= powerPercent {
+            marker.icon = Asset.scooterYellow.image
+        } else if 30..<60 ~= powerPercent {
+            marker.icon = Asset.scooterOrange.image
+        } else {
+            marker.icon = Asset.scooterRed.image
+        }
+        
     }
 }
