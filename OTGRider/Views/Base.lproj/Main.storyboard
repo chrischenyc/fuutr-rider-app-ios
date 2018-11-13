@@ -78,6 +78,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="VZa-Sq-LCR">
+                                <rect key="frame" x="171.5" y="301.5" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="QaK-vs-WAP"/>
+                                    <constraint firstAttribute="width" constant="32" id="nTu-hm-dgg"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-Ss-nph">
                                 <rect key="frame" x="132" y="621" width="111" height="30"/>
                                 <state key="normal" title="SCAN QR CODE"/>
@@ -108,10 +115,12 @@
                         <constraints>
                             <constraint firstItem="CfQ-ca-FN2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0eL-Jy-g3V"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6X2-wB-VND"/>
+                            <constraint firstItem="VZa-Sq-LCR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7D3-J8-QSu"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AnA-aF-8Me"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Dhw-Xp-dVT"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6i-Mk-ptg"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQh-9I-Jzz"/>
+                            <constraint firstItem="VZa-Sq-LCR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-16" id="QiH-3a-nOE"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf3-O6-CJt"/>
                             <constraint firstItem="1MR-Ss-nph" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W8J-2H-ygM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1MR-Ss-nph" secondAttribute="bottom" constant="16" id="X0Q-RH-dS9"/>
@@ -133,6 +142,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pin" width="51.200000762939453" height="51.200000762939453"/>
         <image name="side-menu-icon" width="32" height="32"/>
     </resources>
 </document>
