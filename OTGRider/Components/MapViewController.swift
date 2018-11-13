@@ -12,10 +12,12 @@ import GoogleMaps
 class MapViewController: UIViewController {
     
     private let locationManager = CLLocationManager()
+    private var clusterManager: GMUClusterManager!
     private let countryZoomLevel: Float = 3.6
     private let streetZoomLevel: Float = 15.0
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
     private var searchAPITask: URLSessionTask?
+    private var userLocationFound = false
     
     @IBOutlet weak var mapView: GMSMapView!
     
@@ -28,6 +30,16 @@ class MapViewController: UIViewController {
                                               zoom: countryZoomLevel)
         mapView.camera = camera
         mapView.delegate = self
+        
+        
+        // Set up the cluster manager with the supplied icon generator and renderer.
+        // https://developers.google.com/maps/documentation/ios-sdk/utility/marker-clustering
+        let iconGenerator = GMUDefaultClusterIconGenerator()
+        let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
+        let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
+        clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
+        clusterManager.setDelegate(self, mapDelegate: self)
+        
         
         // request location permisison if needed
         locationManager.delegate = self
@@ -95,49 +107,38 @@ class MapViewController: UIViewController {
     
     
     private func searchScooters() {
-        let cameraPosition: GMSCameraPosition = mapView.camera
-        let coordinate = cameraPosition.target
-        let zoom = cameraPosition.zoom
+        let coordinate = mapView.camera.target
+        /// TODO: zoom level to radius
+        //        let zoom = cameraPosition.zoom
         
         searchAPITask?.cancel()
         searchAPITask = ScooterService().search(latitude: coordinate.latitude,
-                                          longitude: coordinate.longitude,
-                                          radius: 5,
-                                          completion: { [weak self] (scooters, error) in
-                                            guard error == nil else {
-                                                logger.error(error?.localizedDescription)
-                                                return
-                                            }
-                                            
-                                            guard let scooters = scooters else {
-                                                return
-                                            }
-                                            
-                                            self?.addMapMakers(forScooters: scooters)
+                                                longitude: coordinate.longitude,
+                                                radius: 0.01,
+                                                completion: { [weak self] (scooters, error) in
+                                                    guard error == nil else {
+                                                        logger.error(error?.localizedDescription)
+                                                        return
+                                                    }
+                                                    
+                                                    guard let scooters = scooters else {
+                                                        return
+                                                    }
+                                                    
+                                                    self?.addMapMakers(forScooters: scooters)
         })
     }
     
     private func addMapMakers(forScooters scooters: [Scooter]) {
-        logger.debug(scooters)
-        // TODO: add to google map
-    }
-}
-
-// MARK: - GMSMapViewDelegate
-extension MapViewController: GMSMapViewDelegate {
-    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        searchAPITask?.cancel()
-    }
-    
-    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        searchAPITask?.cancel()
-        
-        logger.debug("moved to: \(position.target.latitude) \(position.target.longitude)")
-        logger.debug("map camera: \(mapView.camera.target.latitude) \(mapView.camera.target.longitude)")
-    }
-    
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        return true
+        DispatchQueue.main.async {
+            // add new item
+            let items = scooters.map { (scooter) -> ScooterPOIItem in
+                return ScooterPOIItem(scooter: scooter)
+            }
+            self.clusterManager.add(items)
+            
+            self.clusterManager.cluster()
+        }
     }
 }
 
@@ -159,17 +160,15 @@ extension MapViewController: CLLocationManagerDelegate {
     
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
+        guard !userLocationFound, let location = locations.first else { return }
+        
+        locationManager.stopUpdatingLocation()
+        userLocationFound = true
         
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                               longitude: location.coordinate.longitude,
                                               zoom: streetZoomLevel)
-        
         mapView.animate(to: camera)
-        
-        locationManager.stopUpdatingLocation()
-        
-        searchScooters()
     }
     
     // Handle location manager errors.
@@ -180,3 +179,40 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: - GMSMapViewDelegate
+extension MapViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+    }
+    
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        
+    }
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        guard userLocationFound == true else { return }
+        
+        // TODO: start a time which will fire a new search api call unless the time gets invalidates
+        
+        searchScooters()
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        if let poiItem = marker.userData as? ScooterPOIItem {
+            logger.debug("Did tap marker for cluster item \(String(describing: poiItem.vehicleCode))")
+        } else {
+            logger.debug("Did tap a normal marker")
+        }
+        
+        return false
+    }
+}
+
+// MARK: - GMUClusterManagerDelegate
+extension MapViewController: GMUClusterManagerDelegate {
+    func clusterManager(_ clusterManager: GMUClusterManager, didTap cluster: GMUCluster) -> Bool {
+        let newCamera = GMSCameraPosition.camera(withTarget: cluster.position, zoom: mapView.camera.zoom + 1)
+        mapView.animate(to: newCamera)
+        
+        return true
+    }
+}

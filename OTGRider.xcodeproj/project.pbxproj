@@ -190,6 +190,9 @@
 		6BD472AE219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD47260219A4CAA00D36C3E /* GMUStaticCluster.m */; };
 		6BD472AF219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD47260219A4CAA00D36C3E /* GMUStaticCluster.m */; };
 		6BD472B0219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD47260219A4CAA00D36C3E /* GMUStaticCluster.m */; };
+		6BD472B2219A4DB300D36C3E /* ScooterPOIItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD472B1219A4DB300D36C3E /* ScooterPOIItem.swift */; };
+		6BD472B3219A4DB300D36C3E /* ScooterPOIItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD472B1219A4DB300D36C3E /* ScooterPOIItem.swift */; };
+		6BD472B4219A4DB300D36C3E /* ScooterPOIItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD472B1219A4DB300D36C3E /* ScooterPOIItem.swift */; };
 		6BDE9120218C19DF003F976B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
 		6BDE9121218C19DF003F976B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731AF2189BA8D00CC2651 /* Assets.swift */; };
 		6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C22189CA0400CC2651 /* String+Validate.swift */; };
@@ -377,6 +380,7 @@
 		6BD47260219A4CAA00D36C3E /* GMUStaticCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUStaticCluster.m; sourceTree = "<group>"; };
 		6BD47261219A4CAA00D36C3E /* GMUCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUCluster.h; sourceTree = "<group>"; };
 		6BD47262219A4CAA00D36C3E /* GMUClusterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUClusterItem.h; sourceTree = "<group>"; };
+		6BD472B1219A4DB300D36C3E /* ScooterPOIItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterPOIItem.swift; sourceTree = "<group>"; };
 		6BDE911A218C1983003F976B /* OTGRider-staging.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "OTGRider-staging.entitlements"; sourceTree = "<group>"; };
 		6BDE9146218C19DF003F976B /* OTGRider-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTGRider-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BDE9148218C1A30003F976B /* Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dev-Info.plist"; sourceTree = "<group>"; };
@@ -457,6 +461,7 @@
 				6B6C6AE62197CE3300D956DC /* User.swift */,
 				6B31E1F22197F44E00CB424E /* Payment.swift */,
 				6B1D1E86219A232300F72798 /* Scooter.swift */,
+				6BD472B1219A4DB300D36C3E /* ScooterPOIItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1453,6 +1458,7 @@
 				6BD4726E219A4CAA00D36C3E /* GMUKMLParser.m in Sources */,
 				6BD47298219A4CAA00D36C3E /* GQTPointQuadTreeChild.m in Sources */,
 				6BD472AD219A4CAA00D36C3E /* GMUDefaultClusterIconGenerator.m in Sources */,
+				6BD472B4219A4DB300D36C3E /* ScooterPOIItem.swift in Sources */,
 				6BD4727A219A4CAA00D36C3E /* GMUPolygon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1529,6 +1535,7 @@
 				6BD4726C219A4CAA00D36C3E /* GMUKMLParser.m in Sources */,
 				6BD47296219A4CAA00D36C3E /* GQTPointQuadTreeChild.m in Sources */,
 				6BD472AB219A4CAA00D36C3E /* GMUDefaultClusterIconGenerator.m in Sources */,
+				6BD472B2219A4DB300D36C3E /* ScooterPOIItem.swift in Sources */,
 				6BD47278219A4CAA00D36C3E /* GMUPolygon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1605,6 +1612,7 @@
 				6BD4726D219A4CAA00D36C3E /* GMUKMLParser.m in Sources */,
 				6BD47297219A4CAA00D36C3E /* GQTPointQuadTreeChild.m in Sources */,
 				6BD472AC219A4CAA00D36C3E /* GMUDefaultClusterIconGenerator.m in Sources */,
+				6BD472B3219A4DB300D36C3E /* ScooterPOIItem.swift in Sources */,
 				6BD47279219A4CAA00D36C3E /* GMUPolygon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
