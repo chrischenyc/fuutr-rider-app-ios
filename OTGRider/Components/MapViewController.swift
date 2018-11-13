@@ -14,10 +14,10 @@ class MapViewController: UIViewController {
     private let locationManager = CLLocationManager()
     private var clusterManager: GMUClusterManager!
     private let countryZoomLevel: Float = 3.6
-    private let streetZoomLevel: Float = 15.0
+    private let streetZoomLevel: Float = 16.0
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
+    private let searchReferTime: TimeInterval = 1.5
     private var searchAPITask: URLSessionTask?
-    private var userLocationFound = false
     private var scheduledSearchTimer: Timer?
     
     @IBOutlet weak var mapView: GMSMapView!
@@ -31,6 +31,16 @@ class MapViewController: UIViewController {
                                               zoom: countryZoomLevel)
         mapView.camera = camera
         mapView.delegate = self
+        do {
+            // Set the map style by passing the URL of the local file.
+            if let styleURL = Bundle.main.url(forResource: "GoogleMapStyle", withExtension: "json") {
+                mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+            } else {
+                logger.error("Unable to find style.json")
+            }
+        } catch {
+            logger.error("One or more of the map styles failed to load. \(error)")
+        }
         
         
         // Set up the cluster manager with the supplied icon generator and renderer.
@@ -113,25 +123,27 @@ class MapViewController: UIViewController {
     }
     
     @objc private func searchScooters() {
-        let coordinate = mapView.camera.target
-        /// TODO: zoom level to radius
-        //        let zoom = cameraPosition.zoom
-        
         searchAPITask?.cancel()
-        searchAPITask = ScooterService().search(latitude: coordinate.latitude,
-                                                longitude: coordinate.longitude,
-                                                radius: 0.01,
-                                                completion: { [weak self] (scooters, error) in
-                                                    guard error == nil else {
-                                                        logger.error(error?.localizedDescription)
-                                                        return
-                                                    }
-                                                    
-                                                    guard let scooters = scooters else {
-                                                        return
-                                                    }
-                                                    
-                                                    self?.addMapMakers(forScooters: scooters)
+        
+        let currentMapViewBounds = GMSCoordinateBounds(region: mapView.projection.visibleRegion())
+        let northEast = currentMapViewBounds.northEast
+        let southWest = currentMapViewBounds.southWest
+        
+        searchAPITask = ScooterService().searchInBound(minLatitude: southWest.latitude,
+                                                       minLongitude: southWest.longitude,
+                                                       maxLatitude: northEast.latitude,
+                                                       maxLongitude: northEast.longitude,
+                                                       completion: { [weak self] (scooters, error) in
+                                                        guard error == nil else {
+                                                            logger.error(error?.localizedDescription)
+                                                            return
+                                                        }
+                                                        
+                                                        guard let scooters = scooters else {
+                                                            return
+                                                        }
+                                                        
+                                                        self?.addMapMakers(forScooters: scooters)
         })
     }
     
@@ -168,10 +180,9 @@ extension MapViewController: CLLocationManagerDelegate {
     
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard !userLocationFound, let location = locations.first else { return }
+        guard let location = locations.first else { return }
         
         locationManager.stopUpdatingLocation()
-        userLocationFound = true
         
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                               longitude: location.coordinate.longitude,
@@ -198,11 +209,9 @@ extension MapViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        guard userLocationFound == true else { return }
-        
         scheduledSearchTimer?.invalidate()
         
-        scheduledSearchTimer = Timer.scheduledTimer(timeInterval: 3,
+        scheduledSearchTimer = Timer.scheduledTimer(timeInterval: searchReferTime,
                                                     target: self,
                                                     selector: #selector(searchScooters),
                                                     userInfo: nil,

@@ -112,6 +112,9 @@
 		6BB6CB722196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
 		6BB6CB732196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
 		6BB6CB742196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
+		6BBE6C7D219AE6CA002D639B /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */; };
+		6BBE6C7E219AE6CA002D639B /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */; };
+		6BBE6C7F219AE6CA002D639B /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */; };
 		6BD47263219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4721B219A4CA900D36C3E /* GMUWeightedLatLng.m */; };
 		6BD47264219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4721B219A4CA900D36C3E /* GMUWeightedLatLng.m */; };
 		6BD47265219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4721B219A4CA900D36C3E /* GMUWeightedLatLng.m */; };
@@ -312,6 +315,7 @@
 		6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapStyle.json; sourceTree = "<group>"; };
 		6BD47211219A4C5600D36C3E /* OTGRider-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OTGRider-Bridging-Header.h"; sourceTree = "<group>"; };
 		6BD4721A219A4CA900D36C3E /* GMUGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUGradient.h; sourceTree = "<group>"; };
 		6BD4721B219A4CA900D36C3E /* GMUWeightedLatLng.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUWeightedLatLng.m; sourceTree = "<group>"; };
@@ -527,6 +531,7 @@
 				6BDE9156218C35B7003F976B /* GoogleService-Info.plist */,
 				6BDE9159218C4E62003F976B /* GoogleService-Info.plist */,
 				6BD47211219A4C5600D36C3E /* OTGRider-Bridging-Header.h */,
+				6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -953,6 +958,7 @@
 				6BDE9134218C19DF003F976B /* HowToRide.storyboard in Resources */,
 				6BDE9135218C19DF003F976B /* Account.storyboard in Resources */,
 				6BDE9136218C19DF003F976B /* LaunchScreen.storyboard in Resources */,
+				6BBE6C7F219AE6CA002D639B /* GoogleMapStyle.json in Resources */,
 				6BDE9137218C19DF003F976B /* Settings.storyboard in Resources */,
 				6BDE9138218C19DF003F976B /* Help.storyboard in Resources */,
 				6BDE9139218C19DF003F976B /* SignIn.storyboard in Resources */,
@@ -971,6 +977,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B8731DE218A962D00CC2651 /* HowToRide.storyboard in Resources */,
+				6BBE6C7D219AE6CA002D639B /* GoogleMapStyle.json in Resources */,
 				6B8731E6218A986200CC2651 /* Account.storyboard in Resources */,
 				A0CFE7A521747BF500BA3F6D /* LaunchScreen.storyboard in Resources */,
 				6B8731EE218A98EF00CC2651 /* Settings.storyboard in Resources */,
@@ -992,6 +999,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B8731DF218A962D00CC2651 /* HowToRide.storyboard in Resources */,
+				6BBE6C7E219AE6CA002D639B /* GoogleMapStyle.json in Resources */,
 				6B8731E7218A986200CC2651 /* Account.storyboard in Resources */,
 				A0CFE7B221747D2B00BA3F6D /* LaunchScreen.storyboard in Resources */,
 				6B8731EF218A98EF00CC2651 /* Settings.storyboard in Resources */,
