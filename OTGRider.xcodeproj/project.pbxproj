@@ -431,6 +431,21 @@
 			name = Ride;
 			sourceTree = "<group>";
 		};
+		6BD47170219A47E900D36C3E /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				6BD47171219A485C00D36C3E /* Google-Maps-iOS-Utils */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		6BD47171219A485C00D36C3E /* Google-Maps-iOS-Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Google-Maps-iOS-Utils";
+			sourceTree = "<group>";
+		};
 		6BDE914F218C3055003F976B /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +490,7 @@
 				6BDE914F218C3055003F976B /* API */,
 				6B8731A1218997A000CC2651 /* Helpers */,
 				6B8731AD2189BA6B00CC2651 /* Generated */,
+				6BD47170219A47E900D36C3E /* Libraries */,
 				6BB6CB6C2196501C00B597B3 /* Supporting Files */,
 			);
 			path = OTGRider;

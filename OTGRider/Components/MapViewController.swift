@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     private let countryZoomLevel: Float = 3.6
     private let streetZoomLevel: Float = 15.0
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
-    private var apiTask: URLSessionTask?
+    private var searchAPITask: URLSessionTask?
     
     @IBOutlet weak var mapView: GMSMapView!
     
@@ -99,8 +99,8 @@ class MapViewController: UIViewController {
         let coordinate = cameraPosition.target
         let zoom = cameraPosition.zoom
         
-        apiTask?.cancel()
-        apiTask = ScooterService().search(latitude: coordinate.latitude,
+        searchAPITask?.cancel()
+        searchAPITask = ScooterService().search(latitude: coordinate.latitude,
                                           longitude: coordinate.longitude,
                                           radius: 5,
                                           completion: { [weak self] (scooters, error) in
@@ -125,7 +125,20 @@ class MapViewController: UIViewController {
 
 // MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        searchAPITask?.cancel()
+    }
     
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        searchAPITask?.cancel()
+        
+        logger.debug("moved to: \(position.target.latitude) \(position.target.longitude)")
+        logger.debug("map camera: \(mapView.camera.target.latitude) \(mapView.camera.target.longitude)")
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        return true
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
