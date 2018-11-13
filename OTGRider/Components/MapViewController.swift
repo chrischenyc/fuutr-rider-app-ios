@@ -34,9 +34,15 @@ class MapViewController: UIViewController {
         
         // Set up the cluster manager with the supplied icon generator and renderer.
         // https://developers.google.com/maps/documentation/ios-sdk/utility/marker-clustering
-        let iconGenerator = CluserIconGenerator()
+        
+        let iconGenerator = GMUDefaultClusterIconGenerator(buckets: [10, 20, 50, 100],
+                                                           backgroundImages: [Asset.sideMenuIcon.image,
+                                                                              Asset.sideMenuIcon.image,
+                                                                              Asset.sideMenuIcon.image,
+                                                                              Asset.sideMenuIcon.image])
         let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
         let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
+        renderer.delegate = self
         clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
         clusterManager.setDelegate(self, mapDelegate: self)
         
@@ -133,7 +139,9 @@ class MapViewController: UIViewController {
         DispatchQueue.main.async {
             // add new item
             let items = scooters.map { (scooter) -> ScooterPOIItem in
-                return ScooterPOIItem(scooter: scooter)
+                let item = ScooterPOIItem(scooter: scooter)
+                
+                return item
             }
             self.clusterManager.add(items)
             
@@ -205,6 +213,8 @@ extension MapViewController: GMSMapViewDelegate {
         
         return false
     }
+    
+    
 }
 
 // MARK: - GMUClusterManagerDelegate
@@ -214,5 +224,16 @@ extension MapViewController: GMUClusterManagerDelegate {
         mapView.animate(to: newCamera)
         
         return true
+    }
+}
+
+// MARK: - GMUClusterRendererDelegate
+extension MapViewController: GMUClusterRendererDelegate {
+    func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
+        guard let scooter = marker.userData as? ScooterPOIItem else { return }
+        
+        let powerPercent = scooter.powerPercent ?? 0
+        
+        marker.icon = Asset.scooter.image
     }
 }
