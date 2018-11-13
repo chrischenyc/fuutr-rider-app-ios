@@ -34,7 +34,7 @@ class MapViewController: UIViewController {
         
         // Set up the cluster manager with the supplied icon generator and renderer.
         // https://developers.google.com/maps/documentation/ios-sdk/utility/marker-clustering
-        let iconGenerator = GMUDefaultClusterIconGenerator()
+        let iconGenerator = CluserIconGenerator()
         let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
         let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
         clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
