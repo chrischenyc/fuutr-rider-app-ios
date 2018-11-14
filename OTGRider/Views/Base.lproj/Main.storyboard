@@ -119,6 +119,93 @@
                                     <segue destination="xVf-4u-b1H" kind="presentation" id="9mY-jt-ZDY"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXS-jP-Qde" customClass="ScooterInfoView" customModule="OTGRider" customModuleProvider="target">
+                                <rect key="frame" x="24" y="80" width="327" height="96"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Ds-Z8-uir">
+                                        <rect key="frame" x="16" y="8" width="295" height="80"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGk-Av-fIq">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="33.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dzV-yC-Q6w">
+                                                        <rect key="frame" x="0.0" y="0.0" width="295" height="33.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KR5-fh-ScN">
+                                                                <rect key="frame" x="0.0" y="2.5" width="41.5" height="29"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v80-fh-IcA">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7I-2o-htz">
+                                                                        <rect key="frame" x="0.0" y="14.5" width="41.5" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Pricing" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfL-Qv-xUp">
+                                                                <rect key="frame" x="41.5" y="9.5" width="253.5" height="14.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBg-Vg-ahY">
+                                                <rect key="frame" x="0.0" y="41.5" width="295" height="0.5"/>
+                                                <subviews>
+                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEh-id-tOG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="295" height="0.5"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="0.5" id="UD7-0t-v6o"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qp6-sk-VjH">
+                                                <rect key="frame" x="0.0" y="50" width="295" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-RX-qKE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="143.5" height="30"/>
+                                                        <state key="normal" title="Toot"/>
+                                                        <connections>
+                                                            <action selector="tootButtonTapped:" destination="AXS-jP-Qde" eventType="touchUpInside" id="t7T-ls-06C"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNb-dt-V2j">
+                                                        <rect key="frame" x="151.5" y="0.0" width="143.5" height="30"/>
+                                                        <state key="normal" title="Report Issue"/>
+                                                        <connections>
+                                                            <action selector="reportButtonTapped:" destination="AXS-jP-Qde" eventType="touchUpInside" id="t2e-Bb-UuL"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="3Ds-Z8-uir" firstAttribute="top" secondItem="AXS-jP-Qde" secondAttribute="top" constant="8" id="1k9-p9-tOz"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Ds-Z8-uir" secondAttribute="bottom" constant="8" id="46o-0R-zmB"/>
+                                    <constraint firstAttribute="height" constant="96" id="5pg-XF-mVz"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Ds-Z8-uir" secondAttribute="trailing" constant="16" id="6o6-aG-igP"/>
+                                    <constraint firstItem="3Ds-Z8-uir" firstAttribute="leading" secondItem="AXS-jP-Qde" secondAttribute="leading" constant="16" id="Lix-QP-PPS"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="batteryLabel" destination="v80-fh-IcA" id="GAi-qX-lcg"/>
+                                    <outlet property="pricingLabel" destination="AfL-Qv-xUp" id="AsD-0U-sd7"/>
+                                    <outlet property="rangeLabel" destination="k7I-2o-htz" id="Qor-W9-NB8"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -133,6 +220,9 @@
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf3-O6-CJt"/>
                             <constraint firstItem="1MR-Ss-nph" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W8J-2H-ygM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1MR-Ss-nph" secondAttribute="bottom" constant="16" id="X0Q-RH-dS9"/>
+                            <constraint firstItem="AXS-jP-Qde" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="176" id="ikx-gV-4XW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AXS-jP-Qde" secondAttribute="trailing" constant="24" id="oPz-lR-QhX"/>
+                            <constraint firstItem="AXS-jP-Qde" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="rUd-K2-0fC"/>
                             <constraint firstItem="CfQ-ca-FN2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOs-O4-oXO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -141,6 +231,8 @@
                         <outlet property="guideButton" destination="CfQ-ca-FN2" id="nby-5I-2EI"/>
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
                         <outlet property="scanButton" destination="1MR-Ss-nph" id="wJT-vO-elG"/>
+                        <outlet property="scooterInfoView" destination="AXS-jP-Qde" id="bl0-u1-D5g"/>
+                        <outlet property="scooterInfoViewBottomConstraint" destination="ikx-gV-4XW" id="pjI-XV-grW"/>
                         <outlet property="sideMenuButton" destination="wXu-gN-jng" id="Szo-TM-gWK"/>
                         <segue destination="6ub-gY-uRn" kind="presentation" identifier="showHistory" id="jgO-zq-Q4p"/>
                         <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showAccount" id="NuG-ER-BNQ"/>

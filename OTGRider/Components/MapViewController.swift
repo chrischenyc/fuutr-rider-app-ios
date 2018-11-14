@@ -19,11 +19,14 @@ class MapViewController: UIViewController {
     private let searchReferTime: TimeInterval = 1.5
     private var searchAPITask: URLSessionTask?
     private var scheduledSearchTimer: Timer?
+    private let scooterInfoViewBottomToSuperView: CGFloat = 194
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuButton: UIButton!
     @IBOutlet weak var guideButton: UIButton!
     @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var scooterInfoView: ScooterInfoView!
+    @IBOutlet weak var scooterInfoViewBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,9 @@ class MapViewController: UIViewController {
         guideButton.backgroundColor = UIColor.otgWhite
         scanButton.layoutCornerRadiusAndShadow()
         scanButton.backgroundColor = UIColor.otgWhite
+        scooterInfoView.backgroundColor = UIColor.otgWhite
+        scooterInfoView.layoutCornerRadiusAndShadow()
+        hideScooterInfo()
         
         // init Google Map with default view
         let camera = GMSCameraPosition.camera(withLatitude: defaultCoordinate.latitude,
@@ -169,6 +175,19 @@ class MapViewController: UIViewController {
             self.clusterManager.cluster()
         }
     }
+    
+    private func showScooterInfo(scooter: ScooterPOIItem) {
+        UIView.animate(withDuration: 0.5) {
+            self.scooterInfoView.updateContentWith(scooter: scooter)
+            self.scooterInfoViewBottomConstraint.constant = self.scooterInfoViewBottomToSuperView
+        }
+    }
+    
+    private func hideScooterInfo() {
+        UIView.animate(withDuration: 0.5) {
+            self.scooterInfoViewBottomConstraint.constant = 0
+        }
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -228,15 +247,17 @@ extension MapViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        if let poiItem = marker.userData as? ScooterPOIItem {
-            logger.debug("Did tap a normal marker for scooter item \(String(describing: poiItem.vehicleCode))")
-            // TODO: show annotation label for the selected scooter and a pop up
+        if let scooter = marker.userData as? ScooterPOIItem {
+            logger.debug("Did tap a normal marker for scooter item \(String(describing: scooter.vehicleCode))")
+            showScooterInfo(scooter: scooter)
         }
         
         return false
     }
     
-    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        hideScooterInfo()
+    }
 }
 
 // MARK: - GMUClusterManagerDelegate
