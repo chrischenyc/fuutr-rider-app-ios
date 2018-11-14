@@ -43,8 +43,8 @@
                                             <action selector="phoneNumberVerifyTapped:" destination="9Yg-X6-IMj" eventType="touchUpInside" id="NMt-G8-hgV"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll send a text to verify your number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msX-BP-P0T">
-                                        <rect key="frame" x="17" y="128.5" width="293" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll send a text to verify your number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msX-BP-P0T">
+                                        <rect key="frame" x="8" y="128.5" width="311" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -69,7 +69,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMB-Ei-3Pu">
-                                        <rect key="frame" x="93.5" y="284" width="140" height="30"/>
+                                        <rect key="frame" x="8" y="284" width="311" height="30"/>
                                         <state key="normal" title="email sign up / log in"/>
                                         <connections>
                                             <segue destination="a5m-Kq-tmg" kind="show" id="NGh-tc-vCX"/>
@@ -77,10 +77,14 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JMB-Ei-3Pu" secondAttribute="trailing" constant="8" id="6hu-FX-Drm"/>
                                     <constraint firstItem="7bk-Xn-7Sm" firstAttribute="leading" secondItem="SGR-gA-Me6" secondAttribute="leading" constant="8" id="Em5-5T-1Ra"/>
                                     <constraint firstItem="M2D-h8-K4D" firstAttribute="leading" secondItem="SGR-gA-Me6" secondAttribute="leading" constant="8" id="Lye-fs-PFu"/>
                                     <constraint firstAttribute="trailing" secondItem="Vpl-lZ-PkQ" secondAttribute="trailing" constant="8" id="QI2-ib-d0l"/>
+                                    <constraint firstItem="msX-BP-P0T" firstAttribute="leading" secondItem="SGR-gA-Me6" secondAttribute="leading" constant="8" id="Rbc-nA-rsu"/>
                                     <constraint firstAttribute="trailing" secondItem="M2D-h8-K4D" secondAttribute="trailing" constant="8" id="XtF-4D-H18"/>
+                                    <constraint firstAttribute="trailing" secondItem="msX-BP-P0T" secondAttribute="trailing" constant="8" id="YIR-Ty-vyl"/>
+                                    <constraint firstItem="JMB-Ei-3Pu" firstAttribute="leading" secondItem="SGR-gA-Me6" secondAttribute="leading" constant="8" id="ZSK-g6-QMx"/>
                                     <constraint firstAttribute="trailing" secondItem="7bk-Xn-7Sm" secondAttribute="trailing" constant="8" id="hx2-O8-nnI"/>
                                     <constraint firstItem="Vpl-lZ-PkQ" firstAttribute="leading" secondItem="SGR-gA-Me6" secondAttribute="leading" constant="8" id="jN3-7t-wZ5"/>
                                 </constraints>
@@ -95,6 +99,7 @@
                         <viewLayoutGuide key="safeArea" id="NGA-pj-TOa"/>
                     </view>
                     <connections>
+                        <outlet property="emailSignInButton" destination="JMB-Ei-3Pu" id="9C1-FV-Km8"/>
                         <outlet property="facebookLoginButton" destination="M2D-h8-K4D" id="HB5-il-maV"/>
                         <outlet property="phoneNumberTextField" destination="7bk-Xn-7Sm" id="cUF-wD-t1T"/>
                         <outlet property="phoneNumberVerifyButton" destination="Vpl-lZ-PkQ" id="fbU-aB-Kn6"/>
@@ -569,7 +574,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U9n-5U-fai"/>
-        <segue reference="PB7-vV-uTW"/>
+        <segue reference="uxi-sZ-NDa"/>
+        <segue reference="NYh-wd-6MW"/>
     </inferredMetricsTieBreakers>
 </document>

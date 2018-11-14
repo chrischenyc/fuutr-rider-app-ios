@@ -38,15 +38,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         
         logger.setup(level: logLevel,
-                  showLogIdentifier: false,
-                  showFunctionName: false,
-                  showThreadName: false,
-                  showLevel: true,
-                  showFileNames: true,
-                  showLineNumbers: true,
-                  showDate: true,
-                  writeToFile: nil,
-                  fileLevel: nil)
+                     showLogIdentifier: false,
+                     showFunctionName: false,
+                     showThreadName: false,
+                     showLevel: true,
+                     showFileNames: true,
+                     showLineNumbers: true,
+                     showDate: true,
+                     writeToFile: nil,
+                     fileLevel: nil)
         
         // third-party services init
         #if !DEBUG
@@ -59,8 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configStripe()
         
         // UI init
-        SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
-        SideMenuManager.defaultManager.menuFadeStatusBar = false
+        globalStyling()
         
         // TODO: custom facebook button
         // https://developers.facebook.com/docs/facebook-login/ios/advanced#custom-login-button
@@ -163,5 +162,21 @@ extension AppDelegate {
         STPTheme.default().primaryForegroundColor = .otgDarkBlueColor
         STPTheme.default().secondaryForegroundColor = .otgDarkGrayColor
         STPTheme.default().accentColor = .otgGreenColor
+    }
+}
+
+
+extension AppDelegate {
+    private func globalStyling() {
+        SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
+        SideMenuManager.defaultManager.menuFadeStatusBar = false
+        
+        UIButton.appearance().tintColor = UIColor.otgPrimary
+
+        UINavigationBar.appearance().tintColor = UIColor.otgPrimary
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.otgPrimary]
+        
+        // UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        // UINavigationBar.appearance().shadowImage = UIImage()
     }
 }

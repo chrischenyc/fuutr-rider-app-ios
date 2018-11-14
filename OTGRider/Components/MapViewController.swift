@@ -21,9 +21,18 @@ class MapViewController: UIViewController {
     private var scheduledSearchTimer: Timer?
     
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var sideMenuButton: UIButton!
+    @IBOutlet weak var guideButton: UIButton!
+    @IBOutlet weak var scanButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sideMenuButton.backgroundColor = UIColor.clear
+        guideButton.layoutCornerRadiusAndShadow()
+        guideButton.backgroundColor = UIColor.otgWhite
+        scanButton.layoutCornerRadiusAndShadow()
+        scanButton.backgroundColor = UIColor.otgWhite
         
         // init Google Map with default view
         let camera = GMSCameraPosition.camera(withLatitude: defaultCoordinate.latitude,

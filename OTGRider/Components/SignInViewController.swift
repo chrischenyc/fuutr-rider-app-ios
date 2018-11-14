@@ -16,6 +16,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var phoneNumberVerifyButton: UIButton!
     @IBOutlet weak var phoneNumberVerifyInfoLabel: UILabel!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
+    @IBOutlet weak var emailSignInButton: UIButton!
     
     private var countryCode: UInt64?
     private var phoneNumber: String?
@@ -27,8 +28,13 @@ class SignInViewController: UIViewController {
         
         phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
         phoneNumberVerifyButton.isEnabled = false
+        phoneNumberVerifyButton.backgroundColor = UIColor.otgWhite
+        phoneNumberVerifyButton.layoutCornerRadiusAndShadow()
         facebookLoginButton.readPermissions = ["public_profile", "email"]
         facebookLoginButton.delegate = self
+        facebookLoginButton.layoutCornerRadiusAndShadow()
+        emailSignInButton.layoutCornerRadiusAndShadow()
+        emailSignInButton.backgroundColor = UIColor.otgWhite
     }
     
     override func viewDidAppear(_ animated: Bool) {

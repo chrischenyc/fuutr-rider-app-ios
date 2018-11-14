@@ -115,6 +115,15 @@
 		6BBE6C7D219AE6CA002D639B /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */; };
 		6BBE6C7E219AE6CA002D639B /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */; };
 		6BBE6C7F219AE6CA002D639B /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */; };
+		6BBE6C82219BC9D3002D639B /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE6C81219BC9D3002D639B /* UIView+CornerRadius.swift */; };
+		6BBE6C83219BC9D3002D639B /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE6C81219BC9D3002D639B /* UIView+CornerRadius.swift */; };
+		6BBE6C84219BC9D3002D639B /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE6C81219BC9D3002D639B /* UIView+CornerRadius.swift */; };
+		6BBE6C86219BCA7B002D639B /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE6C85219BCA7B002D639B /* UIViewController+HUD.swift */; };
+		6BBE6C87219BCA7B002D639B /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE6C85219BCA7B002D639B /* UIViewController+HUD.swift */; };
+		6BBE6C88219BCA7B002D639B /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE6C85219BCA7B002D639B /* UIViewController+HUD.swift */; };
+		6BBE6C8A219BCF70002D639B /* CGFloat+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE6C89219BCF70002D639B /* CGFloat+Constants.swift */; };
+		6BBE6C8B219BCF70002D639B /* CGFloat+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE6C89219BCF70002D639B /* CGFloat+Constants.swift */; };
+		6BBE6C8C219BCF70002D639B /* CGFloat+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE6C89219BCF70002D639B /* CGFloat+Constants.swift */; };
 		6BD47263219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4721B219A4CA900D36C3E /* GMUWeightedLatLng.m */; };
 		6BD47264219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4721B219A4CA900D36C3E /* GMUWeightedLatLng.m */; };
 		6BD47265219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4721B219A4CA900D36C3E /* GMUWeightedLatLng.m */; };
@@ -245,9 +254,9 @@
 		6BDE9169218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */; };
 		6BDE916A218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */; };
 		6BDE916B218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */; };
-		6BDE916D218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE916C218CFBF9003F976B /* UIViewControoler+Popup.swift */; };
-		6BDE916E218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE916C218CFBF9003F976B /* UIViewControoler+Popup.swift */; };
-		6BDE916F218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE916C218CFBF9003F976B /* UIViewControoler+Popup.swift */; };
+		6BDE916D218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE916C218CFBF9003F976B /* UIViewControoler+Alert.swift */; };
+		6BDE916E218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE916C218CFBF9003F976B /* UIViewControoler+Alert.swift */; };
+		6BDE916F218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE916C218CFBF9003F976B /* UIViewControoler+Alert.swift */; };
 		6BDE9171218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */; };
 		6BDE9172218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */; };
 		6BDE9173218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */; };
@@ -316,6 +325,9 @@
 		6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapStyle.json; sourceTree = "<group>"; };
+		6BBE6C81219BC9D3002D639B /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
+		6BBE6C85219BCA7B002D639B /* UIViewController+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
+		6BBE6C89219BCF70002D639B /* CGFloat+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Constants.swift"; sourceTree = "<group>"; };
 		6BD47211219A4C5600D36C3E /* OTGRider-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OTGRider-Bridging-Header.h"; sourceTree = "<group>"; };
 		6BD4721A219A4CA900D36C3E /* GMUGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUGradient.h; sourceTree = "<group>"; };
 		6BD4721B219A4CA900D36C3E /* GMUWeightedLatLng.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUWeightedLatLng.m; sourceTree = "<group>"; };
@@ -397,7 +409,7 @@
 		6BDE9160218C833E003F976B /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		6BDE9164218C8FBB003F976B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
-		6BDE916C218CFBF9003F976B /* UIViewControoler+Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControoler+Popup.swift"; sourceTree = "<group>"; };
+		6BDE916C218CFBF9003F976B /* UIViewControoler+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControoler+Alert.swift"; sourceTree = "<group>"; };
 		6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueWithCompletion.swift; sourceTree = "<group>"; };
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		86B2C7CC09C21C83C016544C /* Pods-Project-OTGRider-dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-dev/Pods-Project-OTGRider-dev.debug.xcconfig"; sourceTree = "<group>"; };
@@ -470,21 +482,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		6B8731A1218997A000CC2651 /* Helpers */ = {
+		6B8731A1218997A000CC2651 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				6B8731A2218997B600CC2651 /* Notifications.swift */,
 				6BDE914B218C1DBB003F976B /* Configuration.swift */,
-				6B8731C22189CA0400CC2651 /* String+Validate.swift */,
 				6BDE9160218C833E003F976B /* Aliases.swift */,
-				6BDE916C218CFBF9003F976B /* UIViewControoler+Popup.swift */,
-				6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */,
-				6B214AEB2195B66300553C3D /* Double+Currency.swift */,
 				6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */,
-				6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */,
-				6B31E1F62198141B00CB424E /* Date+Format.swift */,
+				6BBE6C89219BCF70002D639B /* CGFloat+Constants.swift */,
 			);
-			path = Helpers;
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		6B8731AD2189BA6B00CC2651 /* Generated */ = {
@@ -577,6 +584,21 @@
 				6B31E1EE2197F3FC00CB424E /* PaymentsTableViewController.swift */,
 			);
 			name = Account;
+			sourceTree = "<group>";
+		};
+		6BBE6C80219BC926002D639B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				6B8731C22189CA0400CC2651 /* String+Validate.swift */,
+				6BDE916C218CFBF9003F976B /* UIViewControoler+Alert.swift */,
+				6BBE6C85219BCA7B002D639B /* UIViewController+HUD.swift */,
+				6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */,
+				6B214AEB2195B66300553C3D /* Double+Currency.swift */,
+				6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */,
+				6B31E1F62198141B00CB424E /* Date+Format.swift */,
+				6BBE6C81219BC9D3002D639B /* UIView+CornerRadius.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		6BCEFBD6219960A9003FB097 /* Ride */ = {
@@ -726,13 +748,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		6BD472B5219A805500D36C3E /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		6BDE914F218C3055003F976B /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,12 +786,12 @@
 			children = (
 				A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */,
 				6B8731A62189A70600CC2651 /* UserDefaults.swift */,
-				6BD472B5219A805500D36C3E /* Managers */,
 				6B6C6AE52197CE0700D956DC /* Models */,
 				6B8731DB218A957400CC2651 /* Views */,
 				A0CFE7BA21773B7B00BA3F6D /* Components */,
 				6BDE914F218C3055003F976B /* API */,
-				6B8731A1218997A000CC2651 /* Helpers */,
+				6B8731A1218997A000CC2651 /* Constants */,
+				6BBE6C80219BC926002D639B /* Utility */,
 				6B8731AD2189BA6B00CC2651 /* Generated */,
 				6BD47170219A47E900D36C3E /* Libraries */,
 				6BB6CB6C2196501C00B597B3 /* Supporting Files */,
@@ -1412,6 +1427,7 @@
 				6BDE9121218C19DF003F976B /* Assets.swift in Sources */,
 				6BD472B0219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */,
+				6BBE6C88219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA112198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6B31E1F12197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
 				6BDE9123218C19DF003F976B /* UserDefaults.swift in Sources */,
@@ -1428,8 +1444,9 @@
 				6BDE9125218C19DF003F976B /* AppDelegate.swift in Sources */,
 				6B214AEA21958ED100553C3D /* EditPhoneViewController.swift in Sources */,
 				6BD4726B219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
+				6BBE6C8C219BCF70002D639B /* CGFloat+Constants.swift in Sources */,
 				6BD472A7219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
-				6BDE916F218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */,
+				6BDE916F218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6BD472A4219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
 				6BD47268219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF22195C77A00553C3D /* TopUpViewController.swift in Sources */,
@@ -1441,6 +1458,7 @@
 				6B6C6AE92197CE3300D956DC /* User.swift in Sources */,
 				6BD47295219A4CAA00D36C3E /* GQTPointQuadTree.m in Sources */,
 				6BDE9128218C19DF003F976B /* SettingsTableViewController.swift in Sources */,
+				6BBE6C84219BC9D3002D639B /* UIView+CornerRadius.swift in Sources */,
 				6B31E1F52197F44E00CB424E /* Payment.swift in Sources */,
 				6B849D4A21941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B444FE92191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
@@ -1489,6 +1507,7 @@
 				6B8731B22189BA8D00CC2651 /* Assets.swift in Sources */,
 				6BD472AE219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */,
+				6BBE6C86219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA0F2198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6B31E1EF2197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
 				6B8731A72189A70600CC2651 /* UserDefaults.swift in Sources */,
@@ -1505,8 +1524,9 @@
 				A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */,
 				6B214AE821958ED100553C3D /* EditPhoneViewController.swift in Sources */,
 				6BD47269219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
+				6BBE6C8A219BCF70002D639B /* CGFloat+Constants.swift in Sources */,
 				6BD472A5219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
-				6BDE916D218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */,
+				6BDE916D218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6BD472A2219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
 				6BD47266219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF02195C77A00553C3D /* TopUpViewController.swift in Sources */,
@@ -1518,6 +1538,7 @@
 				6B6C6AE72197CE3300D956DC /* User.swift in Sources */,
 				6BD47293219A4CAA00D36C3E /* GQTPointQuadTree.m in Sources */,
 				6B87320A218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */,
+				6BBE6C82219BC9D3002D639B /* UIView+CornerRadius.swift in Sources */,
 				6B31E1F32197F44E00CB424E /* Payment.swift in Sources */,
 				6B849D4821941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B444FE72191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
@@ -1566,6 +1587,7 @@
 				6B8731B32189BA8D00CC2651 /* Assets.swift in Sources */,
 				6BD472AF219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */,
+				6BBE6C87219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA102198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6B31E1F02197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
 				6B8731A82189A70600CC2651 /* UserDefaults.swift in Sources */,
@@ -1582,8 +1604,9 @@
 				A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */,
 				6B214AE921958ED100553C3D /* EditPhoneViewController.swift in Sources */,
 				6BD4726A219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
+				6BBE6C8B219BCF70002D639B /* CGFloat+Constants.swift in Sources */,
 				6BD472A6219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
-				6BDE916E218CFBF9003F976B /* UIViewControoler+Popup.swift in Sources */,
+				6BDE916E218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6BD472A3219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
 				6BD47267219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF12195C77A00553C3D /* TopUpViewController.swift in Sources */,
@@ -1595,6 +1618,7 @@
 				6B6C6AE82197CE3300D956DC /* User.swift in Sources */,
 				6BD47294219A4CAA00D36C3E /* GQTPointQuadTree.m in Sources */,
 				6B87320B218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */,
+				6BBE6C83219BC9D3002D639B /* UIView+CornerRadius.swift in Sources */,
 				6B31E1F42197F44E00CB424E /* Payment.swift in Sources */,
 				6B849D4921941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B444FE82191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
