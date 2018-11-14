@@ -177,15 +177,19 @@ class MapViewController: UIViewController {
     }
     
     private func showScooterInfo(scooter: ScooterPOIItem) {
-        UIView.animate(withDuration: 0.5) {
-            self.scooterInfoView.updateContentWith(scooter: scooter)
-            self.scooterInfoViewBottomConstraint.constant = self.scooterInfoViewBottomToSuperView
+        self.scooterInfoView.updateContentWith(scooter: scooter)
+        self.scooterInfoViewBottomConstraint.constant = self.scooterInfoViewBottomToSuperView
+        
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
         }
     }
     
     private func hideScooterInfo() {
-        UIView.animate(withDuration: 0.5) {
-            self.scooterInfoViewBottomConstraint.constant = 0
+        self.scooterInfoViewBottomConstraint.constant = 0
+        
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
         }
     }
 }
