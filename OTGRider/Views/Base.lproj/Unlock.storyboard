@@ -28,6 +28,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZg-jL-qwt">
                                 <rect key="frame" x="233.5" y="573" width="36" height="30"/>
                                 <state key="normal" title="torch"/>
+                                <connections>
+                                    <action selector="torchButtonTapped:" destination="DvR-xo-IsL" eventType="touchUpInside" id="Jix-FY-DJa"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can find the QR code here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qen-mJ-6bh">
                                 <rect key="frame" x="89" y="106" width="197" height="17"/>
@@ -54,6 +57,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="torchButton" destination="uZg-jL-qwt" id="wc3-lj-Vk7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDA-8f-CZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KHr-zS-cXC" userLabel="Exit" sceneMemberID="exit"/>
