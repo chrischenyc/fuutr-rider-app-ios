@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		470D7A8D9BA5E54FE9E79E82 /* Pods_Project_OTGRider_dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4706DCFA6C56492D699F48 /* Pods_Project_OTGRider_dev.framework */; };
+		6B0128AF219D7EC600AC2439 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128AE219D7EC600AC2439 /* QRCode.swift */; };
+		6B0128B0219D7EC600AC2439 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128AE219D7EC600AC2439 /* QRCode.swift */; };
+		6B0128B1219D7EC600AC2439 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128AE219D7EC600AC2439 /* QRCode.swift */; };
 		6B14FA0B2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
 		6B14FA0C2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
 		6B14FA0D2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
@@ -282,6 +285,7 @@
 /* Begin PBXFileReference section */
 		1D4706DCFA6C56492D699F48 /* Pods_Project_OTGRider_dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_OTGRider_dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		437747352F7B2C3F6BA2A8AF /* Pods-Project-OTGRider-dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-dev/Pods-Project-OTGRider-dev.release.xcconfig"; sourceTree = "<group>"; };
+		6B0128AE219D7EC600AC2439 /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRequestViewController.swift; sourceTree = "<group>"; };
 		6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVerifyViewController.swift; sourceTree = "<group>"; };
 		6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSetViewController.swift; sourceTree = "<group>"; };
@@ -475,6 +479,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6B0128AD219D7EB900AC2439 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				6B0128AE219D7EC600AC2439 /* QRCode.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
 		6B6C6AE52197CE0700D956DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +630,7 @@
 		6BD47170219A47E900D36C3E /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				6B0128AD219D7EB900AC2439 /* QRCode */,
 				6BD47171219A485C00D36C3E /* Google-Maps-iOS-Utils */,
 			);
 			path = Libraries;
@@ -1470,6 +1483,7 @@
 				6B444FE92191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6BDE9129218C19DF003F976B /* EnableLocationViewController.swift in Sources */,
 				6B214AE2219564CD00553C3D /* EditNameViewController.swift in Sources */,
+				6B0128B1219D7EC600AC2439 /* QRCode.swift in Sources */,
 				6BD472A1219A4CAA00D36C3E /* GMUWrappingDictionaryKey.m in Sources */,
 				6BD4727D219A4CAA00D36C3E /* GMUStyleMap.m in Sources */,
 				6B31E1F92198141B00CB424E /* Date+Format.swift in Sources */,
@@ -1551,6 +1565,7 @@
 				6B444FE72191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6B8731CD2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B214AE0219564CD00553C3D /* EditNameViewController.swift in Sources */,
+				6B0128AF219D7EC600AC2439 /* QRCode.swift in Sources */,
 				6BD4729F219A4CAA00D36C3E /* GMUWrappingDictionaryKey.m in Sources */,
 				6BD4727B219A4CAA00D36C3E /* GMUStyleMap.m in Sources */,
 				6B31E1F72198141B00CB424E /* Date+Format.swift in Sources */,
@@ -1632,6 +1647,7 @@
 				6B444FE82191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B214AE1219564CD00553C3D /* EditNameViewController.swift in Sources */,
+				6B0128B0219D7EC600AC2439 /* QRCode.swift in Sources */,
 				6BD472A0219A4CAA00D36C3E /* GMUWrappingDictionaryKey.m in Sources */,
 				6BD4727C219A4CAA00D36C3E /* GMUStyleMap.m in Sources */,
 				6B31E1F82198141B00CB424E /* Date+Format.swift in Sources */,

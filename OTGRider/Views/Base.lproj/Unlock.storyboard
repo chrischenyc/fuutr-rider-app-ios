@@ -18,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can find the QR code here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qen-mJ-6bh">
+                                <rect key="frame" x="89" y="106" width="197" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyo-y8-0fK">
                                 <rect key="frame" x="106" y="573" width="35" height="30"/>
                                 <state key="normal" title="1234"/>
@@ -32,16 +38,20 @@
                                     <action selector="torchButtonTapped:" destination="DvR-xo-IsL" eventType="touchUpInside" id="Jix-FY-DJa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can find the QR code here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qen-mJ-6bh">
-                                <rect key="frame" x="89" y="106" width="197" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMn-qT-Lqe">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MMn-qT-Lqe" secondAttribute="height" multiplier="1:1" id="3y3-NM-fuS"/>
+                                    <constraint firstAttribute="width" constant="200" id="h0j-pi-Ja1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="centerX" secondItem="QvB-gL-kWV" secondAttribute="centerX" id="650-z8-1h7"/>
                             <constraint firstItem="vH3-qe-ICE" firstAttribute="bottom" secondItem="Zyo-y8-0fK" secondAttribute="bottom" constant="64" id="86C-ob-B3e"/>
+                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="centerY" secondItem="QvB-gL-kWV" secondAttribute="centerY" id="P8S-15-TEh"/>
                             <constraint firstItem="uZg-jL-qwt" firstAttribute="centerX" secondItem="QvB-gL-kWV" secondAttribute="centerX" constant="64" id="RA7-hS-dGb"/>
                             <constraint firstItem="Zyo-y8-0fK" firstAttribute="centerX" secondItem="QvB-gL-kWV" secondAttribute="centerX" constant="-64" id="fQG-ZN-oti"/>
                             <constraint firstItem="qen-mJ-6bh" firstAttribute="centerX" secondItem="QvB-gL-kWV" secondAttribute="centerX" id="jow-9s-A4I"/>
@@ -58,6 +68,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="codeReaderView" destination="MMn-qT-Lqe" id="APG-Bb-RxP"/>
                         <outlet property="torchButton" destination="uZg-jL-qwt" id="wc3-lj-Vk7"/>
                     </connections>
                 </viewController>

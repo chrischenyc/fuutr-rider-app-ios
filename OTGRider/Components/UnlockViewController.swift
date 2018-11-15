@@ -17,16 +17,28 @@ class UnlockViewController: UIViewController {
     }
     
     @IBOutlet weak var torchButton: UIButton!
+    @IBOutlet weak var codeReaderView: UIView!
     
     private var torchOn: Bool = false
     var type: UnlockType = .scan
+    private let scanner = QRCode()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         torchButton.setTitle("Torch On", for: .normal)
+        
+        scanner.prepareScan(codeReaderView) { (stringValue) -> () in
+            logger.debug(stringValue)
+        }
+        scanner.scanFrame = codeReaderView.bounds
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        guard checkScanPermissions() else { return }
+        
+        scanner.startScan()
+    }
     
     @IBAction func unwindToUnlockByScan(_ unwindSegue: UIStoryboardSegue) {
         // let sourceViewController = unwindSegue.source
@@ -40,8 +52,11 @@ class UnlockViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // switch off torch and camear before leaving
         torchOn = false
         toggleTorch(on: torchOn)
+        
+//        codeReader.stopScanning()
         
         if segue.identifier == StoryboardSegue.Unlock.fromScanToInput.rawValue,
             let inputUnlockViewController = segue.destination as? UnlockViewController {
@@ -73,5 +88,31 @@ class UnlockViewController: UIViewController {
         else{
             logger.error("Torch is not available")
         }
+    }
+}
+
+// MARK: - camera permission
+extension UnlockViewController {
+    
+    private func checkScanPermissions() -> Bool {
+        return true
+//        do {
+//            return try QRCodeReader.supportsMetadataObjectTypes()
+//        } catch let error as NSError {
+//
+//            switch error.code {
+//            case -11852:
+//                alertMessage("This app is not authorized to use Back Camera. Please grant permission in Settings", actionButtonTitle: "Settings") {
+//                    if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+//                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+//                    }
+//                }
+//
+//            default:
+//                flashErrorMessage("Current device doesn't support QR code scanning, please try manually inputing the code.")
+//            }
+//
+//            return false
+//        }
     }
 }
