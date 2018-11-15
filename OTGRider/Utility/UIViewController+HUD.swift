@@ -40,9 +40,6 @@ extension UIViewController {
     }
     
     func flashErrorMessage(_ message: String?, completion: ((Bool) -> Void)? = nil) {
-        HUD.flash(.labeledImage(image: nil, title: "Error", subtitle: message),
-                  onView: nil,
-                  delay: 2.0,
-                  completion: completion)
+        flashMessage(message, completion: completion)
     }
 }

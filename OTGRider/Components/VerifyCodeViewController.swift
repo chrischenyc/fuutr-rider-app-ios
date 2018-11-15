@@ -91,7 +91,7 @@ class VerifyCodeViewController: UIViewController {
             
             DispatchQueue.main.async {
                 if let error = error {
-                    self?.showError(error)
+                    self?.alertError(error)
                 }
                 
                 // reset UI
@@ -107,7 +107,7 @@ class VerifyCodeViewController: UIViewController {
     private func handleVerificationCompletion(_ error: Error?) {
         DispatchQueue.main.async {
             if let error = error {
-                self.showError(error)
+                self.alertError(error)
             } else {
                 switch self.nextStep {
                 case .signUp:

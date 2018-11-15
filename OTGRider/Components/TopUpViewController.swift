@@ -84,7 +84,7 @@ class TopUpViewController: UIViewController {
 extension TopUpViewController: STPPaymentContextDelegate {
     func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
         logger.error(error)
-        showError(error)
+        alertError(error)
     }
     
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {

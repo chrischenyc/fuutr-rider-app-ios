@@ -121,7 +121,7 @@ class MapViewController: UIViewController {
     }
     
     private func promptForLocationService() {
-        showMessage("This app needs access to the location service so it can find scooters close to you and track your rides.", actionButtonTitle: "Grant access") {
+        alertMessage("This app needs access to the location service so it can find scooters close to you and track your rides.", actionButtonTitle: "Grant access") {
             
             if !CLLocationManager.locationServicesEnabled() {
                 if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {

@@ -13,17 +13,17 @@ import UIKit
 // currently use system alert view, may use custom UI in the future
 extension UIViewController {
     
-    func showError(_ error: Error,
-                   actionButtonTitle: String? = nil,
-                   actionButtonTapped: (()->Void)? = nil) {
-        showMessage(error.localizedDescription,
-                    actionButtonTitle: actionButtonTitle,
-                    actionButtonTapped: actionButtonTapped)
+    func alertError(_ error: Error,
+                    actionButtonTitle: String? = nil,
+                    actionButtonTapped: (()->Void)? = nil) {
+        alertMessage(error.localizedDescription,
+                     actionButtonTitle: actionButtonTitle,
+                     actionButtonTapped: actionButtonTapped)
     }
     
-    func showMessage(_ message: String,
-                     actionButtonTitle: String? = nil,
-                     actionButtonTapped: (()->Void)? = nil) {
+    func alertMessage(_ message: String,
+                      actionButtonTitle: String? = nil,
+                      actionButtonTapped: (()->Void)? = nil) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertController.Style.alert)
         
         if let actionButtonTitle = actionButtonTitle {

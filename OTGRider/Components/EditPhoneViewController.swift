@@ -60,7 +60,7 @@ class EditPhoneViewController: UIViewController {
                 self?.phoneNumberVerifyButton.isEnabled = true
                 
                 if let error = error {
-                    self?.showError(error)
+                    self?.alertError(error)
                 } else {
                     self?.perform(segue: StoryboardSegue.Settings.fromEditPhoneToVerify)
                 }

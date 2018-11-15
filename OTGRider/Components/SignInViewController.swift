@@ -76,7 +76,7 @@ class SignInViewController: UIViewController {
                 
                 
                 if let error = error {
-                    self?.showError(error)
+                    self?.alertError(error)
                 } else {
                     self?.perform(segue: StoryboardSegue.SignIn.showVerifyCode)
                     self?.phoneNumberTextField.text = ""
