@@ -74,5 +74,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>OTG Ride will use your camera to scan QRCode on our scooters</string>
 </dict>
 </plist>
