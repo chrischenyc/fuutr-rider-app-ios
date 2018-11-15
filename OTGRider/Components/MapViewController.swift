@@ -20,6 +20,7 @@ class MapViewController: UIViewController {
     private var searchAPITask: URLSessionTask?
     private var scheduledSearchTimer: Timer?
     private let scooterInfoViewBottomToSuperView: CGFloat = 194
+    var ride: Ride?
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuButton: UIButton!
@@ -117,6 +118,9 @@ class MapViewController: UIViewController {
                 }
                 
             }
+        }
+        else if let _ = sourceViewController as? UnlockViewController, let ride = ride {
+            logger.debug("show ride \(ride)")
         }
     }
     

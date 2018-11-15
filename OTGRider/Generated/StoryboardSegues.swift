@@ -52,7 +52,9 @@ internal enum StoryboardSegue {
   }
   internal enum Unlock: String, SegueType {
     case fromInputToScan
+    case fromManualUnlockToMap
     case fromScanToInput
+    case fromScanUnlockToMap
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
