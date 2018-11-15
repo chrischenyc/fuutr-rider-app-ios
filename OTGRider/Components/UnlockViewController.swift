@@ -1,5 +1,5 @@
 //
-//  UnlockByScanViewController.swift
+//  UnlockViewController.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 1/11/18.
@@ -11,8 +11,15 @@ import AVFoundation
 
 class UnlockViewController: UIViewController {
     
+    enum UnlockType {
+        case scan
+        case input
+    }
+    
     @IBOutlet weak var torchButton: UIButton!
-    private var torchOn:Bool = false
+    
+    private var torchOn: Bool = false
+    var type: UnlockType = .scan
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +31,7 @@ class UnlockViewController: UIViewController {
     @IBAction func unwindToUnlockByScan(_ unwindSegue: UIStoryboardSegue) {
         // let sourceViewController = unwindSegue.source
         // Use data from the view controller which initiated the unwind segue
+        
     }
     
     @IBAction func torchButtonTapped(_ sender: Any) {
@@ -34,6 +42,11 @@ class UnlockViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         torchOn = false
         toggleTorch(on: torchOn)
+        
+        if segue.identifier == StoryboardSegue.Unlock.fromScanToInput.rawValue,
+            let inputUnlockViewController = segue.destination as? UnlockViewController {
+            inputUnlockViewController.type = .input
+        }
     }
     
     private func toggleTorch(on: Bool) {

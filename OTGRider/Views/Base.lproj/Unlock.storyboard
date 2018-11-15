@@ -13,7 +13,7 @@
         <!--Scan To Unlock-->
         <scene sceneID="WuK-8m-cyk">
             <objects>
-                <viewController id="DvR-xo-IsL" customClass="UnlockByScanViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DvR-xo-IsL" customClass="UnlockViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QvB-gL-kWV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="106" y="573" width="35" height="30"/>
                                 <state key="normal" title="1234"/>
                                 <connections>
-                                    <segue destination="TG1-ZS-mA8" kind="show" animates="NO" id="RoP-VA-MQf"/>
+                                    <segue destination="TG1-ZS-mA8" kind="show" identifier="fromScanToInput" animates="NO" id="RoP-VA-MQf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZg-jL-qwt">
@@ -69,7 +69,7 @@
         <!--Unlock Code-->
         <scene sceneID="FK9-50-lCW">
             <objects>
-                <viewController id="yKQ-w9-j73" sceneMemberID="viewController">
+                <viewController id="yKQ-w9-j73" customClass="UnlockViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CiT-ts-r5S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,12 +84,15 @@
                                 <rect key="frame" x="75.5" y="380.5" width="96" height="30"/>
                                 <state key="normal" title="scan QR code"/>
                                 <connections>
-                                    <segue destination="q5C-FY-WvA" kind="unwind" unwindAction="unwindToUnlockByScan:" id="Vxx-ji-3MV"/>
+                                    <segue destination="q5C-FY-WvA" kind="unwind" identifier="fromInputToScan" unwindAction="unwindToUnlockByScan:" id="Vxx-ji-3MV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDY-hC-lL3">
                                 <rect key="frame" x="233.5" y="380.5" width="36" height="30"/>
                                 <state key="normal" title="torch"/>
+                                <connections>
+                                    <action selector="torchButtonTapped:" destination="yKQ-w9-j73" eventType="touchUpInside" id="Wyl-HT-vYI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PrT-u4-60o">
                                 <rect key="frame" x="48" y="318.5" width="279" height="30"/>
@@ -127,6 +130,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="torchButton" destination="lDY-hC-lL3" id="K4G-82-XXO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftu-lk-zQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="q5C-FY-WvA" userLabel="Exit" sceneMemberID="exit"/>
