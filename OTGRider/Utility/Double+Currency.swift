@@ -10,6 +10,6 @@ import Foundation
 
 extension Double {
     var currencyString: String {
-        return "$\(self)"
+        return String(format: "$%.2f", self)
     }
 }

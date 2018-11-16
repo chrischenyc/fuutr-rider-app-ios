@@ -141,10 +141,9 @@ class MapViewController: UIViewController {
     
     // MARK: - ride update
     @objc private func updateRide() {
-        guard var ride = ride, let completed = ride.completed, !completed else { return }
-        guard let duration = ride.duration else { return }
-        ride.duration = duration + 1
+        guard var ride = ride else { return }
         
+        ride.update(withElapsedTime: 1)
         self.ride = ride
     }
 }

@@ -18,6 +18,7 @@ struct Ride: Mappable, Equatable {
     var distance: Int?
     var completed: Bool?
     var unlockCost: Double?
+    var minuteCost: Double?
     var rideCost: Double?
     var totalCost: Double?
     
@@ -34,11 +35,25 @@ struct Ride: Mappable, Equatable {
         distance        <- map["distance"]
         completed       <- map["completed"]
         unlockCost      <- map["unlockCost"]
+        minuteCost      <- map["minuteCost"]
         rideCost        <- map["rideCost"]
         totalCost       <- map["totalCost"]
     }
     
     public static func == (lhs: Ride, rhs: Ride) -> Bool {
         return lhs.id == rhs.id
+    }
+}
+
+extension Ride {
+    mutating func update(withElapsedTime time: TimeInterval) {
+        guard let completed = completed, !completed else { return }
+        
+        guard let duration = duration else { return }
+        let newDuration = duration + time
+        self.duration = newDuration
+        
+        guard let unlockCost = unlockCost, let minuteCost = minuteCost else { return }
+        self.totalCost = unlockCost + minuteCost * (newDuration / 60.0)
     }
 }
