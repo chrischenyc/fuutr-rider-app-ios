@@ -18,6 +18,7 @@ class MapViewController: UIViewController {
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
     
     private var searchAPITask: URLSessionTask?
+    private var rideAPITask: URLSessionTask?
     private let newSearchDelay: TimeInterval = 1.5
     private var scheduledSearchTimer: Timer?
     private var scheduledRideUpdateTimer: Timer?
@@ -52,6 +53,7 @@ class MapViewController: UIViewController {
         setupUI()
         setupMapView()
         setupLocationManager()
+        loadOpenRide()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -93,14 +95,7 @@ class MapViewController: UIViewController {
             let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
             // rewind from unlock
             unwindSegueWithCompletion.completion = {
-                self.ride = ride
-                self.showRideInfo()
-                self.scheduledRideUpdateTimer?.invalidate()
-                self.scheduledRideUpdateTimer = Timer.scheduledTimer(timeInterval: 1,
-                                                                     target: self,
-                                                                     selector: #selector(self.updateRide),
-                                                                     userInfo: nil,
-                                                                     repeats: true)
+                self.showRide(ride)
             }
         }
     }
@@ -113,7 +108,18 @@ class MapViewController: UIViewController {
         }
     }
     
-    // MARK: - API
+    
+    // MARK: - ride update
+    @objc private func updateRide() {
+        guard var ride = ride else { return }
+        
+        ride.refresh()
+        self.ride = ride
+    }
+}
+
+// MARK: - API
+extension MapViewController {
     @objc private func searchScooters() {
         searchAPITask?.cancel()
         
@@ -139,12 +145,27 @@ class MapViewController: UIViewController {
         })
     }
     
-    // MARK: - ride update
-    @objc private func updateRide() {
-        guard var ride = ride else { return }
+    private func loadOpenRide() {
+        guard ride == nil else { return }
         
-        ride.refresh()
-        self.ride = ride
+        rideAPITask?.cancel()
+        
+        rideAPITask = RideService.getCurrentOpenRide({[weak self] (ride, error) in
+            
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    logger.error(error!.localizedDescription)
+                    return
+                }
+                
+                guard let ride = ride else {
+                    logger.debug("No open ride found")
+                    return
+                }
+                
+                self?.showRide(ride)
+            }
+        })
     }
 }
 
@@ -208,6 +229,17 @@ extension MapViewController {
         } else {
             unlockButton.setTitle("Unlock", for: .normal)
         }
+    }
+    
+    private func showRide(_ ride: Ride) {
+        self.ride = ride
+        self.showRideInfo()
+        self.scheduledRideUpdateTimer?.invalidate()
+        self.scheduledRideUpdateTimer = Timer.scheduledTimer(timeInterval: 1,
+                                                             target: self,
+                                                             selector: #selector(self.updateRide),
+                                                             userInfo: nil,
+                                                             repeats: true)
     }
 }
 
