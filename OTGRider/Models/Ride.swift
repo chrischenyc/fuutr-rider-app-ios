@@ -9,11 +9,12 @@
 import Foundation
 import ObjectMapper
 
-struct Ride: Mappable {
+struct Ride: Mappable, Equatable {
+    var id: String?
     var vehicleCode: String?
     var unlockTime: Date?
     var lockTime: Date?
-    var duration: Int?
+    var duration: TimeInterval?
     var distance: Int?
     var completed: Bool?
     var unlockCost: Double?
@@ -25,6 +26,7 @@ struct Ride: Mappable {
     }
     
     mutating func mapping(map: Map) {
+        id              <- map["_id"]
         vehicleCode     <- map["vehicleCode"]
         unlockTime      <- (map["unlockTime"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
         lockTime        <- (map["lockTime"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
@@ -34,5 +36,9 @@ struct Ride: Mappable {
         unlockCost      <- map["unlockCost"]
         rideCost        <- map["rideCost"]
         totalCost       <- map["totalCost"]
+    }
+    
+    public static func == (lhs: Ride, rhs: Ride) -> Bool {
+        return lhs.id == rhs.id
     }
 }

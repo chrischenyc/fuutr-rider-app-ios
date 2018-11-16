@@ -19,7 +19,14 @@ class RideInfoView: UIView {
     
     func updateContent(withRide ride: Ride) {
         scooterInfoLabel.text = "Scooter \(ride.vehicleCode ?? "n/a")"
-        durationLabel.text = "n/a"
+        
+        if let duration = ride.duration {
+            durationLabel.text = duration.hhmmssString()
+        }
+        else {
+            durationLabel.text = "n/a"
+        }
+        
         distanceLabel.text = "n/a"
         costLabel.text = ride.totalCost?.currencyString ?? "n/a"
     }

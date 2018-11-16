@@ -16,18 +16,21 @@ class MapViewController: UIViewController {
     private let countryZoomLevel: Float = 3.6
     private let streetZoomLevel: Float = 16.0
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
-    private let searchReferTime: TimeInterval = 1.5
+    
     private var searchAPITask: URLSessionTask?
+    private let newSearchDelay: TimeInterval = 1.5
     private var scheduledSearchTimer: Timer?
-    private let scooterInfoViewBottomToSuperView: CGFloat = 194
-    private let rideInfoViewBottomToSuperView: CGFloat = 206
+    private var scheduledRideUpdateTimer: Timer?
+    
     var ride: Ride? {
         didSet {
             if let ride = ride {
                 rideInfoView.updateContent(withRide: ride)
             }
             
-            updateUnlockButton()
+            if ride != oldValue {
+                updateUnlockButton()
+            }
         }
     }
     
@@ -37,8 +40,10 @@ class MapViewController: UIViewController {
     @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet weak var scooterInfoView: ScooterInfoView!
     @IBOutlet weak var scooterInfoViewBottomConstraint: NSLayoutConstraint!
+    private let scooterInfoViewBottomToSuperView: CGFloat = 194
     @IBOutlet weak var rideInfoView: RideInfoView!
     @IBOutlet weak var rideInfoViewBottomConstraint: NSLayoutConstraint!
+    private let rideInfoViewBottomToSuperView: CGFloat = 206
     
     // MARK: - lifecycle
     override func viewDidLoad() {
@@ -90,6 +95,12 @@ class MapViewController: UIViewController {
             unwindSegueWithCompletion.completion = {
                 self.ride = ride
                 self.showRideInfo()
+                self.scheduledRideUpdateTimer?.invalidate()
+                self.scheduledRideUpdateTimer = Timer.scheduledTimer(timeInterval: 1,
+                                                                     target: self,
+                                                                     selector: #selector(self.updateRide),
+                                                                     userInfo: nil,
+                                                                     repeats: true)
             }
         }
     }
@@ -126,6 +137,15 @@ class MapViewController: UIViewController {
                                                         
                                                         self?.addMapMakers(forScooters: scooters)
         })
+    }
+    
+    // MARK: - ride update
+    @objc private func updateRide() {
+        guard var ride = ride, let completed = ride.completed, !completed else { return }
+        guard let duration = ride.duration else { return }
+        ride.duration = duration + 1
+        
+        self.ride = ride
     }
 }
 
@@ -329,7 +349,7 @@ extension MapViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         scheduledSearchTimer?.invalidate()
         
-        scheduledSearchTimer = Timer.scheduledTimer(timeInterval: searchReferTime,
+        scheduledSearchTimer = Timer.scheduledTimer(timeInterval: newSearchDelay,
                                                     target: self,
                                                     selector: #selector(searchScooters),
                                                     userInfo: nil,
