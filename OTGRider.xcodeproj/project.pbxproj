@@ -20,6 +20,9 @@
 		6B0128BB219DA0E100AC2439 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BA219DA0E100AC2439 /* Ride.swift */; };
 		6B0128BC219DA0E100AC2439 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BA219DA0E100AC2439 /* Ride.swift */; };
 		6B0128BD219DA0E100AC2439 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BA219DA0E100AC2439 /* Ride.swift */; };
+		6B0128BF219EA4B500AC2439 /* RideInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BE219EA4B500AC2439 /* RideInfoView.swift */; };
+		6B0128C0219EA4B500AC2439 /* RideInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BE219EA4B500AC2439 /* RideInfoView.swift */; };
+		6B0128C1219EA4B500AC2439 /* RideInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BE219EA4B500AC2439 /* RideInfoView.swift */; };
 		6B14FA0B2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
 		6B14FA0C2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
 		6B14FA0D2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
@@ -298,6 +301,7 @@
 		6B0128B2219D9C2C00AC2439 /* ScanUnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanUnlockViewController.swift; sourceTree = "<group>"; };
 		6B0128B6219D9C4D00AC2439 /* ManualUnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualUnlockViewController.swift; sourceTree = "<group>"; };
 		6B0128BA219DA0E100AC2439 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
+		6B0128BE219EA4B500AC2439 /* RideInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideInfoView.swift; sourceTree = "<group>"; };
 		6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRequestViewController.swift; sourceTree = "<group>"; };
 		6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVerifyViewController.swift; sourceTree = "<group>"; };
 		6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSetViewController.swift; sourceTree = "<group>"; };
@@ -549,6 +553,7 @@
 				6B8731F3218A9A9000CC2651 /* Unlock.storyboard */,
 				6B31E1EA2197F34F00CB424E /* PaymentCell.swift */,
 				6B973E5C219BF14B00819A96 /* ScooterInfoView.swift */,
+				6B0128BE219EA4B500AC2439 /* RideInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1522,6 +1527,7 @@
 				6BD4729E219A4CAA00D36C3E /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				6BDE912E218C19DF003F976B /* Notifications.swift in Sources */,
 				6BD47277219A4CAA00D36C3E /* GMUPlacemark.m in Sources */,
+				6B0128C1219EA4B500AC2439 /* RideInfoView.swift in Sources */,
 				6BD4729B219A4CAA00D36C3E /* GMUClusterManager.m in Sources */,
 				6BDE9173218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD47271219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
@@ -1607,6 +1613,7 @@
 				6BD4729C219A4CAA00D36C3E /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				6B8731A3218997B600CC2651 /* Notifications.swift in Sources */,
 				6BD47275219A4CAA00D36C3E /* GMUPlacemark.m in Sources */,
+				6B0128BF219EA4B500AC2439 /* RideInfoView.swift in Sources */,
 				6BD47299219A4CAA00D36C3E /* GMUClusterManager.m in Sources */,
 				6BDE9171218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD4726F219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
@@ -1692,6 +1699,7 @@
 				6BD4729D219A4CAA00D36C3E /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				6B8731A4218997B600CC2651 /* Notifications.swift in Sources */,
 				6BD47276219A4CAA00D36C3E /* GMUPlacemark.m in Sources */,
+				6B0128C0219EA4B500AC2439 /* RideInfoView.swift in Sources */,
 				6BD4729A219A4CAA00D36C3E /* GMUClusterManager.m in Sources */,
 				6BDE9172218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD47270219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,

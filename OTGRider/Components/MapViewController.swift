@@ -20,6 +20,7 @@ class MapViewController: UIViewController {
     private var searchAPITask: URLSessionTask?
     private var scheduledSearchTimer: Timer?
     private let scooterInfoViewBottomToSuperView: CGFloat = 194
+    private let rideInfoViewBottomToSuperView: CGFloat = 206
     var ride: Ride?
     
     @IBOutlet weak var mapView: GMSMapView!
@@ -28,6 +29,10 @@ class MapViewController: UIViewController {
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var scooterInfoView: ScooterInfoView!
     @IBOutlet weak var scooterInfoViewBottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var rideInfoView: RideInfoView!
+    @IBOutlet weak var rideInfoViewBottomConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +44,10 @@ class MapViewController: UIViewController {
         scanButton.backgroundColor = UIColor.otgWhite
         scooterInfoView.backgroundColor = UIColor.otgWhite
         scooterInfoView.layoutCornerRadiusAndShadow()
-        hideScooterInfo()
+        scooterInfoViewBottomConstraint.constant = 0
+        rideInfoView.backgroundColor = UIColor.otgWhite
+        rideInfoView.layoutCornerRadiusAndShadow()
+        rideInfoViewBottomConstraint.constant = 0
         
         // init Google Map with default view
         let camera = GMSCameraPosition.camera(withLatitude: defaultCoordinate.latitude,
@@ -128,10 +136,7 @@ class MapViewController: UIViewController {
             logger.debug("show ride \(ride)")
             
             unwindSegueWithCompletion.completion = {
-                self.alertMessage("Enjoy your ride, please do read the how to ride guide if this is your first ride.",
-                             actionButtonTitle: "How To Ride") {
-                                self.perform(segue: StoryboardSegue.Main.fromMapToHowTo)
-                }
+                self.showRideInfo(ride: ride)
             }
         }
     }
@@ -203,6 +208,23 @@ class MapViewController: UIViewController {
     
     private func hideScooterInfo() {
         self.scooterInfoViewBottomConstraint.constant = 0
+        
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func showRideInfo(ride: Ride) {
+        self.rideInfoView.updateContent(withRide: ride)
+        self.rideInfoViewBottomConstraint.constant = self.rideInfoViewBottomToSuperView
+        
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func hideRideInfo() {
+        self.rideInfoViewBottomConstraint.constant = 0
         
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
