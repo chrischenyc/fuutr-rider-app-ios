@@ -73,9 +73,20 @@ class UnlockViewController: UIViewController {
         apiTask = ScooterService().unlock(vehicleCode: vehicleCode, completion: { [weak self] (ride, error) in
             
             DispatchQueue.main.async {
+                self?.dismissLoading()
+                
                 guard error == nil else {
                     logger.error(error?.localizedDescription)
-                    self?.flashErrorMessage(error?.localizedDescription)
+                    
+                    if error?.localizedDescription == "insufficient balance" {
+                        self?.alertMessage("You account balance is not enough for a new ride",
+                                           actionButtonTitle: "Top up balance",
+                                           actionButtonTapped: {
+                                            self?.navigateToAccount()
+                        })
+                    } else {
+                        self?.flashErrorMessage(error?.localizedDescription)
+                    }
                     return
                 }
                 
@@ -84,16 +95,28 @@ class UnlockViewController: UIViewController {
                     return
                 }
                 
-                
-                if let isScan = self?.isKind(of: ScanUnlockViewController.self), isScan {
-                    self?.perform(segue: StoryboardSegue.Unlock.fromScanUnlockToMap, sender: ride)
-                }
-                else if let isManual = self?.isKind(of: ManualUnlockViewController.self), isManual {
-                    self?.perform(segue: StoryboardSegue.Unlock.fromManualUnlockToMap, sender: ride)
-                }
+                self?.navigateToMap(withRide: ride)
                 
             }
         })
+    }
+    
+    private func navigateToAccount() {
+        if self.isKind(of: ScanUnlockViewController.self) {
+            self.perform(segue: StoryboardSegue.Unlock.fromScanUnlockToAccount)
+        }
+        else {
+            self.perform(segue: StoryboardSegue.Unlock.fromManualUnlockToAccount)
+        }
+    }
+    
+    private func navigateToMap(withRide ride: Ride) {
+        if self.isKind(of: ScanUnlockViewController.self) {
+            self.perform(segue: StoryboardSegue.Unlock.fromScanUnlockToMap, sender: ride)
+        }
+        else {
+            self.perform(segue: StoryboardSegue.Unlock.fromManualUnlockToMap, sender: ride)
+        }
     }
 }
 

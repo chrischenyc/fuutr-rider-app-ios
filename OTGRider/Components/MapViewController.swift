@@ -119,8 +119,17 @@ class MapViewController: UIViewController {
                 
             }
         }
-        else if let _ = sourceViewController as? UnlockViewController, let ride = ride {
+        else if let _ = sourceViewController as? UnlockViewController,
+            let ride = ride,
+            let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
             logger.debug("show ride \(ride)")
+            
+            unwindSegueWithCompletion.completion = {
+                self.alertMessage("Enjoy your ride, please do read the how to ride guide if this is your first ride.",
+                             actionButtonTitle: "How To Ride") {
+                                self.perform(segue: StoryboardSegue.Main.fromMapToHowTo)
+                }
+            }
         }
     }
     

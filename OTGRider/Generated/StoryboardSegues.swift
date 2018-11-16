@@ -17,6 +17,7 @@ internal enum StoryboardSegue {
     case fromTopUpToAccount
   }
   internal enum Main: String, SegueType {
+    case fromMapToHowTo
     case showAccount
     case showHelp
     case showHistory
@@ -52,8 +53,10 @@ internal enum StoryboardSegue {
   }
   internal enum Unlock: String, SegueType {
     case fromInputToScan
+    case fromManualUnlockToAccount
     case fromManualUnlockToMap
     case fromScanToInput
+    case fromScanUnlockToAccount
     case fromScanUnlockToMap
   }
 }
