@@ -143,7 +143,7 @@ class MapViewController: UIViewController {
     @objc private func updateRide() {
         guard var ride = ride else { return }
         
-        ride.update(withElapsedTime: 1)
+        ride.refresh()
         self.ride = ride
     }
 }

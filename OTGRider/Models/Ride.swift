@@ -46,14 +46,14 @@ struct Ride: Mappable, Equatable {
 }
 
 extension Ride {
-    mutating func update(withElapsedTime time: TimeInterval) {
+    mutating func refresh() {
         guard let completed = completed, !completed else { return }
+        guard let unlockTime = unlockTime else { return }
         
-        guard let duration = duration else { return }
-        let newDuration = duration + time
-        self.duration = newDuration
+        let duration = Date().timeIntervalSince(unlockTime)
+        self.duration = duration
         
         guard let unlockCost = unlockCost, let minuteCost = minuteCost else { return }
-        self.totalCost = unlockCost + minuteCost * (newDuration / 60.0)
+        self.totalCost = unlockCost + minuteCost * (duration / 60.0)
     }
 }
