@@ -21,7 +21,15 @@ class MapViewController: UIViewController {
     private var scheduledSearchTimer: Timer?
     private let scooterInfoViewBottomToSuperView: CGFloat = 194
     private let rideInfoViewBottomToSuperView: CGFloat = 206
-    var ride: Ride?
+    var ride: Ride? {
+        didSet {
+            if let ride = ride {
+                rideInfoView.updateContent(withRide: ride)
+            }
+            
+            updateUnlockButton()
+        }
+    }
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuButton: UIButton!
@@ -81,8 +89,7 @@ class MapViewController: UIViewController {
             // rewind from unlock
             unwindSegueWithCompletion.completion = {
                 self.ride = ride
-                self.showRideInfo(ride: ride)
-                self.updateUnlockButton()
+                self.showRideInfo()
             }
         }
     }
@@ -160,8 +167,7 @@ extension MapViewController {
         }
     }
     
-    private func showRideInfo(ride: Ride) {
-        self.rideInfoView.updateContent(withRide: ride)
+    private func showRideInfo() {
         self.rideInfoViewBottomConstraint.constant = self.rideInfoViewBottomToSuperView
         
         UIView.animate(withDuration: 0.25) {
