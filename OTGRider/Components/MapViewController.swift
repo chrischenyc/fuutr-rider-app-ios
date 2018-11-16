@@ -26,82 +26,27 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuButton: UIButton!
     @IBOutlet weak var guideButton: UIButton!
-    @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet weak var scooterInfoView: ScooterInfoView!
     @IBOutlet weak var scooterInfoViewBottomConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var rideInfoView: RideInfoView!
     @IBOutlet weak var rideInfoViewBottomConstraint: NSLayoutConstraint!
     
-    
+    // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sideMenuButton.backgroundColor = UIColor.clear
-        guideButton.layoutCornerRadiusAndShadow()
-        guideButton.backgroundColor = UIColor.otgWhite
-        scanButton.layoutCornerRadiusAndShadow()
-        scanButton.backgroundColor = UIColor.otgWhite
-        scooterInfoView.backgroundColor = UIColor.otgWhite
-        scooterInfoView.layoutCornerRadiusAndShadow()
-        scooterInfoViewBottomConstraint.constant = 0
-        rideInfoView.backgroundColor = UIColor.otgWhite
-        rideInfoView.layoutCornerRadiusAndShadow()
-        rideInfoViewBottomConstraint.constant = 0
-        
-        // init Google Map with default view
-        let camera = GMSCameraPosition.camera(withLatitude: defaultCoordinate.latitude,
-                                              longitude: defaultCoordinate.longitude,
-                                              zoom: countryZoomLevel)
-        mapView.camera = camera
-        mapView.delegate = self
-        do {
-            // Set the map style by passing the URL of the local file.
-            if let styleURL = Bundle.main.url(forResource: "GoogleMapStyle", withExtension: "json") {
-                mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
-            } else {
-                logger.error("Unable to find style.json")
-            }
-        } catch {
-            logger.error("One or more of the map styles failed to load. \(error)")
-        }
-        
-        
-        // Set up the cluster manager with the supplied icon generator and renderer.
-        // https://developers.google.com/maps/documentation/ios-sdk/utility/marker-clustering
-        
-        let iconGenerator = GMUDefaultClusterIconGenerator(buckets: [10, 20, 50, 100],
-                                                           backgroundImages: [Asset.sideMenuIcon.image,
-                                                                              Asset.sideMenuIcon.image,
-                                                                              Asset.sideMenuIcon.image,
-                                                                              Asset.sideMenuIcon.image])
-        let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
-        let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
-        renderer.delegate = self
-        clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
-        clusterManager.setDelegate(self, mapDelegate: self)
-        
-        
-        // request location permisison if needed
-        locationManager.delegate = self
-        switch CLLocationManager.authorizationStatus() {
-        case .denied,
-             .restricted:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-                self?.promptForLocationService()
-            }
-            break
-        case .notDetermined:
-            locationManager.requestAlwaysAuthorization()
-        default:
-            break   // delegate method didChangeAuthorization will be called if permission has been authorized
-        }
+        setupUI()
+        setupMapView()
+        setupLocationManager()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // animate out scooter banner before leaving
         hideScooterInfo()
     }
     
+    // MARK: - user actions
     @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source
         
@@ -133,31 +78,24 @@ class MapViewController: UIViewController {
         else if let _ = sourceViewController as? UnlockViewController,
             let ride = ride,
             let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
-            logger.debug("show ride \(ride)")
-            
+            // rewind from unlock
             unwindSegueWithCompletion.completion = {
+                self.ride = ride
                 self.showRideInfo(ride: ride)
+                self.updateUnlockButton()
             }
         }
     }
     
-    private func promptForLocationService() {
-        alertMessage("This app needs access to the location service so it can find scooters close to you and track your rides.", actionButtonTitle: "Grant access") {
-            
-            if !CLLocationManager.locationServicesEnabled() {
-                if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
-                    // If general location settings are disabled then open general location settings
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            } else {
-                if let url = URL(string: UIApplication.openSettingsURLString) {
-                    // If general location settings are enabled then open location settings for the app
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            }
+    @IBAction func unlockButtonTapped(_ sender: Any) {
+        if ride != nil {
+            // TODO: lock scooter
+        } else {
+            perform(segue: StoryboardSegue.Main.fromMapToScan)
         }
     }
     
+    // MARK: - API
     @objc private func searchScooters() {
         searchAPITask?.cancel()
         
@@ -182,19 +120,27 @@ class MapViewController: UIViewController {
                                                         self?.addMapMakers(forScooters: scooters)
         })
     }
-    
-    private func addMapMakers(forScooters scooters: [Scooter]) {
-        DispatchQueue.main.async {
-            // add new item
-            let items = scooters.map { (scooter) -> ScooterPOIItem in
-                let item = ScooterPOIItem(scooter: scooter)
-                
-                return item
-            }
-            self.clusterManager.add(items)
-            
-            self.clusterManager.cluster()
+}
+
+// MARK: - UI
+extension MapViewController {
+    private func setupUI() {
+        sideMenuButton.backgroundColor = UIColor.clear
+        guideButton.layoutCornerRadiusAndShadow()
+        guideButton.backgroundColor = UIColor.otgWhite
+        unlockButton.layoutCornerRadiusAndShadow()
+        unlockButton.backgroundColor = UIColor.otgWhite
+        scooterInfoView.backgroundColor = UIColor.otgWhite
+        scooterInfoView.layoutCornerRadiusAndShadow()
+        scooterInfoViewBottomConstraint.constant = 0
+        rideInfoView.backgroundColor = UIColor.otgWhite
+        rideInfoView.layoutCornerRadiusAndShadow()
+        rideInfoViewBottomConstraint.constant = 0
+        rideInfoView.onHowToTapped = {
+            self.perform(segue: StoryboardSegue.Main.fromMapToHowTo)
         }
+        
+        updateUnlockButton()
     }
     
     private func showScooterInfo(scooter: ScooterPOIItem) {
@@ -228,6 +174,102 @@ class MapViewController: UIViewController {
         
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func updateUnlockButton() {
+        if ride != nil {
+            unlockButton.setTitle("Lock", for: .normal)
+        } else {
+            unlockButton.setTitle("Unlock", for: .normal)
+        }
+    }
+}
+
+// MARK: - Map
+extension MapViewController {
+    private func setupMapView() {
+        // init Google Map with default view
+        let camera = GMSCameraPosition.camera(withLatitude: defaultCoordinate.latitude,
+                                              longitude: defaultCoordinate.longitude,
+                                              zoom: countryZoomLevel)
+        mapView.camera = camera
+        mapView.delegate = self
+        do {
+            // Set the map style by passing the URL of the local file.
+            if let styleURL = Bundle.main.url(forResource: "GoogleMapStyle", withExtension: "json") {
+                mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+            } else {
+                logger.error("Unable to find style.json")
+            }
+        } catch {
+            logger.error("One or more of the map styles failed to load. \(error)")
+        }
+        
+        
+        // Set up the cluster manager with the supplied icon generator and renderer.
+        // https://developers.google.com/maps/documentation/ios-sdk/utility/marker-clustering
+        
+        let iconGenerator = GMUDefaultClusterIconGenerator(buckets: [10, 20, 50, 100],
+                                                           backgroundImages: [Asset.sideMenuIcon.image,
+                                                                              Asset.sideMenuIcon.image,
+                                                                              Asset.sideMenuIcon.image,
+                                                                              Asset.sideMenuIcon.image])
+        let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
+        let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
+        renderer.delegate = self
+        clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
+        clusterManager.setDelegate(self, mapDelegate: self)
+    }
+    
+    private func addMapMakers(forScooters scooters: [Scooter]) {
+        DispatchQueue.main.async {
+            // add new item
+            let items = scooters.map { (scooter) -> ScooterPOIItem in
+                let item = ScooterPOIItem(scooter: scooter)
+                
+                return item
+            }
+            self.clusterManager.add(items)
+            
+            self.clusterManager.cluster()
+        }
+    }
+}
+
+// MARK: - Location
+extension MapViewController {
+    private func setupLocationManager() {
+        // request location permisison if needed
+        locationManager.delegate = self
+        switch CLLocationManager.authorizationStatus() {
+        case .denied,
+             .restricted:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+                self?.promptForLocationService()
+            }
+            break
+        case .notDetermined:
+            locationManager.requestAlwaysAuthorization()
+        default:
+            break   // delegate method didChangeAuthorization will be called if permission has been authorized
+        }
+    }
+    
+    private func promptForLocationService() {
+        alertMessage("This app needs access to the location service so it can find scooters close to you and track your rides.", actionButtonTitle: "Grant access") {
+            
+            if !CLLocationManager.locationServicesEnabled() {
+                if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
+                    // If general location settings are disabled then open general location settings
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            } else {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    // If general location settings are enabled then open location settings for the app
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
         }
     }
 }

@@ -10,7 +10,21 @@ import Foundation
 
 class RideInfoView: UIView {
     
+    @IBOutlet weak var scooterInfoLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
+    
+    var onHowToTapped: (()->Void)?
+    
     func updateContent(withRide ride: Ride) {
-        
+        scooterInfoLabel.text = "Scooter \(ride.vehicleCode ?? "n/a")"
+        durationLabel.text = "n/a"
+        distanceLabel.text = "n/a"
+        costLabel.text = ride.totalCost?.currencyString ?? "n/a"
+    }
+    
+    @IBAction func howToTapped(_ sender: Any) {
+        onHowToTapped?()
     }
 }

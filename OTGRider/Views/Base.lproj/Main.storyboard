@@ -93,7 +93,7 @@
                                 </constraints>
                                 <state key="normal" title="SCAN QR CODE"/>
                                 <connections>
-                                    <segue destination="jPf-DD-doD" kind="presentation" id="nei-UJ-tpe"/>
+                                    <action selector="unlockButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jzC-BG-1kW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfQ-ca-FN2">
@@ -264,7 +264,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRu-o1-WKR">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="est. cost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRu-o1-WKR">
                                                                 <rect key="frame" x="0.0" y="16" width="93" height="16"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -277,6 +277,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsh-V7-GKn">
                                                 <rect key="frame" x="0.0" y="68.5" width="295" height="35.5"/>
                                                 <state key="normal" title="how to ride"/>
+                                                <connections>
+                                                    <action selector="howToTapped:" destination="JzT-1r-pb8" eventType="touchUpInside" id="oZU-La-UCC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -289,6 +292,12 @@
                                     <constraint firstAttribute="trailing" secondItem="tLl-lz-uFb" secondAttribute="trailing" constant="16" id="fLe-Rc-5fu"/>
                                     <constraint firstAttribute="height" constant="120" id="gEj-yb-vZb"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="costLabel" destination="at5-SI-sog" id="kre-Tk-Kfg"/>
+                                    <outlet property="distanceLabel" destination="Q9n-dL-k5P" id="Aab-n3-66k"/>
+                                    <outlet property="durationLabel" destination="Buf-Jj-vS0" id="okw-Ky-e3K"/>
+                                    <outlet property="scooterInfoLabel" destination="8Lh-Cp-CbR" id="bMv-VB-piB"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -319,14 +328,15 @@
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
                         <outlet property="rideInfoView" destination="JzT-1r-pb8" id="oLq-1K-4jc"/>
                         <outlet property="rideInfoViewBottomConstraint" destination="kld-eC-5Wm" id="IBE-kO-PDV"/>
-                        <outlet property="scanButton" destination="1MR-Ss-nph" id="wJT-vO-elG"/>
                         <outlet property="scooterInfoView" destination="AXS-jP-Qde" id="bl0-u1-D5g"/>
                         <outlet property="scooterInfoViewBottomConstraint" destination="ikx-gV-4XW" id="pjI-XV-grW"/>
                         <outlet property="sideMenuButton" destination="wXu-gN-jng" id="Szo-TM-gWK"/>
+                        <outlet property="unlockButton" destination="1MR-Ss-nph" id="wJT-vO-elG"/>
                         <segue destination="6ub-gY-uRn" kind="presentation" identifier="showHistory" id="jgO-zq-Q4p"/>
                         <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showAccount" id="NuG-ER-BNQ"/>
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>
                         <segue destination="46k-mg-UHB" kind="presentation" identifier="showHelp" id="GwS-O7-LdY"/>
+                        <segue destination="jPf-DD-doD" kind="show" identifier="fromMapToScan" id="XRl-jC-uGj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
