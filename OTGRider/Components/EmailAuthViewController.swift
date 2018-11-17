@@ -73,11 +73,11 @@ class EmailAuthViewController: UIViewController {
         showLoading()
         
         if authType == .signUp {
-            apiTask = AuthService().signup(withEmail: email, password: passowrd, completion: { [weak self] (error) in
+            apiTask = AuthService.signup(withEmail: email, password: passowrd, completion: { [weak self] (error) in
                 self?.handleAuthCompletion(error)
             })
         } else {
-            apiTask = AuthService().login(withEmail: email, password: passowrd, completion: {[weak self] (error) in
+            apiTask = AuthService.login(withEmail: email, password: passowrd, completion: {[weak self] (error) in
                 self?.handleAuthCompletion(error)
             })
         }

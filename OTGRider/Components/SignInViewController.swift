@@ -65,7 +65,7 @@ class SignInViewController: UIViewController {
         apiTask?.cancel()
         
         // create a new API call
-        apiTask = PhoneService().startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
+        apiTask = PhoneService.startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 // reset UI
                 self?.phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
@@ -107,7 +107,7 @@ class SignInViewController: UIViewController {
         
         // create a new API call
         showLoading()
-        apiTask = AuthService().login(withFacebookToken: result.token.tokenString, completion: { [weak self] (error) in
+        apiTask = AuthService.login(withFacebookToken: result.token.tokenString, completion: { [weak self] (error) in
             
             DispatchQueue.main.async {
                 guard error == nil else {

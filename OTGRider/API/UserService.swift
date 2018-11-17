@@ -11,7 +11,7 @@ import SwiftyUserDefaults
 import Stripe
 
 final class UserService: NSObject {
-    func getProfile(_ completion: @escaping (User?, Error?) -> Void) -> URLSessionDataTask? {
+    static func getProfile(_ completion: @escaping (User?, Error?) -> Void) -> URLSessionDataTask? {
         return APIClient.shared.load(path: "/users/me",
                                      method: .get,
                                      params: nil,
@@ -25,7 +25,7 @@ final class UserService: NSObject {
         })
     }
     
-    func updateProfile(_ profile: JSON, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+    static func updateProfile(_ profile: JSON, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         return APIClient.shared.load(path: "/users/me",
                                      method: .patch,
                                      params: profile,
@@ -34,7 +34,7 @@ final class UserService: NSObject {
         })
     }
     
-    func updateEmail(_ email: String, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+    static func updateEmail(_ email: String, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         return APIClient.shared.load(path: "/users/me/email",
                                      method: .put,
                                      params: ["email": email],
@@ -43,7 +43,7 @@ final class UserService: NSObject {
         })
     }
     
-    func udpatePhoneNumber(_ phoneNumber: String,
+    static func udpatePhoneNumber(_ phoneNumber: String,
                            countryCode: UInt64,
                            verificationCode: String,
                            completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
@@ -62,7 +62,7 @@ final class UserService: NSObject {
         })
     }
     
-    func topUpBalance(_ amount: Int,
+    static func topUpBalance(_ amount: Int,
                       stripeSource: String,
                       completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         
@@ -79,7 +79,7 @@ final class UserService: NSObject {
         })
     }
     
-    func getHistoryPayments(completion: @escaping ([Payment]?, Error?) -> Void) -> URLSessionDataTask? {
+    static func getHistoryPayments(completion: @escaping ([Payment]?, Error?) -> Void) -> URLSessionDataTask? {
         return APIClient.shared.load(path: "/users/me/payments",
                                      method: .get,
                                      params: nil,

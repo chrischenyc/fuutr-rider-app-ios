@@ -98,7 +98,7 @@ extension TopUpViewController: STPPaymentContextDelegate {
         // call api to process payment
         apiTask?.cancel()
         showLoading()
-        apiTask = UserService().topUpBalance(paymentContext.paymentAmount, stripeSource: source, completion: { (error) in
+        apiTask = UserService.topUpBalance(paymentContext.paymentAmount, stripeSource: source, completion: { (error) in
             completion(error)
         })
     }

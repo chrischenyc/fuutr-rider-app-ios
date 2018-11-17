@@ -51,7 +51,7 @@ class EditPhoneViewController: UIViewController {
         apiTask?.cancel()
         
         // create a new API call
-        apiTask = PhoneService().startVerification(forPhoneNumber: newPhoneNumber, countryCode: newCountryCode, completion: { [weak self] (error) in
+        apiTask = PhoneService.startVerification(forPhoneNumber: newPhoneNumber, countryCode: newCountryCode, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 // reset UI
                 self?.phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt

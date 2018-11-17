@@ -40,7 +40,7 @@ class EditEmailViewController: UIViewController {
         
         showLoading()
         
-        apiTask = UserService().updateEmail(email, completion: { [weak self] (error) in
+        apiTask = UserService.updateEmail(email, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 guard error == nil else {
                     self?.flashErrorMessage(error?.localizedDescription)

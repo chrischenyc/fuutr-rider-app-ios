@@ -9,7 +9,7 @@
 import Foundation
 
 final class ScooterService {
-    func searchInBound(minLatitude: Double, minLongitude: Double, maxLatitude: Double, maxLongitude: Double, completion: @escaping ([Scooter]?, Error?) -> Void) -> URLSessionDataTask? {
+    static func searchInBound(minLatitude: Double, minLongitude: Double, maxLatitude: Double, maxLongitude: Double, completion: @escaping ([Scooter]?, Error?) -> Void) -> URLSessionDataTask? {
         
         let params: JSON = [
             "minLatitude": minLatitude,
@@ -31,7 +31,7 @@ final class ScooterService {
         })
     }
     
-    func unlock(vehicleCode: String, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
+    static func unlock(vehicleCode: String, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
         let params: JSON = [
             "vehicleCode": vehicleCode
         ]

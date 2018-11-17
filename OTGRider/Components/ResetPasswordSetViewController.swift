@@ -42,7 +42,7 @@ class ResetPasswordSetViewController: UIViewController {
         apiTask?.cancel()
         
         showLoading()
-        apiTask = AuthService().resetPassword(forEmail: email, code: code, password: password ,completion: { [weak self] (error) in
+        apiTask = AuthService.resetPassword(forEmail: email, code: code, password: password ,completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 guard error == nil else {
                     self?.flashErrorMessage(error?.localizedDescription)

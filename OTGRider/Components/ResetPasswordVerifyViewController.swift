@@ -46,7 +46,7 @@ class ResetPasswordVerifyViewController: UIViewController {
         apiTask?.cancel()
         
         showLoading()
-        apiTask = AuthService().verifyPasswordResetCode(forEmail: email, code: code, completion: { [weak self] (error) in
+        apiTask = AuthService.verifyPasswordResetCode(forEmail: email, code: code, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 guard error == nil else {
                     self?.flashErrorMessage(error?.localizedDescription)
@@ -66,7 +66,7 @@ class ResetPasswordVerifyViewController: UIViewController {
         apiTask?.cancel()
         
         showLoading()
-        apiTask = AuthService().requestPasswordResetCode(forEmail: email, completion: { [weak self] (error) in
+        apiTask = AuthService.requestPasswordResetCode(forEmail: email, completion: { [weak self] (error) in
             DispatchQueue.main.async {
                 guard error == nil else {
                     self?.flashErrorMessage(error?.localizedDescription)

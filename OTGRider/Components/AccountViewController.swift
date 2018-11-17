@@ -53,7 +53,7 @@ class AccountViewController: UIViewController {
         
         showLoading()
         
-        apiTask = UserService().getProfile({[weak self] (user, error) in
+        apiTask = UserService.getProfile({[weak self] (user, error) in
             DispatchQueue.main.async {
                 guard error == nil else {
                     self?.flashErrorMessage(error?.localizedDescription)

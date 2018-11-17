@@ -77,7 +77,7 @@ final class APIClient {
                     
                     if error.errorDescription == "access token expired" {
                         logger.warning("expired access token")
-                        AuthService().refreshAccessToken(retryPath: path, retryMethod: method, retryParams: params, retryCompletion: completion)
+                        AuthService.refreshAccessToken(retryPath: path, retryMethod: method, retryParams: params, retryCompletion: completion)
                     }
                     else {
                         logger.error(error)

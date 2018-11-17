@@ -10,7 +10,7 @@ import Foundation
 import SwiftyUserDefaults
 
 final class PhoneService {
-    func startVerification(forPhoneNumber phoneNumber: String,
+    static func startVerification(forPhoneNumber phoneNumber: String,
                            countryCode: UInt64,
                            completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         

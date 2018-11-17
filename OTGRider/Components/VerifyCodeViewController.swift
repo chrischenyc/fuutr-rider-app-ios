@@ -57,13 +57,13 @@ class VerifyCodeViewController: UIViewController {
         // create a new API call
         switch nextStep {
         case .signUp:
-            apiTask = AuthService()
+            apiTask = AuthService
                 .signup(withPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
                     
                     self?.handleVerificationCompletion(error)
                 })
         case .updatePhone:
-            apiTask = UserService().udpatePhoneNumber(phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
+            apiTask = UserService.udpatePhoneNumber(phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
                 
                 self?.handleVerificationCompletion(error)
             })
@@ -87,7 +87,7 @@ class VerifyCodeViewController: UIViewController {
         apiTask?.cancel()
         
         // create a new API call
-        apiTask = PhoneService().startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
+        apiTask = PhoneService.startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
             
             DispatchQueue.main.async {
                 if let error = error {

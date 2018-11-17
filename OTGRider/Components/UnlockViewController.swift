@@ -70,7 +70,7 @@ class UnlockViewController: UIViewController {
         
         showLoading()
         
-        apiTask = ScooterService().unlock(vehicleCode: vehicleCode, completion: { [weak self] (ride, error) in
+        apiTask = ScooterService.unlock(vehicleCode: vehicleCode, completion: { [weak self] (ride, error) in
             
             DispatchQueue.main.async {
                 self?.dismissLoading()

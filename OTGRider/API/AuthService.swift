@@ -11,7 +11,7 @@ import SwiftyUserDefaults
 import FBSDKLoginKit
 
 final class AuthService {
-    func signup(withPhoneNumber phoneNumber: String,
+    static func signup(withPhoneNumber phoneNumber: String,
                 countryCode: UInt64,
                 verificationCode: String,
                 completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
@@ -34,7 +34,7 @@ final class AuthService {
         })
     }
     
-    func signup(withEmail email: String,
+    static func signup(withEmail email: String,
                 password: String,
                 completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         
@@ -55,7 +55,7 @@ final class AuthService {
         })
     }
     
-    func login(withEmail email: String,
+    static func login(withEmail email: String,
                password: String,
                completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         
@@ -76,7 +76,7 @@ final class AuthService {
         })
     }
     
-    func login(withFacebookToken token: String, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+    static func login(withFacebookToken token: String, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         let params: JSON = [
             "access_token": token
         ]
@@ -93,7 +93,7 @@ final class AuthService {
         })
     }
     
-    func refreshAccessToken(retryPath: String,
+    static func refreshAccessToken(retryPath: String,
                             retryMethod: RequestMethod,
                             retryParams: JSON?,
                             retryCompletion: @escaping (Any?, Error?) -> Void ) {
@@ -121,7 +121,7 @@ final class AuthService {
         }
     }
     
-    func requestPasswordResetCode(forEmail email: String,
+    static func requestPasswordResetCode(forEmail email: String,
                                   completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         
         let params: JSON = [
@@ -136,7 +136,7 @@ final class AuthService {
         })
     }
     
-    func verifyPasswordResetCode(forEmail email: String,
+    static func verifyPasswordResetCode(forEmail email: String,
                                  code: String,
                                  completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         
@@ -153,7 +153,7 @@ final class AuthService {
         })
     }
     
-    func resetPassword(forEmail email: String,
+    static func resetPassword(forEmail email: String,
                        code: String,
                        password: String,
                        completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
@@ -191,7 +191,7 @@ extension AuthService {
         NotificationCenter.default.post(name: .userSignedOut, object: nil)
     }
     
-    private func handleAuthenticationResult(result: Any) {
+    private static func handleAuthenticationResult(result: Any) {
         guard let result = result as? JSON else { return }
         
         Defaults[.accessToken] = result["accessToken"] as? String
