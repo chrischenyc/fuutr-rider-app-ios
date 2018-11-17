@@ -21,7 +21,7 @@ class TopUpViewController: UIViewController {
     // MARK: Init
     
     required init?(coder aDecoder: NSCoder) {
-        customerContext = STPCustomerContext(keyProvider: UserService())
+        customerContext = STPCustomerContext(keyProvider: PaymentService())
         paymentContext = STPPaymentContext(customerContext: customerContext)
         paymentContext.configuration.canDeletePaymentMethods = true
         paymentContext.paymentCurrency = "aud"
@@ -98,7 +98,7 @@ extension TopUpViewController: STPPaymentContextDelegate {
         // call api to process payment
         apiTask?.cancel()
         showLoading()
-        apiTask = UserService.topUpBalance(paymentContext.paymentAmount, stripeSource: source, completion: { (error) in
+        apiTask = PaymentService.topUpBalance(paymentContext.paymentAmount, stripeSource: source, completion: { (error) in
             completion(error)
         })
     }

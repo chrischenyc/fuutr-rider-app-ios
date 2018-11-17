@@ -18,7 +18,7 @@ class AccountViewController: UIViewController {
     private let paymentContext: STPPaymentContext
     
     required init?(coder aDecoder: NSCoder) {
-        customerContext = STPCustomerContext(keyProvider: UserService())
+        customerContext = STPCustomerContext(keyProvider: PaymentService())
         paymentContext = STPPaymentContext(customerContext: customerContext)
         paymentContext.configuration.canDeletePaymentMethods = true
         

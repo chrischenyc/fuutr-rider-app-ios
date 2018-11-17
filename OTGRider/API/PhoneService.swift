@@ -19,7 +19,7 @@ final class PhoneService {
             "countryCode": countryCode
         ]
         
-        return APIClient.shared.load(path: "/phone/start-verification",
+        return APIClient.shared.load(path: "/phones/start-verification",
                                      method: .post,
                                      params: params,
                                      completion: { (result, error) in
