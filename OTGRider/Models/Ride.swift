@@ -11,6 +11,7 @@ import ObjectMapper
 
 struct Ride: Mappable, Equatable {
     var id: String?
+    var scooter: String?
     var vehicleCode: String?
     var unlockTime: Date?
     var lockTime: Date?
@@ -19,7 +20,6 @@ struct Ride: Mappable, Equatable {
     var completed: Bool?
     var unlockCost: Double?
     var minuteCost: Double?
-    var rideCost: Double?
     var totalCost: Double?
     
     init?(map: Map) {
@@ -28,6 +28,7 @@ struct Ride: Mappable, Equatable {
     
     mutating func mapping(map: Map) {
         id              <- map["_id"]
+        scooter         <- map["scooter"]
         vehicleCode     <- map["vehicleCode"]
         unlockTime      <- (map["unlockTime"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
         lockTime        <- (map["lockTime"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
@@ -36,7 +37,6 @@ struct Ride: Mappable, Equatable {
         completed       <- map["completed"]
         unlockCost      <- map["unlockCost"]
         minuteCost      <- map["minuteCost"]
-        rideCost        <- map["rideCost"]
         totalCost       <- map["totalCost"]
     }
     
@@ -55,5 +55,12 @@ extension Ride {
         
         guard let unlockCost = unlockCost, let minuteCost = minuteCost else { return }
         self.totalCost = unlockCost + minuteCost * (duration / 60.0)
+    }
+    
+    func summary() -> String {
+        let durationString = duration != nil ? duration!.hhmmssString : "n/a"
+        let costString = totalCost != nil ? totalCost!.currencyString : "n/a"
+        
+        return "\nRide duration: \(durationString)\nTotal cost: \(costString)"
     }
 }

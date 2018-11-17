@@ -102,7 +102,7 @@ class MapViewController: UIViewController {
     
     @IBAction func unlockButtonTapped(_ sender: Any) {
         if ride != nil {
-            // TODO: lock scooter
+            lockScooter()
         } else {
             perform(segue: StoryboardSegue.Main.fromMapToScan)
         }
@@ -128,10 +128,10 @@ extension MapViewController {
         let southWest = currentMapViewBounds.southWest
         
         searchAPITask = ScooterService.searchInBound(minLatitude: southWest.latitude,
-                                                       minLongitude: southWest.longitude,
-                                                       maxLatitude: northEast.latitude,
-                                                       maxLongitude: northEast.longitude,
-                                                       completion: { [weak self] (scooters, error) in
+                                                     minLongitude: southWest.longitude,
+                                                     maxLatitude: northEast.latitude,
+                                                     maxLongitude: northEast.longitude,
+                                                     completion: { [weak self] (scooters, error) in
                                                         guard error == nil else {
                                                             logger.error(error?.localizedDescription)
                                                             return
@@ -150,7 +150,7 @@ extension MapViewController {
         
         rideAPITask?.cancel()
         
-        rideAPITask = RideService.getCurrentOpenRide({[weak self] (ride, error) in
+        rideAPITask = RideService.getOngoingRide({[weak self] (ride, error) in
             
             DispatchQueue.main.async {
                 guard error == nil else {
@@ -164,6 +164,31 @@ extension MapViewController {
                 }
                 
                 self?.showRide(ride)
+            }
+        })
+    }
+    
+    private func lockScooter() {
+        guard let ride = ride, let scooterId = ride.scooter, let rideId = ride.id else { return }
+        
+        rideAPITask?.cancel()
+        
+        showLoading(withMessage: "Locking scooter")
+        rideAPITask = RideService.lock(scooterId: scooterId, rideId: rideId, completion: { [weak self] (ride, error) in
+            DispatchQueue.main.async {
+                self?.dismissLoading()
+                
+                guard error == nil else {
+                    self?.alertError(error!)
+                    return
+                }
+                
+                guard let ride = ride else {
+                    self?.alertMessage(L10n.kOtherError)
+                    return
+                }
+                
+                self?.showCompletedRide(ride)
             }
         })
     }
@@ -225,7 +250,7 @@ extension MapViewController {
     
     private func updateUnlockButton() {
         if ride != nil {
-            unlockButton.setTitle("Lock", for: .normal)
+            unlockButton.setTitle("End Ride", for: .normal)
         } else {
             unlockButton.setTitle("Unlock", for: .normal)
         }
@@ -233,13 +258,21 @@ extension MapViewController {
     
     private func showRide(_ ride: Ride) {
         self.ride = ride
-        self.showRideInfo()
-        self.scheduledRideUpdateTimer?.invalidate()
-        self.scheduledRideUpdateTimer = Timer.scheduledTimer(timeInterval: 1,
-                                                             target: self,
-                                                             selector: #selector(self.updateRide),
-                                                             userInfo: nil,
-                                                             repeats: true)
+        showRideInfo()
+        scheduledRideUpdateTimer?.invalidate()
+        scheduledRideUpdateTimer = Timer.scheduledTimer(timeInterval: 1,
+                                                        target: self,
+                                                        selector: #selector(self.updateRide),
+                                                        userInfo: nil,
+                                                        repeats: true)
+    }
+    
+    private func showCompletedRide(_ ride: Ride) {
+        alertMessage("Thanks! Ride summary:\(ride.summary())")
+        
+        hideRideInfo()
+        scheduledRideUpdateTimer?.invalidate()
+        self.ride = nil
     }
 }
 

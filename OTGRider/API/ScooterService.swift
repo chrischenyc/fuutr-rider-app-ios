@@ -30,22 +30,4 @@ final class ScooterService {
                                         completion(nil, error)
         })
     }
-    
-    static func unlock(vehicleCode: String, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
-        let params: JSON = [
-            "vehicleCode": vehicleCode
-        ]
-        
-        return APIClient.shared.load(path: "/scooters/unlock",
-                                     method: .post,
-                                     params: params,
-                                     completion: { (result, error) in
-                                        if let json = result as? JSON {
-                                            completion(Ride(JSON: json), nil)
-                                            return
-                                        }
-                                        
-                                        completion(nil, error)
-        })
-    }
 }

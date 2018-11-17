@@ -21,7 +21,7 @@ class RideInfoView: UIView {
         scooterInfoLabel.text = "Scooter \(ride.vehicleCode ?? "n/a")"
         
         if let duration = ride.duration {
-            durationLabel.text = duration.hhmmssString()
+            durationLabel.text = duration.hhmmssString
         }
         else {
             durationLabel.text = "n/a"

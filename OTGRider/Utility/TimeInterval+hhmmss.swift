@@ -9,7 +9,7 @@
 import Foundation
 
 extension TimeInterval {
-    func hhmmssString() -> String? {
+    var hhmmssString: String {
         guard self >= 60 else {
             return String(format: "%.0f s", self)
         }
@@ -18,6 +18,6 @@ extension TimeInterval {
         formatter.allowedUnits = [.hour, .minute, .second]
         formatter.unitsStyle = .positional
         
-        return formatter.string(from: self)
+        return formatter.string(from: self)!
     }
 }
