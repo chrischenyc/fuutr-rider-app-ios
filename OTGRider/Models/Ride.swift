@@ -40,6 +40,10 @@ struct Ride: Mappable, Equatable {
         totalCost       <- map["totalCost"]
     }
     
+    static func fromJSONArray(_ jsonArray: [JSON]) -> [Ride]? {
+        return Mapper<Ride>().mapArray(JSONArray: jsonArray)
+    }
+    
     public static func == (lhs: Ride, rhs: Ride) -> Bool {
         return lhs.id == rhs.id
     }

@@ -10,7 +10,7 @@ import Foundation
 
 
 extension Date {
-    func dateTimeString() -> String {
+    var dateTimeString: String {
         let dateFormatter = DateFormatter(withFormat: "MMM d, h:mm a", locale: "en_AU")
         return dateFormatter.string(from: self)
     }

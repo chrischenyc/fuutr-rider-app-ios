@@ -17,7 +17,7 @@ class PaymentCell: UITableViewCell {
     func loadPayment(_ payment: Payment) {
         amountLabel.text = payment.amount?.currencyString
         
-        dateLabel.text = payment.date?.dateTimeString() ?? ""
+        dateLabel.text = payment.date?.dateTimeString ?? ""
         
         var paymentDescription = ""
         if let description = payment.description {

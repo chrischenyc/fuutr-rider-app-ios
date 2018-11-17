@@ -1,16 +1,16 @@
 //
-//  PaymentsTableViewController.swift
+//  HistoryRidesTableViewController.swift
 //  OTGRider
 //
-//  Created by Chris Chen on 11/11/18.
+//  Created by Chris Chen on 17/11/18.
 //  Copyright © 2018 OTGRide. All rights reserved.
 //
 
 import UIKit
 
-class PaymentsTableViewController: UITableViewController {
+class HistoryRidesTableViewController: UITableViewController {
     
-    private var payments: [Payment] = []
+    private var rides: [Ride] = []
     
     private var apiTask: URLSessionTask?
     
@@ -19,49 +19,50 @@ class PaymentsTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView(frame: .zero)
         
-        loadPayments()
+        loadRides()
     }
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return payments.count
+        return rides.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell", for: indexPath) as! PaymentCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryRideCell", for: indexPath) as! HistoryRideCell
         
-        let payment = payments[indexPath.row]
-        cell.loadPayment(payment)
+        let ride = rides[indexPath.row]
+        cell.updateContent(withRide: ride)
         
         return cell
     }
     
-    private func loadPayments() {
+    private func loadRides() {
         apiTask?.cancel()
         
         showLoading()
         
-        apiTask = UserService.getHistoryPayments(completion: { [weak self] (payments, error) in
+        apiTask = RideService.getHistoryRides({ [weak self] (rides, error) in
             DispatchQueue.main.async {
+                self?.dismissLoading()
+                
                 guard error == nil else {
                     self?.flashErrorMessage(error?.localizedDescription)
                     return
                 }
                 
-                guard let payments = payments else {
+                guard let rides = rides else {
                     self?.flashErrorMessage(L10n.kOtherError)
                     return
                 }
                 
-                self?.dismissLoading()
-                self?.payments = payments
-                self?.loadPaymentsContent()
+                self?.rides = rides
+                self?.loadRidesContent()
             }
         })
     }
     
-    private func loadPaymentsContent() {
+    private func loadRidesContent() {
         tableView.reloadData()
         
         // TODO: add call for action UI in case of zero records

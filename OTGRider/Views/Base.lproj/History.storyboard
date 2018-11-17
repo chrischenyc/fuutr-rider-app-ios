@@ -6,32 +6,94 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Ride History-->
-        <scene sceneID="LEj-Dz-Ibb">
+        <scene sceneID="1O4-sn-P0T">
             <objects>
-                <viewController id="Ok9-qt-dsj" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kf1-bm-zse">
+                <tableViewController id="hh2-yE-2j1" customClass="HistoryRidesTableViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fVX-0x-IzZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="cAl-fr-Sfd"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Ride History" id="3ba-xf-mLT">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aNx-2J-5cv">
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryRideCell" rowHeight="120" id="lyF-cx-fZM" customClass="HistoryRideCell" customModule="OTGRider" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lyF-cx-fZM" id="XVt-eo-1PB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="GLS-6P-IMJ">
+                                            <rect key="frame" x="8" y="8" width="359" height="103.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRh-PF-BMP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="17.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6n7-Ie-uRL">
+                                                    <rect key="frame" x="0.0" y="21.5" width="359" height="17.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJN-GX-Bdo">
+                                                    <rect key="frame" x="0.0" y="43" width="359" height="17.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSA-Jt-R5x">
+                                                    <rect key="frame" x="0.0" y="64.5" width="359" height="17.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ka-ff-3vH">
+                                                    <rect key="frame" x="0.0" y="86" width="359" height="17.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="GLS-6P-IMJ" secondAttribute="trailing" constant="8" id="99l-Gi-BqC"/>
+                                        <constraint firstItem="GLS-6P-IMJ" firstAttribute="leading" secondItem="XVt-eo-1PB" secondAttribute="leading" constant="8" id="N6J-58-gAd"/>
+                                        <constraint firstItem="GLS-6P-IMJ" firstAttribute="top" secondItem="XVt-eo-1PB" secondAttribute="top" constant="8" id="Qp9-Wo-tF7"/>
+                                        <constraint firstAttribute="bottom" secondItem="GLS-6P-IMJ" secondAttribute="bottom" constant="8" id="hxV-WA-hrH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="costLabel" destination="3ka-ff-3vH" id="SZg-aA-7zV"/>
+                                    <outlet property="distanceLabel" destination="JJN-GX-Bdo" id="LlB-FM-kBm"/>
+                                    <outlet property="durationLabel" destination="bSA-Jt-R5x" id="1B2-Bo-oum"/>
+                                    <outlet property="endTimeLabel" destination="6n7-Ie-uRL" id="7mY-zT-gjb"/>
+                                    <outlet property="startTimeLabel" destination="JRh-PF-BMP" id="GkC-Uu-S24"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hh2-yE-2j1" id="PVA-TQ-Veb"/>
+                            <outlet property="delegate" destination="hh2-yE-2j1" id="qXn-ig-EDr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ride History" id="axA-dL-Leo">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EoN-rJ-tah">
                             <connections>
-                                <segue destination="N5g-Sj-Cck" kind="unwind" unwindAction="unwindToHome:" id="sgm-zc-4dm"/>
+                                <segue destination="K0R-5X-WQs" kind="unwind" unwindAction="unwindToHome:" id="bt7-5G-d65"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2iC-bc-oUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="N5g-Sj-Cck" userLabel="Exit" sceneMemberID="exit"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SzX-if-lT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="K0R-5X-WQs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="664.79999999999995" y="154.27286356821591"/>
+            <point key="canvasLocation" x="561" y="154"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vAg-8S-dQK">
@@ -44,7 +106,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ok9-qt-dsj" kind="relationship" relationship="rootViewController" id="GCU-ot-nxM"/>
+                        <segue destination="hh2-yE-2j1" kind="relationship" relationship="rootViewController" id="R1c-YK-Vct"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKM-xX-mgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
