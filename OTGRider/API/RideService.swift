@@ -10,7 +10,7 @@ import Foundation
 
 final class RideService {
     static func getOngoingRide(_ completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
-        return APIClient.shared.load(path: "/rides/ongoing",
+        return APIClient.shared.load(path: "/rides/me/ongoing",
                                      method: .get,
                                      params: nil,
                                      completion: { (result, error) in
@@ -61,7 +61,7 @@ final class RideService {
     }
     
     static func getHistoryRides(_ completion: @escaping ([Ride]?, Error?) -> Void) -> URLSessionDataTask? {
-        return APIClient.shared.load(path: "/rides",
+        return APIClient.shared.load(path: "/rides/me",
                                      method: .get,
                                      params: nil,
                                      completion: { (result, error) in

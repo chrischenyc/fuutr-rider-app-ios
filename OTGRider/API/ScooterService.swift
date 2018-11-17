@@ -9,7 +9,7 @@
 import Foundation
 
 final class ScooterService {
-    static func searchInBound(minLatitude: Double, minLongitude: Double, maxLatitude: Double, maxLongitude: Double, completion: @escaping ([Scooter]?, Error?) -> Void) -> URLSessionDataTask? {
+    static func search(minLatitude: Double, minLongitude: Double, maxLatitude: Double, maxLongitude: Double, completion: @escaping ([Scooter]?, Error?) -> Void) -> URLSessionDataTask? {
         
         let params: JSON = [
             "minLatitude": minLatitude,
@@ -18,7 +18,7 @@ final class ScooterService {
             "maxLongitude": maxLongitude,
             ]
         
-        return APIClient.shared.load(path: "/scooters/search-in-bound",
+        return APIClient.shared.load(path: "/scooters",
                                      method: .get,
                                      params: params,
                                      completion: { (result, error) in

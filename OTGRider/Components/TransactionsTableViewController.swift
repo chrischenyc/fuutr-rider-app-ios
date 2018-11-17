@@ -42,7 +42,7 @@ class TransactionsTableViewController: UITableViewController {
         
         showLoading()
         
-        apiTask = TransactionService.getTransactions(completion: { [weak self] (transactions, error) in
+        apiTask = TransactionService.getHistoryTransactions(completion: { [weak self] (transactions, error) in
             DispatchQueue.main.async {
                 guard error == nil else {
                     self?.flashErrorMessage(error?.localizedDescription)

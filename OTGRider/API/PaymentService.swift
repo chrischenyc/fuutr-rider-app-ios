@@ -19,7 +19,7 @@ final class PaymentService: NSObject {
             "source": stripeSource,
             ]
         
-        return APIClient.shared.load(path: "/payments/top-up",
+        return APIClient.shared.load(path: "/payments/me/top-up",
                                      method: .put,
                                      params: params,
                                      completion: { (result, error) in
@@ -28,7 +28,7 @@ final class PaymentService: NSObject {
     }
     
     static func getHistoryPayments(completion: @escaping ([Payment]?, Error?) -> Void) -> URLSessionDataTask? {
-        return APIClient.shared.load(path: "/payments",
+        return APIClient.shared.load(path: "/payments/me",
                                      method: .get,
                                      params: nil,
                                      completion: { (result, error) in
@@ -44,7 +44,7 @@ final class PaymentService: NSObject {
 
 extension PaymentService: STPEphemeralKeyProvider {
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock) {
-        _ = APIClient.shared.load(path: "/payments/stripe-ephemeral-keys",
+        _ = APIClient.shared.load(path: "/payments/me/stripe-ephemeral-keys",
                                   method: .post,
                                   params: ["stripe_version": apiVersion]) { (result, error) in
                                     guard let json = result as? [AnyHashable: Any] else {

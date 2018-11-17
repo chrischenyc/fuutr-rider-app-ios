@@ -127,7 +127,7 @@ extension MapViewController {
         let northEast = currentMapViewBounds.northEast
         let southWest = currentMapViewBounds.southWest
         
-        searchAPITask = ScooterService.searchInBound(minLatitude: southWest.latitude,
+        searchAPITask = ScooterService.search(minLatitude: southWest.latitude,
                                                      minLongitude: southWest.longitude,
                                                      maxLatitude: northEast.latitude,
                                                      maxLongitude: northEast.longitude,

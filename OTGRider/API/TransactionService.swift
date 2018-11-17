@@ -10,7 +10,7 @@ import Foundation
 
 final class TransactionService {
     
-    static func getTransactions(completion: @escaping ([Transaction]?, Error?) -> Void) -> URLSessionDataTask? {
+    static func getHistoryTransactions(completion: @escaping ([Transaction]?, Error?) -> Void) -> URLSessionDataTask? {
         return APIClient.shared.load(path: "/transactions/me",
                                      method: .get,
                                      params: nil,
