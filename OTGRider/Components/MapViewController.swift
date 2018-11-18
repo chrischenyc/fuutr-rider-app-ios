@@ -17,6 +17,7 @@ class MapViewController: UIViewController {
     private var clusterManager: GMUClusterManager!
     private let countryZoomLevel: Float = 3.6
     private let streetZoomLevel: Float = 16.0
+    private let minDistanceFilter: CLLocationDistance = 3
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
     private var currentPath: GMSMutablePath?
     private var currentPolyline: GMSPolyline?
@@ -134,6 +135,12 @@ extension MapViewController {
         pinImageView.image = nil
         
         currentPath = GMSMutablePath()
+        if let currentLocation = currentLocation {
+            currentPath?.add(currentLocation.coordinate)
+        }
+        
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.pausesLocationUpdatesAutomatically = false
     }
     
     private func stopTrackingRide() {
@@ -148,6 +155,9 @@ extension MapViewController {
         currentPath = nil
         currentPolyline?.map = nil
         currentPolyline = nil
+        
+        locationManager.allowsBackgroundLocationUpdates = false
+        locationManager.pausesLocationUpdatesAutomatically = true
     }
     
     @objc private func updateRide() {
@@ -370,8 +380,8 @@ extension MapViewController {
     private func setupLocationManager() {
         // request location permisison if needed
         locationManager.delegate = self
-        locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.distanceFilter = minDistanceFilter
+        locationManager.activityType = .fitness
         
         switch CLLocationManager.authorizationStatus() {
         case .denied,
@@ -385,6 +395,9 @@ extension MapViewController {
         default:
             break   // delegate method didChangeAuthorization will be called if permission has been authorized
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appBecameActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     private func promptForLocationService() {
@@ -402,6 +415,16 @@ extension MapViewController {
                 }
             }
         }
+    }
+    
+    @objc private func appMovedToBackground() {
+        if ongoingRide == nil {
+            locationManager.stopUpdatingLocation()
+        }
+    }
+    
+    @objc private func appBecameActive() {
+        locationManager.startUpdatingLocation()
     }
 }
 
@@ -427,10 +450,8 @@ extension MapViewController: CLLocationManagerDelegate {
         
         currentLocation = location
         
-        if ongoingRide == nil || !CLLocationManager.headingAvailable() {
-            let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
-            mapView.animate(to: camera)
-        }
+        let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
+        mapView.animate(to: camera)
         
         if let currentPath = currentPath {
             currentPath.add(location.coordinate)
@@ -444,16 +465,6 @@ extension MapViewController: CLLocationManagerDelegate {
             
             currentPolyline?.path = currentPath
         }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        guard let location = currentLocation else { return }
-        
-        let camera = GMSCameraPosition.camera(withTarget: location.coordinate,
-                                              zoom: streetZoomLevel,
-                                              bearing: newHeading.trueHeading,
-                                              viewingAngle: 0)
-        mapView.animate(to: camera)
     }
     
     // Handle location manager errors.
