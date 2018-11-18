@@ -71,7 +71,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "../OTGRider/Melbourne.gpx"
+         identifier = "../OTGRider/unlock.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>

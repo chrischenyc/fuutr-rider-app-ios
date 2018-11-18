@@ -157,7 +157,7 @@
 		6BB6CB722196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
 		6BB6CB732196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
 		6BB6CB742196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
-		6BBC6A0221A0DDDA003C910B /* Melbourne.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731A0218968E000CC2651 /* Melbourne.gpx */; };
+		6BBC6A0221A0DDDA003C910B /* unlock.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731A0218968E000CC2651 /* unlock.gpx */; };
 		6BBC6A0321A0DDDD003C910B /* ride.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0021A0DD27003C910B /* ride.gpx */; };
 		6BBC6A0521A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
 		6BBC6A0621A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
@@ -359,7 +359,7 @@
 		6B849D4321941EB300CD9791 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		6B849D4421941EB300CD9791 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneService.swift; sourceTree = "<group>"; };
 		6B87319E2189643800CC2651 /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
-		6B8731A0218968E000CC2651 /* Melbourne.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Melbourne.gpx; sourceTree = "<group>"; };
+		6B8731A0218968E000CC2651 /* unlock.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = unlock.gpx; sourceTree = "<group>"; };
 		6B8731A2218997B600CC2651 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		6B8731A62189A70600CC2651 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		6B8731AA2189B9A500CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -620,7 +620,7 @@
 				A0CFE7A621747BF500BA3F6D /* Info.plist */,
 				6B87319E2189643800CC2651 /* Staging-Info.plist */,
 				6BDE9148218C1A30003F976B /* Dev-Info.plist */,
-				6B8731A0218968E000CC2651 /* Melbourne.gpx */,
+				6B8731A0218968E000CC2651 /* unlock.gpx */,
 				6BBC6A0021A0DD27003C910B /* ride.gpx */,
 				6B8731D5218A816000CC2651 /* OTGRider.entitlements */,
 				6BDE911A218C1983003F976B /* OTGRider-staging.entitlements */,
@@ -1080,7 +1080,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BDE9134218C19DF003F976B /* HowToRide.storyboard in Resources */,
-				6BBC6A0221A0DDDA003C910B /* Melbourne.gpx in Resources */,
+				6BBC6A0221A0DDDA003C910B /* unlock.gpx in Resources */,
 				6BDE9135218C19DF003F976B /* Account.storyboard in Resources */,
 				6BDE9136218C19DF003F976B /* LaunchScreen.storyboard in Resources */,
 				6BBE6C7F219AE6CA002D639B /* GoogleMapStyle.json in Resources */,

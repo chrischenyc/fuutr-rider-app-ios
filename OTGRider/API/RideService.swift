@@ -62,7 +62,7 @@ final class RideService {
         }
         
         if let path = path {
-            params["path"] = path.encodedPath()
+            params["encodedPath"] = path.encodedPath()
             params["distance"] = path.length(of: GMSLengthKind.geodesic)
         }
         
