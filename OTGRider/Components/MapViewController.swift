@@ -19,14 +19,16 @@ class MapViewController: UIViewController {
     private let streetZoomLevel: Float = 16.0
     private let minDistanceFilter: CLLocationDistance = 3
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
-    private var currentPath: GMSMutablePath?
-    private var currentPolyline: GMSPolyline?
     
     private var searchAPITask: URLSessionTask?
     private var rideAPITask: URLSessionTask?
-    private let newSearchDelay: TimeInterval = 1.5
-    private var scheduledSearchTimer: Timer?
-    private var scheduledRideUpdateTimer: Timer?
+    
+    private var deferredSearchTimer: Timer?     // a new round of search API will be fired unless time gets invalidated
+    private let searchDeferring: TimeInterval = 1.5
+    private var rideLocalUpdateTimer: Timer?    // periodically update duration, distance, route
+    private let localUpdateFrequency: TimeInterval = 1
+    private var rideServerUpdateTimer: Timer?   // periodically report travelled coordinates to server
+    private let serverUpdateFrequency: TimeInterval = 10
     
     var ongoingRide: Ride? {
         didSet {
@@ -39,6 +41,10 @@ class MapViewController: UIViewController {
             }
         }
     }
+    
+    private var ongoingRidePath: GMSMutablePath?    // to track travelled distance and to draw route
+    private var ongoingRidePolyline: GMSPolyline?
+    private var incrementalPath: GMSMutablePath?    // to report to server for the new segment
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuButton: UIButton!
@@ -113,9 +119,6 @@ class MapViewController: UIViewController {
             perform(segue: StoryboardSegue.Main.fromMapToScan)
         }
     }
-    
-    
-    
 }
 
 // MARK: - Ride Tracking
@@ -125,18 +128,27 @@ extension MapViewController {
         
         showRideInfo()
         
-        scheduledRideUpdateTimer?.invalidate()
-        scheduledRideUpdateTimer = Timer.scheduledTimer(timeInterval: 1,
+        rideLocalUpdateTimer?.invalidate()
+        rideLocalUpdateTimer = Timer.scheduledTimer(timeInterval: localUpdateFrequency,
                                                         target: self,
-                                                        selector: #selector(self.updateRide),
+                                                        selector: #selector(self.updateRideLocally),
                                                         userInfo: nil,
                                                         repeats: true)
         
+        rideServerUpdateTimer?.invalidate()
+        rideServerUpdateTimer = Timer.scheduledTimer(timeInterval: serverUpdateFrequency,
+                                                    target: self,
+                                                    selector: #selector(self.updateRide),
+                                                    userInfo: nil,
+                                                    repeats: true)
+        
         pinImageView.image = nil
         
-        currentPath = GMSMutablePath()
+        ongoingRidePath = GMSMutablePath()
+        incrementalPath = GMSMutablePath()
         if let currentLocation = currentLocation {
-            currentPath?.add(currentLocation.coordinate)
+            ongoingRidePath?.add(currentLocation.coordinate)
+            incrementalPath?.add(currentLocation.coordinate)
         }
         
         locationManager.allowsBackgroundLocationUpdates = true
@@ -148,23 +160,25 @@ extension MapViewController {
         
         hideRideInfo()
         
-        scheduledRideUpdateTimer?.invalidate()
+        rideLocalUpdateTimer?.invalidate()
+        rideServerUpdateTimer?.invalidate()
         
         pinImageView.image = Asset.pin.image
         
-        currentPath = nil
-        currentPolyline?.map = nil
-        currentPolyline = nil
+        ongoingRidePath = nil
+        ongoingRidePolyline?.map = nil
+        ongoingRidePolyline = nil
+        incrementalPath = nil
         
         locationManager.allowsBackgroundLocationUpdates = false
         locationManager.pausesLocationUpdatesAutomatically = true
     }
     
-    @objc private func updateRide() {
+    @objc private func updateRideLocally() {
         guard var ride = ongoingRide else { return }
         
         ride.refresh()
-        ride.distance = currentPath?.length(of: GMSLengthKind.geodesic)
+        ride.distance = ongoingRidePath?.length(of: GMSLengthKind.geodesic)
         
         self.ongoingRide = ride
     }
@@ -226,7 +240,7 @@ extension MapViewController {
     }
     
     private func lockScooter() {
-        guard let ride = ongoingRide, let scooterId = ride.scooter, let rideId = ride.id else { return }
+        guard let ongoingRide = ongoingRide, let scooterId = ongoingRide.scooter, let rideId = ongoingRide.id else { return }
         
         rideAPITask?.cancel()
         
@@ -234,7 +248,7 @@ extension MapViewController {
         rideAPITask = RideService.lock(scooterId: scooterId,
                                        rideId: rideId,
                                        coordinate: currentLocation?.coordinate,
-                                       path: currentPath,
+                                       path: ongoingRidePath,
                                        completion: { [weak self] (ride, error) in
                                         DispatchQueue.main.async {
                                             self?.dismissLoading()
@@ -254,6 +268,25 @@ extension MapViewController {
                                             self?.showCompletedRide(ride)
                                         }
         })
+    }
+    
+    @objc private func updateRide() {
+        guard let ongoingRideId = ongoingRide?.id else { return }
+        guard let pathToUpdate = incrementalPath else { return }
+        
+        rideAPITask?.cancel()
+        
+        rideAPITask = RideService.update(rideId: ongoingRideId, incrementalPath: pathToUpdate) { (error) in
+            logger.error(error)
+            
+            if error != nil {
+                // TODO: merge path coordinates which was failed to upload
+            }
+            
+//            completion?(error)
+        }
+        
+        incrementalPath = GMSMutablePath()
     }
 }
 
@@ -453,17 +486,21 @@ extension MapViewController: CLLocationManagerDelegate {
         let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
         mapView.animate(to: camera)
         
-        if let currentPath = currentPath {
+        if let currentPath = ongoingRidePath {
             currentPath.add(location.coordinate)
             
-            if currentPolyline == nil {
-                currentPolyline = GMSPolyline(path: currentPath)
-                currentPolyline?.strokeWidth = 2
-                currentPolyline?.strokeColor = UIColor.otgPrimary
-                currentPolyline?.map = mapView
+            if ongoingRidePolyline == nil {
+                ongoingRidePolyline = GMSPolyline(path: currentPath)
+                ongoingRidePolyline?.strokeWidth = 2
+                ongoingRidePolyline?.strokeColor = UIColor.otgPrimary
+                ongoingRidePolyline?.map = mapView
             }
             
-            currentPolyline?.path = currentPath
+            ongoingRidePolyline?.path = currentPath
+        }
+        
+        if let incrementalPath = incrementalPath {
+            incrementalPath.add(location.coordinate)
         }
     }
     
@@ -478,7 +515,7 @@ extension MapViewController: CLLocationManagerDelegate {
 // MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        scheduledSearchTimer?.invalidate()
+        deferredSearchTimer?.invalidate()
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
@@ -486,9 +523,9 @@ extension MapViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        scheduledSearchTimer?.invalidate()
+        deferredSearchTimer?.invalidate()
         
-        scheduledSearchTimer = Timer.scheduledTimer(timeInterval: newSearchDelay,
+        deferredSearchTimer = Timer.scheduledTimer(timeInterval: searchDeferring,
                                                     target: self,
                                                     selector: #selector(searchScooters),
                                                     userInfo: nil,

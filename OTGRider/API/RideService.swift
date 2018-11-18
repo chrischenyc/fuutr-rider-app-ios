@@ -79,6 +79,20 @@ final class RideService {
         })
     }
     
+    static func update(rideId: String, incrementalPath: GMSPath, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        let params: JSON = [
+            "encodedPath": incrementalPath.encodedPath(),
+            "distance": incrementalPath.length(of: GMSLengthKind.geodesic)
+        ]
+        
+        return APIClient.shared.load(path: "/rides/\(rideId)",
+            method: .patch,
+            params: params,
+            completion: { (result, error) in
+                completion(error)
+        })
+    }
+    
     static func getHistoryRides(_ completion: @escaping ([Ride]?, Error?) -> Void) -> URLSessionDataTask? {
         return APIClient.shared.load(path: "/rides/me",
                                      method: .get,
