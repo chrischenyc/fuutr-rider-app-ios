@@ -326,6 +326,7 @@
                     <connections>
                         <outlet property="guideButton" destination="CfQ-ca-FN2" id="nby-5I-2EI"/>
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
+                        <outlet property="pinImageView" destination="VZa-Sq-LCR" id="Y3D-z5-DxB"/>
                         <outlet property="rideInfoView" destination="JzT-1r-pb8" id="oLq-1K-4jc"/>
                         <outlet property="rideInfoViewBottomConstraint" destination="kld-eC-5Wm" id="IBE-kO-PDV"/>
                         <outlet property="scooterInfoView" destination="AXS-jP-Qde" id="bl0-u1-D5g"/>

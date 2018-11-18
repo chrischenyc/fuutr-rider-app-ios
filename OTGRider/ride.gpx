@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    
+    <!--
+     Provide one or more waypoints containing a latitude/longitude pair. If you provide one
+     waypoint, Xcode will simulate that specific location. If you provide multiple waypoints,
+     Xcode will simulate a route visiting each waypoint.
+     -->
+    
+    <wpt lat="-37.8678555" lon="145.2160727">
+        <time>2010-01-01T00:00:00Z</time>
+    </wpt>
+    <wpt lat="-37.8678640" lon="145.2155685">
+        <time>2010-01-01T00:00:15Z</time>
+    </wpt>
+    <wpt lat="-37.8678640" lon="145.2151179">
+        <time>2010-01-01T00:00:30Z</time>
+    </wpt>
+    <wpt lat="-37.8679910" lon="145.2148711">
+        <time>2010-01-01T00:00:39Z</time>
+    </wpt>
+    <wpt lat="-37.8680079" lon="145.2145814">
+        <time>2010-01-01T00:00:48Z</time>
+    </wpt>
+    <wpt lat="-37.8693038" lon="145.2145922">
+        <time>2010-01-01T00:01:40Z</time>
+    </wpt>
+    <wpt lat="-37.8704980" lon="145.2146029">
+        <time>2010-01-01T00:02:28Z</time>
+    </wpt>
+    <wpt lat="-37.8712433" lon="145.2145922">
+        <time>2010-01-01T00:02:58Z</time>
+    </wpt>
+    <wpt lat="-37.8713957" lon="145.2149462">
+        <time>2010-01-01T00:03:10Z</time>
+    </wpt>
+    <wpt lat="-37.8713873" lon="145.2154290">
+        <time>2010-01-01T00:03:26Z</time>
+    </wpt>
+    <wpt lat="-37.8711586" lon="145.2160406">
+        <time>2010-01-01T00:03:47Z</time>
+    </wpt>
+    <wpt lat="-37.8709045" lon="145.2159118">
+        <time>2010-01-01T00:03:58Z</time>
+    </wpt>
+    <wpt lat="-37.8704895" lon="145.2156972">
+        <time>2010-01-01T00:04:16Z</time>
+    </wpt>
+    <wpt lat="-37.8694478" lon="145.2156972">
+        <time>2010-01-01T00:04:58Z</time>
+    </wpt>
+    <wpt lat="-37.8691429" lon="145.2158260">
+        <time>2010-01-01T00:05:11Z</time>
+    </wpt>
+    <wpt lat="-37.8689735" lon="145.2161908">
+        <time>2010-01-01T00:05:24Z</time>
+    </wpt>
+    <wpt lat="-37.8688973" lon="145.2166414">
+        <time>2010-01-01T00:05:38Z</time>
+    </wpt>
+    <wpt lat="-37.8687109" lon="145.2171564">
+        <time>2010-01-01T00:05:56Z</time>
+    </wpt>
+    <wpt lat="-37.8682366" lon="145.2181220">
+        <time>2010-01-01T00:06:32Z</time>
+    </wpt>
+    <wpt lat="-37.8677369" lon="145.2177143">
+        <time>2010-01-01T00:06:56Z</time>
+    </wpt>
+    <wpt lat="-37.8670085" lon="145.2174139">
+        <time>2010-01-01T00:07:27Z</time>
+    </wpt>
+    <wpt lat="-37.8665596" lon="145.2170276">
+        <time>2010-01-01T00:07:48Z</time>
+    </wpt>
+    <wpt lat="-37.8658651" lon="145.2160620">
+        <time>2010-01-01T00:08:30Z</time>
+    </wpt>
+    <wpt lat="-37.8655602" lon="145.2156972">
+        <time>2010-01-01T00:08:47Z</time>
+    </wpt>
+    <wpt lat="-37.8654585" lon="145.2154827">
+        <time>2010-01-01T00:08:54Z</time>
+    </wpt>
+    <wpt lat="-37.8654331" lon="145.2149784">
+        <time>2010-01-01T00:09:10Z</time>
+    </wpt>
+    <wpt lat="-37.8654331" lon="145.2147316">
+        <time>2010-01-01T00:09:18Z</time>
+    </wpt>
+    <wpt lat="-37.8655009" lon="145.2145922">
+        <time>2010-01-01T00:09:23Z</time>
+    </wpt>
+    <wpt lat="-37.8659837" lon="145.2146136">
+        <time>2010-01-01T00:09:43Z</time>
+    </wpt>
+    <wpt lat="-37.8664072" lon="145.2146029">
+        <time>2010-01-01T00:10:00Z</time>
+    </wpt>
+    <wpt lat="-37.8667121" lon="145.2145922">
+        <time>2010-01-01T00:10:12Z</time>
+    </wpt>
+    <wpt lat="-37.8669916" lon="145.2145814">
+        <time>2010-01-01T00:10:23Z</time>
+    </wpt>
+    <wpt lat="-37.8673812" lon="145.2145814">
+        <time>2010-01-01T00:10:39Z</time>
+    </wpt>
+    <wpt lat="-37.8676692" lon="145.2146029">
+        <time>2010-01-01T00:10:50Z</time>
+    </wpt>
+</gpx>
+
+
+

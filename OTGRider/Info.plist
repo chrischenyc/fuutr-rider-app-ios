@@ -46,10 +46,16 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>OTG Ride will use your camera to scan QRCode on our scooters</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>OTG Ride will use your location to look for scooters near you and track your ride</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>OTG Ride will use your location to look for scooters near you and track your ride</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -69,7 +75,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>OTG Ride will use your camera to scan QRCode on our scooters</string>
+	<key>UIApplicationExitsOnSuspend</key>
+	<false/>
 </dict>
 </plist>

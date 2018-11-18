@@ -34,7 +34,7 @@ class UnlockViewController: UIViewController {
         
         if let mapViewController = segue.destination as? MapViewController,
             let ride = sender as? Ride {
-            mapViewController.ride = ride
+            mapViewController.ongoingRide = ride
         }
     }
     

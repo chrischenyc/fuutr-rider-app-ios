@@ -157,6 +157,8 @@
 		6BB6CB722196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
 		6BB6CB732196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
 		6BB6CB742196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
+		6BBC6A0221A0DDDA003C910B /* Melbourne.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731A0218968E000CC2651 /* Melbourne.gpx */; };
+		6BBC6A0321A0DDDD003C910B /* ride.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0021A0DD27003C910B /* ride.gpx */; };
 		6BBE6C7D219AE6CA002D639B /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */; };
 		6BBE6C7E219AE6CA002D639B /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */; };
 		6BBE6C7F219AE6CA002D639B /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */; };
@@ -384,6 +386,7 @@
 		6BB2082C219F8AA3008E5EF1 /* RideService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideService.swift; sourceTree = "<group>"; };
 		6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		6BBC6A0021A0DD27003C910B /* ride.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ride.gpx; sourceTree = "<group>"; };
 		6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapStyle.json; sourceTree = "<group>"; };
 		6BBE6C81219BC9D3002D639B /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		6BBE6C85219BCA7B002D639B /* UIViewController+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
@@ -614,6 +617,7 @@
 				6B87319E2189643800CC2651 /* Staging-Info.plist */,
 				6BDE9148218C1A30003F976B /* Dev-Info.plist */,
 				6B8731A0218968E000CC2651 /* Melbourne.gpx */,
+				6BBC6A0021A0DD27003C910B /* ride.gpx */,
 				6B8731D5218A816000CC2651 /* OTGRider.entitlements */,
 				6BDE911A218C1983003F976B /* OTGRider-staging.entitlements */,
 				6BDE914A218C1A84003F976B /* OTGRider-dev.entitlements */,
@@ -1000,6 +1004,9 @@
 							com.apple.ApplePay = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -1010,6 +1017,9 @@
 						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.Keychain = {
@@ -1024,6 +1034,9 @@
 						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.Keychain = {
@@ -1062,6 +1075,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BDE9134218C19DF003F976B /* HowToRide.storyboard in Resources */,
+				6BBC6A0221A0DDDA003C910B /* Melbourne.gpx in Resources */,
 				6BDE9135218C19DF003F976B /* Account.storyboard in Resources */,
 				6BDE9136218C19DF003F976B /* LaunchScreen.storyboard in Resources */,
 				6BBE6C7F219AE6CA002D639B /* GoogleMapStyle.json in Resources */,
@@ -1069,6 +1083,7 @@
 				6BDE9138218C19DF003F976B /* Help.storyboard in Resources */,
 				6BDE9139218C19DF003F976B /* SignIn.storyboard in Resources */,
 				6BDE913A218C19DF003F976B /* Localizable.strings in Resources */,
+				6BBC6A0321A0DDDD003C910B /* ride.gpx in Resources */,
 				6BDE913B218C19DF003F976B /* Assets.xcassets in Resources */,
 				6BDE913C218C19DF003F976B /* Onboard.storyboard in Resources */,
 				6BDE913D218C19DF003F976B /* Unlock.storyboard in Resources */,

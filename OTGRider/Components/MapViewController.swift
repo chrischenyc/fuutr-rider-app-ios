@@ -16,6 +16,7 @@ class MapViewController: UIViewController {
     private let countryZoomLevel: Float = 3.6
     private let streetZoomLevel: Float = 16.0
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
+    private var currentLocation: CLLocation?
     
     private var searchAPITask: URLSessionTask?
     private var rideAPITask: URLSessionTask?
@@ -23,13 +24,13 @@ class MapViewController: UIViewController {
     private var scheduledSearchTimer: Timer?
     private var scheduledRideUpdateTimer: Timer?
     
-    var ride: Ride? {
+    var ongoingRide: Ride? {
         didSet {
-            if let ride = ride {
-                rideInfoView.updateContent(withRide: ride)
+            if let ongoingRide = ongoingRide {
+                rideInfoView.updateContent(withRide: ongoingRide)
             }
             
-            if ride != oldValue {
+            if ongoingRide != oldValue {
                 updateUnlockButton()
             }
         }
@@ -45,6 +46,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var rideInfoView: RideInfoView!
     @IBOutlet weak var rideInfoViewBottomConstraint: NSLayoutConstraint!
     private let rideInfoViewBottomToSuperView: CGFloat = 206
+    @IBOutlet weak var pinImageView: UIImageView!
     
     // MARK: - lifecycle
     override func viewDidLoad() {
@@ -91,17 +93,17 @@ class MapViewController: UIViewController {
             }
         }
         else if let _ = sourceViewController as? UnlockViewController,
-            let ride = ride,
+            let ride = ongoingRide,
             let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
-            // rewind from unlock
+            // rewind from unlock, a new ride starts
             unwindSegueWithCompletion.completion = {
-                self.showRide(ride)
+                self.startTrackingRide(ride)
             }
         }
     }
     
     @IBAction func unlockButtonTapped(_ sender: Any) {
-        if ride != nil {
+        if ongoingRide != nil {
             lockScooter()
         } else {
             perform(segue: StoryboardSegue.Main.fromMapToScan)
@@ -109,18 +111,51 @@ class MapViewController: UIViewController {
     }
     
     
-    // MARK: - ride update
+    
+}
+
+// MARK: - Ride Tracking
+extension MapViewController {
+    private func startTrackingRide(_ ride: Ride) {
+        ongoingRide = ride
+        
+        showRideInfo()
+        
+        scheduledRideUpdateTimer?.invalidate()
+        scheduledRideUpdateTimer = Timer.scheduledTimer(timeInterval: 1,
+                                                        target: self,
+                                                        selector: #selector(self.updateRide),
+                                                        userInfo: nil,
+                                                        repeats: true)
+        
+        pinImageView.image = nil
+    }
+    
+    private func stopTrackingRide() {
+        ongoingRide = nil
+        
+        hideRideInfo()
+        
+        scheduledRideUpdateTimer?.invalidate()
+        
+        pinImageView.image = Asset.pin.image
+    }
+    
     @objc private func updateRide() {
-        guard var ride = ride else { return }
+        guard var ride = ongoingRide else { return }
         
         ride.refresh()
-        self.ride = ride
+        self.ongoingRide = ride
     }
 }
 
 // MARK: - API
 extension MapViewController {
     @objc private func searchScooters() {
+        // pause new scooter search while user is during a ride
+        guard ongoingRide == nil else { return }
+        
+        
         searchAPITask?.cancel()
         
         let currentMapViewBounds = GMSCoordinateBounds(region: mapView.projection.visibleRegion())
@@ -128,25 +163,25 @@ extension MapViewController {
         let southWest = currentMapViewBounds.southWest
         
         searchAPITask = ScooterService.search(minLatitude: southWest.latitude,
-                                                     minLongitude: southWest.longitude,
-                                                     maxLatitude: northEast.latitude,
-                                                     maxLongitude: northEast.longitude,
-                                                     completion: { [weak self] (scooters, error) in
-                                                        guard error == nil else {
-                                                            logger.error(error?.localizedDescription)
-                                                            return
-                                                        }
-                                                        
-                                                        guard let scooters = scooters else {
-                                                            return
-                                                        }
-                                                        
-                                                        self?.addMapMakers(forScooters: scooters)
+                                              minLongitude: southWest.longitude,
+                                              maxLatitude: northEast.latitude,
+                                              maxLongitude: northEast.longitude,
+                                              completion: { [weak self] (scooters, error) in
+                                                guard error == nil else {
+                                                    logger.error(error?.localizedDescription)
+                                                    return
+                                                }
+                                                
+                                                guard let scooters = scooters else {
+                                                    return
+                                                }
+                                                
+                                                self?.addMapMakers(forScooters: scooters)
         })
     }
     
     private func loadOpenRide() {
-        guard ride == nil else { return }
+        guard ongoingRide == nil else { return }
         
         rideAPITask?.cancel()
         
@@ -163,13 +198,14 @@ extension MapViewController {
                     return
                 }
                 
-                self?.showRide(ride)
+                // resume tracking an ongoing ride
+                self?.startTrackingRide(ride)
             }
         })
     }
     
     private func lockScooter() {
-        guard let ride = ride, let scooterId = ride.scooter, let rideId = ride.id else { return }
+        guard let ride = ongoingRide, let scooterId = ride.scooter, let rideId = ride.id else { return }
         
         rideAPITask?.cancel()
         
@@ -187,6 +223,8 @@ extension MapViewController {
                     self?.alertMessage(L10n.kOtherError)
                     return
                 }
+                
+                self?.stopTrackingRide()
                 
                 self?.showCompletedRide(ride)
             }
@@ -249,30 +287,15 @@ extension MapViewController {
     }
     
     private func updateUnlockButton() {
-        if ride != nil {
+        if ongoingRide != nil {
             unlockButton.setTitle("End Ride", for: .normal)
         } else {
             unlockButton.setTitle("Unlock", for: .normal)
         }
     }
     
-    private func showRide(_ ride: Ride) {
-        self.ride = ride
-        showRideInfo()
-        scheduledRideUpdateTimer?.invalidate()
-        scheduledRideUpdateTimer = Timer.scheduledTimer(timeInterval: 1,
-                                                        target: self,
-                                                        selector: #selector(self.updateRide),
-                                                        userInfo: nil,
-                                                        repeats: true)
-    }
-    
     private func showCompletedRide(_ ride: Ride) {
         alertMessage("Thanks! Ride summary:\(ride.summary())")
-        
-        hideRideInfo()
-        scheduledRideUpdateTimer?.invalidate()
-        self.ride = nil
     }
 }
 
@@ -384,11 +407,21 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
-        locationManager.stopUpdatingLocation()
+        currentLocation = location
         
-        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                              longitude: location.coordinate.longitude,
-                                              zoom: streetZoomLevel)
+        if ongoingRide == nil || !CLLocationManager.headingAvailable() {
+            let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
+            mapView.animate(to: camera)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        guard let location = currentLocation else { return }
+        
+        let camera = GMSCameraPosition.camera(withTarget: location.coordinate,
+                                              zoom: streetZoomLevel,
+                                              bearing: newHeading.trueHeading,
+                                              viewingAngle: 0)
         mapView.animate(to: camera)
     }
     
