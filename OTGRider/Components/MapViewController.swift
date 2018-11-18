@@ -370,6 +370,8 @@ extension MapViewController {
     private func setupLocationManager() {
         // request location permisison if needed
         locationManager.delegate = self
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.pausesLocationUpdatesAutomatically = false
         
         switch CLLocationManager.authorizationStatus() {
         case .denied,
