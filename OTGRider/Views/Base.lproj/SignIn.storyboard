@@ -339,7 +339,7 @@
                                         <rect key="frame" x="0.0" y="46" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                         <connections>
                                             <action selector="passwordChanged:" destination="GXk-iU-xto" eventType="editingChanged" id="CkJ-CK-XXv"/>
                                         </connections>
@@ -574,7 +574,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uxi-sZ-NDa"/>
-        <segue reference="NYh-wd-6MW"/>
+        <segue reference="U9n-5U-fai"/>
+        <segue reference="PB7-vV-uTW"/>
     </inferredMetricsTieBreakers>
 </document>
