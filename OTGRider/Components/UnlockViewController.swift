@@ -70,34 +70,36 @@ class UnlockViewController: UIViewController {
         
         showLoading()
         
-        apiTask = RideService.unlock(vehicleCode: vehicleCode, completion: { [weak self] (ride, error) in
-            
-            DispatchQueue.main.async {
-                self?.dismissLoading()
-                
-                guard error == nil else {
-                    logger.error(error?.localizedDescription)
-                    
-                    if error?.localizedDescription == "insufficient balance" {
-                        self?.alertMessage("You account balance is not enough for a new ride",
-                                           actionButtonTitle: "Top up balance",
-                                           actionButtonTapped: {
-                                            self?.navigateToAccount()
-                        })
-                    } else {
-                        self?.flashErrorMessage(error?.localizedDescription)
-                    }
-                    return
-                }
-                
-                guard let ride = ride else {
-                    self?.flashErrorMessage(L10n.kOtherError)
-                    return
-                }
-                
-                self?.navigateToMap(withRide: ride)
-                
-            }
+        apiTask = RideService.unlock(vehicleCode: vehicleCode,
+                                     coordinate: currentLocation?.coordinate,
+                                     completion: { [weak self] (ride, error) in
+                                        
+                                        DispatchQueue.main.async {
+                                            self?.dismissLoading()
+                                            
+                                            guard error == nil else {
+                                                logger.error(error?.localizedDescription)
+                                                
+                                                if error?.localizedDescription == "insufficient balance" {
+                                                    self?.alertMessage("You account balance is not enough for a new ride",
+                                                                       actionButtonTitle: "Top up balance",
+                                                                       actionButtonTapped: {
+                                                                        self?.navigateToAccount()
+                                                    })
+                                                } else {
+                                                    self?.flashErrorMessage(error?.localizedDescription)
+                                                }
+                                                return
+                                            }
+                                            
+                                            guard let ride = ride else {
+                                                self?.flashErrorMessage(L10n.kOtherError)
+                                                return
+                                            }
+                                            
+                                            self?.navigateToMap(withRide: ride)
+                                            
+                                        }
         })
     }
     

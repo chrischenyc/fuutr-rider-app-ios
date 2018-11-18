@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMaps
 
+var currentLocation: CLLocation?
+
 class MapViewController: UIViewController {
     
     private let locationManager = CLLocationManager()
@@ -16,7 +18,6 @@ class MapViewController: UIViewController {
     private let countryZoomLevel: Float = 3.6
     private let streetZoomLevel: Float = 16.0
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
-    private var currentLocation: CLLocation?
     private var currentPath: GMSMutablePath?
     private var currentPolyline: GMSPolyline?
     
@@ -365,6 +366,7 @@ extension MapViewController {
     private func setupLocationManager() {
         // request location permisison if needed
         locationManager.delegate = self
+        
         switch CLLocationManager.authorizationStatus() {
         case .denied,
              .restricted:
