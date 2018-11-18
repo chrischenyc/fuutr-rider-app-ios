@@ -221,7 +221,7 @@ extension MapViewController {
         rideAPITask?.cancel()
         
         showLoading(withMessage: "Locking scooter")
-        rideAPITask = RideService.lock(scooterId: scooterId, rideId: rideId, completion: { [weak self] (ride, error) in
+        rideAPITask = RideService.lock(scooterId: scooterId, rideId: rideId, coordinate: currentLocation?.coordinate, completion: { [weak self] (ride, error) in
             DispatchQueue.main.async {
                 self?.dismissLoading()
                 

@@ -26,7 +26,7 @@ final class RideService {
     static func unlock(vehicleCode: String, coordinate: CLLocationCoordinate2D?, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
         var params: JSON = [
             "vehicleCode": vehicleCode,
-        ]
+            ]
         
         if let coordinate = coordinate {
             params["latitude"] = coordinate.latitude
@@ -46,11 +46,16 @@ final class RideService {
         })
     }
     
-    static func lock(scooterId: String, rideId: String, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
-        let params: JSON = [
+    static func lock(scooterId: String, rideId: String, coordinate: CLLocationCoordinate2D?, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
+        var params: JSON = [
             "scooterId": scooterId,
             "rideId": rideId
         ]
+        
+        if let coordinate = coordinate {
+            params["latitude"] = coordinate.latitude
+            params["longitude"] = coordinate.longitude
+        }
         
         return APIClient.shared.load(path: "/rides/lock",
                                      method: .post,
