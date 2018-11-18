@@ -17,6 +17,8 @@ class MapViewController: UIViewController {
     private let streetZoomLevel: Float = 16.0
     private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
     private var currentLocation: CLLocation?
+    private var currentPath: GMSMutablePath?
+    private var currentPolyline: GMSPolyline?
     
     private var searchAPITask: URLSessionTask?
     private var rideAPITask: URLSessionTask?
@@ -129,6 +131,8 @@ extension MapViewController {
                                                         repeats: true)
         
         pinImageView.image = nil
+        
+        currentPath = GMSMutablePath()
     }
     
     private func stopTrackingRide() {
@@ -139,12 +143,18 @@ extension MapViewController {
         scheduledRideUpdateTimer?.invalidate()
         
         pinImageView.image = Asset.pin.image
+        
+        currentPath = nil
+        currentPolyline?.map = nil
+        currentPolyline = nil
     }
     
     @objc private func updateRide() {
         guard var ride = ongoingRide else { return }
         
         ride.refresh()
+        ride.distance = currentPath?.length(of: GMSLengthKind.geodesic)
+        
         self.ongoingRide = ride
     }
 }
@@ -412,6 +422,19 @@ extension MapViewController: CLLocationManagerDelegate {
         if ongoingRide == nil || !CLLocationManager.headingAvailable() {
             let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
             mapView.animate(to: camera)
+        }
+        
+        if let currentPath = currentPath {
+            currentPath.add(location.coordinate)
+            
+            if currentPolyline == nil {
+                currentPolyline = GMSPolyline(path: currentPath)
+                currentPolyline?.strokeWidth = 2
+                currentPolyline?.strokeColor = UIColor.otgPrimary
+                currentPolyline?.map = mapView
+            }
+            
+            currentPolyline?.path = currentPath
         }
     }
     

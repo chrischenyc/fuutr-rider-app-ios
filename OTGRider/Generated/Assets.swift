@@ -20,7 +20,6 @@
 internal enum Asset {
   internal static let launch = ImageAsset(name: "launch")
   internal static let pin = ImageAsset(name: "pin")
-  internal static let rider = ImageAsset(name: "rider")
   internal static let scooterGreen = ImageAsset(name: "scooter-green")
   internal static let scooterOrange = ImageAsset(name: "scooter-orange")
   internal static let scooterRed = ImageAsset(name: "scooter-red")

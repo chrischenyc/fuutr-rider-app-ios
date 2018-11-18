@@ -27,7 +27,12 @@ class RideInfoView: UIView {
             durationLabel.text = "n/a"
         }
         
-        distanceLabel.text = "n/a"
+        if let distance = ride.distance {
+            distanceLabel.text = distance.distanceString
+        } else {
+            distanceLabel.text = "n/a"
+        }
+        
         costLabel.text = ride.totalCost?.currencyString ?? "n/a"
     }
     

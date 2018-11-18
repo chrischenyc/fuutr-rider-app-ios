@@ -16,7 +16,7 @@ struct Ride: Mappable, Equatable {
     var unlockTime: Date?
     var lockTime: Date?
     var duration: TimeInterval?
-    var distance: Int?
+    var distance: Double?
     var completed: Bool?
     var unlockCost: Double?
     var minuteCost: Double?
