@@ -221,24 +221,28 @@ extension MapViewController {
         rideAPITask?.cancel()
         
         showLoading(withMessage: "Locking scooter")
-        rideAPITask = RideService.lock(scooterId: scooterId, rideId: rideId, coordinate: currentLocation?.coordinate, completion: { [weak self] (ride, error) in
-            DispatchQueue.main.async {
-                self?.dismissLoading()
-                
-                guard error == nil else {
-                    self?.alertError(error!)
-                    return
-                }
-                
-                guard let ride = ride else {
-                    self?.alertMessage(L10n.kOtherError)
-                    return
-                }
-                
-                self?.stopTrackingRide()
-                
-                self?.showCompletedRide(ride)
-            }
+        rideAPITask = RideService.lock(scooterId: scooterId,
+                                       rideId: rideId,
+                                       coordinate: currentLocation?.coordinate,
+                                       path: currentPath,
+                                       completion: { [weak self] (ride, error) in
+                                        DispatchQueue.main.async {
+                                            self?.dismissLoading()
+                                            
+                                            guard error == nil else {
+                                                self?.alertError(error!)
+                                                return
+                                            }
+                                            
+                                            guard let ride = ride else {
+                                                self?.alertMessage(L10n.kOtherError)
+                                                return
+                                            }
+                                            
+                                            self?.stopTrackingRide()
+                                            
+                                            self?.showCompletedRide(ride)
+                                        }
         })
     }
 }

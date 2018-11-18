@@ -46,7 +46,11 @@ final class RideService {
         })
     }
     
-    static func lock(scooterId: String, rideId: String, coordinate: CLLocationCoordinate2D?, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
+    static func lock(scooterId: String,
+                     rideId: String,
+                     coordinate: CLLocationCoordinate2D?,
+                     path: GMSPath?,
+                     completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
         var params: JSON = [
             "scooterId": scooterId,
             "rideId": rideId
@@ -55,6 +59,11 @@ final class RideService {
         if let coordinate = coordinate {
             params["latitude"] = coordinate.latitude
             params["longitude"] = coordinate.longitude
+        }
+        
+        if let path = path {
+            params["path"] = path.encodedPath()
+            params["distance"] = path.length(of: GMSLengthKind.geodesic)
         }
         
         return APIClient.shared.load(path: "/rides/lock",

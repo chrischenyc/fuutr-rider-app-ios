@@ -9,18 +9,18 @@
 import UIKit
 
 class HistoryRideCell: UITableViewCell {
-
+    
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     
-
+    
     func updateContent(withRide ride: Ride) {
         startTimeLabel.text = "Unlock: " + (ride.unlockTime?.dateTimeString)!
         endTimeLabel.text = "Lock: " + (ride.lockTime?.dateTimeString)!
-        distanceLabel.text = "Distance: " + "n/a"
+        distanceLabel.text = "Distance: " + (ride.distance?.distanceString)!
         durationLabel.text = "Duration: " + (ride.duration?.hhmmssString)!
         costLabel.text = "Cost: " + (ride.totalCost?.currencyString)!
     }
