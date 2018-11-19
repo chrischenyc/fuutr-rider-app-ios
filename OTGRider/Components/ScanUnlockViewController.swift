@@ -76,7 +76,8 @@ extension ScanUnlockViewController {
     
     private func supportsMetadataObjectTypes(_ metadataTypes: [AVMetadataObject.ObjectType]? = nil) throws -> Bool {
         guard let captureDevice = AVCaptureDevice.default(for: .video) else {
-            throw NSError(domain: "com.otgride", code: -1001, userInfo: nil)
+            logger.error("unsupported device")
+            return false
         }
         
         let deviceInput = try AVCaptureDeviceInput(device: captureDevice)

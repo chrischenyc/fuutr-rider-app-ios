@@ -130,17 +130,17 @@ extension MapViewController {
         
         rideLocalUpdateTimer?.invalidate()
         rideLocalUpdateTimer = Timer.scheduledTimer(timeInterval: localUpdateFrequency,
-                                                        target: self,
-                                                        selector: #selector(self.updateRideLocally),
-                                                        userInfo: nil,
-                                                        repeats: true)
+                                                    target: self,
+                                                    selector: #selector(self.updateRideLocally),
+                                                    userInfo: nil,
+                                                    repeats: true)
         
         rideServerUpdateTimer?.invalidate()
         rideServerUpdateTimer = Timer.scheduledTimer(timeInterval: serverUpdateFrequency,
-                                                    target: self,
-                                                    selector: #selector(self.updateRide),
-                                                    userInfo: nil,
-                                                    repeats: true)
+                                                     target: self,
+                                                     selector: #selector(self.updateRide),
+                                                     userInfo: nil,
+                                                     repeats: true)
         
         pinImageView.image = nil
         
@@ -240,52 +240,56 @@ extension MapViewController {
     }
     
     private func lockScooter() {
-        guard let ongoingRide = ongoingRide, let scooterId = ongoingRide.scooter, let rideId = ongoingRide.id else { return }
+        guard let id = ongoingRide?.id else { return }
+        guard let coordinate = currentLocation?.coordinate else { return }
+        guard let incrementalPath = incrementalPath else { return }
+        guard let ongoingRidePath = ongoingRidePath else { return }
+        
+        stopTrackingRide()
         
         rideAPITask?.cancel()
         
         showLoading(withMessage: "Locking scooter")
-        rideAPITask = RideService.lock(scooterId: scooterId,
-                                       rideId: rideId,
-                                       coordinate: currentLocation?.coordinate,
-                                       path: ongoingRidePath,
-                                       completion: { [weak self] (ride, error) in
-                                        DispatchQueue.main.async {
-                                            self?.dismissLoading()
-                                            
-                                            guard error == nil else {
-                                                self?.alertError(error!)
-                                                return
+        rideAPITask = RideService.finish(rideId: id,
+                                         coordinate: coordinate,
+                                         encodedPath: incrementalPath.encodedPath(),
+                                         distance: ongoingRidePath.length(of: GMSLengthKind.geodesic),
+                                         completion: { [weak self] (ride, error) in
+                                            DispatchQueue.main.async {
+                                                self?.dismissLoading()
+                                                
+                                                guard error == nil else {
+                                                    self?.alertError(error!)
+                                                    return
+                                                }
+                                                
+                                                guard let ride = ride else {
+                                                    self?.alertMessage(L10n.kOtherError)
+                                                    return
+                                                }
+                                                
+                                                self?.showCompletedRide(ride)
                                             }
-                                            
-                                            guard let ride = ride else {
-                                                self?.alertMessage(L10n.kOtherError)
-                                                return
-                                            }
-                                            
-                                            self?.stopTrackingRide()
-                                            
-                                            self?.showCompletedRide(ride)
-                                        }
         })
     }
     
     @objc private func updateRide() {
-        guard let ongoingRideId = ongoingRide?.id else { return }
-        guard let pathToUpdate = incrementalPath else { return }
+        guard let rideId = ongoingRide?.id else { return }
+        guard let path = incrementalPath else { return }
         
         rideAPITask?.cancel()
         
-        rideAPITask = RideService.update(rideId: ongoingRideId, incrementalPath: pathToUpdate) { (error) in
-            logger.error(error)
-            
-            if error != nil {
-                // TODO: merge path coordinates which was failed to upload
-            }
-            
-//            completion?(error)
+        rideAPITask = RideService.update(rideId: rideId,
+                                         incrementalEncodedPath: path.encodedPath(),
+                                         incrementalDistance: path.length(of: GMSLengthKind.geodesic)) { (error) in
+                                            logger.error(error)
+                                            
+                                            if error != nil {
+                                                // TODO: merge path coordinates which was failed to upload
+                                            }
         }
         
+        // reset incremental path straight away
         incrementalPath = GMSMutablePath()
     }
 }
@@ -526,10 +530,10 @@ extension MapViewController: GMSMapViewDelegate {
         deferredSearchTimer?.invalidate()
         
         deferredSearchTimer = Timer.scheduledTimer(timeInterval: searchDeferring,
-                                                    target: self,
-                                                    selector: #selector(searchScooters),
-                                                    userInfo: nil,
-                                                    repeats: false)
+                                                   target: self,
+                                                   selector: #selector(searchScooters),
+                                                   userInfo: nil,
+                                                   repeats: false)
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {

@@ -46,43 +46,38 @@ final class RideService {
         })
     }
     
-    static func lock(scooterId: String,
-                     rideId: String,
-                     coordinate: CLLocationCoordinate2D?,
-                     path: GMSPath?,
-                     completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
-        var params: JSON = [
-            "scooterId": scooterId,
-            "rideId": rideId
+    static func finish(rideId: String,
+                       coordinate: CLLocationCoordinate2D,
+                       encodedPath: String,
+                       distance: Double,
+                       completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
+        let params: JSON = [
+            "latitude": coordinate.latitude,
+            "longitude": coordinate.longitude,
+            "encodedPath": encodedPath,
+            "distance": distance
         ]
         
-        if let coordinate = coordinate {
-            params["latitude"] = coordinate.latitude
-            params["longitude"] = coordinate.longitude
-        }
-        
-        if let path = path {
-            params["encodedPath"] = path.encodedPath()
-            params["distance"] = path.length(of: GMSLengthKind.geodesic)
-        }
-        
-        return APIClient.shared.load(path: "/rides/lock",
-                                     method: .post,
-                                     params: params,
-                                     completion: { (result, error) in
-                                        if let json = result as? JSON {
-                                            completion(Ride(JSON: json), nil)
-                                            return
-                                        }
-                                        
-                                        completion(nil, error)
+        return APIClient.shared.load(path: "/rides/\(rideId)/finish",
+            method: .post,
+            params: params,
+            completion: { (result, error) in
+                if let json = result as? JSON {
+                    completion(Ride(JSON: json), nil)
+                    return
+                }
+                
+                completion(nil, error)
         })
     }
     
-    static func update(rideId: String, incrementalPath: GMSPath, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+    static func update(rideId: String,
+                       incrementalEncodedPath: String,
+                       incrementalDistance: Double,
+                       completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
         let params: JSON = [
-            "encodedPath": incrementalPath.encodedPath(),
-            "distance": incrementalPath.length(of: GMSLengthKind.geodesic)
+            "incrementalEncodedPath": incrementalEncodedPath,
+            "incrementalDistance": incrementalDistance
         ]
         
         return APIClient.shared.load(path: "/rides/\(rideId)",
