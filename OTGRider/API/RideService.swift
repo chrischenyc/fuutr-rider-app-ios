@@ -9,20 +9,6 @@
 import Foundation
 
 final class RideService {
-    static func getOngoingRide(_ completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
-        return APIClient.shared.load(path: "/rides/me/ongoing",
-                                     method: .get,
-                                     params: nil,
-                                     completion: { (result, error) in
-                                        if let json = result as? JSON, let ride = Ride(JSON: json) {
-                                            completion(ride, nil)
-                                            return
-                                        }
-                                        
-                                        completion(nil, error)
-        })
-    }
-    
     static func unlock(vehicleCode: String, coordinate: CLLocationCoordinate2D?, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
         var params: JSON = [
             "vehicleCode": vehicleCode,
@@ -48,14 +34,14 @@ final class RideService {
     
     static func finish(rideId: String,
                        coordinate: CLLocationCoordinate2D,
-                       encodedPath: String,
-                       distance: Double,
+                       incrementalEncodedPath: String,
+                       incrementalDistance: Double,
                        completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
         let params: JSON = [
             "latitude": coordinate.latitude,
             "longitude": coordinate.longitude,
-            "encodedPath": encodedPath,
-            "distance": distance
+            "incrementalEncodedPath": incrementalEncodedPath,
+            "incrementalDistance": incrementalDistance
         ]
         
         return APIClient.shared.load(path: "/rides/\(rideId)/finish",
@@ -95,6 +81,20 @@ final class RideService {
                                      completion: { (result, error) in
                                         if let jsonArray = result as? [JSON] {
                                             completion(Ride.fromJSONArray(jsonArray), nil)
+                                            return
+                                        }
+                                        
+                                        completion(nil, error)
+        })
+    }
+    
+    static func getOngoingRide(_ completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
+        return APIClient.shared.load(path: "/rides/me/ongoing",
+                                     method: .get,
+                                     params: nil,
+                                     completion: { (result, error) in
+                                        if let json = result as? JSON, let ride = Ride(JSON: json) {
+                                            completion(ride, nil)
                                             return
                                         }
                                         

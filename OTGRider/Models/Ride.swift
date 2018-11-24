@@ -21,6 +21,7 @@ struct Ride: Mappable, Equatable {
     var unlockCost: Double?
     var minuteCost: Double?
     var totalCost: Double?
+    var encodedPath: String?
     
     init?(map: Map) {
         
@@ -38,6 +39,7 @@ struct Ride: Mappable, Equatable {
         unlockCost      <- map["unlockCost"]
         minuteCost      <- map["minuteCost"]
         totalCost       <- map["totalCost"]
+        encodedPath     <- map["encodedPath"]
     }
     
     static func fromJSONArray(_ jsonArray: [JSON]) -> [Ride]? {

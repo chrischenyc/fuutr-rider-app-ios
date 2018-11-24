@@ -29,6 +29,7 @@ class MapViewController: UIViewController {
     private let localUpdateFrequency: TimeInterval = 1
     private var rideServerUpdateTimer: Timer?   // periodically report travelled coordinates to server
     private let serverUpdateFrequency: TimeInterval = 10
+    private var didLoadOngoingRide: Bool = false
     
     var ongoingRide: Ride? {
         didSet {
@@ -65,7 +66,6 @@ class MapViewController: UIViewController {
         setupUI()
         setupMapView()
         setupLocationManager()
-        loadOpenRide()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -144,7 +144,16 @@ extension MapViewController {
         
         pinImageView.image = nil
         
-        ongoingRidePath = GMSMutablePath()
+        // try to resume previously saved route
+        if let encodedPath = ride.encodedPath, let decodedPath = GMSMutablePath(fromEncodedPath: encodedPath){
+            ongoingRidePath = decodedPath
+            
+            drawRoute(forPath: decodedPath)
+        }
+        else {
+            ongoingRidePath = GMSMutablePath()
+        }
+        
         incrementalPath = GMSMutablePath()
         if let currentLocation = currentLocation {
             ongoingRidePath?.add(currentLocation.coordinate)
@@ -215,8 +224,11 @@ extension MapViewController {
         })
     }
     
-    private func loadOpenRide() {
+    private func loadOngoingRide() {
         guard ongoingRide == nil else { return }
+        guard !didLoadOngoingRide else { return }
+        
+        didLoadOngoingRide = true   // only attempt to load ongoing ride the first time app launches
         
         rideAPITask?.cancel()
         
@@ -243,7 +255,6 @@ extension MapViewController {
         guard let id = ongoingRide?.id else { return }
         guard let coordinate = currentLocation?.coordinate else { return }
         guard let incrementalPath = incrementalPath else { return }
-        guard let ongoingRidePath = ongoingRidePath else { return }
         
         stopTrackingRide()
         
@@ -252,8 +263,8 @@ extension MapViewController {
         showLoading(withMessage: "Locking scooter")
         rideAPITask = RideService.finish(rideId: id,
                                          coordinate: coordinate,
-                                         encodedPath: incrementalPath.encodedPath(),
-                                         distance: ongoingRidePath.length(of: GMSLengthKind.geodesic),
+                                         incrementalEncodedPath: incrementalPath.encodedPath(),
+                                         incrementalDistance: incrementalPath.length(of: GMSLengthKind.geodesic),
                                          completion: { [weak self] (ride, error) in
                                             DispatchQueue.main.async {
                                                 self?.dismissLoading()
@@ -410,6 +421,17 @@ extension MapViewController {
             self.clusterManager.cluster()
         }
     }
+    
+    private func drawRoute(forPath path:GMSPath?) {
+        if ongoingRidePolyline == nil {
+            ongoingRidePolyline = GMSPolyline(path: nil)
+            ongoingRidePolyline?.strokeWidth = 2
+            ongoingRidePolyline?.strokeColor = UIColor.otgPrimary
+            ongoingRidePolyline?.map = mapView
+        }
+        
+        ongoingRidePolyline?.path = path
+    }
 }
 
 // MARK: - Location
@@ -490,17 +512,12 @@ extension MapViewController: CLLocationManagerDelegate {
         let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
         mapView.animate(to: camera)
         
+        // once GPS signal is settled, check if there's an ongoing ride
+        loadOngoingRide()
+        
         if let currentPath = ongoingRidePath {
             currentPath.add(location.coordinate)
-            
-            if ongoingRidePolyline == nil {
-                ongoingRidePolyline = GMSPolyline(path: currentPath)
-                ongoingRidePolyline?.strokeWidth = 2
-                ongoingRidePolyline?.strokeColor = UIColor.otgPrimary
-                ongoingRidePolyline?.map = mapView
-            }
-            
-            ongoingRidePolyline?.path = currentPath
+            drawRoute(forPath: currentPath)
         }
         
         if let incrementalPath = incrementalPath {
