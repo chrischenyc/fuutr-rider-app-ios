@@ -18,44 +18,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMn-qT-Lqe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shm-Gb-0QM" userLabel="View - centre placeholder">
+                                <rect key="frame" x="64" y="210" width="247" height="247"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Shm-Gb-0QM" secondAttribute="height" multiplier="1:1" id="ORk-Fx-wxc"/>
+                                </constraints>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvH-hA-AB8" userLabel="View - backdrop top">
+                                <rect key="frame" x="0.0" y="64" width="375" height="146"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxc-wv-tPB" userLabel="View - backdrop bottom">
+                                <rect key="frame" x="0.0" y="457" width="375" height="210"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMZ-5E-fCf" userLabel="View - backdrop left">
+                                <rect key="frame" x="0.0" y="210" width="64" height="247"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ipg-Ee-65k" userLabel="View - backdrop right">
+                                <rect key="frame" x="311" y="210" width="64" height="247"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can find the QR code here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qen-mJ-6bh">
                                 <rect key="frame" x="89" y="106" width="197" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyo-y8-0fK">
-                                <rect key="frame" x="106" y="573" width="35" height="30"/>
+                                <rect key="frame" x="106" y="589" width="35" height="30"/>
                                 <state key="normal" title="1234"/>
                                 <connections>
                                     <segue destination="TG1-ZS-mA8" kind="show" identifier="fromScanToInput" animates="NO" id="RoP-VA-MQf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZg-jL-qwt">
-                                <rect key="frame" x="233.5" y="573" width="36" height="30"/>
+                                <rect key="frame" x="233.5" y="589" width="36" height="30"/>
                                 <state key="normal" title="torch"/>
                                 <connections>
                                     <action selector="torchButtonTapped:" destination="DvR-xo-IsL" eventType="touchUpInside" id="Jix-FY-DJa"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMn-qT-Lqe">
-                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="MMn-qT-Lqe" secondAttribute="height" multiplier="1:1" id="3y3-NM-fuS"/>
-                                    <constraint firstAttribute="width" constant="240" id="h0j-pi-Ja1"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="centerX" secondItem="QvB-gL-kWV" secondAttribute="centerX" id="650-z8-1h7"/>
-                            <constraint firstItem="vH3-qe-ICE" firstAttribute="bottom" secondItem="Zyo-y8-0fK" secondAttribute="bottom" constant="64" id="86C-ob-B3e"/>
-                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="centerY" secondItem="QvB-gL-kWV" secondAttribute="centerY" id="P8S-15-TEh"/>
+                            <constraint firstItem="Shm-Gb-0QM" firstAttribute="leading" secondItem="vH3-qe-ICE" secondAttribute="leading" constant="64" id="1Nq-PW-v5a"/>
+                            <constraint firstItem="ZMZ-5E-fCf" firstAttribute="leading" secondItem="vH3-qe-ICE" secondAttribute="leading" id="3Jw-KH-roH"/>
+                            <constraint firstItem="Shm-Gb-0QM" firstAttribute="centerY" secondItem="QvB-gL-kWV" secondAttribute="centerY" id="6a8-4I-xoy"/>
+                            <constraint firstItem="vH3-qe-ICE" firstAttribute="bottom" secondItem="Zyo-y8-0fK" secondAttribute="bottom" constant="48" id="86C-ob-B3e"/>
+                            <constraint firstItem="Shm-Gb-0QM" firstAttribute="leading" secondItem="ZMZ-5E-fCf" secondAttribute="trailing" id="BjX-3E-CmH"/>
+                            <constraint firstItem="FvH-hA-AB8" firstAttribute="top" secondItem="vH3-qe-ICE" secondAttribute="top" id="Jgp-jq-IC8"/>
+                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="trailing" secondItem="Ipg-Ee-65k" secondAttribute="trailing" id="ME5-Dy-bAw"/>
+                            <constraint firstItem="ZMZ-5E-fCf" firstAttribute="top" secondItem="FvH-hA-AB8" secondAttribute="bottom" id="MqU-Nn-j2x"/>
+                            <constraint firstItem="Nxc-wv-tPB" firstAttribute="trailing" secondItem="vH3-qe-ICE" secondAttribute="trailing" id="OKU-Kx-qUx"/>
                             <constraint firstItem="uZg-jL-qwt" firstAttribute="centerX" secondItem="QvB-gL-kWV" secondAttribute="centerX" constant="64" id="RA7-hS-dGb"/>
+                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="leading" secondItem="ZMZ-5E-fCf" secondAttribute="leading" id="UTa-xv-bUh"/>
+                            <constraint firstItem="Ipg-Ee-65k" firstAttribute="top" secondItem="FvH-hA-AB8" secondAttribute="bottom" id="Xza-qS-R5h"/>
+                            <constraint firstItem="Nxc-wv-tPB" firstAttribute="bottom" secondItem="QvB-gL-kWV" secondAttribute="bottom" id="b8z-kZ-NJJ"/>
+                            <constraint firstItem="Nxc-wv-tPB" firstAttribute="top" secondItem="Ipg-Ee-65k" secondAttribute="bottom" id="bTy-ct-d4F"/>
+                            <constraint firstItem="FvH-hA-AB8" firstAttribute="leading" secondItem="vH3-qe-ICE" secondAttribute="leading" id="bis-5D-cMK"/>
                             <constraint firstItem="Zyo-y8-0fK" firstAttribute="centerX" secondItem="QvB-gL-kWV" secondAttribute="centerX" constant="-64" id="fQG-ZN-oti"/>
+                            <constraint firstItem="Nxc-wv-tPB" firstAttribute="top" secondItem="ZMZ-5E-fCf" secondAttribute="bottom" id="hlq-S8-5cZ"/>
                             <constraint firstItem="qen-mJ-6bh" firstAttribute="centerX" secondItem="QvB-gL-kWV" secondAttribute="centerX" id="jow-9s-A4I"/>
-                            <constraint firstItem="vH3-qe-ICE" firstAttribute="bottom" secondItem="uZg-jL-qwt" secondAttribute="bottom" constant="64" id="r98-Ha-7Mt"/>
+                            <constraint firstItem="Shm-Gb-0QM" firstAttribute="top" secondItem="FvH-hA-AB8" secondAttribute="bottom" id="nTl-sf-7IN"/>
+                            <constraint firstItem="FvH-hA-AB8" firstAttribute="trailing" secondItem="vH3-qe-ICE" secondAttribute="trailing" id="oVj-yC-LNQ"/>
+                            <constraint firstItem="Nxc-wv-tPB" firstAttribute="leading" secondItem="vH3-qe-ICE" secondAttribute="leading" id="oih-3E-8HW"/>
+                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="top" secondItem="FvH-hA-AB8" secondAttribute="top" id="qHf-wL-VLU"/>
+                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="bottom" secondItem="Nxc-wv-tPB" secondAttribute="bottom" id="qY2-zm-HIW"/>
+                            <constraint firstItem="vH3-qe-ICE" firstAttribute="bottom" secondItem="uZg-jL-qwt" secondAttribute="bottom" constant="48" id="r98-Ha-7Mt"/>
+                            <constraint firstItem="Ipg-Ee-65k" firstAttribute="trailing" secondItem="vH3-qe-ICE" secondAttribute="trailing" id="rXH-9G-XGD"/>
+                            <constraint firstItem="Ipg-Ee-65k" firstAttribute="leading" secondItem="Shm-Gb-0QM" secondAttribute="trailing" id="sN2-lr-Fbv"/>
+                            <constraint firstItem="Shm-Gb-0QM" firstAttribute="centerX" secondItem="QvB-gL-kWV" secondAttribute="centerX" id="sa8-o1-AgL"/>
+                            <constraint firstItem="Nxc-wv-tPB" firstAttribute="top" secondItem="Shm-Gb-0QM" secondAttribute="bottom" id="sq3-5l-Isv"/>
                             <constraint firstItem="qen-mJ-6bh" firstAttribute="top" secondItem="vH3-qe-ICE" secondAttribute="top" constant="42" id="tuI-qq-S04"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vH3-qe-ICE"/>
@@ -204,6 +244,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="byq-Gv-pNF"/>
+        <segue reference="1D7-Xm-beO"/>
     </inferredMetricsTieBreakers>
 </document>
