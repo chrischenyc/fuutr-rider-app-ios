@@ -18,10 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMn-qT-Lqe">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shm-Gb-0QM" userLabel="View - centre placeholder">
                                 <rect key="frame" x="64" y="210" width="247" height="247"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,11 +70,9 @@
                             <constraint firstItem="vH3-qe-ICE" firstAttribute="bottom" secondItem="Zyo-y8-0fK" secondAttribute="bottom" constant="48" id="86C-ob-B3e"/>
                             <constraint firstItem="Shm-Gb-0QM" firstAttribute="leading" secondItem="ZMZ-5E-fCf" secondAttribute="trailing" id="BjX-3E-CmH"/>
                             <constraint firstItem="FvH-hA-AB8" firstAttribute="top" secondItem="vH3-qe-ICE" secondAttribute="top" id="Jgp-jq-IC8"/>
-                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="trailing" secondItem="Ipg-Ee-65k" secondAttribute="trailing" id="ME5-Dy-bAw"/>
                             <constraint firstItem="ZMZ-5E-fCf" firstAttribute="top" secondItem="FvH-hA-AB8" secondAttribute="bottom" id="MqU-Nn-j2x"/>
                             <constraint firstItem="Nxc-wv-tPB" firstAttribute="trailing" secondItem="vH3-qe-ICE" secondAttribute="trailing" id="OKU-Kx-qUx"/>
                             <constraint firstItem="uZg-jL-qwt" firstAttribute="centerX" secondItem="QvB-gL-kWV" secondAttribute="centerX" constant="64" id="RA7-hS-dGb"/>
-                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="leading" secondItem="ZMZ-5E-fCf" secondAttribute="leading" id="UTa-xv-bUh"/>
                             <constraint firstItem="Ipg-Ee-65k" firstAttribute="top" secondItem="FvH-hA-AB8" secondAttribute="bottom" id="Xza-qS-R5h"/>
                             <constraint firstItem="Nxc-wv-tPB" firstAttribute="bottom" secondItem="QvB-gL-kWV" secondAttribute="bottom" id="b8z-kZ-NJJ"/>
                             <constraint firstItem="Nxc-wv-tPB" firstAttribute="top" secondItem="Ipg-Ee-65k" secondAttribute="bottom" id="bTy-ct-d4F"/>
@@ -89,8 +83,6 @@
                             <constraint firstItem="Shm-Gb-0QM" firstAttribute="top" secondItem="FvH-hA-AB8" secondAttribute="bottom" id="nTl-sf-7IN"/>
                             <constraint firstItem="FvH-hA-AB8" firstAttribute="trailing" secondItem="vH3-qe-ICE" secondAttribute="trailing" id="oVj-yC-LNQ"/>
                             <constraint firstItem="Nxc-wv-tPB" firstAttribute="leading" secondItem="vH3-qe-ICE" secondAttribute="leading" id="oih-3E-8HW"/>
-                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="top" secondItem="FvH-hA-AB8" secondAttribute="top" id="qHf-wL-VLU"/>
-                            <constraint firstItem="MMn-qT-Lqe" firstAttribute="bottom" secondItem="Nxc-wv-tPB" secondAttribute="bottom" id="qY2-zm-HIW"/>
                             <constraint firstItem="vH3-qe-ICE" firstAttribute="bottom" secondItem="uZg-jL-qwt" secondAttribute="bottom" constant="48" id="r98-Ha-7Mt"/>
                             <constraint firstItem="Ipg-Ee-65k" firstAttribute="trailing" secondItem="vH3-qe-ICE" secondAttribute="trailing" id="rXH-9G-XGD"/>
                             <constraint firstItem="Ipg-Ee-65k" firstAttribute="leading" secondItem="Shm-Gb-0QM" secondAttribute="trailing" id="sN2-lr-Fbv"/>
@@ -108,7 +100,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="codeReaderView" destination="MMn-qT-Lqe" id="APG-Bb-RxP"/>
                         <outlet property="torchButton" destination="uZg-jL-qwt" id="wc3-lj-Vk7"/>
                         <segue destination="KHr-zS-cXC" kind="unwind" unwindAction="unwindToHome:" id="bWs-RX-EpA"/>
                         <segue destination="azV-My-27l" kind="show" identifier="fromScanUnlockToAccount" id="1D7-Xm-beO"/>

@@ -10,17 +10,16 @@ import Foundation
 import AVFoundation
 
 class ScanUnlockViewController: UnlockViewController {
-    @IBOutlet weak var codeReaderView: UIView!
     
     private let scanner = QRCode()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scanner.prepareScan(codeReaderView) { (stringValue) -> () in
+        scanner.prepareScan(view) { (stringValue) -> () in
             self.handleScanResult(stringValue)
         }
-        scanner.scanFrame = codeReaderView.bounds
+        scanner.scanFrame = view.bounds
     }
     
     override func viewDidAppear(_ animated: Bool) {
