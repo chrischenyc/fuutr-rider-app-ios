@@ -15,10 +15,8 @@ class MapViewController: UIViewController {
     
     private let locationManager = CLLocationManager()
     private var clusterManager: GMUClusterManager!
-    private let countryZoomLevel: Float = 3.6
     private let streetZoomLevel: Float = 16.0
     private let minDistanceFilter: CLLocationDistance = 3
-    private let defaultCoordinate = CLLocationCoordinate2D(latitude: -26.0, longitude: 133.5)   // centre of Australia
     
     private var searchAPITask: URLSessionTask?
     private var rideAPITask: URLSessionTask?
@@ -375,11 +373,6 @@ extension MapViewController {
 // MARK: - Map
 extension MapViewController {
     private func setupMapView() {
-        // init Google Map with default view
-        let camera = GMSCameraPosition.camera(withLatitude: defaultCoordinate.latitude,
-                                              longitude: defaultCoordinate.longitude,
-                                              zoom: countryZoomLevel)
-        mapView.camera = camera
         mapView.delegate = self
         do {
             // Set the map style by passing the URL of the local file.
