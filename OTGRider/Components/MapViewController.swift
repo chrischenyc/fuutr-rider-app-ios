@@ -27,6 +27,7 @@ class MapViewController: UIViewController {
     private let localUpdateFrequency: TimeInterval = 1
     private var rideServerUpdateTimer: Timer?   // periodically report travelled coordinates to server
     private let serverUpdateFrequency: TimeInterval = 10
+    private var serverUpdateThreshhold: CLLocationDistance = 10    // the minimum travel distance for a new server update
     private var didLoadOngoingRide: Bool = false
     
     var ongoingRide: Ride? {
@@ -136,7 +137,7 @@ extension MapViewController {
         rideServerUpdateTimer?.invalidate()
         rideServerUpdateTimer = Timer.scheduledTimer(timeInterval: serverUpdateFrequency,
                                                      target: self,
-                                                     selector: #selector(self.updateRide),
+                                                     selector: #selector(self.updateRideToServer),
                                                      userInfo: nil,
                                                      repeats: true)
         
@@ -282,9 +283,9 @@ extension MapViewController {
         })
     }
     
-    @objc private func updateRide() {
+    @objc private func updateRideToServer() {
         guard let rideId = ongoingRide?.id else { return }
-        guard let path = incrementalPath, path.length(of: GMSLengthKind.geodesic) > 0 else { return }
+        guard let path = incrementalPath, path.length(of: GMSLengthKind.geodesic) > serverUpdateThreshhold else { return }
         
         rideAPITask?.cancel()
         
