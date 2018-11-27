@@ -254,8 +254,6 @@ extension MapViewController {
         guard let coordinate = currentLocation?.coordinate else { return }
         guard let incrementalPath = incrementalPath else { return }
         
-        stopTrackingRide()
-        
         rideAPITask?.cancel()
         
         showLoading(withMessage: "Locking scooter")
@@ -278,6 +276,8 @@ extension MapViewController {
                                                 }
                                                 
                                                 self?.showCompletedRide(ride)
+                                                
+                                                self?.stopTrackingRide()
                                             }
         })
     }
