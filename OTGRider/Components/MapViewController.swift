@@ -284,7 +284,7 @@ extension MapViewController {
     
     @objc private func updateRide() {
         guard let rideId = ongoingRide?.id else { return }
-        guard let path = incrementalPath else { return }
+        guard let path = incrementalPath, path.length(of: GMSLengthKind.geodesic) > 0 else { return }
         
         rideAPITask?.cancel()
         
@@ -417,7 +417,7 @@ extension MapViewController {
     
     private func drawRoute(forPath path:GMSPath?) {
         if ongoingRidePolyline == nil {
-            ongoingRidePolyline = GMSPolyline(path: nil)
+            ongoingRidePolyline = GMSPolyline(path: path)
             ongoingRidePolyline?.strokeWidth = 2
             ongoingRidePolyline?.strokeColor = UIColor.otgPrimary
             ongoingRidePolyline?.map = mapView
@@ -520,8 +520,6 @@ extension MapViewController: CLLocationManagerDelegate {
     
     // Handle location manager errors.
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        manager.stopUpdatingLocation()
-        
         logger.error(error.localizedDescription)
     }
 }
