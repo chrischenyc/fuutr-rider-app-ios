@@ -161,6 +161,9 @@ extension MapViewController {
         
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false
+        
+        // do not show scooters during riding
+        clearMapMakers()
     }
     
     private func stopTrackingRide() {
@@ -180,6 +183,8 @@ extension MapViewController {
         
         locationManager.allowsBackgroundLocationUpdates = false
         locationManager.pausesLocationUpdatesAutomatically = true
+        
+        searchScooters()
     }
     
     @objc private func updateRideLocally() {
@@ -413,6 +418,12 @@ extension MapViewController {
             self.clusterManager.add(items)
             
             self.clusterManager.cluster()
+        }
+    }
+    
+    private func clearMapMakers() {
+        DispatchQueue.main.async {
+            self.clusterManager.clearItems()
         }
     }
     
