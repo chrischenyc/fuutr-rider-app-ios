@@ -119,7 +119,7 @@
                                     <segue destination="xVf-4u-b1H" kind="presentation" id="9mY-jt-ZDY"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXS-jP-Qde" customClass="ScooterInfoView" customModule="OTGRider" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXS-jP-Qde" customClass="VehicleInfoView" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="24" y="80" width="327" height="96"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Ds-Z8-uir">
@@ -212,14 +212,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tLl-lz-uFb">
                                         <rect key="frame" x="16" y="8" width="295" height="104"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scooter no." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lh-Cp-CbR">
-                                                <rect key="frame" x="0.0" y="0.0" width="295" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ILh-ki-cfP">
-                                                <rect key="frame" x="0.0" y="28.5" width="295" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="32"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FCe-Be-rFn">
                                                         <rect key="frame" x="0.0" y="0.0" width="93" height="32"/>
@@ -275,7 +269,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsh-V7-GKn">
-                                                <rect key="frame" x="0.0" y="68.5" width="295" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="40" width="295" height="64"/>
                                                 <state key="normal" title="how to ride"/>
                                                 <connections>
                                                     <action selector="howToTapped:" destination="JzT-1r-pb8" eventType="touchUpInside" id="oZU-La-UCC"/>
@@ -296,7 +290,6 @@
                                     <outlet property="costLabel" destination="at5-SI-sog" id="kre-Tk-Kfg"/>
                                     <outlet property="distanceLabel" destination="Q9n-dL-k5P" id="Aab-n3-66k"/>
                                     <outlet property="durationLabel" destination="Buf-Jj-vS0" id="okw-Ky-e3K"/>
-                                    <outlet property="scooterInfoLabel" destination="8Lh-Cp-CbR" id="bMv-VB-piB"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -329,10 +322,10 @@
                         <outlet property="pinImageView" destination="VZa-Sq-LCR" id="Y3D-z5-DxB"/>
                         <outlet property="rideInfoView" destination="JzT-1r-pb8" id="oLq-1K-4jc"/>
                         <outlet property="rideInfoViewBottomConstraint" destination="kld-eC-5Wm" id="IBE-kO-PDV"/>
-                        <outlet property="scooterInfoView" destination="AXS-jP-Qde" id="bl0-u1-D5g"/>
-                        <outlet property="scooterInfoViewBottomConstraint" destination="ikx-gV-4XW" id="pjI-XV-grW"/>
                         <outlet property="sideMenuButton" destination="wXu-gN-jng" id="Szo-TM-gWK"/>
                         <outlet property="unlockButton" destination="1MR-Ss-nph" id="wJT-vO-elG"/>
+                        <outlet property="vehicleInfoView" destination="AXS-jP-Qde" id="bl0-u1-D5g"/>
+                        <outlet property="vehicleInfoViewBottomConstraint" destination="ikx-gV-4XW" id="pjI-XV-grW"/>
                         <segue destination="6ub-gY-uRn" kind="presentation" identifier="showHistory" id="jgO-zq-Q4p"/>
                         <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showAccount" id="NuG-ER-BNQ"/>
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>

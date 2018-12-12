@@ -10,7 +10,6 @@ import Foundation
 
 class RideInfoView: UIView {
     
-    @IBOutlet weak var scooterInfoLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
@@ -18,8 +17,6 @@ class RideInfoView: UIView {
     var onHowToTapped: (()->Void)?
     
     func updateContent(withRide ride: Ride) {
-        scooterInfoLabel.text = "Scooter \(ride.vehicleCode ?? "n/a")"
-        
         if let duration = ride.duration {
             durationLabel.text = duration.hhmmssString
         }

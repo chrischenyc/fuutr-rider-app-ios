@@ -1,5 +1,5 @@
 //
-//  Scooter.swift
+//  Vehicle.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 13/11/18.
@@ -9,9 +9,8 @@
 import Foundation
 import ObjectMapper
 
-struct Scooter: Mappable {
-    var iotCode: String?
-    var vehicleCode: String?
+struct Vehicle: Mappable {
+    var _id: String?
     var powerPercent: Int?
     var remainderRange: Int?
     var latitude: Double?
@@ -22,15 +21,14 @@ struct Scooter: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        iotCode         <- map["iotCode"]
-        vehicleCode     <- map["vehicleCode"]
+        _id              <- map["_id"]
         powerPercent    <- map["powerPercent"]
         remainderRange  <- map["remainderRange"]
         latitude        <- map["latitude"]
         longitude       <- map["longitude"]
     }
     
-    static func fromJSONArray(_ jsonArray: [JSON]) -> [Scooter]? {
-        return Mapper<Scooter>().mapArray(JSONArray: jsonArray)
+    static func fromJSONArray(_ jsonArray: [JSON]) -> [Vehicle]? {
+        return Mapper<Vehicle>().mapArray(JSONArray: jsonArray)
     }
 }

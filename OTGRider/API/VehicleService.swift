@@ -1,5 +1,5 @@
 //
-//  ScooterService.swift
+//  VehicleService.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 13/11/18.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-final class ScooterService {
-    static func search(minLatitude: Double, minLongitude: Double, maxLatitude: Double, maxLongitude: Double, completion: @escaping ([Scooter]?, Error?) -> Void) -> URLSessionDataTask? {
+final class VehicleService {
+    static func search(minLatitude: Double, minLongitude: Double, maxLatitude: Double, maxLongitude: Double, completion: @escaping ([Vehicle]?, Error?) -> Void) -> URLSessionDataTask? {
         
         let params: JSON = [
             "minLatitude": minLatitude,
@@ -23,7 +23,7 @@ final class ScooterService {
                                      params: params,
                                      completion: { (result, error) in
                                         if let jsonArray = result as? [JSON] {
-                                            completion(Scooter.fromJSONArray(jsonArray), nil)
+                                            completion(Vehicle.fromJSONArray(jsonArray), nil)
                                             return
                                         }
                                         

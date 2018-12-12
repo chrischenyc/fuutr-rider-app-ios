@@ -1,5 +1,5 @@
 //
-//  ScooterInfoView.swift
+//  VehicleInfoView.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 14/11/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScooterInfoView: UIView {
+class VehicleInfoView: UIView {
     
     @IBOutlet weak var batteryLabel: UILabel!
     @IBOutlet weak var rangeLabel: UILabel!
@@ -22,14 +22,14 @@ class ScooterInfoView: UIView {
         
     }
     
-    func updateContentWith(scooter: ScooterPOIItem) {
-        if let powerPercent = scooter.powerPercent {
+    func updateContentWith(_ poi: VehiclePOI) {
+        if let powerPercent = poi.powerPercent {
             batteryLabel.text = "Battery \(powerPercent)%"
         } else {
             batteryLabel.text = "Battery N/A"
         }
         
-        if let remainderRange = scooter.remainderRange {
+        if let remainderRange = poi.remainderRange {
             rangeLabel.text = "Range \(remainderRange)km"
         } else {
             rangeLabel.text = "Range N/A"

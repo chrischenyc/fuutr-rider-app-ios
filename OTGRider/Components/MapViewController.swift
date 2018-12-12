@@ -50,9 +50,9 @@ class MapViewController: UIViewController {
     @IBOutlet weak var sideMenuButton: UIButton!
     @IBOutlet weak var guideButton: UIButton!
     @IBOutlet weak var unlockButton: UIButton!
-    @IBOutlet weak var scooterInfoView: ScooterInfoView!
-    @IBOutlet weak var scooterInfoViewBottomConstraint: NSLayoutConstraint!
-    private let scooterInfoViewBottomToSuperView: CGFloat = 194
+    @IBOutlet weak var vehicleInfoView: VehicleInfoView!
+    @IBOutlet weak var vehicleInfoViewBottomConstraint: NSLayoutConstraint!
+    private let vehicleInfoViewBottomToSuperView: CGFloat = 194
     @IBOutlet weak var rideInfoView: RideInfoView!
     @IBOutlet weak var rideInfoViewBottomConstraint: NSLayoutConstraint!
     private let rideInfoViewBottomToSuperView: CGFloat = 206
@@ -68,8 +68,8 @@ class MapViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // animate out scooter banner before leaving
-        hideScooterInfo()
+        // animate out vehicle banner before leaving
+        hideVehicleInfo()
     }
     
     // MARK: - user actions
@@ -113,7 +113,7 @@ class MapViewController: UIViewController {
     
     @IBAction func unlockButtonTapped(_ sender: Any) {
         if ongoingRide != nil {
-            lockScooter()
+            lockVehicle()
         } else {
             perform(segue: StoryboardSegue.Main.fromMapToScan)
         }
@@ -162,7 +162,7 @@ extension MapViewController {
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false
         
-        // do not show scooters during riding
+        // do not show vehicles during riding
         clearMapMakers()
     }
     
@@ -184,7 +184,7 @@ extension MapViewController {
         locationManager.allowsBackgroundLocationUpdates = false
         locationManager.pausesLocationUpdatesAutomatically = true
         
-        searchScooters()
+        searchVehicles()
     }
     
     @objc private func updateRideLocally() {
@@ -199,8 +199,8 @@ extension MapViewController {
 
 // MARK: - API
 extension MapViewController {
-    @objc private func searchScooters() {
-        // pause new scooter search while user is during a ride
+    @objc private func searchVehicles() {
+        // pause new vehicles search while user is during a ride
         guard ongoingRide == nil else { return }
         
         
@@ -210,21 +210,21 @@ extension MapViewController {
         let northEast = currentMapViewBounds.northEast
         let southWest = currentMapViewBounds.southWest
         
-        searchAPITask = ScooterService.search(minLatitude: southWest.latitude,
+        searchAPITask = VehicleService.search(minLatitude: southWest.latitude,
                                               minLongitude: southWest.longitude,
                                               maxLatitude: northEast.latitude,
                                               maxLongitude: northEast.longitude,
-                                              completion: { [weak self] (scooters, error) in
+                                              completion: { [weak self] (vehicles, error) in
                                                 guard error == nil else {
                                                     logger.error(error?.localizedDescription)
                                                     return
                                                 }
                                                 
-                                                guard let scooters = scooters else {
+                                                guard let vehicles = vehicles else {
                                                     return
                                                 }
                                                 
-                                                self?.addMapMakers(forScooters: scooters)
+                                                self?.addMapMakers(forVehicles: vehicles)
         })
     }
     
@@ -255,7 +255,7 @@ extension MapViewController {
         })
     }
     
-    private func lockScooter() {
+    private func lockVehicle() {
         guard let id = ongoingRide?.id else { return }
         guard let coordinate = currentLocation?.coordinate else { return }
         guard let incrementalPath = incrementalPath else { return }
@@ -317,9 +317,9 @@ extension MapViewController {
         guideButton.backgroundColor = UIColor.otgWhite
         unlockButton.layoutCornerRadiusAndShadow()
         unlockButton.backgroundColor = UIColor.otgWhite
-        scooterInfoView.backgroundColor = UIColor.otgWhite
-        scooterInfoView.layoutCornerRadiusAndShadow()
-        scooterInfoViewBottomConstraint.constant = 0
+        vehicleInfoView.backgroundColor = UIColor.otgWhite
+        vehicleInfoView.layoutCornerRadiusAndShadow()
+        vehicleInfoViewBottomConstraint.constant = 0
         rideInfoView.backgroundColor = UIColor.otgWhite
         rideInfoView.layoutCornerRadiusAndShadow()
         rideInfoViewBottomConstraint.constant = 0
@@ -330,17 +330,17 @@ extension MapViewController {
         updateUnlockButton()
     }
     
-    private func showScooterInfo(scooter: ScooterPOIItem) {
-        self.scooterInfoView.updateContentWith(scooter: scooter)
-        self.scooterInfoViewBottomConstraint.constant = self.scooterInfoViewBottomToSuperView
+    private func showVehicleInfo(_ vehicle: VehiclePOI) {
+        self.vehicleInfoView.updateContentWith(vehicle)
+        self.vehicleInfoViewBottomConstraint.constant = self.vehicleInfoViewBottomToSuperView
         
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
         }
     }
     
-    private func hideScooterInfo() {
-        self.scooterInfoViewBottomConstraint.constant = 0
+    private func hideVehicleInfo() {
+        self.vehicleInfoViewBottomConstraint.constant = 0
         
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
@@ -407,11 +407,11 @@ extension MapViewController {
         clusterManager.setDelegate(self, mapDelegate: self)
     }
     
-    private func addMapMakers(forScooters scooters: [Scooter]) {
+    private func addMapMakers(forVehicles vehicles: [Vehicle]) {
         DispatchQueue.main.async {
             // add new item
-            let items = scooters.map { (scooter) -> ScooterPOIItem in
-                let item = ScooterPOIItem(scooter: scooter)
+            let items = vehicles.map { (vehicle) -> VehiclePOI in
+                let item = VehiclePOI(vehicle: vehicle)
                 
                 return item
             }
@@ -551,22 +551,22 @@ extension MapViewController: GMSMapViewDelegate {
         
         deferredSearchTimer = Timer.scheduledTimer(timeInterval: searchDeferring,
                                                    target: self,
-                                                   selector: #selector(searchScooters),
+                                                   selector: #selector(searchVehicles),
                                                    userInfo: nil,
                                                    repeats: false)
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        if let scooter = marker.userData as? ScooterPOIItem {
-            logger.debug("Did tap a normal marker for scooter item \(String(describing: scooter.vehicleCode))")
-            showScooterInfo(scooter: scooter)
+        if let vehiclePOI = marker.userData as? VehiclePOI {
+            logger.debug("Did tap a normal marker for vehicle item \(String(describing: vehiclePOI.vehicle._id))")
+            showVehicleInfo(vehiclePOI)
         }
         
         return false
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        hideScooterInfo()
+        hideVehicleInfo()
     }
 }
 
@@ -583,9 +583,9 @@ extension MapViewController: GMUClusterManagerDelegate {
 // MARK: - GMUClusterRendererDelegate
 extension MapViewController: GMUClusterRendererDelegate {
     func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
-        guard let scooter = marker.userData as? ScooterPOIItem else { return }
+        guard let vehiclePOI = marker.userData as? VehiclePOI else { return }
         
-        let powerPercent = scooter.powerPercent ?? 0
+        let powerPercent = vehiclePOI.powerPercent ?? 0
         
         if 80...100 ~= powerPercent {
             marker.icon = Asset.scooterGreen.image

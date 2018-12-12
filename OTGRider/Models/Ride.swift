@@ -11,8 +11,7 @@ import ObjectMapper
 
 struct Ride: Mappable, Equatable {
     var id: String?
-    var scooter: String?
-    var vehicleCode: String?
+    var vehicle: String?
     var unlockTime: Date?
     var lockTime: Date?
     var duration: TimeInterval?
@@ -29,8 +28,7 @@ struct Ride: Mappable, Equatable {
     
     mutating func mapping(map: Map) {
         id              <- map["_id"]
-        scooter         <- map["scooter"]
-        vehicleCode     <- map["vehicleCode"]
+        vehicle     <- map["vehicle"]
         unlockTime      <- (map["unlockTime"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
         lockTime        <- (map["lockTime"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
         duration        <- map["duration"]

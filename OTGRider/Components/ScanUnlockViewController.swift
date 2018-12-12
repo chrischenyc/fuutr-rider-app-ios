@@ -46,7 +46,7 @@ class ScanUnlockViewController: UnlockViewController {
         // TODO: parse vehicle code and IoT code
         let vehicleCode = "1234"
         
-        unlockScooter(vehicleCode: vehicleCode)
+        unlockVehicle(vehicleCode: vehicleCode)
     }
 }
 

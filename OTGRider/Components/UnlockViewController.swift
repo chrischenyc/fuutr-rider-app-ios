@@ -65,7 +65,7 @@ class UnlockViewController: UIViewController {
     }
     
     
-    func unlockScooter(vehicleCode: String) {
+    func unlockVehicle(vehicleCode: String) {
         apiTask?.cancel()
         
         showLoading()
