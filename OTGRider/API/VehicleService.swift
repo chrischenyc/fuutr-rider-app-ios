@@ -18,7 +18,7 @@ final class VehicleService {
             "maxLongitude": maxLongitude,
             ]
         
-        return APIClient.shared.load(path: "/scooters",
+        return APIClient.shared.load(path: "/vehicles",
                                      method: .get,
                                      params: params,
                                      completion: { (result, error) in
