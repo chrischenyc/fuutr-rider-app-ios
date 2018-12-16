@@ -70,7 +70,7 @@ class UnlockViewController: UIViewController {
         
         showLoading()
         
-        apiTask = RideService.unlock(vehicleCode: vehicleCode,
+        apiTask = RideService.start(unlockCode: vehicleCode,
                                      coordinate: currentLocation?.coordinate,
                                      completion: { [weak self] (ride, error) in
                                         

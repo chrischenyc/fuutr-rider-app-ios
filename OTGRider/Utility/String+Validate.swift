@@ -38,4 +38,11 @@ extension String {
         let test = NSPredicate(format:"SELF MATCHES %@", regex)
         return test.evaluate(with: self)
     }
+    
+    func isSixDigits() -> Bool {
+        let regex = "^[0-9]{6}$"
+        
+        let test = NSPredicate(format:"SELF MATCHES %@", regex)
+        return test.evaluate(with: self)
+    }
 }

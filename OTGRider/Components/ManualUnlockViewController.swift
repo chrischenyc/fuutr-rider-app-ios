@@ -19,7 +19,7 @@ class ManualUnlockViewController: UnlockViewController {
     }
     
     @IBAction func codeChanged(_ sender: Any) {
-        guard let code = codeTextField.text, code.isFourDigits() else { return }
+        guard let code = codeTextField.text, code.isSixDigits() else { return }
         
         unlockVehicle(vehicleCode: code)
     }
