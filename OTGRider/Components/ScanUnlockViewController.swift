@@ -43,10 +43,7 @@ class ScanUnlockViewController: UnlockViewController {
     private func handleScanResult(_ result: String) {
         logger.debug(result)
         
-        // TODO: parse vehicle code and IoT code
-        let vehicleCode = "1234"
-        
-        unlockVehicle(vehicleCode: vehicleCode)
+        unlockVehicle(unlockCode: result)
     }
 }
 

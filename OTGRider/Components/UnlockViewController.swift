@@ -65,12 +65,12 @@ class UnlockViewController: UIViewController {
     }
     
     
-    func unlockVehicle(vehicleCode: String) {
+    func unlockVehicle(unlockCode: String) {
         apiTask?.cancel()
         
         showLoading()
         
-        apiTask = RideService.start(unlockCode: vehicleCode,
+        apiTask = RideService.start(unlockCode: unlockCode,
                                      coordinate: currentLocation?.coordinate,
                                      completion: { [weak self] (ride, error) in
                                         
