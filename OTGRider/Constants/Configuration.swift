@@ -27,7 +27,7 @@ enum Environment: String {
     var baseURL: String {
         switch self {
         case .Development: return "http://localhost:3000/api"
-        case .Staging: return "http://ec2-13-239-12-227.ap-southeast-2.compute.amazonaws.com/api"
+        case .Staging: return "http://otg-server-staging.ap-southeast-2.elasticbeanstalk.com"
         case .Production: return ""
         }
     }
