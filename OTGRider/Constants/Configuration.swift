@@ -26,9 +26,9 @@ enum Environment: String {
     
     var baseURL: String {
         switch self {
-        case .Development: return "http://localhost:3000/api"
-        case .Staging: return "http://otg-server-staging.ap-southeast-2.elasticbeanstalk.com"
-        case .Production: return ""
+        case .Development: return "http://localhost:3000"
+        case .Staging: return "https://api.staging.otgride.com"
+        case .Production: return "https://api.otgride.com"
         }
     }
     
