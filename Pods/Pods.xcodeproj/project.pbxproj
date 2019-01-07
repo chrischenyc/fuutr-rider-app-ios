@@ -790,7 +790,6 @@
 		C95C7A0AAFE68EC2F45E7E6061472C89 /* STPFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4919A6CA1C6A3CE50CF93B539B309963 /* STPFormTextField.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C9864001D4BBB55EC4BAE511298941E5 /* Duration.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 318F10D89B226BBE85C09CDAC52BFBAF /* Duration.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C9FE592E6358C318F30298FA070B514D /* STPSourceParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 107E10EE264B3B6A80E16844AD01B0D2 /* STPSourceParams.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CA2F6010D78EF96BF78ED6263DCE56F9 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE2D01A17C76D7EC6968F40DFBDFBB2 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CA7B3D002EF6ADD13BF7DCB96600A053 /* DevFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5C4C53AAC72C390F1FFDDECC743BF /* DevFilter.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CAA0050CC81990F76FE91C5E21A7DBB7 /* STPPaymentContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 3615E5A8F926CC5D809057E6A7FDC8FC /* STPPaymentContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAA73B7608F78D5F41C3B1544D23A4CA /* GULSwizzledObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7D1AB53D028F729213FB55E19007BE /* GULSwizzledObject.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -810,6 +809,7 @@
 		CD5475E0E1BF5286F79DDA71A2969D6A /* FBSDKGraphRequestBody.m in Sources */ = {isa = PBXBuildFile; fileRef = F158F096B90C9CFBE18E81B9047989DC /* FBSDKGraphRequestBody.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CD71A4B882F62AD0E326CFECFEA1D55C /* FBSDKAppEventsDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C560A51E30AA6C1DC7ADCFF2E7C81AC5 /* FBSDKAppEventsDeviceInfo.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CDA2E4FD04B87212CDC07E8ABC604987 /* FIRMessagingDataMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E86EDCF1C8412A870314E4BF31CB71 /* FIRMessagingDataMessageManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CDA550120C3D14ABED62BA1C507C61F7 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE2D01A17C76D7EC6968F40DFBDFBB2 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CE6EA5939A431EAE565CEB678A197405 /* FIRMessagingLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 62441678B361DDC01F50EB3BC664B410 /* FIRMessagingLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CF135E1451DE4BA9B4AF17486E9F20FA /* STPSourceCardDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D27EC71A148D92CF345E1AB301881E7 /* STPSourceCardDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF394EEA2E9A71D21E08A058F85540E7 /* STPSourcePoller.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FE94743CDBCA8F52AE2A99EFE6A3E18 /* STPSourcePoller.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -6250,7 +6250,7 @@
 			files = (
 				3427A1B497E7BB660B2627A9F26CD19D /* GoogleToolboxForMac-dummy.m in Sources */,
 				F8959F579323BFD3CB9D12CFEC39DE47 /* GTMLogger.m in Sources */,
-				CA2F6010D78EF96BF78ED6263DCE56F9 /* GTMNSData+zlib.m in Sources */,
+				CDA550120C3D14ABED62BA1C507C61F7 /* GTMNSData+zlib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
