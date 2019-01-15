@@ -12,9 +12,10 @@ import ObjectMapper
 struct Vehicle: Mappable {
     var _id: String?
     var powerPercent: Int?
-    var remainderRange: Int?
+    var remainderRange: Double?
     var latitude: Double?
     var longitude: Double?
+    var vehicleCode: String?
     
     init?(map: Map) {
         
@@ -26,6 +27,7 @@ struct Vehicle: Mappable {
         remainderRange  <- map["remainderRange"]
         latitude        <- map["latitude"]
         longitude       <- map["longitude"]
+        vehicleCode     <- map["vehicleCode"]
     }
     
     static func fromJSONArray(_ jsonArray: [JSON]) -> [Vehicle]? {

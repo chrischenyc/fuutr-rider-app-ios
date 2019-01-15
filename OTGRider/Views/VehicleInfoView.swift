@@ -10,6 +10,7 @@ import UIKit
 
 class VehicleInfoView: UIView {
     
+    @IBOutlet weak var vehicleCodeLabel: UILabel!
     @IBOutlet weak var batteryLabel: UILabel!
     @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var pricingLabel: UILabel!
@@ -23,6 +24,13 @@ class VehicleInfoView: UIView {
     }
     
     func updateContentWith(_ poi: VehiclePOI) {
+        if let vehicleCode = poi.vehicleCode {
+            vehicleCodeLabel.text = vehicleCode
+        }
+        else {
+            vehicleCodeLabel.text = "N/A"
+        }
+        
         if let powerPercent = poi.powerPercent {
             batteryLabel.text = "Battery \(powerPercent)%"
         } else {

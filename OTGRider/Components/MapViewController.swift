@@ -161,6 +161,7 @@ extension MapViewController {
         
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.startUpdatingLocation()
         
         // do not show vehicles during riding
         clearMapMakers()
@@ -183,6 +184,7 @@ extension MapViewController {
         
         locationManager.allowsBackgroundLocationUpdates = false
         locationManager.pausesLocationUpdatesAutomatically = true
+        locationManager.stopUpdatingLocation()
         
         searchVehicles()
     }
@@ -203,17 +205,11 @@ extension MapViewController {
         // pause new vehicles search while user is during a ride
         guard ongoingRide == nil else { return }
         
-        
         searchAPITask?.cancel()
         
-        let currentMapViewBounds = GMSCoordinateBounds(region: mapView.projection.visibleRegion())
-        let northEast = currentMapViewBounds.northEast
-        let southWest = currentMapViewBounds.southWest
-        
-        searchAPITask = VehicleService.search(minLatitude: southWest.latitude,
-                                              minLongitude: southWest.longitude,
-                                              maxLatitude: northEast.latitude,
-                                              maxLongitude: northEast.longitude,
+        searchAPITask = VehicleService.search(latitude: mapView.getCenterCoordinate().latitude,
+                                              longitude: mapView.getCenterCoordinate().longitude,
+                                              radius: mapView.getRadius(),
                                               completion: { [weak self] (vehicles, error) in
                                                 guard error == nil else {
                                                     logger.error(error?.localizedDescription)
@@ -409,6 +405,9 @@ extension MapViewController {
     
     private func addMapMakers(forVehicles vehicles: [Vehicle]) {
         DispatchQueue.main.async {
+            // remove existing items
+            self.clusterManager.clearItems()
+            
             // add new item
             let items = vehicles.map { (vehicle) -> VehiclePOI in
                 let item = VehiclePOI(vehicle: vehicle)
@@ -528,6 +527,8 @@ extension MapViewController: CLLocationManagerDelegate {
         if let incrementalPath = incrementalPath {
             incrementalPath.add(location.coordinate)
         }
+        
+        locationManager.stopUpdatingLocation()
     }
     
     // Handle location manager errors.
@@ -558,7 +559,6 @@ extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let vehiclePOI = marker.userData as? VehiclePOI {
-            logger.debug("Did tap a normal marker for vehicle item \(String(describing: vehiclePOI.vehicle._id))")
             showVehicleInfo(vehiclePOI)
         }
         

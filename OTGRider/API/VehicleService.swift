@@ -9,13 +9,12 @@
 import Foundation
 
 final class VehicleService {
-    static func search(minLatitude: Double, minLongitude: Double, maxLatitude: Double, maxLongitude: Double, completion: @escaping ([Vehicle]?, Error?) -> Void) -> URLSessionDataTask? {
+    static func search(latitude: Double, longitude: Double, radius: Double, completion: @escaping ([Vehicle]?, Error?) -> Void) -> URLSessionDataTask? {
         
         let params: JSON = [
-            "minLatitude": minLatitude,
-            "minLongitude": minLongitude,
-            "maxLatitude": maxLatitude,
-            "maxLongitude": maxLongitude,
+            "latitude": latitude,
+            "longitude": longitude,
+            "radius": radius,
             ]
         
         return APIClient.shared.load(path: "/vehicles",

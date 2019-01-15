@@ -132,16 +132,22 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="295" height="33.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KR5-fh-ScN">
-                                                                <rect key="frame" x="0.0" y="2.5" width="41.5" height="29"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="33.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v80-fh-IcA">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="14.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v80-fh-IcA">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="11"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqU-Sh-MvB">
+                                                                        <rect key="frame" x="0.0" y="11" width="50" height="11.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7I-2o-htz">
-                                                                        <rect key="frame" x="0.0" y="14.5" width="41.5" height="14.5"/>
+                                                                        <rect key="frame" x="0.0" y="22.5" width="50" height="11"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -149,7 +155,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Pricing" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfL-Qv-xUp">
-                                                                <rect key="frame" x="41.5" y="9.5" width="253.5" height="14.5"/>
+                                                                <rect key="frame" x="50" y="9.5" width="245" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -201,9 +207,10 @@
                                     <constraint firstItem="3Ds-Z8-uir" firstAttribute="leading" secondItem="AXS-jP-Qde" secondAttribute="leading" constant="16" id="Lix-QP-PPS"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="batteryLabel" destination="v80-fh-IcA" id="GAi-qX-lcg"/>
+                                    <outlet property="batteryLabel" destination="TqU-Sh-MvB" id="LbE-9c-t7X"/>
                                     <outlet property="pricingLabel" destination="AfL-Qv-xUp" id="AsD-0U-sd7"/>
                                     <outlet property="rangeLabel" destination="k7I-2o-htz" id="Qor-W9-NB8"/>
+                                    <outlet property="vehicleCodeLabel" destination="v80-fh-IcA" id="vZp-z2-WaO"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzT-1r-pb8" customClass="RideInfoView" customModule="OTGRider" customModuleProvider="target">
