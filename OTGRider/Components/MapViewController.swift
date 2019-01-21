@@ -322,10 +322,12 @@ extension MapViewController {
             
             if let vehicle = vehicle {
                 DispatchQueue.main.async {
+                    // refresh vehicle info banner
                     self.vehicleInfoView.updateContentWith(vehicle)
+                    
+                    // refresh map search
+                    self.searchVehicles()
                 }
-                
-                // TODO: trigger search
             }
         })
         

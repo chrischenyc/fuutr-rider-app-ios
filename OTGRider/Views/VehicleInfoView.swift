@@ -61,7 +61,7 @@ class VehicleInfoView: UIView {
         
         if vehicle.reserved {
             // TODO: create timer to update counter
-            reserveButton.setTitle("Reserved for next ", for: .normal)
+            reserveButton.setTitle("Reserved", for: .normal)
         } else {
             reserveButton.setTitle("Reserve", for: .normal)
         }
