@@ -10,24 +10,28 @@ import Foundation
 import ObjectMapper
 
 struct Vehicle: Mappable {
-    var _id: String?
+    var _id: String = ""
     var powerPercent: Int?
     var remainderRange: Double?
     var latitude: Double?
     var longitude: Double?
     var vehicleCode: String?
+    var reserved: Bool = false
+    var reservedUntil: Date?
     
     init?(map: Map) {
         
     }
     
     mutating func mapping(map: Map) {
-        _id              <- map["_id"]
+        _id             <- map["_id"]
         powerPercent    <- map["powerPercent"]
         remainderRange  <- map["remainderRange"]
         latitude        <- map["latitude"]
         longitude       <- map["longitude"]
         vehicleCode     <- map["vehicleCode"]
+        reserved        <- map["reserved"]
+        reservedUntil   <- (map["reservedUntil"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
     }
     
     static func fromJSONArray(_ jsonArray: [JSON]) -> [Vehicle]? {

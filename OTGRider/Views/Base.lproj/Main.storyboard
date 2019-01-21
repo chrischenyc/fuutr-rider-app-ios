@@ -180,17 +180,24 @@
                                                 <rect key="frame" x="0.0" y="50" width="295" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-RX-qKE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="143.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="30"/>
                                                         <state key="normal" title="Toot"/>
                                                         <connections>
                                                             <action selector="tootButtonTapped:" destination="AXS-jP-Qde" eventType="touchUpInside" id="t7T-ls-06C"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNb-dt-V2j">
-                                                        <rect key="frame" x="151.5" y="0.0" width="143.5" height="30"/>
+                                                        <rect key="frame" x="101" y="0.0" width="93" height="30"/>
                                                         <state key="normal" title="Report Issue"/>
                                                         <connections>
                                                             <action selector="reportButtonTapped:" destination="AXS-jP-Qde" eventType="touchUpInside" id="t2e-Bb-UuL"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oz5-Ou-a4i">
+                                                        <rect key="frame" x="202" y="0.0" width="93" height="30"/>
+                                                        <state key="normal" title="Reserve"/>
+                                                        <connections>
+                                                            <action selector="reserveButtonTapped:" destination="AXS-jP-Qde" eventType="touchUpInside" id="KMr-Uv-uJv"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -210,6 +217,7 @@
                                     <outlet property="batteryLabel" destination="TqU-Sh-MvB" id="LbE-9c-t7X"/>
                                     <outlet property="pricingLabel" destination="AfL-Qv-xUp" id="AsD-0U-sd7"/>
                                     <outlet property="rangeLabel" destination="k7I-2o-htz" id="Qor-W9-NB8"/>
+                                    <outlet property="reserveButton" destination="Oz5-Ou-a4i" id="K9R-vZ-6ou"/>
                                     <outlet property="vehicleCodeLabel" destination="v80-fh-IcA" id="vZp-z2-WaO"/>
                                 </connections>
                             </view>

@@ -20,6 +20,7 @@ class MapViewController: UIViewController {
     
     private var searchAPITask: URLSessionTask?
     private var rideAPITask: URLSessionTask?
+    private var vehicleAPITask: URLSessionTask?
     
     private var deferredSearchTimer: Timer?     // a new round of search API will be fired unless time gets invalidated
     private let searchDeferring: TimeInterval = 1.5
@@ -303,6 +304,32 @@ extension MapViewController {
         // reset incremental path straight away
         incrementalPath = GMSMutablePath()
     }
+    
+    private func reserveVehicle(_ vehicle: Vehicle) {
+        // user can't reserve a vehicle during a ride
+        guard ongoingRide == nil else { return }
+        
+        vehicleAPITask?.cancel()
+        
+        vehicleAPITask = VehicleService.reserve(_id: vehicle._id, reserve: !vehicle.reserved, completion: { (vehicle, error) in
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    self.flashErrorMessage(error?.localizedDescription)
+                }
+                
+                return
+            }
+            
+            if let vehicle = vehicle {
+                DispatchQueue.main.async {
+                    self.vehicleInfoView.updateContentWith(vehicle)
+                }
+                
+                // TODO: trigger search
+            }
+        })
+        
+    }
 }
 
 // MARK: - UI
@@ -313,9 +340,16 @@ extension MapViewController {
         guideButton.backgroundColor = UIColor.otgWhite
         unlockButton.layoutCornerRadiusAndShadow()
         unlockButton.backgroundColor = UIColor.otgWhite
+        
         vehicleInfoView.backgroundColor = UIColor.otgWhite
         vehicleInfoView.layoutCornerRadiusAndShadow()
+        vehicleInfoView.onReserve = {
+            (vehicle) in
+            
+            self.reserveVehicle(vehicle)
+        }
         vehicleInfoViewBottomConstraint.constant = 0
+        
         rideInfoView.backgroundColor = UIColor.otgWhite
         rideInfoView.layoutCornerRadiusAndShadow()
         rideInfoViewBottomConstraint.constant = 0
@@ -326,7 +360,7 @@ extension MapViewController {
         updateUnlockButton()
     }
     
-    private func showVehicleInfo(_ vehicle: VehiclePOI) {
+    private func showVehicleInfo(_ vehicle: Vehicle) {
         self.vehicleInfoView.updateContentWith(vehicle)
         self.vehicleInfoViewBottomConstraint.constant = self.vehicleInfoViewBottomToSuperView
         
@@ -559,7 +593,7 @@ extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let vehiclePOI = marker.userData as? VehiclePOI {
-            showVehicleInfo(vehiclePOI)
+            showVehicleInfo(vehiclePOI.vehicle)
         }
         
         return false
@@ -585,7 +619,7 @@ extension MapViewController: GMUClusterRendererDelegate {
     func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
         guard let vehiclePOI = marker.userData as? VehiclePOI else { return }
         
-        let powerPercent = vehiclePOI.powerPercent ?? 0
+        let powerPercent = vehiclePOI.vehicle.powerPercent ?? 0
         
         if 80...100 ~= powerPercent {
             marker.icon = Asset.scooterGreen.image

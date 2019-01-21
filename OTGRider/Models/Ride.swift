@@ -28,7 +28,7 @@ struct Ride: Mappable, Equatable {
     
     mutating func mapping(map: Map) {
         id              <- map["_id"]
-        vehicle     <- map["vehicle"]
+        vehicle         <- map["vehicle"]
         unlockTime      <- (map["unlockTime"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
         lockTime        <- (map["lockTime"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
         duration        <- map["duration"]
