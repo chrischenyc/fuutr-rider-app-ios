@@ -194,7 +194,7 @@ extension MapViewController {
         guard var ride = ongoingRide else { return }
         
         ride.refresh()
-        ride.distance = ongoingRidePath?.length(of: GMSLengthKind.geodesic)
+        ride.distance = ongoingRidePath?.length(of: GMSLengthKind.geodesic) ?? 0
         
         self.ongoingRide = ride
     }
@@ -318,6 +318,7 @@ extension MapViewController {
             
             DispatchQueue.main.async {
                 self.ongoingRide = ride
+                self.updateRideLocally()
             }
         }
     }
@@ -335,6 +336,7 @@ extension MapViewController {
             
             DispatchQueue.main.async {
                 self.ongoingRide = ride
+                self.updateRideLocally()
             }
         }
     }

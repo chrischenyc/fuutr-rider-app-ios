@@ -14,16 +14,17 @@ struct Ride: Mappable, Equatable {
     var vehicle: String?
     var unlockTime: Date?
     var lockTime: Date?
-    var duration: TimeInterval?
-    var distance: Double?
+    var duration: TimeInterval = 0
+    var distance: Double = 0
     var completed: Bool = false
-    var unlockCost: Double?
-    var rideMinuteCost: Double?
-    var pauseMinuteCost: Double?
-    var totalCost: Double?
+    var unlockCost: Double = 0
+    var rideMinuteCost: Double = 0
+    var pauseMinuteCost: Double = 0
+    var totalCost: Double = 0
     var encodedPath: String?
     var paused: Bool = false
     var pausedUntil: Date?
+    var segments: [RideSegment]?
     
     init?(map: Map) {
         
@@ -44,6 +45,7 @@ struct Ride: Mappable, Equatable {
         encodedPath     <- map["encodedPath"]
         paused          <- map["paused"]
         pausedUntil     <- (map["pausedUntil"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
+        segments        <- map["segments"]
     }
     
     static func fromJSONArray(_ jsonArray: [JSON]) -> [Ride]? {
@@ -63,14 +65,27 @@ extension Ride {
         let duration = Date().timeIntervalSince(unlockTime)
         self.duration = duration
         
-        guard let unlockCost = unlockCost, let rideMinuteCost = rideMinuteCost else { return }
-        self.totalCost = unlockCost + rideMinuteCost * (duration / 60.0)
+        self.totalCost = unlockCost
+        
+        if let segments = segments {
+            segments.forEach { (segment) in
+                if let cost = segment.cost {
+                    self.totalCost += cost
+                }
+                else if let start = segment.start {
+                    let segmentDuration = Date().timeIntervalSince(start)
+                    if segment.paused {
+                        self.totalCost += pauseMinuteCost * segmentDuration / 60
+                    }
+                    else {
+                        self.totalCost += rideMinuteCost * segmentDuration / 60
+                    }
+                }
+            }
+        }
     }
     
     func summary() -> String {
-        let durationString = duration != nil ? duration!.hhmmssString : "n/a"
-        let costString = totalCost != nil ? totalCost!.currencyString : "n/a"
-        
-        return "\nRide duration: \(durationString)\nTotal cost: \(costString)"
+        return "\nRide duration: \(duration.hhmmssString)\nTotal cost: \(totalCost.currencyString)"
     }
 }

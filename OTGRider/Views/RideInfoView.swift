@@ -19,20 +19,9 @@ class RideInfoView: UIView {
     var onEndRide: (()->Void)?
     
     func updateContent(withRide ride: Ride) {
-        if let duration = ride.duration {
-            durationLabel.text = duration.hhmmssString
-        }
-        else {
-            durationLabel.text = "n/a"
-        }
-        
-        if let distance = ride.distance {
-            distanceLabel.text = distance.distanceString
-        } else {
-            distanceLabel.text = "n/a"
-        }
-        
-        costLabel.text = ride.totalCost?.currencyString ?? "n/a"
+        durationLabel.text = ride.duration.hhmmssString
+        distanceLabel.text = ride.distance.distanceString
+        costLabel.text = ride.totalCost.currencyString
         
         if ride.paused {
             pauseButton.setTitle("Unlock", for: .normal)
