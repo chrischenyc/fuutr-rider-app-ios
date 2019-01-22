@@ -129,4 +129,18 @@ final class RideService {
                                         completion(nil, error)
         })
     }
+    
+    static func getRide(_ _id: String, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
+        return APIClient.shared.load(path: "/rides/\(_id)",
+                                     method: .get,
+                                     params: nil,
+                                     completion: { (result, error) in
+                                        if let json = result as? JSON, let ride = Ride(JSON: json) {
+                                            completion(ride, nil)
+                                            return
+                                        }
+                                        
+                                        completion(nil, error)
+        })
+    }
 }

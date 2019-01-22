@@ -252,6 +252,29 @@ extension MapViewController {
         })
     }
     
+    private func refreshOngoingRide() {
+        guard let id = ongoingRide?.id else { return }
+        
+        rideAPITask?.cancel()
+        
+        rideAPITask = RideService.getRide(id, completion: { [weak self] (ride, error) in
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    logger.error(error!.localizedDescription)
+                    return
+                }
+                
+                guard let ride = ride else {
+                    logger.debug("No open ride found")
+                    return
+                }
+                
+                // resume tracking an ongoing ride
+                self?.startTrackingRide(ride)
+            }
+        })
+    }
+    
     private func endRide() {
         guard let id = ongoingRide?.id else { return }
         guard let coordinate = currentLocation?.coordinate else { return }
@@ -310,15 +333,15 @@ extension MapViewController {
         
         rideAPITask?.cancel()
         
-        rideAPITask = RideService.pause(rideId: rideId) { (ride, error) in
+        rideAPITask = RideService.pause(rideId: rideId) { [weak self] (ride, error) in
             if error != nil {
                 logger.error(error)
                 return
             }
             
             DispatchQueue.main.async {
-                self.ongoingRide = ride
-                self.updateRideLocally()
+                self?.ongoingRide = ride
+                self?.updateRideLocally()
             }
         }
     }
@@ -328,15 +351,15 @@ extension MapViewController {
         
         rideAPITask?.cancel()
         
-        rideAPITask = RideService.resume(rideId: rideId) { (ride, error) in
+        rideAPITask = RideService.resume(rideId: rideId) { [weak self] (ride, error) in
             if error != nil {
                 logger.error(error)
                 return
             }
             
             DispatchQueue.main.async {
-                self.ongoingRide = ride
-                self.updateRideLocally()
+                self?.ongoingRide = ride
+                self?.updateRideLocally()
             }
         }
     }
@@ -347,10 +370,10 @@ extension MapViewController {
         
         vehicleAPITask?.cancel()
         
-        vehicleAPITask = VehicleService.reserve(_id: vehicle._id, reserve: !vehicle.reserved, completion: { (vehicle, error) in
+        vehicleAPITask = VehicleService.reserve(_id: vehicle._id, reserve: !vehicle.reserved, completion: { [weak self] (vehicle, error) in
             guard error == nil else {
                 DispatchQueue.main.async {
-                    self.flashErrorMessage(error?.localizedDescription)
+                    self?.flashErrorMessage(error?.localizedDescription)
                 }
                 
                 return
@@ -359,14 +382,14 @@ extension MapViewController {
             if let vehicle = vehicle {
                 DispatchQueue.main.async {
                     // refresh vehicle info banner
-                    self.vehicleInfoView.updateContentWith(vehicle)
+                    self?.vehicleInfoView.updateContentWith(vehicle)
                     
                     // refresh map search
-                    self.searchVehicles()
+                    self?.searchVehicles()
                 }
             }
             
-            self.getCurrentUser()
+            self?.getCurrentUser()
         })
         
     }
@@ -416,6 +439,9 @@ extension MapViewController {
         }
         rideInfoView.onEndRide = {
             self.endRide()
+        }
+        rideInfoView.onPauseTimeUp = {
+            self.refreshOngoingRide()
         }
         
         updateUnlockButton()

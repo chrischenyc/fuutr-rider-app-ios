@@ -9,8 +9,6 @@
 import UIKit
 
 class VehicleInfoView: UIView {
-    var vehicle: Vehicle?
-    var reserveTimer: Timer?
     
     @IBOutlet weak var vehicleCodeLabel: UILabel!
     @IBOutlet weak var batteryLabel: UILabel!
@@ -18,6 +16,8 @@ class VehicleInfoView: UIView {
     @IBOutlet weak var pricingLabel: UILabel!
     @IBOutlet weak var reserveButton: UIButton!
     
+    var vehicle: Vehicle?
+    var reserveTimer: Timer?
     var onReserve: ((Vehicle)->Void)?
     var onReserveTimeUp: (()->Void)?
     

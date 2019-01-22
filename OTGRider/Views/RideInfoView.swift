@@ -17,6 +17,7 @@ class RideInfoView: UIView {
     
     var onPauseRide: (()->Void)?
     var onEndRide: (()->Void)?
+    var onPauseTimeUp: (()->Void)?
     
     func updateContent(withRide ride: Ride) {
         durationLabel.text = ride.duration.hhmmssString
@@ -24,6 +25,17 @@ class RideInfoView: UIView {
         costLabel.text = ride.totalCost.currencyString
         
         if ride.paused {
+            guard let pausedUntil = ride.pausedUntil else { return }
+            let remainingPausedTime = Int(pausedUntil.timeIntervalSinceNow)
+            
+            if remainingPausedTime > 0 {
+                logger.debug("pausing ride for \(remainingPausedTime) seconds")
+            }
+            else {
+                self.pauseButton.setTitle("Lock", for: .normal)
+                self.onPauseTimeUp?()
+            }
+            
             pauseButton.setTitle("Unlock", for: .normal)
         } else {
             pauseButton.setTitle("Lock", for: .normal)
