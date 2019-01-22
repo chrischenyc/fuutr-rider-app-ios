@@ -395,6 +395,11 @@ extension MapViewController {
             
             self.reserveVehicle(vehicle)
         }
+        vehicleInfoView.onReserveTimeUp = {
+            DispatchQueue.main.async {
+                self.searchVehicles()
+            }
+        }
         vehicleInfoViewBottomConstraint.constant = 0
         
         rideInfoView.backgroundColor = UIColor.otgWhite

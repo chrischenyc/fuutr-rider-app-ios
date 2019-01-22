@@ -10,6 +10,7 @@ import UIKit
 
 class VehicleInfoView: UIView {
     var vehicle: Vehicle?
+    var reserveTimer: Timer?
     
     @IBOutlet weak var vehicleCodeLabel: UILabel!
     @IBOutlet weak var batteryLabel: UILabel!
@@ -18,6 +19,7 @@ class VehicleInfoView: UIView {
     @IBOutlet weak var reserveButton: UIButton!
     
     var onReserve: ((Vehicle)->Void)?
+    var onReserveTimeUp: (()->Void)?
     
     @IBAction func tootButtonTapped(_ sender: Any) {
         
@@ -60,10 +62,28 @@ class VehicleInfoView: UIView {
         pricingLabel.text = "Unlock for $1 + $0.20/min"
         
         if vehicle.reserved {
-            // TODO: create timer to update counter
             reserveButton.setTitle("Reserved", for: .normal)
+            
+            // create timer to count down
+            reserveTimer?.invalidate()
+            
+            guard let reservedUntil = vehicle.reservedUntil else { return }
+            reserveTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+                let remainingReservedTime = Int(reservedUntil.timeIntervalSinceNow)
+                
+                if remainingReservedTime > 0 {
+                    logger.debug("reserving vehicle for \(remainingReservedTime) seconds")
+                }
+                else {
+                    self.reserveTimer?.invalidate()
+                    self.reserveButton.setTitle("Reserve", for: .normal)
+                    self.onReserveTimeUp?()
+                }
+            })
         } else {
             reserveButton.setTitle("Reserve", for: .normal)
+            
+            reserveTimer?.invalidate()
         }
     }
 }
