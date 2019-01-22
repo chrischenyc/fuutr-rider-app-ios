@@ -32,6 +32,34 @@ final class RideService {
         })
     }
     
+    static func pause(rideId: String, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
+        return APIClient.shared.load(path: "/rides/\(rideId)/pause",
+            method: .patch,
+            params: nil,
+            completion: { (result, error) in
+                if let json = result as? JSON {
+                    completion(Ride(JSON: json), nil)
+                    return
+                }
+                
+                completion(nil, error)
+        })
+    }
+    
+    static func resume(rideId: String, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
+        return APIClient.shared.load(path: "/rides/\(rideId)/resume",
+            method: .patch,
+            params: nil,
+            completion: { (result, error) in
+                if let json = result as? JSON {
+                    completion(Ride(JSON: json), nil)
+                    return
+                }
+                
+                completion(nil, error)
+        })
+    }
+    
     static func finish(rideId: String,
                        coordinate: CLLocationCoordinate2D,
                        incrementalEncodedPath: String,

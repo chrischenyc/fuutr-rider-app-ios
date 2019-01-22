@@ -283,13 +283,25 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsh-V7-GKn">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="weT-oH-0CJ">
                                                 <rect key="frame" x="0.0" y="40" width="295" height="64"/>
-                                                <state key="normal" title="how to ride"/>
-                                                <connections>
-                                                    <action selector="howToTapped:" destination="JzT-1r-pb8" eventType="touchUpInside" id="oZU-La-UCC"/>
-                                                </connections>
-                                            </button>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsh-V7-GKn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="143.5" height="64"/>
+                                                        <state key="normal" title="Lock"/>
+                                                        <connections>
+                                                            <action selector="pauseRideTapped:" destination="JzT-1r-pb8" eventType="touchUpInside" id="oZU-La-UCC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0BE-o7-nAD">
+                                                        <rect key="frame" x="151.5" y="0.0" width="143.5" height="64"/>
+                                                        <state key="normal" title="End Ride"/>
+                                                        <connections>
+                                                            <action selector="endRide:" destination="JzT-1r-pb8" eventType="touchUpInside" id="hfC-B9-uJ5"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -305,6 +317,7 @@
                                     <outlet property="costLabel" destination="at5-SI-sog" id="kre-Tk-Kfg"/>
                                     <outlet property="distanceLabel" destination="Q9n-dL-k5P" id="Aab-n3-66k"/>
                                     <outlet property="durationLabel" destination="Buf-Jj-vS0" id="okw-Ky-e3K"/>
+                                    <outlet property="pauseButton" destination="Hsh-V7-GKn" id="Ldd-MN-OUx"/>
                                 </connections>
                             </view>
                         </subviews>

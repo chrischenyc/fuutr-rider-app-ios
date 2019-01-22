@@ -13,8 +13,10 @@ class RideInfoView: UIView {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var pauseButton: UIButton!
     
-    var onHowToTapped: (()->Void)?
+    var onPauseRide: (()->Void)?
+    var onEndRide: (()->Void)?
     
     func updateContent(withRide ride: Ride) {
         if let duration = ride.duration {
@@ -31,9 +33,19 @@ class RideInfoView: UIView {
         }
         
         costLabel.text = ride.totalCost?.currencyString ?? "n/a"
+        
+        if ride.paused {
+            pauseButton.setTitle("Unlock", for: .normal)
+        } else {
+            pauseButton.setTitle("Lock", for: .normal)
+        }
     }
     
-    @IBAction func howToTapped(_ sender: Any) {
-        onHowToTapped?()
+    @IBAction func pauseRideTapped(_ sender: Any) {
+        onPauseRide?()
+    }
+    
+    @IBAction func endRide(_ sender: Any) {
+        onEndRide?();
     }
 }

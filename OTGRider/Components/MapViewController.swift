@@ -117,11 +117,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func unlockButtonTapped(_ sender: Any) {
-        if ongoingRide != nil {
-            lockVehicle()
-        } else {
-            perform(segue: StoryboardSegue.Main.fromMapToScan)
-        }
+        perform(segue: StoryboardSegue.Main.fromMapToScan)
     }
 }
 
@@ -256,7 +252,7 @@ extension MapViewController {
         })
     }
     
-    private func lockVehicle() {
+    private func endRide() {
         guard let id = ongoingRide?.id else { return }
         guard let coordinate = currentLocation?.coordinate else { return }
         guard let incrementalPath = incrementalPath else { return }
@@ -307,6 +303,40 @@ extension MapViewController {
         
         // reset incremental path straight away
         incrementalPath = GMSMutablePath()
+    }
+    
+    private func pauseRide() {
+        guard let rideId = ongoingRide?.id else { return }
+        
+        rideAPITask?.cancel()
+        
+        rideAPITask = RideService.pause(rideId: rideId) { (ride, error) in
+            if error != nil {
+                logger.error(error)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.ongoingRide = ride
+            }
+        }
+    }
+    
+    private func resumeRide() {
+        guard let rideId = ongoingRide?.id else { return }
+        
+        rideAPITask?.cancel()
+        
+        rideAPITask = RideService.resume(rideId: rideId) { (ride, error) in
+            if error != nil {
+                logger.error(error)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.ongoingRide = ride
+            }
+        }
     }
     
     private func reserveVehicle(_ vehicle: Vehicle) {
@@ -368,8 +398,17 @@ extension MapViewController {
         rideInfoView.backgroundColor = UIColor.otgWhite
         rideInfoView.layoutCornerRadiusAndShadow()
         rideInfoViewBottomConstraint.constant = 0
-        rideInfoView.onHowToTapped = {
-            self.perform(segue: StoryboardSegue.Main.fromMapToHowTo)
+        rideInfoView.onPauseRide = {
+            guard let paused = self.ongoingRide?.paused else { return }
+            
+            if paused {
+                self.resumeRide()
+            } else {
+                self.pauseRide()
+            }
+        }
+        rideInfoView.onEndRide = {
+            self.endRide()
         }
         
         updateUnlockButton()
@@ -410,9 +449,9 @@ extension MapViewController {
     
     private func updateUnlockButton() {
         if ongoingRide != nil {
-            unlockButton.setTitle("End Ride", for: .normal)
+            unlockButton.isHidden = true
         } else {
-            unlockButton.setTitle("Unlock", for: .normal)
+            unlockButton.isHidden = false
         }
     }
     
