@@ -93,6 +93,19 @@ final class AuthService {
         })
     }
     
+    static func logout(_ completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+        guard let refreshToken = Defaults[.refreshToken] else { return nil }
+        
+        let params: JSON = ["refreshToken": refreshToken]
+        
+        return APIClient.shared.load(path: "/auth/logout",
+                                     method: .post,
+                                     params: params,
+                                     completion: { (result, error) in
+                                        completion(error)
+        })
+    }
+    
     static func refreshAccessToken(retryPath: String,
                             retryMethod: RequestMethod,
                             retryParams: JSON?,

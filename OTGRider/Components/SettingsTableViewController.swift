@@ -43,6 +43,13 @@ class SettingsTableViewController: UITableViewController {
     }
     
     private func signOut() {
+        _ = AuthService.logout { (error) in
+            guard error == nil else {
+                logger.error(error?.localizedDescription)
+                return
+            }
+        }
+        
         Defaults[.userSignedIn] = false
         Defaults[.accessToken] = ""
         Defaults[.refreshToken] = ""
