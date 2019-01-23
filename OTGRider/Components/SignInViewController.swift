@@ -28,13 +28,13 @@ class SignInViewController: UIViewController {
         
         phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
         phoneNumberVerifyButton.isEnabled = false
-        phoneNumberVerifyButton.backgroundColor = UIColor.otgWhite
+        phoneNumberVerifyButton.backgroundColor = UIColor.primaryWhiteColor
         phoneNumberVerifyButton.layoutCornerRadiusAndShadow()
         facebookLoginButton.readPermissions = ["public_profile", "email"]
         facebookLoginButton.delegate = self
         facebookLoginButton.layoutCornerRadiusAndShadow()
         emailSignInButton.layoutCornerRadiusAndShadow()
-        emailSignInButton.backgroundColor = UIColor.otgWhite
+        emailSignInButton.backgroundColor = UIColor.primaryWhiteColor
     }
     
     override func viewDidAppear(_ animated: Bool) {

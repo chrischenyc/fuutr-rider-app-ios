@@ -29,7 +29,7 @@ class EmailAuthViewController: UIViewController {
         emailTextField.becomeFirstResponder()
         submitButton.isEnabled = false
         submitButton.layoutCornerRadiusAndShadow()
-        submitButton.backgroundColor = UIColor.otgWhite
+        submitButton.backgroundColor = UIColor.primaryWhiteColor
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

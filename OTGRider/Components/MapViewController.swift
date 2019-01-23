@@ -407,11 +407,11 @@ extension MapViewController {
     private func setupUI() {
         sideMenuButton.backgroundColor = UIColor.clear
         guideButton.layoutCornerRadiusAndShadow()
-        guideButton.backgroundColor = UIColor.otgWhite
+        guideButton.backgroundColor = UIColor.primaryWhiteColor
         unlockButton.layoutCornerRadiusAndShadow()
-        unlockButton.backgroundColor = UIColor.otgWhite
+        unlockButton.backgroundColor = UIColor.primaryWhiteColor
         
-        vehicleInfoView.backgroundColor = UIColor.otgWhite
+        vehicleInfoView.backgroundColor = UIColor.primaryWhiteColor
         vehicleInfoView.layoutCornerRadiusAndShadow()
         vehicleInfoView.onReserve = {
             (vehicle) in
@@ -425,7 +425,7 @@ extension MapViewController {
         }
         vehicleInfoViewBottomConstraint.constant = 0
         
-        rideInfoView.backgroundColor = UIColor.otgWhite
+        rideInfoView.backgroundColor = UIColor.primaryWhiteColor
         rideInfoView.layoutCornerRadiusAndShadow()
         rideInfoViewBottomConstraint.constant = 0
         rideInfoView.onPauseRide = {
@@ -551,7 +551,7 @@ extension MapViewController {
         if ongoingRidePolyline == nil {
             ongoingRidePolyline = GMSPolyline(path: path)
             ongoingRidePolyline?.strokeWidth = 2
-            ongoingRidePolyline?.strokeColor = UIColor.otgPrimary
+            ongoingRidePolyline?.strokeColor = UIColor.primaryRedColor
             ongoingRidePolyline?.map = mapView
         }
         

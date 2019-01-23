@@ -158,10 +158,10 @@ extension AppDelegate {
         }
         
         // Stripe theme configuration
-        STPTheme.default().primaryBackgroundColor = .otgVeryLightGrayColor
-        STPTheme.default().primaryForegroundColor = .otgDarkBlueColor
-        STPTheme.default().secondaryForegroundColor = .otgDarkGrayColor
-        STPTheme.default().accentColor = .otgGreenColor
+        STPTheme.default().primaryBackgroundColor = .stripePrimaryBackgroundColor
+        STPTheme.default().primaryForegroundColor = .stripePrimaryForegroundColor
+        STPTheme.default().secondaryForegroundColor = .stripeSecondaryForegroundColor
+        STPTheme.default().accentColor = .stripeAccentColor
     }
 }
 
@@ -171,12 +171,12 @@ extension AppDelegate {
         SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
         SideMenuManager.defaultManager.menuFadeStatusBar = false
         
-        UIButton.appearance().tintColor = UIColor.otgPrimary
-
-        UINavigationBar.appearance().tintColor = UIColor.otgPrimary
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.otgPrimary]
+        UIButton.appearance().tintColor = UIColor.primaryRedColor
         
-        // UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-        // UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().tintColor = UIColor.primaryRedColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryRedColor]
+        
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
     }
 }

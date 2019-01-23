@@ -51,7 +51,7 @@ open class QRCode: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     ///  - returns: the scanner object
     public override init() {
         self.lineWidth = 4
-        self.strokeColor = UIColor.otgPrimary
+        self.strokeColor = UIColor.primaryRedColor
         self.maxDetectedCount = 20
         self.autoRemoveSubLayers = false
         

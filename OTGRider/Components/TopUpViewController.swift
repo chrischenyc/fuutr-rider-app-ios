@@ -68,7 +68,7 @@ class TopUpViewController: UIViewController {
         guard let selectedPaymentMethod = paymentContext.selectedPaymentMethod else {
             // Show default image, text, and color
             paymentMethodButton.setTitle("Choose payment method", for: .normal)
-            paymentMethodButton.setTitleColor(.otgGrayColor, for: .normal)
+            paymentMethodButton.setTitleColor(.primaryRedColor, for: .normal)
             payButton.isEnabled = false
             return
         }
@@ -77,7 +77,7 @@ class TopUpViewController: UIViewController {
         payButton.isEnabled = true
         paymentMethodButton.setImage(selectedPaymentMethod.image, for: .normal)
         paymentMethodButton.setTitle("Pay with \(selectedPaymentMethod.label)", for: .normal)
-        paymentMethodButton.setTitleColor(.otgDarkBlueColor, for: .normal)
+        paymentMethodButton.setTitleColor(.stripePrimaryForegroundColor, for: .normal)
     }
 }
 

@@ -11,23 +11,13 @@ import UIKit
 
 extension UIColor {
     // MARK: - Primary
-    static let otgPrimary = UIColor("#8EC13B")
+    static let primaryRedColor = UIColor("#DA3732")
+    static let primaryDarkColor = UIColor("#3B3B3B")
+    static let primaryWhiteColor = UIColor("#FFFFFF")
     
-    
-    // MARK: - Blue
-    static let otgDarkBlueColor = UIColor("#32315E")
-    static let otgBlueColor = UIColor("#0090FA")
-    
-    // MARK: - Gray
-    static let otgDarkGrayColor = UIColor("#8798AB")
-    static let otgGrayColor = UIColor("#AAB7C5")
-    static let otgLightGrayColor = UIColor("#E9EEF5")
-    static let otgVeryLightGrayColor = UIColor("#F6F9FC")
-    
-    // MARK: - Green
-    static let otgGreenColor = UIColor("#13B57D")
-    static let otgLightGreenColor = UIColor("#ADF2B4")
-    
-    // MARK: - Button
-    static let otgWhite = UIColor("#FFFFFF")
+    // MARK: - Stripe
+    static let stripePrimaryBackgroundColor = UIColor("#F6F9FC")
+    static let stripePrimaryForegroundColor = UIColor("#32315E")
+    static let stripeSecondaryForegroundColor = UIColor("#8798AB")
+    static let stripeAccentColor = UIColor("#13B57D")
 }
