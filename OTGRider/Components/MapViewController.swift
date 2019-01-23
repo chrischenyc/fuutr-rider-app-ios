@@ -30,6 +30,7 @@ class MapViewController: UIViewController {
     private var rideServerUpdateTimer: Timer?   // periodically report travelled coordinates to server
     private let serverUpdateFrequency: TimeInterval = 10
     private var serverUpdateThreshhold: CLLocationDistance = 10    // the minimum travel distance for a new server update
+    
     private var didLoadOngoingRide: Bool = false
     
     private var currentUser: User?
@@ -162,7 +163,6 @@ extension MapViewController {
         
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false
-        locationManager.startUpdatingLocation()
         
         // do not show vehicles during riding
         clearMapMakers()
@@ -185,7 +185,6 @@ extension MapViewController {
         
         locationManager.allowsBackgroundLocationUpdates = false
         locationManager.pausesLocationUpdatesAutomatically = true
-        locationManager.stopUpdatingLocation()
         
         searchVehicles()
     }
@@ -550,7 +549,7 @@ extension MapViewController {
     private func drawRoute(forPath path:GMSPath?) {
         if ongoingRidePolyline == nil {
             ongoingRidePolyline = GMSPolyline(path: path)
-            ongoingRidePolyline?.strokeWidth = 2
+            ongoingRidePolyline?.strokeWidth = 4
             ongoingRidePolyline?.strokeColor = UIColor.primaryRedColor
             ongoingRidePolyline?.map = mapView
         }
@@ -602,7 +601,8 @@ extension MapViewController {
     }
     
     @objc private func appMovedToBackground() {
-        if ongoingRide == nil {
+        // pause GPS updating if user is not in a ride
+        if ongoingRide == nil || ongoingRide!.paused {
             locationManager.stopUpdatingLocation()
         }
     }
@@ -632,24 +632,34 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
+        // center user once the location is captured for the first time
+        if currentLocation == nil {
+            let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
+            mapView.animate(to: camera)
+        }
         currentLocation = location
         
-        let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
-        mapView.animate(to: camera)
-        
         // once GPS signal is settled, check if there's an ongoing ride
-        loadOngoingRide()
-        
-        if let currentPath = ongoingRidePath {
-            currentPath.add(location.coordinate)
-            drawRoute(forPath: currentPath)
+        if ongoingRide == nil && !didLoadOngoingRide {
+            loadOngoingRide()
         }
         
-        if let incrementalPath = incrementalPath {
-            incrementalPath.add(location.coordinate)
+        // during a ride
+        // update map view and ride path
+        if let ongoingRide = ongoingRide, !ongoingRide.paused {
+            // keep centring user during an active ride
+            let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
+            mapView.animate(to: camera)
+            
+            if let currentPath = ongoingRidePath {
+                currentPath.add(location.coordinate)
+                drawRoute(forPath: currentPath)
+            }
+            
+            if let incrementalPath = incrementalPath {
+                incrementalPath.add(location.coordinate)
+            }
         }
-        
-        locationManager.stopUpdatingLocation()
     }
     
     // Handle location manager errors.
