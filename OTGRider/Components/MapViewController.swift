@@ -17,7 +17,7 @@ class MapViewController: UIViewController {
     private var clusterManager: GMUClusterManager!
     private let streetZoomLevel: Float = 16.0
     private let minDistanceFilter: CLLocationDistance = 3
-    private var zonePolygons: [GMSPolygon] = []
+    private var zonePolygons: [(Zone, GMSPolygon)] = []
     
     private var searchAPITask: URLSessionTask?
     private var rideAPITask: URLSessionTask?
@@ -509,6 +509,29 @@ extension MapViewController {
     private func showCompletedRide(_ ride: Ride) {
         alertMessage("Thanks! Ride summary:\(ride.summary())")
     }
+    
+    private func toggleZoneInfo(_ coordinate: CLLocationCoordinate2D) {
+        var insideZone: (Zone, GMSPolygon)?
+        
+        for (zone, polygon) in zonePolygons {
+            if let path = polygon.path, GMSGeometryContainsLocation(coordinate, path, true) {
+                insideZone = (zone, polygon)
+                break
+            }
+        }
+        
+        if let (zone, _) = insideZone, let title = zone.title, let message = zone.message {
+            let locationMarker = GMSMarker(position: coordinate)
+            locationMarker.map = mapView
+            locationMarker.appearAnimation = .none
+            locationMarker.icon = UIImage(asset: Asset.transparent)
+            locationMarker.opacity = 0
+            locationMarker.isFlat = true
+            locationMarker.title = title
+            locationMarker.snippet = message
+            mapView.selectedMarker = locationMarker
+        }
+    }
 }
 
 // MARK: - Map
@@ -575,9 +598,10 @@ extension MapViewController {
                     polygon.fillColor = fillColor
                     polygon.strokeColor = strokeColor
                     polygon.strokeWidth = 1
+                    polygon.geodesic = true
                     polygon.map = self?.mapView
                     
-                    self?.zonePolygons.append(polygon)
+                    self?.zonePolygons.append((zone, polygon))
                 }
             }
         }
@@ -589,7 +613,7 @@ extension MapViewController {
             
             guard var zonePolygons = self?.zonePolygons else { return }
             
-            for polygon in zonePolygons {
+            for (_, polygon) in zonePolygons {
                 polygon.map = nil
             }
             
@@ -772,6 +796,7 @@ extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         hideVehicleInfo()
+        toggleZoneInfo(coordinate)
     }
 }
 

@@ -13,7 +13,8 @@ struct Zone: Mappable {
     var polygon: [[Double]] = []
     var parking: Bool = true
     var speedMode: Int = 0
-    var note: String?
+    var title: String?
+    var message: String?
     
     init?(map: Map) {
         
@@ -23,7 +24,8 @@ struct Zone: Mappable {
         polygon    <- map["polygon"]
         parking    <- map["parking"]
         speedMode  <- map["speedMode"]
-        note       <- map["note"]
+        title      <- map["title"]
+        message    <- map["message"]
     }
     
     static func fromJSONArray(_ jsonArray: [JSON]) -> [Zone]? {

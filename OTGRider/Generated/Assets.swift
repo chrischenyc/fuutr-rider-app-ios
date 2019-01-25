@@ -25,6 +25,7 @@ internal enum Asset {
   internal static let scooterRed = ImageAsset(name: "scooter-red")
   internal static let scooterYellow = ImageAsset(name: "scooter-yellow")
   internal static let sideMenuIcon = ImageAsset(name: "side-menu-icon")
+  internal static let transparent = ImageAsset(name: "transparent")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
