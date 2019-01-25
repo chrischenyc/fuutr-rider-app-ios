@@ -26,8 +26,8 @@ struct RideSegment: Mappable, Equatable {
         cost        <- map["cost"]
     }
     
-    static func fromJSONArray(_ jsonArray: [JSON]) -> [Ride]? {
-        return Mapper<Ride>().mapArray(JSONArray: jsonArray)
+    static func fromJSONArray(_ jsonArray: [JSON]) -> [RideSegment]? {
+        return Mapper<RideSegment>().mapArray(JSONArray: jsonArray)
     }
     
 }

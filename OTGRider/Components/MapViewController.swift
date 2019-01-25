@@ -17,11 +17,13 @@ class MapViewController: UIViewController {
     private var clusterManager: GMUClusterManager!
     private let streetZoomLevel: Float = 16.0
     private let minDistanceFilter: CLLocationDistance = 3
+    private var zonePolygons: [GMSPolygon] = []
     
     private var searchAPITask: URLSessionTask?
     private var rideAPITask: URLSessionTask?
     private var vehicleAPITask: URLSessionTask?
     private var userAPITask: URLSessionTask?
+    private var zoneAPITask: URLSessionTask?
     
     private var deferredSearchTimer: Timer?     // a new round of search API will be fired unless time gets invalidated
     private let searchDeferring: TimeInterval = 1.5
@@ -71,6 +73,7 @@ class MapViewController: UIViewController {
         setupMapView()
         setupLocationManager()
         getCurrentUser()
+        getZones()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -399,6 +402,22 @@ extension MapViewController {
             self.currentUser = user
         }
     }
+    
+    private func getZones() {
+        zoneAPITask?.cancel()
+        zoneAPITask = ZoneService.search({ [weak self] (zones, error) in
+            guard error == nil else {
+                logger.error(error?.localizedDescription)
+                return
+            }
+            
+            guard let zones = zones else {
+                return
+            }
+            
+            self?.addMapZones(zones)
+        })
+    }
 }
 
 // MARK: - UI
@@ -521,6 +540,61 @@ extension MapViewController {
         renderer.delegate = self
         clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
         clusterManager.setDelegate(self, mapDelegate: self)
+    }
+    
+    private func addMapZones(_ zones: [Zone]) {
+        clearMapZones()
+        
+        DispatchQueue.main.async { [weak self] in
+            for zone in zones {
+                let path = GMSMutablePath()
+                
+                for coordinates in zone.polygon {
+                    path.add(CLLocationCoordinate2D(latitude: coordinates[1], longitude: coordinates[0]))
+                }
+                
+                // Create the polygon, and assign it to the map.
+                var fillColor: UIColor?
+                var strokeColor: UIColor?
+                
+                if !zone.parking {
+                    fillColor = UIColor.noParkingZoneFillColor
+                    strokeColor = UIColor.noParkingZoneStrokeColor
+                }
+                else if zone.speedMode == 1 {
+                    fillColor = UIColor.lowSpeedZoneFillColor
+                    strokeColor = UIColor.lowSpeedZoneStrokeColor
+                }
+                else if zone.speedMode == 2 {
+                    fillColor = UIColor.midSpeedZoneFillColor
+                    strokeColor = UIColor.midSpeedZoneStrokeColor
+                }
+                
+                if let fillColor = fillColor, let strokeColor = strokeColor {
+                    let polygon = GMSPolygon(path: path)
+                    polygon.fillColor = fillColor
+                    polygon.strokeColor = strokeColor
+                    polygon.strokeWidth = 1
+                    polygon.map = self?.mapView
+                    
+                    self?.zonePolygons.append(polygon)
+                }
+            }
+        }
+    }
+    
+    private func clearMapZones() {
+        DispatchQueue.main.async {
+            [weak self] in
+            
+            guard var zonePolygons = self?.zonePolygons else { return }
+            
+            for polygon in zonePolygons {
+                polygon.map = nil
+            }
+            
+            zonePolygons.removeAll()
+        }
     }
     
     private func addMapMakers(forVehicles vehicles: [Vehicle]) {

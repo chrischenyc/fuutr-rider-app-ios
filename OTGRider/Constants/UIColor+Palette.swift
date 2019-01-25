@@ -20,4 +20,12 @@ extension UIColor {
     static let stripePrimaryForegroundColor = UIColor("#32315E")
     static let stripeSecondaryForegroundColor = UIColor("#8798AB")
     static let stripeAccentColor = UIColor("#13B57D")
+    
+    // MARK: - Zone
+    static let noParkingZoneFillColor = UIColor("#4DFF0000")
+    static let noParkingZoneStrokeColor = UIColor("#CCFF0000")
+    static let lowSpeedZoneFillColor = UIColor("#4DEE6F2D")
+    static let lowSpeedZoneStrokeColor = UIColor("#CCEE6F2D")
+    static let midSpeedZoneFillColor = UIColor("#4D42AAF4")
+    static let midSpeedZoneStrokeColor = UIColor("#CC42AAF4")
 }
