@@ -466,7 +466,13 @@ extension MapViewController {
             }
         }
         rideInfoView.onEndRide = {
-            self.endRide()
+            self.alertMessage("Are you sure you want to end the ride?",
+                              positiveActionButtonTitle: "Yes, end ride",
+                              positiveActionButtonTapped: {
+                                self.endRide()
+                              },
+                              negativeActionButtonTitle: "No, keep riding")
+            
         }
         rideInfoView.onPauseTimeUp = {
             self.refreshOngoingRide()
