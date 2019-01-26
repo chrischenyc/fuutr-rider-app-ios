@@ -45,10 +45,7 @@ class VehicleInfoView: DesignableView {
     parkedAt.textColor = UIColor.primaryGreyColor
     range.textColor = UIColor.primaryGreyColor
     
-    reserveButton.layer.borderColor = UIColor.primaryRedColor.cgColor
-    reserveButton.layer.borderWidth = 2
-    reserveButton.layer.cornerRadius = 5
-    reserveButton.titleLabel?.textColor = UIColor.primaryRedColor
+    reserveButton.primaryRedBasic()
     
     waitToReserveAgainLabel.textColor = UIColor.primaryDarkColor
     

@@ -9,9 +9,19 @@
 import Foundation
 
 extension UIButton {
+    // TODO: font style
     func primaryRed() {
         backgroundColor = UIColor.primaryRedColor
-        titleLabel?.textColor = UIColor.white
         layer.cornerRadius = 5
+        titleLabel?.textColor = UIColor.white
+    }
+    
+    // TODO: font style
+    func primaryRedBasic() {
+        backgroundColor = UIColor.clear
+        layer.borderColor = UIColor.primaryRedColor.cgColor
+        layer.borderWidth = 2
+        layer.cornerRadius = 5
+        titleLabel?.textColor = UIColor.primaryRedColor
     }
 }
