@@ -10,14 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HowToRide-->
-        <scene sceneID="z1h-e8-WzL">
-            <objects>
-                <viewControllerPlaceholder storyboardName="HowToRide" id="eZ1-0M-OEE" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ba1-Xz-ijz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2070" y="1543"/>
-        </scene>
         <!--SideMenu-->
         <scene sceneID="XBb-yg-UA7">
             <objects>
@@ -103,9 +95,6 @@
                                     <constraint firstAttribute="height" constant="44" id="p9w-EL-GYw"/>
                                 </constraints>
                                 <state key="normal" title="Learn to ride"/>
-                                <connections>
-                                    <segue destination="eZ1-0M-OEE" kind="presentation" identifier="fromMapToHowTo" id="ndE-UW-B0n"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-gN-jng">
                                 <rect key="frame" x="16" y="20" width="44" height="44"/>
@@ -346,6 +335,7 @@
                     </view>
                     <connections>
                         <outlet property="guideButton" destination="CfQ-ca-FN2" id="nby-5I-2EI"/>
+                        <outlet property="howToRideButton" destination="CfQ-ca-FN2" id="hJ0-7S-rgW"/>
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
                         <outlet property="pinImageView" destination="VZa-Sq-LCR" id="Y3D-z5-DxB"/>
                         <outlet property="rideInfoView" destination="JzT-1r-pb8" id="oLq-1K-4jc"/>

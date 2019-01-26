@@ -53,6 +53,7 @@ class MapViewController: UIViewController {
     private var ongoingRidePolyline: GMSPolyline?
     private var incrementalPath: GMSMutablePath?    // to report to server for the new segment
     
+    @IBOutlet weak var howToRideButton: UIButton!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuButton: UIButton!
     @IBOutlet weak var guideButton: UIButton!
@@ -423,6 +424,7 @@ extension MapViewController {
 // MARK: - UI
 extension MapViewController {
     private func setupUI() {
+        howToRideButton.addTarget(self, action: #selector(showHowToRide), for: .touchUpInside)
         sideMenuButton.backgroundColor = UIColor.clear
         guideButton.layoutCornerRadiusAndShadow()
         guideButton.backgroundColor = UIColor.primaryWhiteColor
@@ -463,6 +465,16 @@ extension MapViewController {
         }
         
         updateUnlockButton()
+    }
+  
+    @objc private func showHowToRide() {
+      let viewController = UIStoryboard(name: "HowToRide", bundle: nil).instantiateViewController(withIdentifier: "HowToRide") as! HowToRideViewController
+      
+      viewController.providesPresentationContextTransitionStyle = true
+      viewController.definesPresentationContext = true
+      viewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+      
+      self.present(viewController, animated: true, completion: nil)
     }
     
     private func showVehicleInfo(_ vehicle: Vehicle) {

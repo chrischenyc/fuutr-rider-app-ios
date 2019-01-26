@@ -17,7 +17,6 @@ internal enum StoryboardSegue {
     case fromTopUpToAccount
   }
   internal enum Main: String, SegueType {
-    case fromMapToHowTo
     case fromMapToScan
     case showAccount
     case showHelp
