@@ -444,12 +444,13 @@ extension MapViewController {
         vehicleInfoView2.onScan = { [weak self] in
           self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
         }
-//        vehicleInfoView.onReserveTimeUp = {
-//            DispatchQueue.main.async {
-//                self.searchVehicles()
-//            }
-//        }
-        
+      
+        vehicleInfoView2.onReserveTimeUp = { [weak self] in
+           DispatchQueue.main.async {
+              self?.searchVehicles()
+           }
+        }
+      
         rideInfoView.backgroundColor = UIColor.primaryWhiteColor
         rideInfoView.layoutCornerRadiusAndShadow()
         rideInfoViewBottomConstraint.constant = 0

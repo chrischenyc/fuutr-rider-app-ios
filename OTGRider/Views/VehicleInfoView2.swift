@@ -12,6 +12,8 @@ class VehicleInfoView2: DesignableView {
   @IBOutlet weak var reserveButton: UIButton!
   @IBOutlet weak var scanButton: UIButton!
   
+  @IBOutlet weak var waitToReserveAgainLabel: UILabel!
+  
   override var nibName: String {
     get {
       return "VehicleInfoView"
@@ -29,10 +31,13 @@ class VehicleInfoView2: DesignableView {
     setupUI()
   }
   
-  var vehicle: Vehicle?
+  private var reserveTimer: Timer?
+  private var vehicle: Vehicle?
+  
   var onReserve: ((Vehicle)-> Void)?
   var onClose: (() -> Void)?
   var onScan: (() -> Void)?
+  var onReserveTimeUp: (()->Void)?
   
   func setupUI() {
     scanButton.backgroundColor = UIColor.primaryRedColor
@@ -46,6 +51,8 @@ class VehicleInfoView2: DesignableView {
     reserveButton.layer.cornerRadius = 5
     reserveButton.titleLabel?.textColor = UIColor.primaryRedColor
     
+    waitToReserveAgainLabel.textColor = UIColor.primaryDarkColor
+    
     closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     reserveButton.addTarget(self, action: #selector(reserveButtonTapped), for: .touchUpInside)
     scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
@@ -56,6 +63,42 @@ class VehicleInfoView2: DesignableView {
     scanButton.titleLabel?.textColor = .white
     rangeLabel.text = vehicle.remainderRange?.distanceString
     priceLabel.attributedText = generatePriceText(with: vehicle)
+    
+    if vehicle.reserved {
+      guard let reservedUntil = vehicle.reservedUntil else { return }
+      
+      reserveButton.setTitle(calculateTimeString(reservedUntil: reservedUntil), for: .normal)
+      
+      waitToReserveAgainLabel.isHidden = false
+      // create timer to count down
+      reserveTimer?.invalidate()
+      
+      reserveTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
+        self?.reserveButton.setTitle(self?.calculateTimeString(reservedUntil: reservedUntil), for: .normal)
+        
+        let remainingReservedTime = Int(reservedUntil.timeIntervalSinceNow)
+        if remainingReservedTime > 0 {
+          logger.debug("reserving vehicle for \(remainingReservedTime) seconds")
+        }
+        else {
+          self?.reserveTimer?.invalidate()
+          self?.waitToReserveAgainLabel.isHidden = true
+          self?.onReserveTimeUp?()
+        }
+      })
+    } else {
+      reserveTimer?.invalidate()
+    }
+  }
+  
+  private func calculateTimeString(reservedUntil: Date) -> String {
+    let remainingReservedTime = Int(reservedUntil.timeIntervalSinceNow)
+    
+    if remainingReservedTime > 0 {
+      return reservedUntil.timeIntervalSinceNow.hhmmssString
+    } else {
+      return "Reserved"
+    }
   }
   
   @objc private func closeButtonTapped() {
@@ -64,7 +107,9 @@ class VehicleInfoView2: DesignableView {
   
   @objc private func reserveButtonTapped() {
     guard let vehicle = vehicle else { return }
-    
+    if vehicle.reserved {
+      return
+    }
     onReserve?(vehicle)
   }
   
