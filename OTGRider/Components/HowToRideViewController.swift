@@ -45,6 +45,7 @@ class HowToRideViewController: UIPageViewController {
     let viewController = UIStoryboard(name: "HowToRide", bundle: nil).instantiateViewController(withIdentifier: "HowToRideSinglePageViewController") as! HowToRideSinglePageViewController
     viewController.descriptionText = withDescription
     viewController.imageName = imageName
+    viewController.delegate = self
     return viewController
   }
   
@@ -82,5 +83,18 @@ extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewContr
   func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
     let pageContentViewController = pageViewController.viewControllers![0]
     pageControl.currentPage = pages.index(of: pageContentViewController)!
+  }
+}
+
+extension HowToRideViewController: HowToRideSinglePageDelegate {
+  func ride() {
+    
+  }
+  
+  func showNextPage() {
+    let currentPageIndex = pageControl.currentPage
+    let nextPage = pages[currentPageIndex + 1]
+    setViewControllers([nextPage], direction: .forward, animated: true, completion: nil)
+    pageControl.currentPage = currentPageIndex + 1
   }
 }

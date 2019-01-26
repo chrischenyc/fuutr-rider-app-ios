@@ -1,3 +1,8 @@
+protocol HowToRideSinglePageDelegate {
+  func ride()
+  func showNextPage()
+}
+
 class HowToRideSinglePageViewController: UIViewController {
   
   @IBOutlet var contentView: UIView!
@@ -7,6 +12,8 @@ class HowToRideSinglePageViewController: UIViewController {
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var rideButton: UIButton!
   @IBOutlet weak var nextButton: UIButton!
+  
+  var delegate: HowToRideSinglePageDelegate?
   
   var descriptionText: String?
   var imageName: String?
@@ -24,5 +31,21 @@ class HowToRideSinglePageViewController: UIViewController {
       rideButton.layer.cornerRadius = 5
       nextButton.isHidden = true
     }
+    
+    nextButton.addTarget(self, action: #selector(showNextPage), for: .touchUpInside)
+    skipButton.addTarget(self, action: #selector(skip), for: .touchUpInside)
+    rideButton.addTarget(self, action: #selector(ride), for: .touchUpInside)
+  }
+  
+  @objc func showNextPage() {
+    delegate?.showNextPage()
+  }
+  
+  @objc func skip() {
+    self.dismiss(animated: true, completion: nil)
+  }
+  
+  @objc func ride() {
+    delegate?.ride()
   }
 }
