@@ -34,6 +34,35 @@ class VehicleInfoView2: DesignableView {
     
     rangeLabel.text = vehicle.remainderRange?.distanceString
     
-    priceLabel.text = "Unlock for \(vehicle.unlockCost.currencyString) + \(vehicle.rideMinuteCost.currencyString)/min"
+    priceLabel.attributedText = generatePriceText(with: vehicle)
   }
+  
+  private func generatePriceText(with vehicle: Vehicle) -> NSMutableAttributedString {
+    let unlockText = NSAttributedString(string: vehicle.unlockCost.stringWithNoCurrencySign, attributes: moneyAttributes)
+    let toUnLockText = NSAttributedString(string: " to unlock ", attributes: textAttributes)
+    let rideCostText = NSAttributedString(string: vehicle.rideMinuteCost.stringWithNoCurrencySign, attributes: moneyAttributes)
+    let perMinText = NSAttributedString(string: " per min", attributes: textAttributes)
+    
+    let priceText = NSMutableAttributedString()
+    priceText.append(unlockText)
+    priceText.append(toUnLockText)
+    priceText.append(rideCostText)
+    priceText.append(perMinText)
+    
+    return priceText
+  }
+  
+  private lazy var moneyAttributes: [NSAttributedString.Key: Any] = {
+    return [
+      NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 19)
+      ] as [NSAttributedString.Key: Any]
+  }()
+  
+  private lazy var textAttributes: [NSAttributedString.Key: Any] = {
+    return [
+      NSAttributedString.Key.foregroundColor : UIColor.primaryGreyColor,
+      NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13),
+      NSAttributedString.Key.baselineOffset: 2
+      ] as [NSAttributedString.Key: Any]
+  }()
 }
