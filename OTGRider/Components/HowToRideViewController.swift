@@ -1,8 +1,13 @@
 class HowToRideViewController: UIPageViewController {
+  var pageControl = UIPageControl()
+  let pageControlWidth: CGFloat = 130
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     dataSource = self
+    delegate = self
+    configurePageControl()
     
     if let firstViewController = pages.first {
       setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
@@ -43,6 +48,16 @@ class HowToRideViewController: UIPageViewController {
     return viewController
   }
   
+  func configurePageControl() {
+    pageControl = UIPageControl(frame: CGRect(x: (UIScreen.main.bounds.width - pageControlWidth) / 2, y: UIScreen.main.bounds.height - 173, width: 130, height: 10))
+    pageControl.numberOfPages = pages.count
+    pageControl.currentPage = 0
+    pageControl.tintColor = UIColor.primaryBlurredColor
+    pageControl.pageIndicatorTintColor = UIColor.primaryBlurredColor
+    pageControl.currentPageIndicatorTintColor = UIColor.white
+    pageControl.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+    view.addSubview(pageControl)
+  }
 }
 
 extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
@@ -64,4 +79,8 @@ extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewContr
     return pages[nextIndex]
   }
 
+  func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    let pageContentViewController = pageViewController.viewControllers![0]
+    pageControl.currentPage = pages.index(of: pageContentViewController)!
+  }
 }

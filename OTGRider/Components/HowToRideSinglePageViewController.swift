@@ -15,7 +15,7 @@ class HowToRideSinglePageViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    contentView.backgroundColor = UIColor(red:0.93, green:0.11, blue:0.14, alpha:1)
+    contentView.backgroundColor = UIColor.primaryRedColor
     descriptionLabel.text = descriptionText
     imageView.image = UIImage(named: imageName ?? "how-to-ride-1")
     
