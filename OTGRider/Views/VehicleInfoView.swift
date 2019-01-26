@@ -59,7 +59,7 @@ class VehicleInfoView: UIView {
             rangeLabel.text = "Range N/A"
         }
         
-        pricingLabel.text = "Unlock for $1 + $0.20/min"
+        pricingLabel.text = "Unlock for \(vehicle.unlockCost.currencyString) + \(vehicle.rideMinuteCost.currencyString)/min"
         
         if vehicle.reserved {
             reserveButton.setTitle("Reserved", for: .normal)
