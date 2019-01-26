@@ -1,3 +1,5 @@
+import SwiftyUserDefaults
+
 protocol HowToRideSinglePageDelegate {
   func ride()
   func showNextPage()
@@ -42,7 +44,10 @@ class HowToRideSinglePageViewController: UIViewController {
   }
   
   @objc func skip() {
-    self.dismiss(animated: true, completion: nil)
+    DispatchQueue.main.async {
+      Defaults[.userTrainedHowToRide] = true
+      self.dismiss(animated: true, completion: nil)
+    }
   }
   
   @objc func ride() {

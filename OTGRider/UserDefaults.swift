@@ -12,6 +12,7 @@ import SwiftyUserDefaults
 extension DefaultsKeys {
     static let userSignedIn = DefaultsKey<Bool>("com.otgride.userSignedIn")
     static let userOnboarded = DefaultsKey<Bool>("com.otgride.userOnboarded")
+    static let userTrainedHowToRide = DefaultsKey<Bool>("com.otgride.userTrainedHowToRide")
     static let accessToken = DefaultsKey<String?>("com.otgride.accessToken")
     static let refreshToken = DefaultsKey<String?>("com.otgride.refreshToken")
 }
