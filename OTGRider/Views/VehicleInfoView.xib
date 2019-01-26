@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehicleInfoView2" customModule="OTGRider" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LzD-kh-xiL" userLabel="dollarImage">
+                    <rect key="frame" x="20" y="20" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="eQr-jv-1IR"/>
+                        <constraint firstAttribute="width" constant="24" id="u0Y-TC-phQ"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9D6-H6-45p" userLabel="locationImage">
+                    <rect key="frame" x="20" y="69" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="aJ8-I7-11k"/>
+                        <constraint firstAttribute="height" constant="24" id="olr-Ly-hcP"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nXt-fN-7BF">
+                    <rect key="frame" x="20" y="113" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="RgS-Ib-U8z"/>
+                        <constraint firstAttribute="width" constant="24" id="V1O-CZ-Zby"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123 Lonsdale St" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuN-U2-YHX">
+                    <rect key="frame" x="54" y="82" width="122" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="parked at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cS-ni-adm">
+                    <rect key="frame" x="54" y="63" width="73" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.2 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9L-nv-MSx">
+                    <rect key="frame" x="52" y="111" width="44" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 to unlock $0.20/min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW6-0n-AEu">
+                    <rect key="frame" x="54" y="17" width="164.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-model" translatesAutoresizingMaskIntoConstraints="NO" id="agB-l3-5Xr">
+                    <rect key="frame" x="249" y="56" width="96" height="96"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="96" id="3yT-Ao-pnp"/>
+                        <constraint firstAttribute="width" constant="96" id="XvH-Kh-1cu"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F4-xC-bLI" userLabel="closeButton">
+                    <rect key="frame" x="339" y="20" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="6S1-Wi-xVV"/>
+                        <constraint firstAttribute="width" constant="16" id="NrM-Fe-eMf"/>
+                    </constraints>
+                    <state key="normal" title="Close"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rr-wp-oxp">
+                    <rect key="frame" x="20" y="185" width="160" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="cek-Gc-GH6"/>
+                    </constraints>
+                    <state key="normal" title="Reserve"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZZ-9q-z2J">
+                    <rect key="frame" x="195" y="185" width="160" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="crb-U7-ISB"/>
+                    </constraints>
+                    <state key="normal" title="Scan"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjM-Ma-WMB">
+                    <rect key="frame" x="52" y="131" width="49" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iZZ-9q-z2J" secondAttribute="bottom" constant="54" id="0G1-f8-GDb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="agB-l3-5Xr" secondAttribute="trailing" constant="30" id="2b7-rh-OvG"/>
+                <constraint firstItem="0F4-xC-bLI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="36a-Dh-Tcb"/>
+                <constraint firstItem="9D6-H6-45p" firstAttribute="top" secondItem="LzD-kh-xiL" secondAttribute="bottom" constant="25" id="8NF-A9-WOA"/>
+                <constraint firstItem="nXt-fN-7BF" firstAttribute="top" secondItem="9D6-H6-45p" secondAttribute="bottom" constant="20" id="HA3-Ku-CdA"/>
+                <constraint firstItem="agB-l3-5Xr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="56" id="Jm0-Zz-5hK"/>
+                <constraint firstItem="2Rr-wp-oxp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="eLi-x6-MTc"/>
+                <constraint firstItem="LzD-kh-xiL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="f20-1R-WWR"/>
+                <constraint firstItem="IW6-0n-AEu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="17" id="g2w-Y4-Wbx"/>
+                <constraint firstItem="9D6-H6-45p" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="i0N-xD-Xf3"/>
+                <constraint firstItem="nXt-fN-7BF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="qo0-v5-8D8"/>
+                <constraint firstItem="LzD-kh-xiL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="rtW-E0-6tX"/>
+                <constraint firstItem="IW6-0n-AEu" firstAttribute="leading" secondItem="LzD-kh-xiL" secondAttribute="trailing" constant="10" id="ugi-YE-Y5E"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iZZ-9q-z2J" secondAttribute="trailing" constant="20" id="xw3-g2-q8k"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0F4-xC-bLI" secondAttribute="trailing" constant="20" id="y7I-1L-qPU"/>
+                <constraint firstAttribute="bottom" secondItem="2Rr-wp-oxp" secondAttribute="bottom" constant="54" id="z3O-HM-gR2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="197.59999999999999" y="372.86356821589209"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="scooter-model" width="96" height="96"/>
+    </resources>
+</document>

@@ -58,15 +58,15 @@ class MapViewController: UIViewController {
     @IBOutlet weak var sideMenuButton: UIButton!
     @IBOutlet weak var guideButton: UIButton!
     @IBOutlet weak var unlockButton: UIButton!
-    @IBOutlet weak var vehicleInfoView: VehicleInfoView!
-    @IBOutlet weak var vehicleInfoViewBottomConstraint: NSLayoutConstraint!
-    private let vehicleInfoViewBottomToSuperView: CGFloat = 194
     @IBOutlet weak var rideInfoView: RideInfoView!
     @IBOutlet weak var rideInfoViewBottomConstraint: NSLayoutConstraint!
     private let rideInfoViewBottomToSuperView: CGFloat = 206
     @IBOutlet weak var pinImageView: UIImageView!
     
-    // MARK: - lifecycle
+  @IBOutlet weak var unlockView: UIView!
+  @IBOutlet weak var vehicleInfoView2: VehicleInfoView2!
+  
+  // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -387,8 +387,8 @@ extension MapViewController {
             if let vehicle = vehicle {
                 DispatchQueue.main.async {
                     // refresh vehicle info banner
-                    self?.vehicleInfoView.updateContentWith(vehicle)
-                    
+//                    self?.vehicleInfoView.updateContentWith(vehicle)
+                  
                     // refresh map search
                     self?.searchVehicles()
                 }
@@ -432,20 +432,17 @@ extension MapViewController {
         guideButton.backgroundColor = UIColor.primaryWhiteColor
         unlockButton.layoutCornerRadiusAndShadow()
         unlockButton.backgroundColor = UIColor.primaryRedColor
-        
-        vehicleInfoView.backgroundColor = UIColor.primaryWhiteColor
-        vehicleInfoView.layoutCornerRadiusAndShadow()
-        vehicleInfoView.onReserve = {
-            (vehicle) in
-            
-            self.reserveVehicle(vehicle)
-        }
-        vehicleInfoView.onReserveTimeUp = {
-            DispatchQueue.main.async {
-                self.searchVehicles()
-            }
-        }
-        vehicleInfoViewBottomConstraint.constant = 0
+      
+//        vehicleInfoView.onReserve = {
+//            (vehicle) in
+//            
+//            self.reserveVehicle(vehicle)
+//        }
+//        vehicleInfoView.onReserveTimeUp = {
+//            DispatchQueue.main.async {
+//                self.searchVehicles()
+//            }
+//        }
         
         rideInfoView.backgroundColor = UIColor.primaryWhiteColor
         rideInfoView.layoutCornerRadiusAndShadow()
@@ -480,20 +477,18 @@ extension MapViewController {
     }
     
     private func showVehicleInfo(_ vehicle: Vehicle) {
-        self.vehicleInfoView.updateContentWith(vehicle)
-        self.vehicleInfoViewBottomConstraint.constant = self.vehicleInfoViewBottomToSuperView
-        
-        UIView.animate(withDuration: 0.25) {
-            self.view.layoutIfNeeded()
-        }
+      DispatchQueue.main.async {
+        self.vehicleInfoView2.isHidden = false
+        self.unlockView.isHidden = true
+      }
+//        self.vehicleInfoView.updateContentWith(vehicle)
     }
     
     private func hideVehicleInfo() {
-        self.vehicleInfoViewBottomConstraint.constant = 0
-        
-        UIView.animate(withDuration: 0.25) {
-            self.view.layoutIfNeeded()
-        }
+      DispatchQueue.main.async {
+        self.vehicleInfoView2.isHidden = true
+        self.unlockView.isHidden = false
+      }
     }
     
     private func showRideInfo() {
