@@ -19,9 +19,23 @@ class VehicleInfoView2: DesignableView {
     set {}
   }
   
-  func updateContentWith(_ vehicle: Vehicle) {
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    setupUI()
+  }
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    setupUI()
+  }
+  
+  var vehicle: Vehicle?
+  var onReserve: ((Vehicle)-> Void)?
+  var onClose: (() -> Void)?
+  var onScan: (() -> Void)?
+  
+  func setupUI() {
     scanButton.backgroundColor = UIColor.primaryRedColor
-    scanButton.titleLabel?.textColor = .white
     scanButton.layer.cornerRadius = 5
     
     parkedAt.textColor = UIColor.primaryGreyColor
@@ -32,9 +46,30 @@ class VehicleInfoView2: DesignableView {
     reserveButton.layer.cornerRadius = 5
     reserveButton.titleLabel?.textColor = UIColor.primaryRedColor
     
+    closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+    reserveButton.addTarget(self, action: #selector(reserveButtonTapped), for: .touchUpInside)
+    scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
+  }
+  
+  func updateContentWith(_ vehicle: Vehicle) {
+    self.vehicle = vehicle
+    scanButton.titleLabel?.textColor = .white
     rangeLabel.text = vehicle.remainderRange?.distanceString
-    
     priceLabel.attributedText = generatePriceText(with: vehicle)
+  }
+  
+  @objc private func closeButtonTapped() {
+    onClose?()
+  }
+  
+  @objc private func reserveButtonTapped() {
+    guard let vehicle = vehicle else { return }
+    
+    onReserve?(vehicle)
+  }
+  
+  @objc private func scanButtonTapped() {
+    onScan?()
   }
   
   private func generatePriceText(with vehicle: Vehicle) -> NSMutableAttributedString {

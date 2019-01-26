@@ -387,7 +387,7 @@ extension MapViewController {
             if let vehicle = vehicle {
                 DispatchQueue.main.async {
                     // refresh vehicle info banner
-//                    self?.vehicleInfoView.updateContentWith(vehicle)
+                    self?.vehicleInfoView2.updateContentWith(vehicle)
                   
                     // refresh map search
                     self?.searchVehicles()
@@ -433,11 +433,17 @@ extension MapViewController {
         unlockButton.layoutCornerRadiusAndShadow()
         unlockButton.backgroundColor = UIColor.primaryRedColor
       
-//        vehicleInfoView.onReserve = {
-//            (vehicle) in
-//            
-//            self.reserveVehicle(vehicle)
-//        }
+        vehicleInfoView2.onReserve = { [weak self] (vehicle) in
+          self?.reserveVehicle(vehicle)
+        }
+      
+        vehicleInfoView2.onClose = { [weak self] in
+          self?.hideVehicleInfo()
+        }
+      
+        vehicleInfoView2.onScan = { [weak self] in
+          self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
+        }
 //        vehicleInfoView.onReserveTimeUp = {
 //            DispatchQueue.main.async {
 //                self.searchVehicles()
