@@ -157,9 +157,6 @@
 		6B91D75E21FB1F2A00B84244 /* ZoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91D75D21FB1F2A00B84244 /* ZoneService.swift */; };
 		6B91D75F21FB1F2A00B84244 /* ZoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91D75D21FB1F2A00B84244 /* ZoneService.swift */; };
 		6B91D76021FB1F2A00B84244 /* ZoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B91D75D21FB1F2A00B84244 /* ZoneService.swift */; };
-		6B973E5D219BF14B00819A96 /* VehicleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B973E5C219BF14B00819A96 /* VehicleInfoView.swift */; };
-		6B973E5E219BF14B00819A96 /* VehicleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B973E5C219BF14B00819A96 /* VehicleInfoView.swift */; };
-		6B973E5F219BF14B00819A96 /* VehicleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B973E5C219BF14B00819A96 /* VehicleInfoView.swift */; };
 		6BB2082D219F8AA3008E5EF1 /* RideService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2082C219F8AA3008E5EF1 /* RideService.swift */; };
 		6BB2082E219F8AA3008E5EF1 /* RideService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2082C219F8AA3008E5EF1 /* RideService.swift */; };
 		6BB2082F219F8AA3008E5EF1 /* RideService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2082C219F8AA3008E5EF1 /* RideService.swift */; };
@@ -329,6 +326,15 @@
 		9197553321FBF5290069D25A /* HowToRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197552E21FBE3460069D25A /* HowToRideViewController.swift */; };
 		9197553421FBF52D0069D25A /* HowToRideSinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197553021FBE8900069D25A /* HowToRideSinglePageViewController.swift */; };
 		9197553521FBF52E0069D25A /* HowToRideSinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197553021FBE8900069D25A /* HowToRideSinglePageViewController.swift */; };
+		9197553B21FC32E20069D25A /* VehicleInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9197553A21FC32E20069D25A /* VehicleInfoView.xib */; };
+		9197553C21FC32E20069D25A /* VehicleInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9197553A21FC32E20069D25A /* VehicleInfoView.xib */; };
+		9197553D21FC32E20069D25A /* VehicleInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9197553A21FC32E20069D25A /* VehicleInfoView.xib */; };
+		9197553F21FC3A230069D25A /* VehicleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197553E21FC3A230069D25A /* VehicleInfoView.swift */; };
+		9197554021FC3A230069D25A /* VehicleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197553E21FC3A230069D25A /* VehicleInfoView.swift */; };
+		9197554121FC3A230069D25A /* VehicleInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197553E21FC3A230069D25A /* VehicleInfoView.swift */; };
+		9197554321FC3A4D0069D25A /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197554221FC3A4D0069D25A /* DesignableView.swift */; };
+		9197554421FC3A4D0069D25A /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197554221FC3A4D0069D25A /* DesignableView.swift */; };
+		9197554521FC3A4D0069D25A /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197554221FC3A4D0069D25A /* DesignableView.swift */; };
 		A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
 		A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
 		A0CFE7A021747BF000BA3F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE79E21747BF000BA3F6D /* Main.storyboard */; };
@@ -407,7 +413,6 @@
 		6B8E30CB219FDE7E00292B4E /* HistoryRidesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRidesTableViewController.swift; sourceTree = "<group>"; };
 		6B91D75921FB1D8400B84244 /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		6B91D75D21FB1F2A00B84244 /* ZoneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneService.swift; sourceTree = "<group>"; };
-		6B973E5C219BF14B00819A96 /* VehicleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfoView.swift; sourceTree = "<group>"; };
 		6BB2082C219F8AA3008E5EF1 /* RideService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideService.swift; sourceTree = "<group>"; };
 		6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -504,6 +509,9 @@
 		86B2C7CC09C21C83C016544C /* Pods-Project-OTGRider-dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-dev/Pods-Project-OTGRider-dev.debug.xcconfig"; sourceTree = "<group>"; };
 		9197552E21FBE3460069D25A /* HowToRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToRideViewController.swift; sourceTree = "<group>"; };
 		9197553021FBE8900069D25A /* HowToRideSinglePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToRideSinglePageViewController.swift; sourceTree = "<group>"; };
+		9197553A21FC32E20069D25A /* VehicleInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleInfoView.xib; sourceTree = "<group>"; };
+		9197553E21FC3A230069D25A /* VehicleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfoView.swift; sourceTree = "<group>"; };
+		9197554221FC3A4D0069D25A /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		A0CFE79721747BF000BA3F6D /* OTGRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTGRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0CFE79C21747BF000BA3F6D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -621,11 +629,12 @@
 				6B8731EA218A98EE00CC2651 /* Settings.storyboard */,
 				6B8731E8218A98EE00CC2651 /* Help.storyboard */,
 				6B8731F3218A9A9000CC2651 /* Unlock.storyboard */,
+				9197553A21FC32E20069D25A /* VehicleInfoView.xib */,
 				6B31E1EA2197F34F00CB424E /* PaymentCell.swift */,
 				6B2C9BB021A01BE80042432D /* TransactionCell.swift */,
-				6B973E5C219BF14B00819A96 /* VehicleInfoView.swift */,
 				6B0128BE219EA4B500AC2439 /* RideInfoView.swift */,
 				6B8E30C6219FDD5000292B4E /* HistoryRideCell.swift */,
+				9197553E21FC3A230069D25A /* VehicleInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -717,6 +726,7 @@
 				6BBE6C81219BC9D3002D639B /* UIView+CornerRadius.swift */,
 				6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */,
 				6B03DC0921EDEF4E00A2765F /* GMSMapView+Search.swift */,
+				9197554221FC3A4D0069D25A /* DesignableView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1133,6 +1143,7 @@
 				6BDE913E218C19DF003F976B /* Main.storyboard in Resources */,
 				6BDE913F218C19DF003F976B /* SideMenu.storyboard in Resources */,
 				6BDE9140218C19DF003F976B /* History.storyboard in Resources */,
+				9197553D21FC32E20069D25A /* VehicleInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,6 +1162,7 @@
 				A0CFE7A221747BF500BA3F6D /* Assets.xcassets in Resources */,
 				6B8731CA2189D86600CC2651 /* Onboard.storyboard in Resources */,
 				6B8731F5218A9A9000CC2651 /* Unlock.storyboard in Resources */,
+				9197553B21FC32E20069D25A /* VehicleInfoView.xib in Resources */,
 				A0CFE7A021747BF000BA3F6D /* Main.storyboard in Resources */,
 				6B8731D9218A909400CC2651 /* SideMenu.storyboard in Resources */,
 				6B8731E2218A97BF00CC2651 /* History.storyboard in Resources */,
@@ -1173,6 +1185,7 @@
 				A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */,
 				6B8731CB2189D86600CC2651 /* Onboard.storyboard in Resources */,
 				6B8731F6218A9A9000CC2651 /* Unlock.storyboard in Resources */,
+				9197553C21FC32E20069D25A /* VehicleInfoView.xib in Resources */,
 				A0CFE7B421747D2B00BA3F6D /* Main.storyboard in Resources */,
 				6B8731DA218A909400CC2651 /* SideMenu.storyboard in Resources */,
 				6B8731E3218A97BF00CC2651 /* History.storyboard in Resources */,
@@ -1577,6 +1590,7 @@
 				6BDE9121218C19DF003F976B /* Assets.swift in Sources */,
 				6BD472B0219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B0128BD219DA0E100AC2439 /* Ride.swift in Sources */,
+				9197554521FC3A4D0069D25A /* DesignableView.swift in Sources */,
 				6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */,
 				6BBE6C88219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA112198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
@@ -1617,7 +1631,6 @@
 				6B03DC1421F6FBF800A2765F /* RideSegment.swift in Sources */,
 				6B849D4A21941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D76021FB1F2A00B84244 /* ZoneService.swift in Sources */,
-				6B973E5F219BF14B00819A96 /* VehicleInfoView.swift in Sources */,
 				6B444FE92191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6BDE9129218C19DF003F976B /* EnableLocationViewController.swift in Sources */,
 				6B214AE2219564CD00553C3D /* EditNameViewController.swift in Sources */,
@@ -1644,6 +1657,7 @@
 				6BD47274219A4CAA00D36C3E /* GMUGeometryCollection.m in Sources */,
 				6BDE9163218C833E003F976B /* Aliases.swift in Sources */,
 				6B14FA152198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */,
+				9197554121FC3A230069D25A /* VehicleInfoView.swift in Sources */,
 				6BD4729E219A4CAA00D36C3E /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				9197553321FBF5290069D25A /* HowToRideViewController.swift in Sources */,
 				6B2C9BBF21A020D60042432D /* TransactionsTableViewController.swift in Sources */,
@@ -1679,6 +1693,7 @@
 				6B8731B22189BA8D00CC2651 /* Assets.swift in Sources */,
 				6BD472AE219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B0128BB219DA0E100AC2439 /* Ride.swift in Sources */,
+				9197554321FC3A4D0069D25A /* DesignableView.swift in Sources */,
 				6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */,
 				6BBE6C86219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA0F2198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
@@ -1719,7 +1734,6 @@
 				6B03DC1221F6FBF800A2765F /* RideSegment.swift in Sources */,
 				6B849D4821941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D75E21FB1F2A00B84244 /* ZoneService.swift in Sources */,
-				6B973E5D219BF14B00819A96 /* VehicleInfoView.swift in Sources */,
 				6B444FE72191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6B8731CD2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B214AE0219564CD00553C3D /* EditNameViewController.swift in Sources */,
@@ -1746,6 +1760,7 @@
 				6BD47272219A4CAA00D36C3E /* GMUGeometryCollection.m in Sources */,
 				6BDE9161218C833E003F976B /* Aliases.swift in Sources */,
 				6B14FA132198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */,
+				9197553F21FC3A230069D25A /* VehicleInfoView.swift in Sources */,
 				6BD4729C219A4CAA00D36C3E /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				9197552F21FBE3460069D25A /* HowToRideViewController.swift in Sources */,
 				6B2C9BBD21A020D60042432D /* TransactionsTableViewController.swift in Sources */,
@@ -1781,6 +1796,7 @@
 				6B8731B32189BA8D00CC2651 /* Assets.swift in Sources */,
 				6BD472AF219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B0128BC219DA0E100AC2439 /* Ride.swift in Sources */,
+				9197554421FC3A4D0069D25A /* DesignableView.swift in Sources */,
 				6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */,
 				6BBE6C87219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA102198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
@@ -1821,7 +1837,6 @@
 				6B03DC1321F6FBF800A2765F /* RideSegment.swift in Sources */,
 				6B849D4921941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D75F21FB1F2A00B84244 /* ZoneService.swift in Sources */,
-				6B973E5E219BF14B00819A96 /* VehicleInfoView.swift in Sources */,
 				6B444FE82191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B214AE1219564CD00553C3D /* EditNameViewController.swift in Sources */,
@@ -1848,6 +1863,7 @@
 				6BD47273219A4CAA00D36C3E /* GMUGeometryCollection.m in Sources */,
 				6BDE9162218C833E003F976B /* Aliases.swift in Sources */,
 				6B14FA142198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */,
+				9197554021FC3A230069D25A /* VehicleInfoView.swift in Sources */,
 				6BD4729D219A4CAA00D36C3E /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				9197553221FBF5280069D25A /* HowToRideViewController.swift in Sources */,
 				6B2C9BBE21A020D60042432D /* TransactionsTableViewController.swift in Sources */,
