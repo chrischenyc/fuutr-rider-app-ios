@@ -171,8 +171,6 @@ extension AppDelegate {
         SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
         SideMenuManager.defaultManager.menuFadeStatusBar = false
         
-        UIButton.appearance().tintColor = UIColor.primaryRedColor
-        
         UINavigationBar.appearance().tintColor = UIColor.primaryRedColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryRedColor]
         

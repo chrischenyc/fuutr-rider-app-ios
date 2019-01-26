@@ -13,7 +13,7 @@ extension UIButton {
     func primaryRed() {
         backgroundColor = UIColor.primaryRedColor
         layer.cornerRadius = .defaultCornerRadius
-        titleLabel?.textColor = UIColor.white
+        setTitleColor(UIColor.white, for: .normal)
     }
     
     // TODO: font style
@@ -22,6 +22,6 @@ extension UIButton {
         layer.borderColor = UIColor.primaryRedColor.cgColor
         layer.borderWidth = 2
         layer.cornerRadius = .defaultCornerRadius
-        titleLabel?.textColor = UIColor.primaryRedColor
+        setTitleColor(UIColor.primaryRedColor, for: .normal)
     }
 }
