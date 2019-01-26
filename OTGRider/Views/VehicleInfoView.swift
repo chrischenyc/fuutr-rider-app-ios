@@ -40,8 +40,7 @@ class VehicleInfoView: DesignableView {
   var onReserveTimeUp: (()->Void)?
   
   func setupUI() {
-    scanButton.backgroundColor = UIColor.primaryRedColor
-    scanButton.layer.cornerRadius = 5
+    scanButton.primaryRed()
     
     parkedAt.textColor = UIColor.primaryGreyColor
     range.textColor = UIColor.primaryGreyColor

@@ -430,8 +430,8 @@ extension MapViewController {
         sideMenuButton.backgroundColor = UIColor.clear
         guideButton.layoutCornerRadiusAndShadow()
         guideButton.backgroundColor = UIColor.primaryWhiteColor
-        unlockButton.layoutCornerRadiusAndShadow()
-        unlockButton.backgroundColor = UIColor.primaryRedColor
+        
+        unlockButton.primaryRed()
       
         vehicleInfoView.onReserve = { [weak self] (vehicle) in
           self?.reserveVehicle(vehicle)
