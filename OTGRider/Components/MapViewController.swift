@@ -431,6 +431,7 @@ extension MapViewController {
         guideButton.layoutCornerRadiusAndShadow()
         guideButton.backgroundColor = UIColor.primaryWhiteColor
         
+        unlockView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         unlockButton.primaryRed()
       
         vehicleInfoView.onReserve = { [weak self] (vehicle) in
