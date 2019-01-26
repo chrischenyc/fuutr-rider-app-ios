@@ -46,6 +46,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZK-IQ-YAX">
+                                <rect key="frame" x="70" y="595" width="235" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="1fj-el-xqG"/>
+                                </constraints>
+                                <state key="normal" title="Ride"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACs-u5-vgB">
                                 <rect key="frame" x="275" y="572" width="100" height="95"/>
                                 <constraints>
@@ -58,6 +66,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uLC-ph-gyF" firstAttribute="top" secondItem="hgJ-zc-kTh" secondAttribute="bottom" constant="7" id="7mh-ux-Gzc"/>
+                            <constraint firstItem="8sH-1y-g7h" firstAttribute="bottom" secondItem="VZK-IQ-YAX" secondAttribute="bottom" constant="27" id="8Oh-Zu-CsJ"/>
                             <constraint firstItem="hgJ-zc-kTh" firstAttribute="leading" secondItem="8sH-1y-g7h" secondAttribute="leading" constant="20" id="FuL-sW-kl8"/>
                             <constraint firstItem="v7k-ms-fqC" firstAttribute="top" secondItem="uLC-ph-gyF" secondAttribute="bottom" constant="78" id="KDR-lN-4YB"/>
                             <constraint firstItem="uLC-ph-gyF" firstAttribute="leading" secondItem="8sH-1y-g7h" secondAttribute="leading" constant="20" id="RQA-bi-1Cr"/>
@@ -65,7 +74,9 @@
                             <constraint firstItem="v7k-ms-fqC" firstAttribute="centerX" secondItem="8sH-1y-g7h" secondAttribute="centerX" id="Uiw-qy-k5Q"/>
                             <constraint firstItem="8sH-1y-g7h" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hgJ-zc-kTh" secondAttribute="trailing" symbolic="YES" id="bEH-aS-p5i"/>
                             <constraint firstAttribute="trailing" secondItem="uLC-ph-gyF" secondAttribute="trailing" constant="20" id="ixA-ea-HLz"/>
+                            <constraint firstItem="8sH-1y-g7h" firstAttribute="trailing" secondItem="VZK-IQ-YAX" secondAttribute="trailing" constant="70" id="kiK-A0-Tpz"/>
                             <constraint firstItem="8sH-1y-g7h" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WAw-Pw-2QF" secondAttribute="trailing" symbolic="YES" id="lTA-0w-Tcc"/>
+                            <constraint firstItem="VZK-IQ-YAX" firstAttribute="leading" secondItem="8sH-1y-g7h" secondAttribute="leading" constant="70" id="lZu-t5-cYO"/>
                             <constraint firstItem="8sH-1y-g7h" firstAttribute="trailing" secondItem="ACs-u5-vgB" secondAttribute="trailing" id="rL5-t8-ORH"/>
                             <constraint firstItem="WAw-Pw-2QF" firstAttribute="leading" secondItem="8sH-1y-g7h" secondAttribute="leading" constant="20" id="t3T-Vv-x8X"/>
                             <constraint firstItem="WAw-Pw-2QF" firstAttribute="top" secondItem="8sH-1y-g7h" secondAttribute="top" constant="14" id="wKX-lm-8dc"/>
@@ -77,6 +88,8 @@
                         <outlet property="contentView" destination="iIG-88-mUs" id="Vqq-5r-Esw"/>
                         <outlet property="descriptionLabel" destination="uLC-ph-gyF" id="CH5-Ud-dBf"/>
                         <outlet property="imageView" destination="v7k-ms-fqC" id="LJu-4v-p12"/>
+                        <outlet property="nextButton" destination="ACs-u5-vgB" id="XAz-Iz-6Ow"/>
+                        <outlet property="rideButton" destination="VZK-IQ-YAX" id="Eog-ww-2l7"/>
                         <outlet property="skipButton" destination="WAw-Pw-2QF" id="PH0-Yg-I19"/>
                         <outlet property="titleLabel" destination="hgJ-zc-kTh" id="Sdh-y3-uwn"/>
                     </connections>

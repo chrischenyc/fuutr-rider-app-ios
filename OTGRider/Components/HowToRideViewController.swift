@@ -30,6 +30,7 @@ class HowToRideViewController: UIPageViewController {
     
     let page7 = getViewController(withDescription: "At all times please wear either a provided FUUTR helmet or your own personal helmet.",
                                   imageName: "how-to-ride-7")
+    page7.isLastPage = true
     
     return [page1, page2, page3, page4, page5, page6, page7]
   }()
