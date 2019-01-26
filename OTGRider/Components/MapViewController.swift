@@ -339,6 +339,7 @@ extension MapViewController {
         rideAPITask = RideService.pause(rideId: rideId) { [weak self] (ride, error) in
             if error != nil {
                 logger.error(error)
+                self?.alertError(error!)
                 return
             }
             
@@ -357,6 +358,7 @@ extension MapViewController {
         rideAPITask = RideService.resume(rideId: rideId) { [weak self] (ride, error) in
             if error != nil {
                 logger.error(error)
+                self?.alertError(error!)
                 return
             }
             
