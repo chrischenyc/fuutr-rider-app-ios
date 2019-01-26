@@ -14,6 +14,8 @@ class VehicleInfoView: DesignableView {
   
   @IBOutlet weak var waitToReserveAgainLabel: UILabel!
   
+  @IBOutlet weak var batteryImageView: UIImageView!
+  
   override var nibName: String {
     get {
       return "VehicleInfoView"
@@ -58,7 +60,8 @@ class VehicleInfoView: DesignableView {
     self.vehicle = vehicle
     scanButton.titleLabel?.textColor = .white
     rangeLabel.text = vehicle.remainderRange?.distanceString
-    priceLabel.attributedText = generatePriceText(with: vehicle)
+    priceLabel.attributedText = generatePriceText(for: vehicle)
+    batteryImageView.image = generateBatteryImage(for: vehicle)
     
     if vehicle.reserved {
       guard let reservedUntil = vehicle.reservedUntil else { return }
@@ -84,6 +87,16 @@ class VehicleInfoView: DesignableView {
       })
     } else {
       reserveTimer?.invalidate()
+    }
+  }
+  
+  private func generateBatteryImage(for vehicle: Vehicle) -> UIImage {
+    let powerPercent = vehicle.powerPercent ?? 0
+    
+    if 30...100 ~= powerPercent {
+      return Asset.icBatteryHalfDarkGray24.image
+    } else {
+      return Asset.icBatteryEmptyDarkGray24.image
     }
   }
   
@@ -113,7 +126,7 @@ class VehicleInfoView: DesignableView {
     onScan?()
   }
   
-  private func generatePriceText(with vehicle: Vehicle) -> NSMutableAttributedString {
+  private func generatePriceText(for vehicle: Vehicle) -> NSMutableAttributedString {
     let unlockText = NSAttributedString(string: vehicle.unlockCost.stringWithNoCurrencySign, attributes: moneyAttributes)
     let toUnLockText = NSAttributedString(string: " to unlock ", attributes: textAttributes)
     let rideCostText = NSAttributedString(string: vehicle.rideMinuteCost.stringWithNoCurrencySign, attributes: moneyAttributes)

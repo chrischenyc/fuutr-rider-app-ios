@@ -840,13 +840,11 @@ extension MapViewController: GMUClusterRendererDelegate {
         let powerPercent = vehiclePOI.vehicle.powerPercent ?? 0
         
         if 80...100 ~= powerPercent {
-            marker.icon = Asset.scooterGreen.image
-        } else if 60..<80 ~= powerPercent {
-            marker.icon = Asset.scooterYellow.image
-        } else if 30..<60 ~= powerPercent {
-            marker.icon = Asset.scooterOrange.image
+            marker.icon = Asset.scooterPinGreen.image
+        } else if 30..<80 ~= powerPercent {
+            marker.icon = Asset.scooterPinYellow.image
         } else {
-            marker.icon = Asset.scooterRed.image
+            marker.icon = Asset.scooterPinRed.image
         }
         
     }

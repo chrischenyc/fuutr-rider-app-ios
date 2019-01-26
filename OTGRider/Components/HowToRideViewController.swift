@@ -31,7 +31,7 @@ class HowToRideViewController: UIPageViewController {
                                   image: Asset.howToRide5.image)
     
     let page6 = getViewController(withDescription: "Park your vehicle in a dedicated OTG Ride Parking Hub or close to the curb, out of the way of pedestrians. Your parking compliance is strictly monitored via a photo at the end of ride.",
-                                  image: Asset.howToRide7.image)
+                                  image: Asset.howToRide6.image)
     
     let page7 = getViewController(withDescription: "At all times please wear either a provided FUUTR helmet or your own personal helmet.",
                                   image: Asset.howToRide7.image)
