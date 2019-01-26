@@ -10,25 +10,32 @@ class HowToRideViewController: UIPageViewController {
   }
   
   private(set) lazy var pages: [UIViewController] = {
-    let page1 = getViewController(withDescription: "Push the vehicle twice with your foot to get started.")
+    let page1 = getViewController(withDescription: "Push the vehicle twice with your foot to get started.",
+                                  imageName: "how-to-ride-1")
     
-    let page2 = getViewController(withDescription: "Push down the right hand throttle to use E-Motor.")
+    let page2 = getViewController(withDescription: "Push down the right hand throttle to use E-Motor.",
+                                  imageName: "how-to-ride-2")
     
-    let page3 = getViewController(withDescription: "Always keep both feet on the deck of the vehicle while riding.")
+    let page3 = getViewController(withDescription: "Always keep both feet on the deck of the vehicle while riding.",
+                                  imageName: "how-to-ride-3")
     
-    let page4 = getViewController(withDescription: "Always use shared paths or bike lanes and always ride to the left.")
+    let page4 = getViewController(withDescription: "Always use shared paths or bike lanes and always ride to the left.",
+                                  imageName: "how-to-ride-4")
     
-    let page5 = getViewController(withDescription: "DO NOT ride OTG Ride vehicles on the sidewalk. Follow all road rules.")
+    let page5 = getViewController(withDescription: "DO NOT ride OTG Ride vehicles on the sidewalk. Follow all road rules.",
+                                  imageName: "how-to-ride-5")
     
-    let page6 = getViewController(withDescription: "Park your vehicle in a dedicated OTG Ride Parking Hub or close to the curb, out of the way of pedestrians. Your parking compliance is strictly monitored via a photo at the end of ride.")
+    let page6 = getViewController(withDescription: "Park your vehicle in a dedicated OTG Ride Parking Hub or close to the curb, out of the way of pedestrians. Your parking compliance is strictly monitored via a photo at the end of ride.",
+                                  imageName: "how-to-ride-6")
     
     return [page1, page2, page3, page4, page5, page6]
   }()
   
-  fileprivate func getViewController(withDescription: String) -> HowToRideSinglePageViewController
+  fileprivate func getViewController(withDescription: String, imageName: String) -> HowToRideSinglePageViewController
   {
     let viewController = UIStoryboard(name: "HowToRide", bundle: nil).instantiateViewController(withIdentifier: "HowToRideSinglePageViewController") as! HowToRideSinglePageViewController
     viewController.descriptionText = withDescription
+    viewController.imageName = imageName
     return viewController
   }
   
@@ -39,7 +46,7 @@ extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewContr
   public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
     guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
     let previousIndex = viewControllerIndex - 1
-    guard previousIndex >= 0 else { return pages.last }
+    guard previousIndex >= 0 else { return nil }
     guard pages.count > previousIndex else { return nil }
     return pages[previousIndex]
   }
@@ -48,7 +55,7 @@ extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewContr
   public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
     guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
     let nextIndex = viewControllerIndex + 1
-    guard nextIndex < pages.count else { return pages.first }
+    guard nextIndex < pages.count else { return nil }
     guard pages.count > nextIndex else { return nil }
     return pages[nextIndex]
   }

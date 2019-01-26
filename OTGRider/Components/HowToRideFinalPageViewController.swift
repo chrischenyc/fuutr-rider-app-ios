@@ -1,0 +1,3 @@
+class HowToRideFinalPageViewController: UIViewController {
+  
+}
