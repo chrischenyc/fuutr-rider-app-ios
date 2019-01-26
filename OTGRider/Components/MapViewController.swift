@@ -477,11 +477,9 @@ extension MapViewController {
     }
     
     private func showVehicleInfo(_ vehicle: Vehicle) {
-      DispatchQueue.main.async {
+        self.vehicleInfoView2.updateContentWith(vehicle)
         self.vehicleInfoView2.isHidden = false
         self.unlockView.isHidden = true
-      }
-//        self.vehicleInfoView.updateContentWith(vehicle)
     }
     
     private func hideVehicleInfo() {
