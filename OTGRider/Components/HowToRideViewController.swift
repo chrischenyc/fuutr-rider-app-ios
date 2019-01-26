@@ -16,35 +16,35 @@ class HowToRideViewController: UIPageViewController {
   
   private(set) lazy var pages: [UIViewController] = {
     let page1 = getViewController(withDescription: "Push the vehicle twice with your foot to get started.",
-                                  imageName: "how-to-ride-1")
+                                  image: Asset.howToRide1.image)
     
     let page2 = getViewController(withDescription: "Push down the right hand throttle to use E-Motor.",
-                                  imageName: "how-to-ride-2")
+                                  image: Asset.howToRide2.image)
     
     let page3 = getViewController(withDescription: "Always keep both feet on the deck of the vehicle while riding.",
-                                  imageName: "how-to-ride-3")
+                                  image: Asset.howToRide3.image)
     
     let page4 = getViewController(withDescription: "Always use shared paths or bike lanes and always ride to the left.",
-                                  imageName: "how-to-ride-4")
+                                  image: Asset.howToRide4.image)
     
     let page5 = getViewController(withDescription: "DO NOT ride OTG Ride vehicles on the sidewalk. Follow all road rules.",
-                                  imageName: "how-to-ride-5")
+                                  image: Asset.howToRide5.image)
     
     let page6 = getViewController(withDescription: "Park your vehicle in a dedicated OTG Ride Parking Hub or close to the curb, out of the way of pedestrians. Your parking compliance is strictly monitored via a photo at the end of ride.",
-                                  imageName: "how-to-ride-6")
+                                  image: Asset.howToRide7.image)
     
     let page7 = getViewController(withDescription: "At all times please wear either a provided FUUTR helmet or your own personal helmet.",
-                                  imageName: "how-to-ride-7")
+                                  image: Asset.howToRide7.image)
     page7.isLastPage = true
     
     return [page1, page2, page3, page4, page5, page6, page7]
   }()
   
-  fileprivate func getViewController(withDescription: String, imageName: String) -> HowToRideSinglePageViewController
+  fileprivate func getViewController(withDescription: String, image: UIImage) -> HowToRideSinglePageViewController
   {
     let viewController = UIStoryboard(name: "HowToRide", bundle: nil).instantiateViewController(withIdentifier: "HowToRideSinglePageViewController") as! HowToRideSinglePageViewController
     viewController.descriptionText = withDescription
-    viewController.imageName = imageName
+    viewController.image = image
     viewController.delegate = self
     return viewController
   }

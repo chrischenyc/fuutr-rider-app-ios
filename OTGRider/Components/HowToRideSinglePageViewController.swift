@@ -19,6 +19,7 @@ class HowToRideSinglePageViewController: UIViewController {
   
   var descriptionText: String?
   var imageName: String?
+  var image: UIImage?
   var isLastPage: Bool = false
   
   override func viewDidLoad() {
@@ -26,7 +27,7 @@ class HowToRideSinglePageViewController: UIViewController {
     
     contentView.backgroundColor = UIColor.primaryRedColor
     descriptionLabel.text = descriptionText
-    imageView.image = UIImage(named: imageName ?? "how-to-ride-1")
+    imageView.image = image
     
     if isLastPage {
       rideButton.isHidden = false
