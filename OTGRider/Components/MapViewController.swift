@@ -434,6 +434,7 @@ extension MapViewController {
         unlockView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         unlockButton.primaryRed()
       
+        vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         vehicleInfoView.onReserve = { [weak self] (vehicle) in
           self?.reserveVehicle(vehicle)
         }
