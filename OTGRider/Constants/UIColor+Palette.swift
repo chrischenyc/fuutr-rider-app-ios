@@ -11,9 +11,10 @@ import UIKit
 
 extension UIColor {
     // MARK: - Primary
-    static let primaryRedColor = UIColor("#DA3732")
+    static let primaryRedColor = UIColor("#ED1B24")
     static let primaryDarkColor = UIColor("#3B3B3B")
     static let primaryWhiteColor = UIColor("#FFFFFF")
+    static let primaryBlurredColor = UIColor("#A9A9A9")
     
     // MARK: - Stripe
     static let stripePrimaryBackgroundColor = UIColor("#F6F9FC")
