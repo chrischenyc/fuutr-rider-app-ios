@@ -431,7 +431,7 @@ extension MapViewController {
         guideButton.layoutCornerRadiusAndShadow()
         guideButton.backgroundColor = UIColor.primaryWhiteColor
         unlockButton.layoutCornerRadiusAndShadow()
-        unlockButton.backgroundColor = UIColor.primaryWhiteColor
+        unlockButton.backgroundColor = UIColor.primaryRedColor
         
         vehicleInfoView.backgroundColor = UIColor.primaryWhiteColor
         vehicleInfoView.layoutCornerRadiusAndShadow()

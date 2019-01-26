@@ -70,6 +70,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-OG-jme" userLabel="bottomView">
+                                <rect key="frame" x="0.0" y="562" width="375" height="105"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-Ss-nph">
+                                        <rect key="frame" x="70" y="30.5" width="235" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="cNv-rs-9zD"/>
+                                            <constraint firstAttribute="width" constant="235" id="poA-St-Dcf"/>
+                                        </constraints>
+                                        <state key="normal" title="Scan">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="unlockButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jzC-BG-1kW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="1MR-Ss-nph" firstAttribute="centerX" secondItem="uh5-OG-jme" secondAttribute="centerX" id="0OM-nG-ziY"/>
+                                    <constraint firstAttribute="height" constant="105" id="KnM-4O-ov5"/>
+                                    <constraint firstItem="1MR-Ss-nph" firstAttribute="centerY" secondItem="uh5-OG-jme" secondAttribute="centerY" id="mlh-dq-v4i"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="VZa-Sq-LCR">
                                 <rect key="frame" x="171.5" y="301.5" width="32" height="32"/>
                                 <constraints>
@@ -77,17 +101,6 @@
                                     <constraint firstAttribute="width" constant="32" id="nTu-hm-dgg"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-Ss-nph">
-                                <rect key="frame" x="123.5" y="607" width="128" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="cNv-rs-9zD"/>
-                                    <constraint firstAttribute="width" constant="128" id="poA-St-Dcf"/>
-                                </constraints>
-                                <state key="normal" title="SCAN QR CODE"/>
-                                <connections>
-                                    <action selector="unlockButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jzC-BG-1kW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfQ-ca-FN2">
                                 <rect key="frame" x="131.5" y="20" width="112" height="44"/>
                                 <constraints>
@@ -313,18 +326,19 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CfQ-ca-FN2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0eL-Jy-g3V"/>
+                            <constraint firstItem="uh5-OG-jme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="67F-AF-bzW"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6X2-wB-VND"/>
                             <constraint firstItem="VZa-Sq-LCR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7D3-J8-QSu"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AnA-aF-8Me"/>
+                            <constraint firstAttribute="bottom" secondItem="uh5-OG-jme" secondAttribute="bottom" id="BXm-qa-vSl"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Dhw-Xp-dVT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uh5-OG-jme" secondAttribute="trailing" id="Ggw-EX-ZlA"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6i-Mk-ptg"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQh-9I-Jzz"/>
                             <constraint firstItem="VZa-Sq-LCR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-16" id="QiH-3a-nOE"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf3-O6-CJt"/>
                             <constraint firstItem="JzT-1r-pb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="UkN-h7-KhO"/>
-                            <constraint firstItem="1MR-Ss-nph" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W8J-2H-ygM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JzT-1r-pb8" secondAttribute="trailing" constant="24" id="WDg-ll-laW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1MR-Ss-nph" secondAttribute="bottom" constant="16" id="X0Q-RH-dS9"/>
                             <constraint firstItem="AXS-jP-Qde" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="176" id="ikx-gV-4XW"/>
                             <constraint firstItem="JzT-1r-pb8" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="320" id="kld-eC-5Wm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AXS-jP-Qde" secondAttribute="trailing" constant="24" id="oPz-lR-QhX"/>
@@ -353,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2796" y="1589"/>
+            <point key="canvasLocation" x="-2796" y="1588.1559220389806"/>
         </scene>
     </scenes>
     <resources>
