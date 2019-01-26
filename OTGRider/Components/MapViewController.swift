@@ -64,7 +64,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var pinImageView: UIImageView!
     
   @IBOutlet weak var unlockView: UIView!
-  @IBOutlet weak var vehicleInfoView2: VehicleInfoView!
+  @IBOutlet weak var vehicleInfoView: VehicleInfoView!
   
   // MARK: - lifecycle
     override func viewDidLoad() {
@@ -387,7 +387,7 @@ extension MapViewController {
             if let vehicle = vehicle {
                 DispatchQueue.main.async {
                     // refresh vehicle info banner
-                    self?.vehicleInfoView2.updateContentWith(vehicle)
+                    self?.vehicleInfoView.updateContentWith(vehicle)
                   
                     // refresh map search
                     self?.searchVehicles()
@@ -433,19 +433,19 @@ extension MapViewController {
         unlockButton.layoutCornerRadiusAndShadow()
         unlockButton.backgroundColor = UIColor.primaryRedColor
       
-        vehicleInfoView2.onReserve = { [weak self] (vehicle) in
+        vehicleInfoView.onReserve = { [weak self] (vehicle) in
           self?.reserveVehicle(vehicle)
         }
       
-        vehicleInfoView2.onClose = { [weak self] in
+        vehicleInfoView.onClose = { [weak self] in
           self?.hideVehicleInfo()
         }
       
-        vehicleInfoView2.onScan = { [weak self] in
+        vehicleInfoView.onScan = { [weak self] in
           self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
         }
       
-        vehicleInfoView2.onReserveTimeUp = { [weak self] in
+        vehicleInfoView.onReserveTimeUp = { [weak self] in
            DispatchQueue.main.async {
               self?.searchVehicles()
            }
@@ -484,14 +484,14 @@ extension MapViewController {
     }
     
     private func showVehicleInfo(_ vehicle: Vehicle) {
-        self.vehicleInfoView2.updateContentWith(vehicle)
-        self.vehicleInfoView2.isHidden = false
+        self.vehicleInfoView.updateContentWith(vehicle)
+        self.vehicleInfoView.isHidden = false
         self.unlockView.isHidden = true
     }
     
     private func hideVehicleInfo() {
       DispatchQueue.main.async {
-        self.vehicleInfoView2.isHidden = true
+        self.vehicleInfoView.isHidden = true
         self.unlockView.isHidden = false
       }
     }

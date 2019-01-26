@@ -262,7 +262,7 @@
                         <outlet property="sideMenuButton" destination="wXu-gN-jng" id="Szo-TM-gWK"/>
                         <outlet property="unlockButton" destination="1MR-Ss-nph" id="wJT-vO-elG"/>
                         <outlet property="unlockView" destination="uh5-OG-jme" id="ejk-zq-8Qb"/>
-                        <outlet property="vehicleInfoView2" destination="FYW-nd-pNL" id="6DX-ay-ise"/>
+                        <outlet property="vehicleInfoView" destination="FYW-nd-pNL" id="6DX-ay-ise"/>
                         <segue destination="6ub-gY-uRn" kind="presentation" identifier="showHistory" id="jgO-zq-Q4p"/>
                         <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showAccount" id="NuG-ER-BNQ"/>
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>
