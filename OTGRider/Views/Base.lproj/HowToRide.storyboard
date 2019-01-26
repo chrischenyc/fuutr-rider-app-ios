@@ -46,6 +46,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACs-u5-vgB">
+                                <rect key="frame" x="275" y="572" width="100" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="bKZ-dm-SEE"/>
+                                    <constraint firstAttribute="height" constant="95" id="zbD-TB-7BJ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="btn-arrow-next"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -53,10 +61,12 @@
                             <constraint firstItem="hgJ-zc-kTh" firstAttribute="leading" secondItem="8sH-1y-g7h" secondAttribute="leading" constant="20" id="FuL-sW-kl8"/>
                             <constraint firstItem="v7k-ms-fqC" firstAttribute="top" secondItem="uLC-ph-gyF" secondAttribute="bottom" constant="78" id="KDR-lN-4YB"/>
                             <constraint firstItem="uLC-ph-gyF" firstAttribute="leading" secondItem="8sH-1y-g7h" secondAttribute="leading" constant="20" id="RQA-bi-1Cr"/>
+                            <constraint firstItem="8sH-1y-g7h" firstAttribute="bottom" secondItem="ACs-u5-vgB" secondAttribute="bottom" id="SjN-9o-VAk"/>
                             <constraint firstItem="v7k-ms-fqC" firstAttribute="centerX" secondItem="8sH-1y-g7h" secondAttribute="centerX" id="Uiw-qy-k5Q"/>
                             <constraint firstItem="8sH-1y-g7h" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hgJ-zc-kTh" secondAttribute="trailing" symbolic="YES" id="bEH-aS-p5i"/>
                             <constraint firstAttribute="trailing" secondItem="uLC-ph-gyF" secondAttribute="trailing" constant="20" id="ixA-ea-HLz"/>
                             <constraint firstItem="8sH-1y-g7h" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WAw-Pw-2QF" secondAttribute="trailing" symbolic="YES" id="lTA-0w-Tcc"/>
+                            <constraint firstItem="8sH-1y-g7h" firstAttribute="trailing" secondItem="ACs-u5-vgB" secondAttribute="trailing" id="rL5-t8-ORH"/>
                             <constraint firstItem="WAw-Pw-2QF" firstAttribute="leading" secondItem="8sH-1y-g7h" secondAttribute="leading" constant="20" id="t3T-Vv-x8X"/>
                             <constraint firstItem="WAw-Pw-2QF" firstAttribute="top" secondItem="8sH-1y-g7h" secondAttribute="top" constant="14" id="wKX-lm-8dc"/>
                             <constraint firstItem="hgJ-zc-kTh" firstAttribute="top" secondItem="8sH-1y-g7h" secondAttribute="top" constant="49" id="wx5-sR-mEp"/>
@@ -73,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5R-Mq-VAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="79"/>
+            <point key="canvasLocation" x="1424.8" y="78.710644677661179"/>
         </scene>
         <!--How To Ride View Controller-->
         <scene sceneID="E6k-QX-go1">
@@ -82,83 +92,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFT-gH-L5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--How To Ride Final Page View Controller-->
-        <scene sceneID="aty-0u-71H">
-            <objects>
-                <viewController storyboardIdentifier="HowToRideFinalPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VXT-Bj-uQX" customClass="HowToRideFinalPageViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="89O-5P-mSC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to ride" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KN-2J-RpF" userLabel="title">
-                                <rect key="frame" x="20" y="69" width="127.5" height="31.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At all times please wear either a provided FUUTR helmet or your own personal helmet." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG9-y2-a1r" userLabel="description">
-                                <rect key="frame" x="20" y="107.5" width="335" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-ride-7" translatesAutoresizingMaskIntoConstraints="NO" id="Ep7-We-8zy" userLabel="image">
-                                <rect key="frame" x="15" y="217" width="345" height="345"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="345" id="SMk-uN-n6d"/>
-                                    <constraint firstAttribute="height" constant="345" id="oTZ-us-bKM"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGQ-Ne-dkI">
-                                <rect key="frame" x="70" y="597" width="235" height="30"/>
-                                <state key="normal" title="Ride">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mut-ab-7lk">
-                                <rect key="frame" x="20" y="34" width="30" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="jES-nK-vwK"/>
-                                </constraints>
-                                <state key="normal" title="Skip">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aJu-my-oX8" firstAttribute="trailing" secondItem="SGQ-Ne-dkI" secondAttribute="trailing" constant="70" id="44l-0N-nbK"/>
-                            <constraint firstAttribute="trailing" secondItem="UG9-y2-a1r" secondAttribute="trailing" constant="20" id="7UM-Qj-uP2"/>
-                            <constraint firstItem="Ep7-We-8zy" firstAttribute="centerX" secondItem="aJu-my-oX8" secondAttribute="centerX" id="BtA-SU-RB1"/>
-                            <constraint firstItem="SGQ-Ne-dkI" firstAttribute="leading" secondItem="aJu-my-oX8" secondAttribute="leading" constant="70" id="J19-WT-YPP"/>
-                            <constraint firstItem="6KN-2J-RpF" firstAttribute="leading" secondItem="aJu-my-oX8" secondAttribute="leading" constant="20" id="JFZ-x6-A9B"/>
-                            <constraint firstItem="aJu-my-oX8" firstAttribute="bottom" secondItem="SGQ-Ne-dkI" secondAttribute="bottom" constant="40" id="Lo9-Tg-RTU"/>
-                            <constraint firstItem="mut-ab-7lk" firstAttribute="leading" secondItem="aJu-my-oX8" secondAttribute="leading" constant="20" id="MwF-mw-tUF"/>
-                            <constraint firstItem="mut-ab-7lk" firstAttribute="top" secondItem="aJu-my-oX8" secondAttribute="top" constant="14" id="U5h-RK-qKR"/>
-                            <constraint firstItem="UG9-y2-a1r" firstAttribute="leading" secondItem="aJu-my-oX8" secondAttribute="leading" constant="20" id="VFE-OF-DTD"/>
-                            <constraint firstItem="6KN-2J-RpF" firstAttribute="top" secondItem="aJu-my-oX8" secondAttribute="top" constant="49" id="W3R-DI-9zl"/>
-                            <constraint firstItem="aJu-my-oX8" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mut-ab-7lk" secondAttribute="trailing" symbolic="YES" id="dhy-Sa-XsN"/>
-                            <constraint firstItem="aJu-my-oX8" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6KN-2J-RpF" secondAttribute="trailing" symbolic="YES" id="n8d-0e-5s4"/>
-                            <constraint firstItem="UG9-y2-a1r" firstAttribute="top" secondItem="6KN-2J-RpF" secondAttribute="bottom" constant="7" id="rPr-lS-MbA"/>
-                            <constraint firstItem="Ep7-We-8zy" firstAttribute="top" secondItem="UG9-y2-a1r" secondAttribute="bottom" constant="78" id="zFs-26-Zpt"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="aJu-my-oX8"/>
-                    </view>
-                    <connections>
-                        <outlet property="contentView" destination="89O-5P-mSC" id="VKJ-o6-zp6"/>
-                        <outlet property="descriptionLabel" destination="UG9-y2-a1r" id="622-WU-UBa"/>
-                        <outlet property="imageView" destination="Ep7-We-8zy" id="xai-XQ-7eV"/>
-                        <outlet property="skipButton" destination="mut-ab-7lk" id="lxo-cl-5to"/>
-                        <outlet property="titleLabel" destination="6KN-2J-RpF" id="oRr-Aq-Zq8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dT1-YU-Pxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="670" y="803"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="btn-arrow-next" width="100" height="95"/>
         <image name="how-to-ride-1" width="345" height="345"/>
-        <image name="how-to-ride-7" width="345" height="345"/>
     </resources>
 </document>

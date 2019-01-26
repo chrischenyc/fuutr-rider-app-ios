@@ -28,7 +28,10 @@ class HowToRideViewController: UIPageViewController {
     let page6 = getViewController(withDescription: "Park your vehicle in a dedicated OTG Ride Parking Hub or close to the curb, out of the way of pedestrians. Your parking compliance is strictly monitored via a photo at the end of ride.",
                                   imageName: "how-to-ride-6")
     
-    return [page1, page2, page3, page4, page5, page6]
+    let page7 = getViewController(withDescription: "At all times please wear either a provided FUUTR helmet or your own personal helmet.",
+                                  imageName: "how-to-ride-7")
+    
+    return [page1, page2, page3, page4, page5, page6, page7]
   }()
   
   fileprivate func getViewController(withDescription: String, imageName: String) -> HowToRideSinglePageViewController
