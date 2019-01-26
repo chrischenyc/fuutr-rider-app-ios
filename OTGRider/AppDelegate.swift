@@ -171,9 +171,9 @@ extension AppDelegate {
         SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
         SideMenuManager.defaultManager.menuFadeStatusBar = false
         
+        // TODO: this is overkill, Stripe screen will be affected too
         UINavigationBar.appearance().tintColor = UIColor.primaryRedColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryRedColor]
-        
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
     }
