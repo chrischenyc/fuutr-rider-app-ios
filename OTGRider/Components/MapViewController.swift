@@ -64,7 +64,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var pinImageView: UIImageView!
     
   @IBOutlet weak var unlockView: UIView!
-  @IBOutlet weak var vehicleInfoView2: VehicleInfoView2!
+  @IBOutlet weak var vehicleInfoView2: VehicleInfoView!
   
   // MARK: - lifecycle
     override func viewDidLoad() {

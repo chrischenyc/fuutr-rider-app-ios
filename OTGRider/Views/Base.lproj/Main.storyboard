@@ -94,7 +94,7 @@
                                     <constraint firstItem="1MR-Ss-nph" firstAttribute="centerY" secondItem="uh5-OG-jme" secondAttribute="centerY" id="mlh-dq-v4i"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-nd-pNL" userLabel="vehicleInfoView" customClass="VehicleInfoView2" customModule="OTGRider" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-nd-pNL" userLabel="vehicleInfoView" customClass="VehicleInfoView" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="386" width="375" height="281"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

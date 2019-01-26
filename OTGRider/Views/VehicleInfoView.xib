@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehicleInfoView2" customModule="OTGRider" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehicleInfoView" customModule="OTGRider" customModuleProvider="target">
             <connections>
                 <outlet property="closeButton" destination="0F4-xC-bLI" id="veW-qx-gkg"/>
                 <outlet property="parkedAt" destination="2cS-ni-adm" id="rtK-Pd-apd"/>
