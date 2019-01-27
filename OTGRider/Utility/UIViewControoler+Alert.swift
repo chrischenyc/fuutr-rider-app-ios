@@ -41,12 +41,13 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func alertMessage(_ message: String,
+    func alertMessage(_ title: String,
+                      _ message: String,
                       positiveActionButtonTitle: String,
                       positiveActionButtonTapped: @escaping (()->Void),
                       negativeActionButtonTitle: String? = nil,
                       negativeActionButtonTapped: (()->Void)? = nil) {
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
         let action = UIAlertAction(title: positiveActionButtonTitle, style: .default) { (alertAction) in
             positiveActionButtonTapped()
