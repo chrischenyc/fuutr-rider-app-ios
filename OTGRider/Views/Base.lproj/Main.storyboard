@@ -104,14 +104,6 @@
                                     <constraint firstAttribute="width" constant="32" id="nTu-hm-dgg"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfQ-ca-FN2">
-                                <rect key="frame" x="131.5" y="20" width="112" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="112" id="Mu4-hx-ZVQ"/>
-                                    <constraint firstAttribute="height" constant="44" id="p9w-EL-GYw"/>
-                                </constraints>
-                                <state key="normal" title="Learn to ride"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-gN-jng">
                                 <rect key="frame" x="16" y="20" width="44" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,7 +111,7 @@
                                     <constraint firstAttribute="height" constant="44" id="LXS-8j-Aki"/>
                                     <constraint firstAttribute="width" constant="44" id="LeY-aJ-clg"/>
                                 </constraints>
-                                <state key="normal" image="side-menu-icon"/>
+                                <state key="normal" image="boy-1"/>
                                 <connections>
                                     <segue destination="xVf-4u-b1H" kind="presentation" id="9mY-jt-ZDY"/>
                                 </connections>
@@ -226,7 +218,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CfQ-ca-FN2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0eL-Jy-g3V"/>
                             <constraint firstItem="uh5-OG-jme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="67F-AF-bzW"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6X2-wB-VND"/>
                             <constraint firstItem="VZa-Sq-LCR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7D3-J8-QSu"/>
@@ -247,13 +238,10 @@
                             <constraint firstItem="JzT-1r-pb8" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="320" id="kld-eC-5Wm"/>
                             <constraint firstItem="r9R-Fu-VmM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lzx-WN-QKS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r9R-Fu-VmM" secondAttribute="trailing" id="x6I-z2-YGR"/>
-                            <constraint firstItem="CfQ-ca-FN2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOs-O4-oXO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="guideButton" destination="CfQ-ca-FN2" id="nby-5I-2EI"/>
-                        <outlet property="howToRideButton" destination="CfQ-ca-FN2" id="hJ0-7S-rgW"/>
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
                         <outlet property="pinImageView" destination="VZa-Sq-LCR" id="Y3D-z5-DxB"/>
                         <outlet property="rideInfoView" destination="JzT-1r-pb8" id="oLq-1K-4jc"/>
@@ -275,7 +263,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="boy-1" width="105" height="105"/>
         <image name="pin" width="51.200000762939453" height="51.200000762939453"/>
-        <image name="side-menu-icon" width="32" height="32"/>
     </resources>
 </document>

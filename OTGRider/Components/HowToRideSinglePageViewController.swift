@@ -1,7 +1,6 @@
 import SwiftyUserDefaults
 
 protocol HowToRideSinglePageDelegate {
-  func ride()
   func showNextPage()
 }
 
@@ -31,6 +30,7 @@ class HowToRideSinglePageViewController: UIViewController {
     
     if isLastPage {
       rideButton.isHidden = false
+      rideButton.setTitleColor(UIColor.primaryRedColor, for: .normal)
       rideButton.layer.cornerRadius = 5
       nextButton.isHidden = true
     }
@@ -52,6 +52,6 @@ class HowToRideSinglePageViewController: UIViewController {
   }
   
   @objc func ride() {
-    delegate?.ride()
+    self.dismiss(animated: true, completion: nil)
   }
 }
