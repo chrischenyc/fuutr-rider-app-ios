@@ -20,9 +20,6 @@
 		6B0128BB219DA0E100AC2439 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BA219DA0E100AC2439 /* Ride.swift */; };
 		6B0128BC219DA0E100AC2439 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BA219DA0E100AC2439 /* Ride.swift */; };
 		6B0128BD219DA0E100AC2439 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BA219DA0E100AC2439 /* Ride.swift */; };
-		6B0128BF219EA4B500AC2439 /* RideInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BE219EA4B500AC2439 /* RideInfoView.swift */; };
-		6B0128C0219EA4B500AC2439 /* RideInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BE219EA4B500AC2439 /* RideInfoView.swift */; };
-		6B0128C1219EA4B500AC2439 /* RideInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0128BE219EA4B500AC2439 /* RideInfoView.swift */; };
 		6B03DC0A21EDEF4E00A2765F /* GMSMapView+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B03DC0921EDEF4E00A2765F /* GMSMapView+Search.swift */; };
 		6B03DC0B21EDEF4E00A2765F /* GMSMapView+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B03DC0921EDEF4E00A2765F /* GMSMapView+Search.swift */; };
 		6B03DC0C21EDEF4E00A2765F /* GMSMapView+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B03DC0921EDEF4E00A2765F /* GMSMapView+Search.swift */; };
@@ -396,7 +393,6 @@
 		6B0128B2219D9C2C00AC2439 /* ScanUnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanUnlockViewController.swift; sourceTree = "<group>"; };
 		6B0128B6219D9C4D00AC2439 /* ManualUnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualUnlockViewController.swift; sourceTree = "<group>"; };
 		6B0128BA219DA0E100AC2439 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
-		6B0128BE219EA4B500AC2439 /* RideInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideInfoView.swift; sourceTree = "<group>"; };
 		6B03DC0921EDEF4E00A2765F /* GMSMapView+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+Search.swift"; sourceTree = "<group>"; };
 		6B03DC1121F6FBF800A2765F /* RideSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSegment.swift; sourceTree = "<group>"; };
 		6B0D921521FD32D100A9B38E /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
@@ -684,7 +680,6 @@
 				914A6B7F21FD543600715879 /* ManualUnlock.storyboard */,
 				6B31E1EA2197F34F00CB424E /* PaymentCell.swift */,
 				6B2C9BB021A01BE80042432D /* TransactionCell.swift */,
-				6B0128BE219EA4B500AC2439 /* RideInfoView.swift */,
 				6B8E30C6219FDD5000292B4E /* HistoryRideCell.swift */,
 				9197553E21FC3A230069D25A /* VehicleInfoView.swift */,
 				9197553A21FC32E20069D25A /* VehicleInfoView.xib */,
@@ -1774,7 +1769,6 @@
 				6BBC6A0721A1090B003C910B /* Double+Distance.swift in Sources */,
 				6B556FAD219ED63C00FA3238 /* TimeInterval+hhmmss.swift in Sources */,
 				6BD47277219A4CAA00D36C3E /* GMUPlacemark.m in Sources */,
-				6B0128C1219EA4B500AC2439 /* RideInfoView.swift in Sources */,
 				6BD4729B219A4CAA00D36C3E /* GMUClusterManager.m in Sources */,
 				6BDE9173218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD47271219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
@@ -1885,7 +1879,6 @@
 				6BBC6A0521A1090B003C910B /* Double+Distance.swift in Sources */,
 				6B556FAB219ED63C00FA3238 /* TimeInterval+hhmmss.swift in Sources */,
 				6BD47275219A4CAA00D36C3E /* GMUPlacemark.m in Sources */,
-				6B0128BF219EA4B500AC2439 /* RideInfoView.swift in Sources */,
 				6BD47299219A4CAA00D36C3E /* GMUClusterManager.m in Sources */,
 				6BDE9171218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD4726F219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
@@ -1996,7 +1989,6 @@
 				6BBC6A0621A1090B003C910B /* Double+Distance.swift in Sources */,
 				6B556FAC219ED63C00FA3238 /* TimeInterval+hhmmss.swift in Sources */,
 				6BD47276219A4CAA00D36C3E /* GMUPlacemark.m in Sources */,
-				6B0128C0219EA4B500AC2439 /* RideInfoView.swift in Sources */,
 				6BD4729A219A4CAA00D36C3E /* GMUClusterManager.m in Sources */,
 				6BDE9172218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD47270219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
