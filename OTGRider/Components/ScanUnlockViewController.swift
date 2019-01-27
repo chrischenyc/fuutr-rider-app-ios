@@ -53,7 +53,6 @@ class ScanUnlockViewController: UnlockViewController {
     logger.debug(result)
     
     unlockVehicle(unlockCode: result,
-                  onSuccess: nil,
                   onBalanceInsufficientError: nil,
                   onGeneralError: { [weak self] error in
                     self?.alertError(error, actionButtonTitle: "OK", actionButtonTapped: {

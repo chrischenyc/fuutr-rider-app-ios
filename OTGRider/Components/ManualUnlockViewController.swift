@@ -56,7 +56,6 @@ extension ManualUnlockViewController: PinCodeViewDelegate {
     view.alpha = 0.5
     
     unlockVehicle(unlockCode: code,
-                  onSuccess: nil,
                   onBalanceInsufficientError: nil,
                   onGeneralError: { [weak self] error in
                     view.alpha = 1

@@ -13,6 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="GhX-Tz-HA0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRT-o6-cLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="vBf-1n-zIH" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kxj-uJ-Y4N">
                         <autoresizingMask key="autoresizingMask"/>
@@ -21,7 +22,6 @@
                         <segue destination="YkZ-jL-DlA" kind="relationship" relationship="rootViewController" id="VCc-G1-vVM"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QRT-o6-cLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="538" y="753"/>
         </scene>
@@ -102,11 +102,7 @@
                         <viewLayoutGuide key="safeArea" id="GcJ-tN-JPk"/>
                     </view>
                     <navigationItem key="navigationItem" title="Scan To Unlock" id="wsl-2e-hYA">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="A9p-GC-SQT">
-                            <connections>
-                                <segue destination="Hc5-ry-IeA" kind="unwind" identifier="fromScanUnlockToMap" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" animates="NO" unwindAction="unwindToHome:" id="dfq-JB-rSk"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="A9p-GC-SQT"/>
                     </navigationItem>
                     <connections>
                         <outlet property="closeButton" destination="Pfm-Kb-fBs" id="pqC-aZ-Ss2"/>
@@ -115,7 +111,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7q-4L-qZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Hc5-ry-IeA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1393" y="752"/>
         </scene>

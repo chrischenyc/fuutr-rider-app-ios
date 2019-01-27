@@ -9,23 +9,20 @@
 import UIKit
 import AVFoundation
 
+protocol UnlockDelegate: AnyObject {
+  func vehicleUnlocked(with ride: Ride)
+}
+
 class UnlockViewController: UIViewController {
   
-    private var apiTask: URLSessionTask?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+  private var apiTask: URLSessionTask?
+  weak var delegate: UnlockDelegate?
   
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let mapViewController = segue.destination as? MapViewController,
-            let ride = sender as? Ride {
-            mapViewController.ongoingRide = ride
-        }
-    }
+  override func viewDidLoad() {
+      super.viewDidLoad()
+  }
   
   func unlockVehicle(unlockCode: String,
-                     onSuccess: ((Ride) -> Void)? = nil,
                      onBalanceInsufficientError: (() -> Void)? = nil,
                      onGeneralError: ((Error) -> Void)? = nil) {
     apiTask?.cancel()
@@ -58,7 +55,9 @@ class UnlockViewController: UIViewController {
            self?.flashErrorMessage(L10n.kOtherError)
            return
          }
-         onSuccess?(ride)
+         self?.dismiss(animated: true, completion: {
+           self?.delegate?.vehicleUnlocked(with: ride)
+         })
        }
     })
   }
