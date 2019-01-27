@@ -24,7 +24,6 @@ ib:
     - OTGRider/Views/Base.lproj/Account.storyboard
     - OTGRider/Views/Base.lproj/Settings.storyboard
     - OTGRider/Views/Base.lproj/Help.storyboard
-    - OTGRider/Views/Base.lproj/Unlock.storyboard
   outputs:
     - templateName: segues-swift4
       output: OTGRider/Generated/StoryboardSegues.swift

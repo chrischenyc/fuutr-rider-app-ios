@@ -50,14 +50,6 @@
             </objects>
             <point key="canvasLocation" x="-2102" y="1799"/>
         </scene>
-        <!--Unlock-->
-        <scene sceneID="Xfz-6d-8Dm">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Unlock" id="jPf-DD-doD" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tSM-Eb-o4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2797" y="2042"/>
-        </scene>
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -82,9 +74,6 @@
                                         <state key="normal" title="Scan">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="unlockButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jzC-BG-1kW"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -278,7 +267,6 @@
                         <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showAccount" id="NuG-ER-BNQ"/>
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>
                         <segue destination="46k-mg-UHB" kind="presentation" identifier="showHelp" id="GwS-O7-LdY"/>
-                        <segue destination="jPf-DD-doD" kind="show" identifier="fromMapToScan" id="XRl-jC-uGj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
