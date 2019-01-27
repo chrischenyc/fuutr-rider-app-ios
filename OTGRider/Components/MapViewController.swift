@@ -443,7 +443,13 @@ extension MapViewController {
       
         vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         vehicleInfoView.onReserve = { [weak self] (vehicle) in
-          self?.reserveVehicle(vehicle)
+          self?.alertMessage("Reserve Scooter",
+                            "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
+                            positiveActionButtonTitle: "OK",
+                            positiveActionButtonTapped: {
+                              self?.reserveVehicle(vehicle)
+                            },
+                            negativeActionButtonTitle: "Cancel")
         }
       
         vehicleInfoView.onClose = { [weak self] in
@@ -460,7 +466,14 @@ extension MapViewController {
         }
       
         vehicleReservedInfoView.onCancel = { [weak self] (vehicle) in
-          self?.cancelVehicleReservation(vehicle)
+          self?.alertMessage("Are you sure you want to cancel the reservation?",
+                             "You won't be able to reserve again for 15 minutes.",
+                             positiveActionButtonTitle: "Keep reservation",
+                             positiveActionButtonTapped: {},
+                             negativeActionButtonTitle: "Cancel reservation",
+                             negativeActionButtonTapped: {
+                                self?.cancelVehicleReservation(vehicle)
+                             })
         }
       
         vehicleReservedInfoView.onReserveTimeUp = { [weak self] in
@@ -483,6 +496,7 @@ extension MapViewController {
         }
         rideInfoView.onEndRide = {
             self.alertMessage("Are you sure you want to end the ride?",
+                              "",
                               positiveActionButtonTitle: "Yes, end ride",
                               positiveActionButtonTapped: {
                                 self.endRide()
