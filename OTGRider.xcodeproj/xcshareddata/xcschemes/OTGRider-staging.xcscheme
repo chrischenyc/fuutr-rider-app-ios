@@ -50,7 +50,7 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "NO">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
@@ -71,7 +71,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "../OTGRider/ride.gpx"
+         identifier = "../OTGRider/unlock.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
