@@ -27,6 +27,7 @@ extension UIViewController {
     
     func alertMessage(title: String? = nil,
                       message: String?,
+                      image: UIImage? = nil,
                       positiveActionButtonTitle: String? = nil,
                       positiveActionButtonTapped: (()->Void)? = nil,
                       negativeActionButtonTitle: String? = nil,
@@ -35,6 +36,7 @@ extension UIViewController {
         
         let viewController = DialogViewController(title: title,
                                                   message: message,
+                                                  image: image,
                                                   positiveActionButtonTitle: positiveActionButtonTitle,
                                                   positiveActionButtonTapped: {
                                                     formSheetController.dismiss(animated: true, completion: {

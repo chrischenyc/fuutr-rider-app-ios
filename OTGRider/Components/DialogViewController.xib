@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DialogViewController" customModule="OTGRider" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="Fal-XL-YfY" id="IZu-s4-8i2"/>
+                <outlet property="imageViewHeightConstraint" destination="j0C-0l-lRm" id="IDa-ZJ-JRn"/>
                 <outlet property="messageLabel" destination="eDk-fc-VKj" id="E7x-nD-xqN"/>
                 <outlet property="negativeButton" destination="fPg-fB-UXG" id="6Oj-9k-x4L"/>
                 <outlet property="negativeButtonContainer" destination="Ikq-RL-eqS" id="W9C-nJ-9BR"/>
@@ -27,22 +29,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QSz-Qy-wBM">
-                    <rect key="frame" x="47.666666666666657" y="76.000000000000014" width="280" height="190.33333333333337"/>
+                    <rect key="frame" x="47.666666666666657" y="76" width="280" height="334.33333333333331"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-XL-YfY">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="128"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="j0C-0l-lRm"/>
+                            </constraints>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ur1-A0-3X7">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="20.333333333333332"/>
+                            <rect key="frame" x="0.0" y="144" width="280" height="20.333333333333343"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDk-fc-VKj">
-                            <rect key="frame" x="0.0" y="36.333333333333329" width="280" height="18"/>
+                            <rect key="frame" x="0.0" y="180.33333333333331" width="280" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUi-Lj-o0L">
-                            <rect key="frame" x="0.0" y="70.333333333333343" width="280" height="60"/>
+                            <rect key="frame" x="0.0" y="214.33333333333331" width="280" height="60"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY3-jb-XSe">
                                     <rect key="frame" x="8" y="16" width="264" height="44"/>
@@ -61,7 +69,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikq-RL-eqS">
-                            <rect key="frame" x="0.0" y="146.33333333333334" width="280" height="44"/>
+                            <rect key="frame" x="0.0" y="290.33333333333331" width="280" height="44"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPg-fB-UXG">
                                     <rect key="frame" x="8" y="0.0" width="264" height="44"/>

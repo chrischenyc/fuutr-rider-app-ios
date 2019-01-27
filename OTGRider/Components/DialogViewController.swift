@@ -10,6 +10,7 @@ import UIKit
 
 class DialogViewController: UIViewController {
     
+    var image: UIImage?
     var messageTitle: String?
     var message: String?
     var positiveActionButtonTitle: String = "OK"
@@ -19,6 +20,7 @@ class DialogViewController: UIViewController {
     
     init(title: String?,
         message: String?,
+        image: UIImage? = nil,
         positiveActionButtonTitle: String?,
         positiveActionButtonTapped: (()->Void)?,
         negativeActionButtonTitle: String? = nil,
@@ -26,6 +28,7 @@ class DialogViewController: UIViewController {
         
         self.messageTitle = title
         self.message = message
+        self.image = image
         if let positiveActionButtonTitle = positiveActionButtonTitle {
             self.positiveActionButtonTitle = positiveActionButtonTitle
         }
@@ -41,6 +44,8 @@ class DialogViewController: UIViewController {
     }
     
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var positiveButton: UIButton!
@@ -56,6 +61,14 @@ class DialogViewController: UIViewController {
     
     private func setupUI() {
         // only leave controls with content
+        
+        if let image = image {
+            imageView.image = image
+            imageViewHeightConstraint.constant = image.size.height
+        } else {
+            stackView.removeArrangedSubview(imageView)
+            imageView.removeFromSuperview()
+        }
         
         if let messageTitle = messageTitle, messageTitle.count > 0 {
             titleLabel.textColor = UIColor.primaryDarkColor
