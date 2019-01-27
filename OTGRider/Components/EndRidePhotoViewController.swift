@@ -50,8 +50,11 @@ class EndRidePhotoViewController: UIViewController {
     sendView.isHidden = true
     previewImageView.isHidden = true
     
-    fastttAddChildViewController(fastCamera)
-    fastCamera.view.frame = self.cameraView.frame
+    // bypass camera setup on Simulator
+    if !Platform.isSimulator {
+      fastttAddChildViewController(fastCamera)
+      fastCamera.view.frame = self.cameraView.frame
+    }
     
     view.bringSubviewToFront(titleView)
     view.bringSubviewToFront(shootView)
@@ -67,6 +70,15 @@ class EndRidePhotoViewController: UIViewController {
   }
   
   @IBAction func shootTapped(_ sender: Any) {
+    // on Simulator, skip to next
+    if Platform.isSimulator {
+      self.photo = UIImage(asset: Asset.howToRide1)
+      self.previewImageView.image = self.photo
+      switchToPreview()
+      
+      return
+    }
+    
     // UI API called on a background thread: https://github.com/IFTTT/FastttCamera/issues/80
     self.fastCamera.takePicture()
   }
@@ -78,6 +90,7 @@ class EndRidePhotoViewController: UIViewController {
   
   @IBAction func sendTapped(_ sender: Any) {
     // TODO: invoke send photo API
+    
     perform(segue: StoryboardSegue.EndRidePhoto.fromEndRidePhotoToMap)
   }
   
