@@ -45,11 +45,6 @@ class ManualUnlockViewController: UnlockViewController {
   @objc private func showQRCode() {
     self.performSegue(withIdentifier: "unwindToScanUnlock", sender: self)
   }
-  
-  @objc private func codeChanged(_ sender: Any) {
-//    guard let code = codeTextField.text, code.isSixDigits() else { return }
-//    unlockVehicle(unlockCode: code)
-  }
 }
 
 extension ManualUnlockViewController: PinCodeViewDelegate {
@@ -58,14 +53,17 @@ extension ManualUnlockViewController: PinCodeViewDelegate {
   }
   
   func pinCodeView(_ view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool) -> Void) {
-    
     view.alpha = 0.5
     
-    // check server for code validity, etc
-    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-      view.alpha = 1
-      
-      callback(false)
-    }
+    unlockVehicle(unlockCode: code,
+                  onSuccess: nil,
+                  onBalanceInsufficientError: nil,
+                  onGeneralError: { [weak self] error in
+                    view.alpha = 1
+                    callback(false)
+                    self?.alertError(error, actionButtonTitle: "OK", actionButtonTapped: {
+                      view.resetDigits()
+                    })
+                  })
   }
 }
