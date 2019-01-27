@@ -52,7 +52,15 @@ class ScanUnlockViewController: UnlockViewController {
   private func handleScanResult(_ result: String) {
     logger.debug(result)
     
-    unlockVehicle(unlockCode: result)
+    unlockVehicle(unlockCode: result,
+                  onSuccess: nil,
+                  onBalanceInsufficientError: nil,
+                  onGeneralError: { [weak self] error in
+                    self?.alertError(error, actionButtonTitle: "OK", actionButtonTapped: {
+                      self?.scanner.clearDrawLayer()
+                      self?.scanner.startScan()
+                    })
+                  })
   }
 }
 

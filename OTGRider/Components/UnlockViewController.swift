@@ -23,62 +23,42 @@ class UnlockViewController: UIViewController {
             mapViewController.ongoingRide = ride
         }
     }
+  
+  func unlockVehicle(unlockCode: String,
+                     onSuccess: ((Ride) -> Void)? = nil,
+                     onBalanceInsufficientError: (() -> Void)? = nil,
+                     onGeneralError: ((Error) -> Void)? = nil) {
+    apiTask?.cancel()
     
+    showLoading()
     
-    func unlockVehicle(unlockCode: String) {
-        apiTask?.cancel()
+    apiTask = RideService.start(unlockCode: unlockCode,
+                                 coordinate: currentLocation?.coordinate,
+                                 completion: { [weak self] (ride, error) in
+       DispatchQueue.main.async {
+         self?.dismissLoading()
         
-        showLoading()
-        
-        apiTask = RideService.start(unlockCode: unlockCode,
-                                     coordinate: currentLocation?.coordinate,
-                                     completion: { [weak self] (ride, error) in
-                                        
-                                        DispatchQueue.main.async {
-                                            self?.dismissLoading()
-                                            
-                                            guard error == nil else {
-                                                logger.error(error?.localizedDescription)
-                                                
-                                                if error?.localizedDescription == "insufficient balance" {
-                                                    self?.alertMessage("You account balance is not enough for a new ride",
-                                                                       actionButtonTitle: "Top up balance",
-                                                                       actionButtonTapped: {
-                                                                        self?.navigateToAccount()
-                                                    })
-                                                } else {
-                                                    self?.flashErrorMessage(error?.localizedDescription)
-                                                }
-                                                return
-                                            }
-                                            
-                                            guard let ride = ride else {
-                                                self?.flashErrorMessage(L10n.kOtherError)
-                                                return
-                                            }
-                                            
-                                            self?.navigateToMap(withRide: ride)
-                                            
-                                        }
-        })
-    }
-    
-    private func navigateToAccount() {
-        if self.isKind(of: ScanUnlockViewController.self) {
-            self.perform(segue: StoryboardSegue.Unlock.fromScanUnlockToAccount)
-        }
-        else {
-            self.perform(segue: StoryboardSegue.Unlock.fromManualUnlockToAccount)
-        }
-    }
-    
-    private func navigateToMap(withRide ride: Ride) {
-        if self.isKind(of: ScanUnlockViewController.self) {
-            self.perform(segue: StoryboardSegue.Unlock.fromScanUnlockToMap, sender: ride)
-        }
-        else {
-            self.perform(segue: StoryboardSegue.Unlock.fromManualUnlockToMap, sender: ride)
-        }
-    }
+         if let error = error {
+           logger.error(error.localizedDescription)
+          
+           if error.localizedDescription == "insufficient balance" {
+               self?.alertMessage("You account balance is not enough for a new ride",
+                                  actionButtonTitle: "Top up balance",
+                                  actionButtonTapped: {
+                                    onBalanceInsufficientError?()
+                                  })
+           } else {
+             onGeneralError?(error)
+           }
+           return
+         }
+         guard let ride = ride else {
+           self?.flashErrorMessage(L10n.kOtherError)
+           return
+         }
+         onSuccess?(ride)
+       }
+    })
+  }
 }
 
