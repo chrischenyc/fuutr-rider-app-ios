@@ -57,7 +57,7 @@
                         <constraint firstAttribute="width" constant="160" id="hqa-Ql-i7C"/>
                         <constraint firstAttribute="height" constant="44" id="lHW-Dy-8JU"/>
                     </constraints>
-                    <state key="normal" title="Reserve"/>
+                    <state key="normal" title="Cancel"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W16-Gm-Exg">
                     <rect key="frame" x="239" y="165" width="160" height="44"/>

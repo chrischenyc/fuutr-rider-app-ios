@@ -65,7 +65,7 @@ class MapViewController: UIViewController {
     
   @IBOutlet weak var unlockView: UIView!
   @IBOutlet weak var vehicleInfoView: VehicleInfoView!
-  
+  @IBOutlet weak var vehicleReservedInfoView: VehicleReservedInfoView!
   // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -387,7 +387,7 @@ extension MapViewController {
             if let vehicle = vehicle {
                 DispatchQueue.main.async {
                     // refresh vehicle info banner
-                    self?.vehicleInfoView.updateContentWith(vehicle)
+                    self?.updateVehicleInfo(vehicle)
                   
                     // refresh map search
                     self?.searchVehicles()
@@ -447,7 +447,12 @@ extension MapViewController {
           self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
         }
       
-        vehicleInfoView.onReserveTimeUp = { [weak self] in
+        vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
+        vehicleReservedInfoView.onScan = { [weak self] in
+          self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
+        }
+      
+        vehicleReservedInfoView.onReserveTimeUp = { [weak self] in
            DispatchQueue.main.async {
               self?.searchVehicles()
            }
@@ -492,15 +497,25 @@ extension MapViewController {
     }
     
     private func showVehicleInfo(_ vehicle: Vehicle) {
-        self.vehicleInfoView.updateContentWith(vehicle)
-        self.vehicleInfoView.isHidden = false
-        self.unlockView.isHidden = true
+      self.updateVehicleInfo(vehicle)
+      self.unlockView.isHidden = true
     }
     
     private func hideVehicleInfo() {
-      DispatchQueue.main.async {
+      self.vehicleInfoView.isHidden = true
+      self.vehicleReservedInfoView.isHidden = true
+      self.unlockView.isHidden = false
+    }
+  
+    private func updateVehicleInfo(_ vehicle: Vehicle) {
+      if vehicle.reserved {
+        self.vehicleReservedInfoView.updateContentWith(vehicle)
+        self.vehicleReservedInfoView.isHidden = false
         self.vehicleInfoView.isHidden = true
-        self.unlockView.isHidden = false
+      } else {
+        self.vehicleInfoView.updateContentWith(vehicle)
+        self.vehicleInfoView.isHidden = false
+        self.vehicleReservedInfoView.isHidden = true
       }
     }
     
