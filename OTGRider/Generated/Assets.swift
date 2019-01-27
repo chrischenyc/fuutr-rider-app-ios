@@ -100,6 +100,7 @@ internal enum Asset {
   internal static let socialInstagramDarkGray35 = ImageAsset(name: "social-instagram-dark-gray-35")
   internal static let socialTwitterDarkGray35 = ImageAsset(name: "social-twitter-dark-gray-35")
   internal static let transparent = ImageAsset(name: "transparent")
+  internal static let unsafeParkingPopup = ImageAsset(name: "unsafe-parking-popup")
   internal static let userMenu = ImageAsset(name: "user-menu")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

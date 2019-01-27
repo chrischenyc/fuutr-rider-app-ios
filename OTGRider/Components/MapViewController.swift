@@ -295,7 +295,12 @@ extension MapViewController {
                                                 self?.dismissLoading()
                                                 
                                                 guard error == nil else {
-                                                    self?.alertError(error!)
+                                                    if error!.localizedDescription == "no-parking" {
+                                                        self?.showNoParkingZoneError()
+                                                    }
+                                                    else {
+                                                        self?.alertError(error!)
+                                                    }
                                                     return
                                                 }
                                                 
@@ -339,7 +344,14 @@ extension MapViewController {
         rideAPITask = RideService.pause(rideId: rideId) { [weak self] (ride, error) in
             if error != nil {
                 logger.error(error)
-                self?.alertError(error!)
+                
+                if error!.localizedDescription == "no-parking" {
+                    self?.showNoParkingZoneError()
+                }
+                else {
+                    self?.alertError(error!)
+                }
+                
                 return
             }
             
@@ -593,6 +605,13 @@ extension MapViewController {
             locationMarker.snippet = message
             mapView.selectedMarker = locationMarker
         }
+    }
+    
+    private func showNoParkingZoneError() {
+        self.alertMessage(title: "You are attempting to park the vehicle in an unsafe area",
+                           message: "The ride cannot end until it is parked upright in an accepted, safe areea.",
+                           image: UIImage(asset: Asset.unsafeParkingPopup),
+                           positiveActionButtonTitle: "I will re-park the vehicle")
     }
 }
 

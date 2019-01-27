@@ -19,6 +19,7 @@
                 <outlet property="negativeButtonContainer" destination="Ikq-RL-eqS" id="W9C-nJ-9BR"/>
                 <outlet property="positiveButton" destination="gY3-jb-XSe" id="Npo-qY-8o7"/>
                 <outlet property="stackView" destination="QSz-Qy-wBM" id="orB-Cc-UO6"/>
+                <outlet property="stackViewTopConstraint" destination="eUD-m8-jSO" id="W6p-1y-DFa"/>
                 <outlet property="titleLabel" destination="Ur1-A0-3X7" id="wh4-4R-1Yb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
