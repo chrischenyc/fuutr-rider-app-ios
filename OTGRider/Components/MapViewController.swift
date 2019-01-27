@@ -309,7 +309,7 @@ extension MapViewController {
                                                     return
                                                 }
                                                 
-                                                self?.showCompletedRide(ride)
+                                                self?.takePhotoForCompletedRide(ride)
                                                 
                                                 self?.stopTrackingRide()
                                             }
@@ -583,6 +583,10 @@ extension MapViewController {
     private func showCompletedRide(_ ride: Ride) {
         alertMessage(message: "Thanks! Ride summary:\(ride.summary())")
     }
+  
+  private func takePhotoForCompletedRide(_ ride: Ride) {
+    perform(segue: StoryboardSegue.Main.showAccount, sender: ride)
+  }
     
     private func toggleZoneInfo(_ coordinate: CLLocationCoordinate2D) {
         var insideZone: (Zone, GMSPolygon)?
