@@ -16,6 +16,9 @@ internal enum StoryboardSegue {
   internal enum Account: String, SegueType {
     case fromTopUpToAccount
   }
+  internal enum EndRidePhoto: String, SegueType {
+    case fromEndRidePhotoToMap
+  }
   internal enum Main: String, SegueType {
     case showAccount
     case showEndRidePhoto

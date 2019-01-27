@@ -11,8 +11,14 @@ import FastttCamera
 
 class EndRidePhotoViewController: UIViewController {
   
+  @IBOutlet weak var titleView: UIView!
   @IBOutlet weak var cameraView: UIView!
+  @IBOutlet weak var previewImageView: UIImageView!
   @IBOutlet weak var shootButton: UIButton!
+  @IBOutlet weak var shootView: UIView!
+  @IBOutlet weak var sendView: UIView!
+  @IBOutlet weak var takeAnotherButton: UIButton!
+  @IBOutlet weak var sendButton: UIButton!
   
   let fastCamera = FastttCamera()
   var ride: Ride!
@@ -25,24 +31,62 @@ class EndRidePhotoViewController: UIViewController {
     
     fastCamera.delegate = self
     
-    loadCameraView()
+    switchToCamera()
   }
   
   private func setupUI() {
+    titleView.layoutCornerRadiusMask(corners: [.bottomRight, .bottomLeft])
+    shootView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
+    sendView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
+    
     shootButton.backgroundColor = UIColor.primaryRedColor
     shootButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: shootButton.frame.size.width/2)
+    
+    takeAnotherButton.primaryDarkBasic()
+    sendButton.primaryRed()
   }
   
-  private func loadCameraView() {
+  private func switchToCamera() {
+    sendView.isHidden = true
+    previewImageView.isHidden = true
+    
     fastttAddChildViewController(fastCamera)
     fastCamera.view.frame = self.cameraView.frame
+    
+    view.bringSubviewToFront(titleView)
+    view.bringSubviewToFront(shootView)
+  }
+  
+  private func switchToPreview() {
+    sendView.isHidden = false
+    previewImageView.isHidden = false
+    
+    fastttRemoveChildViewController(fastCamera)
+    
+    view.bringSubviewToFront(sendView)
   }
   
   @IBAction func shootTapped(_ sender: Any) {
+    // UI API called on a background thread: https://github.com/IFTTT/FastttCamera/issues/80
+    self.fastCamera.takePicture()
+  }
+  
+  @IBAction func takeAnotherTapped(_ sender: Any) {
+    switchToCamera()
+  }
+  
+  
+  @IBAction func sendTapped(_ sender: Any) {
+    // TODO: invoke send photo API
+    perform(segue: StoryboardSegue.EndRidePhoto.fromEndRidePhotoToMap)
   }
   
 }
 
 extension EndRidePhotoViewController: FastttCameraDelegate {
-  
+  func cameraController(_ cameraController: FastttCameraInterface!, didFinishNormalizing capturedImage: FastttCapturedImage!) {
+      self.photo = capturedImage.scaledImage
+      self.previewImageView.image = self.photo
+      self.switchToPreview()
+  }
 }
