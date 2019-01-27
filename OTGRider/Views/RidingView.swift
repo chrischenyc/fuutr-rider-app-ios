@@ -9,6 +9,7 @@ class RidingView: DesignableView {
   @IBOutlet weak var costLabel: UILabel!
   @IBOutlet weak var lockButton: UIButton!
   @IBOutlet weak var endRideButton: UIButton!
+  @IBOutlet weak var scooterIsLockedLabel: UILabel!
   
   var onPauseRide: (()->Void)?
   var onResumeRide: (()->Void)?
@@ -36,8 +37,10 @@ class RidingView: DesignableView {
       }
       
       lockButton.setTitle("Unlock", for: .normal)
+      scooterIsLockedLabel.isHidden = false
     } else {
       lockButton.setTitle("Lock", for: .normal)
+      scooterIsLockedLabel.isHidden = true
     }
   }
   
@@ -66,6 +69,7 @@ class RidingView: DesignableView {
     remainingRangeLabel.textColor = UIColor.primaryGreyColor
     lockButton.addTarget(self, action: #selector(lock), for: .touchUpInside)
     endRideButton.addTarget(self, action: #selector(endRide), for: .touchUpInside)
+    scooterIsLockedLabel.textColor = UIColor.primaryDarkColor
   }
   
   @objc private func lock() {
