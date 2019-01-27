@@ -33,10 +33,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-enter-code" translatesAutoresizingMaskIntoConstraints="NO" id="K2c-EM-ZYz">
-                                <rect key="frame" x="143.66666666666666" y="205.33333333333337" width="88" height="110"/>
+                                <rect key="frame" x="143.66666666666666" y="205.33333333333334" width="88" height="97.000000000000028"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="1LS-64-KK2"/>
-                                    <constraint firstAttribute="height" constant="110" id="SqF-Ry-WLC"/>
+                                    <constraint firstAttribute="height" constant="97" id="SqF-Ry-WLC"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cX-Kk-xvp">
@@ -48,7 +48,7 @@
                                 <state key="normal" title="Scan scotter's QR code"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2g-yc-wtW" customClass="PinCodeView" customModule="PinCodeView">
-                                <rect key="frame" x="21.666666666666657" y="355.33333333333331" width="332" height="40"/>
+                                <rect key="frame" x="21.666666666666657" y="342.33333333333331" width="332" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="332" id="5pz-ir-GQQ"/>

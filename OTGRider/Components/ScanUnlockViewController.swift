@@ -47,6 +47,10 @@ class ScanUnlockViewController: UnlockViewController {
     super.prepare(for: segue, sender: sender)
     
     scanner.stopScan()
+    
+    if let manualUnlockViewController = segue.destination as? ManualUnlockViewController {
+      manualUnlockViewController.delegate = delegate
+    }
   }
   
   private func handleScanResult(_ result: String) {
