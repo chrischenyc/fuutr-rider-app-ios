@@ -300,7 +300,7 @@ extension MapViewController {
                                                 }
                                                 
                                                 guard let ride = ride else {
-                                                    self?.alertMessage(L10n.kOtherError)
+                                                    self?.alertMessage(message: L10n.kOtherError)
                                                     return
                                                 }
                                                 
@@ -443,8 +443,8 @@ extension MapViewController {
       
         vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         vehicleInfoView.onReserve = { [weak self] (vehicle) in
-          self?.alertMessage("Reserve Scooter",
-                            "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
+            self?.alertMessage(title: "Reserve Scooter",
+                               message: "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
                             positiveActionButtonTitle: "OK",
                             positiveActionButtonTapped: {
                               self?.reserveVehicle(vehicle)
@@ -466,8 +466,8 @@ extension MapViewController {
         }
       
         vehicleReservedInfoView.onCancel = { [weak self] (vehicle) in
-          self?.alertMessage("Are you sure you want to cancel the reservation?",
-                             "You won't be able to reserve again for 15 minutes.",
+            self?.alertMessage(title: "Are you sure you want to cancel the reservation?",
+                               message: "You won't be able to reserve again for 15 minutes.",
                              positiveActionButtonTitle: "Keep reservation",
                              positiveActionButtonTapped: {},
                              negativeActionButtonTitle: "Cancel reservation",
@@ -495,8 +495,8 @@ extension MapViewController {
             }
         }
         rideInfoView.onEndRide = {
-            self.alertMessage("Are you sure you want to end the ride?",
-                              "",
+            self.alertMessage(title: "Are you sure you want to end the ride?",
+                              message: "",
                               positiveActionButtonTitle: "Yes, end ride",
                               positiveActionButtonTapped: {
                                 self.endRide()
@@ -569,7 +569,7 @@ extension MapViewController {
     }
     
     private func showCompletedRide(_ ride: Ride) {
-        alertMessage("Thanks! Ride summary:\(ride.summary())")
+        alertMessage(message: "Thanks! Ride summary:\(ride.summary())")
     }
     
     private func toggleZoneInfo(_ coordinate: CLLocationCoordinate2D) {
@@ -743,21 +743,23 @@ extension MapViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(appBecameActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
-    private func promptForLocationService() {
-        alertMessage("This app needs access to the location service so it can find scooters close to you and track your rides.", actionButtonTitle: "Grant access") {
-            
-            if !CLLocationManager.locationServicesEnabled() {
-                if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
-                    // If general location settings are disabled then open general location settings
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            } else {
-                if let url = URL(string: UIApplication.openSettingsURLString) {
-                    // If general location settings are enabled then open location settings for the app
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            }
-        }
+    private func promptForLocationService() { 
+        alertMessage(title: "Location Service Required",
+                     message: "This app needs access to the location service so it can find scooters close to you and track your rides.",
+                     positiveActionButtonTitle: "Grant Access",
+                     positiveActionButtonTapped: {
+                        if !CLLocationManager.locationServicesEnabled() {
+                            if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
+                                // If general location settings are disabled then open general location settings
+                                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                            }
+                        } else {
+                            if let url = URL(string: UIApplication.openSettingsURLString) {
+                                // If general location settings are enabled then open location settings for the app
+                                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                            }
+                        }
+        })
     }
     
     @objc private func appMovedToBackground() {
@@ -802,6 +804,8 @@ extension MapViewController: CLLocationManagerDelegate {
         // once GPS signal is settled, check if there's an ongoing ride
         if ongoingRide == nil && !didLoadOngoingRide {
             loadOngoingRide()
+            
+            alertMessage(message: "test")
         }
         
         // during a ride

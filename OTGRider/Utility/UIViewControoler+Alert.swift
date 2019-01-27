@@ -17,35 +17,18 @@ extension UIViewController {
     func alertError(_ error: Error,
                     actionButtonTitle: String? = nil,
                     actionButtonTapped: (()->Void)? = nil) {
-        alertMessage(error.localizedDescription,
-                     actionButtonTitle: actionButtonTitle,
-                     actionButtonTapped: actionButtonTapped)
+        alertMessage(title: nil,
+                     message: error.localizedDescription,
+                     positiveActionButtonTitle: "OK",
+                     positiveActionButtonTapped: {
+                        actionButtonTapped?()
+        })
     }
     
-    func alertMessage(_ message: String,
-                      actionButtonTitle: String? = nil,
-                      actionButtonTapped: (()->Void)? = nil) {
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertController.Style.alert)
-        
-        if let actionButtonTitle = actionButtonTitle {
-            let action = UIAlertAction(title: actionButtonTitle, style: .default) { (alertAction) in
-                actionButtonTapped?()
-            }
-            alert.addAction(action)
-            
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        }
-        else {
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        }
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func alertMessage(_ title: String,
-                      _ message: String,
-                      positiveActionButtonTitle: String?,
-                      positiveActionButtonTapped: (()->Void)?,
+    func alertMessage(title: String? = nil,
+                      message: String?,
+                      positiveActionButtonTitle: String? = nil,
+                      positiveActionButtonTapped: (()->Void)? = nil,
                       negativeActionButtonTitle: String? = nil,
                       negativeActionButtonTapped: (()->Void)? = nil) {
         var formSheetController: MZFormSheetPresentationViewController!

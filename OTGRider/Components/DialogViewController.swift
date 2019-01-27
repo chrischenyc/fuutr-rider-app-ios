@@ -12,7 +12,7 @@ class DialogViewController: UIViewController {
     
     var messageTitle: String?
     var message: String?
-    var positiveActionButtonTitle: String? = "OK"
+    var positiveActionButtonTitle: String = "OK"
     var positiveActionButtonTapped: (()->Void)?
     var negativeActionButtonTitle: String?
     var negativeActionButtonTapped: (()->Void)?
@@ -26,7 +26,9 @@ class DialogViewController: UIViewController {
         
         self.messageTitle = title
         self.message = message
-        self.positiveActionButtonTitle = positiveActionButtonTitle
+        if let positiveActionButtonTitle = positiveActionButtonTitle {
+            self.positiveActionButtonTitle = positiveActionButtonTitle
+        }
         self.positiveActionButtonTapped = positiveActionButtonTapped
         self.negativeActionButtonTitle = negativeActionButtonTitle
         self.negativeActionButtonTapped = negativeActionButtonTapped

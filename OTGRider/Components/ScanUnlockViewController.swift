@@ -56,11 +56,14 @@ extension ScanUnlockViewController {
         } catch let error as NSError {
             switch error.code {
             case -11852:
-                alertMessage("This app is not authorized to use Back Camera. Please grant permission in Settings", actionButtonTitle: "Settings") {
-                    if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
-                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
-                    }
-                }
+                alertMessage(title: nil,
+                             message: "This app is not authorized to use Back Camera. Please grant permission in Settings",
+                             positiveActionButtonTitle: "Go to Settings",
+                             positiveActionButtonTapped: {
+                                if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                                    UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                                }
+                })
                 
             default:
                 flashErrorMessage("Current device doesn't support QR code scanning, please try manually inputing the code.")
