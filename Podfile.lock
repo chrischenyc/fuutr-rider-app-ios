@@ -122,6 +122,9 @@ PODS:
   - PhoneNumberKit/PhoneNumberKitCore (2.5.0)
   - PhoneNumberKit/UIKit (2.5.0):
     - PhoneNumberKit/PhoneNumberKitCore
+  - PinCodeView (0.3.0):
+    - PinCodeView/Core (= 0.3.0)
+  - PinCodeView/Core (0.3.0)
   - PKHUD (5.2.1)
   - Protobuf (3.6.1)
   - ReachabilitySwift (4.3.0)
@@ -146,6 +149,7 @@ DEPENDENCIES:
   - MZFormSheetPresentationController
   - ObjectMapper
   - PhoneNumberKit
+  - PinCodeView
   - PKHUD
   - ReachabilitySwift
   - SideMenu
@@ -182,6 +186,7 @@ SPEC REPOS:
     - ObjcExceptionBridging
     - ObjectMapper
     - PhoneNumberKit
+    - PinCodeView
     - PKHUD
     - Protobuf
     - ReachabilitySwift
@@ -218,6 +223,7 @@ SPEC CHECKSUMS:
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   PhoneNumberKit: 32a1cd1e0aa9e950feb01886a22fd7386b8cf903
+  PinCodeView: d95d927c930d4c200c9af84958948f3ab80c944a
   PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
@@ -227,6 +233,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: ca7ab545400288bf489afa4b173e10f1321a9a6c
+PODFILE CHECKSUM: d476cd105583f9cbdc45705057b10bbd5eac60ac
 
 COCOAPODS: 1.5.3

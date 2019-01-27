@@ -9,118 +9,57 @@
 import UIKit
 import AVFoundation
 
+protocol UnlockDelegate: AnyObject {
+  func vehicleUnlocked(with ride: Ride)
+}
+
 class UnlockViewController: UIViewController {
+  
+  private var apiTask: URLSessionTask?
+  weak var delegate: UnlockDelegate?
+  
+  override func viewDidLoad() {
+      super.viewDidLoad()
+  }
+  
+  func unlockVehicle(unlockCode: String,
+                     onBalanceInsufficientError: (() -> Void)? = nil,
+                     onGeneralError: ((Error) -> Void)? = nil) {
+    apiTask?.cancel()
     
-    @IBOutlet weak var torchButton: UIButton!
+    showLoading()
     
-    private var torchOn: Bool = false
-    private var apiTask: URLSessionTask?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    apiTask = RideService.start(unlockCode: unlockCode,
+                                 coordinate: currentLocation?.coordinate,
+                                 completion: { [weak self] (ride, error) in
+       DispatchQueue.main.async {
+         self?.dismissLoading()
         
-        torchButton.setTitle("Torch On", for: .normal)
-    }
-    
-    @IBAction func torchButtonTapped(_ sender: Any) {
-        torchOn = !torchOn
-        toggleTorch(on: torchOn)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // switch off torch and camear before leaving
-        torchOn = false
-        toggleTorch(on: torchOn)
-        
-        if let mapViewController = segue.destination as? MapViewController,
-            let ride = sender as? Ride {
-            mapViewController.ongoingRide = ride
-        }
-    }
-    
-    private func toggleTorch(on: Bool) {
-        guard let device = AVCaptureDevice.default(for: AVMediaType.video) else{ return }
-        
-        if (device.hasTorch) {
-            do {
-                try device.lockForConfiguration()
-                
-                if (on) {
-                    device.torchMode = .on
-                    torchButton.setTitle("Torch Off", for: .normal)
-                    
-                } else {
-                    device.torchMode = .off
-                    torchButton.setTitle("Torch On", for: .normal)
-                }
-                
-                device.unlockForConfiguration()
-            } catch {
-                logger.error("Torch could not be used")
-            }
-        }
-        else{
-            logger.error("Torch is not available")
-        }
-    }
-    
-    
-    func unlockVehicle(unlockCode: String) {
-        apiTask?.cancel()
-        
-        showLoading()
-        
-        apiTask = RideService.start(unlockCode: unlockCode,
-                                     coordinate: currentLocation?.coordinate,
-                                     completion: { [weak self] (ride, error) in
-                                        
-                                        DispatchQueue.main.async {
-                                            self?.dismissLoading()
-                                            
-                                            guard error == nil else {
-                                                logger.error(error?.localizedDescription)
-                                                
-                                                if error?.localizedDescription == "insufficient balance" {
-                                                    self?.alertMessage(title: nil,
-                                                                       message: "You account balance is not enough for a new ride",
-                                                                       positiveActionButtonTitle: "Top Up",
-                                                                       positiveActionButtonTapped: {
-                                                                        // TODO: need to indicate AccountViewController, after successful top up, return back to unlock screen
-                                                                        self?.navigateToAccount()
-                                                    })
-                                                } else {
-                                                    self?.flashErrorMessage(error?.localizedDescription)
-                                                }
-                                                return
-                                            }
-                                            
-                                            guard let ride = ride else {
-                                                self?.flashErrorMessage(L10n.kOtherError)
-                                                return
-                                            }
-                                            
-                                            self?.navigateToMap(withRide: ride)
-                                            
-                                        }
-        })
-    }
-    
-    private func navigateToAccount() {
-        if self.isKind(of: ScanUnlockViewController.self) {
-            self.perform(segue: StoryboardSegue.Unlock.fromScanUnlockToAccount)
-        }
-        else {
-            self.perform(segue: StoryboardSegue.Unlock.fromManualUnlockToAccount)
-        }
-    }
-    
-    private func navigateToMap(withRide ride: Ride) {
-        if self.isKind(of: ScanUnlockViewController.self) {
-            self.perform(segue: StoryboardSegue.Unlock.fromScanUnlockToMap, sender: ride)
-        }
-        else {
-            self.perform(segue: StoryboardSegue.Unlock.fromManualUnlockToMap, sender: ride)
-        }
-    }
+         if let error = error {
+           logger.error(error.localizedDescription)
+          
+           if error.localizedDescription == "insufficient balance" {
+            self?.alertMessage(title: nil,
+                               message: "You account balance is not enough for a new ride",
+                               positiveActionButtonTitle: "Top up balance",
+                               positiveActionButtonTapped: {
+                                // TODO: need to indicate AccountViewController, after successful top up, return back to unlock screen
+                                 onBalanceInsufficientError?()
+                               })
+           } else {
+             onGeneralError?(error)
+           }
+           return
+         }
+         guard let ride = ride else {
+           self?.flashErrorMessage(L10n.kOtherError)
+           return
+         }
+         self?.dismiss(animated: true, completion: {
+           self?.delegate?.vehicleUnlocked(with: ride)
+         })
+       }
+    })
+  }
 }
 

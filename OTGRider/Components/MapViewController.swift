@@ -44,7 +44,7 @@ class MapViewController: UIViewController {
             }
             
             if ongoingRide != oldValue {
-                updateUnlockButton()
+                updateUnlockView()
             }
         }
     }
@@ -111,19 +111,22 @@ class MapViewController: UIViewController {
                 
             }
         }
-        else if let _ = sourceViewController as? UnlockViewController,
-            let ride = ongoingRide,
-            let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
-            // rewind from unlock, a new ride starts
-            unwindSegueWithCompletion.completion = {
-                self.startTrackingRide(ride)
-            }
-        }
     }
     
-    @IBAction func unlockButtonTapped(_ sender: Any) {
-        perform(segue: StoryboardSegue.Main.fromMapToScan)
+    @objc private func unlock() {
+      if let viewController = UIStoryboard(name: "ScanUnlock", bundle: nil).instantiateInitialViewController() as? UINavigationController,
+         let unlockVC = viewController.topViewController as? UnlockViewController {
+          self.presentFullScreen(viewController)
+          unlockVC.delegate = self
+      }
     }
+}
+
+// MARK: - scan or input to unlock
+extension MapViewController: UnlockDelegate {
+  func vehicleUnlocked(with ride: Ride) {
+    self.startTrackingRide(ride)
+  }
 }
 
 // MARK: - Ride Tracking
@@ -452,6 +455,7 @@ extension MapViewController {
         
         unlockView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         unlockButton.primaryRed()
+        unlockButton.addTarget(self, action: #selector(unlock), for: .touchUpInside)
       
         vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         vehicleInfoView.onReserve = { [weak self] (vehicle) in
@@ -469,12 +473,12 @@ extension MapViewController {
         }
       
         vehicleInfoView.onScan = { [weak self] in
-          self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
+          self?.unlock()
         }
       
         vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         vehicleReservedInfoView.onScan = { [weak self] in
-          self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
+          self?.unlock()
         }
       
         vehicleReservedInfoView.onCancel = { [weak self] (vehicle) in
@@ -520,17 +524,12 @@ extension MapViewController {
             self.refreshOngoingRide()
         }
         
-        updateUnlockButton()
+        updateUnlockView()
     }
   
     @objc private func showHowToRide() {
       let viewController = UIStoryboard(name: "HowToRide", bundle: nil).instantiateViewController(withIdentifier: "HowToRide") as! HowToRideViewController
-      
-      viewController.providesPresentationContextTransitionStyle = true
-      viewController.definesPresentationContext = true
-      viewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-      
-      self.present(viewController, animated: true, completion: nil)
+      self.presentFullScreen(viewController)
     }
     
     private func showVehicleInfo(_ vehicle: Vehicle) {
@@ -572,11 +571,11 @@ extension MapViewController {
         }
     }
     
-    private func updateUnlockButton() {
+    private func updateUnlockView() {
         if ongoingRide != nil {
-            unlockButton.isHidden = true
+            unlockView.isHidden = true
         } else {
-            unlockButton.isHidden = false
+            unlockView.isHidden = false
         }
     }
     
