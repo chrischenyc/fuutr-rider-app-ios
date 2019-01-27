@@ -87,10 +87,6 @@ extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewContr
 }
 
 extension HowToRideViewController: HowToRideSinglePageDelegate {
-  func ride() {
-    
-  }
-  
   func showNextPage() {
     let currentPageIndex = pageControl.currentPage
     let nextPage = pages[currentPageIndex + 1]

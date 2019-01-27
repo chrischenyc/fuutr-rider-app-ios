@@ -52,11 +52,9 @@ class MapViewController: UIViewController {
     private var ongoingRidePath: GMSMutablePath?    // to track travelled distance and to draw route
     private var ongoingRidePolyline: GMSPolyline?
     private var incrementalPath: GMSMutablePath?    // to report to server for the new segment
-    
-    @IBOutlet weak var howToRideButton: UIButton!
+  
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuButton: UIButton!
-    @IBOutlet weak var guideButton: UIButton!
     @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet weak var rideInfoView: RideInfoView!
     @IBOutlet weak var rideInfoViewBottomConstraint: NSLayoutConstraint!
@@ -132,6 +130,7 @@ class MapViewController: UIViewController {
 extension MapViewController: UnlockDelegate {
   func vehicleUnlocked(with ride: Ride) {
     self.startTrackingRide(ride)
+    showHowToRide()
   }
 }
 
@@ -454,10 +453,7 @@ extension MapViewController {
 // MARK: - UI
 extension MapViewController {
     private func setupUI() {
-        howToRideButton.addTarget(self, action: #selector(showHowToRide), for: .touchUpInside)
         sideMenuButton.backgroundColor = UIColor.clear
-        guideButton.layoutCornerRadiusAndShadow()
-        guideButton.backgroundColor = UIColor.primaryWhiteColor
         
         unlockView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         unlockButton.primaryRed()
@@ -533,7 +529,7 @@ extension MapViewController {
         updateUnlockView()
     }
   
-    @objc private func showHowToRide() {
+    private func showHowToRide() {
       let viewController = UIStoryboard(name: "HowToRide", bundle: nil).instantiateViewController(withIdentifier: "HowToRide") as! HowToRideViewController
       self.presentFullScreen(viewController)
     }
@@ -578,11 +574,13 @@ extension MapViewController {
     }
     
     private func updateUnlockView() {
-        if ongoingRide != nil {
-            unlockView.isHidden = true
-        } else {
-            unlockView.isHidden = false
-        }
+      if ongoingRide != nil {
+        unlockView.isHidden = true
+        vehicleInfoView.isHidden = true
+        vehicleReservedInfoView.isHidden = true
+      } else {
+        unlockView.isHidden = false
+      }
     }
     
     private func showCompletedRide(_ ride: Ride) {
