@@ -76,6 +76,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="UcZ-9P-cnN"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" title="Button"/>
                                 </button>
                             </subviews>
