@@ -51,6 +51,7 @@ internal enum Asset {
   internal static let icClockOutlineDarkGray16 = ImageAsset(name: "ic-clock-outline-dark-gray-16")
   internal static let icCloseDarkGray16 = ImageAsset(name: "ic-close-dark-gray-16")
   internal static let icCloseWhite12 = ImageAsset(name: "ic-close-white-12")
+  internal static let icCloseWhite16 = ImageAsset(name: "ic-close-white-16")
   internal static let icCreditCardDarkGray16 = ImageAsset(name: "ic-credit-card-dark-gray-16")
   internal static let icDollarDarkGray16 = ImageAsset(name: "ic-dollar-dark-gray-16")
   internal static let icDollarDarkGray20 = ImageAsset(name: "ic-dollar-dark-gray-20")
