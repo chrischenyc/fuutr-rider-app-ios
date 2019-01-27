@@ -12,18 +12,17 @@ class DialogViewController: UIViewController {
     
     var messageTitle: String?
     var message: String?
-    var positiveActionButtonTitle: String
-    var positiveActionButtonTapped: (()->Void)
+    var positiveActionButtonTitle: String?
+    var positiveActionButtonTapped: (()->Void)?
     var negativeActionButtonTitle: String?
     var negativeActionButtonTapped: (()->Void)?
     
     init(title: String?,
         message: String?,
         positiveActionButtonTitle: String,
-        positiveActionButtonTapped: @escaping (()->Void),
+        positiveActionButtonTapped: (()->Void),
         negativeActionButtonTitle: String? = nil,
         negativeActionButtonTapped: (()->Void)? = nil) {
-        super.in
         
         self.messageTitle = title
         self.message = message
@@ -31,10 +30,12 @@ class DialogViewController: UIViewController {
         self.positiveActionButtonTapped = positiveActionButtonTapped
         self.negativeActionButtonTitle = negativeActionButtonTitle
         self.negativeActionButtonTapped = negativeActionButtonTapped
+        
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        
+        super.init(coder: aDecoder)
     }
     
     @IBOutlet weak var titleLabel: UILabel!
