@@ -29,6 +29,12 @@
 		6B03DC1221F6FBF800A2765F /* RideSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B03DC1121F6FBF800A2765F /* RideSegment.swift */; };
 		6B03DC1321F6FBF800A2765F /* RideSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B03DC1121F6FBF800A2765F /* RideSegment.swift */; };
 		6B03DC1421F6FBF800A2765F /* RideSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B03DC1121F6FBF800A2765F /* RideSegment.swift */; };
+		6B0D921721FD32D100A9B38E /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D921521FD32D100A9B38E /* DialogViewController.swift */; };
+		6B0D921821FD32D100A9B38E /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D921521FD32D100A9B38E /* DialogViewController.swift */; };
+		6B0D921921FD32D100A9B38E /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D921521FD32D100A9B38E /* DialogViewController.swift */; };
+		6B0D921A21FD32D100A9B38E /* DialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0D921621FD32D100A9B38E /* DialogViewController.xib */; };
+		6B0D921B21FD32D100A9B38E /* DialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0D921621FD32D100A9B38E /* DialogViewController.xib */; };
+		6B0D921C21FD32D100A9B38E /* DialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0D921621FD32D100A9B38E /* DialogViewController.xib */; };
 		6B14FA0B2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
 		6B14FA0C2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
 		6B14FA0D2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */; };
@@ -363,6 +369,8 @@
 		6B0128BE219EA4B500AC2439 /* RideInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideInfoView.swift; sourceTree = "<group>"; };
 		6B03DC0921EDEF4E00A2765F /* GMSMapView+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+Search.swift"; sourceTree = "<group>"; };
 		6B03DC1121F6FBF800A2765F /* RideSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSegment.swift; sourceTree = "<group>"; };
+		6B0D921521FD32D100A9B38E /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		6B0D921621FD32D100A9B38E /* DialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DialogViewController.xib; sourceTree = "<group>"; };
 		6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRequestViewController.swift; sourceTree = "<group>"; };
 		6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVerifyViewController.swift; sourceTree = "<group>"; };
 		6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSetViewController.swift; sourceTree = "<group>"; };
@@ -961,6 +969,8 @@
 				6BB6CB762196F87E00B597B3 /* Onboard */,
 				6BB6CB752196F86400B597B3 /* Auth */,
 				A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */,
+				6B0D921521FD32D100A9B38E /* DialogViewController.swift */,
+				6B0D921621FD32D100A9B38E /* DialogViewController.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1142,6 +1152,7 @@
 				6BDE9139218C19DF003F976B /* SignIn.storyboard in Resources */,
 				6BDE913A218C19DF003F976B /* Localizable.strings in Resources */,
 				6BBC6A0321A0DDDD003C910B /* ride.gpx in Resources */,
+				6B0D921C21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BDE913B218C19DF003F976B /* Assets.xcassets in Resources */,
 				6BDE913C218C19DF003F976B /* Onboard.storyboard in Resources */,
 				6BDE913D218C19DF003F976B /* Unlock.storyboard in Resources */,
@@ -1165,6 +1176,7 @@
 				6B8731BD2189C2B900CC2651 /* SignIn.storyboard in Resources */,
 				6B8731AB2189B9A500CC2651 /* Localizable.strings in Resources */,
 				A0CFE7A221747BF500BA3F6D /* Assets.xcassets in Resources */,
+				6B0D921A21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6B8731CA2189D86600CC2651 /* Onboard.storyboard in Resources */,
 				6B8731F5218A9A9000CC2651 /* Unlock.storyboard in Resources */,
 				9197553B21FC32E20069D25A /* VehicleInfoView.xib in Resources */,
@@ -1188,6 +1200,7 @@
 				6B8731BE2189C2B900CC2651 /* SignIn.storyboard in Resources */,
 				6B8731AC2189B9A500CC2651 /* Localizable.strings in Resources */,
 				A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */,
+				6B0D921B21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6B8731CB2189D86600CC2651 /* Onboard.storyboard in Resources */,
 				6B8731F6218A9A9000CC2651 /* Unlock.storyboard in Resources */,
 				9197553C21FC32E20069D25A /* VehicleInfoView.xib in Resources */,
@@ -1232,6 +1245,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MZAppearance/MZAppearance.framework",
+				"${BUILT_PRODUCTS_DIR}/MZFormSheetPresentationController/MZFormSheetPresentationController.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
@@ -1252,6 +1267,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZAppearance.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZFormSheetPresentationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
@@ -1282,6 +1299,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MZAppearance/MZAppearance.framework",
+				"${BUILT_PRODUCTS_DIR}/MZFormSheetPresentationController/MZFormSheetPresentationController.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
@@ -1302,6 +1321,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZAppearance.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZFormSheetPresentationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
@@ -1434,6 +1455,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MZAppearance/MZAppearance.framework",
+				"${BUILT_PRODUCTS_DIR}/MZFormSheetPresentationController/MZFormSheetPresentationController.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
@@ -1454,6 +1477,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZAppearance.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZFormSheetPresentationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
@@ -1622,6 +1647,7 @@
 				6BDE916F218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6B8E30C9219FDD5000292B4E /* HistoryRideCell.swift in Sources */,
 				6BD472A4219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
+				6B0D921921FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47268219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF22195C77A00553C3D /* TopUpViewController.swift in Sources */,
 				6B1D1E89219A232300F72798 /* Vehicle.swift in Sources */,
@@ -1726,6 +1752,7 @@
 				6BDE916D218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6B8E30C7219FDD5000292B4E /* HistoryRideCell.swift in Sources */,
 				6BD472A2219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
+				6B0D921721FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47266219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF02195C77A00553C3D /* TopUpViewController.swift in Sources */,
 				6B1D1E87219A232300F72798 /* Vehicle.swift in Sources */,
@@ -1830,6 +1857,7 @@
 				6BDE916E218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6B8E30C8219FDD5000292B4E /* HistoryRideCell.swift in Sources */,
 				6BD472A3219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
+				6B0D921821FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47267219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF12195C77A00553C3D /* TopUpViewController.swift in Sources */,
 				6B1D1E88219A232300F72798 /* Vehicle.swift in Sources */,

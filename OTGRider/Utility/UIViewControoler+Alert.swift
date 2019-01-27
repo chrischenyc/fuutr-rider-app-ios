@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MZFormSheetPresentationController
 
 // normalize how error/message is presented modally in UIViewController
 // currently use system alert view, may use custom UI in the future
@@ -46,6 +47,9 @@ extension UIViewController {
                       positiveActionButtonTapped: @escaping (()->Void),
                       negativeActionButtonTitle: String? = nil,
                       negativeActionButtonTapped: (()->Void)? = nil) {
+        
+        // valina iOS alert
+        /*
         let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertController.Style.alert)
         
         let action = UIAlertAction(title: positiveActionButtonTitle, style: .default) { (alertAction) in
@@ -61,5 +65,16 @@ extension UIViewController {
         }
         
         present(alert, animated: true, completion: nil)
+         */
+        
+        let viewController = DialogViewController()
+        viewController.message = message
+        
+        let formSheetController = MZFormSheetPresentationViewController(contentViewController: viewController)
+        formSheetController.contentViewControllerTransitionStyle = .bounce
+        formSheetController.presentationController?.shouldCenterVertically = true
+        formSheetController.presentationController?.contentViewSize = UIView.layoutFittingCompressedSize
+        
+        present(formSheetController, animated: true, completion: nil)
     }
 }
