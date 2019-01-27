@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="1393" y="752"/>
         </scene>
-        <!--MannualUnlock-->
+        <!--ManualUnlock-->
         <scene sceneID="T9c-JJ-KPf">
             <objects>
-                <viewControllerPlaceholder storyboardName="MannualUnlock" id="uxW-y3-xDG" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ManualUnlock" id="uxW-y3-xDG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpj-Et-fAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2039" y="667"/>
