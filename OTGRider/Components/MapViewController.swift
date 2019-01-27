@@ -892,18 +892,21 @@ extension MapViewController: GMUClusterManagerDelegate {
 
 // MARK: - GMUClusterRendererDelegate
 extension MapViewController: GMUClusterRendererDelegate {
-    func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
-        guard let vehiclePOI = marker.userData as? VehiclePOI else { return }
-        
-        let powerPercent = vehiclePOI.vehicle.powerPercent ?? 0
-        
-        if 80...100 ~= powerPercent {
-            marker.icon = Asset.scooterPinGreen.image
-        } else if 30..<80 ~= powerPercent {
-            marker.icon = Asset.scooterPinYellow.image
-        } else {
-            marker.icon = Asset.scooterPinRed.image
-        }
-        
+  func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
+    guard let vehiclePOI = marker.userData as? VehiclePOI else { return }
+    
+    let powerPercent = vehiclePOI.vehicle.powerPercent ?? 0
+    
+    if (ongoingRide?.paused ?? false) {
+      marker.icon = Asset.scooterPinLockedGreen.image
+    } else {
+      if 80...100 ~= powerPercent {
+        marker.icon = Asset.scooterPinGreen.image
+      } else if 30..<80 ~= powerPercent {
+        marker.icon = Asset.scooterPinYellow.image
+      } else {
+        marker.icon = Asset.scooterPinRed.image
+      }
     }
+  }
 }
