@@ -42,11 +42,13 @@ class UnlockViewController: UIViewController {
            logger.error(error.localizedDescription)
           
            if error.localizedDescription == "insufficient balance" {
-               self?.alertMessage("You account balance is not enough for a new ride",
-                                  actionButtonTitle: "Top up balance",
-                                  actionButtonTapped: {
-                                    onBalanceInsufficientError?()
-                                  })
+            self?.alertMessage(title: nil,
+                               message: "You account balance is not enough for a new ride",
+                               positiveActionButtonTitle: "Top up balance",
+                               positiveActionButtonTapped: {
+                                // TODO: need to indicate AccountViewController, after successful top up, return back to unlock screen
+                                 onBalanceInsufficientError?()
+                               })
            } else {
              onGeneralError?(error)
            }
