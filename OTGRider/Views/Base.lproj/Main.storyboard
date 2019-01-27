@@ -112,13 +112,6 @@
                                     <constraint firstAttribute="height" constant="281" id="k12-MV-VWA"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="VZa-Sq-LCR">
-                                <rect key="frame" x="171.5" y="301.5" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="QaK-vs-WAP"/>
-                                    <constraint firstAttribute="width" constant="32" id="nTu-hm-dgg"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-gN-jng">
                                 <rect key="frame" x="16" y="20" width="44" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -137,7 +130,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zoP-Uq-ABq" secondAttribute="trailing" id="4Bn-9p-RIX"/>
                             <constraint firstItem="uh5-OG-jme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="67F-AF-bzW"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6X2-wB-VND"/>
-                            <constraint firstItem="VZa-Sq-LCR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7D3-J8-QSu"/>
                             <constraint firstAttribute="bottom" secondItem="zoP-Uq-ABq" secondAttribute="bottom" id="7bI-3u-4XO"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AnA-aF-8Me"/>
                             <constraint firstAttribute="bottom" secondItem="uh5-OG-jme" secondAttribute="bottom" id="BXm-qa-vSl"/>
@@ -146,7 +138,6 @@
                             <constraint firstItem="FYW-nd-pNL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kaa-EU-zFb"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6i-Mk-ptg"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQh-9I-Jzz"/>
-                            <constraint firstItem="VZa-Sq-LCR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-16" id="QiH-3a-nOE"/>
                             <constraint firstAttribute="bottom" secondItem="r9R-Fu-VmM" secondAttribute="bottom" id="Sha-BV-22t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FYW-nd-pNL" secondAttribute="trailing" id="Tg5-ee-1kV"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf3-O6-CJt"/>
@@ -159,7 +150,6 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
-                        <outlet property="pinImageView" destination="VZa-Sq-LCR" id="Y3D-z5-DxB"/>
                         <outlet property="ridingView" destination="zoP-Uq-ABq" id="OGQ-0R-yrQ"/>
                         <outlet property="sideMenuButton" destination="wXu-gN-jng" id="Szo-TM-gWK"/>
                         <outlet property="unlockButton" destination="1MR-Ss-nph" id="wJT-vO-elG"/>
@@ -180,6 +170,5 @@
     </scenes>
     <resources>
         <image name="boy-1" width="105" height="105"/>
-        <image name="pin" width="51.200000762939453" height="51.200000762939453"/>
     </resources>
 </document>

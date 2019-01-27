@@ -56,7 +56,6 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuButton: UIButton!
     @IBOutlet weak var unlockButton: UIButton!
-    @IBOutlet weak var pinImageView: UIImageView!
     
   @IBOutlet weak var ridingView: RidingView!
   @IBOutlet weak var unlockView: UIView!
@@ -159,8 +158,6 @@ extension MapViewController {
                                                      userInfo: nil,
                                                      repeats: true)
         
-        pinImageView.image = nil
-        
         // try to resume previously saved route
         if let encodedPath = ride.encodedPath, let decodedPath = GMSMutablePath(fromEncodedPath: encodedPath){
             ongoingRidePath = decodedPath
@@ -189,8 +186,6 @@ extension MapViewController {
         
         rideLocalUpdateTimer?.invalidate()
         rideServerUpdateTimer?.invalidate()
-        
-        pinImageView.image = Asset.pin.image
         
         ongoingRidePath = nil
         ongoingRidePolyline?.map = nil
