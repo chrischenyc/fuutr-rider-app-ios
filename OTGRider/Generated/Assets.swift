@@ -19,9 +19,14 @@
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal static let launch = ImageAsset(name: "Launch")
+  internal static let boy1 = ImageAsset(name: "boy-1")
+  internal static let boy2 = ImageAsset(name: "boy-2")
   internal static let btnArrowNextRed = ImageAsset(name: "btn-arrow-next-red")
   internal static let btnArrowNext = ImageAsset(name: "btn-arrow-next")
   internal static let btnBackspaceOutlineRed = ImageAsset(name: "btn-backspace-outline-red")
+  internal static let clusterPin = ImageAsset(name: "cluster-pin")
+  internal static let girl1 = ImageAsset(name: "girl-1")
+  internal static let girl2 = ImageAsset(name: "girl-2")
   internal static let howToRide1 = ImageAsset(name: "how-to-ride-1")
   internal static let howToRide2 = ImageAsset(name: "how-to-ride-2")
   internal static let howToRide3 = ImageAsset(name: "how-to-ride-3")
