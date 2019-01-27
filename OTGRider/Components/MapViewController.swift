@@ -804,8 +804,6 @@ extension MapViewController: CLLocationManagerDelegate {
         // once GPS signal is settled, check if there's an ongoing ride
         if ongoingRide == nil && !didLoadOngoingRide {
             loadOngoingRide()
-            
-            alertMessage(message: "test")
         }
         
         // during a ride

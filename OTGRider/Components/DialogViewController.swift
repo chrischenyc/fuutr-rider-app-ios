@@ -40,10 +40,12 @@ class DialogViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var positiveButton: UIButton!
     @IBOutlet weak var negativeButton: UIButton!
+    @IBOutlet weak var negativeButtonContainer: UIView!
     
     
     override func viewDidLoad() {
@@ -53,19 +55,39 @@ class DialogViewController: UIViewController {
     }
     
     private func setupUI() {
-        titleLabel.textColor = UIColor.primaryDarkColor
-        titleLabel.text = messageTitle
+        // only leave controls with content
         
-        messageLabel.textColor = UIColor.primaryDarkColor
-        messageLabel.text = message
+        if let messageTitle = messageTitle, messageTitle.count > 0 {
+            titleLabel.textColor = UIColor.primaryDarkColor
+            titleLabel.text = messageTitle
+        }
+        else {
+            stackView.removeArrangedSubview(titleLabel)
+            titleLabel.removeFromSuperview()
+        }
+        
+        if let message = message, message.count > 0 {
+            messageLabel.textColor = UIColor.primaryDarkColor
+            messageLabel.text = message
+        } else {
+            stackView.removeArrangedSubview(messageLabel)
+            messageLabel.removeFromSuperview()
+        }
         
         positiveButton.primaryRed()
         positiveButton.setTitle(positiveActionButtonTitle, for: .normal)
         positiveButton.addTarget(self, action: #selector(positiveTapped), for: .touchUpInside)
         
-        negativeButton.primaryDarkBasic()
-        negativeButton.setTitle(negativeActionButtonTitle, for: .normal)
-        negativeButton.addTarget(self, action: #selector(negativeTapped), for: .touchUpInside)
+        if let negativeActionButtonTitle = negativeActionButtonTitle, negativeActionButtonTitle.count > 0 {
+            negativeButton.primaryDarkBasic()
+            negativeButton.setTitle(negativeActionButtonTitle, for: .normal)
+            negativeButton.addTarget(self, action: #selector(negativeTapped), for: .touchUpInside)
+        }
+        else {
+            stackView.removeArrangedSubview(negativeButton)
+            negativeButton.removeFromSuperview()
+        }
+        
     }
     
     @objc private func positiveTapped() {
