@@ -10,17 +10,24 @@ import Foundation
 
 
 class ManualUnlockViewController: UnlockViewController {
-    @IBOutlet weak var codeTextField: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        codeTextField.becomeFirstResponder()
-    }
-    
-    @IBAction func codeChanged(_ sender: Any) {
-        guard let code = codeTextField.text, code.isSixDigits() else { return }
-        
-        unlockVehicle(unlockCode: code)
-    }
+  
+  @IBOutlet weak var enterCodeLabel: UILabel!
+  @IBOutlet weak var closeButton: UIButton!
+  @IBOutlet weak var showQRCodeButton: UIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    enterCodeLabel.textColor = UIColor.primaryGreyColor
+    showQRCodeButton.titleLabel?.textColor = UIColor.primaryRedColor
+    closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+  }
+  
+  @objc private func close() {
+    self.dismiss(animated: true, completion: nil)
+  }
+  
+  @objc private func codeChanged(_ sender: Any) {
+//    guard let code = codeTextField.text, code.isSixDigits() else { return }
+//    unlockVehicle(unlockCode: code)
+  }
 }
