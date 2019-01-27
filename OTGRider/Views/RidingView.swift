@@ -11,10 +11,14 @@ class RidingView: DesignableView {
   @IBOutlet weak var endRideButton: UIButton!
   
   var onPauseRide: (()->Void)?
+  var onResumeRide: (()->Void)?
   var onEndRide: (()->Void)?
   var onPauseTimeUp: (()->Void)?
   
+  var ride: Ride?
+  
   func updateContent(withRide ride: Ride) {
+    self.ride = ride
     ridingTimeLabel.text = ride.duration.hhmmssString
     ridingDistanceLabel.text = ride.distance.distanceString
     costLabel.text = ride.totalCost.currencyString
@@ -65,7 +69,12 @@ class RidingView: DesignableView {
   }
   
   @objc private func lock() {
-    onPauseRide?()
+    guard let ride = self.ride else { return }
+    if ride.paused {
+      onResumeRide?()
+    } else {
+      onPauseRide?()
+    }
   }
   
   @objc private func endRide() {

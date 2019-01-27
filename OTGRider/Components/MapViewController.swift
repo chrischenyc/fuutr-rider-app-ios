@@ -501,31 +501,36 @@ extension MapViewController {
            }
         }
       
-        ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
-        ridingView.onPauseRide = {
-          guard let paused = self.ongoingRide?.paused else { return }
-
-          if paused {
-              self.resumeRide()
-          } else {
-              self.pauseRide()
-          }
-        }
+      ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
       
-        ridingView.onEndRide = {
-          self.alertMessage(title: "Are you sure you want to end the ride?",
-                            message: "",
-                            positiveActionButtonTitle: "Yes, end ride",
-                            positiveActionButtonTapped: {
-                              self.endRide()
-                            },
-                            negativeActionButtonTitle: "No, keep riding")
-        }
-        ridingView.onPauseTimeUp = {
-          self.refreshOngoingRide()
-        }
+      ridingView.onPauseRide = { [weak self] in
+        self?.alertMessage(title: "Are you sure you want to lock the scooter?",
+                          message: "You'll be charged $0.15c per minute when scooter is locked.",
+                          positiveActionButtonTitle: "Yes, lock it",
+                          positiveActionButtonTapped: {
+                            self?.pauseRide()
+                          },
+                          negativeActionButtonTitle: "No, keep riding")
+      }
       
-        updateUnlockView()
+      ridingView.onResumeRide = { [weak self] in
+        self?.resumeRide()
+      }
+      
+      ridingView.onEndRide = { [weak self] in
+        self?.alertMessage(title: "Are you sure you want to end the ride?",
+                          message: "",
+                          positiveActionButtonTitle: "Yes, end ride",
+                          positiveActionButtonTapped: {
+                            self?.endRide()
+                          },
+                          negativeActionButtonTitle: "No, keep riding")
+      }
+      ridingView.onPauseTimeUp = { [weak self] in
+        self?.refreshOngoingRide()
+      }
+      
+      updateUnlockView()
     }
   
     private func showHowToRide() {
