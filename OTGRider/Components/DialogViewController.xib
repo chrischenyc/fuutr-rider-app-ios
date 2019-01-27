@@ -58,6 +58,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="fF5-wQ-LCT"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" title="Button"/>
                                 </button>
                             </subviews>
