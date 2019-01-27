@@ -10,57 +10,17 @@ import UIKit
 import AVFoundation
 
 class UnlockViewController: UIViewController {
-    
-    @IBOutlet weak var torchButton: UIButton!
-    
-    private var torchOn: Bool = false
+  
     private var apiTask: URLSessionTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        torchButton.setTitle("Torch On", for: .normal)
     }
-    
-    @IBAction func torchButtonTapped(_ sender: Any) {
-        torchOn = !torchOn
-        toggleTorch(on: torchOn)
-    }
-    
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // switch off torch and camear before leaving
-        torchOn = false
-        toggleTorch(on: torchOn)
-        
         if let mapViewController = segue.destination as? MapViewController,
             let ride = sender as? Ride {
             mapViewController.ongoingRide = ride
-        }
-    }
-    
-    private func toggleTorch(on: Bool) {
-        guard let device = AVCaptureDevice.default(for: AVMediaType.video) else{ return }
-        
-        if (device.hasTorch) {
-            do {
-                try device.lockForConfiguration()
-                
-                if (on) {
-                    device.torchMode = .on
-                    torchButton.setTitle("Torch Off", for: .normal)
-                    
-                } else {
-                    device.torchMode = .off
-                    torchButton.setTitle("Torch On", for: .normal)
-                }
-                
-                device.unlockForConfiguration()
-            } catch {
-                logger.error("Torch could not be used")
-            }
-        }
-        else{
-            logger.error("Torch is not available")
         }
     }
     

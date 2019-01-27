@@ -11,40 +11,45 @@ import AVFoundation
 
 class ScanUnlockViewController: UnlockViewController {
     
-    private let scanner = QRCode()
+  private let scanner = QRCode()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        scanner.prepareScan(view) { (stringValue) -> () in
-            self.handleScanResult(stringValue)
-        }
-        scanner.scanFrame = view.bounds
+  @IBOutlet weak var placeHolderView: UIView!
+  @IBOutlet weak var closeButton: UIButton!
+  @IBOutlet weak var enterCodeButton: UIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.backgroundColor = UIColor.primaryDarkColor
+    scanner.prepareScan(view) { (stringValue) -> () in
+      self.handleScanResult(stringValue)
     }
+    scanner.scanFrame = view.bounds
+    closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+    placeHolderView.layer.borderColor = UIColor.white.cgColor
+    placeHolderView.layer.borderWidth = 2
+  }
+  
+  @objc private func close() {
+    self.dismiss(animated: true, completion: nil)
+  }
     
-    override func viewDidAppear(_ animated: Bool) {
-        guard checkScanPermissions() else { return }
-        
-        scanner.startScan()
-    }
+  override func viewDidAppear(_ animated: Bool) {
+    guard checkScanPermissions() else { return }
     
-    @IBAction func unwindToUnlockByScan(_ unwindSegue: UIStoryboardSegue) {
-        // let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
-        
-    }
+    scanner.startScan()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        scanner.stopScan()
-    }
+    scanner.stopScan()
+  }
+  
+  private func handleScanResult(_ result: String) {
+    logger.debug(result)
     
-    private func handleScanResult(_ result: String) {
-        logger.debug(result)
-        
-        unlockVehicle(unlockCode: result)
-    }
+    unlockVehicle(unlockCode: result)
+  }
 }
 
 // MARK: - camera permission

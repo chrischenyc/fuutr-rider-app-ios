@@ -121,8 +121,10 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBAction func unlockButtonTapped(_ sender: Any) {
-        perform(segue: StoryboardSegue.Main.fromMapToScan)
+    @objc private func unlock() {
+      if let viewController = UIStoryboard(name: "ScanUnlock", bundle: nil).instantiateInitialViewController() {
+        self.presentFullScreen(viewController)
+      }
     }
 }
 
@@ -440,6 +442,7 @@ extension MapViewController {
         
         unlockView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         unlockButton.primaryRed()
+        unlockButton.addTarget(self, action: #selector(unlock), for: .touchUpInside)
       
         vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         vehicleInfoView.onReserve = { [weak self] (vehicle) in
@@ -457,12 +460,12 @@ extension MapViewController {
         }
       
         vehicleInfoView.onScan = { [weak self] in
-          self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
+          self?.unlock()
         }
       
         vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         vehicleReservedInfoView.onScan = { [weak self] in
-          self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
+          self?.unlock()
         }
       
         vehicleReservedInfoView.onCancel = { [weak self] (vehicle) in
@@ -513,12 +516,7 @@ extension MapViewController {
   
     @objc private func showHowToRide() {
       let viewController = UIStoryboard(name: "HowToRide", bundle: nil).instantiateViewController(withIdentifier: "HowToRide") as! HowToRideViewController
-      
-      viewController.providesPresentationContextTransitionStyle = true
-      viewController.definesPresentationContext = true
-      viewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-      
-      self.present(viewController, animated: true, completion: nil)
+      self.presentFullScreen(viewController)
     }
     
     private func showVehicleInfo(_ vehicle: Vehicle) {
