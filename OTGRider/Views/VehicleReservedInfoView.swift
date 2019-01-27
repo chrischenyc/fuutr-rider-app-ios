@@ -18,7 +18,7 @@ class VehicleReservedInfoView: DesignableView {
   private var reserveTimer: Timer?
   private var vehicle: Vehicle?
   
-  var onCancel: (() -> Void)?
+  var onCancel: ((Vehicle) -> Void)?
   var onScan: (() -> Void)?
   var onReserveTimeUp: (()->Void)?
   
@@ -38,6 +38,9 @@ class VehicleReservedInfoView: DesignableView {
     scooterReserved.textColor = UIColor.primaryDarkColor
     parkLabel.textColor = UIColor.primaryGreyColor
     timerLabel.textColor = UIColor.primaryDarkColor
+    
+    cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+    scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
   }
   
   func updateContentWith(_ vehicle: Vehicle) {
@@ -74,5 +77,14 @@ class VehicleReservedInfoView: DesignableView {
     } else {
       return ""
     }
+  }
+  
+  @objc private func scanButtonTapped() {
+    onScan?()
+  }
+  
+  @objc private func cancelButtonTapped() {
+    guard let vehicle = vehicle else { return }
+    onCancel?(vehicle)
   }
 }

@@ -368,35 +368,42 @@ extension MapViewController {
             }
         }
     }
+  
+    private func cancelVehicleReservation(_ vehicle: Vehicle) {
+      self.toggleVehicleReservation(id: vehicle._id, state: false)
+    }
     
     private func reserveVehicle(_ vehicle: Vehicle) {
-        // user can't reserve a vehicle during a ride
-        guard ongoingRide == nil else { return }
+      self.toggleVehicleReservation(id: vehicle._id, state: true)
+    }
+  
+    private func toggleVehicleReservation(id: String, state: Bool) {
+      // user can't reserve a vehicle during a ride
+      guard ongoingRide == nil else { return }
+      
+      vehicleAPITask?.cancel()
+      
+      vehicleAPITask = VehicleService.reserve(_id: id, reserve: state, completion: { [weak self] (vehicle, error) in
+        guard error == nil else {
+          DispatchQueue.main.async {
+            self?.flashErrorMessage(error?.localizedDescription)
+          }
+          
+          return
+        }
         
-        vehicleAPITask?.cancel()
-        
-        vehicleAPITask = VehicleService.reserve(_id: vehicle._id, reserve: !vehicle.reserved, completion: { [weak self] (vehicle, error) in
-            guard error == nil else {
-                DispatchQueue.main.async {
-                    self?.flashErrorMessage(error?.localizedDescription)
-                }
-                
-                return
-            }
+        if let vehicle = vehicle {
+          DispatchQueue.main.async {
+            // refresh vehicle info banner
+            self?.updateVehicleInfo(vehicle)
             
-            if let vehicle = vehicle {
-                DispatchQueue.main.async {
-                    // refresh vehicle info banner
-                    self?.updateVehicleInfo(vehicle)
-                  
-                    // refresh map search
-                    self?.searchVehicles()
-                }
-            }
-            
-            self?.getCurrentUser()
-        })
+            // refresh map search
+            self?.searchVehicles()
+          }
+        }
         
+        self?.getCurrentUser()
+      })
     }
     
     private func getCurrentUser() {
@@ -450,6 +457,10 @@ extension MapViewController {
         vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         vehicleReservedInfoView.onScan = { [weak self] in
           self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
+        }
+      
+        vehicleReservedInfoView.onCancel = { [weak self] (vehicle) in
+          self?.cancelVehicleReservation(vehicle)
         }
       
         vehicleReservedInfoView.onReserveTimeUp = { [weak self] in
