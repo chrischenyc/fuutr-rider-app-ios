@@ -80,6 +80,12 @@ class MapViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // animate out vehicle banner before leaving
         hideVehicleInfo()
+      
+      // pass through ended Ride object for feature photo uploading API calling
+      if let endRidePhotoViewController = segue.destination as? EndRidePhotoViewController,
+        let ride = sender as? Ride {
+        endRidePhotoViewController.ride = ride
+      }
     }
     
     // MARK: - user actions
@@ -584,7 +590,7 @@ extension MapViewController {
     }
   
   private func takePhotoForCompletedRide(_ ride: Ride) {
-    perform(segue: StoryboardSegue.Main.showAccount, sender: ride)
+    perform(segue: StoryboardSegue.Main.showEndRidePhoto, sender: ride)
   }
     
     private func toggleZoneInfo(_ coordinate: CLLocationCoordinate2D) {

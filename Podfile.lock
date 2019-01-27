@@ -9,6 +9,9 @@ PODS:
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
+  - FastttCamera (0.3.4):
+    - FastttCamera/Default (= 0.3.4)
+  - FastttCamera/Default (0.3.4)
   - FBSDKCoreKit (4.39.1):
     - Bolts (~> 1.9)
   - FBSDKLoginKit (4.39.1):
@@ -141,6 +144,7 @@ DEPENDENCIES:
   - BartyCrouch
   - Crashlytics
   - Fabric
+  - FastttCamera
   - FBSDKLoginKit
   - Firebase/Core
   - Firebase/Messaging
@@ -164,6 +168,7 @@ SPEC REPOS:
     - Bolts
     - Crashlytics
     - Fabric
+    - FastttCamera
     - FBSDKCoreKit
     - FBSDKLoginKit
     - Firebase
@@ -201,6 +206,7 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  FastttCamera: 51f16712cbd5bdb08bc6231b957325c6be5e478d
   FBSDKCoreKit: f442aa96179cc9b382bb4abeb7e340a47cca8f91
   FBSDKLoginKit: c3079d9a4db27c492287b1eed7a4272b28cf8a59
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
@@ -233,6 +239,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: d476cd105583f9cbdc45705057b10bbd5eac60ac
+PODFILE CHECKSUM: 6746423d2058b5c2823d9fa07c62fa42f79f890c
 
 COCOAPODS: 1.5.3

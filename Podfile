@@ -37,6 +37,7 @@ abstract_target 'Project' do
   pod 'PhoneNumberKit'
   pod 'ObjectMapper'
   pod 'PinCodeView'
+  pod 'FastttCamera'
 
   target 'OTGRider' do
 

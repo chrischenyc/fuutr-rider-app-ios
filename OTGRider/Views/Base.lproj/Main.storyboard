@@ -50,6 +50,14 @@
             </objects>
             <point key="canvasLocation" x="-2102" y="1799"/>
         </scene>
+        <!--EndRidePhoto-->
+        <scene sceneID="DMt-lo-LqC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EndRidePhoto" id="8Ti-sb-yF0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Sk-Ny-Aji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2058" y="1859"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -267,6 +275,7 @@
                         <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showAccount" id="NuG-ER-BNQ"/>
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>
                         <segue destination="46k-mg-UHB" kind="presentation" identifier="showHelp" id="GwS-O7-LdY"/>
+                        <segue destination="8Ti-sb-yF0" kind="show" identifier="showEndRidePhoto" id="Tlg-cq-aPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
