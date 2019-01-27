@@ -18,6 +18,7 @@ struct Vehicle: Mappable {
     var vehicleCode: String?
     var reserved: Bool = false
     var reservedUntil: Date?
+    var canReserveAfter: Date?
     var unlockCost: Double = 0
     var rideMinuteCost: Double = 0
     var pauseMinuteCost: Double = 0
@@ -35,6 +36,7 @@ struct Vehicle: Mappable {
         vehicleCode     <- map["vehicleCode"]
         reserved        <- map["reserved"]
         reservedUntil   <- (map["reservedUntil"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
+        canReserveAfter <- (map["canReserveAfter"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
         unlockCost      <- map["unlockCost"]
         rideMinuteCost  <- map["rideMinuteCost"]
         pauseMinuteCost <- map["pauseMinuteCost"]
