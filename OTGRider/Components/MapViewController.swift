@@ -115,6 +115,14 @@ class MapViewController: UIViewController {
                 
             }
         }
+        else if let endRidePhotoViewController = sourceViewController as? EndRidePhotoViewController,
+          let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
+          // user finishes uploading complete ride photo
+          // present ride summary
+          unwindSegueWithCompletion.completion = {
+            self.showRideSummary(endRidePhotoViewController.ride)
+          }
+      }
     }
     
     @objc private func unlock() {
@@ -583,7 +591,7 @@ extension MapViewController {
       }
     }
     
-    private func showCompletedRide(_ ride: Ride) {
+    private func showRideSummary(_ ride: Ride) {
         alertMessage(message: "Thanks! Ride summary:\(ride.summary())")
     }
   

@@ -131,7 +131,7 @@
                         <outlet property="shootView" destination="TO2-86-6cz" id="sr4-qM-xgs"/>
                         <outlet property="takeAnotherButton" destination="kIO-M1-ZPE" id="C6Z-oF-fU2"/>
                         <outlet property="titleView" destination="plL-dA-JU9" id="BvB-6e-f66"/>
-                        <segue destination="oXD-z5-hxl" kind="unwind" identifier="fromEndRidePhotoToMap" unwindAction="unwindToHome:" id="Il2-fV-q2C"/>
+                        <segue destination="oXD-z5-hxl" kind="unwind" identifier="fromEndRidePhotoToMap" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="Il2-fV-q2C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04p-aB-c9a" userLabel="First Responder" sceneMemberID="firstResponder"/>

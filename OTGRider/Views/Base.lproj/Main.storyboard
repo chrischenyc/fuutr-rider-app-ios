@@ -263,7 +263,7 @@
                         <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showAccount" id="NuG-ER-BNQ"/>
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>
                         <segue destination="46k-mg-UHB" kind="presentation" identifier="showHelp" id="GwS-O7-LdY"/>
-                        <segue destination="8Ti-sb-yF0" kind="show" identifier="showEndRidePhoto" id="Tlg-cq-aPh"/>
+                        <segue destination="8Ti-sb-yF0" kind="presentation" identifier="showEndRidePhoto" id="Tlg-cq-aPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
