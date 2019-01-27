@@ -32,7 +32,11 @@ class ScanUnlockViewController: UnlockViewController {
   @objc private func close() {
     self.dismiss(animated: true, completion: nil)
   }
+  
+  @IBAction func unwindToScanUnlock(_ segue: UIStoryboardSegue) {
     
+  }
+  
   override func viewDidAppear(_ animated: Bool) {
     guard checkScanPermissions() else { return }
     

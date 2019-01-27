@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tqT-kc-hyJ">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -68,9 +68,11 @@
                         <outlet property="closeButton" destination="7b9-xg-aW0" id="jc8-uZ-jUa"/>
                         <outlet property="enterCodeLabel" destination="syz-Zh-qgr" id="i4O-F8-pcQ"/>
                         <outlet property="showQRCodeButton" destination="7cX-Kk-xvp" id="KIW-c7-FwC"/>
+                        <segue destination="lX7-YH-uhz" kind="unwind" identifier="unwindToScanUnlock" unwindAction="unwindToScanUnlock:" id="C08-s7-KT5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aa-ha-Ifk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lX7-YH-uhz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="26" y="61"/>
         </scene>

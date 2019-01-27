@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YkZ-jL-DlA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vBf-1n-zIH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="GhX-Tz-HA0">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="vBf-1n-zIH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kxj-uJ-Y4N">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YkZ-jL-DlA" kind="relationship" relationship="rootViewController" id="VCc-G1-vVM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRT-o6-cLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="753"/>
+        </scene>
         <!--Scan To Unlock-->
         <scene sceneID="xae-p7-PuC">
             <objects>
@@ -61,6 +76,9 @@
                                 <state key="normal" title="Enter scooter's code">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="uxW-y3-xDG" kind="show" id="wdZ-PS-zeG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,7 +117,15 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7q-4L-qZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Hc5-ry-IeA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="766.86656671664173"/>
+            <point key="canvasLocation" x="1393" y="752"/>
+        </scene>
+        <!--MannualUnlock-->
+        <scene sceneID="T9c-JJ-KPf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MannualUnlock" id="uxW-y3-xDG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpj-Et-fAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2039" y="667"/>
         </scene>
     </scenes>
     <resources>

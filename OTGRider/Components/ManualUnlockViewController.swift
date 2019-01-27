@@ -18,12 +18,17 @@ class ManualUnlockViewController: UnlockViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     enterCodeLabel.textColor = UIColor.primaryGreyColor
-    showQRCodeButton.titleLabel?.textColor = UIColor.primaryRedColor
+    showQRCodeButton.setTitleColor(UIColor.primaryRedColor, for: .normal)
     closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+    showQRCodeButton.addTarget(self, action: #selector(showQRCode), for: .touchUpInside)
   }
   
   @objc private func close() {
     self.dismiss(animated: true, completion: nil)
+  }
+  
+  @objc private func showQRCode() {
+    self.performSegue(withIdentifier: "unwindToScanUnlock", sender: self)
   }
   
   @objc private func codeChanged(_ sender: Any) {
