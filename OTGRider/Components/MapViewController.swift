@@ -65,7 +65,7 @@ class MapViewController: UIViewController {
     
   @IBOutlet weak var unlockView: UIView!
   @IBOutlet weak var vehicleInfoView: VehicleInfoView!
-  
+  @IBOutlet weak var vehicleReservedInfoView: VehicleReservedInfoView!
   // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -368,35 +368,42 @@ extension MapViewController {
             }
         }
     }
+  
+    private func cancelVehicleReservation(_ vehicle: Vehicle) {
+      self.toggleVehicleReservation(id: vehicle._id, state: false)
+    }
     
     private func reserveVehicle(_ vehicle: Vehicle) {
-        // user can't reserve a vehicle during a ride
-        guard ongoingRide == nil else { return }
+      self.toggleVehicleReservation(id: vehicle._id, state: true)
+    }
+  
+    private func toggleVehicleReservation(id: String, state: Bool) {
+      // user can't reserve a vehicle during a ride
+      guard ongoingRide == nil else { return }
+      
+      vehicleAPITask?.cancel()
+      
+      vehicleAPITask = VehicleService.reserve(_id: id, reserve: state, completion: { [weak self] (vehicle, error) in
+        guard error == nil else {
+          DispatchQueue.main.async {
+            self?.flashErrorMessage(error?.localizedDescription)
+          }
+          
+          return
+        }
         
-        vehicleAPITask?.cancel()
-        
-        vehicleAPITask = VehicleService.reserve(_id: vehicle._id, reserve: !vehicle.reserved, completion: { [weak self] (vehicle, error) in
-            guard error == nil else {
-                DispatchQueue.main.async {
-                    self?.flashErrorMessage(error?.localizedDescription)
-                }
-                
-                return
-            }
+        if let vehicle = vehicle {
+          DispatchQueue.main.async {
+            // refresh vehicle info banner
+            self?.updateVehicleInfo(vehicle)
             
-            if let vehicle = vehicle {
-                DispatchQueue.main.async {
-                    // refresh vehicle info banner
-                    self?.vehicleInfoView.updateContentWith(vehicle)
-                  
-                    // refresh map search
-                    self?.searchVehicles()
-                }
-            }
-            
-            self?.getCurrentUser()
-        })
+            // refresh map search
+            self?.searchVehicles()
+          }
+        }
         
+        self?.getCurrentUser()
+      })
     }
     
     private func getCurrentUser() {
@@ -436,7 +443,13 @@ extension MapViewController {
       
         vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
         vehicleInfoView.onReserve = { [weak self] (vehicle) in
-          self?.reserveVehicle(vehicle)
+          self?.alertMessage("Reserve Scooter",
+                            "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
+                            positiveActionButtonTitle: "OK",
+                            positiveActionButtonTapped: {
+                              self?.reserveVehicle(vehicle)
+                            },
+                            negativeActionButtonTitle: "Cancel")
         }
       
         vehicleInfoView.onClose = { [weak self] in
@@ -447,7 +460,23 @@ extension MapViewController {
           self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
         }
       
-        vehicleInfoView.onReserveTimeUp = { [weak self] in
+        vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
+        vehicleReservedInfoView.onScan = { [weak self] in
+          self?.perform(segue: StoryboardSegue.Main.fromMapToScan)
+        }
+      
+        vehicleReservedInfoView.onCancel = { [weak self] (vehicle) in
+          self?.alertMessage("Are you sure you want to cancel the reservation?",
+                             "You won't be able to reserve again for 15 minutes.",
+                             positiveActionButtonTitle: "Keep reservation",
+                             positiveActionButtonTapped: {},
+                             negativeActionButtonTitle: "Cancel reservation",
+                             negativeActionButtonTapped: {
+                                self?.cancelVehicleReservation(vehicle)
+                             })
+        }
+      
+        vehicleReservedInfoView.onReserveTimeUp = { [weak self] in
            DispatchQueue.main.async {
               self?.searchVehicles()
            }
@@ -467,6 +496,7 @@ extension MapViewController {
         }
         rideInfoView.onEndRide = {
             self.alertMessage("Are you sure you want to end the ride?",
+                              "",
                               positiveActionButtonTitle: "Yes, end ride",
                               positiveActionButtonTapped: {
                                 self.endRide()
@@ -492,15 +522,25 @@ extension MapViewController {
     }
     
     private func showVehicleInfo(_ vehicle: Vehicle) {
-        self.vehicleInfoView.updateContentWith(vehicle)
-        self.vehicleInfoView.isHidden = false
-        self.unlockView.isHidden = true
+      self.updateVehicleInfo(vehicle)
+      self.unlockView.isHidden = true
     }
     
     private func hideVehicleInfo() {
-      DispatchQueue.main.async {
+      self.vehicleInfoView.isHidden = true
+      self.vehicleReservedInfoView.isHidden = true
+      self.unlockView.isHidden = false
+    }
+  
+    private func updateVehicleInfo(_ vehicle: Vehicle) {
+      if vehicle.reserved {
+        self.vehicleReservedInfoView.updateContentWith(vehicle)
+        self.vehicleReservedInfoView.isHidden = false
         self.vehicleInfoView.isHidden = true
-        self.unlockView.isHidden = false
+      } else {
+        self.vehicleInfoView.updateContentWith(vehicle)
+        self.vehicleInfoView.isHidden = false
+        self.vehicleReservedInfoView.isHidden = true
       }
     }
     

@@ -39,7 +39,6 @@ class VehicleInfoView: DesignableView {
   var onReserve: ((Vehicle)-> Void)?
   var onClose: (() -> Void)?
   var onScan: (() -> Void)?
-  var onReserveTimeUp: (()->Void)?
   
   func setupUI() {
     scanButton.primaryRed()
@@ -63,26 +62,22 @@ class VehicleInfoView: DesignableView {
     priceLabel.attributedText = generatePriceText(for: vehicle)
     batteryImageView.image = generateBatteryImage(for: vehicle)
     
-    if vehicle.reserved {
-      guard let reservedUntil = vehicle.reservedUntil else { return }
+    if !canReserveVehicle() {
+      guard let canReserveAfter = vehicle.canReserveAfter else { return }
       
-      reserveButton.setTitle(calculateTimeString(reservedUntil: reservedUntil), for: .normal)
+      reserveButton.setTitle(calculateTimeString(canReserveAfter: canReserveAfter), for: .normal)
       
       waitToReserveAgainLabel.isHidden = false
       // create timer to count down
       reserveTimer?.invalidate()
       
       reserveTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
-        self?.reserveButton.setTitle(self?.calculateTimeString(reservedUntil: reservedUntil), for: .normal)
+        self?.reserveButton.setTitle(self?.calculateTimeString(canReserveAfter: canReserveAfter), for: .normal)
         
-        let remainingReservedTime = Int(reservedUntil.timeIntervalSinceNow)
-        if remainingReservedTime > 0 {
-          logger.debug("reserving vehicle for \(remainingReservedTime) seconds")
-        }
-        else {
+        let remainingReservedTime = Int(canReserveAfter.timeIntervalSinceNow)
+        if remainingReservedTime <= 0 {
           self?.reserveTimer?.invalidate()
           self?.waitToReserveAgainLabel.isHidden = true
-          self?.onReserveTimeUp?()
         }
       })
     } else {
@@ -100,13 +95,13 @@ class VehicleInfoView: DesignableView {
     }
   }
   
-  private func calculateTimeString(reservedUntil: Date) -> String {
-    let remainingReservedTime = Int(reservedUntil.timeIntervalSinceNow)
+  private func calculateTimeString(canReserveAfter: Date) -> String {
+    let remainingWaitTime = Int(canReserveAfter.timeIntervalSinceNow)
     
-    if remainingReservedTime > 0 {
-      return reservedUntil.timeIntervalSinceNow.hhmmssString
+    if remainingWaitTime > 0 {
+      return canReserveAfter.timeIntervalSinceNow.hhmmssString
     } else {
-      return "Reserved"
+      return "Reserve"
     }
   }
   
@@ -120,6 +115,15 @@ class VehicleInfoView: DesignableView {
       return
     }
     onReserve?(vehicle)
+  }
+  
+  private func canReserveVehicle() -> Bool {
+    guard let vehicle = vehicle else { return false }
+    if vehicle.reserved {
+      return false
+    }
+    guard let canReserveAfter = vehicle.canReserveAfter else { return true }
+    return Int(canReserveAfter.timeIntervalSinceNow) <= 0
   }
   
   @objc private func scanButtonTapped() {

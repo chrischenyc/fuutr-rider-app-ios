@@ -24,4 +24,10 @@ extension UIButton {
         layer.cornerRadius = .defaultCornerRadius
         setTitleColor(UIColor.primaryRedColor, for: .normal)
     }
+    
+    // TODO: font style
+    func primaryDarkBasic() {
+        backgroundColor = UIColor.clear
+        setTitleColor(UIColor.primaryDarkColor, for: .normal)
+    }
 }

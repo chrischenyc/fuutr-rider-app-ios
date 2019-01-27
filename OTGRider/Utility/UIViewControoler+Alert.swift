@@ -42,35 +42,31 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func alertMessage(_ message: String,
-                      positiveActionButtonTitle: String,
-                      positiveActionButtonTapped: @escaping (()->Void),
+    func alertMessage(_ title: String,
+                      _ message: String,
+                      positiveActionButtonTitle: String?,
+                      positiveActionButtonTapped: (()->Void)?,
                       negativeActionButtonTitle: String? = nil,
                       negativeActionButtonTapped: (()->Void)? = nil) {
+        var formSheetController: MZFormSheetPresentationViewController!
         
-        // valina iOS alert
-        /*
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertController.Style.alert)
-        
-        let action = UIAlertAction(title: positiveActionButtonTitle, style: .default) { (alertAction) in
-            positiveActionButtonTapped()
-        }
-        alert.addAction(action)
-        
-        if let negativeActionButtonTitle = negativeActionButtonTitle {
-            let action = UIAlertAction(title: negativeActionButtonTitle, style: .cancel) { (alertAction) in
-                negativeActionButtonTapped?()
-            }
-            alert.addAction(action)
-        }
-        
-        present(alert, animated: true, completion: nil)
-         */
-        
-        let viewController = DialogViewController()
+        let viewController = DialogViewController(title: title,
+                                                  message: message,
+                                                  positiveActionButtonTitle: positiveActionButtonTitle,
+                                                  positiveActionButtonTapped: {
+                                                    formSheetController.dismiss(animated: true, completion: {
+                                                        positiveActionButtonTapped?()
+                                                    })
+        },
+                                                  negativeActionButtonTitle: negativeActionButtonTitle,
+                                                  negativeActionButtonTapped: {
+                                                    formSheetController.dismiss(animated: true, completion: {
+                                                        negativeActionButtonTapped?()
+                                                    })
+        })
         viewController.message = message
         
-        let formSheetController = MZFormSheetPresentationViewController(contentViewController: viewController)
+        formSheetController = MZFormSheetPresentationViewController(contentViewController: viewController)
         formSheetController.contentViewControllerTransitionStyle = .bounce
         formSheetController.presentationController?.shouldCenterVertically = true
         formSheetController.presentationController?.contentViewSize = UIView.layoutFittingCompressedSize

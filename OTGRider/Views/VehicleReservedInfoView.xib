@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehicleReservedInfoView" customModule="OTGRider" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="IKB-eH-GGP" id="krX-Jh-mD9"/>
+                <outlet property="parkLabel" destination="Eeq-0W-dpg" id="O9u-7M-27b"/>
+                <outlet property="scanButton" destination="W16-Gm-Exg" id="t19-jq-OEg"/>
+                <outlet property="scooterReserved" destination="rR9-M5-K4p" id="Qrq-mh-lxR"/>
+                <outlet property="timerLabel" destination="c7d-wV-K2n" id="fRl-MC-Eei"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="263"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scooter reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rR9-M5-K4p">
+                    <rect key="frame" x="20" y="20" width="104" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7d-wV-K2n">
+                    <rect key="frame" x="359" y="20" width="40" height="16"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walk to scooter reservation" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4m-Mj-K5i">
+                    <rect key="frame" x="20" y="72" width="143" height="45.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="143" id="Owj-kh-05H"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="339 La Trobe St" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eeq-0W-dpg">
+                    <rect key="frame" x="20" y="117.5" width="97.5" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKB-eH-GGP" userLabel="Cancel">
+                    <rect key="frame" x="20" y="165" width="160" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="hqa-Ql-i7C"/>
+                        <constraint firstAttribute="height" constant="44" id="lHW-Dy-8JU"/>
+                    </constraints>
+                    <state key="normal" title="Cancel"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W16-Gm-Exg">
+                    <rect key="frame" x="239" y="165" width="160" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="FDd-GL-mf8"/>
+                        <constraint firstAttribute="height" constant="44" id="Loi-oy-dTr"/>
+                    </constraints>
+                    <state key="normal" title="Scan"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-model" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-u5-Oiq">
+                    <rect key="frame" x="293" y="56" width="96" height="96"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="96" id="OBM-Dk-pVK"/>
+                        <constraint firstAttribute="height" constant="96" id="qnY-lY-xo3"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="W16-Gm-Exg" secondAttribute="bottom" constant="54" id="3Lk-x7-yuq"/>
+                <constraint firstItem="J4m-Mj-K5i" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="72" id="AYO-HS-oOl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NDi-u5-Oiq" secondAttribute="trailing" constant="30" id="Knj-sl-0Ji"/>
+                <constraint firstItem="Eeq-0W-dpg" firstAttribute="top" secondItem="J4m-Mj-K5i" secondAttribute="bottom" id="Upo-VH-b3x"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="W16-Gm-Exg" secondAttribute="trailing" constant="20" id="UwB-oC-rbn"/>
+                <constraint firstItem="c7d-wV-K2n" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="WrG-aJ-dB8"/>
+                <constraint firstItem="IKB-eH-GGP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Z4e-wf-UGP"/>
+                <constraint firstItem="NDi-u5-Oiq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="56" id="aPT-sP-fY1"/>
+                <constraint firstItem="J4m-Mj-K5i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="cRe-wh-zOW"/>
+                <constraint firstAttribute="bottom" secondItem="IKB-eH-GGP" secondAttribute="bottom" constant="54" id="eYw-uw-ZMI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="c7d-wV-K2n" secondAttribute="trailing" constant="20" id="h4Y-Ao-XcL"/>
+                <constraint firstItem="rR9-M5-K4p" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="oYy-d4-xJr"/>
+                <constraint firstItem="rR9-M5-K4p" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="tS8-NZ-hxi"/>
+                <constraint firstItem="Eeq-0W-dpg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zQF-H4-TNu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-50.399999999999999" y="228.03598200899552"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="scooter-model" width="96" height="96"/>
+    </resources>
+</document>
