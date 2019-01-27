@@ -71,7 +71,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "../OTGRider/unlock.gpx"
+         identifier = "../OTGRider/ride.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
