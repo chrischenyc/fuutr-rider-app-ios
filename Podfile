@@ -35,7 +35,6 @@ abstract_target 'Project' do
   pod 'BartyCrouch'
   pod 'PhoneNumberKit'
   pod 'ObjectMapper'
-  pod 'PinCodeView'
 
   target 'OTGRider' do
 
