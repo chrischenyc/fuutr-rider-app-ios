@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     
     private let locationManager = CLLocationManager()
     private var clusterManager: GMUClusterManager!
-    private let streetZoomLevel: Float = 16.0
+    private let streetZoomLevel: Float = 14.0
     private let minDistanceFilter: CLLocationDistance = 3
     private var zonePolygons: [(Zone, GMSPolygon)] = []
     
