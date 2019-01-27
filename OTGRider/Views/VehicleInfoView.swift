@@ -82,7 +82,6 @@ class VehicleInfoView: DesignableView {
         else {
           self?.reserveTimer?.invalidate()
           self?.waitToReserveAgainLabel.isHidden = true
-          self?.onReserveTimeUp?()
         }
       })
     } else {
