@@ -38,15 +38,15 @@ class MapViewController: UIViewController {
     private var currentUser: User?
     
     var ongoingRide: Ride? {
-        didSet {
-            if let ongoingRide = ongoingRide {
-                rideInfoView.updateContent(withRide: ongoingRide)
-            }
-            
-            if ongoingRide != oldValue {
-                updateUnlockView()
-            }
+      didSet {
+        if let ongoingRide = ongoingRide {
+           ridingView.updateContent(withRide: ongoingRide)
         }
+        
+        if ongoingRide != oldValue {
+           updateUnlockView()
+        }
+      }
     }
     
     private var ongoingRidePath: GMSMutablePath?    // to track travelled distance and to draw route
@@ -56,11 +56,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuButton: UIButton!
     @IBOutlet weak var unlockButton: UIButton!
-    @IBOutlet weak var rideInfoView: RideInfoView!
-    @IBOutlet weak var rideInfoViewBottomConstraint: NSLayoutConstraint!
-    private let rideInfoViewBottomToSuperView: CGFloat = 206
-    @IBOutlet weak var pinImageView: UIImageView!
     
+  @IBOutlet weak var ridingView: RidingView!
   @IBOutlet weak var unlockView: UIView!
   @IBOutlet weak var vehicleInfoView: VehicleInfoView!
   @IBOutlet weak var vehicleReservedInfoView: VehicleReservedInfoView!
@@ -147,8 +144,6 @@ extension MapViewController {
     private func startTrackingRide(_ ride: Ride) {
         ongoingRide = ride
         
-        showRideInfo()
-        
         rideLocalUpdateTimer?.invalidate()
         rideLocalUpdateTimer = Timer.scheduledTimer(timeInterval: localUpdateFrequency,
                                                     target: self,
@@ -162,8 +157,6 @@ extension MapViewController {
                                                      selector: #selector(self.updateRideToServer),
                                                      userInfo: nil,
                                                      repeats: true)
-        
-        pinImageView.image = nil
         
         // try to resume previously saved route
         if let encodedPath = ride.encodedPath, let decodedPath = GMSMutablePath(fromEncodedPath: encodedPath){
@@ -191,12 +184,8 @@ extension MapViewController {
     private func stopTrackingRide() {
         ongoingRide = nil
         
-        hideRideInfo()
-        
         rideLocalUpdateTimer?.invalidate()
         rideServerUpdateTimer?.invalidate()
-        
-        pinImageView.image = Asset.pin.image
         
         ongoingRidePath = nil
         ongoingRidePolyline?.map = nil
@@ -508,32 +497,30 @@ extension MapViewController {
            }
         }
       
-        rideInfoView.backgroundColor = UIColor.primaryWhiteColor
-        rideInfoView.layoutCornerRadiusAndShadow()
-        rideInfoViewBottomConstraint.constant = 0
-        rideInfoView.onPauseRide = {
-            guard let paused = self.ongoingRide?.paused else { return }
-            
-            if paused {
-                self.resumeRide()
-            } else {
-                self.pauseRide()
-            }
+        ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
+        ridingView.onPauseRide = {
+          guard let paused = self.ongoingRide?.paused else { return }
+
+          if paused {
+              self.resumeRide()
+          } else {
+              self.pauseRide()
+          }
         }
-        rideInfoView.onEndRide = {
-            self.alertMessage(title: "Are you sure you want to end the ride?",
-                              message: "",
-                              positiveActionButtonTitle: "Yes, end ride",
-                              positiveActionButtonTapped: {
-                                self.endRide()
-                              },
-                              negativeActionButtonTitle: "No, keep riding")
-            
+      
+        ridingView.onEndRide = {
+          self.alertMessage(title: "Are you sure you want to end the ride?",
+                            message: "",
+                            positiveActionButtonTitle: "Yes, end ride",
+                            positiveActionButtonTapped: {
+                              self.endRide()
+                            },
+                            negativeActionButtonTitle: "No, keep riding")
         }
-        rideInfoView.onPauseTimeUp = {
-            self.refreshOngoingRide()
+        ridingView.onPauseTimeUp = {
+          self.refreshOngoingRide()
         }
-        
+      
         updateUnlockView()
     }
   
@@ -565,28 +552,14 @@ extension MapViewController {
       }
     }
     
-    private func showRideInfo() {
-        self.rideInfoViewBottomConstraint.constant = self.rideInfoViewBottomToSuperView
-        
-        UIView.animate(withDuration: 0.25) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    private func hideRideInfo() {
-        self.rideInfoViewBottomConstraint.constant = 0
-        
-        UIView.animate(withDuration: 0.25) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
     private func updateUnlockView() {
       if ongoingRide != nil {
+        ridingView.isHidden = false
         unlockView.isHidden = true
         vehicleInfoView.isHidden = true
         vehicleReservedInfoView.isHidden = true
       } else {
+        ridingView.isHidden = true
         unlockView.isHidden = false
       }
     }
