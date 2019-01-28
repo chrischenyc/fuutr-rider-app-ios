@@ -56,6 +56,8 @@ class MapViewController: UIViewController {
     private var ongoingRidePolyline: GMSPolyline?
     private var incrementalPath: GMSMutablePath?    // to report to server for the new segment
   
+  private var routePolylines: [GMSPolyline] = []
+  
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuButton: UIButton!
     @IBOutlet weak var unlockButton: UIButton!
@@ -589,6 +591,7 @@ extension MapViewController {
       let steps = route.first?.legs.first?.steps {
       
       DispatchQueue.main.async {
+        self.routePolylines = []
         steps.forEach { step in
           guard let points = step.polyline?.points else { return }
           let path = GMSPath.init(fromEncodedPath: points)
@@ -596,12 +599,17 @@ extension MapViewController {
           polyline.strokeWidth = 4
           polyline.strokeColor = UIColor.primaryRedColor
           polyline.map = self.mapView
+          self.routePolylines.append(polyline)
         }
       }
     }
   }
     
     private func hideVehicleInfo() {
+      self.routePolylines.forEach {
+        $0.map = nil
+      }
+      self.routePolylines = []
       self.vehicleInfoView.isHidden = true
       self.vehicleReservedInfoView.isHidden = true
       self.unlockView.isHidden = false
