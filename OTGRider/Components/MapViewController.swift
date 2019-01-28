@@ -581,7 +581,7 @@ extension MapViewController {
   private func showRideSummary(_ ride: Ride) {
     if let viewController = UIStoryboard(name: "RideFinished", bundle: nil).instantiateInitialViewController() as? RideFinishedViewController {
       self.presentFullScreen(viewController, completion: {
-        viewController.updateContent(with: ride)
+        viewController.updateContent(with: ride, and: currentLocation)
       })
     }
   }
