@@ -81,6 +81,11 @@ class MapViewController: UIViewController {
         let ride = sender as? Ride {
         endRidePhotoViewController.ride = ride
       }
+      
+      if let rideLockedViewController = segue.destination as? RideLockedViewController,
+        let ride = sender as? Ride {
+        rideLockedViewController.ride = ride
+      }
     }
     
     // MARK: - user actions
@@ -361,10 +366,11 @@ extension MapViewController {
             }
             
             DispatchQueue.main.async {
-                self?.ongoingRide = ride
-                self?.updateRideLocally()
-              
-              // during pause, user needs to see the parked vehicle on map
+              self?.ongoingRide = ride
+              self?.updateRideLocally()
+              if let ride = ride {
+                self?.showRideLockedFullScreenView(ride)
+              }
               self?.searchVehicles()
             }
         }
@@ -579,6 +585,10 @@ extension MapViewController {
   
   private func takePhotoForCompletedRide(_ ride: Ride) {
     perform(segue: StoryboardSegue.Main.showEndRidePhoto, sender: ride)
+  }
+  
+  private func showRideLockedFullScreenView(_ ride: Ride) {
+    perform(segue: StoryboardSegue.Main.showRideLocked, sender: ride)
   }
     
     private func toggleZoneInfo(_ coordinate: CLLocationCoordinate2D) {
