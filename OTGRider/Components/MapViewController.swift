@@ -21,6 +21,7 @@ class MapViewController: UIViewController {
     
     private var searchAPITask: URLSessionTask?
     private var rideAPITask: URLSessionTask?
+  private var rideUpdateAPITask: URLSessionTask?
     private var vehicleAPITask: URLSessionTask?
     private var userAPITask: URLSessionTask?
     private var zoneAPITask: URLSessionTask?
@@ -329,9 +330,9 @@ extension MapViewController {
         guard let rideId = ongoingRide?.id else { return }
         guard let path = incrementalPath, path.length(of: GMSLengthKind.geodesic) > serverUpdateThreshhold else { return }
         
-        rideAPITask?.cancel()
+        rideUpdateAPITask?.cancel()
         
-        rideAPITask = RideService.update(rideId: rideId,
+        rideUpdateAPITask = RideService.update(rideId: rideId,
                                          incrementalEncodedPath: path.encodedPath(),
                                          incrementalDistance: path.length(of: GMSLengthKind.geodesic)) { (error) in
                                             logger.error(error)
