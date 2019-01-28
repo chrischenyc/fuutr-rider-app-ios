@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9B9-fy-gSE">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,14 +41,14 @@
                                 <rect key="frame" x="20" y="397" width="100" height="24"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-dollar-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="AEc-pa-5qU" userLabel="dollarImage">
-                                        <rect key="frame" x="16.333333333333336" y="0.0" width="24" height="24"/>
+                                        <rect key="frame" x="38.333333333333336" y="0.0" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="4h0-Dd-MYy"/>
                                             <constraint firstAttribute="height" constant="24" id="el9-1Q-z4r"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpi-j4-CaF" userLabel="ridingCostLabel">
-                                        <rect key="frame" x="40.333333333333343" y="0.66666666666668561" width="39.666666666666657" height="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpi-j4-CaF" userLabel="ridingCostLabel">
+                                        <rect key="frame" x="62.333333333333321" y="0.66666666666668561" width="17.666666666666664" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -74,8 +74,8 @@
                                             <constraint firstAttribute="width" constant="24" id="p7V-IY-QWv"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:01 m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Kg-d4-yo8" userLabel="ridingTimeLabel">
-                                        <rect key="frame" x="34" y="0.66666666666668561" width="61.666666666666657" height="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Kg-d4-yo8" userLabel="ridingTimeLabel">
+                                        <rect key="frame" x="34" y="0.66666666666668561" width="17.666666666666671" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -101,8 +101,8 @@
                                             <constraint firstAttribute="height" constant="24" id="su6-DB-9ZH"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkU-2V-MmU" userLabel="rideDistance">
-                                        <rect key="frame" x="34" y="0.0" width="56" height="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkU-2V-MmU" userLabel="rideDistance">
+                                        <rect key="frame" x="34" y="0.0" width="17.666666666666671" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -229,6 +229,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e7E-tG-Q9M"/>
                     </view>
+                    <connections>
+                        <outlet property="continueButton" destination="QnX-PS-CjK" id="R64-Ha-GYL"/>
+                        <outlet property="costLabel" destination="mpi-j4-CaF" id="NhT-Cl-zwt"/>
+                        <outlet property="mapView" destination="4ic-9X-7wD" id="sfb-VE-BSF"/>
+                        <outlet property="reportButton" destination="967-EN-qsj" id="yL9-RX-I0e"/>
+                        <outlet property="rideDistanceLabel" destination="rkU-2V-MmU" id="rl2-7W-a2d"/>
+                        <outlet property="rideEndedLabel" destination="pQ5-3C-XrP" id="hCI-rR-ne0"/>
+                        <outlet property="rideFinishedTimeLabel" destination="oQ2-rP-ux6" id="vqs-aI-krw"/>
+                        <outlet property="rideUsedTimeLabel" destination="7Kg-d4-yo8" id="PFm-RJ-wJu"/>
+                        <outlet property="shareLabel" destination="rnx-Nf-c5f" id="2Me-Pu-CGU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAV-hT-6of" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
