@@ -40,7 +40,8 @@ class MapViewController: UIViewController {
     var ongoingRide: Ride? {
       didSet {
         if let ongoingRide = ongoingRide {
-           ridingView.updateContent(withRide: ongoingRide)
+          ridingView.updateContent(withRide: ongoingRide)
+          ridePausedViewController?.updateContent(with: ongoingRide)
         }
         
         if ongoingRide != oldValue {
@@ -61,6 +62,9 @@ class MapViewController: UIViewController {
   @IBOutlet weak var unlockView: UIView!
   @IBOutlet weak var vehicleInfoView: VehicleInfoView!
   @IBOutlet weak var vehicleReservedInfoView: VehicleReservedInfoView!
+  
+  var ridePausedViewController: RidePausedViewController?
+  
   // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,11 +84,6 @@ class MapViewController: UIViewController {
       if let endRidePhotoViewController = segue.destination as? EndRidePhotoViewController,
         let ride = sender as? Ride {
         endRidePhotoViewController.ride = ride
-      }
-      
-      if let rideLockedViewController = segue.destination as? RidePausedViewController,
-        let ride = sender as? Ride {
-        rideLockedViewController.ride = ride
       }
     }
     
@@ -588,7 +587,12 @@ extension MapViewController {
   }
   
   private func showRideLockedFullScreenView(_ ride: Ride) {
-    perform(segue: StoryboardSegue.Main.showRidePaused, sender: ride)
+    if let viewController = UIStoryboard(name: "RidePaused", bundle: nil).instantiateInitialViewController() as? RidePausedViewController {
+      ridePausedViewController = viewController
+      self.presentFullScreen(viewController)
+      viewController.delegate = self
+      viewController.updateContent(with: ride)
+    }
   }
     
     private func toggleZoneInfo(_ coordinate: CLLocationCoordinate2D) {
@@ -918,5 +922,17 @@ extension MapViewController: GMUClusterRendererDelegate {
         marker.icon = Asset.scooterPinRed.image
       }
     }
+  }
+}
+
+extension MapViewController: RidePausedDelegate {
+  func rideShouldResume() {
+    self.ridePausedViewController = nil
+    self.resumeRide()
+  }
+  
+  func rideShouldEnd() {
+    self.ridePausedViewController = nil
+    self.endRide()
   }
 }

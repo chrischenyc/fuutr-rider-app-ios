@@ -1,3 +1,8 @@
+protocol RidePausedDelegate: AnyObject {
+  func rideShouldResume()
+  func rideShouldEnd()
+}
+
 class RidePausedViewController: UIViewController {
   
   @IBOutlet weak var closeButton: UIButton!
@@ -11,12 +16,18 @@ class RidePausedViewController: UIViewController {
   @IBOutlet weak var unlockButton: UIButton!
   @IBOutlet weak var endRideButton: UIButton!
   
-  var ride: Ride!
+  weak var delegate: RidePausedDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setupUI()
+  }
+  
+  func updateContent(with ride: Ride) {
+    ridingTimeLabel.text = ride.duration.hhmmssString
+    ridingDistanceLabel.text = ride.distance.distanceString
+    costLabel.text = ride.totalCost.currencyString
   }
   
   private func setupUI() {
@@ -29,23 +40,29 @@ class RidePausedViewController: UIViewController {
     endRideButton.primaryRedBasic()
     
     closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
-    unlockButton.addTarget(self, action: #selector(unlock), for: .touchUpInside)
+    unlockButton.addTarget(self, action: #selector(resume), for: .touchUpInside)
     endRideButton.addTarget(self, action: #selector(endRide), for: .touchUpInside)
-    
-    ridingTimeLabel.text = ride.duration.hhmmssString
-    ridingDistanceLabel.text = ride.distance.distanceString
-    costLabel.text = ride.totalCost.currencyString
   }
   
   @objc private func close() {
     self.dismiss(animated: true, completion: nil)
   }
   
-  @objc private func unlock() {
-    
+  @objc private func resume() {
+    self.dismiss(animated: true, completion: { [weak self] in
+      self?.delegate?.rideShouldResume()
+    })
   }
   
   @objc private func endRide() {
-    
+    self.alertMessage(title: "Are you sure you want to end the ride?",
+                       message: "",
+                       positiveActionButtonTitle: "Yes, end ride",
+                       positiveActionButtonTapped: {
+                        self.dismiss(animated: true, completion: { [weak self] in
+                          self?.delegate?.rideShouldEnd()
+                        })
+                       },
+                       negativeActionButtonTitle: "No, keep riding")
   }
 }

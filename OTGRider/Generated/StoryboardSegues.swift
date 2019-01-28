@@ -24,7 +24,6 @@ internal enum StoryboardSegue {
     case showEndRidePhoto
     case showHelp
     case showHistory
-    case showRidePaused
     case showSettings
   }
   internal enum Onboard: String, SegueType {
