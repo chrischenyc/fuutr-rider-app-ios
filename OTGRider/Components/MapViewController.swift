@@ -212,7 +212,7 @@ extension MapViewController {
 extension MapViewController {
     @objc private func searchVehicles() {
         // pause new vehicles search while user is during a ride
-        guard ongoingRide == nil else { return }
+        guard ongoingRide == nil || ongoingRide!.paused else { return }
         
         searchAPITask?.cancel()
         
@@ -363,6 +363,9 @@ extension MapViewController {
             DispatchQueue.main.async {
                 self?.ongoingRide = ride
                 self?.updateRideLocally()
+              
+              // during pause, user needs to see the parked vehicle on map
+              self?.searchVehicles()
             }
         }
     }
@@ -382,6 +385,7 @@ extension MapViewController {
             DispatchQueue.main.async {
                 self?.ongoingRide = ride
                 self?.updateRideLocally()
+              self?.clearMapMakers()
             }
         }
     }
