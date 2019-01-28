@@ -62,6 +62,13 @@ class VehicleInfoView: DesignableView {
     priceLabel.attributedText = generatePriceText(for: vehicle)
     batteryImageView.image = generateBatteryImage(for: vehicle)
     
+    if let address = vehicle.address {
+      parkedLabel.text = address
+    }
+    else {
+      parkedLabel.text = "--"
+    }
+    
     if !canReserveVehicle() {
       guard let canReserveAfter = vehicle.canReserveAfter else { return }
       
