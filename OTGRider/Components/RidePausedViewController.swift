@@ -1,4 +1,4 @@
-class RideLockedViewController: UIViewController {
+class RidePausedViewController: UIViewController {
   
   @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var rideInProgressLabel: UILabel!

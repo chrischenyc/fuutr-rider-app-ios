@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="-2058" y="1859"/>
         </scene>
-        <!--RideLocked-->
+        <!--RidePaused-->
         <scene sceneID="oZO-Ns-Hqy">
             <objects>
-                <viewControllerPlaceholder storyboardName="RideLocked" id="Qui-Dm-LN6" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="RidePaused" id="Qui-Dm-LN6" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbp-uJ-lc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2213" y="1896"/>
@@ -169,7 +169,7 @@
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>
                         <segue destination="46k-mg-UHB" kind="presentation" identifier="showHelp" id="GwS-O7-LdY"/>
                         <segue destination="8Ti-sb-yF0" kind="presentation" identifier="showEndRidePhoto" id="Tlg-cq-aPh"/>
-                        <segue destination="Qui-Dm-LN6" kind="presentation" identifier="showRideLocked" id="BaK-WE-Prq"/>
+                        <segue destination="Qui-Dm-LN6" kind="presentation" identifier="showRidePaused" id="BaK-WE-Prq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

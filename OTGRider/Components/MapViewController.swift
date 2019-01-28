@@ -82,7 +82,7 @@ class MapViewController: UIViewController {
         endRidePhotoViewController.ride = ride
       }
       
-      if let rideLockedViewController = segue.destination as? RideLockedViewController,
+      if let rideLockedViewController = segue.destination as? RidePausedViewController,
         let ride = sender as? Ride {
         rideLockedViewController.ride = ride
       }
@@ -368,7 +368,7 @@ extension MapViewController {
             DispatchQueue.main.async {
               self?.ongoingRide = ride
               self?.updateRideLocally()
-              if let ride = ride {
+              if let ride = self?.ongoingRide {
                 self?.showRideLockedFullScreenView(ride)
               }
               self?.searchVehicles()
@@ -588,7 +588,7 @@ extension MapViewController {
   }
   
   private func showRideLockedFullScreenView(_ ride: Ride) {
-    perform(segue: StoryboardSegue.Main.showRideLocked, sender: ride)
+    perform(segue: StoryboardSegue.Main.showRidePaused, sender: ride)
   }
     
     private func toggleZoneInfo(_ coordinate: CLLocationCoordinate2D) {

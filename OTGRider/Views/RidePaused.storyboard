@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Ride Locked View Controller-->
+        <!--Ride Paused View Controller-->
         <scene sceneID="DCp-y8-IHn">
             <objects>
-                <viewController storyboardIdentifier="RideLocked" id="6DZ-mU-U9d" customClass="RideLockedViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RideLocked" id="6DZ-mU-U9d" customClass="RidePausedViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P2N-Bs-eQk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,7 +45,7 @@
                                 <rect key="frame" x="130" y="310" width="115" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:01 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze8-ZB-Ppo" userLabel="ridingTimeLabel">
-                                        <rect key="frame" x="37" y="0.5" width="78" height="23"/>
+                                        <rect key="frame" x="39" y="0.5" width="78" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -64,7 +64,6 @@
                                     <constraint firstItem="phB-cg-OwP" firstAttribute="leading" secondItem="nlc-Xe-brk" secondAttribute="leading" id="7IE-46-mih"/>
                                     <constraint firstAttribute="width" constant="115" id="KK0-kE-5Rc"/>
                                     <constraint firstItem="phB-cg-OwP" firstAttribute="centerY" secondItem="nlc-Xe-brk" secondAttribute="centerY" id="Mxo-Yv-TA3"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ze8-ZB-Ppo" secondAttribute="trailing" id="dLi-Ua-MXf"/>
                                     <constraint firstItem="Ze8-ZB-Ppo" firstAttribute="centerY" secondItem="nlc-Xe-brk" secondAttribute="centerY" id="s3l-c2-7FU"/>
                                 </constraints>
                             </view>
@@ -147,6 +146,7 @@
                             <constraint firstItem="vEg-3K-cqi" firstAttribute="top" secondItem="bv3-mp-AwY" secondAttribute="top" constant="5" id="RXd-cV-YbW"/>
                             <constraint firstItem="yeA-D1-RTh" firstAttribute="top" secondItem="nlc-Xe-brk" secondAttribute="bottom" constant="20" id="T0Y-NT-ECi"/>
                             <constraint firstItem="NRn-5f-WIT" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="VJt-6q-S1z"/>
+                            <constraint firstItem="Ze8-ZB-Ppo" firstAttribute="leading" secondItem="ySS-bg-3Rk" secondAttribute="leading" id="Y7k-ti-Nc4"/>
                             <constraint firstItem="nlc-Xe-brk" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="YYy-Ns-Ph4"/>
                             <constraint firstItem="NRn-5f-WIT" firstAttribute="top" secondItem="Ly2-Gf-fFM" secondAttribute="bottom" constant="50" id="cUB-KD-AVv"/>
                             <constraint firstItem="Ly2-Gf-fFM" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="m9k-k1-Eju"/>
