@@ -51,7 +51,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 Lonsdale St" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuN-U2-YHX">
-                    <rect key="frame" x="54" y="65" width="144" height="23"/>
+                    <rect key="frame" x="54" y="65" width="187" height="23"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -121,6 +121,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="iZZ-9q-z2J" secondAttribute="bottom" constant="54" id="0G1-f8-GDb"/>
+                <constraint firstItem="agB-l3-5Xr" firstAttribute="leading" secondItem="RuN-U2-YHX" secondAttribute="trailing" constant="8" id="0OH-9X-LFQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="agB-l3-5Xr" secondAttribute="trailing" constant="30" id="2b7-rh-OvG"/>
                 <constraint firstItem="0F4-xC-bLI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="36a-Dh-Tcb"/>
                 <constraint firstItem="BYz-By-Mps" firstAttribute="centerX" secondItem="2Rr-wp-oxp" secondAttribute="centerX" id="3HE-LU-jON"/>
