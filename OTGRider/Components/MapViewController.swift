@@ -557,10 +557,49 @@ extension MapViewController {
       self.presentFullScreen(viewController)
     }
     
-    private func showVehicleInfo(_ vehicle: Vehicle) {
-      self.updateVehicleInfo(vehicle)
-      self.unlockView.isHidden = true
+  private func showVehicleInfo(_ vehicle: Vehicle, position: CLLocationCoordinate2D) {
+    self.updateVehicleInfo(vehicle)
+    self.drawPath(to: position)
+    self.unlockView.isHidden = true
+  }
+  
+  private func drawPath(to destination: CLLocationCoordinate2D) {
+    guard let currentLocation = currentLocation else {
+      return
     }
+    let origin = "\(currentLocation.coordinate.latitude),\(currentLocation.coordinate.longitude)"
+    let destination = "\(destination.latitude),\(destination.longitude)"
+    var config = Configuration()
+    let googleAPIKey = config.env.googleMapKey
+    let params: JSON = ["origin": origin, "destination": destination, "mode": "walking", "key": googleAPIKey]
+    
+    let apiClient = APIClient(baseURL: "https://maps.googleapis.com")
+    let _ = apiClient.load(path: "/maps/api/directions/json",
+                          method: .get,
+                          params: params,
+                          completion: { [weak self] (result, error) in
+                            self?.drawPointWithGoogleAPIResult(result)
+                          })
+  }
+  
+  private func drawPointWithGoogleAPIResult(_ result: Any?) {
+    if let json = result as? JSON,
+      let jsonArray = json["routes"] as? [JSON],
+      let route = Route.fromJSONArray(jsonArray),
+      let steps = route.first?.legs.first?.steps {
+      
+      DispatchQueue.main.async {
+        steps.forEach { step in
+          guard let points = step.polyline?.points else { return }
+          let path = GMSPath.init(fromEncodedPath: points)
+          let polyline = GMSPolyline.init(path: path)
+          polyline.strokeWidth = 4
+          polyline.strokeColor = UIColor.primaryRedColor
+          polyline.map = self.mapView
+        }
+      }
+    }
+  }
     
     private func hideVehicleInfo() {
       self.vehicleInfoView.isHidden = true
@@ -899,11 +938,11 @@ extension MapViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        if let vehiclePOI = marker.userData as? VehiclePOI {
-            showVehicleInfo(vehiclePOI.vehicle)
-        }
-        
-        return false
+      if let vehiclePOI = marker.userData as? VehiclePOI {
+        showVehicleInfo(vehiclePOI.vehicle, position: vehiclePOI.position)
+      }
+      
+      return false
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {

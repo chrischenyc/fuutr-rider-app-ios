@@ -35,7 +35,7 @@ enum Environment: String {
     var googleMapKey: String {
         switch self {
         case .Development: fallthrough
-        case .Staging: return "AIzaSyA2kZ3cVDtKRB9U3WkThBh1fBn0IBGa-VE"
+        case .Staging: return "AIzaSyCj1ZxYDey7sjtQjpJGTy2sNfQkSoZakBQ"
         case .Production: return ""
         }
     }
