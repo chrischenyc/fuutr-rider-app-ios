@@ -578,9 +578,13 @@ extension MapViewController {
       }
     }
     
-    private func showRideSummary(_ ride: Ride) {
-        alertMessage(message: "Thanks! Ride summary:\(ride.summary())")
+  private func showRideSummary(_ ride: Ride) {
+    if let viewController = UIStoryboard(name: "RideFinished", bundle: nil).instantiateInitialViewController() as? RideFinishedViewController {
+      self.presentFullScreen(viewController, completion: {
+        viewController.updateContent(with: ride)
+      })
     }
+  }
   
   private func takePhotoForCompletedRide(_ ride: Ride) {
     perform(segue: StoryboardSegue.Main.showEndRidePhoto, sender: ride)
