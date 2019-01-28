@@ -15,7 +15,8 @@ class MapViewController: UIViewController {
     
     private let locationManager = CLLocationManager()
     private var clusterManager: GMUClusterManager!
-    private let streetZoomLevel: Float = 14.0
+    private let searchingZoomLevel: Float = 15.0
+  private let ridingZoomLevel: Float = 18.0
     private let minDistanceFilter: CLLocationDistance = 3
     private var zonePolygons: [(Zone, GMSPolygon)] = []
     
@@ -184,6 +185,12 @@ extension MapViewController {
         
         // do not show vehicles during riding
         clearMapMakers()
+      
+      // zoom in map during ride
+      if let currentLocation = currentLocation {
+        let camera = GMSCameraPosition.camera(withTarget: currentLocation.coordinate, zoom: ridingZoomLevel)
+        mapView.animate(to: camera)
+      }
     }
     
     private func stopTrackingRide() {
@@ -199,6 +206,12 @@ extension MapViewController {
         
         locationManager.allowsBackgroundLocationUpdates = false
         locationManager.pausesLocationUpdatesAutomatically = true
+      
+      // zoom out map after ride
+      if let currentLocation = currentLocation {
+        let camera = GMSCameraPosition.camera(withTarget: currentLocation.coordinate, zoom: searchingZoomLevel)
+        mapView.animate(to: camera)
+      }
         
         searchVehicles()
     }
@@ -831,7 +844,7 @@ extension MapViewController: CLLocationManagerDelegate {
         
         // center user once the location is captured for the first time
         if currentLocation == nil {
-            let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
+            let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
             mapView.animate(to: camera)
         }
         currentLocation = location
@@ -845,7 +858,7 @@ extension MapViewController: CLLocationManagerDelegate {
         // update map view and ride path
         if let ongoingRide = ongoingRide, !ongoingRide.paused {
             // keep centring user during an active ride
-            let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
+            let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: ridingZoomLevel)
             mapView.animate(to: camera)
             
             if let currentPath = ongoingRidePath {
