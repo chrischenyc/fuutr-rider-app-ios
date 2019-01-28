@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>OTG Ride</string>
+	<string>FUUTR</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -32,7 +32,7 @@
 	<key>FacebookAppID</key>
 	<string></string>
 	<key>FacebookDisplayName</key>
-	<string>OTG Rider</string>
+	<string>FUUTR</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
@@ -47,11 +47,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>OTG Ride will use your camera to scan QRCode on our scooters</string>
+	<string>FUUTR app will use your camera to scan QRCode on our scooters</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>OTG Ride will use your location to look for scooters near you and track your ride</string>
+	<string>FUUTR app will use your location to look for scooters near you and track your ride</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>OTG Ride will use your location to look for scooters near you and track your ride</string>
+	<string>FUUTR app will use your location to look for scooters near you and track your ride</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

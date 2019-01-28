@@ -27,10 +27,10 @@ class HowToRideViewController: UIPageViewController {
     let page4 = getViewController(withDescription: "Always use shared paths or bike lanes and always ride to the left.",
                                   image: Asset.howToRide4.image)
     
-    let page5 = getViewController(withDescription: "DO NOT ride OTG Ride vehicles on the sidewalk. Follow all road rules.",
+    let page5 = getViewController(withDescription: "DO NOT ride FUUTR vehicles on the sidewalk. Follow all road rules.",
                                   image: Asset.howToRide5.image)
     
-    let page6 = getViewController(withDescription: "Park your vehicle in a dedicated OTG Ride Parking Hub or close to the curb, out of the way of pedestrians. Your parking compliance is strictly monitored via a photo at the end of ride.",
+    let page6 = getViewController(withDescription: "Park your vehicle in a dedicated FUUTR Parking Hub or close to the curb, out of the way of pedestrians. Your parking compliance is strictly monitored via a photo at the end of ride.",
                                   image: Asset.howToRide6.image)
     
     let page7 = getViewController(withDescription: "At all times please wear either a provided FUUTR helmet or your own personal helmet.",
