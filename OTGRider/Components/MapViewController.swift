@@ -592,13 +592,22 @@ extension MapViewController {
       
       DispatchQueue.main.async {
         self.routePolylines = []
+        
         steps.forEach { step in
           guard let points = step.polyline?.points else { return }
           let path = GMSPath.init(fromEncodedPath: points)
           let polyline = GMSPolyline.init(path: path)
           polyline.strokeWidth = 4
-          polyline.strokeColor = UIColor.primaryRedColor
           polyline.map = self.mapView
+          
+          // dotted
+          // https://stackoverflow.com/questions/24384209/ios-google-sdk-map-cannot-create-dotted-polylines
+          let styles: [GMSStrokeStyle] = [.solidColor(.primaryRedColor), .solidColor(.clear)]
+          let scale = 1.0 / self.mapView.projection.points(forMeters: 1, at: self.mapView.camera.target)
+          let solidLine = NSNumber(value: 4.0 * Float(scale))
+          let gap = NSNumber(value: 4.0 * Float(scale))
+          polyline.spans = GMSStyleSpans(polyline.path!, styles, [solidLine, gap], GMSLengthKind.rhumb)
+          
           self.routePolylines.append(polyline)
         }
       }
