@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6DZ-mU-U9d">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ride Paused View Controller-->
+        <scene sceneID="DCp-y8-IHn">
+            <objects>
+                <viewController storyboardIdentifier="RideLocked" id="6DZ-mU-U9d" customClass="RidePausedViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P2N-Bs-eQk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEg-3K-cqi">
+                                <rect key="frame" x="20" y="25" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="I8D-Cc-ul7"/>
+                                    <constraint firstAttribute="height" constant="44" id="ceE-Sz-TKe"/>
+                                </constraints>
+                                <state key="normal" image="ic-close-dark-gray-16"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride in progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQV-Po-Aba" userLabel="rideInProgress">
+                                <rect key="frame" x="128.5" y="34" width="118.5" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-Gf-fFM" userLabel="costLabel">
+                                <rect key="frame" x="170.5" y="56" width="34" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-pin-locked-green" translatesAutoresizingMaskIntoConstraints="NO" id="NRn-5f-WIT">
+                                <rect key="frame" x="143.5" y="122" width="88" height="88"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlc-Xe-brk">
+                                <rect key="frame" x="130" y="310" width="115" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:01 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze8-ZB-Ppo" userLabel="ridingTimeLabel">
+                                        <rect key="frame" x="39" y="0.5" width="78" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-clock-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="phB-cg-OwP" userLabel="clockImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="NGs-Nn-qaS"/>
+                                            <constraint firstAttribute="width" constant="24" id="Sfb-ZU-P77"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="2tZ-hY-LcQ"/>
+                                    <constraint firstItem="phB-cg-OwP" firstAttribute="leading" secondItem="nlc-Xe-brk" secondAttribute="leading" id="7IE-46-mih"/>
+                                    <constraint firstAttribute="width" constant="115" id="KK0-kE-5Rc"/>
+                                    <constraint firstItem="phB-cg-OwP" firstAttribute="centerY" secondItem="nlc-Xe-brk" secondAttribute="centerY" id="Mxo-Yv-TA3"/>
+                                    <constraint firstItem="Ze8-ZB-Ppo" firstAttribute="centerY" secondItem="nlc-Xe-brk" secondAttribute="centerY" id="s3l-c2-7FU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeA-D1-RTh">
+                                <rect key="frame" x="130" y="354" width="115" height="39"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-location-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="ujF-WW-Geg">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="9hJ-Pd-thT"/>
+                                            <constraint firstAttribute="width" constant="24" id="Khq-OP-WHg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-bg-3Rk" userLabel="rideDistance">
+                                        <rect key="frame" x="39" y="0.0" width="56" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16km range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vq-Vv-j7d" userLabel="remainingRange">
+                                        <rect key="frame" x="39" y="23" width="71" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ujF-WW-Geg" firstAttribute="leading" secondItem="yeA-D1-RTh" secondAttribute="leading" id="J27-28-4re"/>
+                                    <constraint firstItem="ujF-WW-Geg" firstAttribute="top" secondItem="yeA-D1-RTh" secondAttribute="top" id="Tip-bA-37W"/>
+                                    <constraint firstAttribute="height" constant="39" id="cbN-JM-CB6"/>
+                                    <constraint firstItem="3vq-Vv-j7d" firstAttribute="leading" secondItem="ySS-bg-3Rk" secondAttribute="leading" id="fkP-Ji-VNu"/>
+                                    <constraint firstAttribute="width" constant="115" id="jmo-pA-zVy"/>
+                                    <constraint firstAttribute="bottom" secondItem="3vq-Vv-j7d" secondAttribute="bottom" id="lOP-Fg-tqT"/>
+                                    <constraint firstItem="ySS-bg-3Rk" firstAttribute="top" secondItem="yeA-D1-RTh" secondAttribute="top" id="tnQ-JV-v6Z"/>
+                                    <constraint firstItem="ySS-bg-3Rk" firstAttribute="leading" secondItem="ujF-WW-Geg" secondAttribute="trailing" constant="15" id="wXd-8k-yEr"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scooter is locked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsy-uI-Koi">
+                                <rect key="frame" x="135" y="407" width="105" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.15c per minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyS-6O-b1H">
+                                <rect key="frame" x="133" y="433" width="109" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3M-bJ-Bvo">
+                                <rect key="frame" x="50" y="469" width="275" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="olQ-WD-P13"/>
+                                    <constraint firstAttribute="height" constant="44" id="wmB-x5-qzn"/>
+                                </constraints>
+                                <state key="normal" title="Unlock"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="law-FY-Wdf">
+                                <rect key="frame" x="50" y="523" width="275" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="Rf3-4k-42Y"/>
+                                    <constraint firstAttribute="height" constant="44" id="WrM-1u-QW2"/>
+                                </constraints>
+                                <state key="normal" title="End Ride"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="V3M-bJ-Bvo" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="0b6-hK-zoD"/>
+                            <constraint firstItem="vEg-3K-cqi" firstAttribute="leading" secondItem="bv3-mp-AwY" secondAttribute="leading" constant="20" id="4GU-xL-FYw"/>
+                            <constraint firstItem="V3M-bJ-Bvo" firstAttribute="top" secondItem="pyS-6O-b1H" secondAttribute="bottom" constant="20" id="B8s-cq-77z"/>
+                            <constraint firstItem="law-FY-Wdf" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="Eff-Mz-BWE"/>
+                            <constraint firstItem="nlc-Xe-brk" firstAttribute="top" secondItem="NRn-5f-WIT" secondAttribute="bottom" constant="100" id="HJR-2E-nac"/>
+                            <constraint firstItem="pyS-6O-b1H" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="Hb1-Pd-kn4"/>
+                            <constraint firstItem="V3M-bJ-Bvo" firstAttribute="bottom" secondItem="law-FY-Wdf" secondAttribute="top" constant="-10" id="L7f-Dv-EZ7"/>
+                            <constraint firstItem="gsy-uI-Koi" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="M8d-g3-JDj"/>
+                            <constraint firstItem="pyS-6O-b1H" firstAttribute="top" secondItem="gsy-uI-Koi" secondAttribute="bottom" constant="10" id="Ofa-zl-pT1"/>
+                            <constraint firstItem="Ly2-Gf-fFM" firstAttribute="top" secondItem="mQV-Po-Aba" secondAttribute="bottom" constant="4" id="QGz-Dg-Zv7"/>
+                            <constraint firstItem="vEg-3K-cqi" firstAttribute="top" secondItem="bv3-mp-AwY" secondAttribute="top" constant="5" id="RXd-cV-YbW"/>
+                            <constraint firstItem="yeA-D1-RTh" firstAttribute="top" secondItem="nlc-Xe-brk" secondAttribute="bottom" constant="20" id="T0Y-NT-ECi"/>
+                            <constraint firstItem="NRn-5f-WIT" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="VJt-6q-S1z"/>
+                            <constraint firstItem="Ze8-ZB-Ppo" firstAttribute="leading" secondItem="ySS-bg-3Rk" secondAttribute="leading" id="Y7k-ti-Nc4"/>
+                            <constraint firstItem="nlc-Xe-brk" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="YYy-Ns-Ph4"/>
+                            <constraint firstItem="NRn-5f-WIT" firstAttribute="top" secondItem="Ly2-Gf-fFM" secondAttribute="bottom" constant="50" id="cUB-KD-AVv"/>
+                            <constraint firstItem="Ly2-Gf-fFM" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="m9k-k1-Eju"/>
+                            <constraint firstItem="mQV-Po-Aba" firstAttribute="top" secondItem="bv3-mp-AwY" secondAttribute="top" constant="14" id="nVm-8W-LHU"/>
+                            <constraint firstItem="mQV-Po-Aba" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="nwu-W2-3DF"/>
+                            <constraint firstItem="yeA-D1-RTh" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="rl3-QG-22o"/>
+                            <constraint firstItem="bv3-mp-AwY" firstAttribute="bottom" secondItem="law-FY-Wdf" secondAttribute="bottom" constant="100" id="vAj-yr-uxH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bv3-mp-AwY"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="vEg-3K-cqi" id="HZi-CI-Qae"/>
+                        <outlet property="costLabel" destination="Ly2-Gf-fFM" id="V35-Vp-uA5"/>
+                        <outlet property="endRideButton" destination="law-FY-Wdf" id="Sf2-ed-qIe"/>
+                        <outlet property="priceLabel" destination="pyS-6O-b1H" id="tHN-fC-Znn"/>
+                        <outlet property="remainingRangeLabel" destination="3vq-Vv-j7d" id="Fsg-ON-7KF"/>
+                        <outlet property="rideInProgressLabel" destination="mQV-Po-Aba" id="sa1-SS-Qs9"/>
+                        <outlet property="ridingDistanceLabel" destination="ySS-bg-3Rk" id="uzJ-uQ-eAB"/>
+                        <outlet property="ridingTimeLabel" destination="Ze8-ZB-Ppo" id="hDx-GV-NP7"/>
+                        <outlet property="scooterIsLockedLabel" destination="gsy-uI-Koi" id="SHN-Ae-nWt"/>
+                        <outlet property="unlockButton" destination="V3M-bJ-Bvo" id="Od8-kn-41F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jvd-9y-1fL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111" y="36"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic-clock-dark-gray-24" width="24" height="24"/>
+        <image name="ic-close-dark-gray-16" width="16" height="16"/>
+        <image name="ic-location-dark-gray-24" width="24" height="24"/>
+        <image name="scooter-pin-locked-green" width="88" height="88"/>
+    </resources>
+</document>

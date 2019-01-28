@@ -40,7 +40,8 @@ class MapViewController: UIViewController {
     var ongoingRide: Ride? {
       didSet {
         if let ongoingRide = ongoingRide {
-           ridingView.updateContent(withRide: ongoingRide)
+          ridingView.updateContent(withRide: ongoingRide)
+          ridePausedViewController?.updateContent(with: ongoingRide)
         }
         
         if ongoingRide != oldValue {
@@ -61,6 +62,9 @@ class MapViewController: UIViewController {
   @IBOutlet weak var unlockView: UIView!
   @IBOutlet weak var vehicleInfoView: VehicleInfoView!
   @IBOutlet weak var vehicleReservedInfoView: VehicleReservedInfoView!
+  
+  var ridePausedViewController: RidePausedViewController?
+  
   // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -361,10 +365,11 @@ extension MapViewController {
             }
             
             DispatchQueue.main.async {
-                self?.ongoingRide = ride
-                self?.updateRideLocally()
-              
-              // during pause, user needs to see the parked vehicle on map
+              self?.ongoingRide = ride
+              self?.updateRideLocally()
+              if let ride = self?.ongoingRide {
+                self?.showRideLockedFullScreenView(ride)
+              }
               self?.searchVehicles()
             }
         }
@@ -501,31 +506,36 @@ extension MapViewController {
            }
         }
       
-        ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
-        ridingView.onPauseRide = {
-          guard let paused = self.ongoingRide?.paused else { return }
-
-          if paused {
-              self.resumeRide()
-          } else {
-              self.pauseRide()
-          }
-        }
+      ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
       
-        ridingView.onEndRide = {
-          self.alertMessage(title: "Are you sure you want to end the ride?",
-                            message: "",
-                            positiveActionButtonTitle: "Yes, end ride",
-                            positiveActionButtonTapped: {
-                              self.endRide()
-                            },
-                            negativeActionButtonTitle: "No, keep riding")
-        }
-        ridingView.onPauseTimeUp = {
-          self.refreshOngoingRide()
-        }
+      ridingView.onPauseRide = { [weak self] in
+        self?.alertMessage(title: "Are you sure you want to lock the scooter?",
+                          message: "You'll be charged $0.15c per minute when scooter is locked.",
+                          positiveActionButtonTitle: "Yes, lock it",
+                          positiveActionButtonTapped: {
+                            self?.pauseRide()
+                          },
+                          negativeActionButtonTitle: "No, keep riding")
+      }
       
-        updateUnlockView()
+      ridingView.onResumeRide = { [weak self] in
+        self?.resumeRide()
+      }
+      
+      ridingView.onEndRide = { [weak self] in
+        self?.alertMessage(title: "Are you sure you want to end the ride?",
+                          message: "",
+                          positiveActionButtonTitle: "Yes, end ride",
+                          positiveActionButtonTapped: {
+                            self?.endRide()
+                          },
+                          negativeActionButtonTitle: "No, keep riding")
+      }
+      ridingView.onPauseTimeUp = { [weak self] in
+        self?.refreshOngoingRide()
+      }
+      
+      updateUnlockView()
     }
   
     private func showHowToRide() {
@@ -574,6 +584,15 @@ extension MapViewController {
   
   private func takePhotoForCompletedRide(_ ride: Ride) {
     perform(segue: StoryboardSegue.Main.showEndRidePhoto, sender: ride)
+  }
+  
+  private func showRideLockedFullScreenView(_ ride: Ride) {
+    if let viewController = UIStoryboard(name: "RidePaused", bundle: nil).instantiateInitialViewController() as? RidePausedViewController {
+      ridePausedViewController = viewController
+      self.presentFullScreen(viewController)
+      viewController.delegate = self
+      viewController.updateContent(with: ride)
+    }
   }
     
     private func toggleZoneInfo(_ coordinate: CLLocationCoordinate2D) {
@@ -887,18 +906,33 @@ extension MapViewController: GMUClusterManagerDelegate {
 
 // MARK: - GMUClusterRendererDelegate
 extension MapViewController: GMUClusterRendererDelegate {
-    func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
-        guard let vehiclePOI = marker.userData as? VehiclePOI else { return }
-        
-        let powerPercent = vehiclePOI.vehicle.powerPercent ?? 0
-        
-        if 80...100 ~= powerPercent {
-            marker.icon = Asset.scooterPinGreen.image
-        } else if 30..<80 ~= powerPercent {
-            marker.icon = Asset.scooterPinYellow.image
-        } else {
-            marker.icon = Asset.scooterPinRed.image
-        }
-        
+  func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
+    guard let vehiclePOI = marker.userData as? VehiclePOI else { return }
+    
+    let powerPercent = vehiclePOI.vehicle.powerPercent ?? 0
+    
+    if (ongoingRide?.paused ?? false) {
+      marker.icon = Asset.scooterPinLockedGreen.image
+    } else {
+      if 80...100 ~= powerPercent {
+        marker.icon = Asset.scooterPinGreen.image
+      } else if 30..<80 ~= powerPercent {
+        marker.icon = Asset.scooterPinYellow.image
+      } else {
+        marker.icon = Asset.scooterPinRed.image
+      }
     }
+  }
+}
+
+extension MapViewController: RidePausedDelegate {
+  func rideShouldResume() {
+    self.ridePausedViewController = nil
+    self.resumeRide()
+  }
+  
+  func rideShouldEnd() {
+    self.ridePausedViewController = nil
+    self.endRide()
+  }
 }

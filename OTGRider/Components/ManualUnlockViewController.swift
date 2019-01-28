@@ -54,12 +54,15 @@ extension ManualUnlockViewController: PinCodeViewDelegate {
   
   func pinCodeView(_ view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool) -> Void) {
 
+    pincodeView.resignFirstResponder()
+    
     unlockVehicle(unlockCode: code,
                   onBalanceInsufficientError: nil,
                   onGeneralError: { [weak self] error in
                     callback(false)
                     self?.alertError(error, actionButtonTitle: "OK", actionButtonTapped: {
                       view.resetDigits()
+                      self?.pincodeView.becomeFirstResponder()
                     })
                   })
   }

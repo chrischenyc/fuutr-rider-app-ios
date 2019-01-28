@@ -371,6 +371,12 @@
 		91FA7F8A21FDCF0A00581BB5 /* RidingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191983421FDC95600CF5F2D /* RidingView.swift */; };
 		91FA7F8B21FDCF1B00581BB5 /* RidingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9191983621FDC96200CF5F2D /* RidingView.xib */; };
 		91FA7F8C21FDCF1C00581BB5 /* RidingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9191983621FDC96200CF5F2D /* RidingView.xib */; };
+		91FA7F9621FE859B00581BB5 /* RidePaused.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA7F9521FE859B00581BB5 /* RidePaused.storyboard */; };
+		91FA7F9721FE859B00581BB5 /* RidePaused.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA7F9521FE859B00581BB5 /* RidePaused.storyboard */; };
+		91FA7F9821FE859B00581BB5 /* RidePaused.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FA7F9521FE859B00581BB5 /* RidePaused.storyboard */; };
+		91FA7F9E21FE981E00581BB5 /* RidePausedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA7F9D21FE981E00581BB5 /* RidePausedViewController.swift */; };
+		91FA7F9F21FE981E00581BB5 /* RidePausedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA7F9D21FE981E00581BB5 /* RidePausedViewController.swift */; };
+		91FA7FA021FE981E00581BB5 /* RidePausedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA7F9D21FE981E00581BB5 /* RidePausedViewController.swift */; };
 		A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
 		A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
 		A0CFE7A021747BF000BA3F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE79E21747BF000BA3F6D /* Main.storyboard */; };
@@ -560,6 +566,8 @@
 		9197553A21FC32E20069D25A /* VehicleInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleInfoView.xib; sourceTree = "<group>"; };
 		9197553E21FC3A230069D25A /* VehicleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfoView.swift; sourceTree = "<group>"; };
 		9197554221FC3A4D0069D25A /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		91FA7F9521FE859B00581BB5 /* RidePaused.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RidePaused.storyboard; sourceTree = "<group>"; };
+		91FA7F9D21FE981E00581BB5 /* RidePausedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidePausedViewController.swift; sourceTree = "<group>"; };
 		A0CFE79721747BF000BA3F6D /* OTGRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTGRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0CFE79C21747BF000BA3F6D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -667,6 +675,7 @@
 			isa = PBXGroup;
 			children = (
 				A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */,
+				6B0D921D21FDBD2000A9B38E /* EndRidePhoto.storyboard */,
 				6B8731BB2189C2B900CC2651 /* SignIn.storyboard */,
 				6B8731C82189D86600CC2651 /* Onboard.storyboard */,
 				A0CFE79E21747BF000BA3F6D /* Main.storyboard */,
@@ -685,9 +694,9 @@
 				9197553A21FC32E20069D25A /* VehicleInfoView.xib */,
 				914A6B7721FD24CC00715879 /* VehicleReservedInfoView.swift */,
 				914A6B7B21FD250000715879 /* VehicleReservedInfoView.xib */,
-				6B0D921D21FDBD2000A9B38E /* EndRidePhoto.storyboard */,
 				9191983421FDC95600CF5F2D /* RidingView.swift */,
 				9191983621FDC96200CF5F2D /* RidingView.xib */,
+				91FA7F9521FE859B00581BB5 /* RidePaused.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -796,6 +805,7 @@
 				6B0128B6219D9C4D00AC2439 /* ManualUnlockViewController.swift */,
 				9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */,
 				6B0D922121FDBE5800A9B38E /* EndRidePhotoViewController.swift */,
+				91FA7F9D21FE981E00581BB5 /* RidePausedViewController.swift */,
 			);
 			name = Ride;
 			sourceTree = "<group>";
@@ -1204,6 +1214,7 @@
 				6B0D921C21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BDE913B218C19DF003F976B /* Assets.xcassets in Resources */,
 				6BDE913C218C19DF003F976B /* Onboard.storyboard in Resources */,
+				91FA7F9821FE859B00581BB5 /* RidePaused.storyboard in Resources */,
 				914A6B8221FD543600715879 /* ManualUnlock.storyboard in Resources */,
 				6BDE913E218C19DF003F976B /* Main.storyboard in Resources */,
 				6BDE913F218C19DF003F976B /* SideMenu.storyboard in Resources */,
@@ -1220,6 +1231,7 @@
 				6B8731DE218A962D00CC2651 /* HowToRide.storyboard in Resources */,
 				6BBE6C7D219AE6CA002D639B /* GoogleMapStyle.json in Resources */,
 				6B8731E6218A986200CC2651 /* Account.storyboard in Resources */,
+				91FA7F9621FE859B00581BB5 /* RidePaused.storyboard in Resources */,
 				A0CFE7A521747BF500BA3F6D /* LaunchScreen.storyboard in Resources */,
 				914A6B8021FD543600715879 /* ManualUnlock.storyboard in Resources */,
 				6B8731EE218A98EF00CC2651 /* Settings.storyboard in Resources */,
@@ -1248,6 +1260,7 @@
 				6B8731DF218A962D00CC2651 /* HowToRide.storyboard in Resources */,
 				6BBE6C7E219AE6CA002D639B /* GoogleMapStyle.json in Resources */,
 				6B8731E7218A986200CC2651 /* Account.storyboard in Resources */,
+				91FA7F9721FE859B00581BB5 /* RidePaused.storyboard in Resources */,
 				A0CFE7B221747D2B00BA3F6D /* LaunchScreen.storyboard in Resources */,
 				914A6B8121FD543600715879 /* ManualUnlock.storyboard in Resources */,
 				6B8731EF218A98EF00CC2651 /* Settings.storyboard in Resources */,
@@ -1720,6 +1733,7 @@
 				6B0D921921FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47268219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF22195C77A00553C3D /* TopUpViewController.swift in Sources */,
+				91FA7FA021FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
 				6B1D1E89219A232300F72798 /* Vehicle.swift in Sources */,
 				6BB6CB742196591D00B597B3 /* UIColor+Hex.swift in Sources */,
 				6BDE9153218C3073003F976B /* APIClient.swift in Sources */,
@@ -1830,6 +1844,7 @@
 				6B0D921721FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47266219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF02195C77A00553C3D /* TopUpViewController.swift in Sources */,
+				91FA7F9E21FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
 				6B1D1E87219A232300F72798 /* Vehicle.swift in Sources */,
 				6BB6CB722196591D00B597B3 /* UIColor+Hex.swift in Sources */,
 				6BDE9151218C3073003F976B /* APIClient.swift in Sources */,
@@ -1940,6 +1955,7 @@
 				6B0D921821FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47267219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF12195C77A00553C3D /* TopUpViewController.swift in Sources */,
+				91FA7F9F21FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
 				6B1D1E88219A232300F72798 /* Vehicle.swift in Sources */,
 				6BB6CB732196591D00B597B3 /* UIColor+Hex.swift in Sources */,
 				6BDE9152218C3073003F976B /* APIClient.swift in Sources */,
