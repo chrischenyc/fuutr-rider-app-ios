@@ -350,6 +350,9 @@
 		9181CB9521FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */; };
 		9181CB9621FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */; };
 		9181CB9721FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */; };
+		9190374C21FEE6F900CDA415 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190374B21FEE6F900CDA415 /* Route.swift */; };
+		9190374D21FEE95F00CDA415 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190374B21FEE6F900CDA415 /* Route.swift */; };
+		9190374E21FEE96000CDA415 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190374B21FEE6F900CDA415 /* Route.swift */; };
 		9191983521FDC95600CF5F2D /* RidingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191983421FDC95600CF5F2D /* RidingView.swift */; };
 		9191983721FDC96200CF5F2D /* RidingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9191983621FDC96200CF5F2D /* RidingView.xib */; };
 		9197552F21FBE3460069D25A /* HowToRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197552E21FBE3460069D25A /* HowToRideViewController.swift */; };
@@ -565,6 +568,7 @@
 		914A6B8321FD545700715879 /* ScanUnlock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanUnlock.storyboard; sourceTree = "<group>"; };
 		914A6B8721FD571F00715879 /* UIViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Present.swift"; sourceTree = "<group>"; };
 		9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeDigitSquareView.swift; sourceTree = "<group>"; };
+		9190374B21FEE6F900CDA415 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		9191983421FDC95600CF5F2D /* RidingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidingView.swift; sourceTree = "<group>"; };
 		9191983621FDC96200CF5F2D /* RidingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RidingView.xib; sourceTree = "<group>"; };
 		9197552E21FBE3460069D25A /* HowToRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToRideViewController.swift; sourceTree = "<group>"; };
@@ -653,6 +657,7 @@
 				6B0128BA219DA0E100AC2439 /* Ride.swift */,
 				6B03DC1121F6FBF800A2765F /* RideSegment.swift */,
 				6B91D75921FB1D8400B84244 /* Zone.swift */,
+				9190374B21FEE6F900CDA415 /* Route.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1729,6 +1734,7 @@
 				6BD47280219A4CAA00D36C3E /* GMUFeature.m in Sources */,
 				6B1D1E8D219A243200F72798 /* VehicleService.swift in Sources */,
 				6B8E30CE219FDE7E00292B4E /* HistoryRidesTableViewController.swift in Sources */,
+				9190374E21FEE96000CDA415 /* Route.swift in Sources */,
 				6BDE916B218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
 				6B0128B5219D9C2C00AC2439 /* ScanUnlockViewController.swift in Sources */,
 				6BD47283219A4CAA00D36C3E /* GMUGroundOverlay.m in Sources */,
@@ -1841,6 +1847,7 @@
 				6BD4727E219A4CAA00D36C3E /* GMUFeature.m in Sources */,
 				6B1D1E8B219A243200F72798 /* VehicleService.swift in Sources */,
 				6B8E30CC219FDE7E00292B4E /* HistoryRidesTableViewController.swift in Sources */,
+				9190374C21FEE6F900CDA415 /* Route.swift in Sources */,
 				6BDE9169218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
 				6B0128B3219D9C2C00AC2439 /* ScanUnlockViewController.swift in Sources */,
 				6BD47281219A4CAA00D36C3E /* GMUGroundOverlay.m in Sources */,
@@ -1953,6 +1960,7 @@
 				6BD4727F219A4CAA00D36C3E /* GMUFeature.m in Sources */,
 				6B1D1E8C219A243200F72798 /* VehicleService.swift in Sources */,
 				6B8E30CD219FDE7E00292B4E /* HistoryRidesTableViewController.swift in Sources */,
+				9190374D21FEE95F00CDA415 /* Route.swift in Sources */,
 				6BDE916A218CFA4A003F976B /* VerifyCodeViewController.swift in Sources */,
 				6B0128B4219D9C2C00AC2439 /* ScanUnlockViewController.swift in Sources */,
 				6BD47282219A4CAA00D36C3E /* GMUGroundOverlay.m in Sources */,
