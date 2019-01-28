@@ -15,6 +15,7 @@ struct Vehicle: Mappable {
   var remainderRange: Double?
   var latitude: Double?
   var longitude: Double?
+  var address: String?
   var vehicleCode: String?
   var reserved: Bool = false
   var reservedUntil: Date?
@@ -35,6 +36,7 @@ struct Vehicle: Mappable {
     remainderRange  <- map["remainderRange"]
     latitude        <- map["latitude"]
     longitude       <- map["longitude"]
+    address         <- map["address"]
     vehicleCode     <- map["vehicleCode"]
     reserved        <- map["reserved"]
     reservedUntil   <- (map["reservedUntil"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
