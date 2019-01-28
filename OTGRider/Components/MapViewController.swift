@@ -565,6 +565,8 @@ extension MapViewController {
     self.unlockView.isHidden = true
   }
   
+  
+  // TODO: move to a GoogleMapService API module
   private func drawPath(to destination: CLLocationCoordinate2D) {
     guard let currentLocation = currentLocation else {
       return
