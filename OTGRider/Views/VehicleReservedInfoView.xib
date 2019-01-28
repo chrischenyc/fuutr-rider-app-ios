@@ -46,7 +46,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="339 La Trobe St" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eeq-0W-dpg">
-                    <rect key="frame" x="20" y="117.5" width="97.5" height="16"/>
+                    <rect key="frame" x="20" y="117.5" width="257" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -88,6 +88,7 @@
                 <constraint firstItem="J4m-Mj-K5i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="cRe-wh-zOW"/>
                 <constraint firstAttribute="bottom" secondItem="IKB-eH-GGP" secondAttribute="bottom" constant="54" id="eYw-uw-ZMI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="c7d-wV-K2n" secondAttribute="trailing" constant="20" id="h4Y-Ao-XcL"/>
+                <constraint firstItem="NDi-u5-Oiq" firstAttribute="leading" secondItem="Eeq-0W-dpg" secondAttribute="trailing" constant="16" id="nE1-7l-bTd"/>
                 <constraint firstItem="rR9-M5-K4p" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="oYy-d4-xJr"/>
                 <constraint firstItem="rR9-M5-K4p" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="tS8-NZ-hxi"/>
                 <constraint firstItem="Eeq-0W-dpg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zQF-H4-TNu"/>

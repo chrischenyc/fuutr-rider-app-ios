@@ -47,6 +47,13 @@ class VehicleReservedInfoView: DesignableView {
     self.vehicle = vehicle
     scanButton.titleLabel?.textColor = .white
     
+    if let address = vehicle.address {
+      parkLabel.text = address
+    }
+    else {
+      parkLabel.text = "--"
+    }
+    
     if vehicle.reserved {
       guard let reservedUntil = vehicle.reservedUntil else { return }
       
