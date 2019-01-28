@@ -1,0 +1,3 @@
+class RideFinishedViewController: UIViewController {
+  
+}
