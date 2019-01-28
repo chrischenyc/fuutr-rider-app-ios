@@ -18,7 +18,7 @@ class HowToRideViewController: UIPageViewController {
     let page1 = getViewController(withDescription: "Push the vehicle twice with your foot to get started.",
                                   image: Asset.howToRide1.image)
     
-    let page2 = getViewController(withDescription: "Push down the right hand throttle to use E-Motor.",
+    let page2 = getViewController(withDescription: "Push down the right hand throttle to use E-Motor.\nPush down left hand throttle to brake or use back wheel brake.",
                                   image: Asset.howToRide2.image)
     
     let page3 = getViewController(withDescription: "Always keep both feet on the deck of the vehicle while riding.",
