@@ -91,3 +91,9 @@ extension Ride {
     return "\nRide duration: \(duration.hhmmssString)\nTotal cost: \(totalCost.currencyString)"
   }
 }
+
+extension Ride {
+  func getRemainingRange() -> Double {
+    return (initialRemainderRange ?? 0 ) - distance
+  }
+}

@@ -22,6 +22,7 @@ class RidingView: DesignableView {
     self.ride = ride
     ridingTimeLabel.text = ride.duration.hhmmssString
     ridingDistanceLabel.text = ride.distance.distanceString
+    remainingRangeLabel.text = ride.getRemainingRange().distanceString
     costLabel.text = ride.totalCost.currencyString
     
     if ride.paused {

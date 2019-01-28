@@ -28,6 +28,7 @@ class RidePausedViewController: UIViewController {
     ridingTimeLabel.text = ride.duration.hhmmssString
     ridingDistanceLabel.text = ride.distance.distanceString
     costLabel.text = ride.totalCost.currencyString
+    remainingRangeLabel.text = ride.getRemainingRange().distanceString
   }
   
   private func setupUI() {
