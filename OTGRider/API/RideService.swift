@@ -9,15 +9,10 @@
 import Foundation
 
 final class RideService {
-  static func start(unlockCode: String, coordinate: CLLocationCoordinate2D?, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
-    var params: JSON = [
+  static func start(unlockCode: String, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
+    let params: JSON = [
       "unlockCode": unlockCode,
       ]
-    
-    if let coordinate = coordinate {
-      params["latitude"] = coordinate.latitude
-      params["longitude"] = coordinate.longitude
-    }
     
     return APIClient.shared.load(path: "/rides/start",
                                  method: .post,

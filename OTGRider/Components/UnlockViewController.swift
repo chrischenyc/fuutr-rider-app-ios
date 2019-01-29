@@ -30,7 +30,6 @@ class UnlockViewController: UIViewController {
     showLoading()
     
     apiTask = RideService.start(unlockCode: unlockCode,
-                                coordinate: currentLocation?.coordinate,
                                 completion: { [weak self] (ride, error) in
                                   DispatchQueue.main.async {
                                     self?.dismissLoading()
