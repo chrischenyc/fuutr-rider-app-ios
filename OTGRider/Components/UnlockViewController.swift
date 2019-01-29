@@ -3,7 +3,7 @@
 //  OTGRider
 //
 //  Created by Chris Chen on 1/11/18.
-//  Copyright © 2018 OTGRide. All rights reserved.
+//  Copyright © 2018 FUUTR. All rights reserved.
 //
 
 import UIKit

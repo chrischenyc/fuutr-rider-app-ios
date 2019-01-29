@@ -1134,7 +1134,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = OTGRide;
+				ORGANIZATIONNAME = FUUTR;
 				TargetAttributes = {
 					6BDE911B218C19DF003F976B = {
 						LastSwiftMigration = 1010;
