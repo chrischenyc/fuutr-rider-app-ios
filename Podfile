@@ -25,6 +25,7 @@ abstract_target 'Project' do
   pod 'SideMenu'
   pod 'PKHUD'
   pod 'MZFormSheetPresentationController'
+  pod 'PinCodeView'
   
   # Networking
   pod 'ReachabilitySwift'
@@ -36,7 +37,6 @@ abstract_target 'Project' do
   pod 'BartyCrouch'
   pod 'PhoneNumberKit'
   pod 'ObjectMapper'
-  pod 'PinCodeView'
   pod 'FastttCamera'
   pod 'Solar'
 
