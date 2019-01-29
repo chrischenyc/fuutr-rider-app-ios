@@ -30,7 +30,7 @@ class VerifyCodeViewController: UIViewController {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
-    infoLabel.text = L10n.kEnterVerificationCode
+    infoLabel.text = R.string.localizable.kEnterVerificationCode()
     codeTextField.becomeFirstResponder()
   }
   
@@ -45,7 +45,7 @@ class VerifyCodeViewController: UIViewController {
     guard let verificationCode = codeTextField.text, verificationCode.isFourDigits() else { return }
     
     // update UI before calling API
-    infoLabel.text = L10n.kVerifying
+    infoLabel.text = R.string.localizable.kVerifying()
     codeTextField.resignFirstResponder()
     codeTextField.isEnabled = false
     nextButton.isEnabled = false
@@ -76,7 +76,7 @@ class VerifyCodeViewController: UIViewController {
     guard let countryCode = countryCode else { return }
     
     // update UI before calling API
-    infoLabel.text = L10n.kSendingVerificationCode
+    infoLabel.text = R.string.localizable.kSendingVerificationCode()
     codeTextField.text = ""
     codeTextField.resignFirstResponder()
     codeTextField.isEnabled = false
@@ -95,7 +95,7 @@ class VerifyCodeViewController: UIViewController {
         }
         
         // reset UI
-        self?.infoLabel.text = L10n.kEnterVerificationCode
+        self?.infoLabel.text = R.string.localizable.kEnterVerificationCode()
         self?.codeTextField.isEnabled = true
         self?.codeTextField.becomeFirstResponder()
         self?.nextButton.isEnabled = true
@@ -112,18 +112,18 @@ class VerifyCodeViewController: UIViewController {
         switch self.nextStep {
         case .signUp:
           if Defaults[.userOnboarded] {
-            self.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToMain)
+            self.performSegue(withIdentifier: R.segue.verifyCodeViewController.fromVerifyCodeToMain.identifier, sender: nil)
           }
           else {
-            self.perform(segue: StoryboardSegue.SignIn.fromVerifyCodeToOnboard)
+            self.performSegue(withIdentifier: R.segue.verifyCodeViewController.fromVerifyCodeToOnboard.identifier, sender: nil)
           }
         case .updatePhone:
-          self.perform(segue: StoryboardSegue.Settings.fromVerifyCodeToSettings)
+          self.performSegue(withIdentifier: R.segue.verifyCodeViewController.fromVerifyCodeToSettings.identifier, sender: nil)
         }
       }
       
       // reset UI
-      self.infoLabel.text = L10n.kEnterVerificationCode
+      self.infoLabel.text = R.string.localizable.kEnterVerificationCode()
       self.codeTextField.isEnabled = true
       self.nextButton.isEnabled = true
       self.resendButton.isEnabled = true

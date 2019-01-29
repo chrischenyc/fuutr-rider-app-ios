@@ -38,7 +38,7 @@ class AccountViewController: UIViewController {
     // let sourceViewController = unwindSegue.source
     // Use data from the view controller which initiated the unwind segue
     
-    if unwindSegue.identifier == StoryboardSegue.Account.fromTopUpToAccount.rawValue {
+    if unwindSegue.identifier == R.segue.topUpViewController.fromTopUpToAccount.identifier {
       loadProfile()
     }
   }
@@ -61,7 +61,7 @@ class AccountViewController: UIViewController {
         }
         
         guard let user = user else {
-          self?.flashErrorMessage(L10n.kOtherError)
+          self?.flashErrorMessage(R.string.localizable.kOtherError())
           return
         }
         

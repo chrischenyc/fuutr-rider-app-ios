@@ -107,7 +107,7 @@ extension TopUpViewController: STPPaymentContextDelegate {
     switch status {
     case .success:
       flashSuccessMessage("payment has been received, thank you!") { [weak self] (success) in
-        self?.perform(segue: StoryboardSegue.Account.fromTopUpToAccount)
+        self?.performSegue(withIdentifier: R.segue.topUpViewController.fromTopUpToAccount, sender: nil)
       }
       
       break

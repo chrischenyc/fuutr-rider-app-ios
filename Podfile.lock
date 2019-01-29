@@ -130,10 +130,12 @@ PODS:
   - PinCodeView/Core (0.3.0)
   - PKHUD (5.2.1)
   - Protobuf (3.6.1)
+  - R.swift (5.0.2):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.0)
   - ReachabilitySwift (4.3.0)
   - SideMenu (5.0.3)
   - Stripe (14.0.0)
-  - SwiftGen (6.0.2)
   - SwiftyUserDefaults (4.0.0-alpha.1)
   - XCGLogger (6.1.0):
     - XCGLogger/Core (= 6.1.0)
@@ -155,10 +157,10 @@ DEPENDENCIES:
   - PhoneNumberKit
   - PinCodeView
   - PKHUD
+  - R.swift
   - ReachabilitySwift
   - SideMenu
   - Stripe
-  - SwiftGen
   - SwiftyUserDefaults (= 4.0.0-alpha.1)
   - XCGLogger
 
@@ -194,10 +196,11 @@ SPEC REPOS:
     - PinCodeView
     - PKHUD
     - Protobuf
+    - R.swift
+    - R.swift.Library
     - ReachabilitySwift
     - SideMenu
     - Stripe
-    - SwiftGen
     - SwiftyUserDefaults
     - XCGLogger
 
@@ -232,13 +235,14 @@ SPEC CHECKSUMS:
   PinCodeView: d95d927c930d4c200c9af84958948f3ab80c944a
   PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
+  R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   Stripe: db29ad197c74aca6fb981e4e8355cf7ebd0fca5a
-  SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 6746423d2058b5c2823d9fa07c62fa42f79f890c
+PODFILE CHECKSUM: d21d95b16a22460073362eb4199e58e286e7aa43
 
 COCOAPODS: 1.5.3

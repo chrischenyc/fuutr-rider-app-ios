@@ -52,7 +52,7 @@ class HistoryRidesTableViewController: UITableViewController {
         }
         
         guard let rides = rides else {
-          self?.flashErrorMessage(L10n.kOtherError)
+          self?.flashErrorMessage(R.string.localizable.kOtherError())
           return
         }
         

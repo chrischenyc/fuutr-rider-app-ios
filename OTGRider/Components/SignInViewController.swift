@@ -26,7 +26,7 @@ class SignInViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
+    phoneNumberVerifyInfoLabel.text = R.string.localizable.kPhoneNumberVerificationPrompt()
     phoneNumberVerifyButton.isEnabled = false
     phoneNumberVerifyButton.backgroundColor = UIColor.primaryWhiteColor
     phoneNumberVerifyButton.layoutCornerRadiusAndShadow()
@@ -55,7 +55,7 @@ class SignInViewController: UIViewController {
     guard let phoneNumber = phoneNumber, let countryCode = countryCode else { return }
     
     // update UI before calling API
-    phoneNumberVerifyInfoLabel.text = L10n.kSendingVerificationCode
+    phoneNumberVerifyInfoLabel.text = R.string.localizable.kSendingVerificationCode()
     phoneNumberTextField.resignFirstResponder()
     phoneNumberTextField.isEnabled = false
     phoneNumberVerifyButton.isEnabled = false
@@ -68,7 +68,7 @@ class SignInViewController: UIViewController {
     apiTask = PhoneService.startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
       DispatchQueue.main.async {
         // reset UI
-        self?.phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
+        self?.phoneNumberVerifyInfoLabel.text = R.string.localizable.kPhoneNumberVerificationPrompt()
         self?.phoneNumberVerifyButton.isEnabled = true
         self?.phoneNumberTextField.isEnabled = true
         self?.phoneNumberVerifyButton.isEnabled = true
@@ -78,7 +78,7 @@ class SignInViewController: UIViewController {
         if let error = error {
           self?.alertError(error)
         } else {
-          self?.perform(segue: StoryboardSegue.SignIn.showVerifyCode)
+          self?.performSegue(withIdentifier: R.segue.signInViewController.showVerifyCode, sender: nil)
           self?.phoneNumberTextField.text = ""
         }
       }
@@ -117,11 +117,11 @@ class SignInViewController: UIViewController {
         
         if Defaults[.userOnboarded] {
           self?.dismissLoading()
-          self?.perform(segue: StoryboardSegue.SignIn.fromSignInToMain, sender: self)
+          self?.performSegue(withIdentifier: R.segue.signInViewController.fromSignInToMain, sender: self)
         }
         else {
           self?.dismissLoading()
-          self?.perform(segue: StoryboardSegue.SignIn.fromSignInToOnboard, sender: self)
+          self?.performSegue(withIdentifier: R.segue.signInViewController.fromSignInToOnboard, sender: self)
         }
       }
     })

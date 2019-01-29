@@ -31,8 +31,8 @@ abstract_target 'Project' do
   
   # helpers
   pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
+  pod 'R.swift'
   pod 'XCGLogger'
-  pod 'SwiftGen'
   pod 'BartyCrouch'
   pod 'PhoneNumberKit'
   pod 'ObjectMapper'

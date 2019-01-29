@@ -86,7 +86,7 @@ class SettingsTableViewController: UITableViewController {
         }
         
         guard let user = user else {
-          self?.flashErrorMessage(L10n.kOtherError)
+          self?.flashErrorMessage(R.string.localizable.kOtherError())
           return
         }
         

@@ -16,25 +16,25 @@ class HowToRideViewController: UIPageViewController {
   
   private(set) lazy var pages: [UIViewController] = {
     let page1 = getViewController(withDescription: "Push the vehicle twice with your foot to get started.",
-                                  image: Asset.howToRide1.image)
+                                  image: R.image.howToRide1()!)
     
     let page2 = getViewController(withDescription: "Push down the right hand throttle to use E-Motor.\nPush down left hand throttle to brake or use back wheel brake.",
-                                  image: Asset.howToRide2.image)
+                                  image: R.image.howToRide2()!)
     
     let page3 = getViewController(withDescription: "Always keep both feet on the deck of the vehicle while riding.",
-                                  image: Asset.howToRide3.image)
+                                  image: R.image.howToRide3()!)
     
     let page4 = getViewController(withDescription: "Always use shared paths or bike lanes and always ride to the left.",
-                                  image: Asset.howToRide4.image)
+                                  image: R.image.howToRide4()!)
     
     let page5 = getViewController(withDescription: "DO NOT ride FUUTR vehicles on the sidewalk. Follow all road rules.",
-                                  image: Asset.howToRide5.image)
+                                  image: R.image.howToRide5()!)
     
     let page6 = getViewController(withDescription: "Park your vehicle in a dedicated FUUTR Parking Hub or close to the curb, out of the way of pedestrians. Your parking compliance is strictly monitored via a photo at the end of ride.",
-                                  image: Asset.howToRide6.image)
+                                  image: R.image.howToRide6()!)
     
     let page7 = getViewController(withDescription: "At all times please wear either a provided FUUTR helmet or your own personal helmet.",
-                                  image: Asset.howToRide7.image)
+                                  image: R.image.howToRide7()!)
     page7.isLastPage = true
     
     return [page1, page2, page3, page4, page5, page6, page7]

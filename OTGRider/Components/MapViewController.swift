@@ -103,11 +103,11 @@ class MapViewController: UIViewController {
         case .greeting:
           break
         case .accont:
-          self.perform(segue: StoryboardSegue.Main.showAccount)
+          self.performSegue(withIdentifier: R.segue.mapViewController.showAccount, sender: nil)
         case .history:
-          self.perform(segue: StoryboardSegue.Main.showHistory)
+          self.performSegue(withIdentifier: R.segue.mapViewController.showHistory.identifier, sender: nil)
         case .settings:
-          self.perform(segue: StoryboardSegue.Main.showSettings)
+          self.performSegue(withIdentifier: R.segue.mapViewController.showSettings.identifier, sender: nil)
         case .help:
           if let url = URL(string: config.env.helpURL), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -332,7 +332,7 @@ extension MapViewController {
                                         }
                                         
                                         guard let ride = ride else {
-                                          self?.alertMessage(message: L10n.kOtherError)
+                                          self?.alertMessage(message: R.string.localizable.kOtherError())
                                           return
                                         }
                                         
@@ -661,7 +661,7 @@ extension MapViewController {
   }
   
   private func takePhotoForCompletedRide(_ ride: Ride) {
-    perform(segue: StoryboardSegue.Main.showEndRidePhoto, sender: ride)
+    performSegue(withIdentifier: R.segue.mapViewController.showEndRidePhoto.identifier, sender: ride)
   }
   
   private func showRideLockedFullScreenView(_ ride: Ride) {
@@ -687,7 +687,7 @@ extension MapViewController {
       let locationMarker = GMSMarker(position: coordinate)
       locationMarker.map = mapView
       locationMarker.appearAnimation = .none
-      locationMarker.icon = UIImage(asset: Asset.transparent)
+      locationMarker.icon = R.image.transparent()
       locationMarker.opacity = 0
       locationMarker.isFlat = true
       locationMarker.title = title
@@ -699,7 +699,7 @@ extension MapViewController {
   private func showNoParkingZoneError() {
     self.alertMessage(title: "You are attempting to park the vehicle in an unsafe area",
                       message: "The ride cannot end until it is parked upright in an accepted, safe areea.",
-                      image: UIImage(asset: Asset.unsafeParkingPopup),
+                      image: R.image.unsafeParkingPopup(),
                       positiveActionButtonTitle: "I will re-park the vehicle")
   }
 }
@@ -723,11 +723,12 @@ extension MapViewController {
     // Set up the cluster manager with the supplied icon generator and renderer.
     // https://developers.google.com/maps/documentation/ios-sdk/utility/marker-clustering
     
+    // TODO: need to generate cluster images
     let iconGenerator = GMUDefaultClusterIconGenerator(buckets: [10, 20, 50, 100],
-                                                       backgroundImages: [Asset.sideMenuIcon.image,
-                                                                          Asset.sideMenuIcon.image,
-                                                                          Asset.sideMenuIcon.image,
-                                                                          Asset.sideMenuIcon.image])
+                                                       backgroundImages: [R.image.clusterPin()!,
+                                                                          R.image.clusterPin()!,
+                                                                          R.image.clusterPin()!,
+                                                                          R.image.clusterPin()!])
     let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
     let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
     renderer.delegate = self
@@ -990,14 +991,14 @@ extension MapViewController: GMUClusterRendererDelegate {
     let powerPercent = vehiclePOI.vehicle.powerPercent ?? 0
     
     if (ongoingRide?.paused ?? false) {
-      marker.icon = Asset.scooterPinLockedGreen.image
+      marker.icon = R.image.scooterPinLockedGreen()
     } else {
       if 80...100 ~= powerPercent {
-        marker.icon = Asset.scooterPinGreen.image
+        marker.icon = R.image.scooterPinGreen()
       } else if 30..<80 ~= powerPercent {
-        marker.icon = Asset.scooterPinYellow.image
+        marker.icon = R.image.scooterPinYellow()
       } else {
-        marker.icon = Asset.scooterPinRed.image
+        marker.icon = R.image.scooterPinRed()
       }
     }
   }

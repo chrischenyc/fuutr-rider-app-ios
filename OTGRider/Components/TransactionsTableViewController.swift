@@ -50,7 +50,7 @@ class TransactionsTableViewController: UITableViewController {
         }
         
         guard let transactions = transactions else {
-          self?.flashErrorMessage(L10n.kOtherError)
+          self?.flashErrorMessage(R.string.localizable.kOtherError())
           return
         }
         

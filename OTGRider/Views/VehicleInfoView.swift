@@ -96,9 +96,9 @@ class VehicleInfoView: DesignableView {
     let powerPercent = vehicle.powerPercent ?? 0
     
     if 30...100 ~= powerPercent {
-      return Asset.icBatteryHalfDarkGray24.image
+      return R.image.icBatteryHalfDarkGray24()!
     } else {
-      return Asset.icBatteryEmptyDarkGray24.image
+      return R.image.icBatteryEmptyDarkGray24()!
     }
   }
   

@@ -33,7 +33,7 @@ class EmailAuthViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == StoryboardSegue.SignIn.fromSignUpToLogIn.rawValue {
+    if segue.identifier == R.segue.emailAuthViewController.fromSignUpToLogIn.identifier {
       if let emailAuthViewController = segue.destination as? EmailAuthViewController {
         emailAuthViewController.authType = .logIn
       }
@@ -106,14 +106,14 @@ class EmailAuthViewController: UIViewController {
       
       self.dismissLoading()
       if Defaults[.userOnboarded] {
-        self.perform(segue: self.authType == .signUp ?
-          StoryboardSegue.SignIn.fromEmailSignUpToMain :
-          StoryboardSegue.SignIn.fromEmailLogInToMain)
+        self.performSegue(withIdentifier: self.authType == .signUp ?
+          R.segue.emailAuthViewController.fromEmailSignUpToMain.identifier :
+          R.segue.emailAuthViewController.fromEmailLogInToMain.identifier, sender: nil)
       }
       else {
-        self.perform(segue: self.authType == .signUp ?
-          StoryboardSegue.SignIn.fromEmailSignUpToOnboard :
-          StoryboardSegue.SignIn.fromEmailLogInToOnboard)
+        self.performSegue(withIdentifier: self.authType == .signUp ?
+          R.segue.emailAuthViewController.fromEmailSignUpToOnboard.identifier :
+          R.segue.emailAuthViewController.fromEmailLogInToOnboard.identifier, sender: nil)
       }
     }
   }

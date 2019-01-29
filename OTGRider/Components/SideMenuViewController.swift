@@ -45,7 +45,7 @@ class SideMenuViewController: UITableViewController {
          .settings,
          .accont,
          .help:
-      perform(segue: StoryboardSegue.SideMenu.showMain)
+      performSegue(withIdentifier: R.segue.sideMenuViewController.showMain, sender: nil)
     }
   }
   

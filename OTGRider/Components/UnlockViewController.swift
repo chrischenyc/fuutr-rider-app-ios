@@ -52,7 +52,7 @@ class UnlockViewController: UIViewController {
                                       return
                                     }
                                     guard let ride = ride else {
-                                      self?.flashErrorMessage(L10n.kOtherError)
+                                      self?.flashErrorMessage(R.string.localizable.kOtherError())
                                       return
                                     }
                                     self?.dismiss(animated: true, completion: {

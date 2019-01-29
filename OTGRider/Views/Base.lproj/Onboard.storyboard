@@ -46,6 +46,7 @@
                     </view>
                     <connections>
                         <segue destination="qzt-tc-SDj" kind="show" identifier="showEnableNotification" id="mgF-Gk-yaG"/>
+                        <segue destination="sTK-FS-clb" kind="show" identifier="showMap" id="hcB-IM-1Z1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCt-fc-crM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -99,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSI-ME-IES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="524" y="162"/>
+            <point key="canvasLocation" x="591" y="594"/>
         </scene>
         <!--Main-->
         <scene sceneID="xaB-0V-UDf">
@@ -110,4 +111,7 @@
             <point key="canvasLocation" x="1162" y="161"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="muN-Ht-7rg"/>
+    </inferredMetricsTieBreakers>
 </document>

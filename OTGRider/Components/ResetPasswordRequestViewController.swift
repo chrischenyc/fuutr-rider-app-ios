@@ -48,7 +48,7 @@ class ResetPasswordRequestViewController: UIViewController {
         }
         
         self?.flashSuccessMessage("Code sent, please check your email", completion: { (finished) in
-          self?.perform(segue: StoryboardSegue.SignIn.fromResetPasswordSendCodeToVerifyCode)
+          self?.performSegue(withIdentifier: R.segue.resetPasswordRequestViewController.fromResetPasswordSendCodeToVerifyCode.identifier, sender: nil)
         })
       }
     })

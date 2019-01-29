@@ -47,7 +47,7 @@ class EditEmailViewController: UIViewController {
           return
         }
         
-        self?.perform(segue: StoryboardSegue.Settings.fromEditEmailToSettings)
+        self?.performSegue(withIdentifier: R.segue.editEmailViewController.fromEditEmailToSettings.identifier, sender: nil)
       }
     })
   }

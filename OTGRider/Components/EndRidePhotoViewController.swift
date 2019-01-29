@@ -72,7 +72,7 @@ class EndRidePhotoViewController: UIViewController {
   @IBAction func shootTapped(_ sender: Any) {
     // on Simulator, skip to next
     if Platform.isSimulator {
-      self.photo = UIImage(asset: Asset.howToRide1)
+      self.photo = R.image.howToRide1()
       self.previewImageView.image = self.photo
       switchToPreview()
       
@@ -91,7 +91,7 @@ class EndRidePhotoViewController: UIViewController {
   @IBAction func sendTapped(_ sender: Any) {
     // TODO: invoke send photo API
     
-    perform(segue: StoryboardSegue.EndRidePhoto.fromEndRidePhotoToMap)
+    performSegue(withIdentifier: R.segue.endRidePhotoViewController.fromEndRidePhotoToMap, sender: nil)
   }
   
 }
