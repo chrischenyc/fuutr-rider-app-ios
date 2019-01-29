@@ -77,7 +77,6 @@ class MapViewController: UIViewController {
         setupMapView()
         setupLocationManager()
         getCurrentUser()
-        getZones()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -233,6 +232,9 @@ extension MapViewController {
     @objc private func searchVehicles() {
         // pause new vehicles search while user is during a ride
         guard ongoingRide == nil || ongoingRide!.paused else { return }
+      
+      // update zones too
+      getZones()
         
         searchAPITask?.cancel()
         
