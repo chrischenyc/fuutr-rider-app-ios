@@ -708,17 +708,7 @@ extension MapViewController {
 extension MapViewController {
   private func setupMapView() {
     mapView.delegate = self
-    do {
-      // Set the map style by passing the URL of the local file.
-      if let styleURL = Bundle.main.url(forResource: "GoogleMapStyle", withExtension: "json") {
-        mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
-      } else {
-        logger.error("Unable to find style.json")
-      }
-    } catch {
-      logger.error("One or more of the map styles failed to load. \(error)")
-    }
-    
+    mapView.applyTheme()
     
     // Set up the cluster manager with the supplied icon generator and renderer.
     // https://developers.google.com/maps/documentation/ios-sdk/utility/marker-clustering
@@ -909,6 +899,7 @@ extension MapViewController: CLLocationManagerDelegate {
       mapView.animate(to: camera)
     }
     currentLocation = location
+    mapView.applyTheme(currentLocation: location)
     
     // once GPS signal is settled, check if there's an ongoing ride
     if ongoingRide == nil && !didLoadOngoingRide {

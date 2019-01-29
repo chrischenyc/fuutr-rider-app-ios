@@ -17,10 +17,12 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 3 files.
+  /// This `R.file` struct is generated, and contains static references to 4 files.
   struct file {
     /// Resource file `GoogleMapStyle.json`.
     static let googleMapStyleJson = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleMapStyle", pathExtension: "json")
+    /// Resource file `GoogleMapStyle.night.json`.
+    static let googleMapStyleNightJson = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleMapStyle.night", pathExtension: "json")
     /// Resource file `ride.gpx`.
     static let rideGpx = Rswift.FileResource(bundle: R.hostingBundle, name: "ride", pathExtension: "gpx")
     /// Resource file `unlock.gpx`.
@@ -29,6 +31,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GoogleMapStyle", withExtension: "json")`
     static func googleMapStyleJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleMapStyleJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "GoogleMapStyle.night", withExtension: "json")`
+    static func googleMapStyleNightJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleMapStyleNightJson
       return fileResource.bundle.url(forResource: fileResource)
     }
     

@@ -135,6 +135,7 @@ PODS:
   - R.swift.Library (5.0.0)
   - ReachabilitySwift (4.3.0)
   - SideMenu (5.0.3)
+  - Solar (2.1.0)
   - Stripe (14.0.0)
   - SwiftyUserDefaults (4.0.0-alpha.1)
   - XCGLogger (6.1.0):
@@ -160,6 +161,7 @@ DEPENDENCIES:
   - R.swift
   - ReachabilitySwift
   - SideMenu
+  - Solar
   - Stripe
   - SwiftyUserDefaults (= 4.0.0-alpha.1)
   - XCGLogger
@@ -200,6 +202,7 @@ SPEC REPOS:
     - R.swift.Library
     - ReachabilitySwift
     - SideMenu
+    - Solar
     - Stripe
     - SwiftyUserDefaults
     - XCGLogger
@@ -239,10 +242,11 @@ SPEC CHECKSUMS:
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
+  Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
   Stripe: db29ad197c74aca6fb981e4e8355cf7ebd0fca5a
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: d21d95b16a22460073362eb4199e58e286e7aa43
+PODFILE CHECKSUM: 841c6585f259b73d3864415098fba6d776fdbf42
 
 COCOAPODS: 1.5.3

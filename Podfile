@@ -38,6 +38,7 @@ abstract_target 'Project' do
   pod 'ObjectMapper'
   pod 'PinCodeView'
   pod 'FastttCamera'
+  pod 'Solar'
 
   target 'OTGRider' do
 

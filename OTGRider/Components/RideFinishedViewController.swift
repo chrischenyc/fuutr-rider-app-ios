@@ -15,6 +15,7 @@ class RideFinishedViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     continueButton.primaryRed()
     reportButton.primaryDarkBasic()
     
@@ -24,16 +25,7 @@ class RideFinishedViewController: UIViewController {
     
     continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
     
-    do {
-      // Set the map style by passing the URL of the local file.
-      if let styleURL = Bundle.main.url(forResource: "GoogleMapStyle", withExtension: "json") {
-        mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
-      } else {
-        logger.error("Unable to find style.json")
-      }
-    } catch {
-      logger.error("One or more of the map styles failed to load. \(error)")
-    }
+    mapView.applyTheme()
   }
   
   func updateContent(with ride: Ride, and location: CLLocation?) {
@@ -45,6 +37,7 @@ class RideFinishedViewController: UIViewController {
     if let location = location {
       let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
       mapView.animate(to: camera)
+      mapView.applyTheme(currentLocation: location)
     }
     
     if let encodedPath = ride.encodedPath, let decodedPath = GMSMutablePath(fromEncodedPath: encodedPath){
