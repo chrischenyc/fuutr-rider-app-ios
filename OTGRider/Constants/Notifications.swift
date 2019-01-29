@@ -9,5 +9,5 @@
 import Foundation
 
 extension Notification.Name {
-    static let userSignedOut = Notification.Name("com.otgride.userSignedOut")
+  static let userSignedOut = Notification.Name("com.otgride.userSignedOut")
 }

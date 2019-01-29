@@ -10,13 +10,13 @@ import UIKit
 
 // https://stackoverflow.com/questions/27483881/perform-push-segue-after-an-unwind-segue
 class UIStoryboardSegueWithCompletion: UIStoryboardSegue {
-    var completion: (() -> Void)?
+  var completion: (() -> Void)?
+  
+  override func perform() {
+    super.perform()
     
-    override func perform() {
-        super.perform()
-        
-        if let completion = completion {
-            completion()
-        }
+    if let completion = completion {
+      completion()
     }
+  }
 }

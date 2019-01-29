@@ -98,8 +98,8 @@ class EndRidePhotoViewController: UIViewController {
 
 extension EndRidePhotoViewController: FastttCameraDelegate {
   func cameraController(_ cameraController: FastttCameraInterface!, didFinishNormalizing capturedImage: FastttCapturedImage!) {
-      self.photo = capturedImage.scaledImage
-      self.previewImageView.image = self.photo
-      self.switchToPreview()
+    self.photo = capturedImage.scaledImage
+    self.previewImageView.image = self.photo
+    self.switchToPreview()
   }
 }

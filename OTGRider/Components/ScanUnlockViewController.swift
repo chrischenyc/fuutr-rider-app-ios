@@ -10,9 +10,9 @@ import Foundation
 import AVFoundation
 
 class ScanUnlockViewController: UnlockViewController {
-    
+  
   private let scanner = QRCode()
-    
+  
   @IBOutlet weak var placeHolderView: UIView!
   @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var enterCodeButton: UIButton!
@@ -63,63 +63,63 @@ class ScanUnlockViewController: UnlockViewController {
                       self?.scanner.clearDrawLayer()
                       self?.scanner.startScan()
                     })
-                  })
+    })
   }
 }
 
 // MARK: - camera permission
 extension ScanUnlockViewController {
-    
-    private func checkScanPermissions() -> Bool {
-        do {
-            return try supportsMetadataObjectTypes()
-        } catch let error as NSError {
-            switch error.code {
-            case -11852:
-                alertMessage(title: nil,
-                             message: "This app is not authorized to use Back Camera. Please grant permission in Settings",
-                             positiveActionButtonTitle: "Go to Settings",
-                             positiveActionButtonTapped: {
-                                if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
-                                    UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
-                                }
-                })
-                
-            default:
-                flashErrorMessage("Current device doesn't support QR code scanning, please try manually inputing the code.")
-            }
-            
-            return false
-        }
+  
+  private func checkScanPermissions() -> Bool {
+    do {
+      return try supportsMetadataObjectTypes()
+    } catch let error as NSError {
+      switch error.code {
+      case -11852:
+        alertMessage(title: nil,
+                     message: "This app is not authorized to use Back Camera. Please grant permission in Settings",
+                     positiveActionButtonTitle: "Go to Settings",
+                     positiveActionButtonTapped: {
+                      if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                      }
+        })
+        
+      default:
+        flashErrorMessage("Current device doesn't support QR code scanning, please try manually inputing the code.")
+      }
+      
+      return false
+    }
+  }
+  
+  private func supportsMetadataObjectTypes(_ metadataTypes: [AVMetadataObject.ObjectType]? = nil) throws -> Bool {
+    guard let captureDevice = AVCaptureDevice.default(for: .video) else {
+      logger.error("unsupported device")
+      return false
     }
     
-    private func supportsMetadataObjectTypes(_ metadataTypes: [AVMetadataObject.ObjectType]? = nil) throws -> Bool {
-        guard let captureDevice = AVCaptureDevice.default(for: .video) else {
-            logger.error("unsupported device")
-            return false
-        }
-        
-        let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
-        let output      = AVCaptureMetadataOutput()
-        let session     = AVCaptureSession()
-        
-        session.addInput(deviceInput)
-        session.addOutput(output)
-        
-        var metadataObjectTypes = metadataTypes
-        
-        if metadataObjectTypes == nil || metadataObjectTypes?.count == 0 {
-            // Check the QRCode metadata object type by default
-            metadataObjectTypes = [.qr]
-        }
-        
-        for metadataObjectType in metadataObjectTypes! {
-            if !output.availableMetadataObjectTypes.contains { $0 == metadataObjectType } {
-                return false
-            }
-        }
-        
-        return true
+    let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
+    let output      = AVCaptureMetadataOutput()
+    let session     = AVCaptureSession()
+    
+    session.addInput(deviceInput)
+    session.addOutput(output)
+    
+    var metadataObjectTypes = metadataTypes
+    
+    if metadataObjectTypes == nil || metadataObjectTypes?.count == 0 {
+      // Check the QRCode metadata object type by default
+      metadataObjectTypes = [.qr]
     }
-
+    
+    for metadataObjectType in metadataObjectTypes! {
+      if !output.availableMetadataObjectTypes.contains { $0 == metadataObjectType } {
+        return false
+      }
+    }
+    
+    return true
+  }
+  
 }

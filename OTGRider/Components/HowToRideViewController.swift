@@ -71,7 +71,7 @@ extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewContr
     return pages[previousIndex]
   }
   
-
+  
   public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
     guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
     let nextIndex = viewControllerIndex + 1
@@ -79,7 +79,7 @@ extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewContr
     guard pages.count > nextIndex else { return nil }
     return pages[nextIndex]
   }
-
+  
   func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
     let pageContentViewController = pageViewController.viewControllers![0]
     pageControl.currentPage = pages.index(of: pageContentViewController)!

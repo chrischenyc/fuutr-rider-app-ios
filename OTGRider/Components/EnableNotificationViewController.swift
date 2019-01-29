@@ -12,40 +12,40 @@ import FirebaseInstanceID
 import SwiftyUserDefaults
 
 class EnableNotificationViewController: UIViewController {
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    
-    @IBAction func enableNotificationTapped(_ sender: Any) {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+    // Do any additional setup after loading the view.
+  }
+  
+  
+  
+  @IBAction func enableNotificationTapped(_ sender: Any) {
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+      
+      if granted {
+        InstanceID.instanceID().instanceID { (result, error) in
+          if let error = error {
+            print("Error fetching remote instange ID: \(error)")
+          } else if let result = result {
+            print("Remote instance ID token: \(result.token)")
             
-            if granted {
-                InstanceID.instanceID().instanceID { (result, error) in
-                    if let error = error {
-                        print("Error fetching remote instange ID: \(error)")
-                    } else if let result = result {
-                        print("Remote instance ID token: \(result.token)")
-                        
-                        // TODO: send token to server
-                    }
-                }
-            }
-            
-            DispatchQueue.main.async {
-                Defaults[.userOnboarded] = true
-                self.perform(segue: StoryboardSegue.Onboard.showMain)
-            }
+            // TODO: send token to server
+          }
         }
-    }
-    
-    @IBAction func laterTapped(_ sender: Any) {
+      }
+      
+      DispatchQueue.main.async {
         Defaults[.userOnboarded] = true
-        
-        perform(segue: StoryboardSegue.Onboard.showMain)
+        self.perform(segue: StoryboardSegue.Onboard.showMain)
+      }
     }
+  }
+  
+  @IBAction func laterTapped(_ sender: Any) {
+    Defaults[.userOnboarded] = true
+    
+    perform(segue: StoryboardSegue.Onboard.showMain)
+  }
 }

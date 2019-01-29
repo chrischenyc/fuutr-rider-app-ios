@@ -11,139 +11,139 @@ import FBSDKLoginKit
 import SwiftyUserDefaults
 
 class SignInViewController: UIViewController {
+  
+  @IBOutlet weak var phoneNumberTextField: UITextField!
+  @IBOutlet weak var phoneNumberVerifyButton: UIButton!
+  @IBOutlet weak var phoneNumberVerifyInfoLabel: UILabel!
+  @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
+  @IBOutlet weak var emailSignInButton: UIButton!
+  
+  private var countryCode: UInt64?
+  private var phoneNumber: String?
+  private var apiTask: URLSessionDataTask?
+  private var fbLoginResult: FBSDKLoginManagerLoginResult?
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var phoneNumberVerifyButton: UIButton!
-    @IBOutlet weak var phoneNumberVerifyInfoLabel: UILabel!
-    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
-    @IBOutlet weak var emailSignInButton: UIButton!
-    
-    private var countryCode: UInt64?
-    private var phoneNumber: String?
-    private var apiTask: URLSessionDataTask?
-    private var fbLoginResult: FBSDKLoginManagerLoginResult?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
-        phoneNumberVerifyButton.isEnabled = false
-        phoneNumberVerifyButton.backgroundColor = UIColor.primaryWhiteColor
-        phoneNumberVerifyButton.layoutCornerRadiusAndShadow()
-        facebookLoginButton.readPermissions = ["public_profile", "email"]
-        facebookLoginButton.delegate = self
-        facebookLoginButton.layoutCornerRadiusAndShadow()
-        emailSignInButton.layoutCornerRadiusAndShadow()
-        emailSignInButton.backgroundColor = UIColor.primaryWhiteColor
+    phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
+    phoneNumberVerifyButton.isEnabled = false
+    phoneNumberVerifyButton.backgroundColor = UIColor.primaryWhiteColor
+    phoneNumberVerifyButton.layoutCornerRadiusAndShadow()
+    facebookLoginButton.readPermissions = ["public_profile", "email"]
+    facebookLoginButton.delegate = self
+    facebookLoginButton.layoutCornerRadiusAndShadow()
+    emailSignInButton.layoutCornerRadiusAndShadow()
+    emailSignInButton.backgroundColor = UIColor.primaryWhiteColor
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    if FBSDKAccessToken.current() != nil, let fbLoginResult = fbLoginResult {
+      authenticateWithFacebook(result: fbLoginResult)
     }
+  }
+  
+  @IBAction func phoneNumberChanged(_ sender: Any) {
+    phoneNumberTextField.text?.isMobileNumber({ (isMobile, coutryCode, phoneNumber) in
+      phoneNumberVerifyButton.isEnabled = isMobile
+      self.countryCode = coutryCode
+      self.phoneNumber = phoneNumber
+    })
+  }
+  
+  @IBAction func phoneNumberVerifyTapped(_ sender: Any) {
+    guard let phoneNumber = phoneNumber, let countryCode = countryCode else { return }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if FBSDKAccessToken.current() != nil, let fbLoginResult = fbLoginResult {
-            authenticateWithFacebook(result: fbLoginResult)
+    // update UI before calling API
+    phoneNumberVerifyInfoLabel.text = L10n.kSendingVerificationCode
+    phoneNumberTextField.resignFirstResponder()
+    phoneNumberTextField.isEnabled = false
+    phoneNumberVerifyButton.isEnabled = false
+    facebookLoginButton.isEnabled = false
+    
+    // cancel previous API call
+    apiTask?.cancel()
+    
+    // create a new API call
+    apiTask = PhoneService.startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
+      DispatchQueue.main.async {
+        // reset UI
+        self?.phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
+        self?.phoneNumberVerifyButton.isEnabled = true
+        self?.phoneNumberTextField.isEnabled = true
+        self?.phoneNumberVerifyButton.isEnabled = true
+        self?.facebookLoginButton.isEnabled = true
+        
+        
+        if let error = error {
+          self?.alertError(error)
+        } else {
+          self?.perform(segue: StoryboardSegue.SignIn.showVerifyCode)
+          self?.phoneNumberTextField.text = ""
         }
+      }
+    })
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let navigationController = segue.destination as? UINavigationController,
+      let verifyCodeViewController = navigationController.topViewController as? VerifyCodeViewController {
+      guard let countryCode = countryCode, let phoneNumber = phoneNumber else { return }
+      
+      verifyCodeViewController.countryCode = countryCode
+      verifyCodeViewController.phoneNumber = phoneNumber
     }
-    
-    @IBAction func phoneNumberChanged(_ sender: Any) {
-        phoneNumberTextField.text?.isMobileNumber({ (isMobile, coutryCode, phoneNumber) in
-            phoneNumberVerifyButton.isEnabled = isMobile
-            self.countryCode = coutryCode
-            self.phoneNumber = phoneNumber
-        })
+  }
+  
+  @IBAction func unwindToSignIn(_ unwindSegue: UIStoryboardSegue) {
+    if unwindSegue.source is SettingsTableViewController {
+      fbLoginResult = nil
     }
+  }
+  
+  private func authenticateWithFacebook(result: FBSDKLoginManagerLoginResult) {
+    // cancel previous API call
+    apiTask?.cancel()
     
-    @IBAction func phoneNumberVerifyTapped(_ sender: Any) {
-        guard let phoneNumber = phoneNumber, let countryCode = countryCode else { return }
-        
-        // update UI before calling API
-        phoneNumberVerifyInfoLabel.text = L10n.kSendingVerificationCode
-        phoneNumberTextField.resignFirstResponder()
-        phoneNumberTextField.isEnabled = false
-        phoneNumberVerifyButton.isEnabled = false
-        facebookLoginButton.isEnabled = false
-        
-        // cancel previous API call
-        apiTask?.cancel()
-        
-        // create a new API call
-        apiTask = PhoneService.startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
-            DispatchQueue.main.async {
-                // reset UI
-                self?.phoneNumberVerifyInfoLabel.text = L10n.kPhoneNumberVerificationPrompt
-                self?.phoneNumberVerifyButton.isEnabled = true
-                self?.phoneNumberTextField.isEnabled = true
-                self?.phoneNumberVerifyButton.isEnabled = true
-                self?.facebookLoginButton.isEnabled = true
-                
-                
-                if let error = error {
-                    self?.alertError(error)
-                } else {
-                    self?.perform(segue: StoryboardSegue.SignIn.showVerifyCode)
-                    self?.phoneNumberTextField.text = ""
-                }
-            }
-        })
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let navigationController = segue.destination as? UINavigationController,
-            let verifyCodeViewController = navigationController.topViewController as? VerifyCodeViewController {
-            guard let countryCode = countryCode, let phoneNumber = phoneNumber else { return }
-            
-            verifyCodeViewController.countryCode = countryCode
-            verifyCodeViewController.phoneNumber = phoneNumber
+    // create a new API call
+    showLoading()
+    apiTask = AuthService.login(withFacebookToken: result.token.tokenString, completion: { [weak self] (error) in
+      
+      DispatchQueue.main.async {
+        guard error == nil else {
+          self?.flashErrorMessage(error?.localizedDescription)
+          return
         }
-    }
-    
-    @IBAction func unwindToSignIn(_ unwindSegue: UIStoryboardSegue) {
-        if unwindSegue.source is SettingsTableViewController {
-            fbLoginResult = nil
-        }
-    }
-    
-    private func authenticateWithFacebook(result: FBSDKLoginManagerLoginResult) {
-        // cancel previous API call
-        apiTask?.cancel()
         
-        // create a new API call
-        showLoading()
-        apiTask = AuthService.login(withFacebookToken: result.token.tokenString, completion: { [weak self] (error) in
-            
-            DispatchQueue.main.async {
-                guard error == nil else {
-                    self?.flashErrorMessage(error?.localizedDescription)
-                    return
-                }
-                
-                if Defaults[.userOnboarded] {
-                    self?.dismissLoading()
-                    self?.perform(segue: StoryboardSegue.SignIn.fromSignInToMain, sender: self)
-                }
-                else {
-                    self?.dismissLoading()
-                    self?.perform(segue: StoryboardSegue.SignIn.fromSignInToOnboard, sender: self)
-                }
-            }
-        })
-    }
+        if Defaults[.userOnboarded] {
+          self?.dismissLoading()
+          self?.perform(segue: StoryboardSegue.SignIn.fromSignInToMain, sender: self)
+        }
+        else {
+          self?.dismissLoading()
+          self?.perform(segue: StoryboardSegue.SignIn.fromSignInToOnboard, sender: self)
+        }
+      }
+    })
+  }
 }
 
 
 extension SignInViewController: FBSDKLoginButtonDelegate {
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        guard error == nil else {
-            logger.warning("Facebook error: \(error.localizedDescription)")
-            return
-        }
-        
-        guard !result.isCancelled else {
-            return
-        }
-        
-        fbLoginResult = result
+  func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+    guard error == nil else {
+      logger.warning("Facebook error: \(error.localizedDescription)")
+      return
     }
     
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        fbLoginResult = nil
+    guard !result.isCancelled else {
+      return
     }
+    
+    fbLoginResult = result
+  }
+  
+  func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+    fbLoginResult = nil
+  }
 }

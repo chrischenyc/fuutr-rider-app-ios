@@ -711,6 +711,7 @@
 				9191983621FDC96200CF5F2D /* RidingView.xib */,
 				91FA7F9521FE859B00581BB5 /* RidePaused.storyboard */,
 				91FA7FA521FEB22600581BB5 /* RideFinished.storyboard */,
+				9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -817,7 +818,6 @@
 				6B873200218AA9F400CC2651 /* UnlockViewController.swift */,
 				6B0128B2219D9C2C00AC2439 /* ScanUnlockViewController.swift */,
 				6B0128B6219D9C4D00AC2439 /* ManualUnlockViewController.swift */,
-				9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */,
 				6B0D922121FDBE5800A9B38E /* EndRidePhotoViewController.swift */,
 				91FA7F9D21FE981E00581BB5 /* RidePausedViewController.swift */,
 				91FA7FA121FEB20100581BB5 /* RideFinishedViewController.swift */,

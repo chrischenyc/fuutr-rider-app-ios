@@ -53,7 +53,7 @@ extension ManualUnlockViewController: PinCodeViewDelegate {
   }
   
   func pinCodeView(_ view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool) -> Void) {
-
+    
     pincodeView.resignFirstResponder()
     
     unlockVehicle(unlockCode: code,
@@ -64,6 +64,6 @@ extension ManualUnlockViewController: PinCodeViewDelegate {
                       view.resetDigits()
                       self?.pincodeView.becomeFirstResponder()
                     })
-                  })
+    })
   }
 }

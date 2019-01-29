@@ -9,42 +9,42 @@
 import UIKit
 
 class EditNameViewController: UIViewController {
+  
+  @IBOutlet weak var nameTextField: UITextField!
+  @IBOutlet weak var submitButton: UIButton!
+  
+  var displayName: String?
+  var apiTask: URLSessionTask?
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var submitButton: UIButton!
+    nameTextField.text = displayName
+    nameTextField.becomeFirstResponder()
+    submitButton.isEnabled = false
+  }
+  
+  @IBAction func nameChanged(_ sender: Any) {
+    submitButton.isEnabled = (displayName != nameTextField.text)
+  }
+  
+  @IBAction func updateTouched(_ sender: Any) {
+    guard let displayName = nameTextField.text else { return }
     
-    var displayName: String?
-    var apiTask: URLSessionTask?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        nameTextField.text = displayName
-        nameTextField.becomeFirstResponder()
-        submitButton.isEnabled = false
-    }
+    apiTask?.cancel()
     
-    @IBAction func nameChanged(_ sender: Any) {
-        submitButton.isEnabled = (displayName != nameTextField.text)
-    }
+    showLoading()
     
-    @IBAction func updateTouched(_ sender: Any) {
-        guard let displayName = nameTextField.text else { return }
+    apiTask = UserService.updateProfile(["displayName": displayName], completion: { [weak self] (error) in
+      DispatchQueue.main.async {
+        guard error == nil else {
+          self?.flashErrorMessage(error?.localizedDescription)
+          return
+        }
         
-        apiTask?.cancel()
-        
-        showLoading()
-        
-        apiTask = UserService.updateProfile(["displayName": displayName], completion: { [weak self] (error) in
-            DispatchQueue.main.async {
-                guard error == nil else {
-                    self?.flashErrorMessage(error?.localizedDescription)
-                    return
-                }
-                
-                self?.perform(segue: StoryboardSegue.Settings.fromEditNameToSettings)
-            }
-        })
-    }
-    
+        self?.perform(segue: StoryboardSegue.Settings.fromEditNameToSettings)
+      }
+    })
+  }
+  
 }

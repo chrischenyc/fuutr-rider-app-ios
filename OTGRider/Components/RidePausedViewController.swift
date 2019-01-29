@@ -57,13 +57,13 @@ class RidePausedViewController: UIViewController {
   
   @objc private func endRide() {
     self.alertMessage(title: "Are you sure you want to end the ride?",
-                       message: "",
-                       positiveActionButtonTitle: "Yes, end ride",
-                       positiveActionButtonTapped: {
+                      message: "",
+                      positiveActionButtonTitle: "Yes, end ride",
+                      positiveActionButtonTapped: {
                         self.dismiss(animated: true, completion: { [weak self] in
                           self?.delegate?.rideShouldEnd()
                         })
-                       },
-                       negativeActionButtonTitle: "No, keep riding")
+    },
+                      negativeActionButtonTitle: "No, keep riding")
   }
 }

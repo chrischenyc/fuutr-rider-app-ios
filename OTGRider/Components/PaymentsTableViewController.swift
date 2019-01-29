@@ -9,62 +9,62 @@
 import UIKit
 
 class PaymentsTableViewController: UITableViewController {
+  
+  private var payments: [Payment] = []
+  
+  private var apiTask: URLSessionTask?
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    private var payments: [Payment] = []
+    tableView.tableFooterView = UIView(frame: .zero)
     
-    private var apiTask: URLSessionTask?
+    loadPayments()
+  }
+  
+  // MARK: - Table view data source
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return payments.count
+  }
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell", for: indexPath) as! PaymentCell
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let payment = payments[indexPath.row]
+    cell.loadPayment(payment)
+    
+    return cell
+  }
+  
+  private func loadPayments() {
+    apiTask?.cancel()
+    
+    showLoading()
+    
+    apiTask = PaymentService.getHistoryPayments(completion: { [weak self] (payments, error) in
+      DispatchQueue.main.async {
+        guard error == nil else {
+          self?.flashErrorMessage(error?.localizedDescription)
+          return
+        }
         
-        tableView.tableFooterView = UIView(frame: .zero)
+        guard let payments = payments else {
+          self?.flashErrorMessage(L10n.kOtherError)
+          return
+        }
         
-        loadPayments()
-    }
+        self?.dismissLoading()
+        self?.payments = payments
+        self?.loadPaymentsContent()
+      }
+    })
+  }
+  
+  private func loadPaymentsContent() {
+    tableView.reloadData()
     
-    // MARK: - Table view data source
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return payments.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell", for: indexPath) as! PaymentCell
-        
-        let payment = payments[indexPath.row]
-        cell.loadPayment(payment)
-        
-        return cell
-    }
-    
-    private func loadPayments() {
-        apiTask?.cancel()
-        
-        showLoading()
-        
-        apiTask = PaymentService.getHistoryPayments(completion: { [weak self] (payments, error) in
-            DispatchQueue.main.async {
-                guard error == nil else {
-                    self?.flashErrorMessage(error?.localizedDescription)
-                    return
-                }
-                
-                guard let payments = payments else {
-                    self?.flashErrorMessage(L10n.kOtherError)
-                    return
-                }
-                
-                self?.dismissLoading()
-                self?.payments = payments
-                self?.loadPaymentsContent()
-            }
-        })
-    }
-    
-    private func loadPaymentsContent() {
-        tableView.reloadData()
-        
-        // TODO: add call for action UI in case of zero records
-    }
-    
+    // TODO: add call for action UI in case of zero records
+  }
+  
 }

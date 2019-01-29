@@ -58,7 +58,7 @@ class VehicleReservedInfoView: DesignableView {
       guard let reservedUntil = vehicle.reservedUntil else { return }
       
       timerLabel.text = calculateTimeString(reservedUntil: reservedUntil)
-
+      
       // create timer to count down
       reserveTimer?.invalidate()
       

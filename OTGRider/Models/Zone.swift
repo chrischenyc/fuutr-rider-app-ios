@@ -10,25 +10,25 @@ import Foundation
 import ObjectMapper
 
 struct Zone: Mappable {
-    var polygon: [[Double]] = []
-    var parking: Bool = true
-    var speedMode: Int = 0
-    var title: String?
-    var message: String?
+  var polygon: [[Double]] = []
+  var parking: Bool = true
+  var speedMode: Int = 0
+  var title: String?
+  var message: String?
+  
+  init?(map: Map) {
     
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        polygon    <- map["polygon"]
-        parking    <- map["parking"]
-        speedMode  <- map["speedMode"]
-        title      <- map["title"]
-        message    <- map["message"]
-    }
-    
-    static func fromJSONArray(_ jsonArray: [JSON]) -> [Zone]? {
-        return Mapper<Zone>().mapArray(JSONArray: jsonArray)
-    }
+  }
+  
+  mutating func mapping(map: Map) {
+    polygon    <- map["polygon"]
+    parking    <- map["parking"]
+    speedMode  <- map["speedMode"]
+    title      <- map["title"]
+    message    <- map["message"]
+  }
+  
+  static func fromJSONArray(_ jsonArray: [JSON]) -> [Zone]? {
+    return Mapper<Zone>().mapArray(JSONArray: jsonArray)
+  }
 }

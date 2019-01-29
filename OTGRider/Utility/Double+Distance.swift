@@ -9,11 +9,11 @@
 import Foundation
 
 extension Double {
-    var distanceString: String {
-        if self < 1000 {
-            return String(format: "%.0f m", self)
-        } else {
-            return String(format: "%.2f km", self/1000.0)
-        }
+  var distanceString: String {
+    if self < 1000 {
+      return String(format: "%.0f m", self)
+    } else {
+      return String(format: "%.2f km", self/1000.0)
     }
+  }
 }

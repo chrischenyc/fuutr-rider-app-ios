@@ -10,7 +10,7 @@ import Foundation
 
 extension Double {
   var currencyString: String {
-      return String(format: "$%.2f", self)
+    return String(format: "$%.2f", self)
   }
   
   var stringWithNoCurrencySign: String {

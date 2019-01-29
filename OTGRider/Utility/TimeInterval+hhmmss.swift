@@ -9,15 +9,15 @@
 import Foundation
 
 extension TimeInterval {
-    var hhmmssString: String {
-        guard self >= 60 else {
-            return String(format: "%.0f s", self)
-        }
-        
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.hour, .minute, .second]
-        formatter.unitsStyle = .positional
-        
-        return formatter.string(from: self)!
+  var hhmmssString: String {
+    guard self >= 60 else {
+      return String(format: "%.0f s", self)
     }
+    
+    let formatter = DateComponentsFormatter()
+    formatter.allowedUnits = [.hour, .minute, .second]
+    formatter.unitsStyle = .positional
+    
+    return formatter.string(from: self)!
+  }
 }

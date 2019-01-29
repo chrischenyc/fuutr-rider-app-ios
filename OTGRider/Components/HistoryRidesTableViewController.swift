@@ -9,63 +9,63 @@
 import UIKit
 
 class HistoryRidesTableViewController: UITableViewController {
+  
+  private var rides: [Ride] = []
+  
+  private var apiTask: URLSessionTask?
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    private var rides: [Ride] = []
+    tableView.tableFooterView = UIView(frame: .zero)
     
-    private var apiTask: URLSessionTask?
+    loadRides()
+  }
+  
+  // MARK: - Table view data source
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return rides.count
+  }
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryRideCell", for: indexPath) as! HistoryRideCell
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let ride = rides[indexPath.row]
+    cell.updateContent(withRide: ride)
+    
+    return cell
+  }
+  
+  private func loadRides() {
+    apiTask?.cancel()
+    
+    showLoading()
+    
+    apiTask = RideService.getHistoryRides({ [weak self] (rides, error) in
+      DispatchQueue.main.async {
+        self?.dismissLoading()
         
-        tableView.tableFooterView = UIView(frame: .zero)
+        guard error == nil else {
+          self?.flashErrorMessage(error?.localizedDescription)
+          return
+        }
         
-        loadRides()
-    }
-    
-    // MARK: - Table view data source
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rides.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryRideCell", for: indexPath) as! HistoryRideCell
+        guard let rides = rides else {
+          self?.flashErrorMessage(L10n.kOtherError)
+          return
+        }
         
-        let ride = rides[indexPath.row]
-        cell.updateContent(withRide: ride)
-        
-        return cell
-    }
+        self?.rides = rides
+        self?.loadRidesContent()
+      }
+    })
+  }
+  
+  private func loadRidesContent() {
+    tableView.reloadData()
     
-    private func loadRides() {
-        apiTask?.cancel()
-        
-        showLoading()
-        
-        apiTask = RideService.getHistoryRides({ [weak self] (rides, error) in
-            DispatchQueue.main.async {
-                self?.dismissLoading()
-                
-                guard error == nil else {
-                    self?.flashErrorMessage(error?.localizedDescription)
-                    return
-                }
-                
-                guard let rides = rides else {
-                    self?.flashErrorMessage(L10n.kOtherError)
-                    return
-                }
-                
-                self?.rides = rides
-                self?.loadRidesContent()
-            }
-        })
-    }
-    
-    private func loadRidesContent() {
-        tableView.reloadData()
-        
-        // TODO: add call for action UI in case of zero records
-    }
-    
+    // TODO: add call for action UI in case of zero records
+  }
+  
 }
