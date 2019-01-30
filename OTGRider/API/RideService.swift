@@ -55,21 +55,10 @@ final class RideService {
     })
   }
   
-  static func finish(rideId: String,
-                     coordinate: CLLocationCoordinate2D,
-                     incrementalEncodedPath: String,
-                     incrementalDistance: Double,
-                     completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
-    let params: JSON = [
-      "latitude": coordinate.latitude,
-      "longitude": coordinate.longitude,
-      "incrementalEncodedPath": incrementalEncodedPath,
-      "incrementalDistance": incrementalDistance
-    ]
-    
+  static func finish(rideId: String, completion: @escaping (Ride?, Error?) -> Void) -> URLSessionDataTask? {
     return APIClient.shared.load(path: "/rides/\(rideId)/finish",
       method: .post,
-      params: params,
+      params: nil,
       completion: { (result, error) in
         if let json = result as? JSON {
           completion(Ride(JSON: json), nil)

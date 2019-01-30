@@ -307,39 +307,33 @@ extension MapViewController {
   
   private func endRide() {
     guard let id = ongoingRide?.id else { return }
-    guard let coordinate = currentLocation?.coordinate else { return }
-    guard let incrementalPath = incrementalPath else { return }
     
     rideAPITask?.cancel()
     
     showLoading(withMessage: "Locking scooter")
-    rideAPITask = RideService.finish(rideId: id,
-                                     coordinate: coordinate,
-                                     incrementalEncodedPath: incrementalPath.encodedPath(),
-                                     incrementalDistance: incrementalPath.length(of: GMSLengthKind.geodesic),
-                                     completion: { [weak self] (ride, error) in
-                                      DispatchQueue.main.async {
-                                        self?.dismissLoading()
-                                        
-                                        guard error == nil else {
-                                          if error!.localizedDescription == "no-parking" {
-                                            self?.showNoParkingZoneError()
-                                          }
-                                          else {
-                                            self?.alertError(error!)
-                                          }
-                                          return
-                                        }
-                                        
-                                        guard let ride = ride else {
-                                          self?.alertMessage(message: R.string.localizable.kOtherError())
-                                          return
-                                        }
-                                        
-                                        self?.takePhotoForCompletedRide(ride)
-                                        
-                                        self?.stopTrackingRide()
-                                      }
+    rideAPITask = RideService.finish(rideId: id, completion: { [weak self] (ride, error) in
+      DispatchQueue.main.async {
+        self?.dismissLoading()
+        
+        guard error == nil else {
+          if error!.localizedDescription == "no-parking" {
+            self?.showNoParkingZoneError()
+          }
+          else {
+            self?.alertError(error!)
+          }
+          return
+        }
+        
+        guard let ride = ride else {
+          self?.alertMessage(message: R.string.localizable.kOtherError())
+          return
+        }
+        
+        self?.takePhotoForCompletedRide(ride)
+        
+        self?.stopTrackingRide()
+      }
     })
   }
   
