@@ -104,9 +104,9 @@ class MapViewController: UIViewController {
         case .accont:
           self.performSegue(withIdentifier: R.segue.mapViewController.showAccount, sender: nil)
         case .history:
-          self.performSegue(withIdentifier: R.segue.mapViewController.showHistory.identifier, sender: nil)
+          self.performSegue(withIdentifier: R.segue.mapViewController.showHistory, sender: nil)
         case .settings:
-          self.performSegue(withIdentifier: R.segue.mapViewController.showSettings.identifier, sender: nil)
+          self.performSegue(withIdentifier: R.segue.mapViewController.showSettings, sender: nil)
         case .help:
           if let url = URL(string: config.env.helpURL), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -634,7 +634,7 @@ extension MapViewController {
   }
   
   private func takePhotoForCompletedRide(_ ride: Ride) {
-    performSegue(withIdentifier: R.segue.mapViewController.showEndRidePhoto.identifier, sender: ride)
+    performSegue(withIdentifier: R.segue.mapViewController.showEndRidePhoto, sender: ride)
   }
   
   private func showRideLockedFullScreenView(_ ride: Ride) {

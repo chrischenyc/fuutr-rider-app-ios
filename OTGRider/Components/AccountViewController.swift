@@ -38,7 +38,8 @@ class AccountViewController: UIViewController {
     // let sourceViewController = unwindSegue.source
     // Use data from the view controller which initiated the unwind segue
     
-    if unwindSegue.identifier == R.segue.topUpViewController.fromTopUpToAccount.identifier {
+    if unwindSegue.identifier == R.segue.topUpViewController.unwindToAccount.identifier {
+      // refresh profile in case user has topped up balance
       loadProfile()
     }
   }

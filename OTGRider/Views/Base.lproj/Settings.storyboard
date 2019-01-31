@@ -223,7 +223,7 @@
                         <outlet property="phoneNumberTextField" destination="7fU-Hr-Ieh" id="yVm-Cy-qKw"/>
                         <outlet property="phoneNumberVerifyButton" destination="gZ6-dZ-m4i" id="vt4-9m-aNq"/>
                         <outlet property="phoneNumberVerifyInfoLabel" destination="1I2-ko-YXD" id="Rly-pF-Oo6"/>
-                        <segue destination="6XQ-kv-9wm" kind="show" identifier="fromEditPhoneToVerify" id="hza-ws-nh6"/>
+                        <segue destination="6XQ-kv-9wm" kind="show" identifier="showVerifyCode" id="hza-ws-nh6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ab-TA-1Rr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -271,7 +271,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="bGb-B9-SZz" id="0Nf-fP-OkH"/>
                         <outlet property="submitButton" destination="gpx-be-fQC" id="9RR-C3-b6F"/>
-                        <segue destination="JlL-n6-hkC" kind="unwind" identifier="fromEditEmailToSettings" unwindAction="unwindToSettings:" id="lCm-de-8o9"/>
+                        <segue destination="JlL-n6-hkC" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettings:" id="lCm-de-8o9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDF-Hw-4cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -320,7 +320,7 @@
                     <connections>
                         <outlet property="nameTextField" destination="WsX-Lo-0AG" id="YNH-bD-XYi"/>
                         <outlet property="submitButton" destination="Z0J-gQ-Jjr" id="ZD5-SG-WVr"/>
-                        <segue destination="vaR-u3-XbX" kind="unwind" identifier="fromEditNameToSettings" unwindAction="unwindToSettings:" id="Fzo-bX-06E"/>
+                        <segue destination="vaR-u3-XbX" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettings:" id="Fzo-bX-06E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTP-dj-HQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -403,7 +403,7 @@
                         <outlet property="infoLabel" destination="PC5-CU-8ek" id="VqK-v1-xoA"/>
                         <outlet property="nextButton" destination="9Y8-YE-17h" id="Etf-O0-uhZ"/>
                         <outlet property="resendButton" destination="Dwn-7i-rlR" id="dlq-2f-HRG"/>
-                        <segue destination="TcE-Vd-H3q" kind="unwind" identifier="fromVerifyCodeToSettings" unwindAction="unwindToSettings:" id="B9m-0V-QSK"/>
+                        <segue destination="TcE-Vd-H3q" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettings:" id="B9m-0V-QSK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syL-qf-9bB" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -54,7 +54,7 @@ class ResetPasswordVerifyViewController: UIViewController {
         }
         
         self?.flashSuccessMessage("Code looks good!", completion: { (finished) in
-          self?.performSegue(withIdentifier: R.segue.resetPasswordVerifyViewController.fromResetPasswordVerifyCodeToSetPassword.identifier, sender: nil)
+          self?.performSegue(withIdentifier: R.segue.resetPasswordVerifyViewController.showNewPassword, sender: nil)
         })
       }
     })

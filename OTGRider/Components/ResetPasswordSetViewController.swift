@@ -51,7 +51,7 @@ class ResetPasswordSetViewController: UIViewController {
         
         self?.flashSuccessMessage("Done! Please log in with the new password", completion: { (finished) in
           if finished {
-            self?.performSegue(withIdentifier: R.segue.resetPasswordSetViewController.fromSetNewPasswordToLogin.identifier, sender: nil)
+            self?.performSegue(withIdentifier: R.segue.resetPasswordSetViewController.unwindToEmailAuth, sender: nil)
           }
         })
       }

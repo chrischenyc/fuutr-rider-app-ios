@@ -42,7 +42,7 @@ class EditNameViewController: UIViewController {
           return
         }
         
-        self?.performSegue(withIdentifier: R.segue.editNameViewController.fromEditNameToSettings, sender: nil)
+        self?.performSegue(withIdentifier: R.segue.editNameViewController.unwindToSettings, sender: nil)
       }
     })
   }

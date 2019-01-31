@@ -46,7 +46,7 @@
                     </view>
                     <connections>
                         <segue destination="qzt-tc-SDj" kind="show" identifier="showEnableNotification" id="mgF-Gk-yaG"/>
-                        <segue destination="sTK-FS-clb" kind="show" identifier="showMap" id="hcB-IM-1Z1"/>
+                        <segue destination="sTK-FS-clb" kind="show" identifier="showHome" id="hcB-IM-1Z1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCt-fc-crM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,7 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="adh-WU-x6o"/>
                     </view>
                     <connections>
-                        <segue destination="sTK-FS-clb" kind="show" identifier="showMain" id="muN-Ht-7rg"/>
+                        <segue destination="sTK-FS-clb" kind="show" identifier="showHome" id="muN-Ht-7rg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSI-ME-IES" userLabel="First Responder" sceneMemberID="firstResponder"/>

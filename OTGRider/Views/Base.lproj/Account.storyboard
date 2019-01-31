@@ -302,7 +302,7 @@
                     <navigationItem key="navigationItem" title="Top Up Balance" id="7gX-fD-o2R">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Gyu-yt-WFU">
                             <connections>
-                                <segue destination="ayk-st-og7" kind="unwind" identifier="fromTopUpToAccount" unwindAction="unwindToAccount:" id="IyD-EP-Pvz"/>
+                                <segue destination="ayk-st-og7" kind="unwind" identifier="unwindToAccount" unwindAction="unwindToAccount:" id="IyD-EP-Pvz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

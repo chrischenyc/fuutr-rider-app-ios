@@ -112,13 +112,13 @@ class VerifyCodeViewController: UIViewController {
         switch self.nextStep {
         case .signUp:
           if Defaults[.userOnboarded] {
-            self.performSegue(withIdentifier: R.segue.verifyCodeViewController.fromVerifyCodeToMain.identifier, sender: nil)
+            self.performSegue(withIdentifier: R.segue.verifyCodeViewController.showHome, sender: nil)
           }
           else {
-            self.performSegue(withIdentifier: R.segue.verifyCodeViewController.fromVerifyCodeToOnboard.identifier, sender: nil)
+            self.performSegue(withIdentifier: R.segue.verifyCodeViewController.showOnboard, sender: nil)
           }
         case .updatePhone:
-          self.performSegue(withIdentifier: R.segue.verifyCodeViewController.fromVerifyCodeToSettings.identifier, sender: nil)
+          self.performSegue(withIdentifier: R.segue.verifyCodeViewController.unwindToSettings, sender: nil)
         }
       }
       

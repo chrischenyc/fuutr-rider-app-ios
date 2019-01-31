@@ -62,7 +62,7 @@ class EditPhoneViewController: UIViewController {
         if let error = error {
           self?.alertError(error)
         } else {
-          self?.performSegue(withIdentifier: R.segue.editPhoneViewController.fromEditPhoneToVerify, sender: nil)
+          self?.performSegue(withIdentifier: R.segue.editPhoneViewController.showVerifyCode, sender: nil)
         }
       }
     })

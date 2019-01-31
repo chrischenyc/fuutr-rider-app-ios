@@ -91,7 +91,7 @@ class EndRidePhotoViewController: UIViewController {
   @IBAction func sendTapped(_ sender: Any) {
     // TODO: invoke send photo API
     
-    performSegue(withIdentifier: R.segue.endRidePhotoViewController.fromEndRidePhotoToMap, sender: nil)
+    performSegue(withIdentifier: R.segue.endRidePhotoViewController.unwindToHome, sender: nil)
   }
   
 }

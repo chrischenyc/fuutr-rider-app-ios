@@ -105,8 +105,8 @@
                         <outlet property="phoneNumberVerifyButton" destination="Vpl-lZ-PkQ" id="fbU-aB-Kn6"/>
                         <outlet property="phoneNumberVerifyInfoLabel" destination="msX-BP-P0T" id="ood-R3-l0g"/>
                         <segue destination="K7W-Yb-j4m" kind="show" identifier="showVerifyCode" id="sNF-jv-BJH"/>
-                        <segue destination="KAD-4P-JWO" kind="show" identifier="fromSignInToOnboard" id="NYh-wd-6MW"/>
-                        <segue destination="7z4-bW-Wae" kind="show" identifier="fromSignInToMain" id="uxi-sZ-NDa"/>
+                        <segue destination="KAD-4P-JWO" kind="show" identifier="showOnboard" id="NYh-wd-6MW"/>
+                        <segue destination="7z4-bW-Wae" kind="show" identifier="showHome" id="uxi-sZ-NDa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOq-lO-7Fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,8 +176,8 @@
                         <outlet property="infoLabel" destination="80i-dC-5ZA" id="YEh-IF-yZR"/>
                         <outlet property="nextButton" destination="4rl-h5-i2B" id="2aZ-Od-NZW"/>
                         <outlet property="resendButton" destination="o2E-aY-TFs" id="kZu-Gq-hCl"/>
-                        <segue destination="KAD-4P-JWO" kind="presentation" identifier="fromVerifyCodeToOnboard" id="Q5s-yY-tXW"/>
-                        <segue destination="7z4-bW-Wae" kind="presentation" identifier="fromVerifyCodeToMain" id="AL8-Zq-xC4"/>
+                        <segue destination="KAD-4P-JWO" kind="presentation" identifier="showOnboard" id="Q5s-yY-tXW"/>
+                        <segue destination="7z4-bW-Wae" kind="presentation" identifier="showHome" id="AL8-Zq-xC4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juU-q2-mQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -262,7 +262,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Exsiting User?" id="5x0-nL-vpa">
                             <connections>
-                                <segue destination="GXk-iU-xto" kind="show" identifier="fromSignUpToLogIn" id="aNq-1F-qTn"/>
+                                <segue destination="GXk-iU-xto" kind="show" identifier="showLogIn" id="aNq-1F-qTn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -270,8 +270,8 @@
                         <outlet property="emailTextField" destination="OkA-26-CDQ" id="3xm-qk-0mf"/>
                         <outlet property="passwordTextField" destination="hV4-8d-PUT" id="eKO-fM-vRO"/>
                         <outlet property="submitButton" destination="xDu-fz-ddN" id="M6O-5Q-ViH"/>
-                        <segue destination="KAD-4P-JWO" kind="presentation" identifier="fromEmailSignUpToOnboard" id="tiw-CG-hzh"/>
-                        <segue destination="7z4-bW-Wae" kind="presentation" identifier="fromEmailSignUpToMain" id="swg-qs-j4S"/>
+                        <segue destination="KAD-4P-JWO" kind="presentation" identifier="fromSignUpToOnboard" id="tiw-CG-hzh"/>
+                        <segue destination="7z4-bW-Wae" kind="presentation" identifier="fromSignUpToHome" id="swg-qs-j4S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXS-aY-wX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,8 +392,8 @@
                         <outlet property="emailTextField" destination="UFN-OL-5vl" id="cUq-ea-3Hp"/>
                         <outlet property="passwordTextField" destination="WY9-UR-56y" id="2pl-zG-EnM"/>
                         <outlet property="submitButton" destination="hIS-SP-Iqw" id="ArL-Ph-nYv"/>
-                        <segue destination="KAD-4P-JWO" kind="presentation" identifier="fromEmailLogInToOnboard" id="PB7-vV-uTW"/>
-                        <segue destination="7z4-bW-Wae" kind="presentation" identifier="fromEmailLogInToMain" id="U9n-5U-fai"/>
+                        <segue destination="KAD-4P-JWO" kind="presentation" identifier="fromLogInToOnboard" id="PB7-vV-uTW"/>
+                        <segue destination="7z4-bW-Wae" kind="presentation" identifier="fromLogInToHome" id="U9n-5U-fai"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbP-3i-aoc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -448,7 +448,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="FTk-A7-zyc" id="Njv-2X-YVG"/>
                         <outlet property="submitButton" destination="vpW-26-DUf" id="JNH-fn-M3Q"/>
-                        <segue destination="elZ-oQ-Gj9" kind="show" identifier="fromResetPasswordSendCodeToVerifyCode" id="qAt-rd-7rb"/>
+                        <segue destination="elZ-oQ-Gj9" kind="show" identifier="showVerifyCode" id="qAt-rd-7rb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8c1-h8-KMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -510,7 +510,7 @@
                         <outlet property="codeTextField" destination="nAc-YS-hns" id="cit-oV-R7A"/>
                         <outlet property="resendButton" destination="Tan-lF-VMn" id="wIu-Jl-cDS"/>
                         <outlet property="submitButton" destination="8Y2-iS-5G8" id="YGm-Nf-Tkj"/>
-                        <segue destination="QqQ-Gy-xzc" kind="show" identifier="fromResetPasswordVerifyCodeToSetPassword" id="95o-pv-skN"/>
+                        <segue destination="QqQ-Gy-xzc" kind="show" identifier="showNewPassword" id="95o-pv-skN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8q-7Y-iKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -564,7 +564,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="PZk-2Q-lmk" id="h4p-yO-B1X"/>
                         <outlet property="submitButton" destination="NUJ-HR-0iH" id="1zb-TF-YLF"/>
-                        <segue destination="4rr-cH-42m" kind="unwind" identifier="fromSetNewPasswordToLogin" unwindAction="unwindToEmailAuth:" id="SJL-FD-RrK"/>
+                        <segue destination="4rr-cH-42m" kind="unwind" identifier="unwindToEmailAuth" unwindAction="unwindToEmailAuth:" id="SJL-FD-RrK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mdw-iG-D0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -574,7 +574,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U9n-5U-fai"/>
+        <segue reference="swg-qs-j4S"/>
         <segue reference="PB7-vV-uTW"/>
     </inferredMetricsTieBreakers>
 </document>

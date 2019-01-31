@@ -78,7 +78,7 @@ class SignInViewController: UIViewController {
         if let error = error {
           self?.alertError(error)
         } else {
-          self?.performSegue(withIdentifier: R.segue.signInViewController.showVerifyCode, sender: nil)
+          self?.performSegue(withIdentifier: R.segue.signInViewController.showVerifyCode.identifier, sender: nil)
           self?.phoneNumberTextField.text = ""
         }
       }
@@ -117,11 +117,11 @@ class SignInViewController: UIViewController {
         
         if Defaults[.userOnboarded] {
           self?.dismissLoading()
-          self?.performSegue(withIdentifier: R.segue.signInViewController.fromSignInToMain, sender: self)
+          self?.performSegue(withIdentifier: R.segue.signInViewController.showHome, sender: self)
         }
         else {
           self?.dismissLoading()
-          self?.performSegue(withIdentifier: R.segue.signInViewController.fromSignInToOnboard, sender: self)
+          self?.performSegue(withIdentifier: R.segue.signInViewController.showOnboard, sender: self)
         }
       }
     })
