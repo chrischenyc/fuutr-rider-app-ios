@@ -129,7 +129,7 @@ class MapViewController: UIViewController {
   @objc private func unlock() {
     if let viewController = UIStoryboard(name: "ScanUnlock", bundle: nil).instantiateInitialViewController() as? UINavigationController,
       let unlockVC = viewController.topViewController as? UnlockViewController {
-      self.presentFullScreen(viewController)
+      presentFullScreen(viewController)
       unlockVC.delegate = self
     }
   }
@@ -138,7 +138,7 @@ class MapViewController: UIViewController {
 // MARK: - scan or input to unlock
 extension MapViewController: UnlockDelegate {
   func vehicleUnlocked(with ride: Ride) {
-    self.startTrackingRide(ride)
+    startTrackingRide(ride)
     showHowToRide()
   }
 }
@@ -220,7 +220,7 @@ extension MapViewController {
     ride.refresh()
     ride.distance = ongoingRidePath?.length(of: GMSLengthKind.geodesic) ?? 0
     
-    self.ongoingRide = ride
+    ongoingRide = ride
   }
 }
 
@@ -400,14 +400,6 @@ extension MapViewController {
     }
   }
   
-  private func cancelVehicleReservation(_ vehicle: Vehicle) {
-    self.toggleVehicleReservation(id: vehicle._id, state: false)
-  }
-  
-  private func reserveVehicle(_ vehicle: Vehicle) {
-    self.toggleVehicleReservation(id: vehicle._id, state: true)
-  }
-  
   private func toggleVehicleReservation(id: String, state: Bool) {
     // user can't reserve a vehicle during a ride
     guard ongoingRide == nil else { return }
@@ -460,7 +452,7 @@ extension MapViewController {
                          message: "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
                          positiveActionButtonTitle: "OK",
                          positiveActionButtonTapped: {
-                          self?.reserveVehicle(vehicle)
+                          self?.toggleVehicleReservation(id: vehicle._id, state: true)
       },
                          negativeActionButtonTitle: "Cancel")
     }
@@ -485,7 +477,7 @@ extension MapViewController {
                          positiveActionButtonTapped: {},
                          negativeActionButtonTitle: "Cancel reservation",
                          negativeActionButtonTapped: {
-                          self?.cancelVehicleReservation(vehicle)
+                          self?.toggleVehicleReservation(id: vehicle._id, state: false)
       })
     }
     
@@ -529,13 +521,13 @@ extension MapViewController {
   
   private func showHowToRide() {
     let viewController = UIStoryboard(name: "HowToRide", bundle: nil).instantiateViewController(withIdentifier: "HowToRide") as! HowToRideViewController
-    self.presentFullScreen(viewController)
+    presentFullScreen(viewController)
   }
   
   private func showVehicleInfo(_ vehicle: Vehicle) {
     // TODO: add show/hide transition animation
-    self.updateVehicleInfo(vehicle)
-    self.unlockView.isHidden = true
+    updateVehicleInfo(vehicle)
+    unlockView.isHidden = true
     
     if let currentLocation = currentLocation, let latitude = vehicle.latitude, let longitude = vehicle.longitude {
       mapView.drawWalkingRoute(from: currentLocation.coordinate,
@@ -545,22 +537,22 @@ extension MapViewController {
   
   private func hideVehicleInfo() {
     // TODO: show/hide transition animation
-    self.vehicleInfoView.isHidden = true
-    self.vehicleReservedInfoView.isHidden = true
-    self.unlockView.isHidden = false
+    vehicleInfoView.isHidden = true
+    vehicleReservedInfoView.isHidden = true
+    unlockView.isHidden = false
     
-    self.mapView.clearWalingRoute()
+    mapView.clearWalkingRoute()
   }
   
   private func updateVehicleInfo(_ vehicle: Vehicle) {
     if vehicle.reserved {
-      self.vehicleReservedInfoView.updateContentWith(vehicle)
-      self.vehicleReservedInfoView.isHidden = false
-      self.vehicleInfoView.isHidden = true
+      vehicleReservedInfoView.updateContentWith(vehicle)
+      vehicleReservedInfoView.isHidden = false
+      vehicleInfoView.isHidden = true
     } else {
-      self.vehicleInfoView.updateContentWith(vehicle)
-      self.vehicleInfoView.isHidden = false
-      self.vehicleReservedInfoView.isHidden = true
+      vehicleInfoView.updateContentWith(vehicle)
+      vehicleInfoView.isHidden = false
+      vehicleReservedInfoView.isHidden = true
     }
   }
   
@@ -578,7 +570,7 @@ extension MapViewController {
   
   private func showRideSummary(_ ride: Ride) {
     if let viewController = UIStoryboard(name: "RideFinished", bundle: nil).instantiateInitialViewController() as? RideFinishedViewController {
-      self.presentFullScreen(viewController, completion: {
+      presentFullScreen(viewController, completion: {
         viewController.updateContent(with: ride, and: currentLocation)
       })
     }
@@ -591,7 +583,7 @@ extension MapViewController {
   private func showRideLockedFullScreenView(_ ride: Ride) {
     if let viewController = UIStoryboard(name: "RidePaused", bundle: nil).instantiateInitialViewController() as? RidePausedViewController {
       ridePausedViewController = viewController
-      self.presentFullScreen(viewController)
+      presentFullScreen(viewController)
       viewController.delegate = self
       viewController.updateContent(with: ride)
     }
@@ -621,10 +613,10 @@ extension MapViewController {
   }
   
   private func showNoParkingZoneError() {
-    self.alertMessage(title: "You are attempting to park the vehicle in an unsafe area",
-                      message: "The ride cannot end until it is parked upright in an accepted, safe areea.",
-                      image: R.image.unsafeParkingPopup(),
-                      positiveActionButtonTitle: "I will re-park the vehicle")
+    alertMessage(title: "You are attempting to park the vehicle in an unsafe area",
+                 message: "The ride cannot end until it is parked upright in an accepted, safe areea.",
+                 image: R.image.unsafeParkingPopup(),
+                 positiveActionButtonTitle: "I will re-park the vehicle")
   }
 }
 
@@ -675,13 +667,13 @@ extension MapViewController {
       
       return item
     }
-    self.clusterManager.add(items)
+    clusterManager.add(items)
     
-    self.clusterManager.cluster()
+    clusterManager.cluster()
   }
   
   private func clearMapMakers() {
-    self.clusterManager.clearItems()
+    clusterManager.clearItems()
   }
   
   private func drawRoute(forPath path:GMSPath?) {
@@ -876,12 +868,12 @@ extension MapViewController: GMUClusterRendererDelegate {
 
 extension MapViewController: RidePausedDelegate {
   func rideShouldResume() {
-    self.ridePausedViewController = nil
-    self.resumeRide()
+    ridePausedViewController = nil
+    resumeRide()
   }
   
   func rideShouldEnd() {
-    self.ridePausedViewController = nil
-    self.endRide()
+    ridePausedViewController = nil
+    endRide()
   }
 }

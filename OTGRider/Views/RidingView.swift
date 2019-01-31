@@ -33,8 +33,8 @@ class RidingView: DesignableView {
         logger.debug("pausing ride for \(remainingPausedTime) seconds")
       }
       else {
-        self.lockButton.setTitle("Lock", for: .normal)
-        self.onPauseTimeUp?()
+        lockButton.setTitle("Lock", for: .normal)
+        onPauseTimeUp?()
       }
       
       lockButton.setTitle("Unlock", for: .normal)
