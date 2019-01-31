@@ -24,7 +24,6 @@ class MapViewController: UIViewController {
   private var rideAPITask: URLSessionTask?
   private var rideUpdateAPITask: URLSessionTask?
   private var vehicleAPITask: URLSessionTask?
-  private var userAPITask: URLSessionTask?
   
   private var deferredSearchTimer: Timer?     // a new round of search API will be fired unless time gets invalidated
   private let searchDeferring: TimeInterval = 1.5
@@ -35,8 +34,6 @@ class MapViewController: UIViewController {
   private var serverUpdateThreshhold: CLLocationDistance = 10    // the minimum travel distance for a new server update
   
   private var didLoadOngoingRide: Bool = false
-  
-  private var currentUser: User?
   
   var ongoingRide: Ride? {
     didSet {
@@ -73,7 +70,6 @@ class MapViewController: UIViewController {
     setupUI()
     setupMapView()
     setupLocationManager()
-    getCurrentUser()
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -424,17 +420,9 @@ extension MapViewController {
           self?.search()
         }
       }
-      
-      self?.getCurrentUser()
     })
   }
   
-  private func getCurrentUser() {
-    userAPITask?.cancel()
-    userAPITask = UserService.getProfile { (user, error) in
-      self.currentUser = user
-    }
-  }
 }
 
 // MARK: - UI
