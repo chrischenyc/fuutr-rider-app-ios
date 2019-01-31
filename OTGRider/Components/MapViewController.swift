@@ -55,8 +55,6 @@ class MapViewController: UIViewController {
   private var ongoingRidePolyline: GMSPolyline?
   private var incrementalPath: GMSMutablePath?    // to report to server for the new segment
   
-  private var routePolylines: [GMSPolyline] = []
-  
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var sideMenuButton: UIButton!
   @IBOutlet weak var unlockButton: UIButton!
@@ -534,71 +532,24 @@ extension MapViewController {
     self.presentFullScreen(viewController)
   }
   
-  private func showVehicleInfo(_ vehicle: Vehicle, position: CLLocationCoordinate2D) {
+  private func showVehicleInfo(_ vehicle: Vehicle) {
+    // TODO: add show/hide transition animation
     self.updateVehicleInfo(vehicle)
-    self.drawPath(to: position)
     self.unlockView.isHidden = true
-  }
-  
-  
-  // TODO: move to a GoogleMapService API module
-  private func drawPath(to destination: CLLocationCoordinate2D) {
-    guard let currentLocation = currentLocation else {
-      return
-    }
-    let origin = "\(currentLocation.coordinate.latitude),\(currentLocation.coordinate.longitude)"
-    let destination = "\(destination.latitude),\(destination.longitude)"
-    var config = Configuration()
-    let googleAPIKey = config.env.googleMapKey
-    let params: JSON = ["origin": origin, "destination": destination, "mode": "walking", "key": googleAPIKey]
     
-    let apiClient = APIClient(baseURL: "https://maps.googleapis.com")
-    let _ = apiClient.load(path: "/maps/api/directions/json",
-                           method: .get,
-                           params: params,
-                           completion: { [weak self] (result, error) in
-                            self?.drawPointWithGoogleAPIResult(result)
-    })
-  }
-  
-  private func drawPointWithGoogleAPIResult(_ result: Any?) {
-    if let json = result as? JSON,
-      let jsonArray = json["routes"] as? [JSON],
-      let route = Route.fromJSONArray(jsonArray),
-      let steps = route.first?.legs.first?.steps {
-      
-      DispatchQueue.main.async {
-        self.routePolylines = []
-        
-        steps.forEach { step in
-          guard let points = step.polyline?.points else { return }
-          let path = GMSPath.init(fromEncodedPath: points)
-          let polyline = GMSPolyline.init(path: path)
-          polyline.strokeWidth = 4
-          polyline.map = self.mapView
-          
-          // dotted
-          // https://stackoverflow.com/questions/24384209/ios-google-sdk-map-cannot-create-dotted-polylines
-          let styles: [GMSStrokeStyle] = [.solidColor(.primaryRedColor), .solidColor(.clear)]
-          let scale = 1.0 / self.mapView.projection.points(forMeters: 1, at: self.mapView.camera.target)
-          let solidLine = NSNumber(value: 4.0 * Float(scale))
-          let gap = NSNumber(value: 4.0 * Float(scale))
-          polyline.spans = GMSStyleSpans(polyline.path!, styles, [solidLine, gap], GMSLengthKind.rhumb)
-          
-          self.routePolylines.append(polyline)
-        }
-      }
+    if let currentLocation = currentLocation, let latitude = vehicle.latitude, let longitude = vehicle.longitude {
+      mapView.drawWalkingRoute(from: currentLocation.coordinate,
+                               to: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
     }
   }
   
   private func hideVehicleInfo() {
-    self.routePolylines.forEach {
-      $0.map = nil
-    }
-    self.routePolylines = []
+    // TODO: show/hide transition animation
     self.vehicleInfoView.isHidden = true
     self.vehicleReservedInfoView.isHidden = true
     self.unlockView.isHidden = false
+    
+    self.mapView.clearWalingRoute()
   }
   
   private func updateVehicleInfo(_ vehicle: Vehicle) {
@@ -880,7 +831,7 @@ extension MapViewController: GMSMapViewDelegate {
   
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
     if let vehiclePOI = marker.userData as? VehiclePOI {
-      showVehicleInfo(vehiclePOI.vehicle, position: vehiclePOI.position)
+      showVehicleInfo(vehiclePOI.vehicle)
     }
     
     return false

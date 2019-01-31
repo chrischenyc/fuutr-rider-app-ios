@@ -107,6 +107,12 @@
 		6B473DB022029530003FE160 /* GMSPolygon+Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DAF2202952F003FE160 /* GMSPolygon+Zone.swift */; };
 		6B473DB122029530003FE160 /* GMSPolygon+Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DAF2202952F003FE160 /* GMSPolygon+Zone.swift */; };
 		6B473DB222029530003FE160 /* GMSPolygon+Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DAF2202952F003FE160 /* GMSPolygon+Zone.swift */; };
+		6B473DB42202F3FF003FE160 /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DB32202F3FF003FE160 /* GoogleMapsService.swift */; };
+		6B473DB52202F3FF003FE160 /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DB32202F3FF003FE160 /* GoogleMapsService.swift */; };
+		6B473DB62202F3FF003FE160 /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DB32202F3FF003FE160 /* GoogleMapsService.swift */; };
+		6B473DB82202F80A003FE160 /* GMSMapView+WalkingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DB72202F80A003FE160 /* GMSMapView+WalkingRoute.swift */; };
+		6B473DB92202F80A003FE160 /* GMSMapView+WalkingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DB72202F80A003FE160 /* GMSMapView+WalkingRoute.swift */; };
+		6B473DBA2202F80A003FE160 /* GMSMapView+WalkingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DB72202F80A003FE160 /* GMSMapView+WalkingRoute.swift */; };
 		6B556FAB219ED63C00FA3238 /* TimeInterval+hhmmss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */; };
 		6B556FAC219ED63C00FA3238 /* TimeInterval+hhmmss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */; };
 		6B556FAD219ED63C00FA3238 /* TimeInterval+hhmmss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */; };
@@ -440,6 +446,8 @@
 		6B31E1F62198141B00CB424E /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		6B444FE62191AC2E00DFB787 /* EmailAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailAuthViewController.swift; sourceTree = "<group>"; };
 		6B473DAF2202952F003FE160 /* GMSPolygon+Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSPolygon+Zone.swift"; sourceTree = "<group>"; };
+		6B473DB32202F3FF003FE160 /* GoogleMapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsService.swift; sourceTree = "<group>"; };
+		6B473DB72202F80A003FE160 /* GMSMapView+WalkingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+WalkingRoute.swift"; sourceTree = "<group>"; };
 		6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+hhmmss.swift"; sourceTree = "<group>"; };
 		6B6C6AE62197CE3300D956DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6B849D4321941EB300CD9791 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -804,6 +812,7 @@
 				6B19043221FC8D0700261E72 /* UIButton+Theme.swift */,
 				6B0D922521FDDDF600A9B38E /* Platform.swift */,
 				6B8DC68322005B5400831B03 /* GMSMapView+Theme.swift */,
+				6B473DB72202F80A003FE160 /* GMSMapView+WalkingRoute.swift */,
 				6B473DAF2202952F003FE160 /* GMSPolygon+Zone.swift */,
 			);
 			path = Utility;
@@ -975,6 +984,7 @@
 				6B1D1E8A219A243200F72798 /* VehicleService.swift */,
 				6BB2082C219F8AA3008E5EF1 /* RideService.swift */,
 				6B91D75D21FB1F2A00B84244 /* SearchService.swift */,
+				6B473DB32202F3FF003FE160 /* GoogleMapsService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1749,6 +1759,7 @@
 				9197553521FBF52E0069D25A /* HowToRideSinglePageViewController.swift in Sources */,
 				6B473DB222029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472B0219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
+				6B473DB62202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
 				6B0128BD219DA0E100AC2439 /* Ride.swift in Sources */,
 				9197554521FC3A4D0069D25A /* DesignableView.swift in Sources */,
 				6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */,
@@ -1825,6 +1836,7 @@
 				6BD47274219A4CAA00D36C3E /* GMUGeometryCollection.m in Sources */,
 				6BDE9163218C833E003F976B /* Aliases.swift in Sources */,
 				6B14FA152198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */,
+				6B473DBA2202F80A003FE160 /* GMSMapView+WalkingRoute.swift in Sources */,
 				9197554121FC3A230069D25A /* VehicleInfoView.swift in Sources */,
 				6BD4729E219A4CAA00D36C3E /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				9197553321FBF5290069D25A /* HowToRideViewController.swift in Sources */,
@@ -1862,6 +1874,7 @@
 				9197553121FBE8900069D25A /* HowToRideSinglePageViewController.swift in Sources */,
 				6B473DB022029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472AE219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
+				6B473DB42202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
 				6B0128BB219DA0E100AC2439 /* Ride.swift in Sources */,
 				9197554321FC3A4D0069D25A /* DesignableView.swift in Sources */,
 				6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */,
@@ -1938,6 +1951,7 @@
 				6BD47272219A4CAA00D36C3E /* GMUGeometryCollection.m in Sources */,
 				6BDE9161218C833E003F976B /* Aliases.swift in Sources */,
 				6B14FA132198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */,
+				6B473DB82202F80A003FE160 /* GMSMapView+WalkingRoute.swift in Sources */,
 				9197553F21FC3A230069D25A /* VehicleInfoView.swift in Sources */,
 				6BD4729C219A4CAA00D36C3E /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				9197552F21FBE3460069D25A /* HowToRideViewController.swift in Sources */,
@@ -1975,6 +1989,7 @@
 				9197553421FBF52D0069D25A /* HowToRideSinglePageViewController.swift in Sources */,
 				6B473DB122029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472AF219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
+				6B473DB52202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
 				6B0128BC219DA0E100AC2439 /* Ride.swift in Sources */,
 				9197554421FC3A4D0069D25A /* DesignableView.swift in Sources */,
 				6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */,
@@ -2051,6 +2066,7 @@
 				6BD47273219A4CAA00D36C3E /* GMUGeometryCollection.m in Sources */,
 				6BDE9162218C833E003F976B /* Aliases.swift in Sources */,
 				6B14FA142198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */,
+				6B473DB92202F80A003FE160 /* GMSMapView+WalkingRoute.swift in Sources */,
 				9197554021FC3A230069D25A /* VehicleInfoView.swift in Sources */,
 				6BD4729D219A4CAA00D36C3E /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				9197553221FBF5280069D25A /* HowToRideViewController.swift in Sources */,
