@@ -55,7 +55,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 92 images.
+  /// This `R.image` struct is generated, and contains static references to 86 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -89,8 +89,6 @@ struct R: Rswift.Validatable {
     static let howToRide6 = Rswift.ImageResource(bundle: R.hostingBundle, name: "how-to-ride-6")
     /// Image `how-to-ride-7`.
     static let howToRide7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "how-to-ride-7")
-    /// Image `ic-apple-dark-gray-16`.
-    static let icAppleDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-apple-dark-gray-16")
     /// Image `ic-arrow-right-dark-gray-16`.
     static let icArrowRightDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-arrow-right-dark-gray-16")
     /// Image `ic-back-dark-gray-16`.
@@ -205,12 +203,6 @@ struct R: Rswift.Validatable {
     static let icTwitterDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-twitter-dark-gray-16")
     /// Image `ic-walking-dark-gray-16`.
     static let icWalkingDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-walking-dark-gray-16")
-    /// Image `img-unsafe-parking-popup`.
-    static let imgUnsafeParkingPopup = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-unsafe-parking-popup")
-    /// Image `label-2-min-walk`.
-    static let label2MinWalk = Rswift.ImageResource(bundle: R.hostingBundle, name: "label-2-min-walk")
-    /// Image `pin`.
-    static let pin = Rswift.ImageResource(bundle: R.hostingBundle, name: "pin")
     /// Image `report-issue-menu`.
     static let reportIssueMenu = Rswift.ImageResource(bundle: R.hostingBundle, name: "report-issue-menu")
     /// Image `scooter-enter-code`.
@@ -227,8 +219,6 @@ struct R: Rswift.Validatable {
     static let scooterPinYellow = Rswift.ImageResource(bundle: R.hostingBundle, name: "scooter-pin-yellow")
     /// Image `scooter-qr-code`.
     static let scooterQrCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "scooter-qr-code")
-    /// Image `side-menu-icon`.
-    static let sideMenuIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "side-menu-icon")
     /// Image `social-facebook-dark-gray-35`.
     static let socialFacebookDarkGray35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "social-facebook-dark-gray-35")
     /// Image `social-instagram-dark-gray-35`.
@@ -239,8 +229,6 @@ struct R: Rswift.Validatable {
     static let transparent = Rswift.ImageResource(bundle: R.hostingBundle, name: "transparent")
     /// Image `unsafe-parking-popup`.
     static let unsafeParkingPopup = Rswift.ImageResource(bundle: R.hostingBundle, name: "unsafe-parking-popup")
-    /// Image `user-menu`.
-    static let userMenu = Rswift.ImageResource(bundle: R.hostingBundle, name: "user-menu")
     
     /// `UIImage(named: "Launch", bundle: ..., traitCollection: ...)`
     static func launch(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -320,11 +308,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "how-to-ride-7", bundle: ..., traitCollection: ...)`
     static func howToRide7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.howToRide7, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-apple-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icAppleDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icAppleDarkGray16, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic-arrow-right-dark-gray-16", bundle: ..., traitCollection: ...)`
@@ -612,21 +595,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icWalkingDarkGray16, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "img-unsafe-parking-popup", bundle: ..., traitCollection: ...)`
-    static func imgUnsafeParkingPopup(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.imgUnsafeParkingPopup, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "label-2-min-walk", bundle: ..., traitCollection: ...)`
-    static func label2MinWalk(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.label2MinWalk, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "pin", bundle: ..., traitCollection: ...)`
-    static func pin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.pin, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "report-issue-menu", bundle: ..., traitCollection: ...)`
     static func reportIssueMenu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.reportIssueMenu, compatibleWith: traitCollection)
@@ -667,11 +635,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.scooterQrCode, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "side-menu-icon", bundle: ..., traitCollection: ...)`
-    static func sideMenuIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.sideMenuIcon, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "social-facebook-dark-gray-35", bundle: ..., traitCollection: ...)`
     static func socialFacebookDarkGray35(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.socialFacebookDarkGray35, compatibleWith: traitCollection)
@@ -695,11 +658,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "unsafe-parking-popup", bundle: ..., traitCollection: ...)`
     static func unsafeParkingPopup(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.unsafeParkingPopup, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "user-menu", bundle: ..., traitCollection: ...)`
-    static func userMenu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.userMenu, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
