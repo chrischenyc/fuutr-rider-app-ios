@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class ZoneService {
+final class SearchService {
   static func search(_ completion: @escaping ([Zone]?, Error?) -> Void) -> URLSessionDataTask? {
     
     return APIClient.shared.load(path: "/zones",

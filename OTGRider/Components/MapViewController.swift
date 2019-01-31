@@ -25,7 +25,6 @@ class MapViewController: UIViewController {
   private var rideUpdateAPITask: URLSessionTask?
   private var vehicleAPITask: URLSessionTask?
   private var userAPITask: URLSessionTask?
-  private var zoneAPITask: URLSessionTask?
   
   private var deferredSearchTimer: Timer?     // a new round of search API will be fired unless time gets invalidated
   private let searchDeferring: TimeInterval = 1.5
@@ -214,7 +213,7 @@ extension MapViewController {
       mapView.animate(to: camera)
     }
     
-    searchVehicles()
+    search()
   }
   
   @objc private func updateRideLocally() {
@@ -229,29 +228,25 @@ extension MapViewController {
 
 // MARK: - API
 extension MapViewController {
-  @objc private func searchVehicles() {
-    // pause new vehicles search while user is during a ride
+  @objc private func search() {
+    // stop searching while in an active ride
     guard ongoingRide == nil || ongoingRide!.paused else { return }
-    
-    // update zones too
-    getZones()
     
     searchAPITask?.cancel()
     
-    searchAPITask = VehicleService.search(latitude: mapView.getCenterCoordinate().latitude,
-                                          longitude: mapView.getCenterCoordinate().longitude,
-                                          radius: mapView.getRadius(),
-                                          completion: { [weak self] (vehicles, error) in
+    searchAPITask = SearchService.search(coordinates: mapView.getCenterCoordinate(),
+                                         radius: mapView.getRadius(),
+                                         completion: { [weak self] (vehicles, zones, error) in
+                                          
+                                          DispatchQueue.main.async {
                                             guard error == nil else {
                                               logger.error(error?.localizedDescription)
                                               return
                                             }
                                             
-                                            guard let vehicles = vehicles else {
-                                              return
-                                            }
-                                            
-                                            self?.addMapMakers(forVehicles: vehicles)
+                                            self?.addMapMakersFor(vehicles)
+                                            self?.addMapPolygonsFor(zones)
+                                          }
     })
   }
   
@@ -382,7 +377,7 @@ extension MapViewController {
         if let ride = self?.ongoingRide {
           self?.showRideLockedFullScreenView(ride)
         }
-        self?.searchVehicles()
+        self?.search()
       }
     }
   }
@@ -436,7 +431,7 @@ extension MapViewController {
           self?.updateVehicleInfo(vehicle)
           
           // refresh map search
-          self?.searchVehicles()
+          self?.search()
         }
       }
       
@@ -449,22 +444,6 @@ extension MapViewController {
     userAPITask = UserService.getProfile { (user, error) in
       self.currentUser = user
     }
-  }
-  
-  private func getZones() {
-    zoneAPITask?.cancel()
-    zoneAPITask = ZoneService.search({ [weak self] (zones, error) in
-      guard error == nil else {
-        logger.error(error?.localizedDescription)
-        return
-      }
-      
-      guard let zones = zones else {
-        return
-      }
-      
-      self?.addMapZones(zones)
-    })
   }
 }
 
@@ -514,7 +493,7 @@ extension MapViewController {
     
     vehicleReservedInfoView.onReserveTimeUp = { [weak self] in
       DispatchQueue.main.async {
-        self?.searchVehicles()
+        self?.search()
       }
     }
     
@@ -720,83 +699,38 @@ extension MapViewController {
     clusterManager.setDelegate(self, mapDelegate: self)
   }
   
-  private func addMapZones(_ zones: [Zone]) {
-    clearMapZones()
+  private func addMapPolygonsFor(_ zones: [Zone]) {
+    // clear existing polygons
+    for (_, polygon) in zonePolygons {
+      polygon.map = nil
+    }
+    zonePolygons.removeAll()
     
-    DispatchQueue.main.async { [weak self] in
-      for zone in zones {
-        let path = GMSMutablePath()
-        
-        for coordinates in zone.polygon {
-          path.add(CLLocationCoordinate2D(latitude: coordinates[1], longitude: coordinates[0]))
-        }
-        
-        // Create the polygon, and assign it to the map.
-        var fillColor: UIColor?
-        var strokeColor: UIColor?
-        
-        if !zone.parking {
-          fillColor = UIColor.noParkingZoneFillColor
-          strokeColor = UIColor.noParkingZoneStrokeColor
-        }
-        else if zone.speedMode == 1 {
-          fillColor = UIColor.lowSpeedZoneFillColor
-          strokeColor = UIColor.lowSpeedZoneStrokeColor
-        }
-        else if zone.speedMode == 2 {
-          fillColor = UIColor.midSpeedZoneFillColor
-          strokeColor = UIColor.midSpeedZoneStrokeColor
-        }
-        
-        if let fillColor = fillColor, let strokeColor = strokeColor {
-          let polygon = GMSPolygon(path: path)
-          polygon.fillColor = fillColor
-          polygon.strokeColor = strokeColor
-          polygon.strokeWidth = 1
-          polygon.geodesic = true
-          polygon.map = self?.mapView
-          
-          self?.zonePolygons.append((zone, polygon))
-        }
-      }
+    // add new polygons
+    for zone in zones {
+      let polygon = GMSPolygon(zone: zone)
+      polygon.map = mapView
+      zonePolygons.append((zone, polygon))
     }
   }
   
-  private func clearMapZones() {
-    DispatchQueue.main.async {
-      [weak self] in
+  private func addMapMakersFor(_ vehicles: [Vehicle]) {
+    // remove existing items
+    clearMapMakers()
+    
+    // add new item
+    let items = vehicles.map { (vehicle) -> VehiclePOI in
+      let item = VehiclePOI(vehicle: vehicle)
       
-      guard var zonePolygons = self?.zonePolygons else { return }
-      
-      for (_, polygon) in zonePolygons {
-        polygon.map = nil
-      }
-      
-      zonePolygons.removeAll()
+      return item
     }
-  }
-  
-  private func addMapMakers(forVehicles vehicles: [Vehicle]) {
-    DispatchQueue.main.async {
-      // remove existing items
-      self.clusterManager.clearItems()
-      
-      // add new item
-      let items = vehicles.map { (vehicle) -> VehiclePOI in
-        let item = VehiclePOI(vehicle: vehicle)
-        
-        return item
-      }
-      self.clusterManager.add(items)
-      
-      self.clusterManager.cluster()
-    }
+    self.clusterManager.add(items)
+    
+    self.clusterManager.cluster()
   }
   
   private func clearMapMakers() {
-    DispatchQueue.main.async {
-      self.clusterManager.clearItems()
-    }
+    self.clusterManager.clearItems()
   }
   
   private func drawRoute(forPath path:GMSPath?) {
@@ -939,7 +873,7 @@ extension MapViewController: GMSMapViewDelegate {
     
     deferredSearchTimer = Timer.scheduledTimer(timeInterval: searchDeferring,
                                                target: self,
-                                               selector: #selector(searchVehicles),
+                                               selector: #selector(search),
                                                userInfo: nil,
                                                repeats: false)
   }
