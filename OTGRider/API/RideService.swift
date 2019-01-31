@@ -87,7 +87,7 @@ final class RideService {
   }
   
   static func getHistoryRides(_ completion: @escaping ([Ride]?, Error?) -> Void) -> URLSessionDataTask? {
-    return APIClient.shared.load(path: "/rides/me",
+    return APIClient.shared.load(path: "/rides/me/history",
                                  method: .get,
                                  params: nil,
                                  completion: { (result, error) in
