@@ -13,18 +13,24 @@ var currentLocation: CLLocation?
 
 class MapViewController: UIViewController {
   
+  // ---------- Google Maps ----------
   private let locationManager = CLLocationManager()
   private var clusterManager: GMUClusterManager!
   private let searchingZoomLevel: Float = 15.0
   private let ridingZoomLevel: Float = 18.0
   private let minDistanceFilter: CLLocationDistance = 3
   private var zonePolygons: [(Zone, GMSPolygon)] = []
+  private var ongoingRidePath: GMSMutablePath?    // to track travelled distance and to draw route
+  private var ongoingRidePolyline: GMSPolyline?
+  private var incrementalPath: GMSMutablePath?    // to report to server for the new segment
   
+  // ---------- API requests ----------
   private var searchAPITask: URLSessionTask?
   private var rideAPITask: URLSessionTask?
   private var rideUpdateAPITask: URLSessionTask?
   private var vehicleAPITask: URLSessionTask?
   
+  // ---------- recurring operations ----------
   private var deferredSearchTimer: Timer?     // a new round of search API will be fired unless time gets invalidated
   private let searchDeferring: TimeInterval = 1.5
   private var rideLocalUpdateTimer: Timer?    // periodically update duration, distance, route
@@ -33,7 +39,8 @@ class MapViewController: UIViewController {
   private let serverUpdateFrequency: TimeInterval = 10
   private var serverUpdateThreshhold: CLLocationDistance = 10    // the minimum travel distance for a new server update
   
-  private var didLoadOngoingRide: Bool = false
+  // ---------- run-time values ----------
+  private var didLoadOngoingRide: Bool = false  // after launch, the app would try to load an ongoing ride
   
   var ongoingRide: Ride? {
     didSet {
@@ -48,10 +55,9 @@ class MapViewController: UIViewController {
     }
   }
   
-  private var ongoingRidePath: GMSMutablePath?    // to track travelled distance and to draw route
-  private var ongoingRidePolyline: GMSPolyline?
-  private var incrementalPath: GMSMutablePath?    // to report to server for the new segment
+  var ridePausedViewController: RidePausedViewController?
   
+  // ---------- IBOutlet ----------
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var sideMenuButton: UIButton!
   @IBOutlet weak var unlockButton: UIButton!
@@ -60,8 +66,6 @@ class MapViewController: UIViewController {
   @IBOutlet weak var unlockView: UIView!
   @IBOutlet weak var vehicleInfoView: VehicleInfoView!
   @IBOutlet weak var vehicleReservedInfoView: VehicleReservedInfoView!
-  
-  var ridePausedViewController: RidePausedViewController?
   
   // MARK: - lifecycle
   override func viewDidLoad() {
@@ -319,7 +323,7 @@ extension MapViewController {
           return
         }
         
-        self?.takePhotoForCompletedRide(ride)
+        self?.performSegue(withIdentifier: R.segue.mapViewController.showEndRidePhoto, sender: ride)
         
         self?.stopTrackingRide()
       }
@@ -336,10 +340,6 @@ extension MapViewController {
                                            incrementalEncodedPath: path.encodedPath(),
                                            incrementalDistance: path.length(of: GMSLengthKind.geodesic)) { (error) in
                                             logger.error(error)
-                                            
-                                            if error != nil {
-                                              // TODO: merge path coordinates which was failed to upload
-                                            }
     }
     
     // reset incremental path straight away
@@ -396,13 +396,13 @@ extension MapViewController {
     }
   }
   
-  private func toggleVehicleReservation(id: String, state: Bool) {
+  private func toggleVehicleReservation(id: String, reserve: Bool) {
     // user can't reserve a vehicle during a ride
     guard ongoingRide == nil else { return }
     
     vehicleAPITask?.cancel()
     
-    vehicleAPITask = VehicleService.reserve(_id: id, reserve: state, completion: { [weak self] (vehicle, error) in
+    vehicleAPITask = VehicleService.reserve(_id: id, reserve: reserve, completion: { [weak self] (vehicle, error) in
       guard error == nil else {
         DispatchQueue.main.async {
           self?.flashErrorMessage(error?.localizedDescription)
@@ -440,7 +440,7 @@ extension MapViewController {
                          message: "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
                          positiveActionButtonTitle: "OK",
                          positiveActionButtonTapped: {
-                          self?.toggleVehicleReservation(id: vehicle._id, state: true)
+                          self?.toggleVehicleReservation(id: vehicle._id, reserve: true)
       },
                          negativeActionButtonTitle: "Cancel")
     }
@@ -465,7 +465,7 @@ extension MapViewController {
                          positiveActionButtonTapped: {},
                          negativeActionButtonTitle: "Cancel reservation",
                          negativeActionButtonTapped: {
-                          self?.toggleVehicleReservation(id: vehicle._id, state: false)
+                          self?.toggleVehicleReservation(id: vehicle._id, reserve: false)
       })
     }
     
@@ -564,39 +564,12 @@ extension MapViewController {
     }
   }
   
-  private func takePhotoForCompletedRide(_ ride: Ride) {
-    performSegue(withIdentifier: R.segue.mapViewController.showEndRidePhoto, sender: ride)
-  }
-  
   private func showRideLockedFullScreenView(_ ride: Ride) {
     if let viewController = UIStoryboard(name: "RidePaused", bundle: nil).instantiateInitialViewController() as? RidePausedViewController {
       ridePausedViewController = viewController
       presentFullScreen(viewController)
       viewController.delegate = self
       viewController.updateContent(with: ride)
-    }
-  }
-  
-  private func toggleZoneInfo(_ coordinate: CLLocationCoordinate2D) {
-    var insideZone: (Zone, GMSPolygon)?
-    
-    for (zone, polygon) in zonePolygons {
-      if let path = polygon.path, GMSGeometryContainsLocation(coordinate, path, true) {
-        insideZone = (zone, polygon)
-        break
-      }
-    }
-    
-    if let (zone, _) = insideZone, let title = zone.title, let message = zone.message {
-      let locationMarker = GMSMarker(position: coordinate)
-      locationMarker.map = mapView
-      locationMarker.appearAnimation = .none
-      locationMarker.icon = R.image.transparent()
-      locationMarker.opacity = 0
-      locationMarker.isFlat = true
-      locationMarker.title = title
-      locationMarker.snippet = message
-      mapView.selectedMarker = locationMarker
     }
   }
   
@@ -673,6 +646,29 @@ extension MapViewController {
     }
     
     ongoingRidePolyline?.path = path
+  }
+  
+  private func toggleZoneInfo(_ coordinate: CLLocationCoordinate2D) {
+    var insideZone: (Zone, GMSPolygon)?
+    
+    for (zone, polygon) in zonePolygons {
+      if let path = polygon.path, GMSGeometryContainsLocation(coordinate, path, true) {
+        insideZone = (zone, polygon)
+        break
+      }
+    }
+    
+    if let (zone, _) = insideZone, let title = zone.title, let message = zone.message {
+      let locationMarker = GMSMarker(position: coordinate)
+      locationMarker.map = mapView
+      locationMarker.appearAnimation = .none
+      locationMarker.icon = R.image.transparent()
+      locationMarker.opacity = 0
+      locationMarker.isFlat = true
+      locationMarker.title = title
+      locationMarker.snippet = message
+      mapView.selectedMarker = locationMarker
+    }
   }
 }
 
