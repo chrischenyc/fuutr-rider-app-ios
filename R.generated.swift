@@ -713,7 +713,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 17 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 18 view controllers.
   struct segue {
     /// This struct is generated for `EditEmailViewController`, and contains static references to 1 segues.
     struct editEmailViewController {
@@ -889,7 +889,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `MapViewController`, and contains static references to 7 segues.
+    /// This struct is generated for `MapViewController`, and contains static references to 8 segues.
     struct mapViewController {
       /// Segue identifier `showAccount`.
       static let showAccount: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showAccount")
@@ -901,6 +901,8 @@ struct R: Rswift.Validatable {
       static let showHistory: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showHistory")
       /// Segue identifier `showHowToRide`.
       static let showHowToRide: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, HowToRideViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHowToRide")
+      /// Segue identifier `showRidePaused`.
+      static let showRidePaused: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, RidePausedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRidePaused")
       /// Segue identifier `showScanUnlock`.
       static let showScanUnlock: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showScanUnlock")
       /// Segue identifier `showSettings`.
@@ -939,6 +941,13 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showHowToRide(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, HowToRideViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showHowToRide, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showRidePaused`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showRidePaused(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, RidePausedViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showRidePaused, segue: segue)
       }
       
       /// Optionally returns a typed version of segue `showScanUnlock`.
@@ -998,6 +1007,21 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showNewPassword(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ResetPasswordVerifyViewController, ResetPasswordSetViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.resetPasswordVerifyViewController.showNewPassword, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `RidePausedViewController`, and contains static references to 1 segues.
+    struct ridePausedViewController {
+      /// Segue identifier `unwindToHome`.
+      static let unwindToHome: Rswift.StoryboardSegueIdentifier<UIStoryboardSegueWithCompletion, RidePausedViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToHome")
+      
+      /// Optionally returns a typed version of segue `unwindToHome`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIStoryboardSegueWithCompletion, RidePausedViewController, UIKit.UIViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.ridePausedViewController.unwindToHome, segue: segue)
       }
       
       fileprivate init() {}

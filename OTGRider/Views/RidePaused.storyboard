@@ -25,6 +25,9 @@
                                     <constraint firstAttribute="height" constant="44" id="ceE-Sz-TKe"/>
                                 </constraints>
                                 <state key="normal" image="ic-close-dark-gray-16"/>
+                                <connections>
+                                    <segue destination="Kj5-LL-YTN" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="hy4-jX-J3f"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride in progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQV-Po-Aba" userLabel="rideInProgress">
                                 <rect key="frame" x="128.5" y="34" width="118.5" height="18"/>
@@ -32,20 +35,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-Gf-fFM" userLabel="costLabel">
-                                <rect key="frame" x="170.5" y="56" width="34" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-Gf-fFM" userLabel="costLabel">
+                                <rect key="frame" x="187.5" y="56" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-pin-locked-green" translatesAutoresizingMaskIntoConstraints="NO" id="NRn-5f-WIT">
-                                <rect key="frame" x="143.5" y="122" width="88" height="88"/>
+                                <rect key="frame" x="143.5" y="106" width="88" height="88"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlc-Xe-brk">
-                                <rect key="frame" x="130" y="310" width="115" height="24"/>
+                                <rect key="frame" x="130" y="294" width="115" height="24"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:01 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze8-ZB-Ppo" userLabel="ridingTimeLabel">
-                                        <rect key="frame" x="39" y="0.5" width="78" height="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze8-ZB-Ppo" userLabel="ridingTimeLabel">
+                                        <rect key="frame" x="39" y="0.5" width="17.5" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -68,7 +71,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeA-D1-RTh">
-                                <rect key="frame" x="130" y="354" width="115" height="39"/>
+                                <rect key="frame" x="130" y="338" width="115" height="39"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-location-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="ujF-WW-Geg">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -77,14 +80,14 @@
                                             <constraint firstAttribute="width" constant="24" id="Khq-OP-WHg"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-bg-3Rk" userLabel="rideDistance">
-                                        <rect key="frame" x="39" y="0.0" width="56" height="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-bg-3Rk" userLabel="rideDistance">
+                                        <rect key="frame" x="39" y="0.0" width="17.5" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16km range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vq-Vv-j7d" userLabel="remainingRange">
-                                        <rect key="frame" x="39" y="23" width="71" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vq-Vv-j7d" userLabel="remainingRange">
+                                        <rect key="frame" x="39" y="23" width="12.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -121,6 +124,9 @@
                                     <constraint firstAttribute="height" constant="44" id="wmB-x5-qzn"/>
                                 </constraints>
                                 <state key="normal" title="Unlock"/>
+                                <connections>
+                                    <action selector="resumeRide:" destination="6DZ-mU-U9d" eventType="touchUpInside" id="k0K-0M-aZx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="law-FY-Wdf">
                                 <rect key="frame" x="50" y="523" width="275" height="44"/>
@@ -129,6 +135,9 @@
                                     <constraint firstAttribute="height" constant="44" id="WrM-1u-QW2"/>
                                 </constraints>
                                 <state key="normal" title="End Ride"/>
+                                <connections>
+                                    <action selector="endRide:" destination="6DZ-mU-U9d" eventType="touchUpInside" id="T9T-fl-n5f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -158,7 +167,6 @@
                         <viewLayoutGuide key="safeArea" id="bv3-mp-AwY"/>
                     </view>
                     <connections>
-                        <outlet property="closeButton" destination="vEg-3K-cqi" id="HZi-CI-Qae"/>
                         <outlet property="costLabel" destination="Ly2-Gf-fFM" id="V35-Vp-uA5"/>
                         <outlet property="endRideButton" destination="law-FY-Wdf" id="Sf2-ed-qIe"/>
                         <outlet property="priceLabel" destination="pyS-6O-b1H" id="tHN-fC-Znn"/>
@@ -168,9 +176,11 @@
                         <outlet property="ridingTimeLabel" destination="Ze8-ZB-Ppo" id="hDx-GV-NP7"/>
                         <outlet property="scooterIsLockedLabel" destination="gsy-uI-Koi" id="SHN-Ae-nWt"/>
                         <outlet property="unlockButton" destination="V3M-bJ-Bvo" id="Od8-kn-41F"/>
+                        <segue destination="Kj5-LL-YTN" kind="unwind" unwindAction="unwindToHome:" id="Zgo-AE-Bxf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jvd-9y-1fL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Kj5-LL-YTN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-111" y="36"/>
         </scene>

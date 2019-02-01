@@ -1,11 +1,18 @@
-protocol RidePausedDelegate: AnyObject {
-  func rideShouldResume()
-  func rideShouldEnd()
+//
+//  TransactionCell.swift
+//  OTGRider
+//
+//  Copyright © 2019 FUUTR. All rights reserved.
+//
+
+enum RidePausedViewControllerDismissAction {
+  case resumeRide
+  case endRide
+  case none
 }
 
 class RidePausedViewController: UIViewController {
   
-  @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var rideInProgressLabel: UILabel!
   @IBOutlet weak var costLabel: UILabel!
   @IBOutlet weak var ridingTimeLabel: UILabel!
@@ -16,7 +23,7 @@ class RidePausedViewController: UIViewController {
   @IBOutlet weak var unlockButton: UIButton!
   @IBOutlet weak var endRideButton: UIButton!
   
-  weak var delegate: RidePausedDelegate?
+  var dismissAction: RidePausedViewControllerDismissAction?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,30 +46,25 @@ class RidePausedViewController: UIViewController {
     priceLabel.textColor = UIColor.primaryGreyColor
     unlockButton.primaryRed()
     endRideButton.primaryRedBasic()
-    
-    closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
-    unlockButton.addTarget(self, action: #selector(resume), for: .touchUpInside)
-    endRideButton.addTarget(self, action: #selector(endRide), for: .touchUpInside)
   }
   
   @objc private func close() {
+    dismissAction = .none
     self.dismiss(animated: true, completion: nil)
   }
   
-  @objc private func resume() {
-    self.dismiss(animated: true, completion: { [weak self] in
-      self?.delegate?.rideShouldResume()
-    })
+  @IBAction func resumeRide(_ sender: Any) {
+    dismissAction = .resumeRide
+    performSegue(withIdentifier: R.segue.ridePausedViewController.unwindToHome, sender: nil)
   }
   
-  @objc private func endRide() {
+  @IBAction func endRide(_ sender: Any) {
     self.alertMessage(title: "Are you sure you want to end the ride?",
                       message: "",
                       positiveActionButtonTitle: "Yes, end ride",
                       positiveActionButtonTapped: {
-                        self.dismiss(animated: true, completion: { [weak self] in
-                          self?.delegate?.rideShouldEnd()
-                        })
+                        self.dismissAction = .endRide
+                        self.performSegue(withIdentifier: R.segue.ridePausedViewController.unwindToHome, sender: nil)
     },
                       negativeActionButtonTitle: "No, keep riding")
   }

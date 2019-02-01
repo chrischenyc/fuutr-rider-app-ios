@@ -85,6 +85,11 @@ class MapViewController: UIViewController {
       let ride = sender as? Ride {
       endRidePhotoViewController.ride = ride
     }
+    
+    if let ridePausedViewController = segue.destination as? RidePausedViewController {
+      // keep a reference of paused screen, so it can be refreshed per second
+      self.ridePausedViewController = ridePausedViewController
+    }
   }
   
   // MARK: - user actions
@@ -125,6 +130,27 @@ class MapViewController: UIViewController {
       unwindSegueWithCompletion.completion = {
         self.startTrackingRide(ride)
         self.showHowToRide()
+      }
+      
+    }
+      // unwind from paused ride
+    else if let ridePausedViewController = sourceViewController as? RidePausedViewController,
+      let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion,
+      let dismissAction = ridePausedViewController.dismissAction {
+      
+      unwindSegueWithCompletion.completion = {
+        self.ridePausedViewController = nil
+        
+        switch dismissAction {
+        case .resumeRide:
+          self.resumeRide()
+          
+        case .endRide:
+          self.endRide()
+          
+        case .none:
+          break
+        }
       }
       
     }
@@ -370,7 +396,7 @@ extension MapViewController {
         self?.ongoingRide = ride
         self?.updateRideLocally()
         if let ride = self?.ongoingRide {
-          self?.showRideLockedFullScreenView(ride)
+          self?.performSegue(withIdentifier: R.segue.mapViewController.showRidePaused, sender: ride)
         }
         self?.search()
       }
@@ -560,15 +586,6 @@ extension MapViewController {
       presentFullScreen(viewController, completion: {
         viewController.updateContent(with: ride, and: currentLocation)
       })
-    }
-  }
-  
-  private func showRideLockedFullScreenView(_ ride: Ride) {
-    if let viewController = UIStoryboard(name: "RidePaused", bundle: nil).instantiateInitialViewController() as? RidePausedViewController {
-      ridePausedViewController = viewController
-      presentFullScreen(viewController)
-      viewController.delegate = self
-      viewController.updateContent(with: ride)
     }
   }
   
@@ -846,17 +863,5 @@ extension MapViewController: GMUClusterRendererDelegate {
         marker.icon = R.image.scooterPinRed()
       }
     }
-  }
-}
-
-extension MapViewController: RidePausedDelegate {
-  func rideShouldResume() {
-    ridePausedViewController = nil
-    resumeRide()
-  }
-  
-  func rideShouldEnd() {
-    ridePausedViewController = nil
-    endRide()
   }
 }
