@@ -84,6 +84,7 @@
                         <outlet property="pincodeView" destination="f2g-yc-wtW" id="mkj-cY-xcB"/>
                         <outlet property="showQRCodeButton" destination="7cX-Kk-xvp" id="KIW-c7-FwC"/>
                         <segue destination="lX7-YH-uhz" kind="unwind" identifier="unwindToScanUnlock" unwindAction="unwindToScanUnlock:" id="C08-s7-KT5"/>
+                        <segue destination="lX7-YH-uhz" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="N2T-gK-JMP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aa-ha-Ifk" userLabel="First Responder" sceneMemberID="firstResponder"/>

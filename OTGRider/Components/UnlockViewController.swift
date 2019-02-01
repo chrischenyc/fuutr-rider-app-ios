@@ -9,22 +9,14 @@
 import UIKit
 import AVFoundation
 
-protocol UnlockDelegate: AnyObject {
-  func vehicleUnlocked(with ride: Ride)
-}
-
 class UnlockViewController: UIViewController {
   
   private var apiTask: URLSessionTask?
-  weak var delegate: UnlockDelegate?
+  var unlockCode: String?
+  var ride: Ride? // has value after successfully unlocked, will be assessed by MapViewController during segue unwind
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-  
-  func unlockVehicle(unlockCode: String,
-                     onBalanceInsufficientError: (() -> Void)? = nil,
-                     onGeneralError: ((Error) -> Void)? = nil) {
+  func unlockVehicle(unlockCode: String, onGeneralError: ((Error) -> Void)? = nil) {
+    self.unlockCode = unlockCode
     apiTask?.cancel()
     
     showLoading()
@@ -42,21 +34,30 @@ class UnlockViewController: UIViewController {
                                                            message: "You account balance is not enough for a new ride",
                                                            positiveActionButtonTitle: "Top up balance",
                                                            positiveActionButtonTapped: {
-                                                            // TODO: need to indicate AccountViewController, after successful top up, return back to unlock screen
-                                                            onBalanceInsufficientError?()
+                                                            // TODO: segue to AccountViewController for topup, after successful top up, return back to re-try unlock
                                         })
                                       } else {
                                         onGeneralError?(error)
                                       }
                                       return
                                     }
+                                    
                                     guard let ride = ride else {
-                                      self?.flashErrorMessage(R.string.localizable.kOtherError())
+                                      self?.alertMessage(message: R.string.localizable.kOtherError())
                                       return
                                     }
-                                    self?.dismiss(animated: true, completion: {
-                                      self?.delegate?.vehicleUnlocked(with: ride)
-                                    })
+                                    
+                                    self?.ride = ride
+                                    
+                                    if let scanUnlock = self?.isKind(of: ScanUnlockViewController.self) {
+                                      if scanUnlock {
+                                        self?.performSegue(withIdentifier: R.segue.scanUnlockViewController.unwindToHome.identifier, sender: ride)
+                                      }
+                                      else {
+                                        self?.performSegue(withIdentifier: R.segue.manualUnlockViewController.unwindToHome.identifier, sender: ride)
+                                      }
+                                    }
+                                    
                                   }
     })
   }

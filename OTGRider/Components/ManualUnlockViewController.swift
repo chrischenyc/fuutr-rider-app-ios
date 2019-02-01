@@ -43,7 +43,7 @@ class ManualUnlockViewController: UnlockViewController {
   }
   
   @objc private func showQRCode() {
-    self.performSegue(withIdentifier: "unwindToScanUnlock", sender: self)
+    self.performSegue(withIdentifier: R.segue.manualUnlockViewController.unwindToScanUnlock, sender: self)
   }
 }
 
@@ -56,14 +56,14 @@ extension ManualUnlockViewController: PinCodeViewDelegate {
     
     pincodeView.resignFirstResponder()
     
-    unlockVehicle(unlockCode: code,
-                  onBalanceInsufficientError: nil,
-                  onGeneralError: { [weak self] error in
-                    callback(false)
-                    self?.alertError(error, actionButtonTitle: "OK", actionButtonTapped: {
-                      view.resetDigits()
-                      self?.pincodeView.becomeFirstResponder()
-                    })
+    unlockVehicle(unlockCode: code, onGeneralError: { [weak self] error in
+      
+      callback(false)
+      
+      self?.alertError(error, actionButtonTitle: "OK", actionButtonTapped: {
+        view.resetDigits()
+        self?.pincodeView.becomeFirstResponder()
+      })
     })
   }
 }

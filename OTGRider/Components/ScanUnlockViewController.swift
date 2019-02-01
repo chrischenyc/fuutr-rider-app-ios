@@ -47,22 +47,14 @@ class ScanUnlockViewController: UnlockViewController {
     super.prepare(for: segue, sender: sender)
     
     scanner.stopScan()
-    
-    if let manualUnlockViewController = segue.destination as? ManualUnlockViewController {
-      manualUnlockViewController.delegate = delegate
-    }
   }
   
   private func handleScanResult(_ result: String) {
-    logger.debug(result)
-    
-    unlockVehicle(unlockCode: result,
-                  onBalanceInsufficientError: nil,
-                  onGeneralError: { [weak self] error in
-                    self?.alertError(error, actionButtonTitle: "OK", actionButtonTapped: {
-                      self?.scanner.clearDrawLayer()
-                      self?.scanner.startScan()
-                    })
+    unlockVehicle(unlockCode: result, onGeneralError: { [weak self] error in
+      self?.alertError(error, actionButtonTitle: "OK", actionButtonTapped: {
+        self?.scanner.clearDrawLayer()
+        self?.scanner.startScan()
+      })
     })
   }
 }
