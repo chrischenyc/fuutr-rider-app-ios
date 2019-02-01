@@ -191,8 +191,6 @@
 		6BB6CB722196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
 		6BB6CB732196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
 		6BB6CB742196591D00B597B3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */; };
-		6BBC6A0221A0DDDA003C910B /* unlock.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731A0218968E000CC2651 /* unlock.gpx */; };
-		6BBC6A0321A0DDDD003C910B /* ride.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0021A0DD27003C910B /* ride.gpx */; };
 		6BBC6A0521A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
 		6BBC6A0621A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
 		6BBC6A0721A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
@@ -1222,7 +1220,6 @@
 				914A6B8621FD545700715879 /* ScanUnlock.storyboard in Resources */,
 				6BDE9134218C19DF003F976B /* HowToRide.storyboard in Resources */,
 				914A6B7E21FD250000715879 /* VehicleReservedInfoView.xib in Resources */,
-				6BBC6A0221A0DDDA003C910B /* unlock.gpx in Resources */,
 				6BDE9135218C19DF003F976B /* Account.storyboard in Resources */,
 				6BDE9136218C19DF003F976B /* LaunchScreen.storyboard in Resources */,
 				6B8DC68222005B0900831B03 /* GoogleMapStyle.night.json in Resources */,
@@ -1233,7 +1230,6 @@
 				6BDE9138218C19DF003F976B /* Help.storyboard in Resources */,
 				6BDE9139218C19DF003F976B /* SignIn.storyboard in Resources */,
 				6BDE913A218C19DF003F976B /* Localizable.strings in Resources */,
-				6BBC6A0321A0DDDD003C910B /* ride.gpx in Resources */,
 				6B0D921C21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BDE913B218C19DF003F976B /* Assets.xcassets in Resources */,
 				6BDE913C218C19DF003F976B /* Onboard.storyboard in Resources */,

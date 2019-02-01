@@ -17,16 +17,12 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 4 files.
+  /// This `R.file` struct is generated, and contains static references to 2 files.
   struct file {
     /// Resource file `GoogleMapStyle.json`.
     static let googleMapStyleJson = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleMapStyle", pathExtension: "json")
     /// Resource file `GoogleMapStyle.night.json`.
     static let googleMapStyleNightJson = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleMapStyle.night", pathExtension: "json")
-    /// Resource file `ride.gpx`.
-    static let rideGpx = Rswift.FileResource(bundle: R.hostingBundle, name: "ride", pathExtension: "gpx")
-    /// Resource file `unlock.gpx`.
-    static let unlockGpx = Rswift.FileResource(bundle: R.hostingBundle, name: "unlock", pathExtension: "gpx")
     
     /// `bundle.url(forResource: "GoogleMapStyle", withExtension: "json")`
     static func googleMapStyleJson(_: Void = ()) -> Foundation.URL? {
@@ -37,18 +33,6 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GoogleMapStyle.night", withExtension: "json")`
     static func googleMapStyleNightJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleMapStyleNightJson
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-    
-    /// `bundle.url(forResource: "ride", withExtension: "gpx")`
-    static func rideGpx(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.rideGpx
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-    
-    /// `bundle.url(forResource: "unlock", withExtension: "gpx")`
-    static func unlockGpx(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.unlockGpx
       return fileResource.bundle.url(forResource: fileResource)
     }
     
