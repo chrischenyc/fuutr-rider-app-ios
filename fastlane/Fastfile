@@ -32,6 +32,6 @@ platform :ios do
   after_all do |lane|
     # This block is called, only if the executed lane was successful
 
-    reset_git_repo
+    reset_git_repo(skip_clean: true)
   end
 end
