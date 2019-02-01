@@ -16,7 +16,7 @@
                 <viewControllerPlaceholder storyboardName="SideMenu" id="xVf-4u-b1H" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8e-um-IXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2077" y="1588"/>
+            <point key="canvasLocation" x="-2048" y="1463"/>
         </scene>
         <!--History-->
         <scene sceneID="uce-Oo-cqs">
@@ -24,7 +24,7 @@
                 <viewControllerPlaceholder storyboardName="History" id="6ub-gY-uRn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKH-ix-XrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2089" y="1633"/>
+            <point key="canvasLocation" x="-2060" y="1508"/>
         </scene>
         <!--Account-->
         <scene sceneID="LKN-cT-zs3">
@@ -32,7 +32,7 @@
                 <viewControllerPlaceholder storyboardName="Account" id="Fr2-ny-Lh9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZG0-Sq-K1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2086" y="1673"/>
+            <point key="canvasLocation" x="-2057" y="1547"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Wfj-cf-A23">
@@ -40,7 +40,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="ouw-MG-0Xz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSQ-CI-hcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2086" y="1718"/>
+            <point key="canvasLocation" x="-2057" y="1592"/>
         </scene>
         <!--Help-->
         <scene sceneID="oR6-cG-Oyt">
@@ -48,7 +48,7 @@
                 <viewControllerPlaceholder storyboardName="Help" id="46k-mg-UHB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zph-2Z-Qeg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2104" y="1762"/>
+            <point key="canvasLocation" x="-2074" y="1636"/>
         </scene>
         <!--EndRidePhoto-->
         <scene sceneID="DMt-lo-LqC">
@@ -56,7 +56,15 @@
                 <viewControllerPlaceholder storyboardName="EndRidePhoto" id="8Ti-sb-yF0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Sk-Ny-Aji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2058" y="1858"/>
+            <point key="canvasLocation" x="-2029" y="1726"/>
+        </scene>
+        <!--HowToRide-->
+        <scene sceneID="sKB-px-qHp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HowToRide" id="FGs-8F-TV0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZU-ua-SfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2042" y="1768"/>
         </scene>
         <!--ScanUnlock-->
         <scene sceneID="lBZ-i9-OXa">
@@ -64,7 +72,7 @@
                 <viewControllerPlaceholder storyboardName="ScanUnlock" id="F6b-Fa-nWT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uam-KE-TSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2070" y="1807"/>
+            <point key="canvasLocation" x="-2040" y="1681"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -173,6 +181,7 @@
                         <segue destination="46k-mg-UHB" kind="presentation" identifier="showHelp" id="GwS-O7-LdY"/>
                         <segue destination="8Ti-sb-yF0" kind="presentation" identifier="showEndRidePhoto" id="Tlg-cq-aPh"/>
                         <segue destination="F6b-Fa-nWT" kind="presentation" identifier="showScanUnlock" id="HOx-pw-uNG"/>
+                        <segue destination="FGs-8F-TV0" kind="presentation" identifier="showHowToRide" id="dw5-Yc-TVD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

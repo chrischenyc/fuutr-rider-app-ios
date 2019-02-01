@@ -508,8 +508,7 @@ extension MapViewController {
   }
   
   private func showHowToRide() {
-    let viewController = UIStoryboard(name: "HowToRide", bundle: nil).instantiateViewController(withIdentifier: "HowToRide") as! HowToRideViewController
-    presentFullScreen(viewController)
+    performSegue(withIdentifier: R.segue.mapViewController.showHowToRide, sender: nil)
   }
   
   private func showVehicleInfo(_ vehicle: Vehicle) {
