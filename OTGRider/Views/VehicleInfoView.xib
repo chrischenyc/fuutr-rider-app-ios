@@ -82,10 +82,10 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F4-xC-bLI" userLabel="closeButton">
-                    <rect key="frame" x="339" y="20" width="16" height="16"/>
+                    <rect key="frame" x="325" y="6" width="44" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="6S1-Wi-xVV"/>
-                        <constraint firstAttribute="width" constant="16" id="NrM-Fe-eMf"/>
+                        <constraint firstAttribute="height" constant="44" id="6S1-Wi-xVV"/>
+                        <constraint firstAttribute="width" constant="44" id="NrM-Fe-eMf"/>
                     </constraints>
                     <state key="normal" image="ic-close-dark-gray-16"/>
                 </button>
@@ -123,7 +123,7 @@
                 <constraint firstAttribute="bottom" secondItem="iZZ-9q-z2J" secondAttribute="bottom" constant="54" id="0G1-f8-GDb"/>
                 <constraint firstItem="agB-l3-5Xr" firstAttribute="leading" secondItem="RuN-U2-YHX" secondAttribute="trailing" constant="8" id="0OH-9X-LFQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="agB-l3-5Xr" secondAttribute="trailing" constant="30" id="2b7-rh-OvG"/>
-                <constraint firstItem="0F4-xC-bLI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="36a-Dh-Tcb"/>
+                <constraint firstItem="0F4-xC-bLI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="36a-Dh-Tcb"/>
                 <constraint firstItem="BYz-By-Mps" firstAttribute="centerX" secondItem="2Rr-wp-oxp" secondAttribute="centerX" id="3HE-LU-jON"/>
                 <constraint firstItem="9D6-H6-45p" firstAttribute="top" secondItem="LzD-kh-xiL" secondAttribute="bottom" constant="25" id="8NF-A9-WOA"/>
                 <constraint firstItem="T9L-nv-MSx" firstAttribute="leading" secondItem="RuN-U2-YHX" secondAttribute="leading" id="AyS-ub-RKH"/>
@@ -145,7 +145,7 @@
                 <constraint firstItem="LzD-kh-xiL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="rtW-E0-6tX"/>
                 <constraint firstItem="IW6-0n-AEu" firstAttribute="leading" secondItem="LzD-kh-xiL" secondAttribute="trailing" constant="10" id="ugi-YE-Y5E"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iZZ-9q-z2J" secondAttribute="trailing" constant="20" id="xw3-g2-q8k"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0F4-xC-bLI" secondAttribute="trailing" constant="20" id="y7I-1L-qPU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0F4-xC-bLI" secondAttribute="trailing" constant="6" id="y7I-1L-qPU"/>
                 <constraint firstAttribute="bottom" secondItem="2Rr-wp-oxp" secondAttribute="bottom" constant="54" id="z3O-HM-gR2"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
