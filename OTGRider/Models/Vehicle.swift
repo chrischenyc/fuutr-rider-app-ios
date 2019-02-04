@@ -12,7 +12,7 @@ import ObjectMapper
 struct Vehicle: Mappable {
   var _id: String = ""
   var powerPercent: Int?
-  var remainderRange: Double?
+  var remainingRange: Double?
   var latitude: Double?
   var longitude: Double?
   var address: String?
@@ -33,7 +33,7 @@ struct Vehicle: Mappable {
   mutating func mapping(map: Map) {
     _id             <- map["_id"]
     powerPercent    <- map["powerPercent"]
-    remainderRange  <- map["remainderRange"]
+    remainingRange  <- map["remainingRange"]
     latitude        <- map["latitude"]
     longitude       <- map["longitude"]
     address         <- map["address"]

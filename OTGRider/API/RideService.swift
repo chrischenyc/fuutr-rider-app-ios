@@ -69,23 +69,6 @@ final class RideService {
     })
   }
   
-  static func update(rideId: String,
-                     incrementalEncodedPath: String,
-                     incrementalDistance: Double,
-                     completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
-    let params: JSON = [
-      "incrementalEncodedPath": incrementalEncodedPath,
-      "incrementalDistance": incrementalDistance
-    ]
-    
-    return APIClient.shared.load(path: "/rides/\(rideId)",
-      method: .patch,
-      params: params,
-      completion: { (result, error) in
-        completion(error)
-    })
-  }
-  
   static func getHistoryRides(_ completion: @escaping ([Ride]?, Error?) -> Void) -> URLSessionDataTask? {
     return APIClient.shared.load(path: "/rides/me/history",
                                  method: .get,

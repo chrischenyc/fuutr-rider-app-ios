@@ -195,6 +195,9 @@
                                     <constraint firstAttribute="height" constant="44" id="vJy-YL-9kA"/>
                                 </constraints>
                                 <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="continueButtonTapped:" destination="9B9-fy-gSE" eventType="touchUpInside" id="sct-fD-dAB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -239,9 +242,11 @@
                         <outlet property="rideFinishedTimeLabel" destination="oQ2-rP-ux6" id="vqs-aI-krw"/>
                         <outlet property="rideUsedTimeLabel" destination="7Kg-d4-yo8" id="PFm-RJ-wJu"/>
                         <outlet property="shareLabel" destination="rnx-Nf-c5f" id="2Me-Pu-CGU"/>
+                        <segue destination="HLN-uQ-hrx" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="diG-n8-X3K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAV-hT-6of" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HLN-uQ-hrx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="116.74876847290641"/>
         </scene>

@@ -1,3 +1,10 @@
+//
+//  TransactionCell.swift
+//  OTGRider
+//
+//  Copyright © 2019 FUUTR. All rights reserved.
+//
+
 class RideFinishedViewController: UIViewController {
   
   @IBOutlet weak var mapView: GMSMapView!
@@ -11,7 +18,10 @@ class RideFinishedViewController: UIViewController {
   @IBOutlet weak var continueButton: UIButton!
   
   private let streetZoomLevel: Float = 14.0
-  private var ongoingRidePolyline: GMSPolyline?
+  private var ridePolyline: GMSPolyline?
+  
+  var ride: Ride?
+  var currentLocation: CLLocation?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,9 +33,11 @@ class RideFinishedViewController: UIViewController {
     rideEndedLabel.textColor = UIColor.primaryGreyColor
     rideFinishedTimeLabel.textColor = UIColor.primaryDarkColor
     
-    continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
-    
     mapView.applyTheme()
+    
+    if let ride = ride {
+      updateContent(with: ride, and: currentLocation)
+    }
   }
   
   func updateContent(with ride: Ride, and location: CLLocation?) {
@@ -47,13 +59,15 @@ class RideFinishedViewController: UIViewController {
   }
   
   private func drawRoute(forPath path: GMSPath?) {
-    ongoingRidePolyline = GMSPolyline(path: path)
-    ongoingRidePolyline?.strokeWidth = 4
-    ongoingRidePolyline?.strokeColor = UIColor.primaryRedColor
-    ongoingRidePolyline?.map = mapView
+    ridePolyline = GMSPolyline(path: path)
+    ridePolyline?.strokeWidth = 4
+    ridePolyline?.strokeColor = UIColor.primaryRedColor
+    ridePolyline?.map = mapView
   }
   
-  @objc private func continueButtonTapped() {
-    self.dismiss(animated: true, completion: nil)
+  @IBAction func continueButtonTapped(_ sender: Any) {
+    // TODO: submit ride review
+    
+    performSegue(withIdentifier: R.segue.rideFinishedViewController.unwindToHome, sender: nil)
   }
 }

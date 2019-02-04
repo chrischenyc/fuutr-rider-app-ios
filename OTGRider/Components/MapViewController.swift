@@ -9,8 +9,6 @@
 import UIKit
 import GoogleMaps
 
-var currentLocation: CLLocation?
-
 class MapViewController: UIViewController {
   
   // ---------- Google Maps ----------
@@ -18,28 +16,24 @@ class MapViewController: UIViewController {
   private var clusterManager: GMUClusterManager!
   private let searchingZoomLevel: Float = 15.0
   private let ridingZoomLevel: Float = 18.0
-  private let minDistanceFilter: CLLocationDistance = 3
+  private let minDistanceFilter: CLLocationDistance = 1
   private var zonePolygons: [(Zone, GMSPolygon)] = []
   private var ongoingRidePath: GMSMutablePath?    // to track travelled distance and to draw route
   private var ongoingRidePolyline: GMSPolyline?
-  private var incrementalPath: GMSMutablePath?    // to report to server for the new segment
   
   // ---------- API requests ----------
   private var searchAPITask: URLSessionTask?
   private var rideAPITask: URLSessionTask?
-  private var rideUpdateAPITask: URLSessionTask?
   private var vehicleAPITask: URLSessionTask?
   
   // ---------- recurring operations ----------
-  private var deferredSearchTimer: Timer?     // a new round of search API will be fired unless time gets invalidated
-  private let searchDeferring: TimeInterval = 1.5
-  private var rideLocalUpdateTimer: Timer?    // periodically update duration, distance, route
-  private let localUpdateFrequency: TimeInterval = 1
-  private var rideServerUpdateTimer: Timer?   // periodically report travelled coordinates to server
-  private let serverUpdateFrequency: TimeInterval = 10
-  private var serverUpdateThreshhold: CLLocationDistance = 10    // the minimum travel distance for a new server update
+  private var deferredSearchTimer: Timer?     // new search will be fired unless timer gets invalidated
+  private let searchDeferring: TimeInterval = 1.5 // cooling off period in case user moves the map again
+  private var ongoingRideRefreshTimer: Timer?    // periodically update duration, distance, route
+  private let ongoingRideRefreshFrequency: TimeInterval = 3
   
   // ---------- run-time values ----------
+  private var currentLocation: CLLocation?
   private var didLoadOngoingRide: Bool = false  // after launch, the app would try to load an ongoing ride
   
   var ongoingRide: Ride? {
@@ -80,15 +74,20 @@ class MapViewController: UIViewController {
     // animate out vehicle banner before leaving
     hideVehicleInfo()
     
-    // pass through ended Ride object for feature photo uploading API calling
+    if let ridePausedViewController = segue.destination as? RidePausedViewController {
+      // keep a reference of paused screen, so it can be refreshed per second
+      self.ridePausedViewController = ridePausedViewController
+    }
+    
     if let endRidePhotoViewController = segue.destination as? EndRidePhotoViewController,
       let ride = sender as? Ride {
       endRidePhotoViewController.ride = ride
     }
     
-    if let ridePausedViewController = segue.destination as? RidePausedViewController {
-      // keep a reference of paused screen, so it can be refreshed per second
-      self.ridePausedViewController = ridePausedViewController
+    if let rideFinishedViewController = segue.destination as? RideFinishedViewController,
+      let ride = sender as? Ride {
+      rideFinishedViewController.ride = ride
+      rideFinishedViewController.currentLocation = currentLocation
     }
   }
   
@@ -157,10 +156,9 @@ class MapViewController: UIViewController {
       // unwind from send finished ride photo
     else if let endRidePhotoViewController = sourceViewController as? EndRidePhotoViewController,
       let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
-      // user finishes uploading complete ride photo
-      // present ride summary
+      // user finishes uploading complete ride photo, present ride summary
       unwindSegueWithCompletion.completion = {
-        self.showRideSummary(endRidePhotoViewController.ride)
+        self.performSegue(withIdentifier: R.segue.mapViewController.showRideFinished, sender: endRidePhotoViewController.ride)
       }
     }
   }
@@ -175,19 +173,12 @@ extension MapViewController {
   private func startTrackingRide(_ ride: Ride) {
     ongoingRide = ride
     
-    rideLocalUpdateTimer?.invalidate()
-    rideLocalUpdateTimer = Timer.scheduledTimer(timeInterval: localUpdateFrequency,
+    ongoingRideRefreshTimer?.invalidate()
+    ongoingRideRefreshTimer = Timer.scheduledTimer(timeInterval: ongoingRideRefreshFrequency,
                                                 target: self,
                                                 selector: #selector(self.updateRideLocally),
                                                 userInfo: nil,
                                                 repeats: true)
-    
-    rideServerUpdateTimer?.invalidate()
-    rideServerUpdateTimer = Timer.scheduledTimer(timeInterval: serverUpdateFrequency,
-                                                 target: self,
-                                                 selector: #selector(self.updateRideToServer),
-                                                 userInfo: nil,
-                                                 repeats: true)
     
     // try to resume previously saved route
     if let encodedPath = ride.encodedPath, let decodedPath = GMSMutablePath(fromEncodedPath: encodedPath){
@@ -199,10 +190,8 @@ extension MapViewController {
       ongoingRidePath = GMSMutablePath()
     }
     
-    incrementalPath = GMSMutablePath()
     if let currentLocation = currentLocation {
       ongoingRidePath?.add(currentLocation.coordinate)
-      incrementalPath?.add(currentLocation.coordinate)
     }
     
     locationManager.allowsBackgroundLocationUpdates = true
@@ -221,13 +210,11 @@ extension MapViewController {
   private func stopTrackingRide() {
     ongoingRide = nil
     
-    rideLocalUpdateTimer?.invalidate()
-    rideServerUpdateTimer?.invalidate()
+    ongoingRideRefreshTimer?.invalidate()
     
     ongoingRidePath = nil
     ongoingRidePolyline?.map = nil
     ongoingRidePolyline = nil
-    incrementalPath = nil
     
     locationManager.allowsBackgroundLocationUpdates = false
     locationManager.pausesLocationUpdatesAutomatically = true
@@ -355,22 +342,6 @@ extension MapViewController {
         self?.stopTrackingRide()
       }
     })
-  }
-  
-  @objc private func updateRideToServer() {
-    guard let rideId = ongoingRide?.id else { return }
-    guard let path = incrementalPath, path.length(of: GMSLengthKind.geodesic) > serverUpdateThreshhold else { return }
-    
-    rideUpdateAPITask?.cancel()
-    
-    rideUpdateAPITask = RideService.update(rideId: rideId,
-                                           incrementalEncodedPath: path.encodedPath(),
-                                           incrementalDistance: path.length(of: GMSLengthKind.geodesic)) { (error) in
-                                            logger.error(error)
-    }
-    
-    // reset incremental path straight away
-    incrementalPath = GMSMutablePath()
   }
   
   private func pauseRide() {
@@ -581,14 +552,6 @@ extension MapViewController {
     }
   }
   
-  private func showRideSummary(_ ride: Ride) {
-    if let viewController = UIStoryboard(name: "RideFinished", bundle: nil).instantiateInitialViewController() as? RideFinishedViewController {
-      presentFullScreen(viewController, completion: {
-        viewController.updateContent(with: ride, and: currentLocation)
-      })
-    }
-  }
-  
   private func showNoParkingZoneError() {
     alertMessage(title: "You are attempting to park the vehicle in an unsafe area",
                  message: "The ride cannot end until it is parked upright in an accepted, safe areea.",
@@ -694,7 +657,7 @@ extension MapViewController {
     // request location permisison if needed
     locationManager.delegate = self
     locationManager.distanceFilter = minDistanceFilter
-    locationManager.activityType = .fitness
+    locationManager.activityType = .otherNavigation
     
     switch CLLocationManager.authorizationStatus() {
     case .denied,
@@ -777,20 +740,16 @@ extension MapViewController: CLLocationManagerDelegate {
       loadOngoingRide()
     }
     
-    // during a ride
-    // update map view and ride path
+    // during a ride, update map view and ride path
     if let ongoingRide = ongoingRide, !ongoingRide.paused {
       // keep centring user during an active ride
+      // TODO: sync map heading direction with user's
       let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: ridingZoomLevel)
       mapView.animate(to: camera)
       
       if let currentPath = ongoingRidePath {
         currentPath.add(location.coordinate)
         drawRoute(forPath: currentPath)
-      }
-      
-      if let incrementalPath = incrementalPath {
-        incrementalPath.add(location.coordinate)
       }
     }
   }

@@ -25,7 +25,7 @@ struct Ride: Mappable, Equatable {
   var paused: Bool = false
   var pausedUntil: Date?
   var segments: [RideSegment]?
-  var initialRemainderRange: Double?  // initial range when vehicle is unlocked
+  var initialRemainingRange: Double?  // initial range when vehicle is unlocked
   
   init?(map: Map) {
     
@@ -47,7 +47,7 @@ struct Ride: Mappable, Equatable {
     paused                <- map["paused"]
     pausedUntil           <- (map["pausedUntil"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
     segments              <- map["segments"]
-    initialRemainderRange <- map["initialRemainderRange"]
+    initialRemainingRange <- map["initialRemainingRange"]
   }
   
   static func fromJSONArray(_ jsonArray: [JSON]) -> [Ride]? {
@@ -94,6 +94,6 @@ extension Ride {
 
 extension Ride {
   func getRemainingRange() -> Double {
-    return (initialRemainderRange ?? 0 ) - distance
+    return (initialRemainingRange ?? 0 ) - distance
   }
 }

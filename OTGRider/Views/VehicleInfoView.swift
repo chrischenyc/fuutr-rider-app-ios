@@ -58,7 +58,7 @@ class VehicleInfoView: DesignableView {
   func updateContentWith(_ vehicle: Vehicle) {
     self.vehicle = vehicle
     scanButton.titleLabel?.textColor = .white
-    rangeLabel.text = vehicle.remainderRange?.distanceString
+    rangeLabel.text = vehicle.remainingRange?.distanceString
     priceLabel.attributedText = generatePriceText(for: vehicle)
     batteryImageView.image = generateBatteryImage(for: vehicle)
     

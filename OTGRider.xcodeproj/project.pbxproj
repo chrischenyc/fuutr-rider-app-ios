@@ -351,9 +351,6 @@
 		914A6B8421FD545700715879 /* ScanUnlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 914A6B8321FD545700715879 /* ScanUnlock.storyboard */; };
 		914A6B8521FD545700715879 /* ScanUnlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 914A6B8321FD545700715879 /* ScanUnlock.storyboard */; };
 		914A6B8621FD545700715879 /* ScanUnlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 914A6B8321FD545700715879 /* ScanUnlock.storyboard */; };
-		914A6B8821FD571F00715879 /* UIViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6B8721FD571F00715879 /* UIViewController+Present.swift */; };
-		914A6B8921FD571F00715879 /* UIViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6B8721FD571F00715879 /* UIViewController+Present.swift */; };
-		914A6B8A21FD571F00715879 /* UIViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6B8721FD571F00715879 /* UIViewController+Present.swift */; };
 		9181CB9521FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */; };
 		9181CB9621FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */; };
 		9181CB9721FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */; };
@@ -576,7 +573,6 @@
 		914A6B7B21FD250000715879 /* VehicleReservedInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleReservedInfoView.xib; sourceTree = "<group>"; };
 		914A6B7F21FD543600715879 /* ManualUnlock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManualUnlock.storyboard; sourceTree = "<group>"; };
 		914A6B8321FD545700715879 /* ScanUnlock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanUnlock.storyboard; sourceTree = "<group>"; };
-		914A6B8721FD571F00715879 /* UIViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Present.swift"; sourceTree = "<group>"; };
 		9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeDigitSquareView.swift; sourceTree = "<group>"; };
 		9190374B21FEE6F900CDA415 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		9191983421FDC95600CF5F2D /* RidingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidingView.swift; sourceTree = "<group>"; };
@@ -797,7 +793,6 @@
 				6B8731C22189CA0400CC2651 /* String+Validate.swift */,
 				6BDE916C218CFBF9003F976B /* UIViewControoler+Alert.swift */,
 				6BBE6C85219BCA7B002D639B /* UIViewController+HUD.swift */,
-				914A6B8721FD571F00715879 /* UIViewController+Present.swift */,
 				6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */,
 				6B214AEB2195B66300553C3D /* Double+Currency.swift */,
 				6BBC6A0421A1090B003C910B /* Double+Distance.swift */,
@@ -1804,7 +1799,6 @@
 				6B03DC1421F6FBF800A2765F /* RideSegment.swift in Sources */,
 				6B849D4A21941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D76021FB1F2A00B84244 /* SearchService.swift in Sources */,
-				914A6B8A21FD571F00715879 /* UIViewController+Present.swift in Sources */,
 				6B444FE92191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6BDE9129218C19DF003F976B /* EnableLocationViewController.swift in Sources */,
 				6B214AE2219564CD00553C3D /* EditNameViewController.swift in Sources */,
@@ -1919,7 +1913,6 @@
 				6B03DC1221F6FBF800A2765F /* RideSegment.swift in Sources */,
 				6B849D4821941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D75E21FB1F2A00B84244 /* SearchService.swift in Sources */,
-				914A6B8821FD571F00715879 /* UIViewController+Present.swift in Sources */,
 				6B444FE72191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6B8731CD2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B214AE0219564CD00553C3D /* EditNameViewController.swift in Sources */,
@@ -2034,7 +2027,6 @@
 				6B03DC1321F6FBF800A2765F /* RideSegment.swift in Sources */,
 				6B849D4921941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D75F21FB1F2A00B84244 /* SearchService.swift in Sources */,
-				914A6B8921FD571F00715879 /* UIViewController+Present.swift in Sources */,
 				6B444FE82191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B214AE1219564CD00553C3D /* EditNameViewController.swift in Sources */,
