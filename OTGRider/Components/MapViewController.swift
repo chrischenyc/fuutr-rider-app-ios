@@ -68,6 +68,8 @@ class MapViewController: UIViewController {
     setupUI()
     setupMapView()
     setupLocationManager()
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,6 +90,12 @@ class MapViewController: UIViewController {
       let ride = sender as? Ride {
       rideFinishedViewController.ride = ride
       rideFinishedViewController.currentLocation = currentLocation
+    }
+  }
+  
+  @objc func applicationDidBecomeActive(_ notification: NSNotification) {
+    if currentLocation != nil && deferredSearchTimer == nil {
+      search()
     }
   }
   
@@ -175,10 +183,10 @@ extension MapViewController {
     
     ongoingRideRefreshTimer?.invalidate()
     ongoingRideRefreshTimer = Timer.scheduledTimer(timeInterval: ongoingRideRefreshFrequency,
-                                                target: self,
-                                                selector: #selector(self.updateRideLocally),
-                                                userInfo: nil,
-                                                repeats: true)
+                                                   target: self,
+                                                   selector: #selector(self.updateRideLocally),
+                                                   userInfo: nil,
+                                                   repeats: true)
     
     // try to resume previously saved route
     if let encodedPath = ride.encodedPath, let decodedPath = GMSMutablePath(fromEncodedPath: encodedPath){
