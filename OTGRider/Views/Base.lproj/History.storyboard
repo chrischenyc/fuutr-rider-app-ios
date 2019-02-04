@@ -83,17 +83,25 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ride History" id="axA-dL-Leo">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EoN-rJ-tah">
-                            <connections>
-                                <segue destination="K0R-5X-WQs" kind="unwind" unwindAction="unwindToHome:" id="bt7-5G-d65"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EoN-rJ-tah"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="K0R-5X-WQs" kind="unwind" unwindAction="unwindToHome:" id="b9P-CQ-eu1"/>
+                        <segue destination="vnM-2y-X9i" kind="show" identifier="showRideSummary" id="JB9-gv-J3l"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzX-if-lT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="K0R-5X-WQs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="561" y="154"/>
+        </scene>
+        <!--RideFinished-->
+        <scene sceneID="Pug-Mp-BSI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RideFinished" id="vnM-2y-X9i" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yi5-Es-MZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1113" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vAg-8S-dQK">

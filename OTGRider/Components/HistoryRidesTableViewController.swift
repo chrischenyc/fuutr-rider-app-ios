@@ -11,15 +11,24 @@ import UIKit
 class HistoryRidesTableViewController: UITableViewController {
   
   private var rides: [Ride] = []
+  var selectedRide: Ride?
   
   private var apiTask: URLSessionTask?
   
+  // MARK: - lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
     tableView.tableFooterView = UIView(frame: .zero)
     
     loadRides()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let rideFinishedViewController = segue.destination as? RideFinishedViewController,
+      let ride = sender as? Ride {
+      rideFinishedViewController.ride = ride
+    }
   }
   
   // MARK: - Table view data source
@@ -68,4 +77,8 @@ class HistoryRidesTableViewController: UITableViewController {
     // TODO: add call for action UI in case of zero records
   }
   
+  // MARK: - TableView delegate
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: R.segue.historyRidesTableViewController.showRideSummary, sender:rides[indexPath.row])
+  }
 }

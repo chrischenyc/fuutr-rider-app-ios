@@ -713,7 +713,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 19 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 20 view controllers.
   struct segue {
     /// This struct is generated for `EditEmailViewController`, and contains static references to 1 segues.
     struct editEmailViewController {
@@ -860,6 +860,21 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIStoryboardSegueWithCompletion, EndRidePhotoViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.endRidePhotoViewController.unwindToHome, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `HistoryRidesTableViewController`, and contains static references to 1 segues.
+    struct historyRidesTableViewController {
+      /// Segue identifier `showRideSummary`.
+      static let showRideSummary: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HistoryRidesTableViewController, RideFinishedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideSummary")
+      
+      /// Optionally returns a typed version of segue `showRideSummary`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showRideSummary(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HistoryRidesTableViewController, RideFinishedViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.historyRidesTableViewController.showRideSummary, segue: segue)
       }
       
       fileprivate init() {}
