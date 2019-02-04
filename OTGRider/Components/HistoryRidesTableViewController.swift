@@ -11,7 +11,6 @@ import UIKit
 class HistoryRidesTableViewController: UITableViewController {
   
   private var rides: [Ride] = []
-  var selectedRide: Ride?
   
   private var apiTask: URLSessionTask?
   
