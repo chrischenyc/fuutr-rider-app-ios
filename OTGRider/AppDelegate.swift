@@ -21,6 +21,7 @@ import Stripe
 // global variables
 let logger = XCGLogger.default
 var config = Configuration()
+var currentLocation: CLLocation?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

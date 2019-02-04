@@ -21,7 +21,6 @@ class RideFinishedViewController: UIViewController {
   private var ridePolyline: GMSPolyline?
   
   var ride: Ride?
-  var currentLocation: CLLocation?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,8 +31,6 @@ class RideFinishedViewController: UIViewController {
     shareLabel.textColor = UIColor.primaryDarkColor
     rideEndedLabel.textColor = UIColor.primaryGreyColor
     rideFinishedTimeLabel.textColor = UIColor.primaryDarkColor
-    
-    mapView.applyTheme()
     
     if let ride = ride {
       updateContent(with: ride, and: currentLocation)

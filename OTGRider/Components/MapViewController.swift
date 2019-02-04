@@ -33,7 +33,6 @@ class MapViewController: UIViewController {
   private let ongoingRideRefreshFrequency: TimeInterval = 3
   
   // ---------- run-time values ----------
-  private var currentLocation: CLLocation?
   private var didLoadOngoingRide: Bool = false  // after launch, the app would try to load an ongoing ride
   
   var ongoingRide: Ride? {
@@ -89,7 +88,6 @@ class MapViewController: UIViewController {
     if let rideFinishedViewController = segue.destination as? RideFinishedViewController,
       let ride = sender as? Ride {
       rideFinishedViewController.ride = ride
-      rideFinishedViewController.currentLocation = currentLocation
     }
   }
   
