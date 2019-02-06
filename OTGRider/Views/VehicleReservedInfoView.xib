@@ -51,7 +51,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKB-eH-GGP" userLabel="Cancel">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKB-eH-GGP" userLabel="Cancel" customClass="FTRedInverseButton" customModule="OTGRider" customModuleProvider="target">
                     <rect key="frame" x="20" y="165" width="160" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="160" id="hqa-Ql-i7C"/>
@@ -59,7 +59,7 @@
                     </constraints>
                     <state key="normal" title="Cancel"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W16-Gm-Exg">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W16-Gm-Exg" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
                     <rect key="frame" x="239" y="165" width="160" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="160" id="FDd-GL-mf8"/>

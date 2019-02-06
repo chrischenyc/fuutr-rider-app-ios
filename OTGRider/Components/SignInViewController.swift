@@ -12,9 +12,7 @@ import SwiftyUserDefaults
 
 class SignInViewController: UIViewController {
   
-  @IBOutlet weak var phoneNumberTextField: UITextField!
-  @IBOutlet weak var phoneNumberVerifyButton: UIButton!
-  @IBOutlet weak var phoneNumberVerifyInfoLabel: UILabel!
+  @IBOutlet weak var backdropView: UIView!
   @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
   @IBOutlet weak var emailSignInButton: UIButton!
   
@@ -23,66 +21,17 @@ class SignInViewController: UIViewController {
   private var apiTask: URLSessionDataTask?
   private var fbLoginResult: FBSDKLoginManagerLoginResult?
   
+  // MARK: - lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    phoneNumberVerifyInfoLabel.text = R.string.localizable.kPhoneNumberVerificationPrompt()
-    phoneNumberVerifyButton.isEnabled = false
-    phoneNumberVerifyButton.backgroundColor = UIColor.primaryWhiteColor
-    phoneNumberVerifyButton.layoutCornerRadiusAndShadow()
-    facebookLoginButton.readPermissions = ["public_profile", "email"]
-    facebookLoginButton.delegate = self
-    facebookLoginButton.layoutCornerRadiusAndShadow()
-    emailSignInButton.layoutCornerRadiusAndShadow()
-    emailSignInButton.backgroundColor = UIColor.primaryWhiteColor
+    setupUI()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     if FBSDKAccessToken.current() != nil, let fbLoginResult = fbLoginResult {
       authenticateWithFacebook(result: fbLoginResult)
     }
-  }
-  
-  @IBAction func phoneNumberChanged(_ sender: Any) {
-    phoneNumberTextField.text?.isMobileNumber({ (isMobile, coutryCode, phoneNumber) in
-      phoneNumberVerifyButton.isEnabled = isMobile
-      self.countryCode = coutryCode
-      self.phoneNumber = phoneNumber
-    })
-  }
-  
-  @IBAction func phoneNumberVerifyTapped(_ sender: Any) {
-    guard let phoneNumber = phoneNumber, let countryCode = countryCode else { return }
-    
-    // update UI before calling API
-    phoneNumberVerifyInfoLabel.text = R.string.localizable.kSendingVerificationCode()
-    phoneNumberTextField.resignFirstResponder()
-    phoneNumberTextField.isEnabled = false
-    phoneNumberVerifyButton.isEnabled = false
-    facebookLoginButton.isEnabled = false
-    
-    // cancel previous API call
-    apiTask?.cancel()
-    
-    // create a new API call
-    apiTask = PhoneService.startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
-      DispatchQueue.main.async {
-        // reset UI
-        self?.phoneNumberVerifyInfoLabel.text = R.string.localizable.kPhoneNumberVerificationPrompt()
-        self?.phoneNumberVerifyButton.isEnabled = true
-        self?.phoneNumberTextField.isEnabled = true
-        self?.phoneNumberVerifyButton.isEnabled = true
-        self?.facebookLoginButton.isEnabled = true
-        
-        
-        if let error = error {
-          self?.alertError(error)
-        } else {
-          self?.performSegue(withIdentifier: R.segue.signInViewController.showVerifyCode.identifier, sender: nil)
-          self?.phoneNumberTextField.text = ""
-        }
-      }
-    })
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -95,10 +44,76 @@ class SignInViewController: UIViewController {
     }
   }
   
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+  
+  // MARK: - user actions
+  //  @IBAction func phoneNumberChanged(_ sender: Any) {
+  //    phoneNumberTextField.text?.isMobileNumber({ (isMobile, coutryCode, phoneNumber) in
+  //      phoneNumberVerifyButton.isEnabled = isMobile
+  //      self.countryCode = coutryCode
+  //      self.phoneNumber = phoneNumber
+  //    })
+  //  }
+  
+  //  @IBAction func phoneNumberVerifyTapped(_ sender: Any) {
+  //    guard let phoneNumber = phoneNumber, let countryCode = countryCode else { return }
+  //
+  //    // update UI before calling API
+  //    phoneNumberTextField.resignFirstResponder()
+  //    phoneNumberTextField.isEnabled = false
+  //    phoneNumberVerifyButton.isEnabled = false
+  //    facebookLoginButton.isEnabled = false
+  //
+  //    // cancel previous API call
+  //    apiTask?.cancel()
+  //
+  //    // create a new API call
+  //    apiTask = PhoneService.startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
+  //      DispatchQueue.main.async {
+  //        // reset UI
+  //        self?.phoneNumberVerifyButton.isEnabled = true
+  //        self?.phoneNumberTextField.isEnabled = true
+  //        self?.phoneNumberVerifyButton.isEnabled = true
+  //        self?.facebookLoginButton.isEnabled = true
+  //
+  //
+  //        if let error = error {
+  //          self?.alertError(error)
+  //        } else {
+  //          self?.performSegue(withIdentifier: R.segue.signInViewController.showVerifyCode.identifier, sender: nil)
+  //          self?.phoneNumberTextField.text = ""
+  //        }
+  //      }
+  //    })
+  //  }
+  
   @IBAction func unwindToSignIn(_ unwindSegue: UIStoryboardSegue) {
     if unwindSegue.source is SettingsTableViewController {
       fbLoginResult = nil
     }
+  }
+  
+  
+  // MARK: - private
+  
+  private func setupUI() {
+    view.backgroundColor = UIColor.primaryRedColor
+    
+    
+    if let constraint = facebookLoginButton.constraints.first(where: { (constraint) -> Bool in
+      return constraint.firstAttribute == .height
+    }) {
+      constraint.constant = 40.0
+    }
+    
+    facebookLoginButton.readPermissions = ["public_profile", "email"]
+    facebookLoginButton.delegate = self
+  }
+  
+  override func viewDidLayoutSubviews() {
+    backdropView.layoutCornerRadiusMask(corners: [.topLeft, .topRight])
   }
   
   private func authenticateWithFacebook(result: FBSDKLoginManagerLoginResult) {

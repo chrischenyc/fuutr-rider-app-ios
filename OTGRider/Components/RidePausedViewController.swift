@@ -44,8 +44,6 @@ class RidePausedViewController: UIViewController {
     remainingRangeLabel.textColor = UIColor.primaryGreyColor
     scooterIsLockedLabel.textColor = UIColor.primaryDarkColor
     priceLabel.textColor = UIColor.primaryGreyColor
-    unlockButton.primaryRed()
-    endRideButton.primaryRedBasic()
   }
   
   @objc private func close() {

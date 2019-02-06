@@ -41,9 +41,6 @@ class EndRidePhotoViewController: UIViewController {
     
     shootButton.backgroundColor = UIColor.primaryRedColor
     shootButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: shootButton.frame.size.width/2)
-    
-    takeAnotherButton.primaryDarkBasic()
-    sendButton.primaryRed()
   }
   
   private func switchToCamera() {

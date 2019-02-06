@@ -1759,6 +1759,7 @@ struct _R: Rswift.Validatable {
       let name = "SignIn"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "ic-mobile-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-mobile-dark-gray-16' is used in storyboard 'SignIn', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

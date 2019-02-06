@@ -63,9 +63,6 @@ class RidingView: DesignableView {
   }
   
   private func setupUI() {
-    endRideButton.primaryRed()
-    lockButton.primaryRedBasic()
-    
     rideInProgressLabel.textColor = UIColor.primaryDarkColor
     remainingRangeLabel.textColor = UIColor.primaryGreyColor
     lockButton.addTarget(self, action: #selector(lock), for: .touchUpInside)

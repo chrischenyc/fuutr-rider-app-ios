@@ -117,7 +117,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3M-bJ-Bvo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3M-bJ-Bvo" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="50" y="469" width="275" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="olQ-WD-P13"/>
@@ -128,7 +128,7 @@
                                     <action selector="resumeRide:" destination="6DZ-mU-U9d" eventType="touchUpInside" id="k0K-0M-aZx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="law-FY-Wdf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="law-FY-Wdf" customClass="FTRedInverseButton" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="50" y="523" width="275" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="Rf3-4k-42Y"/>

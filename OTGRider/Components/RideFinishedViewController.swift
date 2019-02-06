@@ -25,9 +25,6 @@ class RideFinishedViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    continueButton.primaryRed()
-    reportButton.primaryDarkBasic()
-    
     shareLabel.textColor = UIColor.primaryDarkColor
     rideEndedLabel.textColor = UIColor.primaryGreyColor
     rideFinishedTimeLabel.textColor = UIColor.primaryDarkColor

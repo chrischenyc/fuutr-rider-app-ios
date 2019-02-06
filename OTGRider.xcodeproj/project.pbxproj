@@ -50,9 +50,6 @@
 		6B14FA132198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */; };
 		6B14FA142198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */; };
 		6B14FA152198C9A100678FFF /* ResetPasswordSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */; };
-		6B19043321FC8D0700261E72 /* UIButton+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B19043221FC8D0700261E72 /* UIButton+Theme.swift */; };
-		6B19043421FC8D0700261E72 /* UIButton+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B19043221FC8D0700261E72 /* UIButton+Theme.swift */; };
-		6B19043521FC8D0700261E72 /* UIButton+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B19043221FC8D0700261E72 /* UIButton+Theme.swift */; };
 		6B1D1E87219A232300F72798 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D1E86219A232300F72798 /* Vehicle.swift */; };
 		6B1D1E88219A232300F72798 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D1E86219A232300F72798 /* Vehicle.swift */; };
 		6B1D1E89219A232300F72798 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D1E86219A232300F72798 /* Vehicle.swift */; };
@@ -119,6 +116,18 @@
 		6B6C6AE72197CE3300D956DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C6AE62197CE3300D956DC /* User.swift */; };
 		6B6C6AE82197CE3300D956DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C6AE62197CE3300D956DC /* User.swift */; };
 		6B6C6AE92197CE3300D956DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C6AE62197CE3300D956DC /* User.swift */; };
+		6B720FED220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FEC220AD96A0081BCF1 /* FTRedBasicButton.swift */; };
+		6B720FEE220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FEC220AD96A0081BCF1 /* FTRedBasicButton.swift */; };
+		6B720FEF220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FEC220AD96A0081BCF1 /* FTRedBasicButton.swift */; };
+		6B720FF2220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FF1220ADC9A0081BCF1 /* FTRedPrimaryButton.swift */; };
+		6B720FF3220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FF1220ADC9A0081BCF1 /* FTRedPrimaryButton.swift */; };
+		6B720FF4220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FF1220ADC9A0081BCF1 /* FTRedPrimaryButton.swift */; };
+		6B720FF6220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FF5220ADDED0081BCF1 /* FTRedInverseButton.swift */; };
+		6B720FF7220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FF5220ADDED0081BCF1 /* FTRedInverseButton.swift */; };
+		6B720FF8220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FF5220ADDED0081BCF1 /* FTRedInverseButton.swift */; };
+		6B720FFA220ADFCE0081BCF1 /* FTDarkBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FF9220ADFCE0081BCF1 /* FTDarkBasicButton.swift */; };
+		6B720FFB220ADFCE0081BCF1 /* FTDarkBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FF9220ADFCE0081BCF1 /* FTDarkBasicButton.swift */; };
+		6B720FFC220ADFCE0081BCF1 /* FTDarkBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B720FF9220ADFCE0081BCF1 /* FTDarkBasicButton.swift */; };
 		6B849D4521941EB300CD9791 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B849D4321941EB300CD9791 /* AuthService.swift */; };
 		6B849D4621941EB300CD9791 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B849D4321941EB300CD9791 /* AuthService.swift */; };
 		6B849D4721941EB300CD9791 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B849D4321941EB300CD9791 /* AuthService.swift */; };
@@ -422,7 +431,6 @@
 		6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRequestViewController.swift; sourceTree = "<group>"; };
 		6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVerifyViewController.swift; sourceTree = "<group>"; };
 		6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSetViewController.swift; sourceTree = "<group>"; };
-		6B19043221FC8D0700261E72 /* UIButton+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Theme.swift"; sourceTree = "<group>"; };
 		6B1D1E86219A232300F72798 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		6B1D1E8A219A243200F72798 /* VehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleService.swift; sourceTree = "<group>"; };
 		6B214ADF219564CD00553C3D /* EditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
@@ -445,6 +453,10 @@
 		6B473DB72202F80A003FE160 /* GMSMapView+WalkingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+WalkingRoute.swift"; sourceTree = "<group>"; };
 		6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+hhmmss.swift"; sourceTree = "<group>"; };
 		6B6C6AE62197CE3300D956DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6B720FEC220AD96A0081BCF1 /* FTRedBasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTRedBasicButton.swift; sourceTree = "<group>"; };
+		6B720FF1220ADC9A0081BCF1 /* FTRedPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTRedPrimaryButton.swift; sourceTree = "<group>"; };
+		6B720FF5220ADDED0081BCF1 /* FTRedInverseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTRedInverseButton.swift; sourceTree = "<group>"; };
+		6B720FF9220ADFCE0081BCF1 /* FTDarkBasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTDarkBasicButton.swift; sourceTree = "<group>"; };
 		6B849D4321941EB300CD9791 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		6B849D4421941EB300CD9791 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneService.swift; sourceTree = "<group>"; };
 		6B87319E2189643800CC2651 /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
@@ -668,6 +680,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		6B720FF0220ADC510081BCF1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6B720FF1220ADC9A0081BCF1 /* FTRedPrimaryButton.swift */,
+				6B720FF5220ADDED0081BCF1 /* FTRedInverseButton.swift */,
+				6B720FEC220AD96A0081BCF1 /* FTRedBasicButton.swift */,
+				6B720FF9220ADFCE0081BCF1 /* FTDarkBasicButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		6B8731A1218997A000CC2651 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +731,7 @@
 				91FA7F9521FE859B00581BB5 /* RidePaused.storyboard */,
 				91FA7FA521FEB22600581BB5 /* RideFinished.storyboard */,
 				9181CB9421FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift */,
+				6B720FF0220ADC510081BCF1 /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -802,7 +826,6 @@
 				6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */,
 				6B03DC0921EDEF4E00A2765F /* GMSMapView+Search.swift */,
 				9197554221FC3A4D0069D25A /* DesignableView.swift */,
-				6B19043221FC8D0700261E72 /* UIButton+Theme.swift */,
 				6B0D922521FDDDF600A9B38E /* Platform.swift */,
 				6B8DC68322005B5400831B03 /* GMSMapView+Theme.swift */,
 				6B473DB72202F80A003FE160 /* GMSMapView+WalkingRoute.swift */,
@@ -1756,7 +1779,6 @@
 				6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */,
 				6BBE6C88219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA112198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
-				6B19043521FC8D0700261E72 /* UIButton+Theme.swift in Sources */,
 				6B31E1F12197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
 				6BDE9123218C19DF003F976B /* UserDefaults.swift in Sources */,
 				6B14FA0D2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */,
@@ -1788,6 +1810,7 @@
 				91FA7FA021FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
 				6B1D1E89219A232300F72798 /* Vehicle.swift in Sources */,
 				6BB6CB742196591D00B597B3 /* UIColor+Hex.swift in Sources */,
+				6B720FEF220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */,
 				6BDE9153218C3073003F976B /* APIClient.swift in Sources */,
 				6BDE9126218C19DF003F976B /* SignInViewController.swift in Sources */,
 				6B6C6AE92197CE3300D956DC /* User.swift in Sources */,
@@ -1799,6 +1822,7 @@
 				6B03DC1421F6FBF800A2765F /* RideSegment.swift in Sources */,
 				6B849D4A21941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D76021FB1F2A00B84244 /* SearchService.swift in Sources */,
+				6B720FF8220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
 				6B444FE92191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6BDE9129218C19DF003F976B /* EnableLocationViewController.swift in Sources */,
 				6B214AE2219564CD00553C3D /* EditNameViewController.swift in Sources */,
@@ -1838,6 +1862,7 @@
 				6BD4729B219A4CAA00D36C3E /* GMUClusterManager.m in Sources */,
 				6BDE9173218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD47271219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
+				6B720FF4220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */,
 				6BD47265219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */,
 				6B0D922421FDBE5800A9B38E /* EndRidePhotoViewController.swift in Sources */,
 				6BDE9130218C19DF003F976B /* EnableNotificationViewController.swift in Sources */,
@@ -1851,6 +1876,7 @@
 				6BD472B4219A4DB300D36C3E /* VehiclePOI.swift in Sources */,
 				6B2C9BAF21A0155E0042432D /* PaymentService.swift in Sources */,
 				6BD4727A219A4CAA00D36C3E /* GMUPolygon.m in Sources */,
+				6B720FFC220ADFCE0081BCF1 /* FTDarkBasicButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1870,7 +1896,6 @@
 				6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */,
 				6BBE6C86219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA0F2198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
-				6B19043321FC8D0700261E72 /* UIButton+Theme.swift in Sources */,
 				6B31E1EF2197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
 				6B8731A72189A70600CC2651 /* UserDefaults.swift in Sources */,
 				6B14FA0B2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */,
@@ -1902,6 +1927,7 @@
 				91FA7F9E21FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
 				6B1D1E87219A232300F72798 /* Vehicle.swift in Sources */,
 				6BB6CB722196591D00B597B3 /* UIColor+Hex.swift in Sources */,
+				6B720FED220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */,
 				6BDE9151218C3073003F976B /* APIClient.swift in Sources */,
 				6B8731C02189C7FA00CC2651 /* SignInViewController.swift in Sources */,
 				6B6C6AE72197CE3300D956DC /* User.swift in Sources */,
@@ -1913,6 +1939,7 @@
 				6B03DC1221F6FBF800A2765F /* RideSegment.swift in Sources */,
 				6B849D4821941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D75E21FB1F2A00B84244 /* SearchService.swift in Sources */,
+				6B720FF6220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
 				6B444FE72191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6B8731CD2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B214AE0219564CD00553C3D /* EditNameViewController.swift in Sources */,
@@ -1952,6 +1979,7 @@
 				6BD47299219A4CAA00D36C3E /* GMUClusterManager.m in Sources */,
 				6BDE9171218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD4726F219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
+				6B720FF2220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */,
 				6BD47263219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */,
 				6B0D922221FDBE5800A9B38E /* EndRidePhotoViewController.swift in Sources */,
 				6B8731D02189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,
@@ -1965,6 +1993,7 @@
 				6BD472B2219A4DB300D36C3E /* VehiclePOI.swift in Sources */,
 				6B2C9BAD21A0155E0042432D /* PaymentService.swift in Sources */,
 				6BD47278219A4CAA00D36C3E /* GMUPolygon.m in Sources */,
+				6B720FFA220ADFCE0081BCF1 /* FTDarkBasicButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1984,7 +2013,6 @@
 				6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */,
 				6BBE6C87219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA102198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
-				6B19043421FC8D0700261E72 /* UIButton+Theme.swift in Sources */,
 				6B31E1F02197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
 				6B8731A82189A70600CC2651 /* UserDefaults.swift in Sources */,
 				6B14FA0C2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */,
@@ -2016,6 +2044,7 @@
 				91FA7F9F21FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
 				6B1D1E88219A232300F72798 /* Vehicle.swift in Sources */,
 				6BB6CB732196591D00B597B3 /* UIColor+Hex.swift in Sources */,
+				6B720FEE220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */,
 				6BDE9152218C3073003F976B /* APIClient.swift in Sources */,
 				6B8731C12189C7FA00CC2651 /* SignInViewController.swift in Sources */,
 				6B6C6AE82197CE3300D956DC /* User.swift in Sources */,
@@ -2027,6 +2056,7 @@
 				6B03DC1321F6FBF800A2765F /* RideSegment.swift in Sources */,
 				6B849D4921941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D75F21FB1F2A00B84244 /* SearchService.swift in Sources */,
+				6B720FF7220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
 				6B444FE82191AC2E00DFB787 /* EmailAuthViewController.swift in Sources */,
 				6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B214AE1219564CD00553C3D /* EditNameViewController.swift in Sources */,
@@ -2066,6 +2096,7 @@
 				6BD4729A219A4CAA00D36C3E /* GMUClusterManager.m in Sources */,
 				6BDE9172218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD47270219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
+				6B720FF3220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */,
 				6BD47264219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */,
 				6B0D922321FDBE5800A9B38E /* EndRidePhotoViewController.swift in Sources */,
 				6B8731D12189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,
@@ -2079,6 +2110,7 @@
 				6BD472B3219A4DB300D36C3E /* VehiclePOI.swift in Sources */,
 				6B2C9BAE21A0155E0042432D /* PaymentService.swift in Sources */,
 				6BD47279219A4CAA00D36C3E /* GMUPolygon.m in Sources */,
+				6B720FFB220ADFCE0081BCF1 /* FTDarkBasicButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

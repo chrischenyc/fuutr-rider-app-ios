@@ -33,8 +33,6 @@ class VehicleReservedInfoView: DesignableView {
   }
   
   private func setupUI() {
-    scanButton.primaryRed()
-    cancelButton.primaryRedBasic()
     scooterReserved.textColor = UIColor.primaryDarkColor
     parkLabel.textColor = UIColor.primaryGreyColor
     timerLabel.textColor = UIColor.primaryDarkColor

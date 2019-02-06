@@ -435,7 +435,6 @@ extension MapViewController {
     sideMenuButton.backgroundColor = UIColor.clear
     
     unlockView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
-    unlockButton.primaryRed()
     
     vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     vehicleInfoView.onReserve = { [weak self] (vehicle) in

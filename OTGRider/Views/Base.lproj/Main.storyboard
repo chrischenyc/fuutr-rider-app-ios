@@ -105,7 +105,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-OG-jme" userLabel="unlockView">
                                 <rect key="frame" x="0.0" y="562" width="375" height="105"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-Ss-nph">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-Ss-nph" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
                                         <rect key="frame" x="70" y="30.5" width="235" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="cNv-rs-9zD"/>

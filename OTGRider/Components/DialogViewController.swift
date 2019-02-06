@@ -95,12 +95,10 @@ class DialogViewController: UIViewController {
       messageLabel.removeFromSuperview()
     }
     
-    positiveButton.primaryRed()
     positiveButton.setTitle(positiveActionButtonTitle, for: .normal)
     positiveButton.addTarget(self, action: #selector(positiveTapped), for: .touchUpInside)
     
     if let negativeActionButtonTitle = negativeActionButtonTitle, negativeActionButtonTitle.count > 0 {
-      negativeButton.primaryDarkBasic()
       negativeButton.setTitle(negativeActionButtonTitle, for: .normal)
       negativeButton.addTarget(self, action: #selector(negativeTapped), for: .touchUpInside)
     }

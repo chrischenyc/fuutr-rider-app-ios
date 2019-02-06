@@ -28,7 +28,6 @@ class EmailAuthViewController: UIViewController {
     
     emailTextField.becomeFirstResponder()
     submitButton.isEnabled = false
-    submitButton.layoutCornerRadiusAndShadow()
     submitButton.backgroundColor = UIColor.primaryWhiteColor
   }
   

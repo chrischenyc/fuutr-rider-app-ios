@@ -66,7 +66,7 @@
                         <constraint firstAttribute="height" constant="96" id="sTB-HS-qxF"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRa-Jc-4CF">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRa-Jc-4CF" customClass="FTRedInverseButton" customModule="OTGRider" customModuleProvider="target">
                     <rect key="frame" x="20" y="171" width="160" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="iNR-MQ-gdd"/>
@@ -74,7 +74,7 @@
                     </constraints>
                     <state key="normal" title="Lock"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eli-C5-gd1">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eli-C5-gd1" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
                     <rect key="frame" x="195" y="171" width="160" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="160" id="Mha-9x-E7d"/>
