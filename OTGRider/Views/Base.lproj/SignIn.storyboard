@@ -119,6 +119,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="98" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                         <state key="normal" title="Rider Agreement"/>
+                                                        <connections>
+                                                            <action selector="onAgreement:" destination="9Yg-X6-IMj" eventType="touchUpInside" id="7TN-8c-IX8"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJc-IX-A8O">
                                                         <rect key="frame" x="101" y="6.5" width="21" height="14.5"/>
@@ -130,6 +133,9 @@
                                                         <rect key="frame" x="125" y="0.0" width="81" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                         <state key="normal" title="Privacy Policy"/>
+                                                        <connections>
+                                                            <action selector="onPrivacy:" destination="9Yg-X6-IMj" eventType="touchUpInside" id="0lx-8J-iJe"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1A-RL-q6B">
                                                         <rect key="frame" x="209" y="6.5" width="4" height="14.5"/>
@@ -361,7 +367,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5a-bi-D86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="171.36431784107947"/>
+            <point key="canvasLocation" x="449" y="187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="W2m-bo-IVc">

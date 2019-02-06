@@ -95,6 +95,18 @@ class SignInViewController: UIViewController {
     }
   }
   
+  @IBAction func onAgreement(_ sender: Any) {
+    if let url = URL(string: config.env.termsURL), UIApplication.shared.canOpenURL(url) {
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+  }
+  
+  @IBAction func onPrivacy(_ sender: Any) {
+    if let url = URL(string: config.env.privacyURL), UIApplication.shared.canOpenURL(url) {
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+  }
+  
   
   // MARK: - private
   

@@ -56,11 +56,15 @@ enum Environment: String {
     }
   }
   
+  var termsURL: String {
+    return "https://www.fuutr.co"
+  }
+  
+  var privacyURL: String {
+    return "https://www.fuutr.co/privacy"
+  }
+  
   var helpURL: String {
-    switch self {
-    case .Development: return "https://www.otgride.com/how-it-works"
-    case .Staging: return "https://www.otgride.com/how-it-works"
-    case .Production: return "https://www.otgride.com/how-it-works"
-    }
+    return "https://www.fuutr.co/legal-press-notice"
   }
 }
