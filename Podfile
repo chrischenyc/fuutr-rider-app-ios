@@ -1,4 +1,4 @@
-platform :ios, '10.0'
+platform :ios, '11.0'
 workspace 'OTGRider'
 
 inhibit_all_warnings!
@@ -26,6 +26,7 @@ abstract_target 'Project' do
   pod 'PKHUD'
   pod 'MZFormSheetPresentationController'
   pod 'PinCodeView'
+  pod 'IHKeyboardAvoiding'
   
   # Networking
   pod 'ReachabilitySwift'

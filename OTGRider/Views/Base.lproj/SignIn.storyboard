@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--EmailSignIn-->
+        <scene sceneID="Nsm-9y-wQN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EmailSignIn" id="BdC-KT-Nzr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dil-8l-aBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="287" y="-67"/>
+        </scene>
         <!--Delegate-->
         <scene sceneID="QWo-Qz-k4l">
             <objects>
@@ -85,7 +93,7 @@
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Sign in with email"/>
                                                 <connections>
-                                                    <segue destination="a5m-Kq-tmg" kind="show" id="NGh-tc-vCX"/>
+                                                    <segue destination="BdC-KT-Nzr" kind="show" id="HqG-2A-hnL"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuF-1m-Vvq">
@@ -255,7 +263,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juU-q2-mQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OPR-SQ-TBD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="172"/>
+            <point key="canvasLocation" x="2434" y="423"/>
         </scene>
         <!--Onboard-->
         <scene sceneID="ACV-qL-Ci8">
@@ -367,7 +375,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5a-bi-D86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="449" y="187"/>
+            <point key="canvasLocation" x="1642" y="495"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="W2m-bo-IVc">
@@ -649,7 +657,7 @@
         <image name="ic-mobile-dark-gray-16" width="10" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uxi-sZ-NDa"/>
-        <segue reference="NYh-wd-6MW"/>
+        <segue reference="AL8-Zq-xC4"/>
+        <segue reference="Q5s-yY-tXW"/>
     </inferredMetricsTieBreakers>
 </document>

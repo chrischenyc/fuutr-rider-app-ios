@@ -1180,10 +1180,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 16 storyboards.
   struct storyboard {
     /// Storyboard `Account`.
     static let account = _R.storyboard.account()
+    /// Storyboard `EmailSignIn`.
+    static let emailSignIn = _R.storyboard.emailSignIn()
     /// Storyboard `EndRidePhoto`.
     static let endRidePhoto = _R.storyboard.endRidePhoto()
     /// Storyboard `Help`.
@@ -1216,6 +1218,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Account", bundle: ...)`
     static func account(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.account)
+    }
+    
+    /// `UIStoryboard(name: "EmailSignIn", bundle: ...)`
+    static func emailSignIn(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.emailSignIn)
     }
     
     /// `UIStoryboard(name: "EndRidePhoto", bundle: ...)`
@@ -1490,6 +1497,7 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try account.validate()
+      try emailSignIn.validate()
       try endRidePhoto.validate()
       try help.validate()
       try history.validate()
@@ -1513,6 +1521,22 @@ struct _R: Rswift.Validatable {
       let name = "Account"
       
       static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct emailSignIn: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let bundle = R.hostingBundle
+      let name = "EmailSignIn"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "btn-arrow-next-red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-arrow-next-red' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-back-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-back-dark-gray-16' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

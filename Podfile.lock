@@ -107,6 +107,7 @@ PODS:
   - GoogleUtilities/UserDefaults (5.3.7):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
+  - IHKeyboardAvoiding (4.6)
   - MZAppearance (1.1.6)
   - MZFormSheetPresentationController (2.4.3):
     - MZAppearance
@@ -153,6 +154,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/Performance
   - GoogleMaps
+  - IHKeyboardAvoiding
   - MZFormSheetPresentationController
   - ObjectMapper
   - PhoneNumberKit
@@ -189,6 +191,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
+    - IHKeyboardAvoiding
     - MZAppearance
     - MZFormSheetPresentationController
     - nanopb
@@ -229,6 +232,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  IHKeyboardAvoiding: 2a664fdb5f964359fa7ec8fc5c9aebb447583ff8
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetPresentationController: fbfdbad31884f16fac17fbe3c44c168306cc1095
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
@@ -247,6 +251,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 190af968ea7746d1636dfe2b63f7dbbfb0199bf2
+PODFILE CHECKSUM: 4be33c8502a826f38bf4503a2e78b18d5cf2867e
 
 COCOAPODS: 1.5.3
