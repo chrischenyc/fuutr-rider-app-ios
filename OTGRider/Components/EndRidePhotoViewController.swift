@@ -34,13 +34,15 @@ class EndRidePhotoViewController: UIViewController {
     switchToCamera()
   }
   
-  private func setupUI() {
+  override func viewDidLayoutSubviews() {
     titleView.layoutCornerRadiusMask(corners: [.bottomRight, .bottomLeft])
     shootView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
     sendView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
-    
-    shootButton.backgroundColor = UIColor.primaryRedColor
     shootButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: shootButton.frame.size.width/2)
+  }
+  
+  private func setupUI() {
+    shootButton.backgroundColor = UIColor.primaryRedColor
   }
   
   private func switchToCamera() {

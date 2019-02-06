@@ -431,12 +431,15 @@ extension MapViewController {
 
 // MARK: - UI
 extension MapViewController {
+  override func viewDidLayoutSubviews() {
+    unlockView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
+    vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
+    vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
+    ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
+  }
   private func setupUI() {
     sideMenuButton.backgroundColor = UIColor.clear
     
-    unlockView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
-    
-    vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     vehicleInfoView.onReserve = { [weak self] (vehicle) in
       self?.alertMessage(title: "Reserve Scooter",
                          message: "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
@@ -455,7 +458,6 @@ extension MapViewController {
       self?.unlock(self?.vehicleInfoView as Any)
     }
     
-    vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     vehicleReservedInfoView.onScan = { [weak self] in
       self?.unlock(self?.vehicleReservedInfoView as Any)
     }
@@ -476,8 +478,6 @@ extension MapViewController {
         self?.search()
       }
     }
-    
-    ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     
     ridingView.onPauseRide = { [weak self] in
       self?.alertMessage(title: "Are you sure you want to lock the scooter?",
