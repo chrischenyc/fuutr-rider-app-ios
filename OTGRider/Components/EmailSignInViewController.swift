@@ -15,6 +15,8 @@ class EmailSignInViewController: UIViewController {
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var nextButton: UIButton!
   
+  private var authAPITask: URLSessionTask?
+  
   // MARK: - lifecycle
   
   override func viewDidLoad() {
@@ -42,7 +44,33 @@ class EmailSignInViewController: UIViewController {
   }
   
   @IBAction func nextTapped(_ sender: Any) {
+    guard let email = emailTextField.text else {
+      return
+    }
+    
     showLoading()
+    
+    authAPITask?.cancel()
+    
+    authAPITask = AuthService.verify(email: email, completion: { [weak self] (verified, error) in
+      
+      DispatchQueue.main.async {
+        
+        self?.dismissLoading()
+        
+        guard error == nil else {
+          self?.alertError(error!)
+          return
+        }
+        
+        guard let verified = verified else {
+          self?.alertMessage(message: R.string.localizable.kOtherError())
+          return
+        }
+        
+        logger.info("\(verified ? "verified" : "no verified")")
+      }
+    })
   }
   
   // MARK: - private

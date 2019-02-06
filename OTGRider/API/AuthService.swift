@@ -34,6 +34,29 @@ final class AuthService {
     })
   }
   
+  static func verify(email: String,
+                     completion: @escaping (Bool?, Error?) -> Void) -> URLSessionDataTask? {
+    
+    let params: JSON = [
+      "email": email,
+    ]
+    
+    return APIClient.shared.load(path: "/auth/email-verify",
+                                 method: .post,
+                                 params: params,
+                                 completion: { (result, error) in
+                                  
+                                  guard error == nil,
+                                    let result = result as? JSON,
+                                    let verified = result["verified"] as? Bool else {
+                                    completion(nil, error)
+                                    return
+                                  }
+                                  
+                                  completion(verified, nil)
+    })
+  }
+  
   static func signup(withEmail email: String,
                      password: String,
                      completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
