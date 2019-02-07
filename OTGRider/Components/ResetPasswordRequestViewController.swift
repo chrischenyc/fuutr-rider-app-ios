@@ -18,6 +18,7 @@ class ResetPasswordRequestViewController: UIViewController {
   private var apiTask: URLSessionTask?
   var email: String?
   
+  // MARK: - lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -38,6 +39,12 @@ class ResetPasswordRequestViewController: UIViewController {
       verifyCodeViewController.email = emailTextField.text
     }
   }
+  
+  @IBAction func unwindToResetPasswordRequest(_ unwindSegue: UIStoryboardSegue) {
+    
+  }
+  
+  // MARK: - user actions
   
   @IBAction func emailChanged(_ sender: Any) {
     validate()
@@ -70,6 +77,8 @@ class ResetPasswordRequestViewController: UIViewController {
       }
     })
   }
+  
+  // MARK: - private
   
   private func validate() {
     guard let email = emailTextField.text else {

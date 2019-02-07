@@ -1006,10 +1006,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `ResetPasswordSetViewController`, and contains static references to 1 segues.
+    /// This struct is generated for `ResetPasswordSetViewController`, and contains static references to 2 segues.
     struct resetPasswordSetViewController {
       /// Segue identifier `unwindToEmailAuth`.
       static let unwindToEmailAuth: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ResetPasswordSetViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToEmailAuth")
+      /// Segue identifier `unwindToSignInPassword`.
+      static let unwindToSignInPassword: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ResetPasswordSetViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToSignInPassword")
       
       /// Optionally returns a typed version of segue `unwindToEmailAuth`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
@@ -1018,19 +1020,35 @@ struct R: Rswift.Validatable {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.resetPasswordSetViewController.unwindToEmailAuth, segue: segue)
       }
       
+      /// Optionally returns a typed version of segue `unwindToSignInPassword`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func unwindToSignInPassword(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ResetPasswordSetViewController, UIKit.UIViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.resetPasswordSetViewController.unwindToSignInPassword, segue: segue)
+      }
+      
       fileprivate init() {}
     }
     
-    /// This struct is generated for `ResetPasswordVerifyViewController`, and contains static references to 1 segues.
+    /// This struct is generated for `ResetPasswordVerifyViewController`, and contains static references to 2 segues.
     struct resetPasswordVerifyViewController {
       /// Segue identifier `showNewPassword`.
       static let showNewPassword: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ResetPasswordVerifyViewController, ResetPasswordSetViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showNewPassword")
+      /// Segue identifier `showSetPassword`.
+      static let showSetPassword: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ResetPasswordVerifyViewController, ResetPasswordSetViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showSetPassword")
       
       /// Optionally returns a typed version of segue `showNewPassword`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showNewPassword(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ResetPasswordVerifyViewController, ResetPasswordSetViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.resetPasswordVerifyViewController.showNewPassword, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showSetPassword`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showSetPassword(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ResetPasswordVerifyViewController, ResetPasswordSetViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.resetPasswordVerifyViewController.showSetPassword, segue: segue)
       }
       
       fileprivate init() {}

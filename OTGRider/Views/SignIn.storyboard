@@ -310,7 +310,7 @@
                                                     <constraint firstAttribute="width" constant="80" id="ite-vx-Xmy"/>
                                                     <constraint firstAttribute="height" constant="44" id="zxl-wc-ZVU"/>
                                                 </constraints>
-                                                <state key="normal" title="Next">
+                                                <state key="normal" title="Submit">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
@@ -416,7 +416,7 @@
                                                             <constraint firstAttribute="width" constant="88" id="Li5-Rc-Egy"/>
                                                             <constraint firstAttribute="height" constant="44" id="WPu-EJ-LMI"/>
                                                         </constraints>
-                                                        <state key="normal" title="Next"/>
+                                                        <state key="normal" title="Verify"/>
                                                         <connections>
                                                             <action selector="submitButtonTapped:" destination="A9q-Lc-jkk" eventType="touchUpInside" id="yDt-HX-uN7"/>
                                                         </connections>
@@ -446,7 +446,7 @@
                     <navigationItem key="navigationItem" title="Verify Code" id="jgP-ce-6OK">
                         <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="dVM-iy-RVl">
                             <connections>
-                                <segue destination="Ais-DC-SNb" kind="unwind" unwindAction="unwindToSignInEmail:" id="maD-iZ-o7M"/>
+                                <segue destination="Ais-DC-SNb" kind="unwind" unwindAction="unwindToResetPasswordRequest:" id="Xex-YJ-GbY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -455,12 +455,124 @@
                         <outlet property="resendButton" destination="4Bm-Hx-5hq" id="bu7-Tz-FPC"/>
                         <outlet property="stackView" destination="fhn-pV-hhQ" id="FK6-jB-Qzg"/>
                         <outlet property="submitButton" destination="BH3-XN-rB3" id="J5g-gr-p97"/>
+                        <segue destination="GTQ-AX-sNw" kind="show" identifier="showSetPassword" id="AXC-bf-mK6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8go-fH-bDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ais-DC-SNb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2574" y="947"/>
+        </scene>
+        <!--Set New Password-->
+        <scene sceneID="Q2I-5d-KnK">
+            <objects>
+                <viewController id="GTQ-AX-sNw" customClass="ResetPasswordSetViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="soa-Yk-mzd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PtJ-6C-nB1">
+                                <rect key="frame" x="16" y="179" width="343" height="309"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbQ-LY-TOY">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ixr-fw-XoA">
+                                                <rect key="frame" x="16" y="0.0" width="311" height="128"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGM-OX-Pqk">
+                                                        <rect key="frame" x="0.0" y="44" width="267" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="Ctf-zl-8vY"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="passwordChanged:" destination="GTQ-AX-sNw" eventType="editingChanged" id="lU8-3B-Aog"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srK-dg-fPO">
+                                                        <rect key="frame" x="267" y="42" width="44" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="44" id="d0A-bo-BhZ"/>
+                                                            <constraint firstAttribute="height" constant="44" id="wWs-ev-KPO"/>
+                                                        </constraints>
+                                                        <state key="normal" image="ic-show-dark-gray-16"/>
+                                                        <connections>
+                                                            <action selector="toggleShowPassword:" destination="GTQ-AX-sNw" eventType="touchUpInside" id="Pap-HE-Bwq"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ixr-fw-XoA" firstAttribute="top" secondItem="CbQ-LY-TOY" secondAttribute="top" id="1hP-K6-d44"/>
+                                            <constraint firstAttribute="trailing" secondItem="ixr-fw-XoA" secondAttribute="trailing" constant="16" id="EqE-65-pXn"/>
+                                            <constraint firstItem="ixr-fw-XoA" firstAttribute="leading" secondItem="CbQ-LY-TOY" secondAttribute="leading" constant="16" id="qcd-9I-bmc"/>
+                                            <constraint firstAttribute="bottom" secondItem="ixr-fw-XoA" secondAttribute="bottom" id="xNi-LE-0HH"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWr-cH-DFe">
+                                        <rect key="frame" x="0.0" y="136" width="343" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="0fJ-LI-1WC"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIZ-jU-jTZ">
+                                        <rect key="frame" x="0.0" y="145" width="343" height="164"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOt-Ue-wS1" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
+                                                <rect key="frame" x="239" y="64" width="88" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="fp0-aF-4Dp"/>
+                                                    <constraint firstAttribute="width" constant="88" id="spX-Ex-wUM"/>
+                                                </constraints>
+                                                <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="submitButtonTapped:" destination="GTQ-AX-sNw" eventType="touchUpInside" id="xTT-6y-hWG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="IOt-Ue-wS1" firstAttribute="top" secondItem="oIZ-jU-jTZ" secondAttribute="top" constant="64" id="0XV-eh-vz7"/>
+                                            <constraint firstAttribute="trailing" secondItem="IOt-Ue-wS1" secondAttribute="trailing" constant="16" id="Asg-be-lfp"/>
+                                            <constraint firstAttribute="bottom" secondItem="IOt-Ue-wS1" secondAttribute="bottom" constant="56" id="Om9-d3-z5B"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ltn-Xx-WDD" firstAttribute="trailing" secondItem="PtJ-6C-nB1" secondAttribute="trailing" constant="16" id="3Pl-GM-MCa"/>
+                            <constraint firstItem="PtJ-6C-nB1" firstAttribute="leading" secondItem="ltn-Xx-WDD" secondAttribute="leading" constant="16" id="hNW-M4-8oO"/>
+                            <constraint firstItem="PtJ-6C-nB1" firstAttribute="centerY" secondItem="soa-Yk-mzd" secondAttribute="centerY" id="jwN-mr-iWy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ltn-Xx-WDD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Set New Password" id="080-f1-V3g">
+                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="Q9q-AC-hsu">
+                            <connections>
+                                <segue destination="z2K-FU-RV3" kind="unwind" unwindAction="unwindToResetPasswordVerify:" id="kya-pW-YZc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="passwordTextField" destination="aGM-OX-Pqk" id="GDX-5p-vlp"/>
+                        <outlet property="showPasswordButton" destination="srK-dg-fPO" id="8GB-EU-ubQ"/>
+                        <outlet property="stackView" destination="PtJ-6C-nB1" id="zAc-9W-MnP"/>
+                        <outlet property="submitButton" destination="IOt-Ue-wS1" id="ChT-fy-cGH"/>
+                        <segue destination="z2K-FU-RV3" kind="unwind" identifier="unwindToSignInPassword" unwindAction="unwindToSignInPassword:" id="GxH-3B-xDP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WM8-zQ-V6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="z2K-FU-RV3" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3481" y="947"/>
         </scene>
     </scenes>
     <resources>

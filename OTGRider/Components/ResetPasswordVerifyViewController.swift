@@ -40,6 +40,10 @@ class ResetPasswordVerifyViewController: UIViewController {
     }
   }
   
+  @IBAction func unwindToResetPasswordVerify(_ unwindSegue: UIStoryboardSegue) {
+    
+  }
+  
   // MARK: - user actions
   @IBAction func codeChanged(_ sender: Any) {
     validate()
@@ -60,7 +64,7 @@ class ResetPasswordVerifyViewController: UIViewController {
           return
         }
         
-        // TODO: segue
+        self?.performSegue(withIdentifier: R.segue.resetPasswordVerifyViewController.showSetPassword, sender: nil)
       }
     })
   }
