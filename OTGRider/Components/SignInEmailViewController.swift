@@ -23,7 +23,6 @@ class SignInEmailViewController: UIViewController {
     super.viewDidLoad()
     
     navigationController?.navigationBar.applyTheme()
-    
     validate()
   }
   

@@ -63,7 +63,7 @@ class EmailAuthViewController: UIViewController {
   
   @IBAction func submitTapped(_ sender: Any) {
     guard let email = emailTextField.text else { return }
-    guard let passowrd = passwordTextField.text else { return }
+    guard let password = passwordTextField.text else { return }
     
     // cancel previous API call
     apiTask?.cancel()
@@ -72,11 +72,11 @@ class EmailAuthViewController: UIViewController {
     showLoading()
     
     if authType == .signUp {
-      apiTask = AuthService.signup(withEmail: email, password: passowrd, completion: { [weak self] (error) in
+      apiTask = AuthService.signup(withEmail: email, password: password, completion: { [weak self] (error) in
         self?.handleAuthCompletion(error)
       })
     } else {
-      apiTask = AuthService.login(withEmail: email, password: passowrd, completion: {[weak self] (error) in
+      apiTask = AuthService.login(withEmail: email, password: password, completion: {[weak self] (error) in
         self?.handleAuthCompletion(error)
       })
     }

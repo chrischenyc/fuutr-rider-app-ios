@@ -713,7 +713,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 21 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 22 view controllers.
   struct segue {
     /// This struct is generated for `EditEmailViewController`, and contains static references to 1 segues.
     struct editEmailViewController {
@@ -1106,6 +1106,30 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showEnterPassword(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInEmailViewController, SignInPasswordViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInEmailViewController.showEnterPassword, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `SignInPasswordViewController`, and contains static references to 2 segues.
+    struct signInPasswordViewController {
+      /// Segue identifier `showMap`.
+      static let showMap: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInPasswordViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMap")
+      /// Segue identifier `showOnboard`.
+      static let showOnboard: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInPasswordViewController, EnableLocationViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showOnboard")
+      
+      /// Optionally returns a typed version of segue `showMap`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showMap(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInPasswordViewController, MapViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInPasswordViewController.showMap, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showOnboard`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showOnboard(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInPasswordViewController, EnableLocationViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInPasswordViewController.showOnboard, segue: segue)
       }
       
       fileprivate init() {}
@@ -1784,6 +1808,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "btn-arrow-next-red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-arrow-next-red' is used in storyboard 'SignIn', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-back-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-back-dark-gray-16' is used in storyboard 'SignIn', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-show-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-show-dark-gray-16' is used in storyboard 'SignIn', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
