@@ -31,7 +31,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                                 <connections>
                                                     <action selector="emailChanged:" destination="m1S-IG-uch" eventType="editingChanged" id="PKj-bg-XkG"/>
                                                 </connections>
@@ -280,7 +280,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                                 <connections>
                                                     <action selector="emailChanged:" destination="AQi-W0-88c" eventType="editingChanged" id="50j-2n-e4r"/>
                                                 </connections>
