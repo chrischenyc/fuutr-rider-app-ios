@@ -65,7 +65,7 @@ class ResetPasswordRequestViewController: UIViewController {
                            image: nil, // R.image.icCheckDarkGray16(),
                            positiveActionButtonTitle: "Continue",
                            positiveActionButtonTapped: {
-                            // TODO:
+                            self?.performSegue(withIdentifier: R.segue.resetPasswordRequestViewController.showVerifyCode, sender: nil)
         })
       }
     })
