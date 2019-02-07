@@ -713,7 +713,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 20 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 21 view controllers.
   struct segue {
     /// This struct is generated for `EditEmailViewController`, and contains static references to 1 segues.
     struct editEmailViewController {
@@ -1091,6 +1091,21 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIStoryboardSegueWithCompletion, SideMenuViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.sideMenuViewController.unwindToHome, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `SignInEmailViewController`, and contains static references to 1 segues.
+    struct signInEmailViewController {
+      /// Segue identifier `showEnterPassword`.
+      static let showEnterPassword: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInEmailViewController, SignInPasswordViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showEnterPassword")
+      
+      /// Optionally returns a typed version of segue `showEnterPassword`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showEnterPassword(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInEmailViewController, SignInPasswordViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInEmailViewController.showEnterPassword, segue: segue)
       }
       
       fileprivate init() {}

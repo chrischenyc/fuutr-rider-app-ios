@@ -1,5 +1,5 @@
 //
-//  EmailSignInViewController.swift
+//  SignInEmailViewController.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 6/2/19.
@@ -9,7 +9,7 @@
 import UIKit
 import IHKeyboardAvoiding
 
-class EmailSignInViewController: UIViewController {
+class SignInEmailViewController: UIViewController {
   
   @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var emailTextField: UITextField!
@@ -22,12 +22,7 @@ class EmailSignInViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    navigationController?.navigationBar.tintColor = UIColor.primaryDarkColor
-    navigationController?.navigationBar.largeTitleTextAttributes = [
-      NSAttributedString.Key.foregroundColor: UIColor.primaryDarkColor
-    ]
-    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-    navigationController?.navigationBar.shadowImage = UIImage()
+    navigationController?.navigationBar.applyTheme()
     
     validate()
   }
@@ -37,7 +32,20 @@ class EmailSignInViewController: UIViewController {
     emailTextField.becomeFirstResponder()
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let signInPasswordViewController = segue.destination as? SignInPasswordViewController,
+      let displayName = sender as? String? {
+      
+      signInPasswordViewController.email = emailTextField.text
+      signInPasswordViewController.displayName = displayName
+    }
+  }
+  
   // MARK: - user actions
+  
+  @IBAction func unwindToSignInEmail(_ unwindSegue: UIStoryboardSegue) {
+    
+  }
   
   @IBAction func emailChanged(_ sender: Any) {
     validate()
@@ -52,7 +60,7 @@ class EmailSignInViewController: UIViewController {
     
     authAPITask?.cancel()
     
-    authAPITask = AuthService.verify(email: email, completion: { [weak self] (verified, error) in
+    authAPITask = AuthService.verify(email: email, completion: { [weak self] (displayName, error) in
       
       DispatchQueue.main.async {
         
@@ -63,12 +71,7 @@ class EmailSignInViewController: UIViewController {
           return
         }
         
-        guard let verified = verified else {
-          self?.alertMessage(message: R.string.localizable.kOtherError())
-          return
-        }
-        
-        logger.info("\(verified ? "verified" : "no verified")")
+        self?.performSegue(withIdentifier: R.segue.signInEmailViewController.showEnterPassword, sender: displayName)
       }
     })
   }
