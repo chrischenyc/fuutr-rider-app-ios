@@ -9,25 +9,11 @@
 import UIKit
 
 @IBDesignable
-class FTDarkBasicButton: UIButton {
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    
-    commonInit()
-  }
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    
-    commonInit()
-  }
-  
-  override func prepareForInterfaceBuilder() {
-    commonInit()
-  }
-  
-  private func commonInit() {
+class FTDarkBasicButton: FTButton {
+  override func commonInit() {
     backgroundColor = .clear
     setTitleColor(UIColor.primaryDarkColor, for: .normal)
+    
+    alpha = isEnabled ? 1.0 : 0.5
   }
 }

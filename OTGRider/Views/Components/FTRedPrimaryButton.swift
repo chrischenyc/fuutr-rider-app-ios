@@ -9,26 +9,13 @@
 import UIKit
 
 @IBDesignable
-class FTRedPrimaryButton: UIButton {
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    
-    commonInit()
-  }
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    
-    commonInit()
-  }
-  
-  override func prepareForInterfaceBuilder() {
-    commonInit()
-  }
-  
-  private func commonInit() {
+class FTRedPrimaryButton: FTButton {
+  override func commonInit() {
     layer.cornerRadius = .defaultCornerRadius
     backgroundColor = UIColor.primaryRedColor
     setTitleColor(UIColor.white, for: .normal)
+    
+    alpha = isEnabled ? 1.0 : 0.5
   }
+  
 }

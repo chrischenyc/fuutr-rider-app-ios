@@ -359,6 +359,9 @@
 		6BDEEF04220BAD3C00C0FBB8 /* UINavigationBar+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEF03220BAD3B00C0FBB8 /* UINavigationBar+Custom.swift */; };
 		6BDEEF05220BAD3C00C0FBB8 /* UINavigationBar+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEF03220BAD3B00C0FBB8 /* UINavigationBar+Custom.swift */; };
 		6BDEEF06220BAD3C00C0FBB8 /* UINavigationBar+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEF03220BAD3B00C0FBB8 /* UINavigationBar+Custom.swift */; };
+		6BDEEF08220BDEDA00C0FBB8 /* FTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEF07220BDEDA00C0FBB8 /* FTButton.swift */; };
+		6BDEEF09220BDEDA00C0FBB8 /* FTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEF07220BDEDA00C0FBB8 /* FTButton.swift */; };
+		6BDEEF0A220BDEDA00C0FBB8 /* FTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEF07220BDEDA00C0FBB8 /* FTButton.swift */; };
 		81E8C84519DD630C24B9B6DC /* Pods_Project_OTGRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81CF8CCF05B3983496167E9 /* Pods_Project_OTGRider.framework */; };
 		914A6B7821FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6B7721FD24CC00715879 /* VehicleReservedInfoView.swift */; };
 		914A6B7921FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6B7721FD24CC00715879 /* VehicleReservedInfoView.swift */; };
@@ -595,6 +598,7 @@
 		6BDEEEFB220BA8B600C0FBB8 /* SignInEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInEmailViewController.swift; sourceTree = "<group>"; };
 		6BDEEEFF220BA8EC00C0FBB8 /* SignInPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPasswordViewController.swift; sourceTree = "<group>"; };
 		6BDEEF03220BAD3B00C0FBB8 /* UINavigationBar+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Custom.swift"; sourceTree = "<group>"; };
+		6BDEEF07220BDEDA00C0FBB8 /* FTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTButton.swift; sourceTree = "<group>"; };
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		86B2C7CC09C21C83C016544C /* Pods-Project-OTGRider-dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-dev/Pods-Project-OTGRider-dev.debug.xcconfig"; sourceTree = "<group>"; };
 		914A6B7721FD24CC00715879 /* VehicleReservedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleReservedInfoView.swift; sourceTree = "<group>"; };
@@ -699,6 +703,7 @@
 		6B720FF0220ADC510081BCF1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6BDEEF07220BDEDA00C0FBB8 /* FTButton.swift */,
 				6B720FF1220ADC9A0081BCF1 /* FTRedPrimaryButton.swift */,
 				6B720FF5220ADDED0081BCF1 /* FTRedInverseButton.swift */,
 				6B720FEC220AD96A0081BCF1 /* FTRedBasicButton.swift */,
@@ -1803,6 +1808,7 @@
 				6B473DB222029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472B0219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B473DB62202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
+				6BDEEF0A220BDEDA00C0FBB8 /* FTButton.swift in Sources */,
 				6B0128BD219DA0E100AC2439 /* Ride.swift in Sources */,
 				9197554521FC3A4D0069D25A /* DesignableView.swift in Sources */,
 				6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */,
@@ -1923,6 +1929,7 @@
 				6B473DB022029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472AE219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B473DB42202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
+				6BDEEF08220BDEDA00C0FBB8 /* FTButton.swift in Sources */,
 				6B0128BB219DA0E100AC2439 /* Ride.swift in Sources */,
 				9197554321FC3A4D0069D25A /* DesignableView.swift in Sources */,
 				6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */,
@@ -2043,6 +2050,7 @@
 				6B473DB122029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472AF219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B473DB52202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
+				6BDEEF09220BDEDA00C0FBB8 /* FTButton.swift in Sources */,
 				6B0128BC219DA0E100AC2439 /* Ride.swift in Sources */,
 				9197554421FC3A4D0069D25A /* DesignableView.swift in Sources */,
 				6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */,

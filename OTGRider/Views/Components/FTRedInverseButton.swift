@@ -9,29 +9,15 @@
 import UIKit
 
 @IBDesignable
-class FTRedInverseButton: UIButton {
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    
-    commonInit()
-  }
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    
-    commonInit()
-  }
-  
-  override func prepareForInterfaceBuilder() {
-    commonInit()
-  }
-  
-  private func commonInit() {
+class FTRedInverseButton: FTButton {
+  override func commonInit() {
     backgroundColor = UIColor.clear
     layer.borderColor = UIColor.primaryRedColor.cgColor
     layer.borderWidth = 2
     layer.cornerRadius = .defaultCornerRadius
     setTitleColor(UIColor.primaryRedColor, for: .normal)
+    
+    alpha = isEnabled ? 1.0 : 0.5
   }
 }
 

@@ -42,7 +42,7 @@ class HowToRideViewController: UIPageViewController {
   
   fileprivate func getViewController(withDescription: String, image: UIImage) -> HowToRideSinglePageViewController
   {
-    let viewController = UIStoryboard(name: "HowToRide", bundle: nil).instantiateViewController(withIdentifier: "HowToRideSinglePageViewController") as! HowToRideSinglePageViewController
+    let viewController = R.storyboard.howToRide().instantiateInitialViewController() as! HowToRideSinglePageViewController
     viewController.descriptionText = withDescription
     viewController.image = image
     viewController.delegate = self

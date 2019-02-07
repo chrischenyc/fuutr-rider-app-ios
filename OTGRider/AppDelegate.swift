@@ -126,7 +126,7 @@ extension AppDelegate: MessagingDelegate {
 
 extension AppDelegate {
   @objc func handleUserSignedOut(notification: Notification) {
-    guard let signInViewController = UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController() as? WelcomeViewController else { return }
+    guard let welcomeViewController = R.storyboard.welcome().instantiateInitialViewController() as? WelcomeViewController else { return }
     
     DispatchQueue.main.async {
       if let window = self.window, let rootViewController = window.rootViewController {
@@ -134,7 +134,7 @@ extension AppDelegate {
         while let presentedController = currentController.presentedViewController {
           currentController = presentedController
         }
-        currentController.present(signInViewController, animated: true, completion: nil)
+        currentController.present(welcomeViewController, animated: true, completion: nil)
       }
     }
   }
