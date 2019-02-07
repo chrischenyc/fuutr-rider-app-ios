@@ -185,6 +185,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ko-9M-gtC" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="7" width="115" height="30"/>
                                                         <state key="normal" title="Forgot password"/>
+                                                        <connections>
+                                                            <segue destination="AQi-W0-88c" kind="show" id="1hk-1p-PF4"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgv-e8-iyY" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
                                                         <rect key="frame" x="223" y="0.0" width="88" height="44"/>
@@ -246,7 +249,7 @@
                 <viewControllerPlaceholder storyboardName="Onboard" id="2UR-2U-tXq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvc-oP-QiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282" y="-11"/>
+            <point key="canvasLocation" x="2300" y="189"/>
         </scene>
         <!--Main-->
         <scene sceneID="l1F-lj-rXX">
@@ -255,6 +258,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udK-Y5-CRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2282" y="303"/>
+        </scene>
+        <!--Forgot Password-->
+        <scene sceneID="Fki-aF-GOB">
+            <objects>
+                <viewController title="Forgot Password" id="AQi-W0-88c" customClass="ResetPasswordRequestViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BbW-17-wdl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="X1J-nv-zU5">
+                                <rect key="frame" x="16" y="231" width="343" height="205"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBn-lp-s5u">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tbH-CB-jgw">
+                                                <rect key="frame" x="16" y="0.0" width="311" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="LbL-ri-9od"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                                <connections>
+                                                    <action selector="emailChanged:" destination="AQi-W0-88c" eventType="editingChanged" id="50j-2n-e4r"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="tbH-CB-jgw" firstAttribute="top" secondItem="LBn-lp-s5u" secondAttribute="top" id="7jI-Ev-eDj"/>
+                                            <constraint firstAttribute="bottom" secondItem="tbH-CB-jgw" secondAttribute="bottom" id="93w-5f-Sgr"/>
+                                            <constraint firstItem="tbH-CB-jgw" firstAttribute="leading" secondItem="LBn-lp-s5u" secondAttribute="leading" constant="16" id="cS8-YU-9df"/>
+                                            <constraint firstAttribute="trailing" secondItem="tbH-CB-jgw" secondAttribute="trailing" constant="16" id="mQU-1M-DLg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpp-UP-dgt">
+                                        <rect key="frame" x="0.0" y="48" width="343" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="o51-yx-Vwt"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frT-MA-Fnq">
+                                        <rect key="frame" x="0.0" y="57" width="343" height="148"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8s-yu-BAd" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
+                                                <rect key="frame" x="263" y="56" width="80" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="ite-vx-Xmy"/>
+                                                    <constraint firstAttribute="height" constant="44" id="zxl-wc-ZVU"/>
+                                                </constraints>
+                                                <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="submitButtonTapped:" destination="AQi-W0-88c" eventType="touchUpInside" id="1Tq-bU-6ED"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="U8s-yu-BAd" secondAttribute="trailing" id="51T-Rd-5k4"/>
+                                            <constraint firstAttribute="bottom" secondItem="U8s-yu-BAd" secondAttribute="bottom" constant="48" id="DXA-0P-oAT"/>
+                                            <constraint firstItem="U8s-yu-BAd" firstAttribute="top" secondItem="frT-MA-Fnq" secondAttribute="top" constant="56" id="RsH-mR-KY1"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="naj-XB-C7e" firstAttribute="trailing" secondItem="X1J-nv-zU5" secondAttribute="trailing" constant="16" id="PMl-cY-vEC"/>
+                            <constraint firstItem="X1J-nv-zU5" firstAttribute="centerY" secondItem="BbW-17-wdl" secondAttribute="centerY" id="VNR-R4-KpF"/>
+                            <constraint firstItem="X1J-nv-zU5" firstAttribute="leading" secondItem="naj-XB-C7e" secondAttribute="leading" constant="16" id="imb-r1-UYF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="naj-XB-C7e"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Forgot Password" id="6fq-ee-PLy">
+                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="VPV-qX-B5H">
+                            <connections>
+                                <segue destination="OHq-IG-DIL" kind="unwind" unwindAction="unwindToSignInPassword:" id="who-Cz-qfg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="tbH-CB-jgw" id="mqV-eo-YgV"/>
+                        <outlet property="stackView" destination="X1J-nv-zU5" id="XrY-WY-71a"/>
+                        <outlet property="submitButton" destination="U8s-yu-BAd" id="ygt-xU-e8P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WZn-sf-pTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OHq-IG-DIL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1710" y="947"/>
         </scene>
     </scenes>
     <resources>

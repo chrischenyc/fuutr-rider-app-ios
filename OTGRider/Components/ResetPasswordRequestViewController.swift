@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import IHKeyboardAvoiding
 
 class ResetPasswordRequestViewController: UIViewController {
   
+  @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var submitButton: UIButton!
   
@@ -19,9 +21,16 @@ class ResetPasswordRequestViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    emailTextField.becomeFirstResponder()
+    navigationController?.navigationBar.applyTheme()
+    
     emailTextField.text = email
-    validateInput()
+    
+    validate()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    KeyboardAvoiding.avoidingView = stackView
+    emailTextField.becomeFirstResponder()
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,7 +40,7 @@ class ResetPasswordRequestViewController: UIViewController {
   }
   
   @IBAction func emailChanged(_ sender: Any) {
-    validateInput()
+    validate()
   }
   
   @IBAction func submitButtonTapped(_ sender: Any) {
@@ -40,21 +49,29 @@ class ResetPasswordRequestViewController: UIViewController {
     apiTask?.cancel()
     
     showLoading()
+    
     apiTask = AuthService.requestPasswordResetCode(forEmail: email, completion: { [weak self] (error) in
       DispatchQueue.main.async {
+        self?.dismissLoading()
+        
         guard error == nil else {
-          self?.flashErrorMessage(error?.localizedDescription)
+          self?.alertError(error!)
           return
         }
         
-        self?.flashSuccessMessage("Code sent, please check your email", completion: { (finished) in
-          self?.performSegue(withIdentifier: R.segue.resetPasswordRequestViewController.showVerifyCode, sender: nil)
+        // TODO: image
+        self?.alertMessage(title: "Check your email!",
+                           message: "We sent you a password reset code",
+                           image: nil, // R.image.icCheckDarkGray16(),
+                           positiveActionButtonTitle: "Continue",
+                           positiveActionButtonTapped: {
+                            // TODO:
         })
       }
     })
   }
   
-  private func validateInput() {
+  private func validate() {
     guard let email = emailTextField.text else {
       submitButton.isEnabled = false
       return

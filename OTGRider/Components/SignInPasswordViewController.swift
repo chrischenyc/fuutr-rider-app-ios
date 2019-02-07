@@ -44,6 +44,11 @@ class SignInPasswordViewController: UIViewController {
     passwordTextField.becomeFirstResponder()
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let resetPasswordRequestViewController = segue.destination as? ResetPasswordRequestViewController {
+      resetPasswordRequestViewController.email = email
+    }
+  }
   
   // MARK: - user actions
   
