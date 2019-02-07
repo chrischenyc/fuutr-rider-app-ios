@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  WelcomeViewController.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 31/10/18.
@@ -10,7 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import SwiftyUserDefaults
 
-class SignInViewController: UIViewController {
+class WelcomeViewController: UIViewController {
   
   @IBOutlet weak var backdropView: UIView!
   @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
@@ -89,7 +89,7 @@ class SignInViewController: UIViewController {
   //    })
   //  }
   
-  @IBAction func unwindToSignIn(_ unwindSegue: UIStoryboardSegue) {
+  @IBAction func unwindToWelcome(_ unwindSegue: UIStoryboardSegue) {
     if unwindSegue.source is SettingsTableViewController {
       fbLoginResult = nil
     }
@@ -144,11 +144,11 @@ class SignInViewController: UIViewController {
         
         if Defaults[.userOnboarded] {
           self?.dismissLoading()
-          self?.performSegue(withIdentifier: R.segue.signInViewController.showHome, sender: self)
+          self?.performSegue(withIdentifier: R.segue.welcomeViewController.showHome, sender: self)
         }
         else {
           self?.dismissLoading()
-          self?.performSegue(withIdentifier: R.segue.signInViewController.showOnboard, sender: self)
+          self?.performSegue(withIdentifier: R.segue.welcomeViewController.showOnboard, sender: self)
         }
       }
     })
@@ -156,7 +156,7 @@ class SignInViewController: UIViewController {
 }
 
 
-extension SignInViewController: FBSDKLoginButtonDelegate {
+extension WelcomeViewController: FBSDKLoginButtonDelegate {
   func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
     guard error == nil else {
       logger.warning("Facebook error: \(error.localizedDescription)")

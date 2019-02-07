@@ -62,18 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // UI init
     globalStyling()
     
-    // TODO: custom facebook button
-    // https://developers.facebook.com/docs/facebook-login/ios/advanced#custom-login-button
-    // Override point for customization after application launch.
-    // [FBSDKLoginButton class];
-    
     // load initial screen depending on user signed-in status
     if !Defaults[.userSignedIn] {
-      self.window?.rootViewController = UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController()
+      self.window?.rootViewController = R.storyboard.welcome().instantiateInitialViewController()
     } else if !Defaults[.userOnboarded] {
-      self.window?.rootViewController = UIStoryboard(name: "Onboard", bundle: nil).instantiateInitialViewController()
+      self.window?.rootViewController = R.storyboard.onboard().instantiateInitialViewController()
     } else {
-      self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+      self.window?.rootViewController = R.storyboard.main().instantiateInitialViewController()
     }
     
     NotificationCenter.default.addObserver(self, selector: #selector(self.handleUserSignedOut), name: .userSignedOut, object: nil)
@@ -131,7 +126,7 @@ extension AppDelegate: MessagingDelegate {
 
 extension AppDelegate {
   @objc func handleUserSignedOut(notification: Notification) {
-    guard let signInViewController = UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController() as? SignInViewController else { return }
+    guard let signInViewController = UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController() as? WelcomeViewController else { return }
     
     DispatchQueue.main.async {
       if let window = self.window, let rootViewController = window.rootViewController {
@@ -171,5 +166,10 @@ extension AppDelegate {
   private func globalStyling() {
     SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
     SideMenuManager.defaultManager.menuFadeStatusBar = false
+    
+    // TODO: custom facebook button
+    // https://developers.facebook.com/docs/facebook-login/ios/advanced#custom-login-button
+    // Override point for customization after application launch.
+    // [FBSDKLoginButton class];
   }
 }

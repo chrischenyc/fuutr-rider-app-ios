@@ -1111,39 +1111,6 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `SignInViewController`, and contains static references to 3 segues.
-    struct signInViewController {
-      /// Segue identifier `showHome`.
-      static let showHome: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHome")
-      /// Segue identifier `showOnboard`.
-      static let showOnboard: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInViewController, EnableLocationViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showOnboard")
-      /// Segue identifier `showVerifyCode`.
-      static let showVerifyCode: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showVerifyCode")
-      
-      /// Optionally returns a typed version of segue `showHome`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInViewController, MapViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInViewController.showHome, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showOnboard`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showOnboard(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInViewController, EnableLocationViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInViewController.showOnboard, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showVerifyCode`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showVerifyCode(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInViewController.showVerifyCode, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
     /// This struct is generated for `TopUpViewController`, and contains static references to 1 segues.
     struct topUpViewController {
       /// Segue identifier `unwindToAccount`.
@@ -1192,6 +1159,39 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    /// This struct is generated for `WelcomeViewController`, and contains static references to 3 segues.
+    struct welcomeViewController {
+      /// Segue identifier `showHome`.
+      static let showHome: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WelcomeViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHome")
+      /// Segue identifier `showOnboard`.
+      static let showOnboard: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WelcomeViewController, EnableLocationViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showOnboard")
+      /// Segue identifier `showVerifyCode`.
+      static let showVerifyCode: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WelcomeViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showVerifyCode")
+      
+      /// Optionally returns a typed version of segue `showHome`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WelcomeViewController, MapViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.welcomeViewController.showHome, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showOnboard`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showOnboard(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WelcomeViewController, EnableLocationViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.welcomeViewController.showOnboard, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showVerifyCode`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showVerifyCode(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WelcomeViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.welcomeViewController.showVerifyCode, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -1199,8 +1199,6 @@ struct R: Rswift.Validatable {
   struct storyboard {
     /// Storyboard `Account`.
     static let account = _R.storyboard.account()
-    /// Storyboard `EmailSignIn`.
-    static let emailSignIn = _R.storyboard.emailSignIn()
     /// Storyboard `EndRidePhoto`.
     static let endRidePhoto = _R.storyboard.endRidePhoto()
     /// Storyboard `Help`.
@@ -1229,15 +1227,12 @@ struct R: Rswift.Validatable {
     static let sideMenu = _R.storyboard.sideMenu()
     /// Storyboard `SignIn`.
     static let signIn = _R.storyboard.signIn()
+    /// Storyboard `Welcome`.
+    static let welcome = _R.storyboard.welcome()
     
     /// `UIStoryboard(name: "Account", bundle: ...)`
     static func account(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.account)
-    }
-    
-    /// `UIStoryboard(name: "EmailSignIn", bundle: ...)`
-    static func emailSignIn(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.emailSignIn)
     }
     
     /// `UIStoryboard(name: "EndRidePhoto", bundle: ...)`
@@ -1308,6 +1303,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SignIn", bundle: ...)`
     static func signIn(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.signIn)
+    }
+    
+    /// `UIStoryboard(name: "Welcome", bundle: ...)`
+    static func welcome(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.welcome)
     }
     
     fileprivate init() {}
@@ -1512,7 +1512,6 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try account.validate()
-      try emailSignIn.validate()
       try endRidePhoto.validate()
       try help.validate()
       try history.validate()
@@ -1527,6 +1526,7 @@ struct _R: Rswift.Validatable {
       try settings.validate()
       try sideMenu.validate()
       try signIn.validate()
+      try welcome.validate()
     }
     
     struct account: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -1536,22 +1536,6 @@ struct _R: Rswift.Validatable {
       let name = "Account"
       
       static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct emailSignIn: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
-      
-      let bundle = R.hostingBundle
-      let name = "EmailSignIn"
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "btn-arrow-next-red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-arrow-next-red' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic-back-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-back-dark-gray-16' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -1792,13 +1776,29 @@ struct _R: Rswift.Validatable {
     }
     
     struct signIn: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = SignInViewController
+      typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "SignIn"
       
       static func validate() throws {
-        if UIKit.UIImage(named: "ic-mobile-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-mobile-dark-gray-16' is used in storyboard 'SignIn', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "btn-arrow-next-red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-arrow-next-red' is used in storyboard 'SignIn', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-back-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-back-dark-gray-16' is used in storyboard 'SignIn', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct welcome: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = WelcomeViewController
+      
+      let bundle = R.hostingBundle
+      let name = "Welcome"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic-mobile-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-mobile-dark-gray-16' is used in storyboard 'Welcome', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

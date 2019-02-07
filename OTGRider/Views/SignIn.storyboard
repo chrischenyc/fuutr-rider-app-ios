@@ -81,7 +81,7 @@
                     <navigationItem key="navigationItem" title="Enter your email" id="1Ro-3B-Ofd">
                         <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="Mz6-sT-evR">
                             <connections>
-                                <segue destination="pxR-nU-a5f" kind="unwind" unwindAction="unwindToSignIn:" id="AZy-w7-clF"/>
+                                <segue destination="pxR-nU-a5f" kind="unwind" unwindAction="unwindToWelcome:" id="AZy-w7-clF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

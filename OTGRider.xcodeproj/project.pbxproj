@@ -140,10 +140,10 @@
 		6B8731A82189A70600CC2651 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A62189A70600CC2651 /* UserDefaults.swift */; };
 		6B8731AB2189B9A500CC2651 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731A92189B9A500CC2651 /* Localizable.strings */; };
 		6B8731AC2189B9A500CC2651 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731A92189B9A500CC2651 /* Localizable.strings */; };
-		6B8731BD2189C2B900CC2651 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731BB2189C2B900CC2651 /* SignIn.storyboard */; };
-		6B8731BE2189C2B900CC2651 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731BB2189C2B900CC2651 /* SignIn.storyboard */; };
-		6B8731C02189C7FA00CC2651 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */; };
-		6B8731C12189C7FA00CC2651 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */; };
+		6B8731BD2189C2B900CC2651 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731BB2189C2B900CC2651 /* Welcome.storyboard */; };
+		6B8731BE2189C2B900CC2651 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731BB2189C2B900CC2651 /* Welcome.storyboard */; };
+		6B8731C02189C7FA00CC2651 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731BF2189C7FA00CC2651 /* WelcomeViewController.swift */; };
+		6B8731C12189C7FA00CC2651 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731BF2189C7FA00CC2651 /* WelcomeViewController.swift */; };
 		6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C22189CA0400CC2651 /* String+Validate.swift */; };
 		6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C22189CA0400CC2651 /* String+Validate.swift */; };
 		6B8731CA2189D86600CC2651 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731C82189D86600CC2651 /* Onboard.storyboard */; };
@@ -301,7 +301,7 @@
 		6BDE9123218C19DF003F976B /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A62189A70600CC2651 /* UserDefaults.swift */; };
 		6BDE9124218C19DF003F976B /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */; };
 		6BDE9125218C19DF003F976B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
-		6BDE9126218C19DF003F976B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */; };
+		6BDE9126218C19DF003F976B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731BF2189C7FA00CC2651 /* WelcomeViewController.swift */; };
 		6BDE9128218C19DF003F976B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */; };
 		6BDE9129218C19DF003F976B /* EnableLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */; };
 		6BDE912A218C19DF003F976B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731F7218AA4AF00CC2651 /* AccountViewController.swift */; };
@@ -314,7 +314,7 @@
 		6BDE9136218C19DF003F976B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */; };
 		6BDE9137218C19DF003F976B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731EA218A98EE00CC2651 /* Settings.storyboard */; };
 		6BDE9138218C19DF003F976B /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731E8218A98EE00CC2651 /* Help.storyboard */; };
-		6BDE9139218C19DF003F976B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731BB2189C2B900CC2651 /* SignIn.storyboard */; };
+		6BDE9139218C19DF003F976B /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731BB2189C2B900CC2651 /* Welcome.storyboard */; };
 		6BDE913A218C19DF003F976B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731A92189B9A500CC2651 /* Localizable.strings */; };
 		6BDE913B218C19DF003F976B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A121747BF500BA3F6D /* Assets.xcassets */; };
 		6BDE913C218C19DF003F976B /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8731C82189D86600CC2651 /* Onboard.storyboard */; };
@@ -347,9 +347,9 @@
 		6BDE9171218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */; };
 		6BDE9172218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */; };
 		6BDE9173218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */; };
-		6BDEEEF4220B070B00C0FBB8 /* EmailSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEEF3220B070B00C0FBB8 /* EmailSignIn.storyboard */; };
-		6BDEEEF5220B070B00C0FBB8 /* EmailSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEEF3220B070B00C0FBB8 /* EmailSignIn.storyboard */; };
-		6BDEEEF6220B070B00C0FBB8 /* EmailSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEEF3220B070B00C0FBB8 /* EmailSignIn.storyboard */; };
+		6BDEEEF4220B070B00C0FBB8 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEEF3220B070B00C0FBB8 /* SignIn.storyboard */; };
+		6BDEEEF5220B070B00C0FBB8 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEEF3220B070B00C0FBB8 /* SignIn.storyboard */; };
+		6BDEEEF6220B070B00C0FBB8 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEEF3220B070B00C0FBB8 /* SignIn.storyboard */; };
 		6BDEEEFC220BA8B600C0FBB8 /* SignInEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEEFB220BA8B600C0FBB8 /* SignInEmailViewController.swift */; };
 		6BDEEEFD220BA8B600C0FBB8 /* SignInEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEEFB220BA8B600C0FBB8 /* SignInEmailViewController.swift */; };
 		6BDEEEFE220BA8B600C0FBB8 /* SignInEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEEFB220BA8B600C0FBB8 /* SignInEmailViewController.swift */; };
@@ -476,8 +476,8 @@
 		6B8731A2218997B600CC2651 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		6B8731A62189A70600CC2651 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		6B8731AA2189B9A500CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		6B8731BC2189C2B900CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignIn.storyboard; sourceTree = "<group>"; };
-		6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		6B8731BC2189C2B900CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Welcome.storyboard; sourceTree = "<group>"; };
+		6B8731BF2189C7FA00CC2651 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		6B8731C22189CA0400CC2651 /* String+Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validate.swift"; sourceTree = "<group>"; };
 		6B8731C92189D86600CC2651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboard.storyboard; sourceTree = "<group>"; };
 		6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableLocationViewController.swift; sourceTree = "<group>"; };
@@ -591,7 +591,7 @@
 		6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
 		6BDE916C218CFBF9003F976B /* UIViewControoler+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControoler+Alert.swift"; sourceTree = "<group>"; };
 		6BDE9170218D269D003F976B /* UIStoryboardSegueWithCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueWithCompletion.swift; sourceTree = "<group>"; };
-		6BDEEEF3220B070B00C0FBB8 /* EmailSignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailSignIn.storyboard; sourceTree = "<group>"; };
+		6BDEEEF3220B070B00C0FBB8 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		6BDEEEFB220BA8B600C0FBB8 /* SignInEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInEmailViewController.swift; sourceTree = "<group>"; };
 		6BDEEEFF220BA8EC00C0FBB8 /* SignInPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPasswordViewController.swift; sourceTree = "<group>"; };
 		6BDEEF03220BAD3B00C0FBB8 /* UINavigationBar+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Custom.swift"; sourceTree = "<group>"; };
@@ -723,8 +723,8 @@
 			isa = PBXGroup;
 			children = (
 				A0CFE7A321747BF500BA3F6D /* LaunchScreen.storyboard */,
-				6B8731BB2189C2B900CC2651 /* SignIn.storyboard */,
-				6BDEEEF3220B070B00C0FBB8 /* EmailSignIn.storyboard */,
+				6B8731BB2189C2B900CC2651 /* Welcome.storyboard */,
+				6BDEEEF3220B070B00C0FBB8 /* SignIn.storyboard */,
 				6B0D921D21FDBD2000A9B38E /* EndRidePhoto.storyboard */,
 				6B8731C82189D86600CC2651 /* Onboard.storyboard */,
 				A0CFE79E21747BF000BA3F6D /* Main.storyboard */,
@@ -787,7 +787,7 @@
 		6BB6CB752196F86400B597B3 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				6B8731BF2189C7FA00CC2651 /* SignInViewController.swift */,
+				6B8731BF2189C7FA00CC2651 /* WelcomeViewController.swift */,
 				6BDE9168218CFA4A003F976B /* VerifyCodeViewController.swift */,
 				6B444FE62191AC2E00DFB787 /* EmailAuthViewController.swift */,
 				6BDEEEFB220BA8B600C0FBB8 /* SignInEmailViewController.swift */,
@@ -1260,14 +1260,14 @@
 				914A6B7E21FD250000715879 /* VehicleReservedInfoView.xib in Resources */,
 				6BDE9135218C19DF003F976B /* Account.storyboard in Resources */,
 				6BDE9136218C19DF003F976B /* LaunchScreen.storyboard in Resources */,
-				6BDEEEF6220B070B00C0FBB8 /* EmailSignIn.storyboard in Resources */,
+				6BDEEEF6220B070B00C0FBB8 /* SignIn.storyboard in Resources */,
 				6B8DC68222005B0900831B03 /* GoogleMapStyle.night.json in Resources */,
 				6BBE6C7F219AE6CA002D639B /* GoogleMapStyle.json in Resources */,
 				6B0D922021FDBD2000A9B38E /* EndRidePhoto.storyboard in Resources */,
 				91FA7F8C21FDCF1C00581BB5 /* RidingView.xib in Resources */,
 				6BDE9137218C19DF003F976B /* Settings.storyboard in Resources */,
 				6BDE9138218C19DF003F976B /* Help.storyboard in Resources */,
-				6BDE9139218C19DF003F976B /* SignIn.storyboard in Resources */,
+				6BDE9139218C19DF003F976B /* Welcome.storyboard in Resources */,
 				6BDE913A218C19DF003F976B /* Localizable.strings in Resources */,
 				6B0D921C21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BDE913B218C19DF003F976B /* Assets.xcassets in Resources */,
@@ -1296,7 +1296,7 @@
 				6B8731EE218A98EF00CC2651 /* Settings.storyboard in Resources */,
 				91FA7FA621FEB22600581BB5 /* RideFinished.storyboard in Resources */,
 				6B8731EC218A98EF00CC2651 /* Help.storyboard in Resources */,
-				6B8731BD2189C2B900CC2651 /* SignIn.storyboard in Resources */,
+				6B8731BD2189C2B900CC2651 /* Welcome.storyboard in Resources */,
 				6B8731AB2189B9A500CC2651 /* Localizable.strings in Resources */,
 				A0CFE7A221747BF500BA3F6D /* Assets.xcassets in Resources */,
 				9191983721FDC96200CF5F2D /* RidingView.xib in Resources */,
@@ -1309,7 +1309,7 @@
 				6B8731E2218A97BF00CC2651 /* History.storyboard in Resources */,
 				6B8DC68022005B0900831B03 /* GoogleMapStyle.night.json in Resources */,
 				914A6B8421FD545700715879 /* ScanUnlock.storyboard in Resources */,
-				6BDEEEF4220B070B00C0FBB8 /* EmailSignIn.storyboard in Resources */,
+				6BDEEEF4220B070B00C0FBB8 /* SignIn.storyboard in Resources */,
 				6BDE9157218C35B7003F976B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1328,7 +1328,7 @@
 				6B8731EF218A98EF00CC2651 /* Settings.storyboard in Resources */,
 				91FA7FA721FEB22600581BB5 /* RideFinished.storyboard in Resources */,
 				6B8731ED218A98EF00CC2651 /* Help.storyboard in Resources */,
-				6B8731BE2189C2B900CC2651 /* SignIn.storyboard in Resources */,
+				6B8731BE2189C2B900CC2651 /* Welcome.storyboard in Resources */,
 				6B8731AC2189B9A500CC2651 /* Localizable.strings in Resources */,
 				A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */,
 				91FA7F8B21FDCF1B00581BB5 /* RidingView.xib in Resources */,
@@ -1341,7 +1341,7 @@
 				6B8731E3218A97BF00CC2651 /* History.storyboard in Resources */,
 				6B8DC68122005B0900831B03 /* GoogleMapStyle.night.json in Resources */,
 				914A6B8521FD545700715879 /* ScanUnlock.storyboard in Resources */,
-				6BDEEEF5220B070B00C0FBB8 /* EmailSignIn.storyboard in Resources */,
+				6BDEEEF5220B070B00C0FBB8 /* SignIn.storyboard in Resources */,
 				6BDE915A218C4E62003F976B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1842,7 +1842,7 @@
 				6BB6CB742196591D00B597B3 /* UIColor+Hex.swift in Sources */,
 				6B720FEF220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */,
 				6BDE9153218C3073003F976B /* APIClient.swift in Sources */,
-				6BDE9126218C19DF003F976B /* SignInViewController.swift in Sources */,
+				6BDE9126218C19DF003F976B /* WelcomeViewController.swift in Sources */,
 				6B6C6AE92197CE3300D956DC /* User.swift in Sources */,
 				6BD47295219A4CAA00D36C3E /* GQTPointQuadTree.m in Sources */,
 				6BDE9128218C19DF003F976B /* SettingsTableViewController.swift in Sources */,
@@ -1962,7 +1962,7 @@
 				6BB6CB722196591D00B597B3 /* UIColor+Hex.swift in Sources */,
 				6B720FED220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */,
 				6BDE9151218C3073003F976B /* APIClient.swift in Sources */,
-				6B8731C02189C7FA00CC2651 /* SignInViewController.swift in Sources */,
+				6B8731C02189C7FA00CC2651 /* WelcomeViewController.swift in Sources */,
 				6B6C6AE72197CE3300D956DC /* User.swift in Sources */,
 				6BD47293219A4CAA00D36C3E /* GQTPointQuadTree.m in Sources */,
 				6B87320A218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */,
@@ -2082,7 +2082,7 @@
 				6BB6CB732196591D00B597B3 /* UIColor+Hex.swift in Sources */,
 				6B720FEE220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */,
 				6BDE9152218C3073003F976B /* APIClient.swift in Sources */,
-				6B8731C12189C7FA00CC2651 /* SignInViewController.swift in Sources */,
+				6B8731C12189C7FA00CC2651 /* WelcomeViewController.swift in Sources */,
 				6B6C6AE82197CE3300D956DC /* User.swift in Sources */,
 				6BD47294219A4CAA00D36C3E /* GQTPointQuadTree.m in Sources */,
 				6B87320B218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */,
@@ -2163,12 +2163,12 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		6B8731BB2189C2B900CC2651 /* SignIn.storyboard */ = {
+		6B8731BB2189C2B900CC2651 /* Welcome.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6B8731BC2189C2B900CC2651 /* Base */,
 			);
-			name = SignIn.storyboard;
+			name = Welcome.storyboard;
 			sourceTree = "<group>";
 		};
 		6B8731C82189D86600CC2651 /* Onboard.storyboard */ = {
