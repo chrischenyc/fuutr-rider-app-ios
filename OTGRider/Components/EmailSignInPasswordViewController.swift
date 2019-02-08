@@ -1,5 +1,5 @@
 //
-//  SignInPasswordViewController.swift
+//  EmailSignInPasswordViewController.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 7/2/19.
@@ -10,7 +10,7 @@ import UIKit
 import IHKeyboardAvoiding
 import SwiftyUserDefaults
 
-class SignInPasswordViewController: UIViewController {
+class EmailSignInPasswordViewController: UIViewController {
   
   @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var passwordTextField: UITextField!
@@ -113,10 +113,10 @@ class SignInPasswordViewController: UIViewController {
     }
     
     if Defaults[.userOnboarded] {
-      performSegue(withIdentifier: R.segue.signInPasswordViewController.showMap, sender: nil)
+      performSegue(withIdentifier: R.segue.emailSignInPasswordViewController.showMap, sender: nil)
     }
     else {
-      performSegue(withIdentifier: R.segue.signInPasswordViewController.showPermissions, sender: nil)
+      performSegue(withIdentifier: R.segue.emailSignInPasswordViewController.showPermissions, sender: nil)
     }
   }
 }

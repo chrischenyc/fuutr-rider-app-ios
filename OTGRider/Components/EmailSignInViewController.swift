@@ -1,5 +1,5 @@
 //
-//  SignInEmailViewController.swift
+//  EmailSignInViewController.swift
 //  OTGRider
 //
 //  Created by Chris Chen on 6/2/19.
@@ -9,7 +9,7 @@
 import UIKit
 import IHKeyboardAvoiding
 
-class SignInEmailViewController: UIViewController {
+class EmailSignInViewController: UIViewController {
   
   @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var emailTextField: UITextField!
@@ -32,7 +32,7 @@ class SignInEmailViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let signInPasswordViewController = segue.destination as? SignInPasswordViewController,
+    if let signInPasswordViewController = segue.destination as? EmailSignInPasswordViewController,
       let displayName = sender as? String? {
       
       signInPasswordViewController.email = emailTextField.text
@@ -70,7 +70,7 @@ class SignInEmailViewController: UIViewController {
           return
         }
         
-        self?.performSegue(withIdentifier: R.segue.signInEmailViewController.showEnterPassword, sender: displayName)
+        self?.performSegue(withIdentifier: R.segue.emailSignInViewController.showEnterPassword, sender: displayName)
       }
     })
   }

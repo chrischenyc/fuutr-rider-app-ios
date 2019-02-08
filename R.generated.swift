@@ -760,6 +760,45 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    /// This struct is generated for `EmailSignInPasswordViewController`, and contains static references to 2 segues.
+    struct emailSignInPasswordViewController {
+      /// Segue identifier `showMap`.
+      static let showMap: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMap")
+      /// Segue identifier `showPermissions`.
+      static let showPermissions: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, EnableLocationViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showPermissions")
+      
+      /// Optionally returns a typed version of segue `showMap`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showMap(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, MapViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.emailSignInPasswordViewController.showMap, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showPermissions`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showPermissions(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, EnableLocationViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.emailSignInPasswordViewController.showPermissions, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `EmailSignInViewController`, and contains static references to 1 segues.
+    struct emailSignInViewController {
+      /// Segue identifier `showEnterPassword`.
+      static let showEnterPassword: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EmailSignInViewController, EmailSignInPasswordViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showEnterPassword")
+      
+      /// Optionally returns a typed version of segue `showEnterPassword`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showEnterPassword(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EmailSignInViewController, EmailSignInPasswordViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.emailSignInViewController.showEnterPassword, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     /// This struct is generated for `EnableLocationViewController`, and contains static references to 2 segues.
     struct enableLocationViewController {
       /// Segue identifier `showEnableNotification`.
@@ -1097,45 +1136,6 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIStoryboardSegueWithCompletion, SideMenuViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.sideMenuViewController.unwindToHome, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
-    /// This struct is generated for `SignInEmailViewController`, and contains static references to 1 segues.
-    struct signInEmailViewController {
-      /// Segue identifier `showEnterPassword`.
-      static let showEnterPassword: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInEmailViewController, SignInPasswordViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showEnterPassword")
-      
-      /// Optionally returns a typed version of segue `showEnterPassword`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showEnterPassword(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInEmailViewController, SignInPasswordViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInEmailViewController.showEnterPassword, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
-    /// This struct is generated for `SignInPasswordViewController`, and contains static references to 2 segues.
-    struct signInPasswordViewController {
-      /// Segue identifier `showMap`.
-      static let showMap: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInPasswordViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMap")
-      /// Segue identifier `showPermissions`.
-      static let showPermissions: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SignInPasswordViewController, EnableLocationViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showPermissions")
-      
-      /// Optionally returns a typed version of segue `showMap`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showMap(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInPasswordViewController, MapViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInPasswordViewController.showMap, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showPermissions`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showPermissions(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInPasswordViewController, EnableLocationViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInPasswordViewController.showPermissions, segue: segue)
       }
       
       fileprivate init() {}

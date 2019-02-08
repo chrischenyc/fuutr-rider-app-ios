@@ -13,7 +13,7 @@
         <!--Enter your email-->
         <scene sceneID="2uH-0Z-voz">
             <objects>
-                <viewController id="m1S-IG-uch" customClass="SignInEmailViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m1S-IG-uch" customClass="EmailSignInViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IQd-Fp-9ej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="-90.400000000000006" y="240.62968515742131"/>
         </scene>
-        <!--Sign In Password View Controller-->
+        <!--Email Sign In Password View Controller-->
         <scene sceneID="acm-sh-c2h">
             <objects>
-                <viewController id="g4e-45-4KW" customClass="SignInPasswordViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="g4e-45-4KW" customClass="EmailSignInPasswordViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPa-Nn-BTC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
