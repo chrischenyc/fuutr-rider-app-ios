@@ -69,7 +69,7 @@ class EditPhoneViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let verifyCodeViewController = segue.destination as? VerifyCodeViewController {
+    if let verifyCodeViewController = segue.destination as? MobileVerifyCodeViewController {
       guard let newPhoneNumber = newPhoneNumber, let newCountryCode = newCountryCode else { return }
       
       verifyCodeViewController.nextStep = .updatePhone

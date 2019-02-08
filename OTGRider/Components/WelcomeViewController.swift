@@ -92,11 +92,11 @@ class WelcomeViewController: UIViewController {
         
         if Defaults[.userOnboarded] {
           self?.dismissLoading()
-          self?.performSegue(withIdentifier: R.segue.welcomeViewController.showHome, sender: self)
+          self?.performSegue(withIdentifier: R.segue.welcomeViewController.showMap, sender: self)
         }
         else {
           self?.dismissLoading()
-          self?.performSegue(withIdentifier: R.segue.welcomeViewController.showOnboard, sender: self)
+          self?.performSegue(withIdentifier: R.segue.welcomeViewController.showPermissions, sender: self)
         }
       }
     })

@@ -38,13 +38,13 @@ class EnableNotificationViewController: UIViewController {
       
       DispatchQueue.main.async {
         Defaults[.userOnboarded] = true
-        self.performSegue(withIdentifier: R.segue.enableNotificationViewController.showHome, sender: nil)
+        self.performSegue(withIdentifier: R.segue.enableNotificationViewController.showMap, sender: nil)
       }
     }
   }
   
   @IBAction func laterTapped(_ sender: Any) {
     Defaults[.userOnboarded] = true
-    self.performSegue(withIdentifier: R.segue.enableNotificationViewController.showHome, sender: nil)
+    self.performSegue(withIdentifier: R.segue.enableNotificationViewController.showMap, sender: nil)
   }
 }

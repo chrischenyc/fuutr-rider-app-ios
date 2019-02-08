@@ -25,7 +25,7 @@ class SignInMobileViewController: UIViewController {
     super.viewDidLoad()
     
     navigationController?.navigationBar.applyTheme()
-    validate()
+//    validate()
   }
   
   override func viewDidAppear(_ animated: Bool) {

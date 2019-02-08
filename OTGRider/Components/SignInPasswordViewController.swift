@@ -116,7 +116,7 @@ class SignInPasswordViewController: UIViewController {
       performSegue(withIdentifier: R.segue.signInPasswordViewController.showMap, sender: nil)
     }
     else {
-      performSegue(withIdentifier: R.segue.signInPasswordViewController.showOnboard, sender: nil)
+      performSegue(withIdentifier: R.segue.signInPasswordViewController.showPermissions, sender: nil)
     }
   }
 }

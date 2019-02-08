@@ -234,7 +234,7 @@
                         <outlet property="showPasswordButton" destination="pTS-0u-Lhk" id="qS5-9P-prf"/>
                         <outlet property="stackView" destination="CP0-f7-xcj" id="aFu-4l-hoa"/>
                         <outlet property="submitButton" destination="pgv-e8-iyY" id="Zs7-nr-Nyj"/>
-                        <segue destination="2UR-2U-tXq" kind="showDetail" identifier="showOnboard" id="rfc-WD-BYw"/>
+                        <segue destination="2UR-2U-tXq" kind="showDetail" identifier="showPermissions" id="rfc-WD-BYw"/>
                         <segue destination="5iq-hc-MMP" kind="showDetail" identifier="showMap" id="fGc-eO-FUn"/>
                     </connections>
                 </viewController>
