@@ -182,7 +182,6 @@
                     </view>
                     <connections>
                         <outlet property="backdropView" destination="P33-aW-EGI" id="ue7-Eq-hul"/>
-                        <outlet property="emailSignInButton" destination="JMB-Ei-3Pu" id="9C1-FV-Km8"/>
                         <outlet property="facebookLoginButton" destination="M2D-h8-K4D" id="HB5-il-maV"/>
                         <segue destination="K7W-Yb-j4m" kind="show" identifier="showVerifyCode" id="sNF-jv-BJH"/>
                         <segue destination="KAD-4P-JWO" kind="show" identifier="showOnboard" id="NYh-wd-6MW"/>
@@ -304,7 +303,7 @@
         <image name="ic-mobile-dark-gray-16" width="10" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AL8-Zq-xC4"/>
-        <segue reference="Q5s-yY-tXW"/>
+        <segue reference="uxi-sZ-NDa"/>
+        <segue reference="NYh-wd-6MW"/>
     </inferredMetricsTieBreakers>
 </document>
