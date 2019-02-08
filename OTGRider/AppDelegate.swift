@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if !Defaults[.userSignedIn] {
       self.window?.rootViewController = R.storyboard.welcome().instantiateInitialViewController()
     } else if !Defaults[.userOnboarded] {
-      self.window?.rootViewController = R.storyboard.onboard().instantiateInitialViewController()
+      self.window?.rootViewController = R.storyboard.permissions().instantiateInitialViewController()
     } else {
       self.window?.rootViewController = R.storyboard.main().instantiateInitialViewController()
     }

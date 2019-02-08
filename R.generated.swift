@@ -1186,8 +1186,8 @@ struct R: Rswift.Validatable {
     static let main = _R.storyboard.main()
     /// Storyboard `ManualUnlock`.
     static let manualUnlock = _R.storyboard.manualUnlock()
-    /// Storyboard `Onboard`.
-    static let onboard = _R.storyboard.onboard()
+    /// Storyboard `Permissions`.
+    static let permissions = _R.storyboard.permissions()
     /// Storyboard `RideFinished`.
     static let rideFinished = _R.storyboard.rideFinished()
     /// Storyboard `RidePaused`.
@@ -1243,9 +1243,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIStoryboard(resource: R.storyboard.manualUnlock)
     }
     
-    /// `UIStoryboard(name: "Onboard", bundle: ...)`
-    static func onboard(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.onboard)
+    /// `UIStoryboard(name: "Permissions", bundle: ...)`
+    static func permissions(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.permissions)
     }
     
     /// `UIStoryboard(name: "RideFinished", bundle: ...)`
@@ -1492,7 +1492,7 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       try main.validate()
       try manualUnlock.validate()
-      try onboard.validate()
+      try permissions.validate()
       try rideFinished.validate()
       try ridePaused.validate()
       try scanUnlock.validate()
@@ -1638,11 +1638,11 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct onboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+    struct permissions: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = EnableLocationViewController
       
       let bundle = R.hostingBundle
-      let name = "Onboard"
+      let name = "Permissions"
       
       static func validate() throws {
         if #available(iOS 11.0, *) {
