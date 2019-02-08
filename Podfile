@@ -27,6 +27,7 @@ abstract_target 'Project' do
   pod 'MZFormSheetPresentationController'
   pod 'PinCodeView'
   pod 'IHKeyboardAvoiding'
+  pod 'FlagPhoneNumber'
   
   # Networking
   pod 'ReachabilitySwift'
@@ -36,7 +37,6 @@ abstract_target 'Project' do
   pod 'R.swift'
   pod 'XCGLogger'
   pod 'BartyCrouch'
-  pod 'PhoneNumberKit'
   pod 'ObjectMapper'
   pod 'FastttCamera'
   pod 'Solar'

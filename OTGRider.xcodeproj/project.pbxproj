@@ -375,15 +375,15 @@
 		6BDEEFA1220D365C00C0FBB8 /* MobileSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA0220D365C00C0FBB8 /* MobileSignIn.storyboard */; };
 		6BDEEFA2220D365C00C0FBB8 /* MobileSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA0220D365C00C0FBB8 /* MobileSignIn.storyboard */; };
 		6BDEEFA3220D365C00C0FBB8 /* MobileSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA0220D365C00C0FBB8 /* MobileSignIn.storyboard */; };
-		6BDEEFA5220D366700C0FBB8 /* SignInMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA4220D366700C0FBB8 /* SignInMobileViewController.swift */; };
-		6BDEEFA6220D366700C0FBB8 /* SignInMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA4220D366700C0FBB8 /* SignInMobileViewController.swift */; };
-		6BDEEFA7220D366700C0FBB8 /* SignInMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA4220D366700C0FBB8 /* SignInMobileViewController.swift */; };
-		6BDEEFAA220D366E00C0FBB8 /* MobileVerifyCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA8220D366E00C0FBB8 /* MobileVerifyCode.storyboard */; };
-		6BDEEFAB220D366E00C0FBB8 /* MobileVerifyCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA8220D366E00C0FBB8 /* MobileVerifyCode.storyboard */; };
-		6BDEEFAC220D366E00C0FBB8 /* MobileVerifyCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA8220D366E00C0FBB8 /* MobileVerifyCode.storyboard */; };
-		6BDEEFAD220D366E00C0FBB8 /* MobileVerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA9220D366E00C0FBB8 /* MobileVerifyCodeViewController.swift */; };
-		6BDEEFAE220D366F00C0FBB8 /* MobileVerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA9220D366E00C0FBB8 /* MobileVerifyCodeViewController.swift */; };
-		6BDEEFAF220D366F00C0FBB8 /* MobileVerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA9220D366E00C0FBB8 /* MobileVerifyCodeViewController.swift */; };
+		6BDEEFAA220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA8220D366E00C0FBB8 /* MobileVerify.storyboard */; };
+		6BDEEFAB220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA8220D366E00C0FBB8 /* MobileVerify.storyboard */; };
+		6BDEEFAC220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEFA8220D366E00C0FBB8 /* MobileVerify.storyboard */; };
+		6BDEEFB1220D920600C0FBB8 /* MobileSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFB0220D920600C0FBB8 /* MobileSignInViewController.swift */; };
+		6BDEEFB2220D920600C0FBB8 /* MobileSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFB0220D920600C0FBB8 /* MobileSignInViewController.swift */; };
+		6BDEEFB3220D920600C0FBB8 /* MobileSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFB0220D920600C0FBB8 /* MobileSignInViewController.swift */; };
+		6BDEEFB9220DA0DF00C0FBB8 /* MobileVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFB8220DA0DE00C0FBB8 /* MobileVerifyViewController.swift */; };
+		6BDEEFBA220DA0DF00C0FBB8 /* MobileVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFB8220DA0DE00C0FBB8 /* MobileVerifyViewController.swift */; };
+		6BDEEFBB220DA0DF00C0FBB8 /* MobileVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFB8220DA0DE00C0FBB8 /* MobileVerifyViewController.swift */; };
 		81E8C84519DD630C24B9B6DC /* Pods_Project_OTGRider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81CF8CCF05B3983496167E9 /* Pods_Project_OTGRider.framework */; };
 		914A6B7821FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6B7721FD24CC00715879 /* VehicleReservedInfoView.swift */; };
 		914A6B7921FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A6B7721FD24CC00715879 /* VehicleReservedInfoView.swift */; };
@@ -610,9 +610,9 @@
 		6BDEEF78220C1C3C00C0FBB8 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
 		6BDEEF9C220D32C800C0FBB8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6BDEEFA0220D365C00C0FBB8 /* MobileSignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MobileSignIn.storyboard; sourceTree = "<group>"; };
-		6BDEEFA4220D366700C0FBB8 /* SignInMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInMobileViewController.swift; sourceTree = "<group>"; };
-		6BDEEFA8220D366E00C0FBB8 /* MobileVerifyCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MobileVerifyCode.storyboard; sourceTree = "<group>"; };
-		6BDEEFA9220D366E00C0FBB8 /* MobileVerifyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileVerifyCodeViewController.swift; sourceTree = "<group>"; };
+		6BDEEFA8220D366E00C0FBB8 /* MobileVerify.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MobileVerify.storyboard; sourceTree = "<group>"; };
+		6BDEEFB0220D920600C0FBB8 /* MobileSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileSignInViewController.swift; sourceTree = "<group>"; };
+		6BDEEFB8220DA0DE00C0FBB8 /* MobileVerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileVerifyViewController.swift; sourceTree = "<group>"; };
 		848109A96BFCE9E8CB0B64EB /* Pods-Project-OTGRider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider/Pods-Project-OTGRider.debug.xcconfig"; sourceTree = "<group>"; };
 		86B2C7CC09C21C83C016544C /* Pods-Project-OTGRider-dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OTGRider-dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-OTGRider-dev/Pods-Project-OTGRider-dev.debug.xcconfig"; sourceTree = "<group>"; };
 		914A6B7721FD24CC00715879 /* VehicleReservedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleReservedInfoView.swift; sourceTree = "<group>"; };
@@ -794,9 +794,7 @@
 				6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */,
 				6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */,
 				6BDEEFA0220D365C00C0FBB8 /* MobileSignIn.storyboard */,
-				6BDEEFA4220D366700C0FBB8 /* SignInMobileViewController.swift */,
-				6BDEEFA8220D366E00C0FBB8 /* MobileVerifyCode.storyboard */,
-				6BDEEFA9220D366E00C0FBB8 /* MobileVerifyCodeViewController.swift */,
+				6BDEEFB0220D920600C0FBB8 /* MobileSignInViewController.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -1034,6 +1032,17 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		6BDEEFBC220DA15800C0FBB8 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6BDEEFA8220D366E00C0FBB8 /* MobileVerify.storyboard */,
+				6BDEEFB8220DA0DE00C0FBB8 /* MobileVerifyViewController.swift */,
+				6B0D921521FD32D100A9B38E /* DialogViewController.swift */,
+				6B0D921621FD32D100A9B38E /* DialogViewController.xib */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
 		9197552D21FBE3300069D25A /* HowToRide */ = {
 			isa = PBXGroup;
 			children = (
@@ -1097,8 +1106,7 @@
 				6BCEFBD6219960A9003FB097 /* Ride */,
 				6BB6CB782196F89800B597B3 /* Account */,
 				6BB6CB772196F88A00B597B3 /* Settings */,
-				6B0D921521FD32D100A9B38E /* DialogViewController.swift */,
-				6B0D921621FD32D100A9B38E /* DialogViewController.xib */,
+				6BDEEFBC220DA15800C0FBB8 /* Shared */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1276,7 +1284,7 @@
 				6BDEEF9F220D32C800C0FBB8 /* Main.storyboard in Resources */,
 				6B8DC68222005B0900831B03 /* GoogleMapStyle.night.json in Resources */,
 				6BBE6C7F219AE6CA002D639B /* GoogleMapStyle.json in Resources */,
-				6BDEEFAC220D366E00C0FBB8 /* MobileVerifyCode.storyboard in Resources */,
+				6BDEEFAC220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */,
 				91FA7F8C21FDCF1C00581BB5 /* RidingView.xib in Resources */,
 				6BDEEF7B220C1C3C00C0FBB8 /* Help.storyboard in Resources */,
 				6BDEEF53220C1B1800C0FBB8 /* HowToRide.storyboard in Resources */,
@@ -1321,7 +1329,7 @@
 				6BDEEF71220C1C0900C0FBB8 /* RideFinished.storyboard in Resources */,
 				6BDEEF65220C1BC700C0FBB8 /* ManualUnlock.storyboard in Resources */,
 				6BDEEF45220C1A7800C0FBB8 /* EndRidePhoto.storyboard in Resources */,
-				6BDEEFAA220D366E00C0FBB8 /* MobileVerifyCode.storyboard in Resources */,
+				6BDEEFAA220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */,
 				6BDEEF79220C1C3C00C0FBB8 /* Help.storyboard in Resources */,
 				6BDEEF3D220C19E700C0FBB8 /* EmailSignIn.storyboard in Resources */,
 				6BDEEF69220C1BCD00C0FBB8 /* ScanUnlock.storyboard in Resources */,
@@ -1355,7 +1363,7 @@
 				6BDEEF72220C1C0900C0FBB8 /* RideFinished.storyboard in Resources */,
 				6BDEEF66220C1BC700C0FBB8 /* ManualUnlock.storyboard in Resources */,
 				6BDEEF46220C1A7800C0FBB8 /* EndRidePhoto.storyboard in Resources */,
-				6BDEEFAB220D366E00C0FBB8 /* MobileVerifyCode.storyboard in Resources */,
+				6BDEEFAB220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */,
 				6BDEEF7A220C1C3C00C0FBB8 /* Help.storyboard in Resources */,
 				6BDEEF3E220C19E700C0FBB8 /* EmailSignIn.storyboard in Resources */,
 				6BDEEF6A220C1BCD00C0FBB8 /* ScanUnlock.storyboard in Resources */,
@@ -1399,6 +1407,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FastttCamera/FastttCamera.framework",
+				"${BUILT_PRODUCTS_DIR}/FlagPhoneNumber/FlagPhoneNumber.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -1408,7 +1417,6 @@
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PinCodeView/PinCodeView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -1418,6 +1426,7 @@
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
+				"${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1426,6 +1435,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FastttCamera.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlagPhoneNumber.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -1435,7 +1445,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinCodeView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
@@ -1445,6 +1454,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libPhoneNumber_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1463,6 +1473,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FastttCamera/FastttCamera.framework",
+				"${BUILT_PRODUCTS_DIR}/FlagPhoneNumber/FlagPhoneNumber.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -1472,7 +1483,6 @@
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PinCodeView/PinCodeView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -1482,6 +1492,7 @@
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
+				"${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1490,6 +1501,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FastttCamera.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlagPhoneNumber.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -1499,7 +1511,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinCodeView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
@@ -1509,6 +1520,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libPhoneNumber_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1647,6 +1659,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FastttCamera/FastttCamera.framework",
+				"${BUILT_PRODUCTS_DIR}/FlagPhoneNumber/FlagPhoneNumber.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -1656,7 +1669,6 @@
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PinCodeView/PinCodeView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -1666,6 +1678,7 @@
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
+				"${BUILT_PRODUCTS_DIR}/libPhoneNumber-iOS/libPhoneNumber_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1674,6 +1687,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FastttCamera.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlagPhoneNumber.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -1683,7 +1697,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinCodeView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
@@ -1693,6 +1706,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libPhoneNumber_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1832,13 +1846,13 @@
 				6B14FA112198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6BDEEF06220BAD3C00C0FBB8 /* UINavigationBar+Custom.swift in Sources */,
 				6B31E1F12197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
-				6BDEEFAF220D366F00C0FBB8 /* MobileVerifyCodeViewController.swift in Sources */,
 				6BDE9123218C19DF003F976B /* UserDefaults.swift in Sources */,
 				6B14FA0D2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */,
 				6B31E1ED2197F34F00CB424E /* PaymentCell.swift in Sources */,
 				6BD4728F219A4CAA00D36C3E /* GMULineString.m in Sources */,
 				6BDE9124218C19DF003F976B /* SideMenuViewController.swift in Sources */,
 				6BD47280219A4CAA00D36C3E /* GMUFeature.m in Sources */,
+				6BDEEFB3220D920600C0FBB8 /* MobileSignInViewController.swift in Sources */,
 				6B1D1E8D219A243200F72798 /* VehicleService.swift in Sources */,
 				6B8DC67E2200578200831B03 /* R.generated.swift in Sources */,
 				6B8E30CE219FDE7E00292B4E /* HistoryRidesTableViewController.swift in Sources */,
@@ -1875,6 +1889,7 @@
 				6B849D4A21941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D76021FB1F2A00B84244 /* SearchService.swift in Sources */,
 				6B720FF8220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
+				6BDEEFBB220DA0DF00C0FBB8 /* MobileVerifyViewController.swift in Sources */,
 				6BDE9129218C19DF003F976B /* EnableLocationViewController.swift in Sources */,
 				6B214AE2219564CD00553C3D /* EditNameViewController.swift in Sources */,
 				6B2C9BBB21A0203B0042432D /* TransactionService.swift in Sources */,
@@ -1925,7 +1940,6 @@
 				6B91D75C21FB1D8400B84244 /* Zone.swift in Sources */,
 				6BD4726E219A4CAA00D36C3E /* GMUKMLParser.m in Sources */,
 				6BD47298219A4CAA00D36C3E /* GQTPointQuadTreeChild.m in Sources */,
-				6BDEEFA7220D366700C0FBB8 /* SignInMobileViewController.swift in Sources */,
 				6BD472AD219A4CAA00D36C3E /* GMUDefaultClusterIconGenerator.m in Sources */,
 				6BD472B4219A4DB300D36C3E /* VehiclePOI.swift in Sources */,
 				6B2C9BAF21A0155E0042432D /* PaymentService.swift in Sources */,
@@ -1953,13 +1967,13 @@
 				6B14FA0F2198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6BDEEF04220BAD3C00C0FBB8 /* UINavigationBar+Custom.swift in Sources */,
 				6B31E1EF2197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
-				6BDEEFAD220D366E00C0FBB8 /* MobileVerifyCodeViewController.swift in Sources */,
 				6B8731A72189A70600CC2651 /* UserDefaults.swift in Sources */,
 				6B14FA0B2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */,
 				6B31E1EB2197F34F00CB424E /* PaymentCell.swift in Sources */,
 				6BD4728D219A4CAA00D36C3E /* GMULineString.m in Sources */,
 				A0CFE7BC21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				6BD4727E219A4CAA00D36C3E /* GMUFeature.m in Sources */,
+				6BDEEFB1220D920600C0FBB8 /* MobileSignInViewController.swift in Sources */,
 				6B1D1E8B219A243200F72798 /* VehicleService.swift in Sources */,
 				6B8DC67C2200578200831B03 /* R.generated.swift in Sources */,
 				6B8E30CC219FDE7E00292B4E /* HistoryRidesTableViewController.swift in Sources */,
@@ -1996,6 +2010,7 @@
 				6B849D4821941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D75E21FB1F2A00B84244 /* SearchService.swift in Sources */,
 				6B720FF6220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
+				6BDEEFB9220DA0DF00C0FBB8 /* MobileVerifyViewController.swift in Sources */,
 				6B8731CD2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B214AE0219564CD00553C3D /* EditNameViewController.swift in Sources */,
 				6B2C9BB921A0203B0042432D /* TransactionService.swift in Sources */,
@@ -2046,7 +2061,6 @@
 				6B91D75A21FB1D8400B84244 /* Zone.swift in Sources */,
 				6BD4726C219A4CAA00D36C3E /* GMUKMLParser.m in Sources */,
 				6BD47296219A4CAA00D36C3E /* GQTPointQuadTreeChild.m in Sources */,
-				6BDEEFA5220D366700C0FBB8 /* SignInMobileViewController.swift in Sources */,
 				6BD472AB219A4CAA00D36C3E /* GMUDefaultClusterIconGenerator.m in Sources */,
 				6BD472B2219A4DB300D36C3E /* VehiclePOI.swift in Sources */,
 				6B2C9BAD21A0155E0042432D /* PaymentService.swift in Sources */,
@@ -2074,13 +2088,13 @@
 				6B14FA102198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6BDEEF05220BAD3C00C0FBB8 /* UINavigationBar+Custom.swift in Sources */,
 				6B31E1F02197F3FC00CB424E /* PaymentsTableViewController.swift in Sources */,
-				6BDEEFAE220D366F00C0FBB8 /* MobileVerifyCodeViewController.swift in Sources */,
 				6B8731A82189A70600CC2651 /* UserDefaults.swift in Sources */,
 				6B14FA0C2198C95C00678FFF /* ResetPasswordRequestViewController.swift in Sources */,
 				6B31E1EC2197F34F00CB424E /* PaymentCell.swift in Sources */,
 				6BD4728E219A4CAA00D36C3E /* GMULineString.m in Sources */,
 				A0CFE7BD21773C0200BA3F6D /* SideMenuViewController.swift in Sources */,
 				6BD4727F219A4CAA00D36C3E /* GMUFeature.m in Sources */,
+				6BDEEFB2220D920600C0FBB8 /* MobileSignInViewController.swift in Sources */,
 				6B1D1E8C219A243200F72798 /* VehicleService.swift in Sources */,
 				6B8DC67D2200578200831B03 /* R.generated.swift in Sources */,
 				6B8E30CD219FDE7E00292B4E /* HistoryRidesTableViewController.swift in Sources */,
@@ -2117,6 +2131,7 @@
 				6B849D4921941EB300CD9791 /* PhoneService.swift in Sources */,
 				6B91D75F21FB1F2A00B84244 /* SearchService.swift in Sources */,
 				6B720FF7220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
+				6BDEEFBA220DA0DF00C0FBB8 /* MobileVerifyViewController.swift in Sources */,
 				6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
 				6B214AE1219564CD00553C3D /* EditNameViewController.swift in Sources */,
 				6B2C9BBA21A0203B0042432D /* TransactionService.swift in Sources */,
@@ -2167,7 +2182,6 @@
 				6B91D75B21FB1D8400B84244 /* Zone.swift in Sources */,
 				6BD4726D219A4CAA00D36C3E /* GMUKMLParser.m in Sources */,
 				6BD47297219A4CAA00D36C3E /* GQTPointQuadTreeChild.m in Sources */,
-				6BDEEFA6220D366700C0FBB8 /* SignInMobileViewController.swift in Sources */,
 				6BD472AC219A4CAA00D36C3E /* GMUDefaultClusterIconGenerator.m in Sources */,
 				6BD472B3219A4DB300D36C3E /* VehiclePOI.swift in Sources */,
 				6B2C9BAE21A0155E0042432D /* PaymentService.swift in Sources */,

@@ -71,16 +71,18 @@ PODS:
     - GoogleUtilities/Environment (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - Protobuf (~> 3.5)
+  - FlagPhoneNumber (0.7.2):
+    - libPhoneNumber-iOS
   - GoogleAppMeasurement (5.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
-  - GoogleMaps (3.0.1):
-    - GoogleMaps/Maps (= 3.0.1)
-  - GoogleMaps/Base (3.0.1)
-  - GoogleMaps/Maps (3.0.1):
+  - GoogleMaps (3.0.2):
+    - GoogleMaps/Maps (= 3.0.2)
+  - GoogleMaps/Base (3.0.2)
+  - GoogleMaps/Maps (3.0.2):
     - GoogleMaps/Base
   - GoogleToolboxForMac/Defines (2.2.0)
   - GoogleToolboxForMac/Logger (2.2.0):
@@ -108,6 +110,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
   - IHKeyboardAvoiding (4.6)
+  - libPhoneNumber-iOS (0.9.13)
   - MZAppearance (1.1.6)
   - MZFormSheetPresentationController (2.4.3):
     - MZAppearance
@@ -120,12 +123,6 @@ PODS:
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - ObjectMapper (3.4.2)
-  - PhoneNumberKit (2.5.0):
-    - PhoneNumberKit/PhoneNumberKitCore (= 2.5.0)
-    - PhoneNumberKit/UIKit (= 2.5.0)
-  - PhoneNumberKit/PhoneNumberKitCore (2.5.0)
-  - PhoneNumberKit/UIKit (2.5.0):
-    - PhoneNumberKit/PhoneNumberKitCore
   - PinCodeView (0.3.0):
     - PinCodeView/Core (= 0.3.0)
   - PinCodeView/Core (0.3.0)
@@ -153,11 +150,11 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Messaging
   - Firebase/Performance
+  - FlagPhoneNumber
   - GoogleMaps
   - IHKeyboardAvoiding
   - MZFormSheetPresentationController
   - ObjectMapper
-  - PhoneNumberKit
   - PinCodeView
   - PKHUD
   - R.swift
@@ -186,18 +183,19 @@ SPEC REPOS:
     - FirebaseMessaging
     - FirebasePerformance
     - FirebaseRemoteConfig
+    - FlagPhoneNumber
     - GoogleAppMeasurement
     - GoogleMaps
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
     - IHKeyboardAvoiding
+    - libPhoneNumber-iOS
     - MZAppearance
     - MZFormSheetPresentationController
     - nanopb
     - ObjcExceptionBridging
     - ObjectMapper
-    - PhoneNumberKit
     - PinCodeView
     - PKHUD
     - Protobuf
@@ -227,18 +225,19 @@ SPEC CHECKSUMS:
   FirebaseMessaging: acbd51fe1a172bf29abaaa6e93a60f98bbf8e4f9
   FirebasePerformance: 6f77b930f982a54ad487d3de5523ce641db9dcc9
   FirebaseRemoteConfig: 7e11c65f0769c09bff6947997c209515058c5318
+  FlagPhoneNumber: 86194d414c7e3b2f38c16136c4f8a5d34e3ee8b7
   GoogleAppMeasurement: 621f3bc6211d5ba548debe01fafad30cf5ab6859
-  GoogleMaps: ec8c032304e19f609aba11096eed7207ca1af32d
+  GoogleMaps: 941cd655e009b4d8e42df19a3d749bc3fccec973
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   IHKeyboardAvoiding: 2a664fdb5f964359fa7ec8fc5c9aebb447583ff8
+  libPhoneNumber-iOS: e444379ac18bbfbdefad571da735b2cd7e096caa
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetPresentationController: fbfdbad31884f16fac17fbe3c44c168306cc1095
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
-  PhoneNumberKit: 32a1cd1e0aa9e950feb01886a22fd7386b8cf903
   PinCodeView: d95d927c930d4c200c9af84958948f3ab80c944a
   PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
@@ -251,6 +250,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 4be33c8502a826f38bf4503a2e78b18d5cf2867e
+PODFILE CHECKSUM: 9ca87ff78be447d6475273f49d4f8c17c215eecf
 
 COCOAPODS: 1.5.3

@@ -27,17 +27,6 @@ class EditPhoneViewController: UIViewController {
     phoneNumberVerifyButton.isEnabled = false
   }
   
-  @IBAction func phoneNumberChanged(_ sender: Any) {
-    phoneNumberTextField.text?.isMobileNumber({ (isMobile, coutryCode, phoneNumber) in
-      
-      self.newCountryCode = coutryCode
-      self.newPhoneNumber = phoneNumber
-      
-      phoneNumberVerifyButton.isEnabled = isMobile &&
-        (self.newCountryCode != self.countryCode && self.newPhoneNumber != self.phoneNumber)
-    })
-  }
-  
   @IBAction func phoneNumberVerifyTapped(_ sender: Any) {
     guard let newPhoneNumber = newPhoneNumber, let newCountryCode = newCountryCode else { return }
     
@@ -69,7 +58,7 @@ class EditPhoneViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let verifyCodeViewController = segue.destination as? MobileVerifyCodeViewController {
+    if let verifyCodeViewController = segue.destination as? MobileVerifyViewController {
       guard let newPhoneNumber = newPhoneNumber, let newCountryCode = newCountryCode else { return }
       
       verifyCodeViewController.nextStep = .updatePhone

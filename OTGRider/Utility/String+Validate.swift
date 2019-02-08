@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import PhoneNumberKit
 
 extension String {
   func isEmail() -> Bool {
@@ -20,16 +19,6 @@ extension String {
   func isValidPassword() -> Bool {
     let regex = try! NSRegularExpression(pattern: "^(?=.*\\d).{6,16}$", options: .caseInsensitive)
     return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
-  }
-  
-  func isMobileNumber(_ completion: (Bool, UInt64?, String?) -> Void) {
-    do {
-      let phoneNumberKit = PhoneNumberKit()
-      let phoneNumber = try phoneNumberKit.parse(self)
-      completion(phoneNumber.type == .mobile, phoneNumber.countryCode, phoneNumber.numberString)
-    } catch {
-      completion(false, nil, nil)
-    }
   }
   
   func isFourDigits() -> Bool {

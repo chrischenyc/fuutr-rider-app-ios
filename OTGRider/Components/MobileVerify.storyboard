@@ -47,7 +47,7 @@
         <!--Verification Code-->
         <scene sceneID="aqG-On-dBE">
             <objects>
-                <viewController id="A9q-Lc-jkk" customClass="MobileVerifyCodeViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A9q-Lc-jkk" customClass="MobileVerifyViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="74H-mF-rct">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
