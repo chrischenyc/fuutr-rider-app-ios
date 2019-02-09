@@ -1414,7 +1414,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR-dev/Pods-Project-FUUTR-dev-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR-dev/Pods-Project-FUUTR-dev-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -1473,7 +1473,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR-dev/Pods-Project-FUUTR-dev-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR-dev/Pods-Project-FUUTR-dev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		18E9DAE8AE8A0E4566033D01 /* [CP] Embed Pods Frameworks */ = {
@@ -1484,7 +1484,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR-staging/Pods-Project-FUUTR-staging-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR-staging/Pods-Project-FUUTR-staging-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -1543,7 +1543,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR-staging/Pods-Project-FUUTR-staging-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR-staging/Pods-Project-FUUTR-staging-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2B64A10D100599E730EDE34B /* [CP] Copy Pods Resources */ = {
@@ -1554,7 +1554,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR/Pods-Project-FUUTR-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR/Pods-Project-FUUTR-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1565,7 +1565,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR/Pods-Project-FUUTR-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR/Pods-Project-FUUTR-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		31605BF61F63B0E1B4488722 /* [CP] Check Pods Manifest.lock */ = {
@@ -1620,7 +1620,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR/Pods-Project-FUUTR-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR/Pods-Project-FUUTR-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -1679,7 +1679,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR/Pods-Project-FUUTR-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR/Pods-Project-FUUTR-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5CF2D61F99565346E5365A9A /* [CP] Copy Pods Resources */ = {
@@ -1690,7 +1690,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR-staging/Pods-Project-FUUTR-staging-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR-staging/Pods-Project-FUUTR-staging-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1701,7 +1701,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR-staging/Pods-Project-FUUTR-staging-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR-staging/Pods-Project-FUUTR-staging-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6B367FBE22001E70004977AF /* Run Script - R.swift */ = {
@@ -1718,7 +1718,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1738,7 +1738,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1758,7 +1758,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1832,7 +1832,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR-dev/Pods-Project-FUUTR-dev-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR-dev/Pods-Project-FUUTR-dev-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1843,7 +1843,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-FUUTR-dev/Pods-Project-FUUTR-dev-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project-FUUTR-dev/Pods-Project-FUUTR-dev-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
