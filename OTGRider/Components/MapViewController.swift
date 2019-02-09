@@ -323,7 +323,8 @@ extension MapViewController {
     
     rideAPITask?.cancel()
     
-    showLoading(withMessage: "Locking scooter")
+    showLoading()
+    
     rideAPITask = RideService.finish(rideId: id, completion: { [weak self] (ride, error) in
       DispatchQueue.main.async {
         self?.dismissLoading()
@@ -407,22 +408,20 @@ extension MapViewController {
     vehicleAPITask?.cancel()
     
     vehicleAPITask = VehicleService.reserve(_id: id, reserve: reserve, completion: { [weak self] (vehicle, error) in
-      guard error == nil else {
-        DispatchQueue.main.async {
-          self?.flashErrorMessage(error?.localizedDescription)
+      
+      DispatchQueue.main.async {
+        guard error == nil else {
+          self?.alertError(error!)
+          return
         }
         
-        return
-      }
-      
-      if let vehicle = vehicle {
-        DispatchQueue.main.async {
-          // refresh vehicle info banner
+        if let vehicle = vehicle {
           self?.updateVehicleInfo(vehicle)
           
           // refresh map search
           self?.search()
         }
+        
       }
     })
   }

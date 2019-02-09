@@ -106,16 +106,18 @@ extension TopUpViewController: STPPaymentContextDelegate {
   func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
     switch status {
     case .success:
-      flashSuccessMessage("payment has been received, thank you!") { [weak self] (success) in
-        self?.performSegue(withIdentifier: R.segue.topUpViewController.unwindToAccount, sender: nil)
-      }
+      alertMessage(title: "Thank You!",
+                   message: "payment has been received",
+                   positiveActionButtonTapped: {
+                    self.performSegue(withIdentifier: R.segue.topUpViewController.unwindToAccount, sender: nil)
+      })
+      
       
       break
     case .error:
       // Present error to user
       if let error = error {
-        logger.error(error.localizedDescription)
-        flashErrorMessage(error.localizedDescription)
+        alertError(error)
       }
     case .userCancellation:
       // Reset ride request state

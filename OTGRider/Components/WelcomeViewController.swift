@@ -86,7 +86,7 @@ class WelcomeViewController: UIViewController {
       
       DispatchQueue.main.async {
         guard error == nil else {
-          self?.flashErrorMessage(error?.localizedDescription)
+          self?.alertError(error!)
           return
         }
         

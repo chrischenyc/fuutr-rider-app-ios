@@ -78,7 +78,7 @@ extension ScanUnlockViewController {
         })
         
       default:
-        flashErrorMessage("Current device doesn't support QR code scanning, please try manually inputing the code.")
+        alertMessage(message: "Current device doesn't support QR code scanning, please try manually inputing the code.")
       }
       
       return false

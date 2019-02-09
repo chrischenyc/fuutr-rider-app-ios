@@ -57,12 +57,12 @@ class AccountViewController: UIViewController {
     apiTask = UserService.getProfile({[weak self] (user, error) in
       DispatchQueue.main.async {
         guard error == nil else {
-          self?.flashErrorMessage(error?.localizedDescription)
+          self?.alertError(error!)
           return
         }
         
         guard let user = user else {
-          self?.flashErrorMessage(R.string.localizable.kOtherError())
+          self?.alertMessage(message: R.string.localizable.kOtherError())
           return
         }
         

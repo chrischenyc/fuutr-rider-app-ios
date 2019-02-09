@@ -45,12 +45,12 @@ class TransactionsTableViewController: UITableViewController {
     apiTask = TransactionService.getHistoryTransactions(completion: { [weak self] (transactions, error) in
       DispatchQueue.main.async {
         guard error == nil else {
-          self?.flashErrorMessage(error?.localizedDescription)
+          self?.alertError(error!)
           return
         }
         
         guard let transactions = transactions else {
-          self?.flashErrorMessage(R.string.localizable.kOtherError())
+          self?.alertMessage(message: R.string.localizable.kOtherError())
           return
         }
         

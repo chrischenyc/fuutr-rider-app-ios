@@ -55,12 +55,12 @@ class HistoryRidesTableViewController: UITableViewController {
         self?.dismissLoading()
         
         guard error == nil else {
-          self?.flashErrorMessage(error?.localizedDescription)
+          self?.alertError(error!)
           return
         }
         
         guard let rides = rides else {
-          self?.flashErrorMessage(R.string.localizable.kOtherError())
+          self?.alertMessage(message: R.string.localizable.kOtherError())
           return
         }
         
