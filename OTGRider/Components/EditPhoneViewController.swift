@@ -23,7 +23,6 @@ class EditPhoneViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    phoneNumberVerifyInfoLabel.text = R.string.localizable.kPhoneNumberVerificationPrompt()
     phoneNumberVerifyButton.isEnabled = false
   }
   
@@ -31,7 +30,6 @@ class EditPhoneViewController: UIViewController {
     guard let newPhoneNumber = newPhoneNumber, let newCountryCode = newCountryCode else { return }
     
     // update UI before calling API
-    phoneNumberVerifyInfoLabel.text = R.string.localizable.kSendingVerificationCode()
     phoneNumberTextField.resignFirstResponder()
     phoneNumberTextField.isEnabled = false
     phoneNumberVerifyButton.isEnabled = false
@@ -43,7 +41,6 @@ class EditPhoneViewController: UIViewController {
     apiTask = PhoneService.startVerification(forPhoneNumber: newPhoneNumber, countryCode: newCountryCode, completion: { [weak self] (error) in
       DispatchQueue.main.async {
         // reset UI
-        self?.phoneNumberVerifyInfoLabel.text = R.string.localizable.kPhoneNumberVerificationPrompt()
         self?.phoneNumberVerifyButton.isEnabled = true
         self?.phoneNumberTextField.isEnabled = true
         self?.phoneNumberVerifyButton.isEnabled = true

@@ -1,24 +1,9 @@
 
 /* No comment provided by engineer. */
-"kSendingVerificationCode" = "Sending verification code ...";
-
-/* No comment provided by engineer. */
-"kVerifying" = "Verifying ...";
-
-/* No comment provided by engineer. */
 "kNoInternetConnection" = "No Internet connection";
 
 /* No comment provided by engineer. */
 "kOtherError" = "Something went wrong";
 
-/* No comment provided by engineer. */
-"kPhoneNumberVerificationPrompt" = "We'll send a text to verify your number";
-
-/* No comment provided by engineer. */
-"kEnterVerificationCode" = "Enter the 4-digit code sent to your phone";
-
-/* No comment provided by engineer. */
-"kErrorConfirm" = "Okay";
-
 /* company name */
-"kCompanyName" = "FUUTR Pty Ltd";
+"kCompanyName" = "DASH MOBILITY PTY LTD";

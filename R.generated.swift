@@ -1317,13 +1317,9 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
     struct localizable {
-      /// Base translation: Enter the 4-digit code sent to your phone
-      /// 
-      /// Locales: Base
-      static let kEnterVerificationCode = Rswift.StringResource(key: "kEnterVerificationCode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
-      /// Base translation: FUUTR Pty Ltd
+      /// Base translation: DASH MOBILITY PTY LTD
       /// 
       /// Locales: Base
       static let kCompanyName = Rswift.StringResource(key: "kCompanyName", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
@@ -1331,39 +1327,16 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: Base
       static let kNoInternetConnection = Rswift.StringResource(key: "kNoInternetConnection", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
-      /// Base translation: Okay
-      /// 
-      /// Locales: Base
-      static let kErrorConfirm = Rswift.StringResource(key: "kErrorConfirm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
-      /// Base translation: Sending verification code ...
-      /// 
-      /// Locales: Base
-      static let kSendingVerificationCode = Rswift.StringResource(key: "kSendingVerificationCode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
       /// Base translation: Something went wrong
       /// 
       /// Locales: Base
       static let kOtherError = Rswift.StringResource(key: "kOtherError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
-      /// Base translation: Verifying ...
-      /// 
-      /// Locales: Base
-      static let kVerifying = Rswift.StringResource(key: "kVerifying", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
-      /// Base translation: We'll send a text to verify your number
-      /// 
-      /// Locales: Base
-      static let kPhoneNumberVerificationPrompt = Rswift.StringResource(key: "kPhoneNumberVerificationPrompt", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
       
-      /// Base translation: Enter the 4-digit code sent to your phone
-      /// 
-      /// Locales: Base
-      static func kEnterVerificationCode(_: Void = ()) -> String {
-        return NSLocalizedString("kEnterVerificationCode", bundle: R.hostingBundle, value: "Enter the 4-digit code sent to your phone", comment: "")
-      }
-      
-      /// Base translation: FUUTR Pty Ltd
+      /// Base translation: DASH MOBILITY PTY LTD
       /// 
       /// Locales: Base
       static func kCompanyName(_: Void = ()) -> String {
-        return NSLocalizedString("kCompanyName", bundle: R.hostingBundle, value: "FUUTR Pty Ltd", comment: "")
+        return NSLocalizedString("kCompanyName", bundle: R.hostingBundle, value: "DASH MOBILITY PTY LTD", comment: "")
       }
       
       /// Base translation: No Internet connection
@@ -1373,39 +1346,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("kNoInternetConnection", bundle: R.hostingBundle, value: "No Internet connection", comment: "")
       }
       
-      /// Base translation: Okay
-      /// 
-      /// Locales: Base
-      static func kErrorConfirm(_: Void = ()) -> String {
-        return NSLocalizedString("kErrorConfirm", bundle: R.hostingBundle, value: "Okay", comment: "")
-      }
-      
-      /// Base translation: Sending verification code ...
-      /// 
-      /// Locales: Base
-      static func kSendingVerificationCode(_: Void = ()) -> String {
-        return NSLocalizedString("kSendingVerificationCode", bundle: R.hostingBundle, value: "Sending verification code ...", comment: "")
-      }
-      
       /// Base translation: Something went wrong
       /// 
       /// Locales: Base
       static func kOtherError(_: Void = ()) -> String {
         return NSLocalizedString("kOtherError", bundle: R.hostingBundle, value: "Something went wrong", comment: "")
-      }
-      
-      /// Base translation: Verifying ...
-      /// 
-      /// Locales: Base
-      static func kVerifying(_: Void = ()) -> String {
-        return NSLocalizedString("kVerifying", bundle: R.hostingBundle, value: "Verifying ...", comment: "")
-      }
-      
-      /// Base translation: We'll send a text to verify your number
-      /// 
-      /// Locales: Base
-      static func kPhoneNumberVerificationPrompt(_: Void = ()) -> String {
-        return NSLocalizedString("kPhoneNumberVerificationPrompt", bundle: R.hostingBundle, value: "We'll send a text to verify your number", comment: "")
       }
       
       fileprivate init() {}
