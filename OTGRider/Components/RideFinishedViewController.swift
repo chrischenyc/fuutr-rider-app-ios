@@ -1,6 +1,6 @@
 //
 //  TransactionCell.swift
-//  OTGRider
+//  FUUTR
 //
 //  Copyright © 2019 FUUTR. All rights reserved.
 //

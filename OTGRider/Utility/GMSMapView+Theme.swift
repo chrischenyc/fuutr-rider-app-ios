@@ -1,6 +1,6 @@
 //
 //  GMSMapView+Theme.swift
-//  OTGRider
+//  FUUTR
 //
 //  Created by Chris Chen on 29/1/19.
 //  Copyright © 2019 FUUTR. All rights reserved.

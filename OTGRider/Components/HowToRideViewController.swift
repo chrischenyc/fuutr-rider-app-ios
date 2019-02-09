@@ -1,3 +1,10 @@
+//
+//  HowToRideViewController.swift
+//  FUUTR
+//
+//  Copyright © 2019 FUUTR. All rights reserved.
+//
+
 class HowToRideViewController: UIPageViewController {
   var pageControl = UIPageControl()
   let pageControlWidth: CGFloat = 130

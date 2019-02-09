@@ -1,6 +1,6 @@
 //
 //  FTRedInverseButton.swift
-//  OTGRider
+//  FUUTR
 //
 //  Created by Chris Chen on 6/2/19.
 //  Copyright © 2019 FUUTR. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  GoogleMapsService.swift
-//  OTGRider
+//  FUUTR
 //
 //  Created by Chris Chen on 31/1/19.
 //  Copyright © 2019 FUUTR. All rights reserved.

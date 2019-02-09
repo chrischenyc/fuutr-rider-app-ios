@@ -1,3 +1,10 @@
+//
+//  HowToRideSinglePageViewController.swift
+//  FUUTR
+//
+//  Copyright © 2019 FUUTR. All rights reserved.
+//
+
 import SwiftyUserDefaults
 
 protocol HowToRideSinglePageDelegate {

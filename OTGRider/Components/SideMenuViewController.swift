@@ -1,6 +1,6 @@
 //
 //  SideMenuViewController.swift
-//  OTGRider
+//  FUUTR
 //
 //  Created by Chris Chen on 17/10/18.
 //  Copyright © 2018 FUUTR. All rights reserved.
