@@ -52,22 +52,7 @@ class RidingView: DesignableView {
     set {}
   }
   
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    setupUI()
-  }
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    setupUI()
-  }
-  
-  private func setupUI() {
-    lockButton.addTarget(self, action: #selector(lock), for: .touchUpInside)
-    endRideButton.addTarget(self, action: #selector(endRide), for: .touchUpInside)
-  }
-  
-  @objc private func lock() {
+  @IBAction func lock(_ sender: Any) {
     guard let ride = self.ride else { return }
     if ride.paused {
       onResumeRide?()
@@ -76,7 +61,7 @@ class RidingView: DesignableView {
     }
   }
   
-  @objc private func endRide() {
+  @IBAction func endRide(_ sender: Any) {
     onEndRide?();
   }
 }

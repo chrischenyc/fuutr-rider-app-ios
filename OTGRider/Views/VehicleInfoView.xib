@@ -13,14 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehicleInfoView" customModule="OTGRider" customModuleProvider="target">
             <connections>
                 <outlet property="batteryImageView" destination="nXt-fN-7BF" id="547-Zb-oE1"/>
-                <outlet property="closeButton" destination="0F4-xC-bLI" id="veW-qx-gkg"/>
-                <outlet property="parkedAt" destination="2cS-ni-adm" id="rtK-Pd-apd"/>
                 <outlet property="parkedLabel" destination="RuN-U2-YHX" id="yAt-Xu-lj7"/>
                 <outlet property="priceLabel" destination="IW6-0n-AEu" id="GwU-3r-Sv6"/>
-                <outlet property="range" destination="kjM-Ma-WMB" id="efh-dQ-rLQ"/>
                 <outlet property="rangeLabel" destination="T9L-nv-MSx" id="fbj-g0-Puv"/>
                 <outlet property="reserveButton" destination="2Rr-wp-oxp" id="wV3-8y-uNf"/>
-                <outlet property="scanButton" destination="iZZ-9q-z2J" id="GEz-DN-HKM"/>
                 <outlet property="waitToReserveAgainLabel" destination="BYz-By-Mps" id="bCj-4V-PFu"/>
             </connections>
         </placeholder>
@@ -88,6 +84,9 @@
                         <constraint firstAttribute="width" constant="44" id="NrM-Fe-eMf"/>
                     </constraints>
                     <state key="normal" image="ic-close-dark-gray-16"/>
+                    <connections>
+                        <action selector="closeButtonTapped" destination="-1" eventType="touchUpInside" id="c8N-04-Wwe"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rr-wp-oxp" customClass="FTRedInverseButton" customModule="OTGRider" customModuleProvider="target">
                     <rect key="frame" x="20" y="171" width="160" height="44"/>
@@ -96,6 +95,9 @@
                         <constraint firstAttribute="width" constant="160" id="cek-Gc-GH6"/>
                     </constraints>
                     <state key="normal" title="Reserve"/>
+                    <connections>
+                        <action selector="reserveButtonTapped" destination="-1" eventType="touchUpInside" id="Mwi-qF-tpp"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZZ-9q-z2J" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
                     <rect key="frame" x="195" y="171" width="160" height="44"/>
@@ -104,6 +106,9 @@
                         <constraint firstAttribute="height" constant="44" id="nfa-hp-e8f"/>
                     </constraints>
                     <state key="normal" title="Scan"/>
+                    <connections>
+                        <action selector="scanButtonTapped" destination="-1" eventType="touchUpInside" id="jLE-PV-cYv"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjM-Ma-WMB" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
                     <rect key="frame" x="54" y="133" width="39" height="16"/>

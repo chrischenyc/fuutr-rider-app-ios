@@ -12,9 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehicleReservedInfoView" customModule="OTGRider" customModuleProvider="target">
             <connections>
-                <outlet property="cancelButton" destination="IKB-eH-GGP" id="krX-Jh-mD9"/>
                 <outlet property="parkLabel" destination="Eeq-0W-dpg" id="O9u-7M-27b"/>
-                <outlet property="scanButton" destination="W16-Gm-Exg" id="t19-jq-OEg"/>
                 <outlet property="scooterReserved" destination="rR9-M5-K4p" id="Qrq-mh-lxR"/>
                 <outlet property="timerLabel" destination="c7d-wV-K2n" id="fRl-MC-Eei"/>
             </connections>
@@ -58,6 +56,9 @@
                         <constraint firstAttribute="height" constant="44" id="lHW-Dy-8JU"/>
                     </constraints>
                     <state key="normal" title="Cancel"/>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="T2P-X1-7Qn"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W16-Gm-Exg" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
                     <rect key="frame" x="239" y="165" width="160" height="44"/>
@@ -66,6 +67,9 @@
                         <constraint firstAttribute="height" constant="44" id="Loi-oy-dTr"/>
                     </constraints>
                     <state key="normal" title="Scan"/>
+                    <connections>
+                        <action selector="scanButtonTapped:" destination="-1" eventType="touchUpInside" id="uTl-vX-1xm"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-model" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-u5-Oiq">
                     <rect key="frame" x="293" y="56" width="96" height="96"/>

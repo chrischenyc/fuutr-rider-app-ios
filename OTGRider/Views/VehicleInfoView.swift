@@ -2,18 +2,10 @@
 class VehicleInfoView: DesignableView {
   
   @IBOutlet weak var priceLabel: UILabel!
-  @IBOutlet weak var parkedAt: UILabel!
   @IBOutlet weak var parkedLabel: UILabel!
-  
-  @IBOutlet weak var range: UILabel!
   @IBOutlet weak var rangeLabel: UILabel!
-  
-  @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var reserveButton: UIButton!
-  @IBOutlet weak var scanButton: UIButton!
-  
   @IBOutlet weak var waitToReserveAgainLabel: UILabel!
-  
   @IBOutlet weak var batteryImageView: UIImageView!
   
   override var nibName: String {
@@ -23,28 +15,12 @@ class VehicleInfoView: DesignableView {
     set {}
   }
   
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    setupUI()
-  }
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    setupUI()
-  }
-  
   private var reserveTimer: Timer?
   private var vehicle: Vehicle?
   
   var onReserve: ((Vehicle)-> Void)?
   var onClose: (() -> Void)?
   var onScan: (() -> Void)?
-  
-  func setupUI() {
-    closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-    reserveButton.addTarget(self, action: #selector(reserveButtonTapped), for: .touchUpInside)
-    scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
-  }
   
   func updateContentWith(_ vehicle: Vehicle) {
     self.vehicle = vehicle
@@ -102,11 +78,11 @@ class VehicleInfoView: DesignableView {
     }
   }
   
-  @objc private func closeButtonTapped() {
+  @IBAction func closeButtonTapped() {
     onClose?()
   }
   
-  @objc private func reserveButtonTapped() {
+  @IBAction func reserveButtonTapped() {
     guard let vehicle = vehicle else { return }
     if vehicle.reserved {
       return
@@ -123,7 +99,7 @@ class VehicleInfoView: DesignableView {
     return Int(canReserveAfter.timeIntervalSinceNow) <= 0
   }
   
-  @objc private func scanButtonTapped() {
+  @IBAction func scanButtonTapped() {
     onScan?()
   }
   

@@ -5,8 +5,6 @@ class VehicleReservedInfoView: DesignableView {
   
   @IBOutlet weak var parkLabel: UILabel!
   @IBOutlet weak var timerLabel: UILabel!
-  @IBOutlet weak var cancelButton: UIButton!
-  @IBOutlet weak var scanButton: UIButton!
   
   override var nibName: String {
     get {
@@ -21,21 +19,6 @@ class VehicleReservedInfoView: DesignableView {
   var onCancel: ((Vehicle) -> Void)?
   var onScan: (() -> Void)?
   var onReserveTimeUp: (()->Void)?
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    setupUI()
-  }
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    setupUI()
-  }
-  
-  private func setupUI() {
-    cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
-    scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
-  }
   
   func updateContentWith(_ vehicle: Vehicle) {
     self.vehicle = vehicle
@@ -79,11 +62,11 @@ class VehicleReservedInfoView: DesignableView {
     }
   }
   
-  @objc private func scanButtonTapped() {
+  @IBAction func scanButtonTapped(_ sender: Any) {
     onScan?()
   }
   
-  @objc private func cancelButtonTapped() {
+  @IBAction func cancelButtonTapped(_ sender: Any) {
     guard let vehicle = vehicle else { return }
     onCancel?(vehicle)
   }

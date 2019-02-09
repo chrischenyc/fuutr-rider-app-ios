@@ -73,6 +73,9 @@
                         <constraint firstAttribute="width" constant="160" id="kMG-q1-Klj"/>
                     </constraints>
                     <state key="normal" title="Lock"/>
+                    <connections>
+                        <action selector="lock:" destination="-1" eventType="touchUpInside" id="5dt-db-2Ko"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eli-C5-gd1" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
                     <rect key="frame" x="195" y="171" width="160" height="44"/>
@@ -81,6 +84,9 @@
                         <constraint firstAttribute="height" constant="44" id="PKo-fq-ttA"/>
                     </constraints>
                     <state key="normal" title="End Ride"/>
+                    <connections>
+                        <action selector="endRide:" destination="-1" eventType="touchUpInside" id="cj5-Ja-nEh"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16km range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ew7-FG-LqA" userLabel="remainingRange" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
                     <rect key="frame" x="54" y="139" width="71" height="16"/>
