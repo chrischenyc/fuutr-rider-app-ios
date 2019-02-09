@@ -24,8 +24,6 @@ public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
     
     self.textAlignment = .center
     self.font = UIFont.systemFont(ofSize: 30)
-    self.layer.borderWidth = 2
-    self.layer.cornerRadius = 3
     self.textColor = UIColor.primaryDarkColor
     self.configure(withState: .empty)
     
@@ -44,5 +42,14 @@ public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
     case .failedVerification:
       layer.borderColor = UIColor.primaryRedColor.cgColor
     }
+  }
+  
+  public override func layoutSubviews() {
+    super.layoutSubviews()
+    
+    let border = CALayer()
+    border.backgroundColor = UIColor.lightGray.cgColor
+    border.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1)
+    self.layer.addSublayer(border)
   }
 }
