@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6BDE911B218C19DF003F976B"
-               BuildableName = "OTGRider-dev.app"
-               BlueprintName = "OTGRider-dev"
-               ReferencedContainer = "container:OTGRider.xcodeproj">
+               BlueprintIdentifier = "A0CFE7AC21747D2B00BA3F6D"
+               BuildableName = "FUUTR-staging.app"
+               BlueprintName = "FUUTR-staging"
+               ReferencedContainer = "container:FUUTR.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6BDE911B218C19DF003F976B"
-            BuildableName = "OTGRider-dev.app"
-            BlueprintName = "OTGRider-dev"
-            ReferencedContainer = "container:OTGRider.xcodeproj">
+            BlueprintIdentifier = "A0CFE7AC21747D2B00BA3F6D"
+            BuildableName = "FUUTR-staging.app"
+            BlueprintName = "FUUTR-staging"
+            ReferencedContainer = "container:FUUTR.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6BDE911B218C19DF003F976B"
-            BuildableName = "OTGRider-dev.app"
-            BlueprintName = "OTGRider-dev"
-            ReferencedContainer = "container:OTGRider.xcodeproj">
+            BlueprintIdentifier = "A0CFE7AC21747D2B00BA3F6D"
+            BuildableName = "FUUTR-staging.app"
+            BlueprintName = "FUUTR-staging"
+            ReferencedContainer = "container:FUUTR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -85,10 +85,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6BDE911B218C19DF003F976B"
-            BuildableName = "OTGRider-dev.app"
-            BlueprintName = "OTGRider-dev"
-            ReferencedContainer = "container:OTGRider.xcodeproj">
+            BlueprintIdentifier = "A0CFE7AC21747D2B00BA3F6D"
+            BuildableName = "FUUTR-staging.app"
+            BlueprintName = "FUUTR-staging"
+            ReferencedContainer = "container:FUUTR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

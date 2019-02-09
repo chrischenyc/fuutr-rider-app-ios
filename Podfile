@@ -1,5 +1,5 @@
 platform :ios, '11.0'
-workspace 'OTGRider'
+workspace 'FUUTR'
 
 inhibit_all_warnings!
 use_frameworks!
@@ -36,26 +36,25 @@ abstract_target 'Project' do
   pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
   pod 'R.swift'
   pod 'XCGLogger'
-  pod 'BartyCrouch'
   pod 'ObjectMapper'
   pod 'FastttCamera'
   pod 'Solar'
 
-  target 'OTGRider' do
+  target 'FUUTR' do
 
-    # Pods for OTGRider
+    # Pods for FUUTR
   
   end
   
-  target 'OTGRider-staging' do
+  target 'FUUTR-staging' do
   
-    # Pods for OTGRider-staging
+    # Pods for FUUTR-staging
   
   end
   
-  target 'OTGRider-dev' do
+  target 'FUUTR-dev' do
       
-      # Pods for OTGRider-dev
+      # Pods for FUUTR-dev
       
   end
 end

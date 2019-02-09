@@ -20,15 +20,15 @@ struct Configuration {
 }
 
 enum Environment: String {
-  case Development = "OTGRider-dev"
-  case Staging = "OTGRider-staging"
-  case Production = "OTGRider"
+  case Development = "FUUTR-dev"
+  case Staging = "FUUTR-staging"
+  case Production = "FUUTR"
   
   var baseURL: String {
     switch self {
     case .Development: return "http://localhost:3000"
     case .Staging: return "https://api.staging.otgride.com"
-    case .Production: return "https://api.otgride.com"
+    case .Production: return "https://api.fuutr.co"
     }
   }
   

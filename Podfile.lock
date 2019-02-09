@@ -1,5 +1,4 @@
 PODS:
-  - BartyCrouch (3.13.0)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -142,7 +141,6 @@ PODS:
     - ObjcExceptionBridging
 
 DEPENDENCIES:
-  - BartyCrouch
   - Crashlytics
   - Fabric
   - FastttCamera
@@ -167,7 +165,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - BartyCrouch
     - Bolts
     - Crashlytics
     - Fabric
@@ -209,7 +206,6 @@ SPEC REPOS:
     - XCGLogger
 
 SPEC CHECKSUMS:
-  BartyCrouch: 69e5e6ec67e77951dc1c22aa48abbf05d175b81c
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
@@ -250,6 +246,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 9ca87ff78be447d6475273f49d4f8c17c215eecf
+PODFILE CHECKSUM: 91fdb132fb308016d7553d04c102cb16c4b51e2e
 
 COCOAPODS: 1.5.3
