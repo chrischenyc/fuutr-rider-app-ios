@@ -17,6 +17,8 @@ class ScanUnlockViewController: UnlockViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    navigationController?.navigationBar.applyDarkTheme()
     view.backgroundColor = UIColor.primaryDarkColor
     scanner.prepareScan(view) { (stringValue) -> () in
       self.handleScanResult(stringValue)

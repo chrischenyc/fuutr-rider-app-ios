@@ -26,7 +26,7 @@ class EmailSignInPasswordViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    navigationController?.navigationBar.applyTheme()
+    navigationController?.navigationBar.applyLightTheme()
     if let displayName = displayName {
       title = "G'day, \(displayName)!"
       submitButton.setTitle("Log in", for: .normal)

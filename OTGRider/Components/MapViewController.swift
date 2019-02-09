@@ -170,7 +170,7 @@ class MapViewController: UIViewController {
   }
   
   @IBAction func unlock(_ sender: Any) {
-    performSegue(withIdentifier: R.segue.mapViewController.showScanUnlock, sender: nil)
+    performSegue(withIdentifier: R.segue.mapViewController.showUnlock, sender: nil)
   }
 }
 

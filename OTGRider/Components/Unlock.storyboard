@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vBf-1n-zIH">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oys-6g-c0N">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,106 +10,77 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="GhX-Tz-HA0">
-            <objects>
-                <navigationController navigationBarHidden="YES" id="vBf-1n-zIH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kxj-uJ-Y4N">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="YkZ-jL-DlA" kind="relationship" relationship="rootViewController" id="VCc-G1-vVM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QRT-o6-cLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="538" y="753"/>
-        </scene>
-        <!--Scan To Unlock-->
+        <!--Scan QR Code-->
         <scene sceneID="xae-p7-PuC">
             <objects>
                 <viewController storyboardIdentifier="ScanUnlock" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YkZ-jL-DlA" customClass="ScanUnlockViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o0u-cA-zcg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the scooter’s QR Code that you can find located in the handle bar." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-Fb-1Vg">
+                                <rect key="frame" x="16" y="111" width="288" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-qr-code" translatesAutoresizingMaskIntoConstraints="NO" id="7Ya-R4-XRA">
+                                <rect key="frame" x="116" y="125.5" width="88" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Skh-9T-2Ar"/>
+                                    <constraint firstAttribute="width" constant="88" id="WHp-Ad-boC"/>
+                                </constraints>
+                            </imageView>
                             <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDa-Bf-9Db" userLabel="View - centre placeholder">
-                                <rect key="frame" x="83" y="348.5" width="209" height="209"/>
+                                <rect key="frame" x="55.5" y="259.5" width="209" height="209"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mDa-Bf-9Db" secondAttribute="height" multiplier="1:1" id="G6Z-2c-9ai"/>
                                     <constraint firstAttribute="width" constant="209" id="vzv-SI-tBc"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfm-Kb-fBs">
-                                <rect key="frame" x="8" y="28" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="11f-RD-XjM"/>
-                                    <constraint firstAttribute="width" constant="44" id="pdu-JI-kRW"/>
-                                </constraints>
-                                <state key="normal" image="ic-close-white-16"/>
-                                <connections>
-                                    <segue destination="NOz-RB-Lhf" kind="unwind" unwindAction="unwindToHome:" id="gYV-mS-PhV"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QR Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-m9-qTg">
-                                <rect key="frame" x="16" y="80" width="226.5" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the scooter’s QR Code that you can find located in the handle bar." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-Fb-1Vg">
-                                <rect key="frame" x="20" y="128" width="335" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-qr-code" translatesAutoresizingMaskIntoConstraints="NO" id="7Ya-R4-XRA">
-                                <rect key="frame" x="143.5" y="179.5" width="88" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="Skh-9T-2Ar"/>
-                                    <constraint firstAttribute="width" constant="88" id="WHp-Ad-boC"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can't scan?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prd-I5-8ef">
-                                <rect key="frame" x="152.5" y="540" width="70.5" height="16"/>
+                                <rect key="frame" x="124.5" y="492" width="71" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LI7-AO-IdY">
-                                <rect key="frame" x="116.5" y="570" width="142" height="29"/>
+                                <rect key="frame" x="89" y="508" width="142" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ipX-iO-SSm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <state key="normal" title="Enter scooter's code">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uxW-y3-xDG" kind="show" id="wdZ-PS-zeG"/>
+                                    <segue destination="XZT-jc-hDl" kind="showDetail" id="wdy-lN-cM2"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mjJ-m9-qTg" firstAttribute="top" secondItem="Pfm-Kb-fBs" secondAttribute="bottom" constant="8" id="4sZ-2E-bSW"/>
-                            <constraint firstItem="Pfm-Kb-fBs" firstAttribute="leading" secondItem="GcJ-tN-JPk" secondAttribute="leading" constant="8" id="CAY-Ec-pTQ"/>
-                            <constraint firstItem="GcJ-tN-JPk" firstAttribute="bottom" secondItem="LI7-AO-IdY" secondAttribute="bottom" constant="68" id="Hk3-Tt-QiA"/>
-                            <constraint firstItem="hvy-Fb-1Vg" firstAttribute="top" secondItem="mjJ-m9-qTg" secondAttribute="bottom" constant="7" id="JhV-qr-jPh"/>
-                            <constraint firstItem="mjJ-m9-qTg" firstAttribute="leading" secondItem="GcJ-tN-JPk" secondAttribute="leading" constant="16" id="Jwy-K9-15f"/>
-                            <constraint firstItem="mDa-Bf-9Db" firstAttribute="top" secondItem="hvy-Fb-1Vg" secondAttribute="bottom" constant="189" id="PMq-pg-N1D"/>
-                            <constraint firstItem="hvy-Fb-1Vg" firstAttribute="leading" secondItem="GcJ-tN-JPk" secondAttribute="leading" constant="20" id="QLK-Ah-ePy"/>
-                            <constraint firstItem="hvy-Fb-1Vg" firstAttribute="trailing" secondItem="GcJ-tN-JPk" secondAttribute="trailing" constant="-20" id="QZP-pB-bx7"/>
+                            <constraint firstItem="hvy-Fb-1Vg" firstAttribute="top" secondItem="GcJ-tN-JPk" secondAttribute="top" id="4uX-7b-Il7"/>
+                            <constraint firstItem="LI7-AO-IdY" firstAttribute="top" secondItem="prd-I5-8ef" secondAttribute="bottom" id="Ci3-zH-yZh"/>
+                            <constraint firstItem="GcJ-tN-JPk" firstAttribute="bottom" secondItem="LI7-AO-IdY" secondAttribute="bottom" constant="16" id="HzK-Qo-bVM"/>
+                            <constraint firstItem="hvy-Fb-1Vg" firstAttribute="leading" secondItem="GcJ-tN-JPk" secondAttribute="leading" constant="16" id="QLK-Ah-ePy"/>
+                            <constraint firstItem="mDa-Bf-9Db" firstAttribute="top" secondItem="7Ya-R4-XRA" secondAttribute="bottom" constant="24" id="Xma-cP-zDk"/>
                             <constraint firstItem="7Ya-R4-XRA" firstAttribute="centerX" secondItem="GcJ-tN-JPk" secondAttribute="centerX" id="Zsf-qE-FM0"/>
+                            <constraint firstItem="prd-I5-8ef" firstAttribute="centerX" secondItem="o0u-cA-zcg" secondAttribute="centerX" id="aZa-uH-GV3"/>
                             <constraint firstItem="mDa-Bf-9Db" firstAttribute="centerX" secondItem="o0u-cA-zcg" secondAttribute="centerX" id="cJv-dU-PO1"/>
-                            <constraint firstItem="prd-I5-8ef" firstAttribute="centerX" secondItem="GcJ-tN-JPk" secondAttribute="centerX" id="cZz-4C-SuG"/>
-                            <constraint firstItem="Pfm-Kb-fBs" firstAttribute="top" secondItem="GcJ-tN-JPk" secondAttribute="top" constant="8" id="cpc-VK-zrQ"/>
-                            <constraint firstItem="LI7-AO-IdY" firstAttribute="top" secondItem="prd-I5-8ef" secondAttribute="bottom" constant="14" id="dBA-rn-y2o"/>
-                            <constraint firstItem="7Ya-R4-XRA" firstAttribute="top" secondItem="hvy-Fb-1Vg" secondAttribute="bottom" constant="20" id="f7M-D7-NYz"/>
-                            <constraint firstItem="LI7-AO-IdY" firstAttribute="centerX" secondItem="GcJ-tN-JPk" secondAttribute="centerX" id="fr5-Ys-8cf"/>
+                            <constraint firstItem="mDa-Bf-9Db" firstAttribute="centerY" secondItem="o0u-cA-zcg" secondAttribute="centerY" constant="80" id="hjj-da-WcW"/>
+                            <constraint firstItem="LI7-AO-IdY" firstAttribute="centerX" secondItem="o0u-cA-zcg" secondAttribute="centerX" id="iUm-b1-XMw"/>
+                            <constraint firstAttribute="trailing" secondItem="hvy-Fb-1Vg" secondAttribute="trailing" constant="16" id="ukn-B7-iu0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GcJ-tN-JPk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Scan To Unlock" id="wsl-2e-hYA">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="A9p-GC-SQT"/>
+                    <navigationItem key="navigationItem" title="Scan QR Code" id="wsl-2e-hYA">
+                        <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="A9p-GC-SQT">
+                            <connections>
+                                <segue destination="NOz-RB-Lhf" kind="unwind" unwindAction="unwindToHome:" id="sJf-9F-HWe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="placeHolderView" destination="mDa-Bf-9Db" id="vev-5f-bB7"/>
@@ -119,19 +90,121 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7q-4L-qZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NOz-RB-Lhf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="752"/>
+            <point key="canvasLocation" x="2169" y="752"/>
         </scene>
-        <!--ManualUnlock-->
-        <scene sceneID="T9c-JJ-KPf">
+        <!--Enter Code-->
+        <scene sceneID="sKO-uT-bRR">
             <objects>
-                <viewControllerPlaceholder storyboardName="ManualUnlock" id="uxW-y3-xDG" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kpj-Et-fAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="Enter Code" id="4Qi-V5-2tn" customClass="ManualUnlockViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ChF-Cq-5DN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the scooter’s 6-digit code that you can find located in the handle bar." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAg-hd-iP8" userLabel="enterCodeLabel" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
+                                <rect key="frame" x="16" y="111" width="288" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="a3B-2w-N3k">
+                                <rect key="frame" x="16" y="177" width="288" height="214"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-enter-code" translatesAutoresizingMaskIntoConstraints="NO" id="REc-59-XuS">
+                                        <rect key="frame" x="100" y="0.0" width="88" height="97"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="88" id="7tW-EF-cfl"/>
+                                            <constraint firstAttribute="height" constant="97" id="Bch-kf-CJ0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYh-Wp-2br" customClass="PinCodeView" customModule="PinCodeView">
+                                        <rect key="frame" x="0.0" y="113" width="288" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="tnd-qD-Ov6"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmb-Gg-z2q" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
+                                        <rect key="frame" x="63.5" y="169" width="161" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="pV1-0Q-vP5"/>
+                                        </constraints>
+                                        <state key="normal" title="Scan scotter's QR code"/>
+                                        <connections>
+                                            <segue destination="xP3-XS-LFZ" kind="unwind" unwindAction="unwindToScanUnlock:" id="Mea-82-pVV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZAg-hd-iP8" firstAttribute="leading" secondItem="tSc-TU-RdN" secondAttribute="leading" constant="16" id="40c-ti-3ef"/>
+                            <constraint firstItem="a3B-2w-N3k" firstAttribute="centerX" secondItem="ChF-Cq-5DN" secondAttribute="centerX" id="Lui-Gh-3ge"/>
+                            <constraint firstItem="tSc-TU-RdN" firstAttribute="trailing" secondItem="a3B-2w-N3k" secondAttribute="trailing" constant="16" id="RSk-Bo-kAJ"/>
+                            <constraint firstItem="a3B-2w-N3k" firstAttribute="leading" secondItem="tSc-TU-RdN" secondAttribute="leading" constant="16" id="RsJ-Rg-gf8"/>
+                            <constraint firstItem="tSc-TU-RdN" firstAttribute="trailing" secondItem="ZAg-hd-iP8" secondAttribute="trailing" constant="16" id="fcC-fg-nzG"/>
+                            <constraint firstItem="ZAg-hd-iP8" firstAttribute="top" secondItem="tSc-TU-RdN" secondAttribute="top" id="kPK-UR-iW0"/>
+                            <constraint firstItem="a3B-2w-N3k" firstAttribute="centerY" secondItem="ChF-Cq-5DN" secondAttribute="centerY" id="kaM-za-2cq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tSc-TU-RdN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enter Code" id="cpj-zp-ELl">
+                        <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="duq-c0-JgC">
+                            <connections>
+                                <segue destination="xP3-XS-LFZ" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="oWC-5i-Wt0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pincodeView" destination="sYh-Wp-2br" id="R7f-Ru-Tmq"/>
+                        <outlet property="stackView" destination="a3B-2w-N3k" id="cOA-PU-48Y"/>
+                        <segue destination="xP3-XS-LFZ" kind="unwind" unwindAction="unwindToHome:" id="glc-zf-TsI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tri-lh-IXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xP3-XS-LFZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2039" y="667"/>
+            <point key="canvasLocation" x="3846" y="752"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8dW-EL-I48">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Oys-6g-c0N" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="sdq-Ls-xbn">
+                        <rect key="frame" x="0.0" y="20" width="320" height="91"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YkZ-jL-DlA" kind="relationship" relationship="rootViewController" id="E7E-7E-vQF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJN-OC-zq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392.8" y="751.57421289355329"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hn8-dt-CBg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XZT-jc-hDl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="53f-nv-Eai">
+                        <rect key="frame" x="0.0" y="20" width="320" height="91"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Qi-V5-2tn" kind="relationship" relationship="rootViewController" id="TWW-4x-pe6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S5u-g9-4BH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3010" y="752"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ic-close-white-16" width="16" height="16"/>
+        <image name="ic-close-dark-gray-16" width="16" height="16"/>
+        <image name="scooter-enter-code" width="88" height="97"/>
         <image name="scooter-qr-code" width="88" height="110"/>
     </resources>
 </document>

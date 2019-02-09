@@ -32,7 +32,7 @@ class ResetPasswordVerifyViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    navigationController?.navigationBar.applyTheme()
+    navigationController?.navigationBar.applyLightTheme()
   }
   
   override func viewDidAppear(_ animated: Bool) {

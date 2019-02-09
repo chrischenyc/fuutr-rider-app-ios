@@ -8,10 +8,12 @@
 
 import Foundation
 
+import IHKeyboardAvoiding
 import PinCodeView
 
 class ManualUnlockViewController: UnlockViewController {
   
+  @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var pincodeView: PinCodeView! {
     didSet {
       pincodeView.delegate = self
@@ -22,8 +24,12 @@ class ManualUnlockViewController: UnlockViewController {
     }
   }
   
+  override func viewDidLoad() {
+    navigationController?.navigationBar.applyLightTheme()
+  }
+  
   override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    KeyboardAvoiding.avoidingView = stackView
     pincodeView.becomeFirstResponder()
   }
 }

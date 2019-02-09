@@ -22,7 +22,7 @@ class ResetPasswordRequestViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    navigationController?.navigationBar.applyTheme()
+    navigationController?.navigationBar.applyLightTheme()
     
     emailTextField.text = email
     emailTextField.delegate = self

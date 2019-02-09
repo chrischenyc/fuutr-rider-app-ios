@@ -53,7 +53,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6-digit code we sent to your phone number" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5O-Rx-915">
-                                <rect key="frame" x="16" y="116" width="343" height="17"/>
+                                <rect key="frame" x="20" y="116" width="335" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -95,9 +95,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fhn-pV-hhQ" firstAttribute="centerY" secondItem="74H-mF-rct" secondAttribute="centerY" id="473-B8-pDN"/>
-                            <constraint firstItem="U5O-Rx-915" firstAttribute="leading" secondItem="3Ck-CL-bRu" secondAttribute="leading" constant="16" id="Ekg-Et-Oeo"/>
+                            <constraint firstItem="U5O-Rx-915" firstAttribute="leading" secondItem="3Ck-CL-bRu" secondAttribute="leading" constant="20" id="Ekg-Et-Oeo"/>
                             <constraint firstItem="U5O-Rx-915" firstAttribute="top" secondItem="3Ck-CL-bRu" secondAttribute="top" id="MUt-Jm-tfL"/>
-                            <constraint firstItem="3Ck-CL-bRu" firstAttribute="trailing" secondItem="U5O-Rx-915" secondAttribute="trailing" constant="16" id="W1Q-Jo-y7R"/>
+                            <constraint firstItem="3Ck-CL-bRu" firstAttribute="trailing" secondItem="U5O-Rx-915" secondAttribute="trailing" constant="20" id="W1Q-Jo-y7R"/>
                             <constraint firstItem="3Ck-CL-bRu" firstAttribute="trailing" secondItem="fhn-pV-hhQ" secondAttribute="trailing" constant="16" id="adY-X0-jVE"/>
                             <constraint firstItem="fhn-pV-hhQ" firstAttribute="leading" secondItem="3Ck-CL-bRu" secondAttribute="leading" constant="16" id="kdL-Pb-Hbt"/>
                         </constraints>

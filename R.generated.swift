@@ -899,10 +899,10 @@ struct R: Rswift.Validatable {
       static let showRideFinished: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, RideFinishedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideFinished")
       /// Segue identifier `showRidePaused`.
       static let showRidePaused: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, RidePausedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRidePaused")
-      /// Segue identifier `showScanUnlock`.
-      static let showScanUnlock: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showScanUnlock")
       /// Segue identifier `showSettings`.
       static let showSettings: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showSettings")
+      /// Segue identifier `showUnlock`.
+      static let showUnlock: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showUnlock")
       
       /// Optionally returns a typed version of segue `showAccount`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
@@ -953,18 +953,18 @@ struct R: Rswift.Validatable {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showRidePaused, segue: segue)
       }
       
-      /// Optionally returns a typed version of segue `showScanUnlock`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showScanUnlock(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showScanUnlock, segue: segue)
-      }
-      
       /// Optionally returns a typed version of segue `showSettings`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showSettings(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showSettings, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showUnlock`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showUnlock(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showUnlock, segue: segue)
       }
       
       fileprivate init() {}
@@ -1174,7 +1174,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 18 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 17 storyboards.
   struct storyboard {
     /// Storyboard `Account`.
     static let account = _R.storyboard.account()
@@ -1192,8 +1192,6 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
-    /// Storyboard `ManualUnlock`.
-    static let manualUnlock = _R.storyboard.manualUnlock()
     /// Storyboard `MobileSignIn`.
     static let mobileSignIn = _R.storyboard.mobileSignIn()
     /// Storyboard `MobileVerify`.
@@ -1251,11 +1249,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
-    }
-    
-    /// `UIStoryboard(name: "ManualUnlock", bundle: ...)`
-    static func manualUnlock(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.manualUnlock)
     }
     
     /// `UIStoryboard(name: "MobileSignIn", bundle: ...)`
@@ -1457,7 +1450,6 @@ struct _R: Rswift.Validatable {
       try howToRide.validate()
       try launchScreen.validate()
       try main.validate()
-      try manualUnlock.validate()
       try mobileSignIn.validate()
       try mobileVerify.validate()
       try permissions.validate()
@@ -1600,28 +1592,6 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct manualUnlock: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ManualUnlockViewController
-      
-      let bundle = R.hostingBundle
-      let mannualUnlock = StoryboardViewControllerResource<ManualUnlockViewController>(identifier: "MannualUnlock")
-      let name = "ManualUnlock"
-      
-      func mannualUnlock(_: Void = ()) -> ManualUnlockViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mannualUnlock)
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'ManualUnlock', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "scooter-enter-code", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-enter-code' is used in storyboard 'ManualUnlock', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.manualUnlock().mannualUnlock() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mannualUnlock' could not be loaded from storyboard 'ManualUnlock' as 'ManualUnlockViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
     struct mobileSignIn: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
@@ -1753,7 +1723,8 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "ic-close-white-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-white-16' is used in storyboard 'Unlock', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'Unlock', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "scooter-enter-code", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-enter-code' is used in storyboard 'Unlock', but couldn't be loaded.") }
         if UIKit.UIImage(named: "scooter-qr-code", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-qr-code' is used in storyboard 'Unlock', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }

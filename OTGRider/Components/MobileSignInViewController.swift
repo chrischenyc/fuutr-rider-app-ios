@@ -73,7 +73,7 @@ class MobileSignInViewController: UIViewController {
   
   // MARK: - private
   private func setupUI() {
-    navigationController?.navigationBar.applyTheme()
+    navigationController?.navigationBar.applyLightTheme()
     phoneNumberTextField.setFlag(for: .AU)
     countryCode = 61
     phoneNumberTextField.parentViewController = self

@@ -88,7 +88,7 @@
                 <viewControllerPlaceholder storyboardName="Unlock" id="F6b-Fa-nWT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uam-KE-TSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2040" y="1681"/>
+            <point key="canvasLocation" x="-2064" y="1681"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -196,7 +196,7 @@
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>
                         <segue destination="46k-mg-UHB" kind="presentation" identifier="showHelp" id="GwS-O7-LdY"/>
                         <segue destination="8Ti-sb-yF0" kind="presentation" identifier="showEndRidePhoto" id="Tlg-cq-aPh"/>
-                        <segue destination="F6b-Fa-nWT" kind="presentation" identifier="showScanUnlock" id="HOx-pw-uNG"/>
+                        <segue destination="F6b-Fa-nWT" kind="presentation" identifier="showUnlock" id="HOx-pw-uNG"/>
                         <segue destination="FGs-8F-TV0" kind="presentation" identifier="showHowToRide" id="dw5-Yc-TVD"/>
                         <segue destination="ppe-bv-DTM" kind="presentation" identifier="showRidePaused" id="WgS-vD-LeP"/>
                         <segue destination="tbq-IZ-tMd" kind="presentation" identifier="showRideFinished" id="eCg-aT-VBb"/>

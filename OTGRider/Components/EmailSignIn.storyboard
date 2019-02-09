@@ -364,7 +364,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6-digit code we sent to your email" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcO-Nt-09O" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
-                                <rect key="frame" x="16" y="116" width="343" height="17"/>
+                                <rect key="frame" x="20" y="116" width="335" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -407,9 +407,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fhn-pV-hhQ" firstAttribute="centerY" secondItem="74H-mF-rct" secondAttribute="centerY" id="473-B8-pDN"/>
-                            <constraint firstItem="3Ck-CL-bRu" firstAttribute="trailing" secondItem="OcO-Nt-09O" secondAttribute="trailing" constant="16" id="UcK-6r-iCW"/>
+                            <constraint firstItem="3Ck-CL-bRu" firstAttribute="trailing" secondItem="OcO-Nt-09O" secondAttribute="trailing" constant="20" id="UcK-6r-iCW"/>
                             <constraint firstItem="3Ck-CL-bRu" firstAttribute="trailing" secondItem="fhn-pV-hhQ" secondAttribute="trailing" constant="16" id="adY-X0-jVE"/>
-                            <constraint firstItem="OcO-Nt-09O" firstAttribute="leading" secondItem="74H-mF-rct" secondAttribute="leading" constant="16" id="fIO-Eg-f5k"/>
+                            <constraint firstItem="OcO-Nt-09O" firstAttribute="leading" secondItem="74H-mF-rct" secondAttribute="leading" constant="20" id="fIO-Eg-f5k"/>
                             <constraint firstItem="fhn-pV-hhQ" firstAttribute="leading" secondItem="3Ck-CL-bRu" secondAttribute="leading" constant="16" id="kdL-Pb-Hbt"/>
                             <constraint firstItem="OcO-Nt-09O" firstAttribute="top" secondItem="3Ck-CL-bRu" secondAttribute="top" id="oml-Y0-ZWv"/>
                         </constraints>

@@ -70,7 +70,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll send you a verification code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDa-gl-VTo" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
-                                <rect key="frame" x="16" y="116" width="216" height="17"/>
+                                <rect key="frame" x="20" y="116" width="335" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -78,9 +78,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="XHs-x7-MIc" firstAttribute="trailing" secondItem="ZDa-gl-VTo" secondAttribute="trailing" constant="20" id="6ly-Mv-h9h"/>
                             <constraint firstItem="XHs-x7-MIc" firstAttribute="trailing" secondItem="vYh-tJ-PAk" secondAttribute="trailing" constant="16" id="AY3-TL-W3y"/>
                             <constraint firstItem="vYh-tJ-PAk" firstAttribute="leading" secondItem="XHs-x7-MIc" secondAttribute="leading" constant="16" id="CWd-wG-IV9"/>
-                            <constraint firstItem="ZDa-gl-VTo" firstAttribute="leading" secondItem="XHs-x7-MIc" secondAttribute="leading" constant="16" id="eHU-Gn-OVj"/>
+                            <constraint firstItem="ZDa-gl-VTo" firstAttribute="leading" secondItem="XHs-x7-MIc" secondAttribute="leading" constant="20" id="eHU-Gn-OVj"/>
                             <constraint firstItem="ZDa-gl-VTo" firstAttribute="top" secondItem="XHs-x7-MIc" secondAttribute="top" id="qFd-hg-mbr"/>
                             <constraint firstItem="vYh-tJ-PAk" firstAttribute="centerY" secondItem="IQd-Fp-9ej" secondAttribute="centerY" id="qqa-zQ-wqd"/>
                         </constraints>

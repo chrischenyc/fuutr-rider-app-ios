@@ -348,9 +348,6 @@
 		6BDEEF61220C1B9400C0FBB8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF60220C1B9400C0FBB8 /* Settings.storyboard */; };
 		6BDEEF62220C1B9400C0FBB8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF60220C1B9400C0FBB8 /* Settings.storyboard */; };
 		6BDEEF63220C1B9400C0FBB8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF60220C1B9400C0FBB8 /* Settings.storyboard */; };
-		6BDEEF65220C1BC700C0FBB8 /* ManualUnlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF64220C1BC700C0FBB8 /* ManualUnlock.storyboard */; };
-		6BDEEF66220C1BC700C0FBB8 /* ManualUnlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF64220C1BC700C0FBB8 /* ManualUnlock.storyboard */; };
-		6BDEEF67220C1BC700C0FBB8 /* ManualUnlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF64220C1BC700C0FBB8 /* ManualUnlock.storyboard */; };
 		6BDEEF69220C1BCD00C0FBB8 /* Unlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF68220C1BCD00C0FBB8 /* Unlock.storyboard */; };
 		6BDEEF6A220C1BCD00C0FBB8 /* Unlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF68220C1BCD00C0FBB8 /* Unlock.storyboard */; };
 		6BDEEF6B220C1BCD00C0FBB8 /* Unlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF68220C1BCD00C0FBB8 /* Unlock.storyboard */; };
@@ -610,7 +607,6 @@
 		6BDEEF58220C1B5800C0FBB8 /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		6BDEEF5C220C1B7200C0FBB8 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		6BDEEF60220C1B9400C0FBB8 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		6BDEEF64220C1BC700C0FBB8 /* ManualUnlock.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ManualUnlock.storyboard; sourceTree = "<group>"; };
 		6BDEEF68220C1BCD00C0FBB8 /* Unlock.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Unlock.storyboard; sourceTree = "<group>"; };
 		6BDEEF6C220C1BF800C0FBB8 /* RidePaused.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RidePaused.storyboard; sourceTree = "<group>"; };
 		6BDEEF70220C1C0900C0FBB8 /* RideFinished.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RideFinished.storyboard; sourceTree = "<group>"; };
@@ -1059,7 +1055,6 @@
 				6BDEEF68220C1BCD00C0FBB8 /* Unlock.storyboard */,
 				6B873200218AA9F400CC2651 /* UnlockViewController.swift */,
 				6B0128B2219D9C2C00AC2439 /* ScanUnlockViewController.swift */,
-				6BDEEF64220C1BC700C0FBB8 /* ManualUnlock.storyboard */,
 				6B0128B6219D9C4D00AC2439 /* ManualUnlockViewController.swift */,
 			);
 			name = Unlock;
@@ -1315,7 +1310,6 @@
 				6BDEEF77220C1C3800C0FBB8 /* LaunchScreen.storyboard in Resources */,
 				6BDEEF5B220C1B5800C0FBB8 /* History.storyboard in Resources */,
 				6BDEEFA3220D365C00C0FBB8 /* MobileSignIn.storyboard in Resources */,
-				6BDEEF67220C1BC700C0FBB8 /* ManualUnlock.storyboard in Resources */,
 				6BDEEF57220C1B3900C0FBB8 /* SideMenu.storyboard in Resources */,
 				6BDE913A218C19DF003F976B /* Localizable.strings in Resources */,
 				6B0D921C21FD32D100A9B38E /* DialogViewController.xib in Resources */,
@@ -1350,7 +1344,6 @@
 				9191983721FDC96200CF5F2D /* RidingView.xib in Resources */,
 				6B0D921A21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BDEEF71220C1C0900C0FBB8 /* RideFinished.storyboard in Resources */,
-				6BDEEF65220C1BC700C0FBB8 /* ManualUnlock.storyboard in Resources */,
 				6BDEEF45220C1A7800C0FBB8 /* EndRidePhoto.storyboard in Resources */,
 				6BDEEFAA220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */,
 				6BDEEF79220C1C3C00C0FBB8 /* Help.storyboard in Resources */,
@@ -1384,7 +1377,6 @@
 				91FA7F8B21FDCF1B00581BB5 /* RidingView.xib in Resources */,
 				6B0D921B21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BDEEF72220C1C0900C0FBB8 /* RideFinished.storyboard in Resources */,
-				6BDEEF66220C1BC700C0FBB8 /* ManualUnlock.storyboard in Resources */,
 				6BDEEF46220C1A7800C0FBB8 /* EndRidePhoto.storyboard in Resources */,
 				6BDEEFAB220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */,
 				6BDEEF7A220C1C3C00C0FBB8 /* Help.storyboard in Resources */,
