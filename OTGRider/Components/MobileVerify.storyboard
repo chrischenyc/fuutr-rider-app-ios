@@ -104,7 +104,7 @@
                         <viewLayoutGuide key="safeArea" id="3Ck-CL-bRu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Verification Code" id="jgP-ce-6OK">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="dVM-iy-RVl">
+                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="dVM-iy-RVl">
                             <connections>
                                 <action selector="onBack:" destination="A9q-Lc-jkk" id="aIf-j9-0w2"/>
                             </connections>

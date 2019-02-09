@@ -82,7 +82,7 @@
                         <viewLayoutGuide key="safeArea" id="XHs-x7-MIc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Enter your email" id="1Ro-3B-Ofd">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="Mz6-sT-evR">
+                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="Mz6-sT-evR">
                             <connections>
                                 <segue destination="pxR-nU-a5f" kind="unwind" unwindAction="unwindToWelcome:" id="AZy-w7-clF"/>
                             </connections>
@@ -223,7 +223,7 @@
                         <viewLayoutGuide key="safeArea" id="pRZ-tE-XB9"/>
                     </view>
                     <navigationItem key="navigationItem" id="KcB-iy-eKr">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="RLQ-gQ-LGw">
+                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="RLQ-gQ-LGw">
                             <connections>
                                 <segue destination="FoD-J2-AZQ" kind="unwind" unwindAction="unwindToSignInEmail:" id="XhL-hY-3sp"/>
                             </connections>
@@ -337,7 +337,7 @@
                         <viewLayoutGuide key="safeArea" id="naj-XB-C7e"/>
                     </view>
                     <navigationItem key="navigationItem" title="Forgot Password" id="6fq-ee-PLy">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="VPV-qX-B5H">
+                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="VPV-qX-B5H">
                             <connections>
                                 <segue destination="OHq-IG-DIL" kind="unwind" unwindAction="unwindToSignInPassword:" id="who-Cz-qfg"/>
                             </connections>
@@ -416,7 +416,7 @@
                         <viewLayoutGuide key="safeArea" id="3Ck-CL-bRu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Verification Code" id="jgP-ce-6OK">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="dVM-iy-RVl">
+                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="dVM-iy-RVl">
                             <connections>
                                 <segue destination="Ais-DC-SNb" kind="unwind" unwindAction="unwindToResetPasswordRequest:" id="Xex-YJ-GbY"/>
                             </connections>
@@ -526,7 +526,7 @@
                         <viewLayoutGuide key="safeArea" id="ltn-Xx-WDD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Set New Password" id="080-f1-V3g">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="Q9q-AC-hsu">
+                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="Q9q-AC-hsu">
                             <connections>
                                 <segue destination="z2K-FU-RV3" kind="unwind" unwindAction="unwindToResetPasswordVerify:" id="kya-pW-YZc"/>
                             </connections>

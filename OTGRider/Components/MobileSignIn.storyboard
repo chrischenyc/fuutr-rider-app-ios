@@ -87,7 +87,7 @@
                         <viewLayoutGuide key="safeArea" id="XHs-x7-MIc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Phone Number" id="1Ro-3B-Ofd">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="Mz6-sT-evR">
+                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="Mz6-sT-evR">
                             <connections>
                                 <segue destination="pxR-nU-a5f" kind="unwind" unwindAction="unwindToWelcome:" id="AZy-w7-clF"/>
                             </connections>
