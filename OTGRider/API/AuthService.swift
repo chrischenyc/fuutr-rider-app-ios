@@ -11,7 +11,7 @@ import SwiftyUserDefaults
 import FBSDKLoginKit
 
 final class AuthService {
-  static func signup(withPhoneNumber phoneNumber: String,
+  static func signIn(withPhoneNumber phoneNumber: String,
                      countryCode: UInt64,
                      verificationCode: String,
                      completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {

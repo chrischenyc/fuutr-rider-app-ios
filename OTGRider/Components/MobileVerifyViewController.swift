@@ -99,7 +99,7 @@ extension MobileVerifyViewController: PinCodeViewDelegate {
     switch nextStep {
     case .signIn:
       apiTask = AuthService
-        .signup(withPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: code, completion: { [weak self] (error) in
+        .signIn(withPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: code, completion: { [weak self] (error) in
           
           DispatchQueue.main.async {
             self?.dismissLoading()
