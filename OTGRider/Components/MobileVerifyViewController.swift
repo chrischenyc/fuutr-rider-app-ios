@@ -24,7 +24,7 @@ class MobileVerifyViewController: UIViewController {
       pinCodeView.delegate = self
       pinCodeView.numberOfDigits = 6
       pinCodeView.groupingSize = 0
-      pinCodeView.itemSpacing = 10
+      pinCodeView.itemSpacing = 12
       pinCodeView.digitViewInit = PinCodeDigitSquareView.init
     }
   }
