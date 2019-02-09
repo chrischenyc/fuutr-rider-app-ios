@@ -25,6 +25,7 @@ class ResetPasswordRequestViewController: UIViewController {
     navigationController?.navigationBar.applyTheme()
     
     emailTextField.text = email
+    emailTextField.delegate = self
     
     validate()
   }
@@ -89,4 +90,13 @@ class ResetPasswordRequestViewController: UIViewController {
     submitButton.isEnabled = email.isEmail()
   }
   
+}
+
+
+extension ResetPasswordRequestViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    submitButtonTapped(textField)
+    
+    return true
+  }
 }

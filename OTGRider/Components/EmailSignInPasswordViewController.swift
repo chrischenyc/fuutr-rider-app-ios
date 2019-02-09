@@ -36,6 +36,8 @@ class EmailSignInPasswordViewController: UIViewController {
       submitButton.setTitle("Sign up", for: .normal)
     }
     
+    passwordTextField.delegate = self
+    
     validate()
   }
   
@@ -118,5 +120,13 @@ class EmailSignInPasswordViewController: UIViewController {
     else {
       performSegue(withIdentifier: R.segue.emailSignInPasswordViewController.showPermissions, sender: nil)
     }
+  }
+}
+
+extension EmailSignInPasswordViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    submitTapped(textField)
+    
+    return true
   }
 }

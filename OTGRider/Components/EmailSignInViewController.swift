@@ -23,6 +23,7 @@ class EmailSignInViewController: UIViewController {
     super.viewDidLoad()
     
     navigationController?.navigationBar.applyTheme()
+    emailTextField.delegate = self
     validate()
   }
   
@@ -85,4 +86,13 @@ class EmailSignInViewController: UIViewController {
     nextButton.isEnabled = true
   }
   
+}
+
+
+extension EmailSignInViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    nextTapped(textField)
+    
+    return true
+  }
 }

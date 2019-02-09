@@ -24,6 +24,8 @@ class ResetPasswordSetViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    passwordTextField.delegate = self
+    
     validate()
   }
   
@@ -87,5 +89,13 @@ class ResetPasswordSetViewController: UIViewController {
     }
     
     submitButton.isEnabled = password.isValidPassword()
+  }
+}
+
+extension ResetPasswordSetViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    submitButtonTapped(textField)
+    
+    return true
   }
 }
