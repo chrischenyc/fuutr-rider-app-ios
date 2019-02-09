@@ -59,41 +59,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fhn-pV-hhQ">
-                                <rect key="frame" x="16" y="223" width="343" height="221"/>
+                                <rect key="frame" x="16" y="227.5" width="343" height="212"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCO-nU-m79">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCO-nU-m79" customClass="PinCodeView" customModule="PinCodeView">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="123456" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MdB-rX-DOP">
-                                                <rect key="frame" x="16" y="0.0" width="311" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="N80-Yj-4nl"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                                <connections>
-                                                    <action selector="codeChanged:" destination="A9q-Lc-jkk" eventType="editingChanged" id="TJZ-NG-4L5"/>
-                                                </connections>
-                                            </textField>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="MdB-rX-DOP" firstAttribute="top" secondItem="vCO-nU-m79" secondAttribute="top" id="RiW-46-sIf"/>
-                                            <constraint firstAttribute="bottom" secondItem="MdB-rX-DOP" secondAttribute="bottom" id="qT1-r2-6pP"/>
-                                            <constraint firstItem="MdB-rX-DOP" firstAttribute="leading" secondItem="vCO-nU-m79" secondAttribute="leading" constant="16" id="rHB-f2-fjp"/>
-                                            <constraint firstAttribute="trailing" secondItem="MdB-rX-DOP" secondAttribute="trailing" constant="16" id="zK6-Za-euj"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTu-W4-j5u">
-                                        <rect key="frame" x="0.0" y="48" width="343" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="Du3-NS-u9w"/>
+                                            <constraint firstAttribute="height" constant="40" id="18c-yB-lEn"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebo-cN-Mn6">
-                                        <rect key="frame" x="0.0" y="57" width="343" height="164"/>
+                                        <rect key="frame" x="0.0" y="48" width="343" height="164"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bm-Hx-5hq" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
                                                 <rect key="frame" x="126.5" y="56" width="90" height="44"/>
@@ -135,7 +111,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="codeTextField" destination="MdB-rX-DOP" id="2M9-0M-qvj"/>
+                        <outlet property="pinCodeView" destination="vCO-nU-m79" id="4ch-BB-Ovp"/>
                         <outlet property="resendButton" destination="4Bm-Hx-5hq" id="bu7-Tz-FPC"/>
                         <outlet property="stackView" destination="fhn-pV-hhQ" id="FK6-jB-Qzg"/>
                         <segue destination="2UR-2U-tXq" kind="showDetail" identifier="showPermissions" id="Mbz-Qf-TZ5"/>

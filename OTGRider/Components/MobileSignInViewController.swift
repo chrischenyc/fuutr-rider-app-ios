@@ -34,11 +34,12 @@ class MobileSignInViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let mobileVerificationCodeViewController = segue.destination as? MobileVerifyViewController {
+    if let navigationController = segue.destination as? UINavigationController,
+      let mobileVerifyCodeViewController = navigationController.topViewController as? MobileVerifyViewController {
       guard let countryCode = countryCode, let phoneNumber = phoneNumber else { return }
       
-      mobileVerificationCodeViewController.countryCode = countryCode
-      mobileVerificationCodeViewController.phoneNumber = phoneNumber
+      mobileVerifyCodeViewController.countryCode = countryCode
+      mobileVerifyCodeViewController.phoneNumber = phoneNumber
     }
   }
   

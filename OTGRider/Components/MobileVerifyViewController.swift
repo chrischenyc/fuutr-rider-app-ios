@@ -9,19 +9,28 @@
 import UIKit
 import SwiftyUserDefaults
 import IHKeyboardAvoiding
+import PinCodeView
 
 class MobileVerifyViewController: UIViewController {
   
   enum VerifyCodeViewControllerNextStep {
-    case signIn
-    case updatePhone
+    case signIn       // this screen is segued from email sign in
+    case updatePhone  // this screen is segued fom change phone number
   }
   
   @IBOutlet weak var stackView: UIStackView!
-  @IBOutlet weak var codeTextField: UITextField!
+  @IBOutlet weak var pinCodeView: PinCodeView! {
+    didSet {
+      pinCodeView.delegate = self
+      pinCodeView.numberOfDigits = 6
+      pinCodeView.groupingSize = 0
+      pinCodeView.itemSpacing = 10
+      pinCodeView.digitViewInit = PinCodeDigitSquareView.init
+    }
+  }
   @IBOutlet weak var resendButton: UIButton!
   
-  // this screen is re-used by sign-in and change phone number
+  
   var nextStep: VerifyCodeViewControllerNextStep = .signIn
   var countryCode: UInt64?
   var phoneNumber: String?
@@ -36,7 +45,7 @@ class MobileVerifyViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     KeyboardAvoiding.avoidingView = stackView
-    codeTextField.becomeFirstResponder()
+    pinCodeView.becomeFirstResponder()
   }
   
   
@@ -52,53 +61,15 @@ class MobileVerifyViewController: UIViewController {
     }
   }
   
-  @IBAction func codeChanged(_ sender: Any) {
-    // TODO: trigger submit
-  }
-  
-  
-  private func submit() {
-    guard let phoneNumber = phoneNumber else { return }
-    guard let countryCode = countryCode else { return }
-    guard let verificationCode = codeTextField.text, verificationCode.isFourDigits() else { return }
-    
-    apiTask?.cancel()
-    
-    showLoading()
-    
-    switch nextStep {
-    case .signIn:
-      apiTask = AuthService
-        .signup(withPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
-          
-          DispatchQueue.main.async {
-            self?.dismissLoading()
-            self?.handleVerificationCompletion(error)
-          }
-        })
-      
-    case .updatePhone:
-      apiTask = UserService.udpatePhoneNumber(phoneNumber, countryCode: countryCode, verificationCode: verificationCode, completion: { [weak self] (error) in
-        
-        DispatchQueue.main.async {
-          self?.dismissLoading()
-          self?.handleVerificationCompletion(error)
-        }
-      })
-    }
-    
-  }
-  
   @IBAction func resendButtonTapped(_ sender: Any) {
     guard let phoneNumber = phoneNumber else { return }
     guard let countryCode = countryCode else { return }
     
-    // update UI before calling API
-    codeTextField.text = ""
-    
     apiTask?.cancel()
     
+    pinCodeView.resetDigits()
     showLoading()
+    
     apiTask = PhoneService.startVerification(forPhoneNumber: phoneNumber, countryCode: countryCode, completion: { [weak self] (error) in
       
       DispatchQueue.main.async {
@@ -109,31 +80,66 @@ class MobileVerifyViewController: UIViewController {
           return
         }
         
-        self?.alertMessage(title: "Done!", message: "We sent you a new verification code")
+        self?.alertMessage(message: "We sent you a new verification coee")
       }
     })
   }
-  
-  // MARK: - private
-  
-  private func handleVerificationCompletion(_ error: Error?) {
-    guard error == nil else {
-      self.alertError(error!)
-      return
-    }
+}
+
+extension MobileVerifyViewController: PinCodeViewDelegate {
+  func pinCodeView(_ view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool) -> Void) {
     
-    switch self.nextStep {
+    guard let phoneNumber = phoneNumber else { return }
+    guard let countryCode = countryCode else { return }
+    
+    apiTask?.cancel()
+    
+    showLoading()
+    
+    switch nextStep {
     case .signIn:
-      if Defaults[.userOnboarded] {
-        self.performSegue(withIdentifier: R.segue.mobileVerifyViewController.showMap, sender: nil)
-      }
-      else {
-        self.performSegue(withIdentifier: R.segue.mobileVerifyViewController.showPermissions, sender: nil)
-      }
+      apiTask = AuthService
+        .signup(withPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: code, completion: { [weak self] (error) in
+          
+          DispatchQueue.main.async {
+            self?.dismissLoading()
+            
+            guard error == nil else {
+              self?.pinCodeView.resetDigits()
+              self?.alertError(error!)
+              return
+            }
+            
+            if Defaults[.userOnboarded] {
+              self?.performSegue(withIdentifier: R.segue.mobileVerifyViewController.showMap, sender: nil)
+            }
+            else {
+              self?.performSegue(withIdentifier: R.segue.mobileVerifyViewController.showPermissions, sender: nil)
+            }
+          }
+        })
       
     case .updatePhone:
-      self.performSegue(withIdentifier: R.segue.mobileVerifyViewController.unwindToSettings, sender: nil)
+      apiTask = UserService.udpatePhoneNumber(phoneNumber, countryCode: countryCode, verificationCode: code, completion: { [weak self] (error) in
+        
+        DispatchQueue.main.async {
+          self?.dismissLoading()
+          
+          guard error == nil else {
+            self?.pinCodeView.resetDigits()
+            self?.alertError(error!)
+            return
+          }
+          
+          self?.performSegue(withIdentifier: R.segue.mobileVerifyViewController.unwindToSettings, sender: nil)
+        }
+      })
     }
-    
   }
+  
+  func pinCodeView(_ view: PinCodeView, didInsertText text: String) {
+    // do nothing
+  }
+  
+  
 }
