@@ -13,37 +13,22 @@ enum RidePausedViewControllerDismissAction {
 
 class RidePausedViewController: UIViewController {
   
-  @IBOutlet weak var rideInProgressLabel: UILabel!
   @IBOutlet weak var costLabel: UILabel!
   @IBOutlet weak var ridingTimeLabel: UILabel!
   @IBOutlet weak var ridingDistanceLabel: UILabel!
   @IBOutlet weak var remainingRangeLabel: UILabel!
-  @IBOutlet weak var scooterIsLockedLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var unlockButton: UIButton!
   @IBOutlet weak var endRideButton: UIButton!
   
   var dismissAction: RidePausedViewControllerDismissAction?
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    setupUI()
-  }
-  
   func updateContent(with ride: Ride) {
     ridingTimeLabel.text = ride.duration.hhmmssString
     ridingDistanceLabel.text = ride.distance.distanceString
     costLabel.text = ride.totalCost.currencyString
     remainingRangeLabel.text = ride.getRemainingRange().distanceString
-  }
-  
-  private func setupUI() {
-    rideInProgressLabel.textColor = UIColor.primaryDarkColor
-    costLabel.textColor = UIColor.primaryGreyColor
-    remainingRangeLabel.textColor = UIColor.primaryGreyColor
-    scooterIsLockedLabel.textColor = UIColor.primaryDarkColor
-    priceLabel.textColor = UIColor.primaryGreyColor
+    priceLabel.text = "\(ride.pauseMinuteCost.currencyString) per minute"
   }
   
   @objc private func close() {

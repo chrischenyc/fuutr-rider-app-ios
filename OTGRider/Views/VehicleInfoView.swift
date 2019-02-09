@@ -41,11 +41,6 @@ class VehicleInfoView: DesignableView {
   var onScan: (() -> Void)?
   
   func setupUI() {
-    parkedAt.textColor = UIColor.primaryGreyColor
-    range.textColor = UIColor.primaryGreyColor
-    
-    waitToReserveAgainLabel.textColor = UIColor.primaryDarkColor
-    
     closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     reserveButton.addTarget(self, action: #selector(reserveButtonTapped), for: .touchUpInside)
     scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
@@ -53,7 +48,6 @@ class VehicleInfoView: DesignableView {
   
   func updateContentWith(_ vehicle: Vehicle) {
     self.vehicle = vehicle
-    scanButton.titleLabel?.textColor = .white
     rangeLabel.text = vehicle.remainingRange?.distanceString
     priceLabel.attributedText = generatePriceText(for: vehicle)
     batteryImageView.image = generateBatteryImage(for: vehicle)
@@ -150,6 +144,7 @@ class VehicleInfoView: DesignableView {
   
   private lazy var moneyAttributes: [NSAttributedString.Key: Any] = {
     return [
+      NSAttributedString.Key.foregroundColor : UIColor.primaryDarkColor,
       NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 19)
       ] as [NSAttributedString.Key: Any]
   }()

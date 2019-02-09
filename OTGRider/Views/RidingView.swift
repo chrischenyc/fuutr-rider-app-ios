@@ -63,11 +63,8 @@ class RidingView: DesignableView {
   }
   
   private func setupUI() {
-    rideInProgressLabel.textColor = UIColor.primaryDarkColor
-    remainingRangeLabel.textColor = UIColor.primaryGreyColor
     lockButton.addTarget(self, action: #selector(lock), for: .touchUpInside)
     endRideButton.addTarget(self, action: #selector(endRide), for: .touchUpInside)
-    scooterIsLockedLabel.textColor = UIColor.primaryDarkColor
   }
   
   @objc private func lock() {

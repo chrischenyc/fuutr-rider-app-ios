@@ -10,10 +10,8 @@ class RideFinishedViewController: UIViewController {
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var rideUsedTimeLabel: UILabel!
   @IBOutlet weak var rideFinishedTimeLabel: UILabel!
-  @IBOutlet weak var rideEndedLabel: UILabel!
   @IBOutlet weak var rideDistanceLabel: UILabel!
   @IBOutlet weak var costLabel: UILabel!
-  @IBOutlet weak var shareLabel: UILabel!
   @IBOutlet weak var reportButton: UIButton!
   @IBOutlet weak var continueButton: UIButton!
   
@@ -24,10 +22,6 @@ class RideFinishedViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    shareLabel.textColor = UIColor.primaryDarkColor
-    rideEndedLabel.textColor = UIColor.primaryGreyColor
-    rideFinishedTimeLabel.textColor = UIColor.primaryDarkColor
     
     if let ride = ride {
       updateContent(with: ride, and: currentLocation)

@@ -29,13 +29,13 @@
                                     <segue destination="Kj5-LL-YTN" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="hy4-jX-J3f"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride in progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQV-Po-Aba" userLabel="rideInProgress">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride in progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQV-Po-Aba" userLabel="rideInProgress" customClass="FTDarkLabel" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="128.5" y="34" width="118.5" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-Gf-fFM" userLabel="costLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-Gf-fFM" userLabel="costLabel" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="187.5" y="56" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -47,7 +47,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlc-Xe-brk">
                                 <rect key="frame" x="130" y="294" width="115" height="24"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze8-ZB-Ppo" userLabel="ridingTimeLabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze8-ZB-Ppo" userLabel="ridingTimeLabel" customClass="FTDarkLabel" customModule="OTGRider" customModuleProvider="target">
                                         <rect key="frame" x="39" y="0.5" width="17.5" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
@@ -80,13 +80,13 @@
                                             <constraint firstAttribute="width" constant="24" id="Khq-OP-WHg"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-bg-3Rk" userLabel="rideDistance">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-bg-3Rk" userLabel="rideDistance" customClass="FTDarkLabel" customModule="OTGRider" customModuleProvider="target">
                                         <rect key="frame" x="39" y="0.0" width="17.5" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vq-Vv-j7d" userLabel="remainingRange">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vq-Vv-j7d" userLabel="remainingRange" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
                                         <rect key="frame" x="39" y="23" width="12.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
@@ -105,13 +105,13 @@
                                     <constraint firstItem="ySS-bg-3Rk" firstAttribute="leading" secondItem="ujF-WW-Geg" secondAttribute="trailing" constant="15" id="wXd-8k-yEr"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scooter is locked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsy-uI-Koi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scooter is locked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsy-uI-Koi" customClass="FTDarkLabel" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="135" y="407" width="105" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.15c per minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyS-6O-b1H">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.15c per minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyS-6O-b1H" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="133" y="433" width="109" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -171,10 +171,8 @@
                         <outlet property="endRideButton" destination="law-FY-Wdf" id="Sf2-ed-qIe"/>
                         <outlet property="priceLabel" destination="pyS-6O-b1H" id="tHN-fC-Znn"/>
                         <outlet property="remainingRangeLabel" destination="3vq-Vv-j7d" id="Fsg-ON-7KF"/>
-                        <outlet property="rideInProgressLabel" destination="mQV-Po-Aba" id="sa1-SS-Qs9"/>
                         <outlet property="ridingDistanceLabel" destination="ySS-bg-3Rk" id="uzJ-uQ-eAB"/>
                         <outlet property="ridingTimeLabel" destination="Ze8-ZB-Ppo" id="hDx-GV-NP7"/>
-                        <outlet property="scooterIsLockedLabel" destination="gsy-uI-Koi" id="SHN-Ae-nWt"/>
                         <outlet property="unlockButton" destination="V3M-bJ-Bvo" id="Od8-kn-41F"/>
                         <segue destination="Kj5-LL-YTN" kind="unwind" unwindAction="unwindToHome:" id="Zgo-AE-Bxf"/>
                     </connections>

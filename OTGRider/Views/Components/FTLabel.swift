@@ -1,14 +1,14 @@
 //
-//  FTButton.swift
+//  FTLabel.swift
 //  OTGRider
 //
-//  Created by Chris Chen on 7/2/19.
+//  Created by Chris Chen on 9/2/19.
 //  Copyright © 2019 FUUTR. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class FTButton: UIButton {
+class FTLabel: UILabel {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
@@ -32,7 +32,7 @@ class FTButton: UIButton {
   }
   
   func commonInit() {
-    assertionFailure("Subclass of FTButton should override commonInit method")
+    assertionFailure("Subclass of FTLabel should override commonInit method")
   }
   
 }

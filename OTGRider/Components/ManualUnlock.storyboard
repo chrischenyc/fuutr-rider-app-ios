@@ -26,12 +26,12 @@
                                 </constraints>
                                 <state key="normal" image="ic-close-dark-gray-16"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7u-1O-Qyc" userLabel="enterCodeTitle">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7u-1O-Qyc" userLabel="enterCodeTitle" customClass="FTDarkLabel" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="16" y="116" width="176" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the scooter’s 6-digit code that you can find located in the handle bar." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syz-Zh-qgr" userLabel="enterCodeLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the scooter’s 6-digit code that you can find located in the handle bar." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syz-Zh-qgr" userLabel="enterCodeLabel" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="20" y="164" width="335" height="31.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
@@ -80,7 +80,6 @@
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="7b9-xg-aW0" id="jc8-uZ-jUa"/>
-                        <outlet property="enterCodeLabel" destination="syz-Zh-qgr" id="i4O-F8-pcQ"/>
                         <outlet property="pincodeView" destination="f2g-yc-wtW" id="mkj-cY-xcB"/>
                         <outlet property="showQRCodeButton" destination="7cX-Kk-xvp" id="KIW-c7-FwC"/>
                         <segue destination="lX7-YH-uhz" kind="unwind" identifier="unwindToScanUnlock" unwindAction="unwindToScanUnlock:" id="C08-s7-KT5"/>

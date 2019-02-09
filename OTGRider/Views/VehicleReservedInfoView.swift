@@ -33,17 +33,12 @@ class VehicleReservedInfoView: DesignableView {
   }
   
   private func setupUI() {
-    scooterReserved.textColor = UIColor.primaryDarkColor
-    parkLabel.textColor = UIColor.primaryGreyColor
-    timerLabel.textColor = UIColor.primaryDarkColor
-    
     cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
     scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
   }
   
   func updateContentWith(_ vehicle: Vehicle) {
     self.vehicle = vehicle
-    scanButton.titleLabel?.textColor = .white
     
     if let address = vehicle.address {
       parkLabel.text = address

@@ -12,7 +12,6 @@ import PinCodeView
 
 class ManualUnlockViewController: UnlockViewController {
   
-  @IBOutlet weak var enterCodeLabel: UILabel!
   @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var showQRCodeButton: UIButton!
   @IBOutlet weak var pincodeView: PinCodeView! {
@@ -27,7 +26,7 @@ class ManualUnlockViewController: UnlockViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    enterCodeLabel.textColor = UIColor.primaryGreyColor
+    
     showQRCodeButton.setTitleColor(UIColor.primaryRedColor, for: .normal)
     closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
     showQRCodeButton.addTarget(self, action: #selector(showQRCode), for: .touchUpInside)
