@@ -14,8 +14,6 @@ class ScanUnlockViewController: UnlockViewController {
   private let scanner = QRCode()
   
   @IBOutlet weak var placeHolderView: UIView!
-  @IBOutlet weak var closeButton: UIButton!
-  @IBOutlet weak var enterCodeButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,18 +22,10 @@ class ScanUnlockViewController: UnlockViewController {
       self.handleScanResult(stringValue)
     }
     scanner.scanFrame = view.bounds
-    closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
     placeHolderView.layer.borderColor = UIColor.white.cgColor
     placeHolderView.layer.borderWidth = 2
   }
   
-  @objc private func close() {
-    self.dismiss(animated: true, completion: nil)
-  }
-  
-  @IBAction func unwindToScanUnlock(_ segue: UIStoryboardSegue) {
-    
-  }
   
   override func viewDidAppear(_ animated: Bool) {
     guard checkScanPermissions() else { return }
@@ -47,6 +37,10 @@ class ScanUnlockViewController: UnlockViewController {
     super.prepare(for: segue, sender: sender)
     
     scanner.stopScan()
+  }
+  
+  @IBAction func unwindToScanUnlock(_ segue: UIStoryboardSegue) {
+    
   }
   
   private func handleScanResult(_ result: String) {

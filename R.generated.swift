@@ -868,25 +868,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `ManualUnlockViewController`, and contains static references to 2 segues.
+    /// This struct is generated for `ManualUnlockViewController`, and contains static references to 1 segues.
     struct manualUnlockViewController {
       /// Segue identifier `unwindToHome`.
       static let unwindToHome: Rswift.StoryboardSegueIdentifier<UIStoryboardSegueWithCompletion, ManualUnlockViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToHome")
-      /// Segue identifier `unwindToScanUnlock`.
-      static let unwindToScanUnlock: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ManualUnlockViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToScanUnlock")
       
       /// Optionally returns a typed version of segue `unwindToHome`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIStoryboardSegueWithCompletion, ManualUnlockViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.manualUnlockViewController.unwindToHome, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `unwindToScanUnlock`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func unwindToScanUnlock(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ManualUnlockViewController, UIKit.UIViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.manualUnlockViewController.unwindToScanUnlock, segue: segue)
       }
       
       fileprivate init() {}
@@ -1213,12 +1204,12 @@ struct R: Rswift.Validatable {
     static let rideFinished = _R.storyboard.rideFinished()
     /// Storyboard `RidePaused`.
     static let ridePaused = _R.storyboard.ridePaused()
-    /// Storyboard `ScanUnlock`.
-    static let scanUnlock = _R.storyboard.scanUnlock()
     /// Storyboard `Settings`.
     static let settings = _R.storyboard.settings()
     /// Storyboard `SideMenu`.
     static let sideMenu = _R.storyboard.sideMenu()
+    /// Storyboard `Unlock`.
+    static let unlock = _R.storyboard.unlock()
     /// Storyboard `Welcome`.
     static let welcome = _R.storyboard.welcome()
     
@@ -1292,11 +1283,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIStoryboard(resource: R.storyboard.ridePaused)
     }
     
-    /// `UIStoryboard(name: "ScanUnlock", bundle: ...)`
-    static func scanUnlock(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.scanUnlock)
-    }
-    
     /// `UIStoryboard(name: "Settings", bundle: ...)`
     static func settings(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.settings)
@@ -1305,6 +1291,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SideMenu", bundle: ...)`
     static func sideMenu(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.sideMenu)
+    }
+    
+    /// `UIStoryboard(name: "Unlock", bundle: ...)`
+    static func unlock(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.unlock)
     }
     
     /// `UIStoryboard(name: "Welcome", bundle: ...)`
@@ -1472,9 +1463,9 @@ struct _R: Rswift.Validatable {
       try permissions.validate()
       try rideFinished.validate()
       try ridePaused.validate()
-      try scanUnlock.validate()
       try settings.validate()
       try sideMenu.validate()
+      try unlock.validate()
       try welcome.validate()
     }
     
@@ -1722,28 +1713,6 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct scanUnlock: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
-      
-      let bundle = R.hostingBundle
-      let name = "ScanUnlock"
-      let scanUnlock = StoryboardViewControllerResource<ScanUnlockViewController>(identifier: "ScanUnlock")
-      
-      func scanUnlock(_: Void = ()) -> ScanUnlockViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: scanUnlock)
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "ic-close-white-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-white-16' is used in storyboard 'ScanUnlock', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "scooter-qr-code", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-qr-code' is used in storyboard 'ScanUnlock', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.scanUnlock().scanUnlock() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'scanUnlock' could not be loaded from storyboard 'ScanUnlock' as 'ScanUnlockViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
     struct settings: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
@@ -1767,6 +1736,28 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, *) {
         }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct unlock: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let bundle = R.hostingBundle
+      let name = "Unlock"
+      let scanUnlock = StoryboardViewControllerResource<ScanUnlockViewController>(identifier: "ScanUnlock")
+      
+      func scanUnlock(_: Void = ()) -> ScanUnlockViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: scanUnlock)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic-close-white-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-white-16' is used in storyboard 'Unlock', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "scooter-qr-code", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-qr-code' is used in storyboard 'Unlock', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.unlock().scanUnlock() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'scanUnlock' could not be loaded from storyboard 'Unlock' as 'ScanUnlockViewController'.") }
       }
       
       fileprivate init() {}

@@ -12,8 +12,6 @@ import PinCodeView
 
 class ManualUnlockViewController: UnlockViewController {
   
-  @IBOutlet weak var closeButton: UIButton!
-  @IBOutlet weak var showQRCodeButton: UIButton!
   @IBOutlet weak var pincodeView: PinCodeView! {
     didSet {
       pincodeView.delegate = self
@@ -24,24 +22,9 @@ class ManualUnlockViewController: UnlockViewController {
     }
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
-    showQRCodeButton.addTarget(self, action: #selector(showQRCode), for: .touchUpInside)
-  }
-  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     pincodeView.becomeFirstResponder()
-  }
-  
-  @objc private func close() {
-    self.dismiss(animated: true, completion: nil)
-  }
-  
-  @objc private func showQRCode() {
-    self.performSegue(withIdentifier: R.segue.manualUnlockViewController.unwindToScanUnlock, sender: self)
   }
 }
 
@@ -58,7 +41,7 @@ extension ManualUnlockViewController: PinCodeViewDelegate {
       
       callback(false)
       
-      self?.alertError(error, actionButtonTitle: "OK", actionButtonTapped: {
+      self?.alertError(error, actionButtonTapped: {
         view.resetDigits()
         self?.pincodeView.becomeFirstResponder()
       })

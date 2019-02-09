@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tqT-kc-hyJ">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,44 +15,50 @@
             <objects>
                 <viewController storyboardIdentifier="MannualUnlock" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tqT-kc-hyJ" customClass="ManualUnlockViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24I-8l-7EJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-xg-aW0">
-                                <rect key="frame" x="8" y="64" width="44" height="44"/>
+                                <rect key="frame" x="8" y="40" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="EtQ-w6-B4O"/>
                                     <constraint firstAttribute="width" constant="44" id="apH-hp-3iy"/>
                                 </constraints>
                                 <state key="normal" image="ic-close-dark-gray-16"/>
+                                <connections>
+                                    <segue destination="lX7-YH-uhz" kind="unwind" unwindAction="unwindToHome:" id="iCl-vv-eJ7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7u-1O-Qyc" userLabel="enterCodeTitle" customClass="FTDarkLabel" customModule="OTGRider" customModuleProvider="target">
-                                <rect key="frame" x="16" y="116" width="176" height="41"/>
+                                <rect key="frame" x="16" y="92" width="176" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the scooter’s 6-digit code that you can find located in the handle bar." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syz-Zh-qgr" userLabel="enterCodeLabel" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
-                                <rect key="frame" x="20" y="164" width="335" height="31.333333333333343"/>
+                                <rect key="frame" x="20" y="140" width="335" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-enter-code" translatesAutoresizingMaskIntoConstraints="NO" id="K2c-EM-ZYz">
-                                <rect key="frame" x="143.66666666666666" y="215.33333333333337" width="88" height="97"/>
+                                <rect key="frame" x="143.5" y="191.5" width="88" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="1LS-64-KK2"/>
                                     <constraint firstAttribute="height" constant="97" id="SqF-Ry-WLC"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cX-Kk-xvp" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
-                                <rect key="frame" x="50" y="433" width="275" height="45"/>
+                                <rect key="frame" x="50" y="322" width="275" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="iN8-BS-BFm"/>
                                     <constraint firstAttribute="height" constant="45" id="too-CA-GN1"/>
                                 </constraints>
                                 <state key="normal" title="Scan scotter's QR code"/>
+                                <connections>
+                                    <segue destination="lX7-YH-uhz" kind="unwind" unwindAction="unwindToScanUnlock:" id="QMh-Cl-r8k"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2g-yc-wtW" customClass="PinCodeView" customModule="PinCodeView">
-                                <rect key="frame" x="21.666666666666657" y="352.33333333333331" width="332" height="40"/>
+                                <rect key="frame" x="21.5" y="328.5" width="332" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="332" id="5pz-ir-GQQ"/>
@@ -79,10 +85,7 @@
                         <viewLayoutGuide key="safeArea" id="Q0S-jL-e1w"/>
                     </view>
                     <connections>
-                        <outlet property="closeButton" destination="7b9-xg-aW0" id="jc8-uZ-jUa"/>
                         <outlet property="pincodeView" destination="f2g-yc-wtW" id="mkj-cY-xcB"/>
-                        <outlet property="showQRCodeButton" destination="7cX-Kk-xvp" id="KIW-c7-FwC"/>
-                        <segue destination="lX7-YH-uhz" kind="unwind" identifier="unwindToScanUnlock" unwindAction="unwindToScanUnlock:" id="C08-s7-KT5"/>
                         <segue destination="lX7-YH-uhz" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="N2T-gK-JMP"/>
                     </connections>
                 </viewController>

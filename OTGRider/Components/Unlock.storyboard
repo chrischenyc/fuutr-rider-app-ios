@@ -48,6 +48,9 @@
                                     <constraint firstAttribute="width" constant="44" id="pdu-JI-kRW"/>
                                 </constraints>
                                 <state key="normal" image="ic-close-white-16"/>
+                                <connections>
+                                    <segue destination="NOz-RB-Lhf" kind="unwind" unwindAction="unwindToHome:" id="gYV-mS-PhV"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QR Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-m9-qTg">
                                 <rect key="frame" x="16" y="80" width="226.5" height="41"/>
@@ -109,8 +112,6 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="A9p-GC-SQT"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="closeButton" destination="Pfm-Kb-fBs" id="pqC-aZ-Ss2"/>
-                        <outlet property="enterCodeButton" destination="LI7-AO-IdY" id="adB-Xf-xJS"/>
                         <outlet property="placeHolderView" destination="mDa-Bf-9Db" id="vev-5f-bB7"/>
                         <segue destination="NOz-RB-Lhf" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="AUY-Pn-55a"/>
                     </connections>
