@@ -1086,7 +1086,7 @@
 		A0CFE78E21747BF000BA3F6D = {
 			isa = PBXGroup;
 			children = (
-				A0CFE79921747BF000BA3F6D /* OTGRider */,
+				A0CFE79921747BF000BA3F6D /* FUUTR */,
 				A0CFE79821747BF000BA3F6D /* Products */,
 				43F92B2007DBC13F8C59318F /* Pods */,
 				F39279E41308C0B2F4A73AC0 /* Frameworks */,
@@ -1103,7 +1103,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A0CFE79921747BF000BA3F6D /* OTGRider */ = {
+		A0CFE79921747BF000BA3F6D /* FUUTR */ = {
 			isa = PBXGroup;
 			children = (
 				A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */,
@@ -1117,7 +1117,7 @@
 				6BD47170219A47E900D36C3E /* Libraries */,
 				6BB6CB6C2196501C00B597B3 /* Supporting Files */,
 			);
-			path = OTGRider;
+			path = FUUTR;
 			sourceTree = "<group>";
 		};
 		A0CFE7BA21773B7B00BA3F6D /* Components */ = {
@@ -2241,17 +2241,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "OTGRider/FUUTR-dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/FUUTR/FUUTR-dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQXKH8T8SZ;
-				INFOPLIST_FILE = "$(SRCROOT)/OTGRider/Dev-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FUUTR/Dev-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.fuutr.ios.rider.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OTGRider/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FUUTR/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2264,17 +2264,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "OTGRider/FUUTR-dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/FUUTR/FUUTR-dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQXKH8T8SZ;
-				INFOPLIST_FILE = "$(SRCROOT)/OTGRider/Dev-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FUUTR/Dev-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.fuutr.ios.rider.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OTGRider/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FUUTR/Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2402,17 +2402,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = OTGRider/FUUTR.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/FUUTR/FUUTR.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQXKH8T8SZ;
-				INFOPLIST_FILE = OTGRider/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FUUTR/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.fuutr.ios.rider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OTGRider/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FUUTR/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2425,10 +2425,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = OTGRider/FUUTR.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/FUUTR/FUUTR.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQXKH8T8SZ;
-				INFOPLIST_FILE = OTGRider/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FUUTR/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2436,7 +2436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.fuutr.ios.rider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "OTGRider/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FUUTR/Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2448,17 +2448,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "OTGRider/FUUTR-staging.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/FUUTR/FUUTR-staging.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQXKH8T8SZ;
-				INFOPLIST_FILE = "$(SRCROOT)/OTGRider/Staging-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FUUTR/Staging-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.ios.rider.staging;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OTGRider/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FUUTR/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2471,10 +2471,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "OTGRider/FUUTR-staging.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/FUUTR/FUUTR-staging.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VQXKH8T8SZ;
-				INFOPLIST_FILE = "$(SRCROOT)/OTGRider/Staging-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FUUTR/Staging-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2482,7 +2482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.otgride.ios.rider.staging;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "OTGRider/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FUUTR/Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
