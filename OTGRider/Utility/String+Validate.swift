@@ -20,11 +20,4 @@ extension String {
     let regex = try! NSRegularExpression(pattern: "^(?=.*\\d).{6,16}$", options: .caseInsensitive)
     return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
   }
-  
-  func isFourDigits() -> Bool {
-    let regex = "^[0-9]{4}$"
-    
-    let test = NSPredicate(format:"SELF MATCHES %@", regex)
-    return test.evaluate(with: self)
-  }
 }

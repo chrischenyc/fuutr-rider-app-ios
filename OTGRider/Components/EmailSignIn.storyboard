@@ -355,7 +355,7 @@
             </objects>
             <point key="canvasLocation" x="1710" y="947"/>
         </scene>
-        <!--Verify Code-->
+        <!--Verification Code-->
         <scene sceneID="aqG-On-dBE">
             <objects>
                 <viewController id="A9q-Lc-jkk" customClass="ResetPasswordVerifyViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
@@ -363,73 +363,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6-digit code we sent to your email" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcO-Nt-09O">
+                                <rect key="frame" x="16" y="116" width="343" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fhn-pV-hhQ">
-                                <rect key="frame" x="16" y="223" width="343" height="221"/>
+                                <rect key="frame" x="16" y="227.5" width="343" height="212"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCO-nU-m79">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCO-nU-m79" customClass="PinCodeView" customModule="PinCodeView">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="123456" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MdB-rX-DOP">
-                                                <rect key="frame" x="16" y="0.0" width="311" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="N80-Yj-4nl"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                                <connections>
-                                                    <action selector="codeChanged:" destination="A9q-Lc-jkk" eventType="editingChanged" id="TJZ-NG-4L5"/>
-                                                </connections>
-                                            </textField>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="MdB-rX-DOP" firstAttribute="top" secondItem="vCO-nU-m79" secondAttribute="top" id="RiW-46-sIf"/>
-                                            <constraint firstAttribute="bottom" secondItem="MdB-rX-DOP" secondAttribute="bottom" id="qT1-r2-6pP"/>
-                                            <constraint firstItem="MdB-rX-DOP" firstAttribute="leading" secondItem="vCO-nU-m79" secondAttribute="leading" constant="16" id="rHB-f2-fjp"/>
-                                            <constraint firstAttribute="trailing" secondItem="MdB-rX-DOP" secondAttribute="trailing" constant="16" id="zK6-Za-euj"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTu-W4-j5u">
-                                        <rect key="frame" x="0.0" y="48" width="343" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="Du3-NS-u9w"/>
+                                            <constraint firstAttribute="height" constant="40" id="gjg-r4-yJP"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebo-cN-Mn6">
-                                        <rect key="frame" x="0.0" y="57" width="343" height="164"/>
+                                        <rect key="frame" x="0.0" y="48" width="343" height="164"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gbH-Tn-Sh9">
-                                                <rect key="frame" x="16" y="56" width="311" height="44"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bm-Hx-5hq" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="7" width="58" height="30"/>
-                                                        <state key="normal" title="Re-send"/>
-                                                        <connections>
-                                                            <action selector="resendButtonTapped:" destination="A9q-Lc-jkk" eventType="touchUpInside" id="Eos-f6-aer"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BH3-XN-rB3" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
-                                                        <rect key="frame" x="223" y="0.0" width="88" height="44"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="88" id="Li5-Rc-Egy"/>
-                                                            <constraint firstAttribute="height" constant="44" id="WPu-EJ-LMI"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Verify"/>
-                                                        <connections>
-                                                            <action selector="submitButtonTapped:" destination="A9q-Lc-jkk" eventType="touchUpInside" id="yDt-HX-uN7"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bm-Hx-5hq" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
+                                                <rect key="frame" x="135.5" y="56" width="72" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="J8w-ik-oid"/>
+                                                    <constraint firstAttribute="height" constant="44" id="R5y-4a-acf"/>
+                                                </constraints>
+                                                <state key="normal" title="Re-send"/>
+                                                <connections>
+                                                    <action selector="resendButtonTapped:" destination="A9q-Lc-jkk" eventType="touchUpInside" id="Eos-f6-aer"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="gbH-Tn-Sh9" secondAttribute="trailing" constant="16" id="kaG-LV-SJA"/>
-                                            <constraint firstAttribute="bottom" secondItem="gbH-Tn-Sh9" secondAttribute="bottom" constant="64" id="xip-EI-lwj"/>
-                                            <constraint firstItem="gbH-Tn-Sh9" firstAttribute="top" secondItem="ebo-cN-Mn6" secondAttribute="top" constant="56" id="ypB-2E-p4O"/>
-                                            <constraint firstItem="gbH-Tn-Sh9" firstAttribute="leading" secondItem="ebo-cN-Mn6" secondAttribute="leading" constant="16" id="z9I-9d-FGe"/>
+                                            <constraint firstAttribute="bottom" secondItem="4Bm-Hx-5hq" secondAttribute="bottom" constant="64" id="Brc-Lx-HQe"/>
+                                            <constraint firstItem="4Bm-Hx-5hq" firstAttribute="top" secondItem="ebo-cN-Mn6" secondAttribute="top" constant="56" id="HMl-Md-xWY"/>
+                                            <constraint firstItem="4Bm-Hx-5hq" firstAttribute="centerX" secondItem="ebo-cN-Mn6" secondAttribute="centerX" id="TgV-5N-zJv"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -438,12 +407,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fhn-pV-hhQ" firstAttribute="centerY" secondItem="74H-mF-rct" secondAttribute="centerY" id="473-B8-pDN"/>
+                            <constraint firstItem="3Ck-CL-bRu" firstAttribute="trailing" secondItem="OcO-Nt-09O" secondAttribute="trailing" constant="16" id="UcK-6r-iCW"/>
                             <constraint firstItem="3Ck-CL-bRu" firstAttribute="trailing" secondItem="fhn-pV-hhQ" secondAttribute="trailing" constant="16" id="adY-X0-jVE"/>
+                            <constraint firstItem="OcO-Nt-09O" firstAttribute="leading" secondItem="74H-mF-rct" secondAttribute="leading" constant="16" id="fIO-Eg-f5k"/>
                             <constraint firstItem="fhn-pV-hhQ" firstAttribute="leading" secondItem="3Ck-CL-bRu" secondAttribute="leading" constant="16" id="kdL-Pb-Hbt"/>
+                            <constraint firstItem="OcO-Nt-09O" firstAttribute="top" secondItem="3Ck-CL-bRu" secondAttribute="top" id="oml-Y0-ZWv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Ck-CL-bRu"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Verify Code" id="jgP-ce-6OK">
+                    <navigationItem key="navigationItem" title="Verification Code" id="jgP-ce-6OK">
                         <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" style="plain" id="dVM-iy-RVl">
                             <connections>
                                 <segue destination="Ais-DC-SNb" kind="unwind" unwindAction="unwindToResetPasswordRequest:" id="Xex-YJ-GbY"/>
@@ -451,10 +423,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="codeTextField" destination="MdB-rX-DOP" id="2M9-0M-qvj"/>
+                        <outlet property="pinCodeView" destination="vCO-nU-m79" id="1NT-1x-9Ob"/>
                         <outlet property="resendButton" destination="4Bm-Hx-5hq" id="bu7-Tz-FPC"/>
                         <outlet property="stackView" destination="fhn-pV-hhQ" id="FK6-jB-Qzg"/>
-                        <outlet property="submitButton" destination="BH3-XN-rB3" id="J5g-gr-p97"/>
                         <segue destination="GTQ-AX-sNw" kind="show" identifier="showSetPassword" id="AXC-bf-mK6"/>
                     </connections>
                 </viewController>
