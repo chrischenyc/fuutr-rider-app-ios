@@ -27,7 +27,6 @@ class ManualUnlockViewController: UnlockViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    showQRCodeButton.setTitleColor(UIColor.primaryRedColor, for: .normal)
     closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
     showQRCodeButton.addTarget(self, action: #selector(showQRCode), for: .touchUpInside)
   }

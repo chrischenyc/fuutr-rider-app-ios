@@ -43,7 +43,7 @@
                                     <constraint firstAttribute="height" constant="97" id="SqF-Ry-WLC"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cX-Kk-xvp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cX-Kk-xvp" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
                                 <rect key="frame" x="50" y="433" width="275" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="iN8-BS-BFm"/>
