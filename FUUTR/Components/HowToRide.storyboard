@@ -13,7 +13,7 @@
         <!--How To Ride Single Page View Controller-->
         <scene sceneID="Tr9-oa-4Hj">
             <objects>
-                <viewController storyboardIdentifier="HowToRideSinglePageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ALt-4A-SEv" customClass="HowToRideSinglePageViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HowToRideSinglePageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ALt-4A-SEv" customClass="HowToRideSinglePageViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iIG-88-mUs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,7 @@
                                 <state key="normal" title="Button" image="btn-arrow-next"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uLC-ph-gyF" firstAttribute="top" secondItem="hgJ-zc-kTh" secondAttribute="bottom" constant="7" id="7mh-ux-Gzc"/>
                             <constraint firstItem="8sH-1y-g7h" firstAttribute="bottom" secondItem="VZK-IQ-YAX" secondAttribute="bottom" constant="27" id="8Oh-Zu-CsJ"/>
@@ -96,14 +96,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5R-Mq-VAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424.8" y="78.710644677661179"/>
+            <point key="canvasLocation" x="994" y="27"/>
         </scene>
         <!--How To Ride View Controller-->
         <scene sceneID="E6k-QX-go1">
             <objects>
-                <pageViewController storyboardIdentifier="HowToRide" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="F5A-xg-PPy" customClass="HowToRideViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="HowToRide" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="F5A-xg-PPy" customClass="HowToRideViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFT-gH-L5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="231" y="27"/>
         </scene>
     </scenes>
     <resources>

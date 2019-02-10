@@ -9,6 +9,7 @@ class HowToRideViewController: UIPageViewController {
   var pageControl = UIPageControl()
   let pageControlWidth: CGFloat = 130
   
+  // MARK: - lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -21,6 +22,7 @@ class HowToRideViewController: UIPageViewController {
     }
   }
   
+  // MARK: - private
   private(set) lazy var pages: [UIViewController] = {
     let page1 = getViewController(withDescription: "Push the vehicle twice with your foot to get started.",
                                   image: R.image.howToRide1()!)
@@ -49,7 +51,7 @@ class HowToRideViewController: UIPageViewController {
   
   fileprivate func getViewController(withDescription: String, image: UIImage) -> HowToRideSinglePageViewController
   {
-    let viewController = R.storyboard.howToRide().instantiateInitialViewController() as! HowToRideSinglePageViewController
+    let viewController = R.storyboard.howToRide.howToRideSinglePageViewController()!
     viewController.descriptionText = withDescription
     viewController.image = image
     viewController.delegate = self
@@ -68,6 +70,7 @@ class HowToRideViewController: UIPageViewController {
   }
 }
 
+// MARK: - UIPageViewControllerDelegate, UIPageViewControllerDataSource
 extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
   
   public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -93,6 +96,7 @@ extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewContr
   }
 }
 
+// MARK: - HowToRideSinglePageDelegate
 extension HowToRideViewController: HowToRideSinglePageDelegate {
   func showNextPage() {
     let currentPageIndex = pageControl.currentPage
