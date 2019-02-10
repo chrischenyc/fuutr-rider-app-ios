@@ -713,7 +713,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 22 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 23 view controllers.
   struct segue {
     /// This struct is generated for `EditEmailViewController`, and contains static references to 1 segues.
     struct editEmailViewController {
@@ -848,6 +848,30 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showRideSummary(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HistoryRidesTableViewController, UIKit.UINavigationController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.historyRidesTableViewController.showRideSummary, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `HowToRideViewController`, and contains static references to 2 segues.
+    struct howToRideViewController {
+      /// Segue identifier `embedPageViewController`.
+      static let embedPageViewController: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HowToRideViewController, UIKit.UIPageViewController> = Rswift.StoryboardSegueIdentifier(identifier: "embedPageViewController")
+      /// Segue identifier `unwindToHome`.
+      static let unwindToHome: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HowToRideViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToHome")
+      
+      /// Optionally returns a typed version of segue `embedPageViewController`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func embedPageViewController(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HowToRideViewController, UIKit.UIPageViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.howToRideViewController.embedPageViewController, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `unwindToHome`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HowToRideViewController, UIKit.UIViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.howToRideViewController.unwindToHome, segue: segue)
       }
       
       fileprivate init() {}
@@ -1515,25 +1539,67 @@ struct _R: Rswift.Validatable {
       typealias InitialController = HowToRideViewController
       
       let bundle = R.hostingBundle
-      let howToRide = StoryboardViewControllerResource<HowToRideViewController>(identifier: "HowToRide")
-      let howToRideSinglePageViewController = StoryboardViewControllerResource<HowToRideSinglePageViewController>(identifier: "HowToRideSinglePageViewController")
+      let howToRide = StoryboardViewControllerResource<UIKit.UIPageViewController>(identifier: "HowToRide")
       let name = "HowToRide"
+      let page1 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page1")
+      let page2 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page2")
+      let page3 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page3")
+      let page4 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page4")
+      let page5 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page5")
+      let page6 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page6")
+      let page7 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page7")
       
-      func howToRide(_: Void = ()) -> HowToRideViewController? {
+      func howToRide(_: Void = ()) -> UIKit.UIPageViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: howToRide)
       }
       
-      func howToRideSinglePageViewController(_: Void = ()) -> HowToRideSinglePageViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: howToRideSinglePageViewController)
+      func page1(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: page1)
+      }
+      
+      func page2(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: page2)
+      }
+      
+      func page3(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: page3)
+      }
+      
+      func page4(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: page4)
+      }
+      
+      func page5(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: page5)
+      }
+      
+      func page6(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: page6)
+      }
+      
+      func page7(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: page7)
       }
       
       static func validate() throws {
         if UIKit.UIImage(named: "btn-arrow-next", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-arrow-next' is used in storyboard 'HowToRide', but couldn't be loaded.") }
         if UIKit.UIImage(named: "how-to-ride-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-1' is used in storyboard 'HowToRide', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "how-to-ride-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-2' is used in storyboard 'HowToRide', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "how-to-ride-3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-3' is used in storyboard 'HowToRide', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "how-to-ride-4", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-4' is used in storyboard 'HowToRide', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "how-to-ride-5", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-5' is used in storyboard 'HowToRide', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "how-to-ride-6", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-6' is used in storyboard 'HowToRide', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "how-to-ride-7", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-7' is used in storyboard 'HowToRide', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
-        if _R.storyboard.howToRide().howToRide() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'howToRide' could not be loaded from storyboard 'HowToRide' as 'HowToRideViewController'.") }
-        if _R.storyboard.howToRide().howToRideSinglePageViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'howToRideSinglePageViewController' could not be loaded from storyboard 'HowToRide' as 'HowToRideSinglePageViewController'.") }
+        if _R.storyboard.howToRide().howToRide() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'howToRide' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIPageViewController'.") }
+        if _R.storyboard.howToRide().page1() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page1' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
+        if _R.storyboard.howToRide().page2() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page2' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
+        if _R.storyboard.howToRide().page3() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page3' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
+        if _R.storyboard.howToRide().page4() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page4' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
+        if _R.storyboard.howToRide().page5() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page5' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
+        if _R.storyboard.howToRide().page6() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page6' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
+        if _R.storyboard.howToRide().page7() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page7' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
       }
       
       fileprivate init() {}

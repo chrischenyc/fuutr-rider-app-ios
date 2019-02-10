@@ -5,74 +5,76 @@
 //  Copyright © 2019 FUUTR. All rights reserved.
 //
 
-class HowToRideViewController: UIPageViewController {
-  var pageControl = UIPageControl()
-  let pageControlWidth: CGFloat = 130
+import SwiftyUserDefaults
+
+class HowToRideViewController: UIViewController {
+  @IBOutlet weak var pageControl: UIPageControl! {
+    didSet {
+      pageControl.numberOfPages = pages.count
+      pageControl.currentPage = 0
+      pageControl.tintColor = UIColor.primaryBlurredColor
+      pageControl.pageIndicatorTintColor = UIColor.primaryBlurredColor
+      pageControl.currentPageIndicatorTintColor = UIColor.white
+      pageControl.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+    }
+  }
+  @IBOutlet weak var nextButton: UIButton!
+  
+  var pageViewController: UIPageViewController? {
+    didSet {
+      pageViewController?.dataSource = self
+      pageViewController?.delegate = self
+      
+      if let firstViewController = pages.first {
+        pageViewController?.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+      }
+    }
+  }
   
   // MARK: - lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    dataSource = self
-    delegate = self
-    configurePageControl()
-    
-    if let firstViewController = pages.first {
-      setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+    view.backgroundColor = UIColor.primaryRedColor
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == R.segue.howToRideViewController.embedPageViewController.identifier,
+      let pageViewController = segue.destination as? UIPageViewController {
+      self.pageViewController = pageViewController
     }
   }
   
+  // MARK: - user actions
+  @IBAction func nextTapped(_ sender: Any) {
+    let currentPageIndex = pageControl.currentPage
+    let nextPage = pages[currentPageIndex + 1]
+    pageViewController?.setViewControllers([nextPage], direction: .forward, animated: true, completion: nil)
+    pageControl.currentPage = currentPageIndex + 1
+    nextButton.isHidden = pageControl.currentPage == pages.count - 1
+  }
+  
+  @IBAction func skipTapped(_ sender: Any) {
+    Defaults[.userTrainedHowToRide] = true
+    performSegue(withIdentifier: R.segue.howToRideViewController.unwindToHome, sender: nil)
+  }
+  
   // MARK: - private
-  private(set) lazy var pages: [UIViewController] = {
-    let page1 = getViewController(withDescription: "Push the vehicle twice with your foot to get started.",
-                                  image: R.image.howToRide1()!)
-    
-    let page2 = getViewController(withDescription: "Push down the right hand throttle to use E-Motor.\nPush down left hand throttle to brake or use back wheel brake.",
-                                  image: R.image.howToRide2()!)
-    
-    let page3 = getViewController(withDescription: "Always keep both feet on the deck of the vehicle while riding.",
-                                  image: R.image.howToRide3()!)
-    
-    let page4 = getViewController(withDescription: "Always use shared paths or bike lanes and always ride to the left.",
-                                  image: R.image.howToRide4()!)
-    
-    let page5 = getViewController(withDescription: "DO NOT ride FUUTR vehicles on the sidewalk. Follow all road rules.",
-                                  image: R.image.howToRide5()!)
-    
-    let page6 = getViewController(withDescription: "Park your vehicle in a dedicated FUUTR Parking Hub or close to the curb, out of the way of pedestrians. Your parking compliance is strictly monitored via a photo at the end of ride.",
-                                  image: R.image.howToRide6()!)
-    
-    let page7 = getViewController(withDescription: "At all times please wear either a provided FUUTR helmet or your own personal helmet.",
-                                  image: R.image.howToRide7()!)
-    page7.isLastPage = true
-    
-    return [page1, page2, page3, page4, page5, page6, page7]
+  private(set) lazy var pages: [UIViewController] = {    
+    return [
+      R.storyboard.howToRide.page1()!,
+      R.storyboard.howToRide.page2()!,
+      R.storyboard.howToRide.page3()!,
+      R.storyboard.howToRide.page4()!,
+      R.storyboard.howToRide.page5()!,
+      R.storyboard.howToRide.page6()!,
+      R.storyboard.howToRide.page7()!,
+    ]
   }()
-  
-  fileprivate func getViewController(withDescription: String, image: UIImage) -> HowToRideSinglePageViewController
-  {
-    let viewController = R.storyboard.howToRide.howToRideSinglePageViewController()!
-    viewController.descriptionText = withDescription
-    viewController.image = image
-    viewController.delegate = self
-    return viewController
-  }
-  
-  func configurePageControl() {
-    pageControl = UIPageControl(frame: CGRect(x: (UIScreen.main.bounds.width - pageControlWidth) / 2, y: UIScreen.main.bounds.height - 173, width: 130, height: 10))
-    pageControl.numberOfPages = pages.count
-    pageControl.currentPage = 0
-    pageControl.tintColor = UIColor.primaryBlurredColor
-    pageControl.pageIndicatorTintColor = UIColor.primaryBlurredColor
-    pageControl.currentPageIndicatorTintColor = UIColor.white
-    pageControl.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-    view.addSubview(pageControl)
-  }
 }
 
-// MARK: - UIPageViewControllerDelegate, UIPageViewControllerDataSource
-extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-  
+// MARK: - UIPageViewControllerDataSource
+extension HowToRideViewController: UIPageViewControllerDataSource {
   public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
     guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
     let previousIndex = viewControllerIndex - 1
@@ -89,19 +91,22 @@ extension HowToRideViewController: UIPageViewControllerDelegate, UIPageViewContr
     guard pages.count > nextIndex else { return nil }
     return pages[nextIndex]
   }
-  
-  func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-    let pageContentViewController = pageViewController.viewControllers![0]
-    pageControl.currentPage = pages.index(of: pageContentViewController)!
-  }
 }
 
-// MARK: - HowToRideSinglePageDelegate
-extension HowToRideViewController: HowToRideSinglePageDelegate {
-  func showNextPage() {
-    let currentPageIndex = pageControl.currentPage
-    let nextPage = pages[currentPageIndex + 1]
-    setViewControllers([nextPage], direction: .forward, animated: true, completion: nil)
-    pageControl.currentPage = currentPageIndex + 1
+// MARK: - UIPageViewControllerDelegate
+extension HowToRideViewController: UIPageViewControllerDelegate {
+  func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    let pageContentViewController = pageViewController.viewControllers!.first!
+    pageControl.currentPage = pages.index(of: pageContentViewController)!
+    
+    if pageControl.currentPage < pages.count - 1 {
+      nextButton.isHidden = false
+    }
+  }
+  
+  func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+    if pages.index(of: pendingViewControllers.first!) == pages.count - 1 {
+      nextButton.isHidden = true
+    }
   }
 }

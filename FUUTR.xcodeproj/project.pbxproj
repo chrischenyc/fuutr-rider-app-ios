@@ -172,6 +172,15 @@
 		6BB2082D219F8AA3008E5EF1 /* RideService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2082C219F8AA3008E5EF1 /* RideService.swift */; };
 		6BB2082E219F8AA3008E5EF1 /* RideService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2082C219F8AA3008E5EF1 /* RideService.swift */; };
 		6BB2082F219F8AA3008E5EF1 /* RideService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2082C219F8AA3008E5EF1 /* RideService.swift */; };
+		6BB50ED12210C95300F8BBF4 /* FTWhiteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED02210C95300F8BBF4 /* FTWhiteLabel.swift */; };
+		6BB50ED22210C95300F8BBF4 /* FTWhiteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED02210C95300F8BBF4 /* FTWhiteLabel.swift */; };
+		6BB50ED32210C95300F8BBF4 /* FTWhiteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED02210C95300F8BBF4 /* FTWhiteLabel.swift */; };
+		6BB50ED52210C99C00F8BBF4 /* FTWhiteBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED42210C99C00F8BBF4 /* FTWhiteBasicButton.swift */; };
+		6BB50ED62210C99C00F8BBF4 /* FTWhiteBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED42210C99C00F8BBF4 /* FTWhiteBasicButton.swift */; };
+		6BB50ED72210C99C00F8BBF4 /* FTWhiteBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED42210C99C00F8BBF4 /* FTWhiteBasicButton.swift */; };
+		6BB50ED92210CFB100F8BBF4 /* FTWhitePrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED82210CFB100F8BBF4 /* FTWhitePrimaryButton.swift */; };
+		6BB50EDA2210CFB100F8BBF4 /* FTWhitePrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED82210CFB100F8BBF4 /* FTWhitePrimaryButton.swift */; };
+		6BB50EDB2210CFB100F8BBF4 /* FTWhitePrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED82210CFB100F8BBF4 /* FTWhitePrimaryButton.swift */; };
 		6BB6CB6E2196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
 		6BB6CB6F2196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
 		6BB6CB702196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
@@ -404,11 +413,8 @@
 		9191983521FDC95600CF5F2D /* RidingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191983421FDC95600CF5F2D /* RidingView.swift */; };
 		9191983721FDC96200CF5F2D /* RidingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9191983621FDC96200CF5F2D /* RidingView.xib */; };
 		9197552F21FBE3460069D25A /* HowToRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197552E21FBE3460069D25A /* HowToRideViewController.swift */; };
-		9197553121FBE8900069D25A /* HowToRideSinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197553021FBE8900069D25A /* HowToRideSinglePageViewController.swift */; };
 		9197553221FBF5280069D25A /* HowToRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197552E21FBE3460069D25A /* HowToRideViewController.swift */; };
 		9197553321FBF5290069D25A /* HowToRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197552E21FBE3460069D25A /* HowToRideViewController.swift */; };
-		9197553421FBF52D0069D25A /* HowToRideSinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197553021FBE8900069D25A /* HowToRideSinglePageViewController.swift */; };
-		9197553521FBF52E0069D25A /* HowToRideSinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197553021FBE8900069D25A /* HowToRideSinglePageViewController.swift */; };
 		9197553B21FC32E20069D25A /* VehicleInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9197553A21FC32E20069D25A /* VehicleInfoView.xib */; };
 		9197553C21FC32E20069D25A /* VehicleInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9197553A21FC32E20069D25A /* VehicleInfoView.xib */; };
 		9197553D21FC32E20069D25A /* VehicleInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9197553A21FC32E20069D25A /* VehicleInfoView.xib */; };
@@ -509,6 +515,9 @@
 		6B91D75921FB1D8400B84244 /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		6B91D75D21FB1F2A00B84244 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		6BB2082C219F8AA3008E5EF1 /* RideService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideService.swift; sourceTree = "<group>"; };
+		6BB50ED02210C95300F8BBF4 /* FTWhiteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTWhiteLabel.swift; sourceTree = "<group>"; };
+		6BB50ED42210C99C00F8BBF4 /* FTWhiteBasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTWhiteBasicButton.swift; sourceTree = "<group>"; };
+		6BB50ED82210CFB100F8BBF4 /* FTWhitePrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTWhitePrimaryButton.swift; sourceTree = "<group>"; };
 		6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		6BBC6A0021A0DD27003C910B /* ride.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ride.gpx; sourceTree = "<group>"; };
@@ -634,7 +643,6 @@
 		9191983421FDC95600CF5F2D /* RidingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidingView.swift; sourceTree = "<group>"; };
 		9191983621FDC96200CF5F2D /* RidingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RidingView.xib; sourceTree = "<group>"; };
 		9197552E21FBE3460069D25A /* HowToRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToRideViewController.swift; sourceTree = "<group>"; };
-		9197553021FBE8900069D25A /* HowToRideSinglePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToRideSinglePageViewController.swift; sourceTree = "<group>"; };
 		9197553A21FC32E20069D25A /* VehicleInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleInfoView.xib; sourceTree = "<group>"; };
 		9197553E21FC3A230069D25A /* VehicleInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInfoView.swift; sourceTree = "<group>"; };
 		9197554221FC3A4D0069D25A /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
@@ -734,12 +742,15 @@
 			children = (
 				6BDEEF07220BDEDA00C0FBB8 /* FTButton.swift */,
 				6B720FF1220ADC9A0081BCF1 /* FTRedPrimaryButton.swift */,
+				6BB50ED82210CFB100F8BBF4 /* FTWhitePrimaryButton.swift */,
 				6B720FF5220ADDED0081BCF1 /* FTRedInverseButton.swift */,
 				6B720FEC220AD96A0081BCF1 /* FTRedBasicButton.swift */,
 				6B720FF9220ADFCE0081BCF1 /* FTDarkBasicButton.swift */,
+				6BB50ED42210C99C00F8BBF4 /* FTWhiteBasicButton.swift */,
 				6BDEEFC5220E7C6D00C0FBB8 /* FTLabel.swift */,
 				6BDEEFC9220E7CBA00C0FBB8 /* FTDarkLabel.swift */,
 				6BDEEFCD220E7D0E00C0FBB8 /* FTLightLabel.swift */,
+				6BB50ED02210C95300F8BBF4 /* FTWhiteLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -886,6 +897,8 @@
 			children = (
 				6BDEEF9C220D32C800C0FBB8 /* Main.storyboard */,
 				A0CFE79C21747BF000BA3F6D /* MapViewController.swift */,
+				6BDEEF50220C1B1800C0FBB8 /* HowToRide.storyboard */,
+				9197552E21FBE3460069D25A /* HowToRideViewController.swift */,
 				6BDEEF6C220C1BF800C0FBB8 /* RidePaused.storyboard */,
 				91FA7F9D21FE981E00581BB5 /* RidePausedViewController.swift */,
 				6BDEEF44220C1A7800C0FBB8 /* RideParkedPhoto.storyboard */,
@@ -1075,16 +1088,6 @@
 			name = Unlock;
 			sourceTree = "<group>";
 		};
-		9197552D21FBE3300069D25A /* HowToRide */ = {
-			isa = PBXGroup;
-			children = (
-				6BDEEF50220C1B1800C0FBB8 /* HowToRide.storyboard */,
-				9197552E21FBE3460069D25A /* HowToRideViewController.swift */,
-				9197553021FBE8900069D25A /* HowToRideSinglePageViewController.swift */,
-			);
-			name = HowToRide;
-			sourceTree = "<group>";
-		};
 		A0CFE78E21747BF000BA3F6D = {
 			isa = PBXGroup;
 			children = (
@@ -1132,7 +1135,6 @@
 				6BB6CB752196F86400B597B3 /* Auth */,
 				6BB6CB762196F87E00B597B3 /* Permissions */,
 				6BDEEFD1220EB6D000C0FBB8 /* Unlock */,
-				9197552D21FBE3300069D25A /* HowToRide */,
 				6BCEFBD6219960A9003FB097 /* Ride */,
 				6BB6CB782196F89800B597B3 /* Account */,
 				6B8E30CA219FDE6600292B4E /* History */,
@@ -1856,7 +1858,6 @@
 				6BD47286219A4CAA00D36C3E /* GMUStyle.m in Sources */,
 				6BDE915F218C79C1003F976B /* ServiceError.swift in Sources */,
 				6BDE9120218C19DF003F976B /* MapViewController.swift in Sources */,
-				9197553521FBF52E0069D25A /* HowToRideSinglePageViewController.swift in Sources */,
 				6B473DB222029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472B0219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B473DB62202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
@@ -1897,9 +1898,11 @@
 				6B0D921921FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47268219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF22195C77A00553C3D /* TopUpViewController.swift in Sources */,
+				6BB50ED32210C95300F8BBF4 /* FTWhiteLabel.swift in Sources */,
 				91FA7FA021FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
 				6B1D1E89219A232300F72798 /* Vehicle.swift in Sources */,
 				6BB6CB742196591D00B597B3 /* UIColor+Hex.swift in Sources */,
+				6BB50EDB2210CFB100F8BBF4 /* FTWhitePrimaryButton.swift in Sources */,
 				6B720FEF220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */,
 				6BDE9153218C3073003F976B /* APIClient.swift in Sources */,
 				6BDE9126218C19DF003F976B /* WelcomeViewController.swift in Sources */,
@@ -1922,6 +1925,7 @@
 				6BD472A1219A4CAA00D36C3E /* GMUWrappingDictionaryKey.m in Sources */,
 				6BD4727D219A4CAA00D36C3E /* GMUStyleMap.m in Sources */,
 				6B31E1F92198141B00CB424E /* Date+Format.swift in Sources */,
+				6BB50ED72210C99C00F8BBF4 /* FTWhiteBasicButton.swift in Sources */,
 				6B2C9BB321A01BE80042432D /* TransactionCell.swift in Sources */,
 				6B2C9BB721A01D7F0042432D /* Transaction.swift in Sources */,
 				9181CB9721FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */,
@@ -1980,7 +1984,6 @@
 				6BD47284219A4CAA00D36C3E /* GMUStyle.m in Sources */,
 				6BDE915D218C79C1003F976B /* ServiceError.swift in Sources */,
 				A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */,
-				9197553121FBE8900069D25A /* HowToRideSinglePageViewController.swift in Sources */,
 				6B473DB022029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472AE219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B473DB42202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
@@ -2021,9 +2024,11 @@
 				6B0D921721FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47266219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF02195C77A00553C3D /* TopUpViewController.swift in Sources */,
+				6BB50ED12210C95300F8BBF4 /* FTWhiteLabel.swift in Sources */,
 				91FA7F9E21FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
 				6B1D1E87219A232300F72798 /* Vehicle.swift in Sources */,
 				6BB6CB722196591D00B597B3 /* UIColor+Hex.swift in Sources */,
+				6BB50ED92210CFB100F8BBF4 /* FTWhitePrimaryButton.swift in Sources */,
 				6B720FED220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */,
 				6BDE9151218C3073003F976B /* APIClient.swift in Sources */,
 				6B8731C02189C7FA00CC2651 /* WelcomeViewController.swift in Sources */,
@@ -2046,6 +2051,7 @@
 				6BD4729F219A4CAA00D36C3E /* GMUWrappingDictionaryKey.m in Sources */,
 				6BD4727B219A4CAA00D36C3E /* GMUStyleMap.m in Sources */,
 				6B31E1F72198141B00CB424E /* Date+Format.swift in Sources */,
+				6BB50ED52210C99C00F8BBF4 /* FTWhiteBasicButton.swift in Sources */,
 				6B2C9BB121A01BE80042432D /* TransactionCell.swift in Sources */,
 				6B2C9BB521A01D7F0042432D /* Transaction.swift in Sources */,
 				9181CB9521FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */,
@@ -2104,7 +2110,6 @@
 				6BD47285219A4CAA00D36C3E /* GMUStyle.m in Sources */,
 				6BDE915E218C79C1003F976B /* ServiceError.swift in Sources */,
 				A0CFE7AE21747D2B00BA3F6D /* MapViewController.swift in Sources */,
-				9197553421FBF52D0069D25A /* HowToRideSinglePageViewController.swift in Sources */,
 				6B473DB122029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472AF219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B473DB52202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
@@ -2145,9 +2150,11 @@
 				6B0D921821FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47267219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6B214AF12195C77A00553C3D /* TopUpViewController.swift in Sources */,
+				6BB50ED22210C95300F8BBF4 /* FTWhiteLabel.swift in Sources */,
 				91FA7F9F21FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
 				6B1D1E88219A232300F72798 /* Vehicle.swift in Sources */,
 				6BB6CB732196591D00B597B3 /* UIColor+Hex.swift in Sources */,
+				6BB50EDA2210CFB100F8BBF4 /* FTWhitePrimaryButton.swift in Sources */,
 				6B720FEE220AD96A0081BCF1 /* FTRedBasicButton.swift in Sources */,
 				6BDE9152218C3073003F976B /* APIClient.swift in Sources */,
 				6B8731C12189C7FA00CC2651 /* WelcomeViewController.swift in Sources */,
@@ -2170,6 +2177,7 @@
 				6BD472A0219A4CAA00D36C3E /* GMUWrappingDictionaryKey.m in Sources */,
 				6BD4727C219A4CAA00D36C3E /* GMUStyleMap.m in Sources */,
 				6B31E1F82198141B00CB424E /* Date+Format.swift in Sources */,
+				6BB50ED62210C99C00F8BBF4 /* FTWhiteBasicButton.swift in Sources */,
 				6B2C9BB221A01BE80042432D /* TransactionCell.swift in Sources */,
 				6B2C9BB621A01D7F0042432D /* Transaction.swift in Sources */,
 				9181CB9621FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */,
