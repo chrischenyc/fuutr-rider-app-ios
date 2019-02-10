@@ -93,7 +93,7 @@
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,7 +105,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-OG-jme" userLabel="unlockView">
                                 <rect key="frame" x="0.0" y="562" width="375" height="105"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-Ss-nph" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-Ss-nph" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
                                         <rect key="frame" x="70" y="30.5" width="235" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="cNv-rs-9zD"/>
@@ -126,21 +126,21 @@
                                     <constraint firstItem="1MR-Ss-nph" firstAttribute="centerY" secondItem="uh5-OG-jme" secondAttribute="centerY" id="mlh-dq-v4i"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-nd-pNL" userLabel="vehicleInfoView" customClass="VehicleInfoView" customModule="OTGRider" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="386" width="375" height="281"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-nd-pNL" userLabel="vehicleInfoView" customClass="VehicleInfoView" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="403" width="375" height="264"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="281" id="9lK-su-A6r"/>
+                                    <constraint firstAttribute="height" constant="264" id="9lK-su-A6r"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9R-Fu-VmM" userLabel="vehicleReservedInfoView" customClass="VehicleReservedInfoView" customModule="OTGRider" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9R-Fu-VmM" userLabel="vehicleReservedInfoView" customClass="VehicleReservedInfoView" customModule="FUUTR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="386" width="375" height="281"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="281" id="iyG-va-zlo"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-Uq-ABq" userLabel="ridingView" customClass="RidingView" customModule="OTGRider" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-Uq-ABq" userLabel="ridingView" customClass="RidingView" customModule="FUUTR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="386" width="375" height="281"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
