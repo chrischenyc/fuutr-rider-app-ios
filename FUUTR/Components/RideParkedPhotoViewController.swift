@@ -1,5 +1,5 @@
 //
-//  EndRidePhotoViewController.swift
+//  RideParkedPhotoViewController.swift
 //  FUUTR
 //
 //  Created by Chris Chen on 27/1/19.
@@ -9,7 +9,7 @@
 import UIKit
 import FastttCamera
 
-class EndRidePhotoViewController: UIViewController {
+class RideParkedPhotoViewController: UIViewController {
   
   @IBOutlet weak var titleView: UIView!
   @IBOutlet weak var cameraView: UIView!
@@ -39,6 +39,14 @@ class EndRidePhotoViewController: UIViewController {
     shootView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
     sendView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
     shootButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: shootButton.frame.size.width/2)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let navigationController = segue.destination as? UINavigationController,
+      let rideFinishedViewController = navigationController.topViewController as? RideFinishedViewController,
+      let ride = sender as? Ride {
+      rideFinishedViewController.ride = ride
+    }
   }
   
   private func setupUI() {
@@ -90,12 +98,12 @@ class EndRidePhotoViewController: UIViewController {
   @IBAction func sendTapped(_ sender: Any) {
     // TODO: invoke send photo API
     
-    performSegue(withIdentifier: R.segue.endRidePhotoViewController.unwindToHome, sender: nil)
+    performSegue(withIdentifier: R.segue.rideParkedPhotoViewController.showRideSummary, sender: ride)
   }
   
 }
 
-extension EndRidePhotoViewController: FastttCameraDelegate {
+extension RideParkedPhotoViewController: FastttCameraDelegate {
   func cameraController(_ cameraController: FastttCameraInterface!, didFinishNormalizing capturedImage: FastttCapturedImage!) {
     self.photo = capturedImage.scaledImage
     self.previewImageView.image = self.photo

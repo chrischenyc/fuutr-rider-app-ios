@@ -32,9 +32,9 @@
 		6B0D921A21FD32D100A9B38E /* DialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0D921621FD32D100A9B38E /* DialogViewController.xib */; };
 		6B0D921B21FD32D100A9B38E /* DialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0D921621FD32D100A9B38E /* DialogViewController.xib */; };
 		6B0D921C21FD32D100A9B38E /* DialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0D921621FD32D100A9B38E /* DialogViewController.xib */; };
-		6B0D922221FDBE5800A9B38E /* EndRidePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D922121FDBE5800A9B38E /* EndRidePhotoViewController.swift */; };
-		6B0D922321FDBE5800A9B38E /* EndRidePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D922121FDBE5800A9B38E /* EndRidePhotoViewController.swift */; };
-		6B0D922421FDBE5800A9B38E /* EndRidePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D922121FDBE5800A9B38E /* EndRidePhotoViewController.swift */; };
+		6B0D922221FDBE5800A9B38E /* RideParkedPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D922121FDBE5800A9B38E /* RideParkedPhotoViewController.swift */; };
+		6B0D922321FDBE5800A9B38E /* RideParkedPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D922121FDBE5800A9B38E /* RideParkedPhotoViewController.swift */; };
+		6B0D922421FDBE5800A9B38E /* RideParkedPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D922121FDBE5800A9B38E /* RideParkedPhotoViewController.swift */; };
 		6B0D922621FDDDF600A9B38E /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D922521FDDDF600A9B38E /* Platform.swift */; };
 		6B0D922721FDDDF600A9B38E /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D922521FDDDF600A9B38E /* Platform.swift */; };
 		6B0D922821FDDDF600A9B38E /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D922521FDDDF600A9B38E /* Platform.swift */; };
@@ -326,9 +326,9 @@
 		6BDEEF41220C1A3C00C0FBB8 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF40220C1A3C00C0FBB8 /* Welcome.storyboard */; };
 		6BDEEF42220C1A3C00C0FBB8 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF40220C1A3C00C0FBB8 /* Welcome.storyboard */; };
 		6BDEEF43220C1A3C00C0FBB8 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF40220C1A3C00C0FBB8 /* Welcome.storyboard */; };
-		6BDEEF45220C1A7800C0FBB8 /* EndRidePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF44220C1A7800C0FBB8 /* EndRidePhoto.storyboard */; };
-		6BDEEF46220C1A7800C0FBB8 /* EndRidePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF44220C1A7800C0FBB8 /* EndRidePhoto.storyboard */; };
-		6BDEEF47220C1A7800C0FBB8 /* EndRidePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF44220C1A7800C0FBB8 /* EndRidePhoto.storyboard */; };
+		6BDEEF45220C1A7800C0FBB8 /* RideParkedPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF44220C1A7800C0FBB8 /* RideParkedPhoto.storyboard */; };
+		6BDEEF46220C1A7800C0FBB8 /* RideParkedPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF44220C1A7800C0FBB8 /* RideParkedPhoto.storyboard */; };
+		6BDEEF47220C1A7800C0FBB8 /* RideParkedPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF44220C1A7800C0FBB8 /* RideParkedPhoto.storyboard */; };
 		6BDEEF49220C1AAA00C0FBB8 /* Permissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF48220C1AAA00C0FBB8 /* Permissions.storyboard */; };
 		6BDEEF4A220C1AAA00C0FBB8 /* Permissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF48220C1AAA00C0FBB8 /* Permissions.storyboard */; };
 		6BDEEF4B220C1AAA00C0FBB8 /* Permissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF48220C1AAA00C0FBB8 /* Permissions.storyboard */; };
@@ -456,7 +456,7 @@
 		6B03DC1121F6FBF800A2765F /* RideSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSegment.swift; sourceTree = "<group>"; };
 		6B0D921521FD32D100A9B38E /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		6B0D921621FD32D100A9B38E /* DialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DialogViewController.xib; sourceTree = "<group>"; };
-		6B0D922121FDBE5800A9B38E /* EndRidePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndRidePhotoViewController.swift; sourceTree = "<group>"; };
+		6B0D922121FDBE5800A9B38E /* RideParkedPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideParkedPhotoViewController.swift; sourceTree = "<group>"; };
 		6B0D922521FDDDF600A9B38E /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		6B14FA0A2198C95B00678FFF /* ResetPasswordRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRequestViewController.swift; sourceTree = "<group>"; };
 		6B14FA0E2198C97E00678FFF /* ResetPasswordVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVerifyViewController.swift; sourceTree = "<group>"; };
@@ -604,7 +604,7 @@
 		6BDEEF07220BDEDA00C0FBB8 /* FTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTButton.swift; sourceTree = "<group>"; };
 		6BDEEF3C220C19E700C0FBB8 /* EmailSignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmailSignIn.storyboard; sourceTree = "<group>"; };
 		6BDEEF40220C1A3C00C0FBB8 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
-		6BDEEF44220C1A7800C0FBB8 /* EndRidePhoto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EndRidePhoto.storyboard; sourceTree = "<group>"; };
+		6BDEEF44220C1A7800C0FBB8 /* RideParkedPhoto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RideParkedPhoto.storyboard; sourceTree = "<group>"; };
 		6BDEEF48220C1AAA00C0FBB8 /* Permissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Permissions.storyboard; sourceTree = "<group>"; };
 		6BDEEF50220C1B1800C0FBB8 /* HowToRide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HowToRide.storyboard; sourceTree = "<group>"; };
 		6BDEEF54220C1B3900C0FBB8 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
@@ -884,10 +884,12 @@
 		6BCEFBD6219960A9003FB097 /* Ride */ = {
 			isa = PBXGroup;
 			children = (
+				6BDEEF9C220D32C800C0FBB8 /* Main.storyboard */,
+				A0CFE79C21747BF000BA3F6D /* MapViewController.swift */,
 				6BDEEF6C220C1BF800C0FBB8 /* RidePaused.storyboard */,
 				91FA7F9D21FE981E00581BB5 /* RidePausedViewController.swift */,
-				6BDEEF44220C1A7800C0FBB8 /* EndRidePhoto.storyboard */,
-				6B0D922121FDBE5800A9B38E /* EndRidePhotoViewController.swift */,
+				6BDEEF44220C1A7800C0FBB8 /* RideParkedPhoto.storyboard */,
+				6B0D922121FDBE5800A9B38E /* RideParkedPhotoViewController.swift */,
 				6BDEEF70220C1C0900C0FBB8 /* RideFinished.storyboard */,
 				91FA7FA121FEB20100581BB5 /* RideFinishedViewController.swift */,
 			);
@@ -1127,8 +1129,6 @@
 				6B8731BF2189C7FA00CC2651 /* WelcomeViewController.swift */,
 				6BDEEF54220C1B3900C0FBB8 /* SideMenu.storyboard */,
 				A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */,
-				6BDEEF9C220D32C800C0FBB8 /* Main.storyboard */,
-				A0CFE79C21747BF000BA3F6D /* MapViewController.swift */,
 				6BB6CB752196F86400B597B3 /* Auth */,
 				6BB6CB762196F87E00B597B3 /* Permissions */,
 				6BDEEFD1220EB6D000C0FBB8 /* Unlock */,
@@ -1328,7 +1328,7 @@
 				6B0D921C21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BDE913B218C19DF003F976B /* Assets.xcassets in Resources */,
 				6BDEEF3F220C19E700C0FBB8 /* EmailSignIn.storyboard in Resources */,
-				6BDEEF47220C1A7800C0FBB8 /* EndRidePhoto.storyboard in Resources */,
+				6BDEEF47220C1A7800C0FBB8 /* RideParkedPhoto.storyboard in Resources */,
 				6BDEEF6F220C1BF800C0FBB8 /* RidePaused.storyboard in Resources */,
 				6BDEEF4B220C1AAA00C0FBB8 /* Permissions.storyboard in Resources */,
 				6BDEEF6B220C1BCD00C0FBB8 /* Unlock.storyboard in Resources */,
@@ -1357,7 +1357,7 @@
 				9191983721FDC96200CF5F2D /* RidingView.xib in Resources */,
 				6B0D921A21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BDEEF71220C1C0900C0FBB8 /* RideFinished.storyboard in Resources */,
-				6BDEEF45220C1A7800C0FBB8 /* EndRidePhoto.storyboard in Resources */,
+				6BDEEF45220C1A7800C0FBB8 /* RideParkedPhoto.storyboard in Resources */,
 				6BDEEFAA220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */,
 				6BDEEF79220C1C3C00C0FBB8 /* Help.storyboard in Resources */,
 				6BDEEF3D220C19E700C0FBB8 /* EmailSignIn.storyboard in Resources */,
@@ -1390,7 +1390,7 @@
 				91FA7F8B21FDCF1B00581BB5 /* RidingView.xib in Resources */,
 				6B0D921B21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BDEEF72220C1C0900C0FBB8 /* RideFinished.storyboard in Resources */,
-				6BDEEF46220C1A7800C0FBB8 /* EndRidePhoto.storyboard in Resources */,
+				6BDEEF46220C1A7800C0FBB8 /* RideParkedPhoto.storyboard in Resources */,
 				6BDEEFAB220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */,
 				6BDEEF7A220C1C3C00C0FBB8 /* Help.storyboard in Resources */,
 				6BDEEF3E220C19E700C0FBB8 /* EmailSignIn.storyboard in Resources */,
@@ -1955,7 +1955,7 @@
 				6BD47271219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
 				6B720FF4220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */,
 				6BD47265219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */,
-				6B0D922421FDBE5800A9B38E /* EndRidePhotoViewController.swift in Sources */,
+				6B0D922421FDBE5800A9B38E /* RideParkedPhotoViewController.swift in Sources */,
 				6BDE9130218C19DF003F976B /* EnableNotificationViewController.swift in Sources */,
 				91FA7F8A21FDCF0A00581BB5 /* RidingView.swift in Sources */,
 				6BDEEEFE220BA8B600C0FBB8 /* EmailSignInViewController.swift in Sources */,
@@ -2079,7 +2079,7 @@
 				6BD4726F219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
 				6B720FF2220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */,
 				6BD47263219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */,
-				6B0D922221FDBE5800A9B38E /* EndRidePhotoViewController.swift in Sources */,
+				6B0D922221FDBE5800A9B38E /* RideParkedPhotoViewController.swift in Sources */,
 				6B8731D02189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,
 				9191983521FDC95600CF5F2D /* RidingView.swift in Sources */,
 				6BDEEEFC220BA8B600C0FBB8 /* EmailSignInViewController.swift in Sources */,
@@ -2203,7 +2203,7 @@
 				6BD47270219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
 				6B720FF3220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */,
 				6BD47264219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */,
-				6B0D922321FDBE5800A9B38E /* EndRidePhotoViewController.swift in Sources */,
+				6B0D922321FDBE5800A9B38E /* RideParkedPhotoViewController.swift in Sources */,
 				6B8731D12189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,
 				91FA7F8921FDCF0A00581BB5 /* RidingView.swift in Sources */,
 				6BDEEEFD220BA8B600C0FBB8 /* EmailSignInViewController.swift in Sources */,

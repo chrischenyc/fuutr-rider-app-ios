@@ -838,21 +838,6 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `EndRidePhotoViewController`, and contains static references to 1 segues.
-    struct endRidePhotoViewController {
-      /// Segue identifier `unwindToHome`.
-      static let unwindToHome: Rswift.StoryboardSegueIdentifier<UIStoryboardSegueWithCompletion, EndRidePhotoViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToHome")
-      
-      /// Optionally returns a typed version of segue `unwindToHome`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIStoryboardSegueWithCompletion, EndRidePhotoViewController, UIKit.UIViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.endRidePhotoViewController.unwindToHome, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
     /// This struct is generated for `HistoryRidesTableViewController`, and contains static references to 1 segues.
     struct historyRidesTableViewController {
       /// Segue identifier `showRideSummary`.
@@ -883,20 +868,18 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `MapViewController`, and contains static references to 9 segues.
+    /// This struct is generated for `MapViewController`, and contains static references to 8 segues.
     struct mapViewController {
       /// Segue identifier `showAccount`.
       static let showAccount: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showAccount")
-      /// Segue identifier `showEndRidePhoto`.
-      static let showEndRidePhoto: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, EndRidePhotoViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showEndRidePhoto")
       /// Segue identifier `showHelp`.
       static let showHelp: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showHelp")
       /// Segue identifier `showHistory`.
       static let showHistory: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showHistory")
       /// Segue identifier `showHowToRide`.
       static let showHowToRide: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, HowToRideViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHowToRide")
-      /// Segue identifier `showRideFinished`.
-      static let showRideFinished: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideFinished")
+      /// Segue identifier `showRideParkedPhoto`.
+      static let showRideParkedPhoto: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, RideParkedPhotoViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideParkedPhoto")
       /// Segue identifier `showRidePaused`.
       static let showRidePaused: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, RidePausedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRidePaused")
       /// Segue identifier `showSettings`.
@@ -909,13 +892,6 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showAccount(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showAccount, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showEndRidePhoto`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showEndRidePhoto(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, EndRidePhotoViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showEndRidePhoto, segue: segue)
       }
       
       /// Optionally returns a typed version of segue `showHelp`.
@@ -939,11 +915,11 @@ struct R: Rswift.Validatable {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showHowToRide, segue: segue)
       }
       
-      /// Optionally returns a typed version of segue `showRideFinished`.
+      /// Optionally returns a typed version of segue `showRideParkedPhoto`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showRideFinished(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showRideFinished, segue: segue)
+      static func showRideParkedPhoto(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, RideParkedPhotoViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showRideParkedPhoto, segue: segue)
       }
       
       /// Optionally returns a typed version of segue `showRidePaused`.
@@ -1087,6 +1063,21 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    /// This struct is generated for `RideParkedPhotoViewController`, and contains static references to 1 segues.
+    struct rideParkedPhotoViewController {
+      /// Segue identifier `showRideSummary`.
+      static let showRideSummary: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, RideParkedPhotoViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideSummary")
+      
+      /// Optionally returns a typed version of segue `showRideSummary`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showRideSummary(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, RideParkedPhotoViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.rideParkedPhotoViewController.showRideSummary, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     /// This struct is generated for `RidePausedViewController`, and contains static references to 1 segues.
     struct ridePausedViewController {
       /// Segue identifier `unwindToHome`.
@@ -1180,8 +1171,6 @@ struct R: Rswift.Validatable {
     static let account = _R.storyboard.account()
     /// Storyboard `EmailSignIn`.
     static let emailSignIn = _R.storyboard.emailSignIn()
-    /// Storyboard `EndRidePhoto`.
-    static let endRidePhoto = _R.storyboard.endRidePhoto()
     /// Storyboard `Help`.
     static let help = _R.storyboard.help()
     /// Storyboard `History`.
@@ -1200,6 +1189,8 @@ struct R: Rswift.Validatable {
     static let permissions = _R.storyboard.permissions()
     /// Storyboard `RideFinished`.
     static let rideFinished = _R.storyboard.rideFinished()
+    /// Storyboard `RideParkedPhoto`.
+    static let rideParkedPhoto = _R.storyboard.rideParkedPhoto()
     /// Storyboard `RidePaused`.
     static let ridePaused = _R.storyboard.ridePaused()
     /// Storyboard `Settings`.
@@ -1219,11 +1210,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "EmailSignIn", bundle: ...)`
     static func emailSignIn(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.emailSignIn)
-    }
-    
-    /// `UIStoryboard(name: "EndRidePhoto", bundle: ...)`
-    static func endRidePhoto(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.endRidePhoto)
     }
     
     /// `UIStoryboard(name: "Help", bundle: ...)`
@@ -1269,6 +1255,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "RideFinished", bundle: ...)`
     static func rideFinished(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.rideFinished)
+    }
+    
+    /// `UIStoryboard(name: "RideParkedPhoto", bundle: ...)`
+    static func rideParkedPhoto(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.rideParkedPhoto)
     }
     
     /// `UIStoryboard(name: "RidePaused", bundle: ...)`
@@ -1444,7 +1435,6 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try account.validate()
       try emailSignIn.validate()
-      try endRidePhoto.validate()
       try help.validate()
       try history.validate()
       try howToRide.validate()
@@ -1454,6 +1444,7 @@ struct _R: Rswift.Validatable {
       try mobileVerify.validate()
       try permissions.validate()
       try rideFinished.validate()
+      try rideParkedPhoto.validate()
       try ridePaused.validate()
       try settings.validate()
       try sideMenu.validate()
@@ -1485,20 +1476,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "btn-arrow-next-red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-arrow-next-red' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-back-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-back-dark-gray-16' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-show-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-show-dark-gray-16' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
-        }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct endRidePhoto: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = EndRidePhotoViewController
-      
-      let bundle = R.hostingBundle
-      let name = "EndRidePhoto"
-      
-      static func validate() throws {
         if #available(iOS 11.0, *) {
         }
       }
@@ -1652,6 +1629,20 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "social-facebook-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-facebook-dark-gray-35' is used in storyboard 'RideFinished', but couldn't be loaded.") }
         if UIKit.UIImage(named: "social-instagram-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-instagram-dark-gray-35' is used in storyboard 'RideFinished', but couldn't be loaded.") }
         if UIKit.UIImage(named: "social-twitter-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-twitter-dark-gray-35' is used in storyboard 'RideFinished', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct rideParkedPhoto: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = RideParkedPhotoViewController
+      
+      let bundle = R.hostingBundle
+      let name = "RideParkedPhoto"
+      
+      static func validate() throws {
         if #available(iOS 11.0, *) {
         }
       }

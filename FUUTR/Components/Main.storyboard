@@ -50,13 +50,13 @@
             </objects>
             <point key="canvasLocation" x="-2074" y="1636"/>
         </scene>
-        <!--EndRidePhoto-->
+        <!--RideParkedPhoto-->
         <scene sceneID="DMt-lo-LqC">
             <objects>
-                <viewControllerPlaceholder storyboardName="EndRidePhoto" id="8Ti-sb-yF0" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="RideParkedPhoto" id="8Ti-sb-yF0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Sk-Ny-Aji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2029" y="1726"/>
+            <point key="canvasLocation" x="-2015" y="1726"/>
         </scene>
         <!--HowToRide-->
         <scene sceneID="sKB-px-qHp">
@@ -73,14 +73,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TpM-2b-C9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2040" y="1807"/>
-        </scene>
-        <!--RideFinished-->
-        <scene sceneID="tfV-1u-aDh">
-            <objects>
-                <viewControllerPlaceholder storyboardName="RideFinished" id="tbq-IZ-tMd" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wrK-oI-ZVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2034" y="1852"/>
         </scene>
         <!--Unlock-->
         <scene sceneID="lBZ-i9-OXa">
@@ -189,11 +181,10 @@
                         <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showAccount" id="NuG-ER-BNQ"/>
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>
                         <segue destination="46k-mg-UHB" kind="presentation" identifier="showHelp" id="GwS-O7-LdY"/>
-                        <segue destination="8Ti-sb-yF0" kind="presentation" identifier="showEndRidePhoto" id="Tlg-cq-aPh"/>
+                        <segue destination="8Ti-sb-yF0" kind="presentation" identifier="showRideParkedPhoto" id="Tlg-cq-aPh"/>
                         <segue destination="F6b-Fa-nWT" kind="presentation" identifier="showUnlock" id="HOx-pw-uNG"/>
                         <segue destination="FGs-8F-TV0" kind="presentation" identifier="showHowToRide" id="dw5-Yc-TVD"/>
                         <segue destination="ppe-bv-DTM" kind="presentation" identifier="showRidePaused" id="WgS-vD-LeP"/>
-                        <segue destination="tbq-IZ-tMd" kind="presentation" identifier="showRideFinished" id="eCg-aT-VBb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

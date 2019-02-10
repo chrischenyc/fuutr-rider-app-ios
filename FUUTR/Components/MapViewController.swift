@@ -80,7 +80,7 @@ class MapViewController: UIViewController {
       self.ridePausedViewController = ridePausedViewController
     }
     
-    if let endRidePhotoViewController = segue.destination as? EndRidePhotoViewController,
+    if let endRidePhotoViewController = segue.destination as? RideParkedPhotoViewController,
       let ride = sender as? Ride {
       endRidePhotoViewController.ride = ride
     }
@@ -160,14 +160,7 @@ class MapViewController: UIViewController {
       }
       
     }
-      // unwind from send finished ride photo
-    else if let endRidePhotoViewController = sourceViewController as? EndRidePhotoViewController,
-      let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
-      // user finishes uploading complete ride photo, present ride summary
-      unwindSegueWithCompletion.completion = {
-        self.performSegue(withIdentifier: R.segue.mapViewController.showRideFinished, sender: endRidePhotoViewController.ride)
-      }
-    }
+    
   }
   
   @IBAction func unlock(_ sender: Any) {
@@ -345,7 +338,7 @@ extension MapViewController {
           return
         }
         
-        self?.performSegue(withIdentifier: R.segue.mapViewController.showEndRidePhoto, sender: ride)
+        self?.performSegue(withIdentifier: R.segue.mapViewController.showRideParkedPhoto, sender: ride)
         
         self?.stopTrackingRide()
       }

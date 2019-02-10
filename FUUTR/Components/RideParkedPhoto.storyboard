@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--End Ride Photo View Controller-->
+        <!--Ride Parked Photo View Controller-->
         <scene sceneID="eCn-Nv-i46">
             <objects>
-                <viewController id="Q8C-ax-Kal" customClass="EndRidePhotoViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q8C-ax-Kal" customClass="RideParkedPhotoViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="82h-Ur-4bR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plL-dA-JU9">
                                 <rect key="frame" x="0.0" y="20" width="375" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parked Scooter Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJJ-ED-vsF" customClass="FTDarkLabel" customModule="OTGRider" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parked Scooter Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJJ-ED-vsF" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
                                         <rect key="frame" x="104" y="32" width="167" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -66,7 +66,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZrL-BI-6JT">
                                         <rect key="frame" x="48" y="34" width="279" height="44"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIO-M1-ZPE" customClass="FTDarkBasicButton" customModule="OTGRider" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIO-M1-ZPE" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="131.5" height="44"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Take another"/>
@@ -74,7 +74,7 @@
                                                     <action selector="takeAnotherTapped:" destination="Q8C-ax-Kal" eventType="touchUpInside" id="f4i-Ib-Ysb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhi-Qc-6zD" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhi-Qc-6zD" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
                                                 <rect key="frame" x="147.5" y="0.0" width="131.5" height="44"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Send"/>
@@ -131,13 +131,20 @@
                         <outlet property="shootView" destination="TO2-86-6cz" id="sr4-qM-xgs"/>
                         <outlet property="takeAnotherButton" destination="kIO-M1-ZPE" id="C6Z-oF-fU2"/>
                         <outlet property="titleView" destination="plL-dA-JU9" id="BvB-6e-f66"/>
-                        <segue destination="oXD-z5-hxl" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="Il2-fV-q2C"/>
+                        <segue destination="u8T-pP-OQq" kind="showDetail" identifier="showRideSummary" id="XxQ-Sf-awC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04p-aB-c9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="oXD-z5-hxl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-268" y="166.8665667166417"/>
+        </scene>
+        <!--RideFinished-->
+        <scene sceneID="BRL-9g-hF4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RideFinished" id="u8T-pP-OQq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fb6-86-k2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="432" y="166"/>
         </scene>
     </scenes>
 </document>
