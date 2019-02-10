@@ -9,11 +9,12 @@ class RideFinishedViewController: UIViewController {
   
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var rideUsedTimeLabel: UILabel!
-  @IBOutlet weak var rideFinishedTimeLabel: UILabel!
   @IBOutlet weak var rideDistanceLabel: UILabel!
   @IBOutlet weak var costLabel: UILabel!
   @IBOutlet weak var reportButton: UIButton!
   @IBOutlet weak var continueButton: UIButton!
+  @IBOutlet weak var mapViewHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var socialAndButtonVerticalSpacing: NSLayoutConstraint!
   
   private let streetZoomLevel: Float = 14.0
   private var ridePolyline: GMSPolyline?
@@ -22,6 +23,12 @@ class RideFinishedViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // adjust auto-layout to fit everything in iPhone 5 screen
+    if UIScreen.main.bounds.height <= 568 {
+      mapViewHeightConstraint.constant = 200
+      socialAndButtonVerticalSpacing.constant = 8
+    }
     
     if let ride = ride {
       updateContent(with: ride, and: currentLocation)
@@ -32,7 +39,7 @@ class RideFinishedViewController: UIViewController {
     costLabel.text = ride.totalCost.currencyString
     rideUsedTimeLabel.text = ride.duration.hhmmssString
     rideDistanceLabel.text = ride.distance.distanceString
-    rideFinishedTimeLabel.text = ride.lockTime?.dateTimeString
+    title = ride.lockTime?.dateTimeString
     
     if let location = location {
       let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)

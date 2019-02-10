@@ -884,10 +884,10 @@
 		6BCEFBD6219960A9003FB097 /* Ride */ = {
 			isa = PBXGroup;
 			children = (
-				6BDEEF44220C1A7800C0FBB8 /* EndRidePhoto.storyboard */,
-				6B0D922121FDBE5800A9B38E /* EndRidePhotoViewController.swift */,
 				6BDEEF6C220C1BF800C0FBB8 /* RidePaused.storyboard */,
 				91FA7F9D21FE981E00581BB5 /* RidePausedViewController.swift */,
+				6BDEEF44220C1A7800C0FBB8 /* EndRidePhoto.storyboard */,
+				6B0D922121FDBE5800A9B38E /* EndRidePhotoViewController.swift */,
 				6BDEEF70220C1C0900C0FBB8 /* RideFinished.storyboard */,
 				91FA7FA121FEB20100581BB5 /* RideFinishedViewController.swift */,
 			);
@@ -1718,7 +1718,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1738,7 +1738,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1758,7 +1758,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

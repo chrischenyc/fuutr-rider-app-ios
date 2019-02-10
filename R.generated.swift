@@ -856,12 +856,12 @@ struct R: Rswift.Validatable {
     /// This struct is generated for `HistoryRidesTableViewController`, and contains static references to 1 segues.
     struct historyRidesTableViewController {
       /// Segue identifier `showRideSummary`.
-      static let showRideSummary: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HistoryRidesTableViewController, RideFinishedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideSummary")
+      static let showRideSummary: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HistoryRidesTableViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideSummary")
       
       /// Optionally returns a typed version of segue `showRideSummary`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showRideSummary(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HistoryRidesTableViewController, RideFinishedViewController>? {
+      static func showRideSummary(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HistoryRidesTableViewController, UIKit.UINavigationController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.historyRidesTableViewController.showRideSummary, segue: segue)
       }
       
@@ -896,7 +896,7 @@ struct R: Rswift.Validatable {
       /// Segue identifier `showHowToRide`.
       static let showHowToRide: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, HowToRideViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHowToRide")
       /// Segue identifier `showRideFinished`.
-      static let showRideFinished: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, RideFinishedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideFinished")
+      static let showRideFinished: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideFinished")
       /// Segue identifier `showRidePaused`.
       static let showRidePaused: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, RidePausedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRidePaused")
       /// Segue identifier `showSettings`.
@@ -942,7 +942,7 @@ struct R: Rswift.Validatable {
       /// Optionally returns a typed version of segue `showRideFinished`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showRideFinished(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, RideFinishedViewController>? {
+      static func showRideFinished(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showRideFinished, segue: segue)
       }
       
@@ -1638,7 +1638,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct rideFinished: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = RideFinishedViewController
+      typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "RideFinished"

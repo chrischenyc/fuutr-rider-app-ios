@@ -85,7 +85,8 @@ class MapViewController: UIViewController {
       endRidePhotoViewController.ride = ride
     }
     
-    if let rideFinishedViewController = segue.destination as? RideFinishedViewController,
+    if let navigationController = segue.destination as? UINavigationController,
+      let rideFinishedViewController = navigationController.topViewController as? RideFinishedViewController,
       let ride = sender as? Ride {
       rideFinishedViewController.ride = ride
     }
