@@ -444,6 +444,10 @@ extension MainViewController {
   private func setupUI() {
     unlockInfoView.onFindMe = { [weak self] in
       
+      if let location = currentLocation, let searchingZoomLevel = self?.searchingZoomLevel {
+        let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
+        self?.mapView.animate(to: camera)
+      }
     }
     
     unlockInfoView.onScan = { [weak self] in
