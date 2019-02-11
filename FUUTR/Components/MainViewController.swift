@@ -1,5 +1,5 @@
 //
-//  MapViewController.swift
+//  MainViewController.swift
 //  FUUTR
 //
 //  Created by Chris Chen on 15/10/18.
@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class MapViewController: UIViewController {
+class MainViewController: UIViewController {
   
   // ---------- Google Maps ----------
   private let locationManager = CLLocationManager()
@@ -111,11 +111,11 @@ class MapViewController: UIViewController {
         case .greeting:
           break
         case .accont:
-          self.performSegue(withIdentifier: R.segue.mapViewController.showAccount, sender: nil)
+          self.performSegue(withIdentifier: R.segue.mainViewController.showAccount, sender: nil)
         case .history:
-          self.performSegue(withIdentifier: R.segue.mapViewController.showHistory, sender: nil)
+          self.performSegue(withIdentifier: R.segue.mainViewController.showHistory, sender: nil)
         case .settings:
-          self.performSegue(withIdentifier: R.segue.mapViewController.showSettings, sender: nil)
+          self.performSegue(withIdentifier: R.segue.mainViewController.showSettings, sender: nil)
         case .help:
           if let url = URL(string: config.env.helpURL), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -163,12 +163,12 @@ class MapViewController: UIViewController {
   }
   
   private func unlock() {
-    performSegue(withIdentifier: R.segue.mapViewController.showUnlock, sender: nil)
+    performSegue(withIdentifier: R.segue.mainViewController.showUnlock, sender: nil)
   }
 }
 
 // MARK: - Ride Tracking
-extension MapViewController {
+extension MainViewController {
   private func startTrackingRide(_ ride: Ride) {
     ongoingRide = ride
     
@@ -238,7 +238,7 @@ extension MapViewController {
 }
 
 // MARK: - API
-extension MapViewController {
+extension MainViewController {
   @objc private func search() {
     // stop searching while in an active ride
     guard ongoingRide == nil || ongoingRide!.paused else { return }
@@ -337,7 +337,7 @@ extension MapViewController {
           return
         }
         
-        self?.performSegue(withIdentifier: R.segue.mapViewController.showRideParkedPhoto, sender: ride)
+        self?.performSegue(withIdentifier: R.segue.mainViewController.showRideParkedPhoto, sender: ride)
         
         self?.stopTrackingRide()
       }
@@ -367,7 +367,7 @@ extension MapViewController {
         self?.ongoingRide = ride
         self?.updateRideLocally()
         if let ride = self?.ongoingRide {
-          self?.performSegue(withIdentifier: R.segue.mapViewController.showRidePaused, sender: ride)
+          self?.performSegue(withIdentifier: R.segue.mainViewController.showRidePaused, sender: ride)
         }
         self?.search()
       }
@@ -422,7 +422,7 @@ extension MapViewController {
 }
 
 // MARK: - UI
-extension MapViewController {
+extension MainViewController {
   override func viewDidLayoutSubviews() {
     unlockInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
@@ -508,7 +508,7 @@ extension MapViewController {
   }
   
   private func showHowToRide() {
-    performSegue(withIdentifier: R.segue.mapViewController.showHowToRide, sender: nil)
+    performSegue(withIdentifier: R.segue.mainViewController.showHowToRide, sender: nil)
   }
   
   private func showVehicleInfo(_ vehicle: Vehicle) {
@@ -564,7 +564,7 @@ extension MapViewController {
 }
 
 // MARK: - Map
-extension MapViewController {
+extension MainViewController {
   private func setupMapView() {
     mapView.delegate = self
     mapView.applyTheme()
@@ -655,7 +655,7 @@ extension MapViewController {
 }
 
 // MARK: - Location
-extension MapViewController {
+extension MainViewController {
   private func setupLocationManager() {
     // request location permisison if needed
     locationManager.delegate = self
@@ -711,7 +711,7 @@ extension MapViewController {
 }
 
 // MARK: - CLLocationManagerDelegate
-extension MapViewController: CLLocationManagerDelegate {
+extension MainViewController: CLLocationManagerDelegate {
   
   // Handle authorization for the location manager.
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -764,7 +764,7 @@ extension MapViewController: CLLocationManagerDelegate {
 }
 
 // MARK: - GMSMapViewDelegate
-extension MapViewController: GMSMapViewDelegate {
+extension MainViewController: GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
     deferredSearchTimer?.invalidate()
   }
@@ -798,7 +798,7 @@ extension MapViewController: GMSMapViewDelegate {
 }
 
 // MARK: - GMUClusterManagerDelegate
-extension MapViewController: GMUClusterManagerDelegate {
+extension MainViewController: GMUClusterManagerDelegate {
   func clusterManager(_ clusterManager: GMUClusterManager, didTap cluster: GMUCluster) -> Bool {
     let newCamera = GMSCameraPosition.camera(withTarget: cluster.position, zoom: mapView.camera.zoom + 1)
     mapView.animate(to: newCamera)
@@ -808,7 +808,7 @@ extension MapViewController: GMUClusterManagerDelegate {
 }
 
 // MARK: - GMUClusterRendererDelegate
-extension MapViewController: GMUClusterRendererDelegate {
+extension MainViewController: GMUClusterRendererDelegate {
   func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
     guard let vehiclePOI = marker.userData as? VehiclePOI else { return }
     

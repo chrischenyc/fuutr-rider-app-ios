@@ -92,7 +92,7 @@ class WelcomeViewController: UIViewController {
         
         if Defaults[.userOnboarded] {
           self?.dismissLoading()
-          self?.performSegue(withIdentifier: R.segue.welcomeViewController.showMap, sender: self)
+          self?.performSegue(withIdentifier: R.segue.welcomeViewController.showMain, sender: self)
         }
         else {
           self?.dismissLoading()

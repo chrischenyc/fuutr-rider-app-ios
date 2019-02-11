@@ -115,7 +115,7 @@ class EmailSignInPasswordViewController: UIViewController {
     }
     
     if Defaults[.userOnboarded] {
-      performSegue(withIdentifier: R.segue.emailSignInPasswordViewController.showMap, sender: nil)
+      performSegue(withIdentifier: R.segue.emailSignInPasswordViewController.showMain, sender: nil)
     }
     else {
       performSegue(withIdentifier: R.segue.emailSignInPasswordViewController.showPermissions, sender: nil)

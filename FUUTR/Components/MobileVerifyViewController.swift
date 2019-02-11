@@ -111,7 +111,7 @@ extension MobileVerifyViewController: PinCodeViewDelegate {
             }
             
             if Defaults[.userOnboarded] {
-              self?.performSegue(withIdentifier: R.segue.mobileVerifyViewController.showMap, sender: nil)
+              self?.performSegue(withIdentifier: R.segue.mobileVerifyViewController.showMain, sender: nil)
             }
             else {
               self?.performSegue(withIdentifier: R.segue.mobileVerifyViewController.showPermissions, sender: nil)

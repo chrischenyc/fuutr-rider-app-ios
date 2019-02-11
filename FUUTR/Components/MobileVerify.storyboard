@@ -47,7 +47,7 @@
         <!--Verification Code-->
         <scene sceneID="aqG-On-dBE">
             <objects>
-                <viewController id="A9q-Lc-jkk" customClass="MobileVerifyViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A9q-Lc-jkk" customClass="MobileVerifyViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="74H-mF-rct">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebo-cN-Mn6">
                                         <rect key="frame" x="0.0" y="48" width="343" height="164"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bm-Hx-5hq" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bm-Hx-5hq" customClass="FTRedBasicButton" customModule="FUUTR" customModuleProvider="target">
                                                 <rect key="frame" x="126.5" y="56" width="90" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="PUy-hI-Zat"/>
@@ -115,7 +115,7 @@
                         <outlet property="resendButton" destination="4Bm-Hx-5hq" id="bu7-Tz-FPC"/>
                         <outlet property="stackView" destination="fhn-pV-hhQ" id="FK6-jB-Qzg"/>
                         <segue destination="2UR-2U-tXq" kind="showDetail" identifier="showPermissions" id="Mbz-Qf-TZ5"/>
-                        <segue destination="5iq-hc-MMP" kind="showDetail" identifier="showMap" id="CE4-cs-8Wf"/>
+                        <segue destination="5iq-hc-MMP" kind="showDetail" identifier="showMain" id="CE4-cs-8Wf"/>
                         <segue destination="Ais-DC-SNb" kind="unwind" identifier="unwindToSignInMobile" unwindAction="unwindToSignInMobile:" id="8wf-ff-nb3"/>
                         <segue destination="Ais-DC-SNb" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettings:" id="xRj-Mv-3Zd"/>
                     </connections>

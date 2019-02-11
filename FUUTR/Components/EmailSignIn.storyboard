@@ -13,7 +13,7 @@
         <!--Enter your email-->
         <scene sceneID="2uH-0Z-voz">
             <objects>
-                <viewController id="m1S-IG-uch" customClass="EmailSignInViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m1S-IG-uch" customClass="EmailSignInViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IQd-Fp-9ej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,7 +121,7 @@
         <!--Email Sign In Password View Controller-->
         <scene sceneID="acm-sh-c2h">
             <objects>
-                <viewController id="g4e-45-4KW" customClass="EmailSignInPasswordViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="g4e-45-4KW" customClass="EmailSignInPasswordViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPa-Nn-BTC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,14 +182,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zea-aP-0Vs">
                                                 <rect key="frame" x="16" y="56" width="311" height="44"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ko-9M-gtC" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ko-9M-gtC" customClass="FTRedBasicButton" customModule="FUUTR" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="7" width="115" height="30"/>
                                                         <state key="normal" title="Forgot password"/>
                                                         <connections>
                                                             <segue destination="AQi-W0-88c" kind="show" id="1hk-1p-PF4"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgv-e8-iyY" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgv-e8-iyY" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
                                                         <rect key="frame" x="223" y="0.0" width="88" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="3eG-8G-pHN"/>
@@ -235,7 +235,7 @@
                         <outlet property="stackView" destination="CP0-f7-xcj" id="aFu-4l-hoa"/>
                         <outlet property="submitButton" destination="pgv-e8-iyY" id="Zs7-nr-Nyj"/>
                         <segue destination="2UR-2U-tXq" kind="showDetail" identifier="showPermissions" id="rfc-WD-BYw"/>
-                        <segue destination="5iq-hc-MMP" kind="showDetail" identifier="showMap" id="fGc-eO-FUn"/>
+                        <segue destination="5iq-hc-MMP" kind="showDetail" identifier="showMain" id="fGc-eO-FUn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqD-pf-gjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -262,7 +262,7 @@
         <!--Forgot Password-->
         <scene sceneID="Fki-aF-GOB">
             <objects>
-                <viewController title="Forgot Password" id="AQi-W0-88c" customClass="ResetPasswordRequestViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Forgot Password" id="AQi-W0-88c" customClass="ResetPasswordRequestViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BbW-17-wdl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +304,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frT-MA-Fnq">
                                         <rect key="frame" x="0.0" y="57" width="343" height="148"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8s-yu-BAd" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8s-yu-BAd" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
                                                 <rect key="frame" x="263" y="56" width="80" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="ite-vx-Xmy"/>
@@ -358,12 +358,12 @@
         <!--Verification Code-->
         <scene sceneID="aqG-On-dBE">
             <objects>
-                <viewController id="A9q-Lc-jkk" customClass="ResetPasswordVerifyViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A9q-Lc-jkk" customClass="ResetPasswordVerifyViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="74H-mF-rct">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6-digit code we sent to your email" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcO-Nt-09O" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6-digit code we sent to your email" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcO-Nt-09O" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="116" width="335" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -382,7 +382,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebo-cN-Mn6">
                                         <rect key="frame" x="0.0" y="48" width="343" height="164"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bm-Hx-5hq" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bm-Hx-5hq" customClass="FTRedBasicButton" customModule="FUUTR" customModuleProvider="target">
                                                 <rect key="frame" x="135.5" y="56" width="72" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="72" id="J8w-ik-oid"/>
@@ -437,7 +437,7 @@
         <!--Set New Password-->
         <scene sceneID="Q2I-5d-KnK">
             <objects>
-                <viewController id="GTQ-AX-sNw" customClass="ResetPasswordSetViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GTQ-AX-sNw" customClass="ResetPasswordSetViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="soa-Yk-mzd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -495,7 +495,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIZ-jU-jTZ">
                                         <rect key="frame" x="0.0" y="145" width="343" height="164"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOt-Ue-wS1" customClass="FTRedPrimaryButton" customModule="OTGRider" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOt-Ue-wS1" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
                                                 <rect key="frame" x="239" y="64" width="88" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="fp0-aF-4Dp"/>

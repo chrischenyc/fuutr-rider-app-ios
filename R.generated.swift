@@ -774,16 +774,16 @@ struct R: Rswift.Validatable {
     
     /// This struct is generated for `EmailSignInPasswordViewController`, and contains static references to 2 segues.
     struct emailSignInPasswordViewController {
-      /// Segue identifier `showMap`.
-      static let showMap: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMap")
+      /// Segue identifier `showMain`.
+      static let showMain: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, MainViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMain")
       /// Segue identifier `showPermissions`.
       static let showPermissions: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, EnableLocationViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showPermissions")
       
-      /// Optionally returns a typed version of segue `showMap`.
+      /// Optionally returns a typed version of segue `showMain`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showMap(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, MapViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.emailSignInPasswordViewController.showMap, segue: segue)
+      static func showMain(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, MainViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.emailSignInPasswordViewController.showMain, segue: segue)
       }
       
       /// Optionally returns a typed version of segue `showPermissions`.
@@ -815,8 +815,8 @@ struct R: Rswift.Validatable {
     struct enableLocationViewController {
       /// Segue identifier `showEnableNotification`.
       static let showEnableNotification: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EnableLocationViewController, EnableNotificationViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showEnableNotification")
-      /// Segue identifier `showMap`.
-      static let showMap: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EnableLocationViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMap")
+      /// Segue identifier `showMain`.
+      static let showMain: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EnableLocationViewController, MainViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMain")
       
       /// Optionally returns a typed version of segue `showEnableNotification`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
@@ -825,11 +825,11 @@ struct R: Rswift.Validatable {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.enableLocationViewController.showEnableNotification, segue: segue)
       }
       
-      /// Optionally returns a typed version of segue `showMap`.
+      /// Optionally returns a typed version of segue `showMain`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showMap(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EnableLocationViewController, MapViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.enableLocationViewController.showMap, segue: segue)
+      static func showMain(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EnableLocationViewController, MainViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.enableLocationViewController.showMain, segue: segue)
       }
       
       fileprivate init() {}
@@ -837,14 +837,14 @@ struct R: Rswift.Validatable {
     
     /// This struct is generated for `EnableNotificationViewController`, and contains static references to 1 segues.
     struct enableNotificationViewController {
-      /// Segue identifier `showMap`.
-      static let showMap: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EnableNotificationViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMap")
+      /// Segue identifier `showMain`.
+      static let showMain: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EnableNotificationViewController, MainViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMain")
       
-      /// Optionally returns a typed version of segue `showMap`.
+      /// Optionally returns a typed version of segue `showMain`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showMap(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EnableNotificationViewController, MapViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.enableNotificationViewController.showMap, segue: segue)
+      static func showMain(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EnableNotificationViewController, MainViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.enableNotificationViewController.showMain, segue: segue)
       }
       
       fileprivate init() {}
@@ -889,6 +889,84 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    /// This struct is generated for `MainViewController`, and contains static references to 8 segues.
+    struct mainViewController {
+      /// Segue identifier `showAccount`.
+      static let showAccount: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showAccount")
+      /// Segue identifier `showHelp`.
+      static let showHelp: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showHelp")
+      /// Segue identifier `showHistory`.
+      static let showHistory: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showHistory")
+      /// Segue identifier `showHowToRide`.
+      static let showHowToRide: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, HowToRideViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHowToRide")
+      /// Segue identifier `showRideParkedPhoto`.
+      static let showRideParkedPhoto: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, RideParkedPhotoViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideParkedPhoto")
+      /// Segue identifier `showRidePaused`.
+      static let showRidePaused: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, RidePausedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRidePaused")
+      /// Segue identifier `showSettings`.
+      static let showSettings: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showSettings")
+      /// Segue identifier `showUnlock`.
+      static let showUnlock: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showUnlock")
+      
+      /// Optionally returns a typed version of segue `showAccount`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showAccount(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showAccount, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showHelp`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showHelp(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showHelp, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showHistory`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showHistory(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showHistory, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showHowToRide`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showHowToRide(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, HowToRideViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showHowToRide, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showRideParkedPhoto`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showRideParkedPhoto(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, RideParkedPhotoViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showRideParkedPhoto, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showRidePaused`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showRidePaused(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, RidePausedViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showRidePaused, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showSettings`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showSettings(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showSettings, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showUnlock`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showUnlock(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showUnlock, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     /// This struct is generated for `ManualUnlockViewController`, and contains static references to 1 segues.
     struct manualUnlockViewController {
       /// Segue identifier `unwindToHome`.
@@ -899,84 +977,6 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIStoryboardSegueWithCompletion, ManualUnlockViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.manualUnlockViewController.unwindToHome, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
-    /// This struct is generated for `MapViewController`, and contains static references to 8 segues.
-    struct mapViewController {
-      /// Segue identifier `showAccount`.
-      static let showAccount: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showAccount")
-      /// Segue identifier `showHelp`.
-      static let showHelp: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showHelp")
-      /// Segue identifier `showHistory`.
-      static let showHistory: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showHistory")
-      /// Segue identifier `showHowToRide`.
-      static let showHowToRide: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, HowToRideViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHowToRide")
-      /// Segue identifier `showRideParkedPhoto`.
-      static let showRideParkedPhoto: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, RideParkedPhotoViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideParkedPhoto")
-      /// Segue identifier `showRidePaused`.
-      static let showRidePaused: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, RidePausedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRidePaused")
-      /// Segue identifier `showSettings`.
-      static let showSettings: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showSettings")
-      /// Segue identifier `showUnlock`.
-      static let showUnlock: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showUnlock")
-      
-      /// Optionally returns a typed version of segue `showAccount`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showAccount(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showAccount, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showHelp`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showHelp(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showHelp, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showHistory`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showHistory(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showHistory, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showHowToRide`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showHowToRide(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, HowToRideViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showHowToRide, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showRideParkedPhoto`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showRideParkedPhoto(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, RideParkedPhotoViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showRideParkedPhoto, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showRidePaused`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showRidePaused(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, RidePausedViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showRidePaused, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showSettings`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showSettings(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showSettings, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showUnlock`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showUnlock(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MapViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mapViewController.showUnlock, segue: segue)
       }
       
       fileprivate init() {}
@@ -999,8 +999,8 @@ struct R: Rswift.Validatable {
     
     /// This struct is generated for `MobileVerifyViewController`, and contains static references to 4 segues.
     struct mobileVerifyViewController {
-      /// Segue identifier `showMap`.
-      static let showMap: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MobileVerifyViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMap")
+      /// Segue identifier `showMain`.
+      static let showMain: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MobileVerifyViewController, MainViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMain")
       /// Segue identifier `showPermissions`.
       static let showPermissions: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MobileVerifyViewController, EnableLocationViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showPermissions")
       /// Segue identifier `unwindToSettings`.
@@ -1008,11 +1008,11 @@ struct R: Rswift.Validatable {
       /// Segue identifier `unwindToSignInMobile`.
       static let unwindToSignInMobile: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MobileVerifyViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToSignInMobile")
       
-      /// Optionally returns a typed version of segue `showMap`.
+      /// Optionally returns a typed version of segue `showMain`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showMap(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MobileVerifyViewController, MapViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mobileVerifyViewController.showMap, segue: segue)
+      static func showMain(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MobileVerifyViewController, MainViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mobileVerifyViewController.showMain, segue: segue)
       }
       
       /// Optionally returns a typed version of segue `showPermissions`.
@@ -1176,16 +1176,16 @@ struct R: Rswift.Validatable {
     
     /// This struct is generated for `WelcomeViewController`, and contains static references to 2 segues.
     struct welcomeViewController {
-      /// Segue identifier `showMap`.
-      static let showMap: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WelcomeViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMap")
+      /// Segue identifier `showMain`.
+      static let showMain: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WelcomeViewController, MainViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMain")
       /// Segue identifier `showPermissions`.
       static let showPermissions: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WelcomeViewController, EnableLocationViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showPermissions")
       
-      /// Optionally returns a typed version of segue `showMap`.
+      /// Optionally returns a typed version of segue `showMain`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showMap(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WelcomeViewController, MapViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.welcomeViewController.showMap, segue: segue)
+      static func showMain(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WelcomeViewController, MainViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.welcomeViewController.showMain, segue: segue)
       }
       
       /// Optionally returns a typed version of segue `showPermissions`.
@@ -1651,7 +1651,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = MapViewController
+      typealias InitialController = MainViewController
       
       let bundle = R.hostingBundle
       let name = "Main"

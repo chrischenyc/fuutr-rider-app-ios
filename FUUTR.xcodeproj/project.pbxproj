@@ -187,6 +187,9 @@
 		6BB50EE12211047700F8BBF4 /* UnlockInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */; };
 		6BB50EE22211047700F8BBF4 /* UnlockInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */; };
 		6BB50EE32211047700F8BBF4 /* UnlockInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */; };
+		6BB50EE522112C9500F8BBF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50EE422112C9500F8BBF4 /* MainViewController.swift */; };
+		6BB50EE622112C9500F8BBF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50EE422112C9500F8BBF4 /* MainViewController.swift */; };
+		6BB50EE722112C9500F8BBF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50EE422112C9500F8BBF4 /* MainViewController.swift */; };
 		6BB6CB6E2196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
 		6BB6CB6F2196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
 		6BB6CB702196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
@@ -289,7 +292,6 @@
 		6BD472B2219A4DB300D36C3E /* VehiclePOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD472B1219A4DB300D36C3E /* VehiclePOI.swift */; };
 		6BD472B3219A4DB300D36C3E /* VehiclePOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD472B1219A4DB300D36C3E /* VehiclePOI.swift */; };
 		6BD472B4219A4DB300D36C3E /* VehiclePOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD472B1219A4DB300D36C3E /* VehiclePOI.swift */; };
-		6BDE9120218C19DF003F976B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
 		6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731C22189CA0400CC2651 /* String+Validate.swift */; };
 		6BDE9123218C19DF003F976B /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A62189A70600CC2651 /* UserDefaults.swift */; };
 		6BDE9124218C19DF003F976B /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */; };
@@ -441,9 +443,7 @@
 		91FA7FA321FEB20100581BB5 /* RideFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA7FA121FEB20100581BB5 /* RideFinishedViewController.swift */; };
 		91FA7FA421FEB20100581BB5 /* RideFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA7FA121FEB20100581BB5 /* RideFinishedViewController.swift */; };
 		A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
-		A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
 		A0CFE7A221747BF500BA3F6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A121747BF500BA3F6D /* Assets.xcassets */; };
-		A0CFE7AE21747D2B00BA3F6D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79C21747BF000BA3F6D /* MapViewController.swift */; };
 		A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */; };
 		A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CFE7A121747BF500BA3F6D /* Assets.xcassets */; };
 		A0CFE7BC21773C0200BA3F6D /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */; };
@@ -526,6 +526,7 @@
 		6BB50ED82210CFB100F8BBF4 /* FTWhitePrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTWhitePrimaryButton.swift; sourceTree = "<group>"; };
 		6BB50EDC2211047700F8BBF4 /* UnlockInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockInfoView.swift; sourceTree = "<group>"; };
 		6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnlockInfoView.xib; sourceTree = "<group>"; };
+		6BB50EE422112C9500F8BBF4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		6BBC6A0021A0DD27003C910B /* ride.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ride.gpx; sourceTree = "<group>"; };
@@ -659,7 +660,6 @@
 		943AAB5BF2A748B9BED0987A /* Pods_Project_FUUTR_dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_FUUTR_dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79721747BF000BA3F6D /* FUUTR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FUUTR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0CFE79C21747BF000BA3F6D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A0CFE7A121747BF500BA3F6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CFE7A621747BF500BA3F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0CFE7B821747D2B00BA3F6D /* FUUTR-staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FUUTR-staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -906,7 +906,7 @@
 			isa = PBXGroup;
 			children = (
 				6BDEEF9C220D32C800C0FBB8 /* Main.storyboard */,
-				A0CFE79C21747BF000BA3F6D /* MapViewController.swift */,
+				6BB50EE422112C9500F8BBF4 /* MainViewController.swift */,
 				6BDEEF50220C1B1800C0FBB8 /* HowToRide.storyboard */,
 				9197552E21FBE3460069D25A /* HowToRideViewController.swift */,
 				6BDEEF6C220C1BF800C0FBB8 /* RidePaused.storyboard */,
@@ -1870,7 +1870,6 @@
 			files = (
 				6BD47286219A4CAA00D36C3E /* GMUStyle.m in Sources */,
 				6BDE915F218C79C1003F976B /* ServiceError.swift in Sources */,
-				6BDE9120218C19DF003F976B /* MapViewController.swift in Sources */,
 				6B473DB222029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472B0219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B473DB62202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
@@ -1972,6 +1971,7 @@
 				6BDE9173218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD47271219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
 				6B720FF4220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */,
+				6BB50EE722112C9500F8BBF4 /* MainViewController.swift in Sources */,
 				6BD47265219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */,
 				6B0D922421FDBE5800A9B38E /* RideParkedPhotoViewController.swift in Sources */,
 				6BDE9130218C19DF003F976B /* EnableNotificationViewController.swift in Sources */,
@@ -1997,7 +1997,6 @@
 			files = (
 				6BD47284219A4CAA00D36C3E /* GMUStyle.m in Sources */,
 				6BDE915D218C79C1003F976B /* ServiceError.swift in Sources */,
-				A0CFE79D21747BF000BA3F6D /* MapViewController.swift in Sources */,
 				6B473DB022029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472AE219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B473DB42202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
@@ -2099,6 +2098,7 @@
 				6BDE9171218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD4726F219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
 				6B720FF2220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */,
+				6BB50EE522112C9500F8BBF4 /* MainViewController.swift in Sources */,
 				6BD47263219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */,
 				6B0D922221FDBE5800A9B38E /* RideParkedPhotoViewController.swift in Sources */,
 				6B8731D02189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,
@@ -2124,7 +2124,6 @@
 			files = (
 				6BD47285219A4CAA00D36C3E /* GMUStyle.m in Sources */,
 				6BDE915E218C79C1003F976B /* ServiceError.swift in Sources */,
-				A0CFE7AE21747D2B00BA3F6D /* MapViewController.swift in Sources */,
 				6B473DB122029530003FE160 /* GMSPolygon+Zone.swift in Sources */,
 				6BD472AF219A4CAA00D36C3E /* GMUStaticCluster.m in Sources */,
 				6B473DB52202F3FF003FE160 /* GoogleMapsService.swift in Sources */,
@@ -2226,6 +2225,7 @@
 				6BDE9172218D269D003F976B /* UIStoryboardSegueWithCompletion.swift in Sources */,
 				6BD47270219A4CAA00D36C3E /* GMUGeometryRenderer.m in Sources */,
 				6B720FF3220ADC9A0081BCF1 /* FTRedPrimaryButton.swift in Sources */,
+				6BB50EE622112C9500F8BBF4 /* MainViewController.swift in Sources */,
 				6BD47264219A4CAA00D36C3E /* GMUWeightedLatLng.m in Sources */,
 				6B0D922321FDBE5800A9B38E /* RideParkedPhotoViewController.swift in Sources */,
 				6B8731D12189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */,

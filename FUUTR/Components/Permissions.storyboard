@@ -13,7 +13,7 @@
         <!--Enable Location View Controller-->
         <scene sceneID="gaY-ZW-amW">
             <objects>
-                <viewController id="ive-ph-I79" customClass="EnableLocationViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ive-ph-I79" customClass="EnableLocationViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bAP-Ab-FOh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
                     </view>
                     <connections>
                         <segue destination="qzt-tc-SDj" kind="show" identifier="showEnableNotification" id="mgF-Gk-yaG"/>
-                        <segue destination="sTK-FS-clb" kind="show" identifier="showMap" id="hcB-IM-1Z1"/>
+                        <segue destination="sTK-FS-clb" kind="show" identifier="showMain" id="hcB-IM-1Z1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCt-fc-crM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -56,7 +56,7 @@
         <!--Enable Notification View Controller-->
         <scene sceneID="bYf-OB-Srn">
             <objects>
-                <viewController id="qzt-tc-SDj" customClass="EnableNotificationViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qzt-tc-SDj" customClass="EnableNotificationViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6cH-By-grx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="adh-WU-x6o"/>
                     </view>
                     <connections>
-                        <segue destination="sTK-FS-clb" kind="show" identifier="showMap" id="muN-Ht-7rg"/>
+                        <segue destination="sTK-FS-clb" kind="show" identifier="showMain" id="muN-Ht-7rg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSI-ME-IES" userLabel="First Responder" sceneMemberID="firstResponder"/>

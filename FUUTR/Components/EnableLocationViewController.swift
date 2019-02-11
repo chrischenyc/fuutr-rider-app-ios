@@ -39,7 +39,7 @@ extension EnableLocationViewController: CLLocationManagerDelegate {
     }
     
     if UIApplication.shared.isRegisteredForRemoteNotifications {
-      performSegue(withIdentifier: R.segue.enableLocationViewController.showMap, sender: nil)
+      performSegue(withIdentifier: R.segue.enableLocationViewController.showMain, sender: nil)
     } else {
       performSegue(withIdentifier: R.segue.enableLocationViewController.showEnableNotification, sender: nil)
     }
