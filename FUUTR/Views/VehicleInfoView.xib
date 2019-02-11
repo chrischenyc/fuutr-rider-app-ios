@@ -36,29 +36,29 @@
                         <action selector="closeButtonTapped" destination="-1" eventType="touchUpInside" id="c8N-04-Wwe"/>
                     </connections>
                 </button>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="cQn-Q5-p1M">
-                    <rect key="frame" x="20" y="20" width="227" height="134"/>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LgO-K9-TPb" userLabel="Stack View - price">
+                    <rect key="frame" x="20" y="20" width="289" height="24"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LgO-K9-TPb" userLabel="Stack View - price">
-                            <rect key="frame" x="0.0" y="0.0" width="227" height="24"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-dollar-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="LzD-kh-xiL" userLabel="dollarImage">
-                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="eQr-jv-1IR"/>
-                                        <constraint firstAttribute="width" constant="24" id="u0Y-TC-phQ"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 to unlock $0.20/min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW6-0n-AEu">
-                                    <rect key="frame" x="32" y="2" width="195" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-dollar-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="LzD-kh-xiL" userLabel="dollarImage">
+                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="eQr-jv-1IR"/>
+                                <constraint firstAttribute="width" constant="24" id="u0Y-TC-phQ"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 to unlock $0.20/min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW6-0n-AEu">
+                            <rect key="frame" x="32" y="2" width="257" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="cQn-Q5-p1M">
+                    <rect key="frame" x="20" y="56" width="227" height="98"/>
+                    <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dys-Re-zfD" userLabel="Stack View - location">
-                            <rect key="frame" x="0.0" y="36" width="227" height="43"/>
+                            <rect key="frame" x="0.0" y="0.0" width="227" height="43"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-location-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="9D6-H6-45p" userLabel="locationImage">
                                     <rect key="frame" x="0.0" y="9.5" width="24" height="24"/>
@@ -87,7 +87,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L8Q-6w-CQe" userLabel="Stack View - range">
-                            <rect key="frame" x="0.0" y="91" width="227" height="43"/>
+                            <rect key="frame" x="0.0" y="55" width="227" height="43"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-battery-empty-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="nXt-fN-7BF">
                                     <rect key="frame" x="0.0" y="9.5" width="24" height="24"/>
@@ -165,18 +165,21 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="agB-l3-5Xr" secondAttribute="trailing" constant="24" id="2b7-rh-OvG"/>
                 <constraint firstItem="0F4-xC-bLI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="36a-Dh-Tcb"/>
+                <constraint firstItem="cQn-Q5-p1M" firstAttribute="top" secondItem="LgO-K9-TPb" secondAttribute="bottom" constant="12" id="39d-6f-bIo"/>
                 <constraint firstItem="cQn-Q5-p1M" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="BEM-Sd-Lf7"/>
                 <constraint firstItem="agB-l3-5Xr" firstAttribute="leading" secondItem="cQn-Q5-p1M" secondAttribute="trailing" constant="8" id="Dtf-i5-zTt"/>
+                <constraint firstItem="LgO-K9-TPb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Fu8-AW-MRa"/>
                 <constraint firstItem="agB-l3-5Xr" firstAttribute="bottom" secondItem="cQn-Q5-p1M" secondAttribute="bottom" id="RnB-8n-YBx"/>
-                <constraint firstItem="cQn-Q5-p1M" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="cjQ-0t-vVR"/>
+                <constraint firstItem="0F4-xC-bLI" firstAttribute="leading" secondItem="LgO-K9-TPb" secondAttribute="trailing" constant="16" id="Zgc-SD-vU1"/>
                 <constraint firstItem="Hjy-GO-ulf" firstAttribute="top" secondItem="cQn-Q5-p1M" secondAttribute="bottom" constant="32" id="djE-a7-Cd9"/>
+                <constraint firstItem="LgO-K9-TPb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="gYW-64-5fq"/>
                 <constraint firstItem="Hjy-GO-ulf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="okW-sA-idt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hjy-GO-ulf" secondAttribute="trailing" constant="20" id="rhJ-kp-3XT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0F4-xC-bLI" secondAttribute="trailing" constant="6" id="y7I-1L-qPU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="197.59999999999999" y="372.86356821589209"/>
+            <point key="canvasLocation" x="-328" y="304"/>
         </view>
     </objects>
     <resources>
