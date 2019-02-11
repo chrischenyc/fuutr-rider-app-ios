@@ -181,6 +181,12 @@
 		6BB50ED92210CFB100F8BBF4 /* FTWhitePrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED82210CFB100F8BBF4 /* FTWhitePrimaryButton.swift */; };
 		6BB50EDA2210CFB100F8BBF4 /* FTWhitePrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED82210CFB100F8BBF4 /* FTWhitePrimaryButton.swift */; };
 		6BB50EDB2210CFB100F8BBF4 /* FTWhitePrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50ED82210CFB100F8BBF4 /* FTWhitePrimaryButton.swift */; };
+		6BB50EDE2211047700F8BBF4 /* UnlockInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50EDC2211047700F8BBF4 /* UnlockInfoView.swift */; };
+		6BB50EDF2211047700F8BBF4 /* UnlockInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50EDC2211047700F8BBF4 /* UnlockInfoView.swift */; };
+		6BB50EE02211047700F8BBF4 /* UnlockInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB50EDC2211047700F8BBF4 /* UnlockInfoView.swift */; };
+		6BB50EE12211047700F8BBF4 /* UnlockInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */; };
+		6BB50EE22211047700F8BBF4 /* UnlockInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */; };
+		6BB50EE32211047700F8BBF4 /* UnlockInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */; };
 		6BB6CB6E2196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
 		6BB6CB6F2196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
 		6BB6CB702196563700B597B3 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */; };
@@ -518,6 +524,8 @@
 		6BB50ED02210C95300F8BBF4 /* FTWhiteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTWhiteLabel.swift; sourceTree = "<group>"; };
 		6BB50ED42210C99C00F8BBF4 /* FTWhiteBasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTWhiteBasicButton.swift; sourceTree = "<group>"; };
 		6BB50ED82210CFB100F8BBF4 /* FTWhitePrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTWhitePrimaryButton.swift; sourceTree = "<group>"; };
+		6BB50EDC2211047700F8BBF4 /* UnlockInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockInfoView.swift; sourceTree = "<group>"; };
+		6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnlockInfoView.xib; sourceTree = "<group>"; };
 		6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		6BBC6A0021A0DD27003C910B /* ride.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ride.gpx; sourceTree = "<group>"; };
@@ -775,6 +783,8 @@
 				6B31E1EA2197F34F00CB424E /* PaymentCell.swift */,
 				6B2C9BB021A01BE80042432D /* TransactionCell.swift */,
 				6B8E30C6219FDD5000292B4E /* HistoryRideCell.swift */,
+				6BB50EDC2211047700F8BBF4 /* UnlockInfoView.swift */,
+				6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */,
 				9197553E21FC3A230069D25A /* VehicleInfoView.swift */,
 				9197553A21FC32E20069D25A /* VehicleInfoView.xib */,
 				914A6B7721FD24CC00715879 /* VehicleReservedInfoView.swift */,
@@ -1323,6 +1333,7 @@
 				6BDEEF53220C1B1800C0FBB8 /* HowToRide.storyboard in Resources */,
 				6BDEEF43220C1A3C00C0FBB8 /* Welcome.storyboard in Resources */,
 				6BDEEF77220C1C3800C0FBB8 /* LaunchScreen.storyboard in Resources */,
+				6BB50EE32211047700F8BBF4 /* UnlockInfoView.xib in Resources */,
 				6BDEEF5B220C1B5800C0FBB8 /* History.storyboard in Resources */,
 				6BDEEFA3220D365C00C0FBB8 /* MobileSignIn.storyboard in Resources */,
 				6BDEEF57220C1B3900C0FBB8 /* SideMenu.storyboard in Resources */,
@@ -1346,6 +1357,7 @@
 				914A6B7C21FD250000715879 /* VehicleReservedInfoView.xib in Resources */,
 				6BDEEF9D220D32C800C0FBB8 /* Main.storyboard in Resources */,
 				6BBE6C7D219AE6CA002D639B /* GoogleMapStyle.json in Resources */,
+				6BB50EE12211047700F8BBF4 /* UnlockInfoView.xib in Resources */,
 				6BDEEF6D220C1BF800C0FBB8 /* RidePaused.storyboard in Resources */,
 				6BDEEFA1220D365C00C0FBB8 /* MobileSignIn.storyboard in Resources */,
 				6BDEEF59220C1B5800C0FBB8 /* History.storyboard in Resources */,
@@ -1379,6 +1391,7 @@
 				914A6B7D21FD250000715879 /* VehicleReservedInfoView.xib in Resources */,
 				6BDEEF9E220D32C800C0FBB8 /* Main.storyboard in Resources */,
 				6BBE6C7E219AE6CA002D639B /* GoogleMapStyle.json in Resources */,
+				6BB50EE22211047700F8BBF4 /* UnlockInfoView.xib in Resources */,
 				6BDEEF6E220C1BF800C0FBB8 /* RidePaused.storyboard in Resources */,
 				6BDEEFA2220D365C00C0FBB8 /* MobileSignIn.storyboard in Resources */,
 				6BDEEF5A220C1B5800C0FBB8 /* History.storyboard in Resources */,
@@ -1889,6 +1902,7 @@
 				6BDE9125218C19DF003F976B /* AppDelegate.swift in Sources */,
 				914A6B7A21FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */,
 				6B214AEA21958ED100553C3D /* EditPhoneViewController.swift in Sources */,
+				6BB50EE02211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD4726B219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
 				6BBE6C8C219BCF70002D639B /* CGFloat+Constants.swift in Sources */,
 				6BD472A7219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
@@ -2015,6 +2029,7 @@
 				A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */,
 				914A6B7821FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */,
 				6B214AE821958ED100553C3D /* EditPhoneViewController.swift in Sources */,
+				6BB50EDE2211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD47269219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
 				6BBE6C8A219BCF70002D639B /* CGFloat+Constants.swift in Sources */,
 				6BD472A5219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
@@ -2141,6 +2156,7 @@
 				A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */,
 				914A6B7921FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */,
 				6B214AE921958ED100553C3D /* EditPhoneViewController.swift in Sources */,
+				6BB50EDF2211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD4726A219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
 				6BBE6C8B219BCF70002D639B /* CGFloat+Constants.swift in Sources */,
 				6BD472A6219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,

@@ -66,9 +66,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if !Defaults[.userSignedIn] {
       self.window?.rootViewController = R.storyboard.welcome().instantiateInitialViewController()
     } else if !Defaults[.userOnboarded] {
-      self.window?.rootViewController = R.storyboard.main().instantiateInitialViewController()
+      self.window?.rootViewController = R.storyboard.permissions().instantiateInitialViewController()
     } else {
-      self.window?.rootViewController = R.storyboard.howToRide().instantiateInitialViewController()
+      self.window?.rootViewController = R.storyboard.main().instantiateInitialViewController()
     }
     
     NotificationCenter.default.addObserver(self, selector: #selector(self.handleUserSignedOut), name: .userSignedOut, object: nil)

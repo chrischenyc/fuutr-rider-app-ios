@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnlockInfoView" customModule="FUUTR" customModuleProvider="target">
+            <connections>
+                <outlet property="priceLabel" destination="Eeq-0W-dpg" id="O9u-7M-27b"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="228"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WxV-JY-l8h">
+                    <rect key="frame" x="20" y="64" width="263" height="39"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride a scooter" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4m-Mj-K5i" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="263" height="23"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="339 La Trobe St" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eeq-0W-dpg" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="23" width="263" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-model" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-u5-Oiq">
+                    <rect key="frame" x="299" y="35.5" width="96" height="96"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="96" id="OBM-Dk-pVK"/>
+                        <constraint firstAttribute="height" constant="96" id="qnY-lY-xo3"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kcr-3b-4xH">
+                    <rect key="frame" x="20" y="163.5" width="379" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKB-eH-GGP" userLabel="Cancel" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="181.5" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="lHW-Dy-8JU"/>
+                            </constraints>
+                            <state key="normal" title="Scan"/>
+                            <connections>
+                                <action selector="scanButtonTapped:" destination="-1" eventType="touchUpInside" id="gPU-n1-6MR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W16-Gm-Exg" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
+                            <rect key="frame" x="197.5" y="0.0" width="181.5" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Loi-oy-dTr"/>
+                            </constraints>
+                            <state key="normal" title="Find Me"/>
+                            <connections>
+                                <action selector="findMeButtonTapped:" destination="-1" eventType="touchUpInside" id="g67-gA-ShL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="kcr-3b-4xH" firstAttribute="top" secondItem="NDi-u5-Oiq" secondAttribute="bottom" constant="32" id="Cmu-vC-m6z"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NDi-u5-Oiq" secondAttribute="trailing" constant="24" id="Knj-sl-0Ji"/>
+                <constraint firstItem="NDi-u5-Oiq" firstAttribute="leading" secondItem="WxV-JY-l8h" secondAttribute="trailing" constant="16" id="RfA-6d-dR2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kcr-3b-4xH" secondAttribute="trailing" constant="20" id="Sxy-QJ-PmR"/>
+                <constraint firstItem="kcr-3b-4xH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="VWS-9J-3D2"/>
+                <constraint firstItem="WxV-JY-l8h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="fLG-pJ-gn8"/>
+                <constraint firstItem="NDi-u5-Oiq" firstAttribute="centerY" secondItem="WxV-JY-l8h" secondAttribute="centerY" id="q9Q-6z-KqR"/>
+                <constraint firstItem="WxV-JY-l8h" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="64" id="vET-CL-Zh9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-50.399999999999999" y="205.09745127436284"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="scooter-model" width="96" height="96"/>
+    </resources>
+</document>

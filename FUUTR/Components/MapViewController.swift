@@ -53,12 +53,11 @@ class MapViewController: UIViewController {
   // ---------- IBOutlet ----------
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var sideMenuButton: UIButton!
-  @IBOutlet weak var unlockButton: UIButton!
   
-  @IBOutlet weak var ridingView: RidingView!
-  @IBOutlet weak var unlockView: UIView!
+  @IBOutlet weak var unlockInfoView: UnlockInfoView!
   @IBOutlet weak var vehicleInfoView: VehicleInfoView!
   @IBOutlet weak var vehicleReservedInfoView: VehicleReservedInfoView!
+  @IBOutlet weak var ridingView: RidingView!
   
   // MARK: - lifecycle
   override func viewDidLoad() {
@@ -163,7 +162,7 @@ class MapViewController: UIViewController {
     
   }
   
-  @IBAction func unlock(_ sender: Any) {
+  private func unlock() {
     performSegue(withIdentifier: R.segue.mapViewController.showUnlock, sender: nil)
   }
 }
@@ -425,13 +424,19 @@ extension MapViewController {
 // MARK: - UI
 extension MapViewController {
   override func viewDidLayoutSubviews() {
-    unlockView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
+    unlockInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
   }
   private func setupUI() {
-    sideMenuButton.backgroundColor = UIColor.clear
+    unlockInfoView.onFindMe = { [weak self] in
+      
+    }
+    
+    unlockInfoView.onScan = { [weak self] in
+      self?.unlock()
+    }
     
     vehicleInfoView.onReserve = { [weak self] (vehicle) in
       self?.alertMessage(title: "Reserve Scooter",
@@ -448,11 +453,11 @@ extension MapViewController {
     }
     
     vehicleInfoView.onScan = { [weak self] in
-      self?.unlock(self?.vehicleInfoView as Any)
+      self?.unlock()
     }
     
     vehicleReservedInfoView.onScan = { [weak self] in
-      self?.unlock(self?.vehicleReservedInfoView as Any)
+      self?.unlock()
     }
     
     vehicleReservedInfoView.onCancel = { [weak self] (vehicle) in
@@ -509,7 +514,7 @@ extension MapViewController {
   private func showVehicleInfo(_ vehicle: Vehicle) {
     // TODO: add show/hide transition animation
     updateVehicleInfo(vehicle)
-    unlockView.isHidden = true
+    unlockInfoView.isHidden = true
     
     if let currentLocation = currentLocation, let latitude = vehicle.latitude, let longitude = vehicle.longitude {
       mapView.drawWalkingRoute(from: currentLocation.coordinate,
@@ -521,7 +526,7 @@ extension MapViewController {
     // TODO: show/hide transition animation
     vehicleInfoView.isHidden = true
     vehicleReservedInfoView.isHidden = true
-    unlockView.isHidden = false
+    unlockInfoView.isHidden = false
     
     mapView.clearWalkingRoute()
   }
@@ -541,12 +546,12 @@ extension MapViewController {
   private func updateUnlockView() {
     if ongoingRide != nil {
       ridingView.isHidden = false
-      unlockView.isHidden = true
+      unlockInfoView.isHidden = true
       vehicleInfoView.isHidden = true
       vehicleReservedInfoView.isHidden = true
     } else {
       ridingView.isHidden = true
-      unlockView.isHidden = false
+      unlockInfoView.isHidden = false
     }
   }
   

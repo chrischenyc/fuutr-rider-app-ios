@@ -94,29 +94,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-OG-jme" userLabel="unlockView">
-                                <rect key="frame" x="0.0" y="562" width="375" height="105"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-Ss-nph" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
-                                        <rect key="frame" x="70" y="30.5" width="235" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="cNv-rs-9zD"/>
-                                            <constraint firstAttribute="width" constant="235" id="poA-St-Dcf"/>
-                                        </constraints>
-                                        <state key="normal" title="Scan">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="unlock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bgf-n7-fkc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-OG-jme" userLabel="unlockView" customClass="UnlockInfoView" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="411" width="375" height="256"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="1MR-Ss-nph" firstAttribute="centerX" secondItem="uh5-OG-jme" secondAttribute="centerX" id="0OM-nG-ziY"/>
-                                    <constraint firstAttribute="height" constant="105" id="KnM-4O-ov5"/>
-                                    <constraint firstItem="1MR-Ss-nph" firstAttribute="centerY" secondItem="uh5-OG-jme" secondAttribute="centerY" id="mlh-dq-v4i"/>
-                                </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-nd-pNL" userLabel="vehicleInfoView" customClass="VehicleInfoView" customModule="FUUTR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="411" width="375" height="256"/>
@@ -146,7 +126,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="zoP-Uq-ABq" secondAttribute="trailing" id="4Bn-9p-RIX"/>
-                            <constraint firstItem="uh5-OG-jme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="67F-AF-bzW"/>
+                            <constraint firstItem="uh5-OG-jme" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="67F-AF-bzW"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6X2-wB-VND"/>
                             <constraint firstAttribute="bottom" secondItem="zoP-Uq-ABq" secondAttribute="bottom" id="7bI-3u-4XO"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AnA-aF-8Me"/>
@@ -154,6 +134,7 @@
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Dhw-Xp-dVT"/>
                             <constraint firstAttribute="trailing" secondItem="uh5-OG-jme" secondAttribute="trailing" id="Ggw-EX-ZlA"/>
                             <constraint firstItem="FYW-nd-pNL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kaa-EU-zFb"/>
+                            <constraint firstItem="uh5-OG-jme" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-256" id="NPg-Cg-nuw"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6i-Mk-ptg"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQh-9I-Jzz"/>
                             <constraint firstAttribute="bottom" secondItem="r9R-Fu-VmM" secondAttribute="bottom" id="Sha-BV-22t"/>
@@ -173,8 +154,7 @@
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
                         <outlet property="ridingView" destination="zoP-Uq-ABq" id="OGQ-0R-yrQ"/>
                         <outlet property="sideMenuButton" destination="wXu-gN-jng" id="Szo-TM-gWK"/>
-                        <outlet property="unlockButton" destination="1MR-Ss-nph" id="wJT-vO-elG"/>
-                        <outlet property="unlockView" destination="uh5-OG-jme" id="ejk-zq-8Qb"/>
+                        <outlet property="unlockInfoView" destination="uh5-OG-jme" id="ejk-zq-8Qb"/>
                         <outlet property="vehicleInfoView" destination="FYW-nd-pNL" id="6DX-ay-ise"/>
                         <outlet property="vehicleReservedInfoView" destination="r9R-Fu-VmM" id="5Pc-Zb-QLT"/>
                         <segue destination="6ub-gY-uRn" kind="presentation" identifier="showHistory" id="jgO-zq-Q4p"/>

@@ -647,12 +647,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
     /// Nib `DialogViewController`.
     static let dialogViewController = _R.nib._DialogViewController()
     /// Nib `RidingView`.
     static let ridingView = _R.nib._RidingView()
+    /// Nib `UnlockInfoView`.
+    static let unlockInfoView = _R.nib._UnlockInfoView()
     /// Nib `VehicleInfoView`.
     static let vehicleInfoView = _R.nib._VehicleInfoView()
     /// Nib `VehicleReservedInfoView`.
@@ -668,6 +670,12 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.ridingView) instead")
     static func ridingView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.ridingView)
+    }
+    
+    /// `UINib(name: "UnlockInfoView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.unlockInfoView) instead")
+    static func unlockInfoView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.unlockInfoView)
     }
     
     /// `UINib(name: "VehicleInfoView", in: bundle)`
@@ -688,6 +696,10 @@ struct R: Rswift.Validatable {
     
     static func ridingView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.ridingView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func unlockInfoView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.unlockInfoView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func vehicleInfoView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1380,6 +1392,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _RidingView.validate()
+      try _UnlockInfoView.validate()
       try _VehicleInfoView.validate()
       try _VehicleReservedInfoView.validate()
     }
@@ -1407,6 +1420,23 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic-clock-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-clock-dark-gray-24' is used in nib 'RidingView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-location-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-location-dark-gray-24' is used in nib 'RidingView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-model' is used in nib 'RidingView', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _UnlockInfoView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "UnlockInfoView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-model' is used in nib 'UnlockInfoView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
