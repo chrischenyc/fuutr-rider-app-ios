@@ -18,6 +18,8 @@ class HistoryRidesTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    navigationController?.navigationBar.applyLightTheme()
+    
     tableView.tableFooterView = UIView(frame: .zero)
     
     loadRides()

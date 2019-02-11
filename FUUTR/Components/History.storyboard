@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BZa-U7-rhs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y21-KI-XUu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,13 +12,13 @@
         <!--Ride History-->
         <scene sceneID="1O4-sn-P0T">
             <objects>
-                <tableViewController id="hh2-yE-2j1" customClass="HistoryRidesTableViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hh2-yE-2j1" customClass="HistoryRidesTableViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fVX-0x-IzZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryRideCell" rowHeight="120" id="lyF-cx-fZM" customClass="HistoryRideCell" customModule="OTGRider" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryRideCell" rowHeight="120" id="lyF-cx-fZM" customClass="HistoryRideCell" customModule="FUUTR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lyF-cx-fZM" id="XVt-eo-1PB">
@@ -83,7 +83,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ride History" id="axA-dL-Leo">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EoN-rJ-tah"/>
+                        <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="EoN-rJ-tah">
+                            <connections>
+                                <segue destination="K0R-5X-WQs" kind="unwind" unwindAction="unwindToHome:" id="aaZ-5A-HLi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="K0R-5X-WQs" kind="unwind" unwindAction="unwindToHome:" id="b9P-CQ-eu1"/>
@@ -93,7 +97,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzX-if-lT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="K0R-5X-WQs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="561" y="154"/>
+            <point key="canvasLocation" x="1500" y="153.37331334332833"/>
         </scene>
         <!--RideFinished-->
         <scene sceneID="Pug-Mp-BSI">
@@ -101,25 +105,28 @@
                 <viewControllerPlaceholder storyboardName="RideFinished" id="vnM-2y-X9i" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yi5-Es-MZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="88"/>
+            <point key="canvasLocation" x="2051.1999999999998" y="87.256371814092958"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="vAg-8S-dQK">
+        <scene sceneID="Idk-8R-EHW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BZa-U7-rhs" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y21-KI-XUu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dx3-VL-LXd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="fOa-e7-X4K">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hh2-yE-2j1" kind="relationship" relationship="rootViewController" id="R1c-YK-Vct"/>
+                        <segue destination="hh2-yE-2j1" kind="relationship" relationship="rootViewController" id="Gtu-Av-qrE"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iKM-xX-mgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xr7-T0-Bjx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274.39999999999998" y="154.27286356821591"/>
+            <point key="canvasLocation" x="560.79999999999995" y="153.37331334332833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic-close-dark-gray-16" width="16" height="16"/>
+    </resources>
 </document>

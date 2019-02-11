@@ -1558,6 +1558,7 @@ struct _R: Rswift.Validatable {
       let name = "History"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'History', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
