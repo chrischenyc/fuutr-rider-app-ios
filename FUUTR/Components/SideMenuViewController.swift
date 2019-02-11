@@ -10,43 +10,61 @@ import UIKit
 
 // arrange enums according to the order of static cells in SideMenu.storyboard
 enum SideMenuItem: Int {
-  case greeting
   case history
-  case accont
-  case settings
+  case wallet
+  case account
   case help
 }
 
-class SideMenuViewController: UITableViewController {
+class SideMenuViewController: UIViewController {
+  
+  @IBOutlet weak var greetingBackdropView: UIView!
+  @IBOutlet weak var avatarImageView: UIImageView!
+  @IBOutlet weak var greetingLabel: UILabel!
+  @IBOutlet weak var rideHistoryButton: UIButton!
+  @IBOutlet weak var walletButton: UIButton!
+  @IBOutlet weak var accountButton: UIButton!
+  @IBOutlet weak var helpButton: UIButton!
   
   var selectedMenuItem: SideMenuItem?
-  
-  @IBOutlet weak var versionLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if let appName = Bundle.main.infoDictionary!["CFBundleDisplayName"] as? String,
-      let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String,
-      let buildNumber = Bundle.main.infoDictionary!["CFBundleVersion"] as? String {
-      versionLabel.text = "\(appName) \(appVersion)(\(buildNumber))"
+    greetingBackdropView.backgroundColor = UIColor.primaryRedColor
+    if let displayName = currentUser?.displayName {
+      greetingLabel.text = "Hi, \(displayName)!"
     }
+    else {
+      greetingLabel.text = "Hi!"
+    }
+    
+    rideHistoryButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    walletButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    accountButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    helpButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    rideHistoryButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
+    walletButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
+    accountButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
+    helpButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
   }
   
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    selectedMenuItem = SideMenuItem(rawValue: indexPath.row)
-    
-    guard let selectedMenuItem = selectedMenuItem else { return }
-    
-    switch selectedMenuItem {
-    case .greeting:
-      break
-    case .history,
-         .settings,
-         .accont,
-         .help:
+  @IBAction func menuItemSelected(_ sender: Any) {
+    if let button = sender as? UIButton {
+      switch button {
+      case rideHistoryButton:
+        selectedMenuItem = .history
+      case walletButton:
+        selectedMenuItem = .wallet
+      case accountButton:
+        selectedMenuItem = .account
+      case helpButton:
+        selectedMenuItem = .help
+      default:
+        break
+      }
+      
       performSegue(withIdentifier: R.segue.sideMenuViewController.unwindToHome, sender: nil)
     }
   }
-  
 }

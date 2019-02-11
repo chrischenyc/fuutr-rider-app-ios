@@ -854,7 +854,7 @@
 			name = Permissions;
 			sourceTree = "<group>";
 		};
-		6BB6CB772196F88A00B597B3 /* Settings */ = {
+		6BB6CB772196F88A00B597B3 /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				6BDEEF60220C1B9400C0FBB8 /* Settings.storyboard */,
@@ -863,10 +863,10 @@
 				6B214AE32195701C00553C3D /* EditEmailViewController.swift */,
 				6B214AE721958ED100553C3D /* EditPhoneViewController.swift */,
 			);
-			name = Settings;
+			name = Account;
 			sourceTree = "<group>";
 		};
-		6BB6CB782196F89800B597B3 /* Account */ = {
+		6BB6CB782196F89800B597B3 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
 				6BDEEF5C220C1B7200C0FBB8 /* Account.storyboard */,
@@ -875,7 +875,7 @@
 				6B31E1EE2197F3FC00CB424E /* PaymentsTableViewController.swift */,
 				6B2C9BBC21A020D60042432D /* TransactionsTableViewController.swift */,
 			);
-			name = Account;
+			name = Wallet;
 			sourceTree = "<group>";
 		};
 		6BBE6C80219BC926002D639B /* Utility */ = {
@@ -1146,9 +1146,9 @@
 				6BB6CB762196F87E00B597B3 /* Permissions */,
 				6BDEEFD1220EB6D000C0FBB8 /* Unlock */,
 				6BCEFBD6219960A9003FB097 /* Ride */,
-				6BB6CB782196F89800B597B3 /* Account */,
+				6BB6CB782196F89800B597B3 /* Wallet */,
 				6B8E30CA219FDE6600292B4E /* History */,
-				6BB6CB772196F88A00B597B3 /* Settings */,
+				6BB6CB772196F88A00B597B3 /* Account */,
 				6BDEEFBC220DA15800C0FBB8 /* Shared */,
 			);
 			path = Components;

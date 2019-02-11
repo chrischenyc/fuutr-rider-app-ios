@@ -1791,6 +1791,9 @@ struct _R: Rswift.Validatable {
       let name = "SideMenu"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "boy-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'boy-1' is used in storyboard 'SideMenu', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-clock-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-clock-dark-gray-24' is used in storyboard 'SideMenu', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-report-issue-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-report-issue-dark-gray-16' is used in storyboard 'SideMenu', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
   private var searchAPITask: URLSessionTask?
   private var rideAPITask: URLSessionTask?
   private var vehicleAPITask: URLSessionTask?
+  private var userAPITask: URLSessionTask?
   
   // ---------- recurring operations ----------
   private var deferredSearchTimer: Timer?     // new search will be fired unless timer gets invalidated
@@ -108,13 +109,11 @@ class MainViewController: UIViewController {
       
       unwindSegueWithCompletion.completion = {
         switch selectedMenuItem {
-        case .greeting:
-          break
-        case .accont:
-          self.performSegue(withIdentifier: R.segue.mainViewController.showAccount, sender: nil)
         case .history:
           self.performSegue(withIdentifier: R.segue.mainViewController.showHistory, sender: nil)
-        case .settings:
+        case .wallet:
+          self.performSegue(withIdentifier: R.segue.mainViewController.showAccount, sender: nil)
+        case .account:
           self.performSegue(withIdentifier: R.segue.mainViewController.showSettings, sender: nil)
         case .help:
           if let url = URL(string: config.env.helpURL), UIApplication.shared.canOpenURL(url) {
@@ -416,6 +415,19 @@ extension MainViewController {
         }
         
       }
+    })
+  }
+  
+  private func getUser() {
+    userAPITask?.cancel()
+    
+    userAPITask = UserService.getProfile({ (user, error) in
+      guard error == nil else {
+        logger.error("Couldn't get user profile: \(error!.localizedDescription)")
+        return
+      }
+      
+      currentUser = user
     })
   }
   
