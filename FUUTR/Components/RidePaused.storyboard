@@ -159,12 +159,10 @@
                     </view>
                     <connections>
                         <outlet property="costLabel" destination="Ly2-Gf-fFM" id="V35-Vp-uA5"/>
-                        <outlet property="endRideButton" destination="law-FY-Wdf" id="Sf2-ed-qIe"/>
                         <outlet property="priceLabel" destination="pyS-6O-b1H" id="tHN-fC-Znn"/>
                         <outlet property="remainingRangeLabel" destination="3vq-Vv-j7d" id="Fsg-ON-7KF"/>
                         <outlet property="ridingDistanceLabel" destination="ySS-bg-3Rk" id="uzJ-uQ-eAB"/>
                         <outlet property="ridingTimeLabel" destination="Ze8-ZB-Ppo" id="hDx-GV-NP7"/>
-                        <outlet property="unlockButton" destination="V3M-bJ-Bvo" id="Od8-kn-41F"/>
                         <segue destination="Kj5-LL-YTN" kind="unwind" unwindAction="unwindToHome:" id="Zgo-AE-Bxf"/>
                     </connections>
                 </viewController>

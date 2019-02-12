@@ -20,8 +20,6 @@ class RidePausedViewController: UIViewController {
   @IBOutlet weak var ridingDistanceLabel: UILabel!
   @IBOutlet weak var remainingRangeLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
-  @IBOutlet weak var unlockButton: UIButton!
-  @IBOutlet weak var endRideButton: UIButton!
   
   var dismissAction: RidePausedViewControllerDismissAction?
   
