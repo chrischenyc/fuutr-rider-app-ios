@@ -28,6 +28,7 @@ abstract_target 'Project' do
   pod 'PinCodeView'
   pod 'IHKeyboardAvoiding'
   pod 'FlagPhoneNumber'
+  pod 'Cosmos'
   
   # Networking
   pod 'ReachabilitySwift'

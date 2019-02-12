@@ -5,12 +5,15 @@
 //  Copyright © 2019 FUUTR. All rights reserved.
 //
 
+import Cosmos
+
 class RideFinishedViewController: UIViewController {
   
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var rideUsedTimeLabel: UILabel!
   @IBOutlet weak var rideDistanceLabel: UILabel!
   @IBOutlet weak var costLabel: UILabel!
+  @IBOutlet weak var ratingView: CosmosView!
   @IBOutlet weak var reportButton: UIButton!
   @IBOutlet weak var continueButton: UIButton!
   @IBOutlet weak var mapViewHeightConstraint: NSLayoutConstraint!
