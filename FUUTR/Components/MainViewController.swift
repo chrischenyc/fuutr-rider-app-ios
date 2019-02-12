@@ -72,9 +72,6 @@ class MainViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // animate out vehicle banner before leaving
-    hideVehicleInfo()
-    
     if let ridePausedViewController = segue.destination as? RidePausedViewController {
       // keep a reference of paused screen, so it can be refreshed per second
       self.ridePausedViewController = ridePausedViewController
