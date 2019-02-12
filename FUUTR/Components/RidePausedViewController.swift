@@ -8,7 +8,6 @@
 enum RidePausedViewControllerDismissAction {
   case resumeRide
   case endRide
-  case none
 }
 
 class RidePausedViewController: UIViewController {
@@ -25,6 +24,8 @@ class RidePausedViewController: UIViewController {
   
   // MARK: - lifecycle
   override func viewDidLoad() {
+    navigationController?.navigationBar.applyLightTheme()
+    
     updateContent()
     
     Timer.scheduledTimer(timeInterval: 1,
@@ -39,6 +40,14 @@ class RidePausedViewController: UIViewController {
   
   @objc private func updateContent() {
     ride.refresh()
+    
+    guard let pausedUntil = ride.pausedUntil else { return }
+    guard Int(pausedUntil.timeIntervalSinceNow) >= 0 else {
+      dismissAction = nil
+      performSegue(withIdentifier: R.segue.ridePausedViewController.unwindToHome, sender: nil)
+      return
+    }
+    
     ridingTimeLabel.text = ride.duration.hhmmssString
     ridingDistanceLabel.text = ride.distance.distanceString
     costLabel.text = ride.totalCost.currencyString
@@ -47,11 +56,6 @@ class RidePausedViewController: UIViewController {
   }
   
   // MARK: - user actions
-  @objc private func close() {
-    dismissAction = .none
-    self.dismiss(animated: true, completion: nil)
-  }
-  
   @IBAction func resumeRide(_ sender: Any) {
     dismissAction = .resumeRide
     performSegue(withIdentifier: R.segue.ridePausedViewController.unwindToHome, sender: nil)

@@ -902,7 +902,7 @@ struct R: Rswift.Validatable {
       /// Segue identifier `showRideParkedPhoto`.
       static let showRideParkedPhoto: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, RideParkedPhotoViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideParkedPhoto")
       /// Segue identifier `showRidePaused`.
-      static let showRidePaused: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, RidePausedViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRidePaused")
+      static let showRidePaused: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showRidePaused")
       /// Segue identifier `showSettings`.
       static let showSettings: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showSettings")
       /// Segue identifier `showUnlock`.
@@ -946,7 +946,7 @@ struct R: Rswift.Validatable {
       /// Optionally returns a typed version of segue `showRidePaused`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showRidePaused(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, RidePausedViewController>? {
+      static func showRidePaused(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showRidePaused, segue: segue)
       }
       
@@ -1748,7 +1748,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct ridePaused: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = RidePausedViewController
+      typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "RidePaused"

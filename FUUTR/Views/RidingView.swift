@@ -29,16 +29,14 @@ class RidingView: DesignableView {
       guard let pausedUntil = ride.pausedUntil else { return }
       let remainingPausedTime = Int(pausedUntil.timeIntervalSinceNow)
       
-      if remainingPausedTime > 0 {
-        logger.debug("pausing ride for \(remainingPausedTime) seconds")
-      }
-      else {
+      if remainingPausedTime <= 0 {
         lockButton.setTitle("Lock", for: .normal)
         onPauseTimeUp?()
       }
-      
-      lockButton.setTitle("Unlock", for: .normal)
-      scooterIsLockedLabel.isHidden = false
+      else {
+        lockButton.setTitle("Unlock", for: .normal)
+        scooterIsLockedLabel.isHidden = false
+      }
     } else {
       lockButton.setTitle("Lock", for: .normal)
       scooterIsLockedLabel.isHidden = true

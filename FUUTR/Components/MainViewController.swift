@@ -68,7 +68,8 @@ class MainViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let ridePausedViewController = segue.destination as? RidePausedViewController,
+    if let navigationController = segue.destination as? UINavigationController,
+      let ridePausedViewController = navigationController.topViewController as? RidePausedViewController,
       let ride = sender as? Ride {
       ridePausedViewController.ride = ride
     }
@@ -142,9 +143,6 @@ class MainViewController: UIViewController {
           
         case .endRide:
           self.endRide()
-          
-        case .none:
-          break
         }
       }
       
