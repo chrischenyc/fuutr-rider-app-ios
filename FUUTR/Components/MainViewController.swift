@@ -441,9 +441,13 @@ extension MainViewController {
     vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
   }
+  
   private func setupUI() {
+    if let remoteConfig = remoteConfig {
+      unlockInfoView.priceLabel.text = "\(remoteConfig.unlockCost.currencyString) to unlock, \(remoteConfig.rideMinuteCost.currencyString) per minute"
+    }
+    
     unlockInfoView.onFindMe = { [weak self] in
-      
       if let location = currentLocation, let searchingZoomLevel = self?.searchingZoomLevel {
         let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
         self?.mapView.animate(to: camera)

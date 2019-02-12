@@ -20,6 +20,7 @@ import Stripe
 
 // global variables
 let logger = XCGLogger.default
+var remoteConfig: RemoteConfig?
 var config = Configuration()
 var currentLocation: CLLocation?
 var currentUser: User?
@@ -55,22 +56,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     FirebaseApp.configure()
     Messaging.messaging().delegate = self
     #endif
-    
     GMSServices.provideAPIKey(config.env.googleMapKey)
     FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
     configStripe()
     
-    // UI init
+    getRemoteConfig()
     globalStyling()
-    
-    // load initial screen depending on user signed-in status
-    if !Defaults[.userSignedIn] {
-      self.window?.rootViewController = R.storyboard.welcome().instantiateInitialViewController()
-    } else if !Defaults[.userOnboarded] {
-      self.window?.rootViewController = R.storyboard.permissions().instantiateInitialViewController()
-    } else {
-      self.window?.rootViewController = R.storyboard.main().instantiateInitialViewController()
-    }
+    showInitialScreen()
     
     NotificationCenter.default.addObserver(self, selector: #selector(self.handleUserSignedOut), name: .userSignedOut, object: nil)
     
@@ -172,5 +164,27 @@ extension AppDelegate {
     // https://developers.facebook.com/docs/facebook-login/ios/advanced#custom-login-button
     // Override point for customization after application launch.
     // [FBSDKLoginButton class];
+  }
+  
+  private func getRemoteConfig() {
+    _ = RemoteConfigService.getConfig { (config, error) in
+      guard error == nil else {
+        logger.error("Couldn't get remote config: \(error!.localizedDescription)")
+        return
+      }
+      
+      remoteConfig = config
+    }
+  }
+  
+  private func showInitialScreen() {
+    // load initial screen depending on user signed-in status
+    if !Defaults[.userSignedIn] {
+      self.window?.rootViewController = R.storyboard.welcome().instantiateInitialViewController()
+    } else if !Defaults[.userOnboarded] {
+      self.window?.rootViewController = R.storyboard.permissions().instantiateInitialViewController()
+    } else {
+      self.window?.rootViewController = R.storyboard.main().instantiateInitialViewController()
+    }
   }
 }

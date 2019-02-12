@@ -21,10 +21,6 @@ class UnlockInfoView: DesignableView {
   var onFindMe: (() -> Void)?
   var onScan: (() -> Void)?
   
-  func updateContentWith() {
-    
-  }
-  
   @IBAction func scanButtonTapped(_ sender: Any) {
     onScan?()
   }
