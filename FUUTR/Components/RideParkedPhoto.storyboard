@@ -69,7 +69,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIO-M1-ZPE" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="131.5" height="44"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Take another"/>
+                                                <state key="normal" title="Take Another"/>
                                                 <connections>
                                                     <action selector="takeAnotherTapped:" destination="Q8C-ax-Kal" eventType="touchUpInside" id="f4i-Ib-Ysb"/>
                                                 </connections>

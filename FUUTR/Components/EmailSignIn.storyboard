@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Enter your email-->
+        <!--Enter Your Email-->
         <scene sceneID="2uH-0Z-voz">
             <objects>
                 <viewController id="m1S-IG-uch" customClass="EmailSignInViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,7 +81,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XHs-x7-MIc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Enter your email" id="1Ro-3B-Ofd">
+                    <navigationItem key="navigationItem" title="Enter Your Email" id="1Ro-3B-Ofd">
                         <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="Mz6-sT-evR">
                             <connections>
                                 <segue destination="pxR-nU-a5f" kind="unwind" unwindAction="unwindToWelcome:" id="AZy-w7-clF"/>
