@@ -31,7 +31,6 @@ class MainViewController: UIViewController {
   private var deferredSearchTimer: Timer?     // new search will be fired unless timer gets invalidated
   private let searchDeferring: TimeInterval = 1.5 // cooling off period in case user moves the map again
   private var ongoingRideRefreshTimer: Timer?    // periodically update duration, distance, route
-  private let ongoingRideRefreshFrequency: TimeInterval = 3
   
   // ---------- run-time values ----------
   private var didLoadOngoingRide: Bool = false  // after launch, the app would try to load an ongoing ride
@@ -40,7 +39,6 @@ class MainViewController: UIViewController {
     didSet {
       if let ongoingRide = ongoingRide {
         ridingView.updateContent(withRide: ongoingRide)
-        ridePausedViewController?.updateContent(with: ongoingRide)
       }
       
       if ongoingRide != oldValue {
@@ -48,8 +46,6 @@ class MainViewController: UIViewController {
       }
     }
   }
-  
-  var ridePausedViewController: RidePausedViewController?
   
   // ---------- IBOutlet ----------
   @IBOutlet weak var mapView: GMSMapView!
@@ -72,9 +68,9 @@ class MainViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let ridePausedViewController = segue.destination as? RidePausedViewController {
-      // keep a reference of paused screen, so it can be refreshed per second
-      self.ridePausedViewController = ridePausedViewController
+    if let ridePausedViewController = segue.destination as? RidePausedViewController,
+      let ride = sender as? Ride {
+      ridePausedViewController.ride = ride
     }
     
     if let endRidePhotoViewController = segue.destination as? RideParkedPhotoViewController,
@@ -140,8 +136,6 @@ class MainViewController: UIViewController {
       let dismissAction = ridePausedViewController.dismissAction {
       
       unwindSegueWithCompletion.completion = {
-        self.ridePausedViewController = nil
-        
         switch dismissAction {
         case .resumeRide:
           self.resumeRide()
@@ -169,7 +163,7 @@ extension MainViewController {
     ongoingRide = ride
     
     ongoingRideRefreshTimer?.invalidate()
-    ongoingRideRefreshTimer = Timer.scheduledTimer(timeInterval: ongoingRideRefreshFrequency,
+    ongoingRideRefreshTimer = Timer.scheduledTimer(timeInterval: 1,
                                                    target: self,
                                                    selector: #selector(self.updateRideLocally),
                                                    userInfo: nil,

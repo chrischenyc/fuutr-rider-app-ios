@@ -13,6 +13,8 @@ enum RidePausedViewControllerDismissAction {
 
 class RidePausedViewController: UIViewController {
   
+  var ride: Ride!
+  
   @IBOutlet weak var costLabel: UILabel!
   @IBOutlet weak var ridingTimeLabel: UILabel!
   @IBOutlet weak var ridingDistanceLabel: UILabel!
@@ -23,7 +25,22 @@ class RidePausedViewController: UIViewController {
   
   var dismissAction: RidePausedViewControllerDismissAction?
   
-  func updateContent(with ride: Ride) {
+  // MARK: - lifecycle
+  override func viewDidLoad() {
+    updateContent()
+    
+    Timer.scheduledTimer(timeInterval: 1,
+                         target: self,
+                         selector: #selector(updateContent),
+                         userInfo: nil,
+                         repeats: true)
+  }
+  
+  
+  // MARK: - private
+  
+  @objc private func updateContent() {
+    ride.refresh()
     ridingTimeLabel.text = ride.duration.hhmmssString
     ridingDistanceLabel.text = ride.distance.distanceString
     costLabel.text = ride.totalCost.currencyString
@@ -31,6 +48,7 @@ class RidePausedViewController: UIViewController {
     priceLabel.text = "\(ride.pauseMinuteCost.currencyString) per minute"
   }
   
+  // MARK: - user actions
   @objc private func close() {
     dismissAction = .none
     self.dismiss(animated: true, completion: nil)
