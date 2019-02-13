@@ -12,6 +12,7 @@ import Stripe
 class WalletViewController: UIViewController {
   
   @IBOutlet weak var balanceLabel: UILabel!
+  @IBOutlet weak var paymentMethodsButton: UIButton!
   @IBOutlet weak var paymentHistoryButton: UIButton!
   @IBOutlet weak var balanceHistoryButton: UIButton!
   
@@ -35,6 +36,8 @@ class WalletViewController: UIViewController {
     super.viewDidLoad()
     
     navigationController?.navigationBar.applyLightTheme()
+    paymentMethodsButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    paymentMethodsButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
     paymentHistoryButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
     paymentHistoryButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
     balanceHistoryButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)

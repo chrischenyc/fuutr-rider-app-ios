@@ -149,8 +149,8 @@ struct R: Rswift.Validatable {
     static let icLocationRed32 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-location-red-32")
     /// Image `ic-lock-dark-gray-16`.
     static let icLockDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-lock-dark-gray-16")
-    /// Image `ic-mastercard--dark-gray-16`.
-    static let icMastercardDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-mastercard--dark-gray-16")
+    /// Image `ic-mastercard-dark-gray-16`.
+    static let icMastercardDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-mastercard-dark-gray-16")
     /// Image `ic-mobile-dark-gray-16`.
     static let icMobileDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-mobile-dark-gray-16")
     /// Image `ic-more-dark-gray-16`.
@@ -490,7 +490,7 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icLockDarkGray16, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-mastercard--dark-gray-16", bundle: ..., traitCollection: ...)`
+    /// `UIImage(named: "ic-mastercard-dark-gray-16", bundle: ..., traitCollection: ...)`
     static func icMastercardDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icMastercardDarkGray16, compatibleWith: traitCollection)
     }
@@ -1878,6 +1878,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic-arrow-right-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-arrow-right-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-balance-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-balance-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-mastercard-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-mastercard-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-payment-history-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-payment-history-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
