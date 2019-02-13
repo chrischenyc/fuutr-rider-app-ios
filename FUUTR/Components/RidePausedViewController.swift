@@ -50,9 +50,9 @@ class RidePausedViewController: UIViewController {
     
     ridingTimeLabel.text = ride.duration.hhmmssString
     ridingDistanceLabel.text = ride.distance.distanceString
-    costLabel.text = ride.totalCost.currencyString
+    costLabel.text = ride.totalCost.priceString
     remainingRangeLabel.text = ride.getRemainingRange().distanceString
-    priceLabel.text = "\(ride.pauseMinuteCost.currencyString) per minute"
+    priceLabel.text = "\(ride.pauseMinuteCost.priceString) per minute"
   }
   
   // MARK: - user actions

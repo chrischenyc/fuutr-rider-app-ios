@@ -9,11 +9,11 @@
 import Foundation
 
 extension Double {
-  var currencyString: String {
+  var priceString: String {
     return String(format: "$%.2f", self)
   }
   
-  var stringWithNoCurrencySign: String {
-    return String(format: "$%.2f", self)
+  var priceStringWithoutCurrency: String {
+    return String(format: "%.2f", self)
   }
 }

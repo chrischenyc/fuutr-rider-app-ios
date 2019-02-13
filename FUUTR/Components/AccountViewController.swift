@@ -73,7 +73,7 @@ class AccountViewController: UIViewController {
   }
   
   private func loadUserContent(_ user: User) {
-    self.balanceLabel.text = "Balance \(user.balance.currencyString)"
+    self.balanceLabel.text = "Balance \(user.balance.priceString)"
   }
   
 }

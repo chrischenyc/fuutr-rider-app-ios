@@ -29,7 +29,7 @@ class HistoryRideCell: UITableViewCell {
     startTimeLabel.text = ride.unlockTime?.dateTimeString
     distanceLabel.text = ride.distance.distanceString
     durationLabel.text = ride.duration.hhmmssString
-    costLabel.text = ride.totalCost.currencyString
+    costLabel.text = ride.totalCost.priceStringWithoutCurrency
     mapView.drawRouteFor(ride: ride)
   }
 }

@@ -15,7 +15,7 @@ class PaymentCell: UITableViewCell {
   @IBOutlet weak var descriptionLabel: UILabel!
   
   func loadPayment(_ payment: Payment) {
-    amountLabel.text = payment.amount?.currencyString
+    amountLabel.text = payment.amount?.priceString
     
     dateLabel.text = payment.date?.dateTimeString ?? ""
     

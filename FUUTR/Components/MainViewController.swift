@@ -433,7 +433,7 @@ extension MainViewController {
   
   private func setupUI() {
     if let remoteConfig = remoteConfig {
-      unlockInfoView.priceLabel.text = "\(remoteConfig.unlockCost.currencyString) to unlock, \(remoteConfig.rideMinuteCost.currencyString) per minute"
+      unlockInfoView.priceLabel.text = "\(remoteConfig.unlockCost.priceString) to unlock, \(remoteConfig.rideMinuteCost.priceString) per minute"
     }
     
     unlockInfoView.onFindMe = { [weak self] in

@@ -16,8 +16,8 @@ class TransactionCell: UITableViewCell {
   @IBOutlet weak var descriptionLabel: UILabel!
   
   func loadTransaction(_ transaction: Transaction) {
-    amountLabel.text = transaction.amount?.currencyString
-    balanceLabel.text = transaction.balance?.currencyString
+    amountLabel.text = transaction.amount?.priceString
+    balanceLabel.text = transaction.balance?.priceString
     dateLabel.text = transaction.date?.dateTimeString ?? ""
     descriptionLabel.text = transaction.type
   }

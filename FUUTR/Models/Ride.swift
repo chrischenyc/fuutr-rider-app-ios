@@ -88,7 +88,7 @@ extension Ride {
   }
   
   func summary() -> String {
-    return "\nRide duration: \(duration.hhmmssString)\nTotal cost: \(totalCost.currencyString)"
+    return "\nRide duration: \(duration.hhmmssString)\nTotal cost: \(totalCost.priceString)"
   }
 }
 

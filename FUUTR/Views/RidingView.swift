@@ -23,7 +23,7 @@ class RidingView: DesignableView {
     ridingTimeLabel.text = ride.duration.hhmmssString
     ridingDistanceLabel.text = ride.distance.distanceString
     remainingRangeLabel.text = ride.getRemainingRange().distanceString
-    costLabel.text = ride.totalCost.currencyString
+    costLabel.text = ride.totalCost.priceString
     
     if ride.paused {
       guard let pausedUntil = ride.pausedUntil else { return }

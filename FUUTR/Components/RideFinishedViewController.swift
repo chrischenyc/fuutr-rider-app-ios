@@ -31,7 +31,7 @@ class RideFinishedViewController: UIViewController {
     mapView.applyTheme()
     
     if let ride = ride {
-      costLabel.text = ride.totalCost.currencyString
+      costLabel.text = ride.totalCost.priceStringWithoutCurrency
       durationLabel.text = ride.duration.hhmmssString
       distanceLabel.text = ride.distance.distanceString
       title = ride.lockTime?.dateTimeString

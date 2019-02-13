@@ -109,9 +109,9 @@ class VehicleInfoView: DesignableView {
   }
   
   private func generatePriceText(for vehicle: Vehicle) -> NSMutableAttributedString {
-    let unlockText = NSAttributedString(string: vehicle.unlockCost.stringWithNoCurrencySign, attributes: moneyAttributes)
+    let unlockText = NSAttributedString(string: vehicle.unlockCost.priceStringWithoutCurrency, attributes: moneyAttributes)
     let toUnLockText = NSAttributedString(string: " to unlock ", attributes: textAttributes)
-    let rideCostText = NSAttributedString(string: vehicle.rideMinuteCost.stringWithNoCurrencySign, attributes: moneyAttributes)
+    let rideCostText = NSAttributedString(string: vehicle.rideMinuteCost.priceStringWithoutCurrency, attributes: moneyAttributes)
     let perMinText = NSAttributedString(string: " per min", attributes: textAttributes)
     
     let priceText = NSMutableAttributedString()
