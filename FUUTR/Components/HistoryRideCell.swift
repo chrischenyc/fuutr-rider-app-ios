@@ -30,5 +30,6 @@ class HistoryRideCell: UITableViewCell {
     distanceLabel.text = ride.distance.distanceString
     durationLabel.text = ride.duration.hhmmssString
     costLabel.text = ride.totalCost.currencyString
+    mapView.drawRouteFor(ride: ride)
   }
 }

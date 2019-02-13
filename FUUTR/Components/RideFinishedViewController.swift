@@ -19,8 +19,6 @@ class RideFinishedViewController: UIViewController {
   @IBOutlet weak var mapViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var socialAndButtonVerticalSpacing: NSLayoutConstraint!
   
-  private var ridePolyline: GMSPolyline?
-  
   var ride: Ride?
   
   override func viewDidLoad() {
