@@ -791,7 +791,6 @@
 				6BDEEF78220C1C3C00C0FBB8 /* Help.storyboard */,
 				6B31E1EA2197F34F00CB424E /* PaymentCell.swift */,
 				6B2C9BB021A01BE80042432D /* TransactionCell.swift */,
-				6B8E30C6219FDD5000292B4E /* HistoryRideCell.swift */,
 				6BB50EDC2211047700F8BBF4 /* UnlockInfoView.swift */,
 				6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */,
 				9197553E21FC3A230069D25A /* VehicleInfoView.swift */,
@@ -810,6 +809,7 @@
 			isa = PBXGroup;
 			children = (
 				6BDEEF58220C1B5800C0FBB8 /* History.storyboard */,
+				6B8E30C6219FDD5000292B4E /* HistoryRideCell.swift */,
 				6B8E30CB219FDE7E00292B4E /* HistoryRidesTableViewController.swift */,
 			);
 			name = History;
@@ -1749,7 +1749,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1769,7 +1769,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1789,7 +1789,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
