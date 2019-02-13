@@ -22,7 +22,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F4-xC-bLI" userLabel="closeButton">
@@ -118,14 +118,14 @@
                     </subviews>
                 </stackView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-model" translatesAutoresizingMaskIntoConstraints="NO" id="agB-l3-5Xr">
-                    <rect key="frame" x="255" y="58" width="96" height="96"/>
+                    <rect key="frame" x="255" y="56" width="96" height="96"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="96" id="3yT-Ao-pnp"/>
                         <constraint firstAttribute="width" constant="96" id="XvH-Kh-1cu"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hjy-GO-ulf">
-                    <rect key="frame" x="20" y="186" width="335" height="44"/>
+                    <rect key="frame" x="20" y="184" width="335" height="44"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-aY-ka5">
                             <rect key="frame" x="0.0" y="0.0" width="159.5" height="44"/>
@@ -169,9 +169,9 @@
                 <constraint firstItem="cQn-Q5-p1M" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="BEM-Sd-Lf7"/>
                 <constraint firstItem="agB-l3-5Xr" firstAttribute="leading" secondItem="cQn-Q5-p1M" secondAttribute="trailing" constant="8" id="Dtf-i5-zTt"/>
                 <constraint firstItem="LgO-K9-TPb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Fu8-AW-MRa"/>
-                <constraint firstItem="agB-l3-5Xr" firstAttribute="bottom" secondItem="cQn-Q5-p1M" secondAttribute="bottom" id="RnB-8n-YBx"/>
+                <constraint firstItem="agB-l3-5Xr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="56" id="Q4v-IN-Yr0"/>
                 <constraint firstItem="0F4-xC-bLI" firstAttribute="leading" secondItem="LgO-K9-TPb" secondAttribute="trailing" constant="16" id="Zgc-SD-vU1"/>
-                <constraint firstItem="Hjy-GO-ulf" firstAttribute="top" secondItem="cQn-Q5-p1M" secondAttribute="bottom" constant="32" id="djE-a7-Cd9"/>
+                <constraint firstItem="Hjy-GO-ulf" firstAttribute="top" secondItem="agB-l3-5Xr" secondAttribute="bottom" constant="32" id="ZtN-vk-obw"/>
                 <constraint firstItem="LgO-K9-TPb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="gYW-64-5fq"/>
                 <constraint firstItem="Hjy-GO-ulf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="okW-sA-idt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hjy-GO-ulf" secondAttribute="trailing" constant="20" id="rhJ-kp-3XT"/>

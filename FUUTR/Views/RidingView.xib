@@ -24,7 +24,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="DdU-Bf-0x9">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride in progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xE2-54-qNl" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
@@ -92,14 +92,14 @@
                     </subviews>
                 </stackView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-model" translatesAutoresizingMaskIntoConstraints="NO" id="RbN-T8-4In">
-                    <rect key="frame" x="255" y="51" width="96" height="96"/>
+                    <rect key="frame" x="255" y="56" width="96" height="96"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="96" id="7dv-dE-aAI"/>
                         <constraint firstAttribute="height" constant="96" id="sTB-HS-qxF"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kfr-YS-q9P">
-                    <rect key="frame" x="20" y="179" width="335" height="64"/>
+                    <rect key="frame" x="20" y="184" width="335" height="64"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="73p-TE-s0w">
                             <rect key="frame" x="0.0" y="0.0" width="159.5" height="64"/>
@@ -141,12 +141,12 @@
                 <constraint firstItem="xE2-54-qNl" firstAttribute="leading" secondItem="4s8-uV-HhH" secondAttribute="leading" constant="20" id="4xc-ts-Wpm"/>
                 <constraint firstItem="Kfr-YS-q9P" firstAttribute="leading" secondItem="DdU-Bf-0x9" secondAttribute="leading" constant="20" id="5aL-yv-7pc"/>
                 <constraint firstAttribute="trailing" secondItem="Kfr-YS-q9P" secondAttribute="trailing" constant="20" id="ByB-cR-Rvk"/>
-                <constraint firstItem="Kfr-YS-q9P" firstAttribute="top" secondItem="xDb-Hp-x4l" secondAttribute="bottom" constant="32" id="EqY-Hc-9aR"/>
                 <constraint firstItem="xDb-Hp-x4l" firstAttribute="leading" secondItem="4s8-uV-HhH" secondAttribute="leading" constant="20" id="HVQ-nw-lgW"/>
                 <constraint firstItem="xE2-54-qNl" firstAttribute="top" secondItem="4s8-uV-HhH" secondAttribute="top" constant="20" id="STl-cs-JKT"/>
                 <constraint firstItem="4s8-uV-HhH" firstAttribute="trailing" secondItem="wt7-WR-4DW" secondAttribute="trailing" constant="20" id="TTK-43-uSP"/>
-                <constraint firstItem="RbN-T8-4In" firstAttribute="bottom" secondItem="xDb-Hp-x4l" secondAttribute="bottom" id="Zzo-MU-6l2"/>
                 <constraint firstItem="4s8-uV-HhH" firstAttribute="trailing" secondItem="RbN-T8-4In" secondAttribute="trailing" constant="24" id="hkL-gR-0wd"/>
+                <constraint firstItem="Kfr-YS-q9P" firstAttribute="top" secondItem="RbN-T8-4In" secondAttribute="bottom" constant="32" id="ivP-b1-IUe"/>
+                <constraint firstItem="RbN-T8-4In" firstAttribute="top" secondItem="DdU-Bf-0x9" secondAttribute="top" constant="56" id="kna-wS-YKj"/>
                 <constraint firstItem="wt7-WR-4DW" firstAttribute="top" secondItem="4s8-uV-HhH" secondAttribute="top" constant="20" id="t4y-OP-KIj"/>
                 <constraint firstItem="RbN-T8-4In" firstAttribute="leading" secondItem="xDb-Hp-x4l" secondAttribute="trailing" constant="8" id="t5P-OL-qcz"/>
             </constraints>
