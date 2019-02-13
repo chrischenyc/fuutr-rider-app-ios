@@ -125,10 +125,10 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hjy-GO-ulf">
-                    <rect key="frame" x="20" y="186" width="335" height="64"/>
+                    <rect key="frame" x="20" y="186" width="335" height="44"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-aY-ka5">
-                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="64"/>
+                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="44"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rr-wp-oxp" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="159.5" height="44"/>
@@ -140,8 +140,8 @@
                                         <action selector="reserveButtonTapped" destination="-1" eventType="touchUpInside" id="Mwi-qF-tpp"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wait to reserve again" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AM9-9e-6CP" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="48" width="159.5" height="16"/>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wait to reserve again" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AM9-9e-6CP" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="159.5" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>

@@ -39,7 +39,7 @@ class VehicleInfoView: DesignableView {
       guard let canReserveAfter = vehicle.canReserveAfter else { return }
       
       reserveButton.setTitle(calculateTimeString(canReserveAfter: canReserveAfter), for: .normal)
-      
+      reserveButton.isEnabled = false
       waitToReserveAgainLabel.isHidden = false
       // create timer to count down
       reserveTimer?.invalidate()
@@ -51,10 +51,15 @@ class VehicleInfoView: DesignableView {
         if remainingReservedTime <= 0 {
           self?.reserveTimer?.invalidate()
           self?.waitToReserveAgainLabel.isHidden = true
+          self?.reserveButton.setTitle("Reserve", for: .normal)
+          self?.reserveButton.isEnabled = true
         }
       })
     } else {
       reserveTimer?.invalidate()
+      reserveButton.setTitle("Reserve", for: .normal)
+      reserveButton.isEnabled = true
+      reserveButton.isEnabled = true
     }
   }
   
