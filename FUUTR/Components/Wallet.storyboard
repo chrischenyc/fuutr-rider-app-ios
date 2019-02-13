@@ -433,14 +433,14 @@
                     <navigationItem key="navigationItem" title="Top Up Balance" id="7gX-fD-o2R">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Gyu-yt-WFU">
                             <connections>
-                                <segue destination="ayk-st-og7" kind="unwind" identifier="unwindToAccount" unwindAction="unwindToAccount:" id="IyD-EP-Pvz"/>
+                                <segue destination="ayk-st-og7" kind="unwind" identifier="unwindToWallet" unwindAction="unwindToWallet:" id="IyD-EP-Pvz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="payButton" destination="y1d-nn-t61" id="eKz-8X-C8e"/>
                         <outlet property="paymentMethodButton" destination="wF2-Qr-Yx2" id="xUH-qG-AVz"/>
-                        <segue destination="ayk-st-og7" kind="unwind" unwindAction="unwindToAccount:" id="x4R-Nk-2OT"/>
+                        <segue destination="ayk-st-og7" kind="unwind" unwindAction="unwindToWallet:" id="x4R-Nk-2OT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edv-bb-WPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

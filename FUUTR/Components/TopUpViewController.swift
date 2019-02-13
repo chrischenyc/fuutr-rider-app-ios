@@ -109,7 +109,7 @@ extension TopUpViewController: STPPaymentContextDelegate {
       alertMessage(title: "Thank You!",
                    message: "payment has been received",
                    positiveActionButtonTapped: {
-                    self.performSegue(withIdentifier: R.segue.topUpViewController.unwindToAccount, sender: nil)
+                    self.performSegue(withIdentifier: R.segue.topUpViewController.unwindToWallet, sender: nil)
       })
       
       
