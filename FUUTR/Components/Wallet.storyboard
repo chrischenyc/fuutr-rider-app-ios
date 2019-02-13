@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Account-->
+        <!--Wallet-->
         <scene sceneID="LEj-Dz-Ibb">
             <objects>
-                <viewController id="Ok9-qt-dsj" customClass="AccountViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ok9-qt-dsj" customClass="WalletViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kf1-bm-zse">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,8 +71,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cAl-fr-Sfd"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Account" id="2hA-tQ-BGy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0il-1b-TfY">
+                    <navigationItem key="navigationItem" title="Wallet" id="2hA-tQ-BGy">
+                        <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="0il-1b-TfY">
                             <connections>
                                 <segue destination="N5g-Sj-Cck" kind="unwind" unwindAction="unwindToHome:" id="yJN-4E-IC6"/>
                             </connections>
@@ -90,13 +90,13 @@
         <!--Balance History-->
         <scene sceneID="0L2-S4-DMs">
             <objects>
-                <tableViewController title="Balance History" id="gLu-9k-a0X" customClass="TransactionsTableViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Balance History" id="gLu-9k-a0X" customClass="TransactionsTableViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7h5-ge-KAf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCell" rowHeight="88" id="mKk-N4-GFC" customClass="TransactionCell" customModule="OTGRider" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCell" rowHeight="88" id="mKk-N4-GFC" customClass="TransactionCell" customModule="FUUTR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mKk-N4-GFC" id="hk2-2g-FJc">
@@ -166,13 +166,13 @@
         <!--Payment History-->
         <scene sceneID="a78-U3-ADj">
             <objects>
-                <tableViewController title="Payment History" id="Wy3-7P-GmG" customClass="PaymentsTableViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Payment History" id="Wy3-7P-GmG" customClass="PaymentsTableViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AQC-1W-fRT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentCell" rowHeight="72" id="xeX-xf-NoT" customClass="PaymentCell" customModule="OTGRider" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentCell" rowHeight="72" id="xeX-xf-NoT" customClass="PaymentCell" customModule="FUUTR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xeX-xf-NoT" id="GHL-KL-Lih">
@@ -235,7 +235,7 @@
         <!--Top Up Balance-->
         <scene sceneID="eJ4-rU-9Q6">
             <objects>
-                <viewController id="mgC-tv-cdf" customClass="TopUpViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mgC-tv-cdf" customClass="TopUpViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gzD-Vw-kXV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,4 +354,7 @@
             <point key="canvasLocation" x="-274.39999999999998" y="154.27286356821591"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic-close-dark-gray-16" width="16" height="16"/>
+    </resources>
 </document>

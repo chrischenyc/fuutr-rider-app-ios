@@ -106,7 +106,7 @@ class MainViewController: UIViewController {
         case .history:
           self.performSegue(withIdentifier: R.segue.mainViewController.showHistory, sender: nil)
         case .wallet:
-          self.performSegue(withIdentifier: R.segue.mainViewController.showAccount, sender: nil)
+          self.performSegue(withIdentifier: R.segue.mainViewController.showWallet, sender: nil)
         case .account:
           self.performSegue(withIdentifier: R.segue.mainViewController.showSettings, sender: nil)
         case .help:

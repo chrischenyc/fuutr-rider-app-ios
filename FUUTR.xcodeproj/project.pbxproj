@@ -142,8 +142,8 @@
 		6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */; };
 		6B8731D02189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */; };
 		6B8731D12189DB7600CC2651 /* EnableNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */; };
-		6B8731F8218AA4AF00CC2651 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731F7218AA4AF00CC2651 /* AccountViewController.swift */; };
-		6B8731F9218AA4AF00CC2651 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731F7218AA4AF00CC2651 /* AccountViewController.swift */; };
+		6B8731F8218AA4AF00CC2651 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731F7218AA4AF00CC2651 /* WalletViewController.swift */; };
+		6B8731F9218AA4AF00CC2651 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731F7218AA4AF00CC2651 /* WalletViewController.swift */; };
 		6B873201218AA9F400CC2651 /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873200218AA9F400CC2651 /* UnlockViewController.swift */; };
 		6B873202218AA9F400CC2651 /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873200218AA9F400CC2651 /* UnlockViewController.swift */; };
 		6B87320A218ACD6400CC2651 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */; };
@@ -299,7 +299,7 @@
 		6BDE9126218C19DF003F976B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731BF2189C7FA00CC2651 /* WelcomeViewController.swift */; };
 		6BDE9128218C19DF003F976B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */; };
 		6BDE9129218C19DF003F976B /* EnableLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */; };
-		6BDE912A218C19DF003F976B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731F7218AA4AF00CC2651 /* AccountViewController.swift */; };
+		6BDE912A218C19DF003F976B /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731F7218AA4AF00CC2651 /* WalletViewController.swift */; };
 		6BDE912D218C19DF003F976B /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B873200218AA9F400CC2651 /* UnlockViewController.swift */; };
 		6BDE912E218C19DF003F976B /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731A2218997B600CC2651 /* Notifications.swift */; };
 		6BDE9130218C19DF003F976B /* EnableNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */; };
@@ -358,9 +358,9 @@
 		6BDEEF59220C1B5800C0FBB8 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF58220C1B5800C0FBB8 /* History.storyboard */; };
 		6BDEEF5A220C1B5800C0FBB8 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF58220C1B5800C0FBB8 /* History.storyboard */; };
 		6BDEEF5B220C1B5800C0FBB8 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF58220C1B5800C0FBB8 /* History.storyboard */; };
-		6BDEEF5D220C1B7300C0FBB8 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF5C220C1B7200C0FBB8 /* Account.storyboard */; };
-		6BDEEF5E220C1B7300C0FBB8 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF5C220C1B7200C0FBB8 /* Account.storyboard */; };
-		6BDEEF5F220C1B7300C0FBB8 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF5C220C1B7200C0FBB8 /* Account.storyboard */; };
+		6BDEEF5D220C1B7300C0FBB8 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF5C220C1B7200C0FBB8 /* Wallet.storyboard */; };
+		6BDEEF5E220C1B7300C0FBB8 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF5C220C1B7200C0FBB8 /* Wallet.storyboard */; };
+		6BDEEF5F220C1B7300C0FBB8 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF5C220C1B7200C0FBB8 /* Wallet.storyboard */; };
 		6BDEEF61220C1B9400C0FBB8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF60220C1B9400C0FBB8 /* Settings.storyboard */; };
 		6BDEEF62220C1B9400C0FBB8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF60220C1B9400C0FBB8 /* Settings.storyboard */; };
 		6BDEEF63220C1B9400C0FBB8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDEEF60220C1B9400C0FBB8 /* Settings.storyboard */; };
@@ -528,7 +528,7 @@
 		6B8731CC2189DA4A00CC2651 /* EnableLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableLocationViewController.swift; sourceTree = "<group>"; };
 		6B8731CF2189DB7600CC2651 /* EnableNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableNotificationViewController.swift; sourceTree = "<group>"; };
 		6B8731D5218A816000CC2651 /* FUUTR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FUUTR.entitlements; sourceTree = "<group>"; };
-		6B8731F7218AA4AF00CC2651 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		6B8731F7218AA4AF00CC2651 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		6B873200218AA9F400CC2651 /* UnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
 		6B873209218ACD6400CC2651 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6B8DC67B2200578200831B03 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -645,7 +645,7 @@
 		6BDEEF50220C1B1800C0FBB8 /* HowToRide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HowToRide.storyboard; sourceTree = "<group>"; };
 		6BDEEF54220C1B3900C0FBB8 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		6BDEEF58220C1B5800C0FBB8 /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
-		6BDEEF5C220C1B7200C0FBB8 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		6BDEEF5C220C1B7200C0FBB8 /* Wallet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
 		6BDEEF60220C1B9400C0FBB8 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		6BDEEF68220C1BCD00C0FBB8 /* Unlock.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Unlock.storyboard; sourceTree = "<group>"; };
 		6BDEEF6C220C1BF800C0FBB8 /* RidePaused.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RidePaused.storyboard; sourceTree = "<group>"; };
@@ -896,8 +896,8 @@
 		6BB6CB782196F89800B597B3 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				6BDEEF5C220C1B7200C0FBB8 /* Account.storyboard */,
-				6B8731F7218AA4AF00CC2651 /* AccountViewController.swift */,
+				6BDEEF5C220C1B7200C0FBB8 /* Wallet.storyboard */,
+				6B8731F7218AA4AF00CC2651 /* WalletViewController.swift */,
 				6B214AEF2195C77A00553C3D /* TopUpViewController.swift */,
 				6B31E1EE2197F3FC00CB424E /* PaymentsTableViewController.swift */,
 				6B2C9BBC21A020D60042432D /* TransactionsTableViewController.swift */,
@@ -1176,8 +1176,8 @@
 				6BB6CB762196F87E00B597B3 /* Permissions */,
 				6BDEEFD1220EB6D000C0FBB8 /* Unlock */,
 				6BCEFBD6219960A9003FB097 /* Ride */,
-				6BB6CB782196F89800B597B3 /* Wallet */,
 				6B8E30CA219FDE6600292B4E /* History */,
+				6BB6CB782196F89800B597B3 /* Wallet */,
 				6BB6CB772196F88A00B597B3 /* Account */,
 				6BDEEFBC220DA15800C0FBB8 /* Shared */,
 			);
@@ -1376,7 +1376,7 @@
 				6BDEEF6F220C1BF800C0FBB8 /* RidePaused.storyboard in Resources */,
 				6BDEEF4B220C1AAA00C0FBB8 /* Permissions.storyboard in Resources */,
 				6BDEEF6B220C1BCD00C0FBB8 /* Unlock.storyboard in Resources */,
-				6BDEEF5F220C1B7300C0FBB8 /* Account.storyboard in Resources */,
+				6BDEEF5F220C1B7300C0FBB8 /* Wallet.storyboard in Resources */,
 				9197553D21FC32E20069D25A /* VehicleInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1394,7 +1394,7 @@
 				6BDEEF59220C1B5800C0FBB8 /* History.storyboard in Resources */,
 				6BDEEF51220C1B1800C0FBB8 /* HowToRide.storyboard in Resources */,
 				6BDEEF41220C1A3C00C0FBB8 /* Welcome.storyboard in Resources */,
-				6BDEEF5D220C1B7300C0FBB8 /* Account.storyboard in Resources */,
+				6BDEEF5D220C1B7300C0FBB8 /* Wallet.storyboard in Resources */,
 				6BDEEF55220C1B3900C0FBB8 /* SideMenu.storyboard in Resources */,
 				6BDEEF75220C1C3800C0FBB8 /* LaunchScreen.storyboard in Resources */,
 				6B8731AB2189B9A500CC2651 /* Localizable.strings in Resources */,
@@ -1429,7 +1429,7 @@
 				6BDEEF5A220C1B5800C0FBB8 /* History.storyboard in Resources */,
 				6BDEEF52220C1B1800C0FBB8 /* HowToRide.storyboard in Resources */,
 				6BDEEF42220C1A3C00C0FBB8 /* Welcome.storyboard in Resources */,
-				6BDEEF5E220C1B7300C0FBB8 /* Account.storyboard in Resources */,
+				6BDEEF5E220C1B7300C0FBB8 /* Wallet.storyboard in Resources */,
 				6BDEEF56220C1B3900C0FBB8 /* SideMenu.storyboard in Resources */,
 				6BDEEF76220C1C3800C0FBB8 /* LaunchScreen.storyboard in Resources */,
 				6B8731AC2189B9A500CC2651 /* Localizable.strings in Resources */,
@@ -1985,7 +1985,7 @@
 				6B2C9BB321A01BE80042432D /* TransactionCell.swift in Sources */,
 				6B2C9BB721A01D7F0042432D /* Transaction.swift in Sources */,
 				9181CB9721FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */,
-				6BDE912A218C19DF003F976B /* AccountViewController.swift in Sources */,
+				6BDE912A218C19DF003F976B /* WalletViewController.swift in Sources */,
 				6B214AE62195701C00553C3D /* EditEmailViewController.swift in Sources */,
 				91FA7FA421FEB20100581BB5 /* RideFinishedViewController.swift in Sources */,
 				6BD47289219A4CAA00D36C3E /* GMUPoint.m in Sources */,
@@ -2117,7 +2117,7 @@
 				6B2C9BB121A01BE80042432D /* TransactionCell.swift in Sources */,
 				6B2C9BB521A01D7F0042432D /* Transaction.swift in Sources */,
 				9181CB9521FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */,
-				6B8731F8218AA4AF00CC2651 /* AccountViewController.swift in Sources */,
+				6B8731F8218AA4AF00CC2651 /* WalletViewController.swift in Sources */,
 				6B214AE42195701C00553C3D /* EditEmailViewController.swift in Sources */,
 				91FA7FA221FEB20100581BB5 /* RideFinishedViewController.swift in Sources */,
 				6BD47287219A4CAA00D36C3E /* GMUPoint.m in Sources */,
@@ -2249,7 +2249,7 @@
 				6B2C9BB221A01BE80042432D /* TransactionCell.swift in Sources */,
 				6B2C9BB621A01D7F0042432D /* Transaction.swift in Sources */,
 				9181CB9621FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */,
-				6B8731F9218AA4AF00CC2651 /* AccountViewController.swift in Sources */,
+				6B8731F9218AA4AF00CC2651 /* WalletViewController.swift in Sources */,
 				6B214AE52195701C00553C3D /* EditEmailViewController.swift in Sources */,
 				91FA7FA321FEB20100581BB5 /* RideFinishedViewController.swift in Sources */,
 				6BD47288219A4CAA00D36C3E /* GMUPoint.m in Sources */,

@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-2060" y="1508"/>
         </scene>
-        <!--Account-->
+        <!--Wallet-->
         <scene sceneID="LKN-cT-zs3">
             <objects>
-                <viewControllerPlaceholder storyboardName="Account" id="Fr2-ny-Lh9" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Wallet" id="Fr2-ny-Lh9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZG0-Sq-K1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2057" y="1547"/>
@@ -158,7 +158,7 @@
                         <outlet property="vehicleInfoView" destination="FYW-nd-pNL" id="6DX-ay-ise"/>
                         <outlet property="vehicleReservedInfoView" destination="r9R-Fu-VmM" id="5Pc-Zb-QLT"/>
                         <segue destination="6ub-gY-uRn" kind="presentation" identifier="showHistory" id="jgO-zq-Q4p"/>
-                        <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showAccount" id="NuG-ER-BNQ"/>
+                        <segue destination="Fr2-ny-Lh9" kind="presentation" identifier="showWallet" id="NuG-ER-BNQ"/>
                         <segue destination="ouw-MG-0Xz" kind="presentation" identifier="showSettings" id="VHB-2V-NAl"/>
                         <segue destination="46k-mg-UHB" kind="presentation" identifier="showHelp" id="GwS-O7-LdY"/>
                         <segue destination="8Ti-sb-yF0" kind="presentation" identifier="showRideParkedPhoto" id="Tlg-cq-aPh"/>

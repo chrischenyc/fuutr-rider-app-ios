@@ -1,5 +1,5 @@
 //
-//  AccountViewController.swift
+//  WalletViewController.swift
 //  FUUTR
 //
 //  Created by Chris Chen on 1/11/18.
@@ -9,7 +9,7 @@
 import UIKit
 import Stripe
 
-class AccountViewController: UIViewController {
+class WalletViewController: UIViewController {
   
   @IBOutlet weak var balanceLabel: UILabel!
   
