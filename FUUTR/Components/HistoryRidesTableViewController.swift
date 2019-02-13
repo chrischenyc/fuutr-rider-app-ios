@@ -26,13 +26,13 @@ class HistoryRidesTableViewController: UITableViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let rideFinishedViewController = segue.destination as? RideFinishedViewController,
+    if let historyRideViewController = segue.destination as? HistoryRideViewController,
       let ride = sender as? Ride {
-      rideFinishedViewController.ride = ride
+      historyRideViewController.ride = ride
     }
   }
   
-  // MARK: - Table view data source
+  // MARK: - Table view data source and delegate
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return rides.count
@@ -46,6 +46,12 @@ class HistoryRidesTableViewController: UITableViewController {
     
     return cell
   }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: R.segue.historyRidesTableViewController.showHistoryRide, sender:rides[indexPath.row])
+  }
+  
+  // MARK: - private
   
   private func loadRides() {
     apiTask?.cancel()
@@ -76,10 +82,5 @@ class HistoryRidesTableViewController: UITableViewController {
     tableView.reloadData()
     
     // TODO: add call for action UI in case of zero records
-  }
-  
-  // MARK: - TableView delegate
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    performSegue(withIdentifier: R.segue.historyRidesTableViewController.showRideSummary, sender:rides[indexPath.row])
   }
 }

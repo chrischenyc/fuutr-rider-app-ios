@@ -1,5 +1,5 @@
 //
-//  RideFinishedViewController.swift
+//  HistoryRideViewController.swift
 //  FUUTR
 //
 //  Copyright © 2019 FUUTR. All rights reserved.
@@ -7,7 +7,7 @@
 
 import Cosmos
 
-class RideFinishedViewController: UIViewController {
+class HistoryRideViewController: UIViewController {
   
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var durationLabel: UILabel!
@@ -15,7 +15,6 @@ class RideFinishedViewController: UIViewController {
   @IBOutlet weak var costLabel: UILabel!
   @IBOutlet weak var ratingView: CosmosView!
   @IBOutlet weak var mapViewHeightConstraint: NSLayoutConstraint!
-  @IBOutlet weak var socialAndButtonVerticalSpacing: NSLayoutConstraint!
   
   var ride: Ride?
   
@@ -24,8 +23,7 @@ class RideFinishedViewController: UIViewController {
     
     // adjust auto-layout to fit everything in iPhone 5 screen
     if UIScreen.main.bounds.height <= 568 {
-      mapViewHeightConstraint.constant = 200
-      socialAndButtonVerticalSpacing.constant = 8
+      mapViewHeightConstraint.constant = 260
     }
     
     mapView.applyTheme()
@@ -37,11 +35,5 @@ class RideFinishedViewController: UIViewController {
       title = ride.lockTime?.dateTimeString
       mapView.drawRouteFor(ride: ride)
     }
-  }
-  
-  @IBAction func continueButtonTapped(_ sender: Any) {
-    // TODO: submit ride review
-    
-    performSegue(withIdentifier: R.segue.rideFinishedViewController.unwindToHome, sender: nil)
   }
 }

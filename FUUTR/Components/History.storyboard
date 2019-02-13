@@ -154,7 +154,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="K0R-5X-WQs" kind="unwind" unwindAction="unwindToHome:" id="b9P-CQ-eu1"/>
-                        <segue destination="vnM-2y-X9i" kind="show" identifier="showRideSummary" id="JB9-gv-J3l"/>
+                        <segue destination="vnM-2y-X9i" kind="show" identifier="showHistoryRide" id="JB9-gv-J3l"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzX-if-lT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,13 +162,13 @@
             </objects>
             <point key="canvasLocation" x="1500" y="153.37331334332833"/>
         </scene>
-        <!--RideFinished-->
+        <!--HistoryRide-->
         <scene sceneID="Pug-Mp-BSI">
             <objects>
-                <viewControllerPlaceholder storyboardName="RideFinished" id="vnM-2y-X9i" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="HistoryRide" id="vnM-2y-X9i" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yi5-Es-MZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2051.1999999999998" y="87.256371814092958"/>
+            <point key="canvasLocation" x="2130" y="152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Idk-8R-EHW">
