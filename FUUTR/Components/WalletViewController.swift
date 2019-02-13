@@ -12,10 +12,14 @@ import Stripe
 class WalletViewController: UIViewController {
   
   @IBOutlet weak var balanceLabel: UILabel!
+  @IBOutlet weak var paymentHistoryButton: UIButton!
+  @IBOutlet weak var balanceHistoryButton: UIButton!
+  
   
   private var apiTask: URLSessionTask?
   private let customerContext: STPCustomerContext
   private let paymentContext: STPPaymentContext
+  
   
   required init?(coder aDecoder: NSCoder) {
     customerContext = STPCustomerContext(keyProvider: PaymentService())
@@ -29,6 +33,12 @@ class WalletViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    navigationController?.navigationBar.applyLightTheme()
+    paymentHistoryButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    paymentHistoryButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
+    balanceHistoryButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    balanceHistoryButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
     
     loadProfile()
   }
@@ -73,7 +83,7 @@ class WalletViewController: UIViewController {
   }
   
   private func loadUserContent(_ user: User) {
-    self.balanceLabel.text = "Balance \(user.balance.priceString)"
+    self.balanceLabel.text = user.balance.priceString
   }
   
 }
