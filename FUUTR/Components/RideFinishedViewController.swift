@@ -19,7 +19,6 @@ class RideFinishedViewController: UIViewController {
   @IBOutlet weak var mapViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var socialAndButtonVerticalSpacing: NSLayoutConstraint!
   
-  private let streetZoomLevel: Float = 14.0
   private var ridePolyline: GMSPolyline?
   
   var ride: Ride?
@@ -33,34 +32,15 @@ class RideFinishedViewController: UIViewController {
       socialAndButtonVerticalSpacing.constant = 8
     }
     
+    mapView.applyTheme()
+    
     if let ride = ride {
-      updateContent(with: ride, and: currentLocation)
+      costLabel.text = ride.totalCost.currencyString
+      rideUsedTimeLabel.text = ride.duration.hhmmssString
+      rideDistanceLabel.text = ride.distance.distanceString
+      title = ride.lockTime?.dateTimeString
+      mapView.drawRouteFor(ride: ride)
     }
-  }
-  
-  func updateContent(with ride: Ride, and location: CLLocation?) {
-    costLabel.text = ride.totalCost.currencyString
-    rideUsedTimeLabel.text = ride.duration.hhmmssString
-    rideDistanceLabel.text = ride.distance.distanceString
-    title = ride.lockTime?.dateTimeString
-    
-    if let location = location {
-      let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: streetZoomLevel)
-      mapView.animate(to: camera)
-      mapView.applyTheme(currentLocation: location)
-    }
-    
-    if let encodedPath = ride.encodedPath, let decodedPath = GMSMutablePath(fromEncodedPath: encodedPath){
-      
-      drawRoute(forPath: decodedPath)
-    }
-  }
-  
-  private func drawRoute(forPath path: GMSPath?) {
-    ridePolyline = GMSPolyline(path: path)
-    ridePolyline?.strokeWidth = 4
-    ridePolyline?.strokeColor = UIColor.primaryRedColor
-    ridePolyline?.map = mapView
   }
   
   @IBAction func continueButtonTapped(_ sender: Any) {

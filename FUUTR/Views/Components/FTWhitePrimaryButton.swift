@@ -10,7 +10,7 @@ import UIKit
 
 class FTWhitePrimaryButton: FTButton {
   override func commonInit() {
-    layer.cornerRadius = .defaultCornerRadius
+    layer.cornerRadius = defaultCornerRadius
     backgroundColor = UIColor.white
     setTitleColor(UIColor.primaryRedColor, for: .normal)
     

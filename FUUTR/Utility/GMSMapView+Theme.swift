@@ -11,7 +11,7 @@ import GoogleMaps
 import Solar
 
 extension GMSMapView {
-  func applyTheme(currentLocation: CLLocation? = nil) {
+  func applyTheme() {
     do {
       var themeJSON = "GoogleMapStyle"
       

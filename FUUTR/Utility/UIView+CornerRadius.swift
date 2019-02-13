@@ -11,7 +11,7 @@ import Foundation
 extension UIView {
   
   // Apply clipping mask on certain corners with corner radius
-  func layoutCornerRadiusMask(corners: UIRectCorner, cornerRadius: CGFloat = CGFloat.defaultCornerRadius) {
+  func layoutCornerRadiusMask(corners: UIRectCorner, cornerRadius: CGFloat = defaultCornerRadius) {
     let cornerRadii = CGSize(width: cornerRadius, height: cornerRadius)
     let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: cornerRadii)
     

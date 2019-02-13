@@ -22,6 +22,7 @@ class HistoryRideCell: UITableViewCell {
     super.layoutSubviews()
     
     backdropView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight])
+    mapView.applyTheme()
   }
   
   func updateContent(withRide ride: Ride) {

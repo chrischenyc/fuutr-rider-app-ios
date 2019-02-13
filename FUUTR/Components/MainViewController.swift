@@ -745,7 +745,7 @@ extension MainViewController: CLLocationManagerDelegate {
       mapView.animate(to: camera)
     }
     currentLocation = location
-    mapView.applyTheme(currentLocation: location)
+    mapView.applyTheme()
     
     // once GPS signal is settled, check if there's an ongoing ride
     if ongoingRide == nil && !didLoadOngoingRide {

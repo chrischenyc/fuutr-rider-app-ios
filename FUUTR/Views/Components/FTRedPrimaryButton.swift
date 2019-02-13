@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 class FTRedPrimaryButton: FTButton {
   override func commonInit() {
-    layer.cornerRadius = .defaultCornerRadius
+    layer.cornerRadius = defaultCornerRadius
     backgroundColor = UIColor.primaryRedColor
     setTitleColor(UIColor.white, for: .normal)
     

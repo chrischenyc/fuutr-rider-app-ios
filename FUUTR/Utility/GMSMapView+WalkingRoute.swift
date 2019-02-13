@@ -10,7 +10,7 @@ import Foundation
 import GoogleMaps
 
 private var googleMapsAPITask: URLSessionTask?
-private var routePolyline: GMSPolyline?
+private var walkingRoutePolyline: GMSPolyline?
 
 extension GMSMapView {
   func drawWalkingRoute(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) {
@@ -34,9 +34,9 @@ extension GMSMapView {
             }
           }
           
-          routePolyline = GMSPolyline.init(path: routePath)
+          walkingRoutePolyline = GMSPolyline.init(path: routePath)
           
-          if let routePolyline = routePolyline {
+          if let routePolyline = walkingRoutePolyline {
             
             routePolyline.strokeWidth = 4
             routePolyline.map = self
@@ -56,8 +56,8 @@ extension GMSMapView {
   
   func clearWalkingRoute() {
     DispatchQueue.main.async {
-      routePolyline?.map = nil
-      routePolyline = nil
+      walkingRoutePolyline?.map = nil
+      walkingRoutePolyline = nil
     }
   }
 }
