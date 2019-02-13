@@ -19,10 +19,7 @@ extension UIColor {
   static let primaryGreenColor = UIColor("#008F00")
   
   // MARK: - Stripe
-  static let stripePrimaryBackgroundColor = UIColor("#F6F9FC")
-  static let stripePrimaryForegroundColor = UIColor("#32315E")
-  static let stripeSecondaryForegroundColor = UIColor("#8798AB")
-  static let stripeAccentColor = UIColor("#13B57D")
+  static let stripeAccentColor = UIColor("#ED1B24")
   
   // MARK: - Zone
   static let noParkingZoneFillColor = UIColor("#4DFF0000")

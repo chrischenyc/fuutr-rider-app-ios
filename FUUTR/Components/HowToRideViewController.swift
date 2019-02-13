@@ -12,8 +12,8 @@ class HowToRideViewController: UIViewController {
     didSet {
       pageControl.numberOfPages = pages.count
       pageControl.currentPage = 0
-      pageControl.tintColor = UIColor.primaryBlurredColor
-      pageControl.pageIndicatorTintColor = UIColor.primaryBlurredColor
+      pageControl.tintColor = UIColor.primaryGreyColor
+      pageControl.pageIndicatorTintColor = UIColor.primaryGreyColor
       pageControl.currentPageIndicatorTintColor = UIColor.white
       pageControl.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
     }

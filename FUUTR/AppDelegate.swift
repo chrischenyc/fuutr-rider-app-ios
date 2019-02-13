@@ -147,9 +147,6 @@ extension AppDelegate {
     }
     
     // Stripe theme configuration
-    STPTheme.default().primaryBackgroundColor = .stripePrimaryBackgroundColor
-    STPTheme.default().primaryForegroundColor = .stripePrimaryForegroundColor
-    STPTheme.default().secondaryForegroundColor = .stripeSecondaryForegroundColor
     STPTheme.default().accentColor = .stripeAccentColor
   }
 }

@@ -77,7 +77,6 @@ class TopUpViewController: UIViewController {
     payButton.isEnabled = true
     paymentMethodButton.setImage(selectedPaymentMethod.image, for: .normal)
     paymentMethodButton.setTitle("Pay with \(selectedPaymentMethod.label)", for: .normal)
-    paymentMethodButton.setTitleColor(.stripePrimaryForegroundColor, for: .normal)
   }
 }
 
