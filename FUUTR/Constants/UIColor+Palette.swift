@@ -16,6 +16,7 @@ extension UIColor {
   static let primaryWhiteColor = UIColor("#FFFFFF")
   static let primaryBlurredColor = UIColor("#A9A9A9")
   static let primaryGreyColor = UIColor("#878787")
+  static let primaryGreenColor = UIColor("#008F00")
   
   // MARK: - Stripe
   static let stripePrimaryBackgroundColor = UIColor("#F6F9FC")

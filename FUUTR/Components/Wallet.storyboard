@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="Ok9-qt-dsj" customClass="WalletViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kf1-bm-zse">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="XzM-T1-9df">
-                                <rect key="frame" x="32" y="96" width="311" height="163"/>
+                                <rect key="frame" x="32" y="28" width="311" height="163"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT BALANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ic-ye-xcY" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
                                         <rect key="frame" x="102" y="0.0" width="107.5" height="13.5"/>
@@ -47,7 +47,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-7n-Wv0">
-                                <rect key="frame" x="0.0" y="315" width="375" height="119.5"/>
+                                <rect key="frame" x="0.0" y="251" width="375" height="119.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-P1-oZM">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -198,47 +198,84 @@
         <scene sceneID="0L2-S4-DMs">
             <objects>
                 <tableViewController title="Balance History" id="gLu-9k-a0X" customClass="TransactionsTableViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7h5-ge-KAf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7h5-ge-KAf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="K1v-pZ-qRe">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m1F-wl-fy4">
+                                    <rect key="frame" x="20" y="0.0" width="319" height="44"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjZ-a4-Xnm" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="13" width="171" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3J-XS-DQn" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                            <rect key="frame" x="179" y="13" width="66" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="66" id="EWz-VU-jtz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCE-dI-c4M" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                            <rect key="frame" x="253" y="13" width="66" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="66" id="Sua-aA-CV6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="m1F-wl-fy4" firstAttribute="leading" secondItem="K1v-pZ-qRe" secondAttribute="leading" constant="20" id="18z-Vx-vcw"/>
+                                <constraint firstAttribute="bottom" secondItem="m1F-wl-fy4" secondAttribute="bottom" id="TuW-ZV-RX1"/>
+                                <constraint firstItem="m1F-wl-fy4" firstAttribute="top" secondItem="K1v-pZ-qRe" secondAttribute="top" id="V2D-CI-3fG"/>
+                                <constraint firstAttribute="trailing" secondItem="m1F-wl-fy4" secondAttribute="trailing" constant="36" id="gUy-4u-ucc"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCell" rowHeight="88" id="mKk-N4-GFC" customClass="TransactionCell" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TransactionCell" rowHeight="44" id="mKk-N4-GFC" customClass="TransactionCell" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mKk-N4-GFC" id="hk2-2g-FJc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ws4-MK-mz7">
-                                            <rect key="frame" x="8" y="8" width="359" height="71.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3yD-q3-z7T">
+                                            <rect key="frame" x="20" y="0.0" width="321" height="43.5"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3yD-q3-z7T">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="21"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dob-fa-hK2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="321.5" height="21"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KM-vH-e3t">
-                                                            <rect key="frame" x="321.5" y="0.0" width="37.5" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq0-QN-u5P">
-                                                    <rect key="frame" x="0.0" y="25" width="359" height="21.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq0-QN-u5P" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="13.5" width="173" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-u2-uCp">
-                                                    <rect key="frame" x="0.0" y="50.5" width="359" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="$999.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dob-fa-hK2">
+                                                    <rect key="frame" x="181" y="13.5" width="66" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="66" id="mKe-mw-dLV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9999.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KM-vH-e3t" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                                                    <rect key="frame" x="255" y="13.5" width="66" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="66" id="t3N-Nl-jDI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -246,17 +283,16 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ws4-MK-mz7" firstAttribute="leading" secondItem="hk2-2g-FJc" secondAttribute="leading" constant="8" id="Zs8-dW-zMc"/>
-                                        <constraint firstAttribute="trailing" secondItem="Ws4-MK-mz7" secondAttribute="trailing" constant="8" id="dQt-Fi-PUS"/>
-                                        <constraint firstAttribute="bottom" secondItem="Ws4-MK-mz7" secondAttribute="bottom" constant="8" id="q32-ZS-cG9"/>
-                                        <constraint firstItem="Ws4-MK-mz7" firstAttribute="top" secondItem="hk2-2g-FJc" secondAttribute="top" constant="8" id="qSR-ga-WFp"/>
+                                        <constraint firstItem="3yD-q3-z7T" firstAttribute="leading" secondItem="hk2-2g-FJc" secondAttribute="leading" constant="20" id="1bp-Kd-Ybz"/>
+                                        <constraint firstAttribute="trailing" secondItem="3yD-q3-z7T" secondAttribute="trailing" id="Kd7-ew-DED"/>
+                                        <constraint firstItem="3yD-q3-z7T" firstAttribute="top" secondItem="hk2-2g-FJc" secondAttribute="top" id="MUd-eH-Spu"/>
+                                        <constraint firstAttribute="bottom" secondItem="3yD-q3-z7T" secondAttribute="bottom" id="Sh6-xi-wWo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="amountLabel" destination="dob-fa-hK2" id="kAG-sW-Bg1"/>
                                     <outlet property="balanceLabel" destination="8KM-vH-e3t" id="wyZ-v9-sca"/>
                                     <outlet property="dateLabel" destination="gq0-QN-u5P" id="7Af-ou-8CN"/>
-                                    <outlet property="descriptionLabel" destination="Pka-u2-uCp" id="3LE-eJ-YGE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -275,7 +311,7 @@
             <objects>
                 <tableViewController title="Payment History" id="Wy3-7P-GmG" customClass="PaymentsTableViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AQC-1W-fRT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -435,7 +471,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QTG-uw-Q5I" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yyl-5B-xiI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Yyl-5B-xiI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

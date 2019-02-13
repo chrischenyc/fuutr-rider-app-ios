@@ -13,13 +13,12 @@ class TransactionCell: UITableViewCell {
   @IBOutlet weak var amountLabel: UILabel!
   @IBOutlet weak var balanceLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
-  @IBOutlet weak var descriptionLabel: UILabel!
   
   func loadTransaction(_ transaction: Transaction) {
+    dateLabel.text = transaction.date?.dateTimeString
     amountLabel.text = transaction.amount?.priceString
+    amountLabel.textColor = (transaction.amount! > 0) ? UIColor.primaryGreenColor : UIColor.primaryRedColor
     balanceLabel.text = transaction.balance?.priceString
-    dateLabel.text = transaction.date?.dateTimeString ?? ""
-    descriptionLabel.text = transaction.type
   }
   
 }

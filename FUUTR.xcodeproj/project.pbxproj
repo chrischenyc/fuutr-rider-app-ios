@@ -805,8 +805,6 @@
 			children = (
 				6BDEEF74220C1C3800C0FBB8 /* LaunchScreen.storyboard */,
 				6BDEEF78220C1C3C00C0FBB8 /* Help.storyboard */,
-				6B31E1EA2197F34F00CB424E /* PaymentCell.swift */,
-				6B2C9BB021A01BE80042432D /* TransactionCell.swift */,
 				6BB50EDC2211047700F8BBF4 /* UnlockInfoView.swift */,
 				6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */,
 				9197553E21FC3A230069D25A /* VehicleInfoView.swift */,
@@ -897,6 +895,8 @@
 			isa = PBXGroup;
 			children = (
 				6BDEEF5C220C1B7200C0FBB8 /* Wallet.storyboard */,
+				6B31E1EA2197F34F00CB424E /* PaymentCell.swift */,
+				6B2C9BB021A01BE80042432D /* TransactionCell.swift */,
 				6B8731F7218AA4AF00CC2651 /* WalletViewController.swift */,
 				6B214AEF2195C77A00553C3D /* TopUpViewController.swift */,
 				6B31E1EE2197F3FC00CB424E /* PaymentsTableViewController.swift */,
