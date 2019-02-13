@@ -268,47 +268,36 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wwv-xk-PkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1484" y="-530"/>
+            <point key="canvasLocation" x="1614" y="-619"/>
         </scene>
         <!--Payment History-->
         <scene sceneID="a78-U3-ADj">
             <objects>
                 <tableViewController title="Payment History" id="Wy3-7P-GmG" customClass="PaymentsTableViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AQC-1W-fRT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AQC-1W-fRT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentCell" rowHeight="72" id="xeX-xf-NoT" customClass="PaymentCell" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PaymentCell" rowHeight="44" id="xeX-xf-NoT" customClass="PaymentCell" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xeX-xf-NoT" id="GHL-KL-Lih">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tb2-Zy-T1L">
-                                            <rect key="frame" x="8" y="8" width="359" height="55.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KBT-oZ-cnQ">
+                                            <rect key="frame" x="20" y="0.0" width="321" height="43.5"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KBT-oZ-cnQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpd-EC-9Cu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="321.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZU8-xD-xfe">
-                                                            <rect key="frame" x="321.5" y="0.0" width="37.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1M-Br-8jk">
-                                                    <rect key="frame" x="0.0" y="28.5" width="359" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpd-EC-9Cu" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="285.5" height="43.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZU8-xD-xfe" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                                                    <rect key="frame" x="285.5" y="0.0" width="35.5" height="43.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -316,16 +305,15 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="tb2-Zy-T1L" firstAttribute="top" secondItem="GHL-KL-Lih" secondAttribute="top" constant="8" id="4Y7-Mb-F1G"/>
-                                        <constraint firstItem="tb2-Zy-T1L" firstAttribute="leading" secondItem="GHL-KL-Lih" secondAttribute="leading" constant="8" id="ADm-cN-cOs"/>
-                                        <constraint firstAttribute="trailing" secondItem="tb2-Zy-T1L" secondAttribute="trailing" constant="8" id="gFA-pz-bvX"/>
-                                        <constraint firstAttribute="bottom" secondItem="tb2-Zy-T1L" secondAttribute="bottom" constant="8" id="kXf-Yk-O5e"/>
+                                        <constraint firstAttribute="bottom" secondItem="KBT-oZ-cnQ" secondAttribute="bottom" id="IE8-W4-RoA"/>
+                                        <constraint firstItem="KBT-oZ-cnQ" firstAttribute="leading" secondItem="GHL-KL-Lih" secondAttribute="leading" constant="20" id="Ndi-xw-ehn"/>
+                                        <constraint firstItem="KBT-oZ-cnQ" firstAttribute="top" secondItem="GHL-KL-Lih" secondAttribute="top" id="RCd-87-Y9o"/>
+                                        <constraint firstAttribute="trailing" secondItem="KBT-oZ-cnQ" secondAttribute="trailing" id="xyd-LW-aNQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="amountLabel" destination="Rpd-EC-9Cu" id="Hcl-x7-LSA"/>
-                                    <outlet property="dateLabel" destination="ZU8-xD-xfe" id="6td-Ct-xMs"/>
-                                    <outlet property="descriptionLabel" destination="e1M-Br-8jk" id="jZq-sC-lg3"/>
+                                    <outlet property="amountLabel" destination="ZU8-xD-xfe" id="Jiq-9X-lHk"/>
+                                    <outlet property="dateLabel" destination="Rpd-EC-9Cu" id="eAd-Ft-qNI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -337,7 +325,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="miK-RV-yvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1484" y="154"/>
+            <point key="canvasLocation" x="1614" y="45"/>
         </scene>
         <!--Top Up Balance-->
         <scene sceneID="eJ4-rU-9Q6">
@@ -422,7 +410,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edv-bb-WPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ayk-st-og7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1484" y="896"/>
+            <point key="canvasLocation" x="2393" y="716"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ozF-hY-1lu">
@@ -440,7 +428,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="re1-VD-xDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="896"/>
+            <point key="canvasLocation" x="1614" y="716"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rir-Pf-oev">
