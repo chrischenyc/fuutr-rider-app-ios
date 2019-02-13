@@ -43,6 +43,17 @@ class WalletViewController: UIViewController {
     loadProfile()
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(true)
+    
+    // needed to clear the text in the back navigation:
+    self.navigationItem.title = " "
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.navigationItem.title = "Wallet"
+  }
   
   @IBAction func unwindToAccount(_ unwindSegue: UIStoryboardSegue) {
     // let sourceViewController = unwindSegue.source
