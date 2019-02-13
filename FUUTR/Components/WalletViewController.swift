@@ -58,6 +58,7 @@ class WalletViewController: UIViewController {
     self.navigationItem.title = "Wallet"
   }
   
+  // MARK: - user actions
   @IBAction func unwindToWallet(_ unwindSegue: UIStoryboardSegue) {
     // let sourceViewController = unwindSegue.source
     // Use data from the view controller which initiated the unwind segue
@@ -70,7 +71,7 @@ class WalletViewController: UIViewController {
   
   @IBAction func paymentMethodsButtonTapped(_ sender: Any) {
     // present Stripe UI
-    paymentContext.presentPaymentMethodsViewController()
+    paymentContext.pushPaymentMethodsViewController()
   }
   
   private func loadProfile() {

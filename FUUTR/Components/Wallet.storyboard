@@ -75,7 +75,7 @@
                                                             <constraint firstAttribute="height" constant="44" id="JGU-Wd-rFv"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Payment Methods" image="ic-mastercard-dark-gray-16">
+                                                        <state key="normal" title="Payment Method" image="ic-mastercard-dark-gray-16">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
