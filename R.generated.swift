@@ -919,7 +919,7 @@ struct R: Rswift.Validatable {
       /// Segue identifier `showHowToRide`.
       static let showHowToRide: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, HowToRideViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHowToRide")
       /// Segue identifier `showRideParkedPhoto`.
-      static let showRideParkedPhoto: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, RideParkedPhotoViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideParkedPhoto")
+      static let showRideParkedPhoto: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideParkedPhoto")
       /// Segue identifier `showRidePaused`.
       static let showRidePaused: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showRidePaused")
       /// Segue identifier `showSettings`.
@@ -953,7 +953,7 @@ struct R: Rswift.Validatable {
       /// Optionally returns a typed version of segue `showRideParkedPhoto`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showRideParkedPhoto(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, RideParkedPhotoViewController>? {
+      static func showRideParkedPhoto(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showRideParkedPhoto, segue: segue)
       }
       
@@ -1775,7 +1775,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct rideParkedPhoto: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = RideParkedPhotoViewController
+      typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "RideParkedPhoto"

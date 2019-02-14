@@ -11,7 +11,6 @@ import FastttCamera
 
 class RideParkedPhotoViewController: UIViewController {
   
-  @IBOutlet weak var titleView: UIView!
   @IBOutlet weak var cameraView: UIView!
   @IBOutlet weak var previewImageView: UIImageView!
   @IBOutlet weak var shootButton: UIButton!
@@ -35,7 +34,6 @@ class RideParkedPhotoViewController: UIViewController {
   }
   
   override func viewDidLayoutSubviews() {
-    titleView.layoutCornerRadiusMask(corners: [.bottomRight, .bottomLeft])
     shootView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
     sendView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
     shootButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: shootButton.frame.size.width/2)
@@ -63,7 +61,6 @@ class RideParkedPhotoViewController: UIViewController {
       fastCamera.view.frame = self.cameraView.frame
     }
     
-    view.bringSubviewToFront(titleView)
     view.bringSubviewToFront(shootView)
   }
   

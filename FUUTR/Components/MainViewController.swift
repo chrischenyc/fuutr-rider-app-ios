@@ -74,9 +74,10 @@ class MainViewController: UIViewController {
       ridePausedViewController.ride = ride
     }
     
-    if let endRidePhotoViewController = segue.destination as? RideParkedPhotoViewController,
+    if let navigationController = segue.destination as? UINavigationController,
+      let rideParkedPhotoViewController = navigationController.topViewController as? RideParkedPhotoViewController,
       let ride = sender as? Ride {
-      endRidePhotoViewController.ride = ride
+      rideParkedPhotoViewController.ride = ride
     }
     
     if let navigationController = segue.destination as? UINavigationController,

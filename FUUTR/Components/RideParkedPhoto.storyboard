@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q8C-ax-Kal">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QCn-V9-uge">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,37 +10,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Ride Parked Photo View Controller-->
+        <!--Parked Scooter Photo-->
         <scene sceneID="eCn-Nv-i46">
             <objects>
                 <viewController id="Q8C-ax-Kal" customClass="RideParkedPhotoViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="82h-Ur-4bR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tv0-gH-zS0">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plL-dA-JU9">
-                                <rect key="frame" x="0.0" y="20" width="375" height="64"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parked Scooter Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJJ-ED-vsF" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                        <rect key="frame" x="104" y="32" width="167" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="uJJ-ED-vsF" firstAttribute="centerX" secondItem="plL-dA-JU9" secondAttribute="centerX" id="36K-yb-Ayb"/>
-                                    <constraint firstItem="uJJ-ED-vsF" firstAttribute="centerY" secondItem="plL-dA-JU9" secondAttribute="centerY" constant="10" id="DSQ-fc-Zlu"/>
-                                    <constraint firstAttribute="height" constant="64" id="TWv-7V-7TO"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TO2-86-6cz">
-                                <rect key="frame" x="0.0" y="555" width="375" height="112"/>
+                                <rect key="frame" x="0.0" y="491" width="375" height="112"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abw-pg-pT3">
                                         <rect key="frame" x="155.5" y="24" width="64" height="64"/>
@@ -61,7 +44,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6h-Dq-SwW">
-                                <rect key="frame" x="0.0" y="555" width="375" height="112"/>
+                                <rect key="frame" x="0.0" y="491" width="375" height="112"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZrL-BI-6JT">
                                         <rect key="frame" x="48" y="34" width="279" height="44"/>
@@ -97,31 +80,29 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izv-tW-lx8">
-                                <rect key="frame" x="0.0" y="84" width="375" height="471"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="491"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TO2-86-6cz" firstAttribute="leading" secondItem="b5Q-JL-iOy" secondAttribute="leading" id="A5m-3P-JIT"/>
-                            <constraint firstItem="izv-tW-lx8" firstAttribute="top" secondItem="plL-dA-JU9" secondAttribute="bottom" id="ARL-en-sgB"/>
                             <constraint firstItem="Tv0-gH-zS0" firstAttribute="leading" secondItem="b5Q-JL-iOy" secondAttribute="leading" id="BSF-lo-9eG"/>
                             <constraint firstItem="U6h-Dq-SwW" firstAttribute="leading" secondItem="b5Q-JL-iOy" secondAttribute="leading" id="QWC-SK-EEq"/>
-                            <constraint firstItem="plL-dA-JU9" firstAttribute="leading" secondItem="b5Q-JL-iOy" secondAttribute="leading" id="Qaq-86-xoL"/>
                             <constraint firstItem="TO2-86-6cz" firstAttribute="top" secondItem="izv-tW-lx8" secondAttribute="bottom" id="SCc-Cc-UJF"/>
                             <constraint firstItem="izv-tW-lx8" firstAttribute="trailing" secondItem="b5Q-JL-iOy" secondAttribute="trailing" id="TTk-qq-Apk"/>
                             <constraint firstItem="b5Q-JL-iOy" firstAttribute="bottom" secondItem="TO2-86-6cz" secondAttribute="bottom" id="Td5-6V-sWT"/>
                             <constraint firstItem="Tv0-gH-zS0" firstAttribute="bottom" secondItem="TO2-86-6cz" secondAttribute="bottom" id="YkY-aV-66d"/>
-                            <constraint firstItem="Tv0-gH-zS0" firstAttribute="top" secondItem="plL-dA-JU9" secondAttribute="top" id="b1r-74-WQw"/>
                             <constraint firstItem="U6h-Dq-SwW" firstAttribute="bottom" secondItem="b5Q-JL-iOy" secondAttribute="bottom" id="d5m-v4-rEK"/>
                             <constraint firstItem="U6h-Dq-SwW" firstAttribute="trailing" secondItem="b5Q-JL-iOy" secondAttribute="trailing" id="eEQ-TQ-djs"/>
-                            <constraint firstItem="b5Q-JL-iOy" firstAttribute="trailing" secondItem="plL-dA-JU9" secondAttribute="trailing" id="g9F-42-hT6"/>
-                            <constraint firstItem="plL-dA-JU9" firstAttribute="top" secondItem="82h-Ur-4bR" secondAttribute="top" constant="20" id="kP3-nV-QOu"/>
+                            <constraint firstItem="Tv0-gH-zS0" firstAttribute="top" secondItem="b5Q-JL-iOy" secondAttribute="top" id="jeG-uX-lzQ"/>
                             <constraint firstItem="b5Q-JL-iOy" firstAttribute="trailing" secondItem="Tv0-gH-zS0" secondAttribute="trailing" id="lcE-UX-SNQ"/>
                             <constraint firstItem="izv-tW-lx8" firstAttribute="leading" secondItem="b5Q-JL-iOy" secondAttribute="leading" id="tsA-sQ-maZ"/>
+                            <constraint firstItem="izv-tW-lx8" firstAttribute="top" secondItem="b5Q-JL-iOy" secondAttribute="top" id="u4u-hy-8zM"/>
                             <constraint firstItem="b5Q-JL-iOy" firstAttribute="trailing" secondItem="TO2-86-6cz" secondAttribute="trailing" id="uAH-9k-pV7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b5Q-JL-iOy"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Parked Scooter Photo" id="hUh-Vc-Qlk"/>
                     <connections>
                         <outlet property="cameraView" destination="Tv0-gH-zS0" id="QIJ-xF-fKx"/>
                         <outlet property="previewImageView" destination="izv-tW-lx8" id="Cg8-hO-SxQ"/>
@@ -130,13 +111,12 @@
                         <outlet property="shootButton" destination="Abw-pg-pT3" id="MYP-yc-Qhs"/>
                         <outlet property="shootView" destination="TO2-86-6cz" id="sr4-qM-xgs"/>
                         <outlet property="takeAnotherButton" destination="kIO-M1-ZPE" id="C6Z-oF-fU2"/>
-                        <outlet property="titleView" destination="plL-dA-JU9" id="BvB-6e-f66"/>
                         <segue destination="u8T-pP-OQq" kind="showDetail" identifier="showRideSummary" id="XxQ-Sf-awC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04p-aB-c9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-268" y="166.8665667166417"/>
+            <point key="canvasLocation" x="671.20000000000005" y="166.8665667166417"/>
         </scene>
         <!--RideFinished-->
         <scene sceneID="BRL-9g-hF4">
@@ -144,7 +124,25 @@
                 <viewControllerPlaceholder storyboardName="RideFinished" id="u8T-pP-OQq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fb6-86-k2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="432" y="166"/>
+            <point key="canvasLocation" x="1371.2" y="165.51724137931035"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hJF-JG-Ao9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QCn-V9-uge" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="anu-PR-wY8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q8C-ax-Kal" kind="relationship" relationship="rootViewController" id="li0-dh-s0c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yza-fG-OKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268" y="166.8665667166417"/>
         </scene>
     </scenes>
 </document>
