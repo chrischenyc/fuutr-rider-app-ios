@@ -18,22 +18,15 @@ class WalletViewController: UIViewController {
   
   
   private var apiTask: URLSessionTask?
-  private let customerContext: STPCustomerContext
-  private let paymentContext: STPPaymentContext
-  
-  
-  required init?(coder aDecoder: NSCoder) {
-    customerContext = STPCustomerContext(keyProvider: PaymentService())
-    paymentContext = STPPaymentContext(customerContext: customerContext)
-    paymentContext.configuration.canDeletePaymentMethods = true
-    
-    super.init(coder: aDecoder)
-    
-    paymentContext.hostViewController = self
-  }
+  private var paymentContext: STPPaymentContext?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let customerContext = STPCustomerContext(keyProvider: PaymentService())
+    paymentContext = STPPaymentContext(customerContext: customerContext)
+    paymentContext?.configuration.canDeletePaymentMethods = true
+    paymentContext?.hostViewController = self
     
     navigationController?.navigationBar.applyLightTheme()
     paymentMethodsButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
@@ -71,7 +64,7 @@ class WalletViewController: UIViewController {
   
   @IBAction func paymentMethodsButtonTapped(_ sender: Any) {
     // present Stripe UI
-    paymentContext.pushPaymentMethodsViewController()
+    paymentContext?.pushPaymentMethodsViewController()
   }
   
   private func loadProfile() {

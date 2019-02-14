@@ -415,11 +415,11 @@
             <objects>
                 <viewController id="mgC-tv-cdf" customClass="TopUpViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gzD-Vw-kXV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1yR-eb-v1G">
-                                <rect key="frame" x="24" y="270.5" width="327" height="126"/>
+                                <rect key="frame" x="24" y="212.5" width="327" height="126"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="YMQ-54-Hbz">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
@@ -478,7 +478,7 @@
                         <viewLayoutGuide key="safeArea" id="UbR-PK-i1D"/>
                     </view>
                     <navigationItem key="navigationItem" title="Top Up Balance" id="7gX-fD-o2R">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Gyu-yt-WFU">
+                        <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="Gyu-yt-WFU">
                             <connections>
                                 <segue destination="ayk-st-og7" kind="unwind" identifier="unwindToWallet" unwindAction="unwindToWallet:" id="IyD-EP-Pvz"/>
                             </connections>
@@ -500,8 +500,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zb8-2E-qsg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9go-GV-Ds0">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="9go-GV-Ds0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
