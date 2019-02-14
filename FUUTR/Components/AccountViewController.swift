@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewController.swift
+//  AccountViewController.swift
 //  FUUTR
 //
 //  Created by Chris Chen on 1/11/18.
@@ -10,39 +10,46 @@ import UIKit
 import SwiftyUserDefaults
 import FBSDKLoginKit
 
-class SettingsTableViewController: UITableViewController {
+class AccountViewController: UIViewController {
   
-  @IBOutlet weak var displayNameLabel: UILabel!
-  @IBOutlet weak var phoneNumberLabel: UILabel!
-  @IBOutlet weak var emailLabel: UILabel!
+  @IBOutlet weak var avatarImageView: UIImageView!
+  @IBOutlet weak var nameTextField: UITextField!
+  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var phoneTextField: UITextField!
+  @IBOutlet weak var passwordTextField: UITextField!
   
   private var apiTask: URLSessionTask?
   private var user: User?
   
+  // MARK: - lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    tableView.tableFooterView = UIView(frame: .zero)
-    displayNameLabel.text = ""
-    phoneNumberLabel.text = ""
-    emailLabel.text = ""
+    navigationController?.navigationBar.applyLightTheme()
+    
+    nameTextField.isEnabled = false
+    nameTextField.textColor = UIColor.primaryGreyColor
+    emailTextField.isEnabled = false
+    emailTextField.textColor = UIColor.primaryGreyColor
+    phoneTextField.isEnabled = false
+    phoneTextField.textColor = UIColor.primaryGreyColor
+    passwordTextField.isEnabled = false
+    passwordTextField.textColor = UIColor.primaryGreyColor
     
     loadProfile()
   }
   
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: true)
-    
-    if indexPath.row == 3 {
-      signOut()
-    }
+  override func viewDidLayoutSubviews() {
+    avatarImageView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarImageView.frame.size.width/2)
   }
+  
+  // MARK: - user actions
   
   @IBAction func unwindToSettings(_ unwindSegue: UIStoryboardSegue) {
     loadProfile()
   }
   
-  private func signOut() {
+  @IBAction func signOut() {
     _ = AuthService.logout { (error) in
       guard error == nil else {
         logger.error(error?.localizedDescription)
@@ -73,6 +80,7 @@ class SettingsTableViewController: UITableViewController {
     }
   }
   
+  // MARK: - API
   private func loadProfile() {
     apiTask?.cancel()
     
@@ -80,6 +88,8 @@ class SettingsTableViewController: UITableViewController {
     
     apiTask = UserService.getProfile({[weak self] (user, error) in
       DispatchQueue.main.async {
+        self?.dismissLoading()
+        
         guard error == nil else {
           self?.alertError(error!)
           return
@@ -90,17 +100,12 @@ class SettingsTableViewController: UITableViewController {
           return
         }
         
-        self?.dismissLoading()
-        self?.loadUserContent(user)
-        
+        self?.nameTextField.text = user.displayName
+        self?.emailTextField.text = user.email
+        self?.phoneTextField.text = user.phoneNumber
+        self?.passwordTextField.text = "password"
         self?.user = user
       }
     })
-  }
-  
-  private func loadUserContent(_ user: User) {
-    self.displayNameLabel.text = user.displayName
-    self.phoneNumberLabel.text = user.phoneNumber
-    self.emailLabel.text = user.email
   }
 }

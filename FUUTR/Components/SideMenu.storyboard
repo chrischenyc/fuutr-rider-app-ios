@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pHh-ve-860">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="324"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybs-wV-1aU">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
@@ -70,13 +70,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgz-mo-Pus">
-                                        <rect key="frame" x="0.0" y="124" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="124" width="375" height="180"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="gaj-qZ-UOl">
-                                                <rect key="frame" x="0.0" y="32" width="375" height="168"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gaj-qZ-UOl">
+                                                <rect key="frame" x="0.0" y="32" width="375" height="148"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WF-Me-9rz" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="7xg-Ek-iLD"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <state key="normal" title="Ride History" image="ic-history-dark-gray-24">
                                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +89,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbD-YT-AfJ" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                                        <rect key="frame" x="0.0" y="52" width="375" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="sUg-CV-t0L"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <state key="normal" title="Wallet" image="ic-wallet-dark-gray-24">
                                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,7 +102,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ly-AK-7sf" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="128" width="375" height="40"/>
+                                                        <rect key="frame" x="0.0" y="104" width="375" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="zOy-dL-EAK"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <state key="normal" title="Account" image="ic-user-dark-gray-24">
                                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -746,8 +746,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 22 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 23 view controllers.
   struct segue {
+    /// This struct is generated for `AccountViewController`, and contains static references to 1 segues.
+    struct accountViewController {
+      /// Segue identifier `unwindToHome`.
+      static let unwindToHome: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, AccountViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToHome")
+      
+      /// Optionally returns a typed version of segue `unwindToHome`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, AccountViewController, UIKit.UIViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.accountViewController.unwindToHome, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     /// This struct is generated for `EditEmailViewController`, and contains static references to 1 segues.
     struct editEmailViewController {
       /// Segue identifier `unwindToSettings`.
@@ -1519,6 +1534,8 @@ struct _R: Rswift.Validatable {
       let name = "Account"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "boy-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'boy-1' is used in storyboard 'Account', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'Account', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

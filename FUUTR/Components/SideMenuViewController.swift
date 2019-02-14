@@ -28,6 +28,8 @@ class SideMenuViewController: UIViewController {
   
   var selectedMenuItem: SideMenuItem?
   
+  // MARK: - lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -48,6 +50,12 @@ class SideMenuViewController: UIViewController {
     accountButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
     helpButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
   }
+  
+  override func viewDidLayoutSubviews() {
+    avatarImageView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarImageView.frame.size.width/2)
+  }
+  
+  // MARK: - user actions
   
   @IBAction func menuItemSelected(_ sender: Any) {
     if let button = sender as? UIButton {

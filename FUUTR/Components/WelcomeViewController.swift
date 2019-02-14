@@ -38,7 +38,7 @@ class WelcomeViewController: UIViewController {
   // MARK: - user actions
   
   @IBAction func unwindToWelcome(_ unwindSegue: UIStoryboardSegue) {
-    if unwindSegue.source is SettingsTableViewController {
+    if unwindSegue.source is AccountViewController {
       fbLoginResult = nil
     }
   }
