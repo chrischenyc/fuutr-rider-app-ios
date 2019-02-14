@@ -9,9 +9,11 @@
 import UIKit
 import SwiftyUserDefaults
 import FBSDKLoginKit
+import IHKeyboardAvoiding
 
 class AccountViewController: UIViewController {
   
+  @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var avatarImageView: UIImageView!
   @IBOutlet weak var avatarEditButton: UIButton!
   @IBOutlet weak var nameTextField: UITextField!
@@ -38,6 +40,10 @@ class AccountViewController: UIViewController {
     
     toggleEditing(false)
     loadProfile()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    KeyboardAvoiding.avoidingView = stackView
   }
   
   override func viewDidLayoutSubviews() {
@@ -138,10 +144,10 @@ class AccountViewController: UIViewController {
                                                           target: self,
                                                           action: #selector(saveEditing))
       
-      nameTextField.isEnabled = false
+      nameTextField.isEnabled = true
       emailTextField.isEnabled = false
       phoneTextField.isEnabled = false
-      passwordTextField.isEnabled = false
+      passwordTextField.isEnabled = true
       
       avatarEditButton.isHidden = false
     } else {
