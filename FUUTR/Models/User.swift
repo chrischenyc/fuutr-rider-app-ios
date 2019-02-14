@@ -14,6 +14,7 @@ struct User: Mappable {
   var email: String?
   var countryCode: UInt64?
   var phoneNumber: String?
+  var hasPassword: Bool?
   var photo: String?
   var balance: Double = 0
   var canReserveVehicleAfter: Date?
@@ -27,6 +28,7 @@ struct User: Mappable {
     email                   <- map["email"]
     countryCode             <- map["countryCode"]
     phoneNumber             <- map["phoneNumber"]
+    hasPassword             <- map["hasPassword"]
     photo                   <- map["photo"]
     balance                 <- map["balance"]
     canReserveVehicleAfter  <- (map["canReserveVehicleAfter"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))

@@ -13,13 +13,22 @@ import FBSDKLoginKit
 class AccountViewController: UIViewController {
   
   @IBOutlet weak var avatarImageView: UIImageView!
+  @IBOutlet weak var avatarEditButton: UIButton!
   @IBOutlet weak var nameTextField: UITextField!
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var phoneTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
   private var apiTask: URLSessionTask?
-  private var user: User?
+  private var user: User? {
+    didSet {
+      toggleEditing(false)
+      
+      if let user = user {
+        populateUserProfile(user, editing: false)
+      }
+    }
+  }
   
   // MARK: - lifecycle
   override func viewDidLoad() {
@@ -33,6 +42,8 @@ class AccountViewController: UIViewController {
   
   override func viewDidLayoutSubviews() {
     avatarImageView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarImageView.frame.size.width/2)
+    
+    avatarEditButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarEditButton.frame.size.width/2)
   }
   
   // MARK: - user actions
@@ -55,6 +66,9 @@ class AccountViewController: UIViewController {
   
   @objc func saveEditing() {
     // TODO:
+  }
+  
+  @IBAction func editAvatar(_ sender: Any) {
   }
   
   @IBAction func signOut() {
@@ -108,10 +122,6 @@ class AccountViewController: UIViewController {
           return
         }
         
-        self?.nameTextField.text = user.displayName
-        self?.emailTextField.text = user.email
-        self?.phoneTextField.text = user.phoneNumber
-        self?.passwordTextField.text = "password"
         self?.user = user
       }
     })
@@ -125,17 +135,15 @@ class AccountViewController: UIViewController {
                                                          action: #selector(cancelEditing))
       
       navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
-                                                         target: self,
-                                                         action: #selector(saveEditing))
+                                                          target: self,
+                                                          action: #selector(saveEditing))
       
       nameTextField.isEnabled = false
-      nameTextField.textColor = UIColor.primaryGreyColor
       emailTextField.isEnabled = false
-      emailTextField.textColor = UIColor.primaryGreyColor
       phoneTextField.isEnabled = false
-      phoneTextField.textColor = UIColor.primaryGreyColor
       passwordTextField.isEnabled = false
-      passwordTextField.textColor = UIColor.primaryGreyColor
+      
+      avatarEditButton.isHidden = false
     } else {
       navigationItem.leftBarButtonItem = UIBarButtonItem(image: R.image.icCloseDarkGray16(),
                                                          style: .plain,
@@ -147,13 +155,73 @@ class AccountViewController: UIViewController {
                                                           action: #selector(startEditing))
       
       nameTextField.isEnabled = false
-      nameTextField.textColor = UIColor.primaryGreyColor
       emailTextField.isEnabled = false
-      emailTextField.textColor = UIColor.primaryGreyColor
       phoneTextField.isEnabled = false
-      phoneTextField.textColor = UIColor.primaryGreyColor
       passwordTextField.isEnabled = false
-      passwordTextField.textColor = UIColor.primaryGreyColor
+      
+      avatarEditButton.isHidden = true
+    }
+    
+    if let user = user {
+      populateUserProfile(user, editing: on)
+    }
+  }
+  
+  private func populateUserProfile(_ user: User, editing: Bool) {
+    if editing {
+      nameTextField.textColor = UIColor.primaryDarkColor
+      nameTextField.placeholder = "e.g. Charlotte Johnston"
+      nameTextField.text = user.displayName
+      
+      emailTextField.textColor = UIColor.primaryDarkColor
+      emailTextField.placeholder = "email"
+      emailTextField.text = user.email
+      
+      phoneTextField.textColor = UIColor.primaryDarkColor
+      phoneTextField.placeholder = "0412 345 678"
+      phoneTextField.text = user.phoneNumber
+      
+      passwordTextField.textColor = UIColor.primaryDarkColor
+      passwordTextField.placeholder = "Current password"
+      passwordTextField.text = ""
+    } else {
+      if let displayName = user.displayName, displayName.count > 0 {
+        nameTextField.textColor = UIColor.primaryGreyColor
+        nameTextField.text = displayName
+      }
+      else {
+        nameTextField.textColor = UIColor.primaryRedColor
+        nameTextField.text = "+ Add your name"
+      }
+      
+      if let email = user.email, email.count > 0 {
+        emailTextField.textColor = UIColor.primaryGreyColor
+        emailTextField.text = email
+      }
+      else {
+        emailTextField.textColor = UIColor.primaryRedColor
+        emailTextField.text = "+ Add an email"
+      }
+      
+      if let phone = user.phoneNumber, phone.count > 0 {
+        phoneTextField.textColor = UIColor.primaryGreyColor
+        phoneTextField.text = phone
+      }
+      else {
+        phoneTextField.textColor = UIColor.primaryRedColor
+        phoneTextField.text = "+ Add a phone"
+      }
+      
+      if let hasPassword = user.hasPassword, hasPassword {
+        passwordTextField.textColor = UIColor.primaryGreyColor
+        passwordTextField.text = "password"
+        passwordTextField.isSecureTextEntry = true
+      }
+      else {
+        passwordTextField.textColor = UIColor.primaryRedColor
+        passwordTextField.text = "+ Add a password"
+        passwordTextField.isSecureTextEntry = false
+      }
     }
   }
 }
