@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -154,21 +155,13 @@
                     </navigationItem>
                     <connections>
                         <segue destination="K0R-5X-WQs" kind="unwind" unwindAction="unwindToHome:" id="b9P-CQ-eu1"/>
-                        <segue destination="vnM-2y-X9i" kind="show" identifier="showHistoryRide" id="JB9-gv-J3l"/>
+                        <segue destination="cdD-ui-EHQ" kind="show" identifier="showHistoryRide" id="hhE-aT-MEj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzX-if-lT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="K0R-5X-WQs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1500" y="153.37331334332833"/>
-        </scene>
-        <!--HistoryRide-->
-        <scene sceneID="Pug-Mp-BSI">
-            <objects>
-                <viewControllerPlaceholder storyboardName="HistoryRide" id="vnM-2y-X9i" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yi5-Es-MZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2130" y="152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Idk-8R-EHW">
@@ -188,6 +181,195 @@
             </objects>
             <point key="canvasLocation" x="560.79999999999995" y="153.37331334332833"/>
         </scene>
+        <!--History Ride View Controller-->
+        <scene sceneID="hW3-8U-oNq">
+            <objects>
+                <viewController id="cdD-ui-EHQ" customClass="HistoryRideViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nqK-wV-zsF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFC-1R-gYP" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="WUB-bb-VRf"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhE-Ty-OG1" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="152.5" y="328" width="70.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p47-b8-IbF">
+                                <rect key="frame" x="16" y="360" width="343" height="24"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qgY-B8-V0Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="24"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-dollar-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="JkS-zw-NaN" userLabel="dollarImage">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="OUI-cl-KvX"/>
+                                                    <constraint firstAttribute="height" constant="24" id="vvG-zg-a1e"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOs-mS-XiC" userLabel="ridingCostLabel" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                <rect key="frame" x="36" y="0.5" width="67.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="1HR-6Q-cEd">
+                                        <rect key="frame" x="119.5" y="0.0" width="104" height="24"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-clock-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="Rkm-eg-4uT" userLabel="clockImage">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="rfO-rp-52v"/>
+                                                    <constraint firstAttribute="height" constant="24" id="v5Y-NI-OhU"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wew-GQ-Na0" userLabel="ridingTimeLabel" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                <rect key="frame" x="36" y="0.5" width="68" height="23"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="shs-R6-Y4S">
+                                        <rect key="frame" x="239.5" y="0.0" width="103.5" height="24"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-location-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="hfx-ER-Vn5">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="1bq-2u-tSx"/>
+                                                    <constraint firstAttribute="height" constant="24" id="4Sp-jc-nVU"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7g-WT-yHS" userLabel="rideDistance" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                <rect key="frame" x="36" y="0.5" width="67.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ehj-xm-vjk">
+                                <rect key="frame" x="91.5" y="399" width="192" height="112"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share the FUUTR with friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgN-RE-RPX" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="16"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4by-mr-wlP">
+                                        <rect key="frame" x="0.0" y="16" width="192" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cds-Sf-J9J" userLabel="facebookButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="0ZJ-xE-h2Z"/>
+                                                    <constraint firstAttribute="width" constant="64" id="N0t-xy-16w"/>
+                                                </constraints>
+                                                <state key="normal" image="social-facebook-dark-gray-35"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWf-V8-6RJ" userLabel="twitterButton">
+                                                <rect key="frame" x="64" y="0.0" width="64" height="64"/>
+                                                <state key="normal" image="social-twitter-dark-gray-35"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnU-Rb-BtR" userLabel="instagramButton">
+                                                <rect key="frame" x="128" y="0.0" width="64" height="64"/>
+                                                <state key="normal" image="social-instagram-dark-gray-35"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kR-B9-gM0">
+                                        <rect key="frame" x="0.0" y="80" width="192" height="32"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEa-8Q-9ta" customClass="CosmosView" customModule="Cosmos">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="ic-rating-red-32"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="ic-rating-empty-red-32"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                        <real key="value" value="32"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="qEa-8Q-9ta" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3kR-B9-gM0" secondAttribute="leading" id="JP1-4x-cOb"/>
+                                            <constraint firstAttribute="height" constant="32" id="Qpk-P6-EcA"/>
+                                            <constraint firstItem="qEa-8Q-9ta" firstAttribute="top" secondItem="3kR-B9-gM0" secondAttribute="top" id="XuZ-Tr-8Ob"/>
+                                            <constraint firstAttribute="bottom" secondItem="qEa-8Q-9ta" secondAttribute="bottom" id="qWY-Pa-bmi"/>
+                                            <constraint firstItem="qEa-8Q-9ta" firstAttribute="centerX" secondItem="3kR-B9-gM0" secondAttribute="centerX" id="tOh-sS-22Z"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qEa-8Q-9ta" secondAttribute="trailing" id="wk4-fk-yWU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Ad-lc-h7w">
+                                <rect key="frame" x="50" y="543" width="275" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6v-lB-6DS" userLabel="reportButton" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="A55-CQ-MNr"/>
+                                            <constraint firstAttribute="width" constant="275" id="HBY-lc-64O"/>
+                                        </constraints>
+                                        <state key="normal" title="Report an issue"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KhE-Ty-OG1" firstAttribute="top" secondItem="NFC-1R-gYP" secondAttribute="bottom" constant="8" id="7O9-0l-qa2"/>
+                            <constraint firstItem="qsC-SE-Gu7" firstAttribute="trailing" secondItem="p47-b8-IbF" secondAttribute="trailing" constant="16" id="7jc-Pv-vro"/>
+                            <constraint firstItem="9Ad-lc-h7w" firstAttribute="centerX" secondItem="nqK-wV-zsF" secondAttribute="centerX" id="8Q4-lk-MBn"/>
+                            <constraint firstItem="qsC-SE-Gu7" firstAttribute="trailing" secondItem="NFC-1R-gYP" secondAttribute="trailing" id="Id8-GD-erp"/>
+                            <constraint firstItem="9Ad-lc-h7w" firstAttribute="top" secondItem="ehj-xm-vjk" secondAttribute="bottom" constant="32" id="J4o-Qe-mzC"/>
+                            <constraint firstItem="NFC-1R-gYP" firstAttribute="top" secondItem="qsC-SE-Gu7" secondAttribute="top" id="LAI-vp-7u9"/>
+                            <constraint firstItem="NFC-1R-gYP" firstAttribute="leading" secondItem="qsC-SE-Gu7" secondAttribute="leading" id="LdN-sS-KZO"/>
+                            <constraint firstItem="p47-b8-IbF" firstAttribute="centerX" secondItem="nqK-wV-zsF" secondAttribute="centerX" id="Q2t-pD-QXq"/>
+                            <constraint firstItem="p47-b8-IbF" firstAttribute="leading" secondItem="qsC-SE-Gu7" secondAttribute="leading" constant="16" id="TCw-vj-Tf4"/>
+                            <constraint firstItem="KhE-Ty-OG1" firstAttribute="bottom" secondItem="p47-b8-IbF" secondAttribute="top" constant="-16" id="Toc-wK-VgT"/>
+                            <constraint firstItem="KhE-Ty-OG1" firstAttribute="centerX" secondItem="qsC-SE-Gu7" secondAttribute="centerX" id="cse-bO-YyP"/>
+                            <constraint firstItem="ehj-xm-vjk" firstAttribute="centerX" secondItem="nqK-wV-zsF" secondAttribute="centerX" id="lU1-bd-t5a"/>
+                            <constraint firstItem="qsC-SE-Gu7" firstAttribute="bottom" secondItem="9Ad-lc-h7w" secondAttribute="bottom" constant="16" id="oVk-V0-JrC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qsC-SE-Gu7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="35v-Wg-hMJ"/>
+                    <connections>
+                        <outlet property="costLabel" destination="DOs-mS-XiC" id="aiQ-ka-1oG"/>
+                        <outlet property="distanceLabel" destination="i7g-WT-yHS" id="FsT-7T-JA2"/>
+                        <outlet property="durationLabel" destination="Wew-GQ-Na0" id="gCQ-sB-xJl"/>
+                        <outlet property="mapView" destination="NFC-1R-gYP" id="fTC-H2-1GB"/>
+                        <outlet property="mapViewHeightConstraint" destination="WUB-bb-VRf" id="bud-GC-fIL"/>
+                        <outlet property="ratingView" destination="qEa-8Q-9ta" id="avi-7y-g79"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agJ-Z6-VeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2308" y="152"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic-arrow-right-dark-gray-16" width="16" height="16"/>
@@ -195,5 +377,10 @@
         <image name="ic-close-dark-gray-16" width="16" height="16"/>
         <image name="ic-dollar-dark-gray-24" width="24" height="24"/>
         <image name="ic-location-dark-gray-24" width="24" height="24"/>
+        <image name="ic-rating-empty-red-32" width="32" height="32"/>
+        <image name="ic-rating-red-32" width="32" height="32"/>
+        <image name="social-facebook-dark-gray-35" width="83" height="83"/>
+        <image name="social-instagram-dark-gray-35" width="83" height="83"/>
+        <image name="social-twitter-dark-gray-35" width="83" height="83"/>
     </resources>
 </document>

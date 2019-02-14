@@ -1222,14 +1222,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 18 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 17 storyboards.
   struct storyboard {
     /// Storyboard `EmailSignIn`.
     static let emailSignIn = _R.storyboard.emailSignIn()
     /// Storyboard `Help`.
     static let help = _R.storyboard.help()
-    /// Storyboard `HistoryRide`.
-    static let historyRide = _R.storyboard.historyRide()
     /// Storyboard `History`.
     static let history = _R.storyboard.history()
     /// Storyboard `HowToRide`.
@@ -1274,11 +1272,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "History", bundle: ...)`
     static func history(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.history)
-    }
-    
-    /// `UIStoryboard(name: "HistoryRide", bundle: ...)`
-    static func historyRide(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.historyRide)
     }
     
     /// `UIStoryboard(name: "HowToRide", bundle: ...)`
@@ -1518,7 +1511,6 @@ struct _R: Rswift.Validatable {
       try emailSignIn.validate()
       try help.validate()
       try history.validate()
-      try historyRide.validate()
       try howToRide.validate()
       try launchScreen.validate()
       try main.validate()
@@ -1578,28 +1570,11 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'History', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-dollar-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-dollar-dark-gray-24' is used in storyboard 'History', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-location-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-location-dark-gray-24' is used in storyboard 'History', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
-        }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct historyRide: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = HistoryRideViewController
-      
-      let bundle = R.hostingBundle
-      let name = "HistoryRide"
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "ic-clock-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-clock-dark-gray-24' is used in storyboard 'HistoryRide', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic-dollar-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-dollar-dark-gray-24' is used in storyboard 'HistoryRide', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic-location-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-location-dark-gray-24' is used in storyboard 'HistoryRide', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic-rating-empty-red-32", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-rating-empty-red-32' is used in storyboard 'HistoryRide', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic-rating-red-32", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-rating-red-32' is used in storyboard 'HistoryRide', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "social-facebook-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-facebook-dark-gray-35' is used in storyboard 'HistoryRide', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "social-instagram-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-instagram-dark-gray-35' is used in storyboard 'HistoryRide', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "social-twitter-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-twitter-dark-gray-35' is used in storyboard 'HistoryRide', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-rating-empty-red-32", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-rating-empty-red-32' is used in storyboard 'History', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-rating-red-32", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-rating-red-32' is used in storyboard 'History', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "social-facebook-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-facebook-dark-gray-35' is used in storyboard 'History', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "social-instagram-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-instagram-dark-gray-35' is used in storyboard 'History', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "social-twitter-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-twitter-dark-gray-35' is used in storyboard 'History', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
