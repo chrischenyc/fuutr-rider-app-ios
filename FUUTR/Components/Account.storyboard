@@ -128,15 +128,16 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PzH-Nt-FHc">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXU-BC-kfd">
                                                         <rect key="frame" x="120" y="5" width="215" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="IJj-v7-rPf"/>
+                                                            <constraint firstAttribute="height" constant="40" id="vWy-4E-V3k"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" textContentType="email"/>
-                                                    </textField>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <segue destination="VRa-Pt-JgE" kind="show" id="ZdK-Hd-BD8"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -287,11 +288,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lWS-oU-Zqc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Account" id="NH8-J3-OXK"/>
+                    <navigationItem key="navigationItem" title="Account" largeTitleDisplayMode="never" id="NH8-J3-OXK"/>
                     <connections>
                         <outlet property="avatarEditButton" destination="EWC-xk-Bmf" id="efV-Bp-qgV"/>
                         <outlet property="avatarImageView" destination="RNo-U7-an5" id="B1D-zW-1kv"/>
-                        <outlet property="emailTextField" destination="PzH-Nt-FHc" id="1XM-IY-iu2"/>
+                        <outlet property="emailButton" destination="wXU-BC-kfd" id="tGa-ck-5ab"/>
                         <outlet property="nameTextField" destination="X3r-Ng-GJ4" id="VBh-rP-ZN1"/>
                         <outlet property="passwordTextField" destination="tOb-Pp-4gl" id="GHa-50-lmj"/>
                         <outlet property="phoneTextField" destination="M0Z-78-glr" id="Md3-34-M8w"/>
@@ -354,56 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ab-TA-1Rr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673" y="182"/>
-        </scene>
-        <!--Edit Email-->
-        <scene sceneID="81t-H6-Wyq">
-            <objects>
-                <viewController title="Edit Email" id="uu8-qw-Ghd" customClass="EditEmailViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yms-8T-4QC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="KkA-VE-Rwd">
-                                <rect key="frame" x="24" y="295.5" width="327" height="76"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-B9-SZz">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
-                                        <connections>
-                                            <action selector="nameChanged:" destination="uu8-qw-Ghd" eventType="editingChanged" id="E8a-ff-uHf"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpx-be-fQC">
-                                        <rect key="frame" x="0.0" y="46" width="327" height="30"/>
-                                        <state key="normal" title="update"/>
-                                        <connections>
-                                            <action selector="updateTouched:" destination="uu8-qw-Ghd" eventType="touchUpInside" id="o44-Ke-X7Y"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="KkA-VE-Rwd" firstAttribute="centerY" secondItem="yms-8T-4QC" secondAttribute="centerY" id="aMy-Ij-mfe"/>
-                            <constraint firstItem="KkA-VE-Rwd" firstAttribute="leading" secondItem="yms-8T-4QC" secondAttribute="leading" constant="24" id="dLx-UW-dTO"/>
-                            <constraint firstItem="kMb-OT-TEj" firstAttribute="trailing" secondItem="KkA-VE-Rwd" secondAttribute="trailing" constant="24" id="wFg-g7-4pK"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="kMb-OT-TEj"/>
-                    </view>
-                    <connections>
-                        <outlet property="emailTextField" destination="bGb-B9-SZz" id="0Nf-fP-OkH"/>
-                        <outlet property="submitButton" destination="gpx-be-fQC" id="9RR-C3-b6F"/>
-                        <segue destination="JlL-n6-hkC" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettings:" id="lCm-de-8o9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oDF-Hw-4cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="JlL-n6-hkC" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1673" y="944"/>
+            <point key="canvasLocation" x="1673" y="-628"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zUC-yS-ZnA">
@@ -429,11 +381,94 @@
                 <viewControllerPlaceholder storyboardName="MobileVerify" id="4jt-n3-tgF" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXC-Fv-S2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2319" y="181"/>
+            <point key="canvasLocation" x="2782" y="-829"/>
+        </scene>
+        <!--Enter New Email-->
+        <scene sceneID="9Br-sI-AEQ">
+            <objects>
+                <viewController id="VRa-Pt-JgE" customClass="EditEmailViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VH6-Ic-Wco">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5ze-2a-Zcb">
+                                <rect key="frame" x="16" y="145.5" width="343" height="184"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="934-mP-eHF">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gf4-F1-JI2">
+                                                <rect key="frame" x="16" y="0.0" width="311" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="S0P-71-Kpj"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                                <connections>
+                                                    <action selector="emailChanged:" destination="VRa-Pt-JgE" eventType="editingChanged" id="S67-re-gX3"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Gf4-F1-JI2" firstAttribute="top" secondItem="934-mP-eHF" secondAttribute="top" id="Czz-g1-QSP"/>
+                                            <constraint firstItem="Gf4-F1-JI2" firstAttribute="leading" secondItem="934-mP-eHF" secondAttribute="leading" constant="16" id="F65-6n-NMs"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gf4-F1-JI2" secondAttribute="trailing" constant="16" id="Mtl-zo-07d"/>
+                                            <constraint firstAttribute="bottom" secondItem="Gf4-F1-JI2" secondAttribute="bottom" id="hi1-ab-ltU"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7q3-as-3wD">
+                                        <rect key="frame" x="0.0" y="48" width="343" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="v9a-K6-kUZ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLx-oe-apK">
+                                        <rect key="frame" x="0.0" y="57" width="343" height="127"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2la-pn-Fyv">
+                                                <rect key="frame" x="243" y="32" width="100" height="95"/>
+                                                <state key="normal" image="btn-arrow-next-red"/>
+                                                <connections>
+                                                    <action selector="nextTapped:" destination="VRa-Pt-JgE" eventType="touchUpInside" id="PpH-WI-Noz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="2la-pn-Fyv" secondAttribute="trailing" id="GVV-u2-3H1"/>
+                                            <constraint firstAttribute="bottom" secondItem="2la-pn-Fyv" secondAttribute="bottom" id="fkv-LS-dOO"/>
+                                            <constraint firstItem="2la-pn-Fyv" firstAttribute="top" secondItem="bLx-oe-apK" secondAttribute="top" constant="32" id="j5x-0o-TJa"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5ze-2a-Zcb" firstAttribute="centerY" secondItem="VH6-Ic-Wco" secondAttribute="centerY" constant="-64" id="4nS-t6-8Xf"/>
+                            <constraint firstItem="7sy-8c-lGl" firstAttribute="trailing" secondItem="5ze-2a-Zcb" secondAttribute="trailing" constant="16" id="Qos-Xy-wiE"/>
+                            <constraint firstItem="5ze-2a-Zcb" firstAttribute="leading" secondItem="7sy-8c-lGl" secondAttribute="leading" constant="16" id="ZvA-1j-HX3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7sy-8c-lGl"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enter New Email" id="E8n-PP-vsv"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Gf4-F1-JI2" id="bSG-iv-aep"/>
+                        <outlet property="nextButton" destination="2la-pn-Fyv" id="Dn7-wW-L3r"/>
+                        <outlet property="stackView" destination="5ze-2a-Zcb" id="IJd-OQ-lnp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RfO-ef-oLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1673" y="98"/>
         </scene>
     </scenes>
     <resources>
         <image name="boy-1" width="105" height="105"/>
+        <image name="btn-arrow-next-red" width="100" height="95"/>
         <image name="ic-edit-white-16" width="16" height="16"/>
     </resources>
 </document>

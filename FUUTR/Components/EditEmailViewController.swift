@@ -7,49 +7,95 @@
 //
 
 import UIKit
+import IHKeyboardAvoiding
 
 class EditEmailViewController: UIViewController {
   
-  @IBOutlet weak var emailTextField: UITextField!
-  @IBOutlet weak var submitButton: UIButton!
-  
   var email: String?
-  var apiTask: URLSessionTask?
+  
+  @IBOutlet weak var stackView: UIStackView!
+  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var nextButton: UIButton!
+  
+  private var authAPITask: URLSessionTask?
+  
+  // MARK: - lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     emailTextField.text = email
-    emailTextField.becomeFirstResponder()
-    submitButton.isEnabled = false
+    emailTextField.delegate = self
+    validate()
   }
   
-  @IBAction func nameChanged(_ sender: Any) {
-    guard let newEmail = emailTextField.text else {
-      submitButton.isEnabled = false
+  override func viewDidAppear(_ animated: Bool) {
+    KeyboardAvoiding.avoidingView = stackView
+    emailTextField.becomeFirstResponder()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let signInPasswordViewController = segue.destination as? EmailSignInPasswordViewController,
+      let displayName = sender as? String? {
+      
+      signInPasswordViewController.email = emailTextField.text
+      signInPasswordViewController.displayName = displayName
+    }
+  }
+  
+  // MARK: - user actions
+  
+  @IBAction func emailChanged(_ sender: Any) {
+    validate()
+  }
+  
+  @IBAction func nextTapped(_ sender: Any) {
+    guard let email = emailTextField.text else {
       return
     }
     
-    submitButton.isEnabled = (email != newEmail && newEmail.isEmail())
-  }
-  
-  @IBAction func updateTouched(_ sender: Any) {
-    guard let email = emailTextField.text else { return }
-    
-    apiTask?.cancel()
-    
     showLoading()
     
-    apiTask = UserService.updateEmail(email, completion: { [weak self] (error) in
+    authAPITask?.cancel()
+    
+    authAPITask = AuthService.verify(email: email, completion: { [weak self] (displayName, error) in
+      
       DispatchQueue.main.async {
+        
+        self?.dismissLoading()
+        
         guard error == nil else {
           self?.alertError(error!)
           return
         }
         
-        self?.performSegue(withIdentifier: R.segue.editEmailViewController.unwindToSettings, sender: nil)
+        if displayName != nil {
+          // email is taken
+        }
+        else {
+          
+        }
       }
     })
   }
   
+  // MARK: - private
+  private func validate() {
+    guard let validEmail = emailTextField.text?.isEmail(), validEmail == true else {
+      nextButton.isEnabled = false
+      return
+    }
+    
+    nextButton.isEnabled = true
+  }
+  
+}
+
+
+extension EditEmailViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    nextTapped(textField)
+    
+    return true
+  }
 }

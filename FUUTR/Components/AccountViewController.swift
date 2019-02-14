@@ -17,7 +17,7 @@ class AccountViewController: UIViewController {
   @IBOutlet weak var avatarImageView: UIImageView!
   @IBOutlet weak var avatarEditButton: UIButton!
   @IBOutlet weak var nameTextField: UITextField!
-  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var emailButton: UIButton!
   @IBOutlet weak var phoneTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
@@ -44,6 +44,18 @@ class AccountViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     KeyboardAvoiding.avoidingView = stackView
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(true)
+    
+    // needed to clear the text in the back navigation:
+    self.navigationItem.title = " "
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.navigationItem.title = "Account"
   }
   
   override func viewDidLayoutSubviews() {
@@ -161,7 +173,7 @@ class AccountViewController: UIViewController {
                                                           action: #selector(saveEditing))
       
       nameTextField.isEnabled = true
-      emailTextField.isEnabled = false
+      emailButton.isEnabled = true
       phoneTextField.isEnabled = false
       passwordTextField.isEnabled = true
       
@@ -177,7 +189,7 @@ class AccountViewController: UIViewController {
                                                           action: #selector(startEditing))
       
       nameTextField.isEnabled = false
-      emailTextField.isEnabled = false
+      emailButton.isEnabled = false
       phoneTextField.isEnabled = false
       passwordTextField.isEnabled = false
       
@@ -195,9 +207,15 @@ class AccountViewController: UIViewController {
       nameTextField.placeholder = "e.g. Charlotte Johnston"
       nameTextField.text = user.displayName
       
-      emailTextField.textColor = UIColor.primaryDarkColor
-      emailTextField.placeholder = "email"
-      emailTextField.text = user.email
+      emailButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
+      if let email = user.email, email.count > 0 {
+        emailButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
+        emailButton.setTitle(email, for: .normal)
+      }
+      else {
+        emailButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
+        emailButton.setTitle("email", for: .normal)
+      }
       
       phoneTextField.textColor = UIColor.primaryDarkColor
       phoneTextField.placeholder = "0412 345 678"
@@ -217,12 +235,12 @@ class AccountViewController: UIViewController {
       }
       
       if let email = user.email, email.count > 0 {
-        emailTextField.textColor = UIColor.primaryGreyColor
-        emailTextField.text = email
+        emailButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
+        emailButton.setTitle(email, for: .normal)
       }
       else {
-        emailTextField.textColor = UIColor.primaryRedColor
-        emailTextField.text = "+ Add an email"
+        emailButton.setTitleColor(UIColor.primaryRedColor, for: .normal)
+        emailButton.setTitle("+ Add an email", for: .normal)
       }
       
       if let phone = user.phoneNumber, phone.count > 0 {
