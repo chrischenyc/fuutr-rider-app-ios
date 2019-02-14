@@ -265,10 +265,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lWS-oU-Zqc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Account" id="NH8-J3-OXK">
-                        <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="dh7-uY-opT"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="dr0-WL-Hp0"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Account" id="NH8-J3-OXK"/>
                     <connections>
                         <outlet property="avatarImageView" destination="RNo-U7-an5" id="B1D-zW-1kv"/>
                         <outlet property="emailTextField" destination="PzH-Nt-FHc" id="1XM-IY-iu2"/>
@@ -462,6 +459,5 @@
     </scenes>
     <resources>
         <image name="boy-1" width="105" height="105"/>
-        <image name="ic-close-dark-gray-16" width="16" height="16"/>
     </resources>
 </document>

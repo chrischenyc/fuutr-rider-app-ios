@@ -27,15 +27,7 @@ class AccountViewController: UIViewController {
     
     navigationController?.navigationBar.applyLightTheme()
     
-    nameTextField.isEnabled = false
-    nameTextField.textColor = UIColor.primaryGreyColor
-    emailTextField.isEnabled = false
-    emailTextField.textColor = UIColor.primaryGreyColor
-    phoneTextField.isEnabled = false
-    phoneTextField.textColor = UIColor.primaryGreyColor
-    passwordTextField.isEnabled = false
-    passwordTextField.textColor = UIColor.primaryGreyColor
-    
+    toggleEditing(false)
     loadProfile()
   }
   
@@ -47,6 +39,22 @@ class AccountViewController: UIViewController {
   
   @IBAction func unwindToSettings(_ unwindSegue: UIStoryboardSegue) {
     loadProfile()
+  }
+  
+  @objc func unwindToHome() {
+    performSegue(withIdentifier: R.segue.accountViewController.unwindToHome, sender: nil)
+  }
+  
+  @objc func cancelEditing() {
+    toggleEditing(false)
+  }
+  
+  @objc func startEditing() {
+    toggleEditing(true)
+  }
+  
+  @objc func saveEditing() {
+    // TODO:
   }
   
   @IBAction func signOut() {
@@ -107,5 +115,45 @@ class AccountViewController: UIViewController {
         self?.user = user
       }
     })
+  }
+  
+  // MARK: - private
+  private func toggleEditing(_ on: Bool) {
+    if on {
+      navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                                         target: self,
+                                                         action: #selector(cancelEditing))
+      
+      navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
+                                                         target: self,
+                                                         action: #selector(saveEditing))
+      
+      nameTextField.isEnabled = false
+      nameTextField.textColor = UIColor.primaryGreyColor
+      emailTextField.isEnabled = false
+      emailTextField.textColor = UIColor.primaryGreyColor
+      phoneTextField.isEnabled = false
+      phoneTextField.textColor = UIColor.primaryGreyColor
+      passwordTextField.isEnabled = false
+      passwordTextField.textColor = UIColor.primaryGreyColor
+    } else {
+      navigationItem.leftBarButtonItem = UIBarButtonItem(image: R.image.icCloseDarkGray16(),
+                                                         style: .plain,
+                                                         target: self,
+                                                         action: #selector(unwindToHome))
+      
+      navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
+                                                          target: self,
+                                                          action: #selector(startEditing))
+      
+      nameTextField.isEnabled = false
+      nameTextField.textColor = UIColor.primaryGreyColor
+      emailTextField.isEnabled = false
+      emailTextField.textColor = UIColor.primaryGreyColor
+      phoneTextField.isEnabled = false
+      phoneTextField.textColor = UIColor.primaryGreyColor
+      passwordTextField.isEnabled = false
+      passwordTextField.textColor = UIColor.primaryGreyColor
+    }
   }
 }
