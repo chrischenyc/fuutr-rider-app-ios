@@ -34,11 +34,11 @@ class SideMenuViewController: UIViewController {
     super.viewDidLoad()
     
     greetingBackdropView.backgroundColor = UIColor.primaryRedColor
-    if let displayName = currentUser?.displayName {
-      greetingLabel.text = "Hi, \(displayName)!"
+    if let displayName = currentUser?.displayName, displayName.count > 0 {
+      greetingLabel.text = "G'day, \(displayName)!"
     }
     else {
-      greetingLabel.text = "Hi!"
+      greetingLabel.text = "G'day!"
     }
     
     rideHistoryButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)

@@ -53,9 +53,6 @@
 		6B1D1E8B219A243200F72798 /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D1E8A219A243200F72798 /* VehicleService.swift */; };
 		6B1D1E8C219A243200F72798 /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D1E8A219A243200F72798 /* VehicleService.swift */; };
 		6B1D1E8D219A243200F72798 /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D1E8A219A243200F72798 /* VehicleService.swift */; };
-		6B214AE0219564CD00553C3D /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214ADF219564CD00553C3D /* EditNameViewController.swift */; };
-		6B214AE1219564CD00553C3D /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214ADF219564CD00553C3D /* EditNameViewController.swift */; };
-		6B214AE2219564CD00553C3D /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214ADF219564CD00553C3D /* EditNameViewController.swift */; };
 		6B214AE42195701C00553C3D /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AE32195701C00553C3D /* EditEmailViewController.swift */; };
 		6B214AE52195701C00553C3D /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AE32195701C00553C3D /* EditEmailViewController.swift */; };
 		6B214AE62195701C00553C3D /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AE32195701C00553C3D /* EditEmailViewController.swift */; };
@@ -490,7 +487,6 @@
 		6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSetViewController.swift; sourceTree = "<group>"; };
 		6B1D1E86219A232300F72798 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		6B1D1E8A219A243200F72798 /* VehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleService.swift; sourceTree = "<group>"; };
-		6B214ADF219564CD00553C3D /* EditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
 		6B214AE32195701C00553C3D /* EditEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		6B214AE721958ED100553C3D /* EditPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoneViewController.swift; sourceTree = "<group>"; };
 		6B214AEB2195B66300553C3D /* Double+Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Price.swift"; sourceTree = "<group>"; };
@@ -879,7 +875,6 @@
 			children = (
 				6BDEEF60220C1B9400C0FBB8 /* Account.storyboard */,
 				6B873209218ACD6400CC2651 /* AccountViewController.swift */,
-				6B214ADF219564CD00553C3D /* EditNameViewController.swift */,
 				6B214AE32195701C00553C3D /* EditEmailViewController.swift */,
 				6B214AE721958ED100553C3D /* EditPhoneViewController.swift */,
 			);
@@ -1966,7 +1961,6 @@
 				6B720FF8220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
 				6BDEEFBB220DA0DF00C0FBB8 /* MobileVerifyViewController.swift in Sources */,
 				6BDE9129218C19DF003F976B /* EnableLocationViewController.swift in Sources */,
-				6B214AE2219564CD00553C3D /* EditNameViewController.swift in Sources */,
 				6B2C9BBB21A0203B0042432D /* TransactionService.swift in Sources */,
 				6BB2082F219F8AA3008E5EF1 /* RideService.swift in Sources */,
 				6B0128B1219D7EC600AC2439 /* QRCode.swift in Sources */,
@@ -2098,7 +2092,6 @@
 				6B720FF6220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
 				6BDEEFB9220DA0DF00C0FBB8 /* MobileVerifyViewController.swift in Sources */,
 				6B8731CD2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
-				6B214AE0219564CD00553C3D /* EditNameViewController.swift in Sources */,
 				6B2C9BB921A0203B0042432D /* TransactionService.swift in Sources */,
 				6BB2082D219F8AA3008E5EF1 /* RideService.swift in Sources */,
 				6B0128AF219D7EC600AC2439 /* QRCode.swift in Sources */,
@@ -2230,7 +2223,6 @@
 				6B720FF7220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
 				6BDEEFBA220DA0DF00C0FBB8 /* MobileVerifyViewController.swift in Sources */,
 				6B8731CE2189DA4A00CC2651 /* EnableLocationViewController.swift in Sources */,
-				6B214AE1219564CD00553C3D /* EditNameViewController.swift in Sources */,
 				6B2C9BBA21A0203B0042432D /* TransactionService.swift in Sources */,
 				6BB2082E219F8AA3008E5EF1 /* RideService.swift in Sources */,
 				6B0128B0219D7EC600AC2439 /* QRCode.swift in Sources */,

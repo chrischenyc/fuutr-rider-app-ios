@@ -746,7 +746,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 23 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 22 view controllers.
   struct segue {
     /// This struct is generated for `AccountViewController`, and contains static references to 1 segues.
     struct accountViewController {
@@ -773,21 +773,6 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToSettings(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EditEmailViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.editEmailViewController.unwindToSettings, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
-    /// This struct is generated for `EditNameViewController`, and contains static references to 1 segues.
-    struct editNameViewController {
-      /// Segue identifier `unwindToSettings`.
-      static let unwindToSettings: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EditNameViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToSettings")
-      
-      /// Optionally returns a typed version of segue `unwindToSettings`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func unwindToSettings(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EditNameViewController, UIKit.UIViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.editNameViewController.unwindToSettings, segue: segue)
       }
       
       fileprivate init() {}

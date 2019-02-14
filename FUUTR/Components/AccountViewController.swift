@@ -71,7 +71,26 @@ class AccountViewController: UIViewController {
   }
   
   @objc func saveEditing() {
-    // TODO:
+    var profile: JSON = [:]
+    profile["displayName"] = nameTextField.text
+    
+    apiTask?.cancel()
+    
+    showLoading()
+    
+    apiTask = UserService.updateProfile(profile, completion: { [weak self] (error) in
+      DispatchQueue.main.async {
+        
+        self?.dismissLoading()
+        
+        guard error == nil else {
+          self?.alertError(error!)
+          return
+        }
+        
+        self?.loadProfile()
+      }
+    })
   }
   
   @IBAction func editAvatar(_ sender: Any) {
@@ -96,10 +115,7 @@ class AccountViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let editNameViewController = segue.destination as? EditNameViewController {
-      editNameViewController.displayName = user?.displayName
-    }
-    else if let editEmailViewController = segue.destination as? EditEmailViewController {
+    if let editEmailViewController = segue.destination as? EditEmailViewController {
       editEmailViewController.email = user?.email
     }
     else if let editPhoneViewController = segue.destination as? EditPhoneViewController {
