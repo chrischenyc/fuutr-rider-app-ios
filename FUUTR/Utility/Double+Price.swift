@@ -13,6 +13,10 @@ extension Double {
     return String(format: "$%.2f", self)
   }
   
+  var priceStringWithoutDecimal: String {
+    return String(format: "$%.f", self)
+  }
+  
   var priceStringWithoutCurrency: String {
     return String(format: "%.2f", self)
   }

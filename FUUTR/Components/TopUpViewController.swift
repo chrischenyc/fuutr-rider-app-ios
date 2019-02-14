@@ -12,13 +12,19 @@ import Stripe
 class TopUpViewController: UIViewController {
   @IBOutlet weak var insufficientFundLabel: UILabel!
   @IBOutlet weak var balanceLabel: UILabel!
-  @IBOutlet weak var topupAmountLabel: UILabel!
+  @IBOutlet weak var amountLabel: UILabel!
   @IBOutlet weak var paymentMethodButton: UIButton!
   @IBOutlet weak var payButton: UIButton!
   
   private var paymentContext: STPPaymentContext?
   private var apiTask: URLSessionTask?
-  private var amount : Int = 0
+  private var amount : Int = 0 {
+    didSet {
+      amountLabel.text = Double(amount).priceStringWithoutDecimal
+      payButton.isEnabled = amount > 0
+      paymentContext?.paymentAmount = amount * 100
+    }
+  }
   
   // MARK: lifecycle
   override func viewDidLoad() {
@@ -31,28 +37,30 @@ class TopUpViewController: UIViewController {
     paymentContext?.delegate = self
     paymentContext?.hostViewController = self
     
-    
     navigationController?.navigationBar.applyLightTheme(transparentBackground: false)
     paymentMethodButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
     paymentMethodButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
-    payButton.isEnabled = false
+    
+    updatePaymentMethodButton()
     
     loadProfile()
   }
   
+  // MARK: - user actions
   
   @IBAction func amountChoosed(_ sender: Any) {
-    if let button = sender as? UIButton, let amountString = button.titleLabel?.text {
-      if let amount = Int(amountString) {
-        paymentContext?.paymentAmount = amount * 100
+    if let button = sender as? UIButton {
+      let tag = button.tag
+      switch tag {
+      case 0:
+        amount = 0
+      default:
+        amount += tag
       }
-      
-      reloadPaymentButtonContent()
     }
   }
   
   @IBAction func paymentButtonTapped(_ sender: Any) {
-    // present Stripe UI
     paymentContext?.presentPaymentMethodsViewController()
   }
   
@@ -60,7 +68,7 @@ class TopUpViewController: UIViewController {
     paymentContext?.requestPayment()
   }
   
-  // MARK: - private
+  // MARK: - API
   
   private func loadProfile() {
     apiTask?.cancel()
@@ -69,6 +77,8 @@ class TopUpViewController: UIViewController {
     
     apiTask = UserService.getProfile({[weak self] (user, error) in
       DispatchQueue.main.async {
+        self?.dismissLoading()
+        
         guard error == nil else {
           self?.alertError(error!)
           return
@@ -79,45 +89,32 @@ class TopUpViewController: UIViewController {
           return
         }
         
-        self?.dismissLoading()
-        self?.loadUserContent(user)
+        self?.balanceLabel.text = user.balance.priceString
       }
     })
   }
   
-  private func loadUserContent(_ user: User) {
-    self.balanceLabel.text = user.balance.priceString
-  }
-  
-  private func reloadPaymentButtonContent() {
-    guard let paymentAmount = paymentContext?.paymentAmount, paymentAmount > 0 else {
-      payButton.isEnabled = false
-      return
-    }
-    
-    guard let selectedPaymentMethod = paymentContext?.selectedPaymentMethod else {
-      // Show default image, text, and color
-      paymentMethodButton.setTitle("Choose payment method", for: .normal)
+  // MARK: - private
+  private func updatePaymentMethodButton() {
+    if let selectedPaymentMethod = paymentContext?.selectedPaymentMethod {
+      paymentMethodButton.setImage(selectedPaymentMethod.image, for: .normal)
+      paymentMethodButton.setTitle(selectedPaymentMethod.label, for: .normal)
+      payButton.isEnabled = amount > 0
+    } else {
+      paymentMethodButton.setTitle("Add payment method", for: .normal)
       paymentMethodButton.setTitleColor(.primaryRedColor, for: .normal)
       payButton.isEnabled = false
-      return
     }
-    
-    // Show selected payment method image, label, and darker color
-    payButton.isEnabled = true
-    paymentMethodButton.setImage(selectedPaymentMethod.image, for: .normal)
-    paymentMethodButton.setTitle("Pay with \(selectedPaymentMethod.label)", for: .normal)
   }
 }
 
 extension TopUpViewController: STPPaymentContextDelegate {
   func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
-    logger.error(error)
     alertError(error)
   }
   
   func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
-    reloadPaymentButtonContent()
+    updatePaymentMethodButton()
   }
   
   func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
@@ -135,10 +132,10 @@ extension TopUpViewController: STPPaymentContextDelegate {
   func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
     switch status {
     case .success:
-      alertMessage(title: "Thank You!",
-                   message: "payment has been received",
+      alertMessage(title: "Your wallet has been credited",
+                   message: nil,
                    positiveActionButtonTapped: {
-                    self.performSegue(withIdentifier: R.segue.topUpViewController.unwindToWallet, sender: nil)
+                    self.loadProfile()
       })
       
       

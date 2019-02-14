@@ -56,8 +56,7 @@ class WalletViewController: UIViewController {
     // let sourceViewController = unwindSegue.source
     // Use data from the view controller which initiated the unwind segue
     
-    if unwindSegue.identifier == R.segue.topUpViewController.unwindToWallet.identifier {
-      // refresh profile in case user has topped up balance
+    if let _ = unwindSegue.source as? TopUpViewController {
       loadProfile()
     }
   }

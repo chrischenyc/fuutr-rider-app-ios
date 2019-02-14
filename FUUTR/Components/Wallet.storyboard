@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="XzM-T1-9df">
-                                <rect key="frame" x="32" y="25" width="311" height="163"/>
+                                <rect key="frame" x="32" y="32" width="311" height="163"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT BALANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ic-ye-xcY" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
                                         <rect key="frame" x="102" y="0.0" width="107.5" height="13.5"/>
@@ -487,7 +487,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="YMQ-54-Hbz">
                                                         <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOR-1i-vBH" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOR-1i-vBH" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="77" height="44"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="77" id="qPU-Bu-d2Y"/>
@@ -497,7 +497,7 @@
                                                                     <action selector="amountChoosed:" destination="mgC-tv-cdf" eventType="touchUpInside" id="t2A-FM-oEP"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1Z-nk-DiC" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1Z-nk-DiC" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
                                                                 <rect key="frame" x="117" y="0.0" width="77" height="44"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="77" id="wgG-GD-sgE"/>
@@ -507,7 +507,7 @@
                                                                     <action selector="amountChoosed:" destination="mgC-tv-cdf" eventType="touchUpInside" id="R4y-Dh-x93"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYT-c7-dJp" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYT-c7-dJp" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
                                                                 <rect key="frame" x="234" y="0.0" width="77" height="44"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="77" id="Jsj-MX-y9H"/>
@@ -525,7 +525,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="iBT-cS-qxJ">
                                                         <rect key="frame" x="0.0" y="68" width="311" height="44"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-YU-amv" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                                                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-YU-amv" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="77" height="44"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="77" id="s44-9o-HFD"/>
@@ -535,7 +535,7 @@
                                                                     <action selector="amountChoosed:" destination="mgC-tv-cdf" eventType="touchUpInside" id="Ksa-Zg-2SP"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55y-cJ-jIM" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                                                            <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55y-cJ-jIM" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
                                                                 <rect key="frame" x="117" y="0.0" width="77" height="44"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="77" id="gxk-dL-a7o"/>
@@ -654,17 +654,16 @@
                     <navigationItem key="navigationItem" title="Top Up Balance" id="7gX-fD-o2R">
                         <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="Gyu-yt-WFU">
                             <connections>
-                                <segue destination="ayk-st-og7" kind="unwind" identifier="unwindToWallet" unwindAction="unwindToWallet:" id="IyD-EP-Pvz"/>
+                                <segue destination="ayk-st-og7" kind="unwind" unwindAction="unwindToWallet:" id="ZJ0-N2-Hi8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="amountLabel" destination="Ul7-Vh-0xv" id="Iva-1a-aZ5"/>
                         <outlet property="balanceLabel" destination="E3N-mD-ciq" id="lro-4P-Ute"/>
                         <outlet property="insufficientFundLabel" destination="e98-61-qkW" id="zgJ-Lq-G0z"/>
                         <outlet property="payButton" destination="y1d-nn-t61" id="eKz-8X-C8e"/>
                         <outlet property="paymentMethodButton" destination="aFj-9Y-w7e" id="smC-aW-yGr"/>
-                        <outlet property="topupAmountLabel" destination="Ul7-Vh-0xv" id="Iva-1a-aZ5"/>
-                        <segue destination="ayk-st-og7" kind="unwind" unwindAction="unwindToWallet:" id="x4R-Nk-2OT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edv-bb-WPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

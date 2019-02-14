@@ -746,7 +746,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 23 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 22 view controllers.
   struct segue {
     /// This struct is generated for `EditEmailViewController`, and contains static references to 1 segues.
     struct editEmailViewController {
@@ -1175,21 +1175,6 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIStoryboardSegueWithCompletion, SideMenuViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.sideMenuViewController.unwindToHome, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
-    /// This struct is generated for `TopUpViewController`, and contains static references to 1 segues.
-    struct topUpViewController {
-      /// Segue identifier `unwindToWallet`.
-      static let unwindToWallet: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, TopUpViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToWallet")
-      
-      /// Optionally returns a typed version of segue `unwindToWallet`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func unwindToWallet(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, TopUpViewController, UIKit.UIViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.topUpViewController.unwindToWallet, segue: segue)
       }
       
       fileprivate init() {}
