@@ -55,6 +55,10 @@ class SideMenuViewController: UIViewController {
     avatarImageView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarImageView.frame.size.width/2)
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    
+  }
+  
   // MARK: - user actions
   
   @IBAction func menuItemSelected(_ sender: Any) {

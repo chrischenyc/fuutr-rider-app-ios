@@ -34,20 +34,17 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="WxV-JY-l8h">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WxV-JY-l8h">
                     <rect key="frame" x="20" y="72" width="219" height="61.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walk to scooter reservation" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4m-Mj-K5i" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="143" height="45.5"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="143" id="Owj-kh-05H"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="0.0" width="219" height="45.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="339 La Trobe St" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eeq-0W-dpg" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="45.5" width="97.5" height="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="339 La Trobe St" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eeq-0W-dpg" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="45.5" width="219" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

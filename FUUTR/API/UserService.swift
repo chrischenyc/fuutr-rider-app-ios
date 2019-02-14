@@ -17,6 +17,7 @@ final class UserService {
                                  completion: { (result, error) in
                                   if let json = result as? JSON, let user = User(JSON: json) {
                                     completion(user, nil)
+                                    currentUser = user
                                     return
                                   }
                                   

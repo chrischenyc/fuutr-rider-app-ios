@@ -73,6 +73,8 @@ class WalletViewController: UIViewController {
     
     apiTask = UserService.getProfile({[weak self] (user, error) in
       DispatchQueue.main.async {
+        self?.dismissLoading()
+        
         guard error == nil else {
           self?.alertError(error!)
           return
@@ -83,7 +85,6 @@ class WalletViewController: UIViewController {
           return
         }
         
-        self?.dismissLoading()
         self?.loadUserContent(user)
       }
     })

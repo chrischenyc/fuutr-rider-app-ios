@@ -63,6 +63,7 @@ class MainViewController: UIViewController {
     setupUI()
     setupMapView()
     setupLocationManager()
+    getUser()
     
     NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
   }
@@ -411,13 +412,11 @@ extension MainViewController {
   private func getUser() {
     userAPITask?.cancel()
     
-    userAPITask = UserService.getProfile({ (user, error) in
+    userAPITask =  UserService.getProfile({ (user, error) in
       guard error == nil else {
         logger.error("Couldn't get user profile: \(error!.localizedDescription)")
         return
       }
-      
-      currentUser = user
     })
   }
   
