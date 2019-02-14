@@ -1850,6 +1850,7 @@ struct _R: Rswift.Validatable {
       let name = "Wallet"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "btn-backspace-outline-red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-backspace-outline-red' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-arrow-right-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-arrow-right-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-balance-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-balance-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }

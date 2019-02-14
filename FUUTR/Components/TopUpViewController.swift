@@ -10,11 +10,15 @@ import UIKit
 import Stripe
 
 class TopUpViewController: UIViewController {
+  @IBOutlet weak var insufficientFundLabel: UILabel!
+  @IBOutlet weak var balanceLabel: UILabel!
+  @IBOutlet weak var topupAmountLabel: UILabel!
   @IBOutlet weak var paymentMethodButton: UIButton!
   @IBOutlet weak var payButton: UIButton!
   
   private var paymentContext: STPPaymentContext?
   private var apiTask: URLSessionTask?
+  private var amount : Int = 0
   
   // MARK: lifecycle
   override func viewDidLoad() {
@@ -29,8 +33,11 @@ class TopUpViewController: UIViewController {
     
     
     navigationController?.navigationBar.applyLightTheme(transparentBackground: false)
-    
+    paymentMethodButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    paymentMethodButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
     payButton.isEnabled = false
+    
+    loadProfile()
   }
   
   
@@ -51,6 +58,35 @@ class TopUpViewController: UIViewController {
   
   @IBAction func payButtonTapped(_ sender: Any) {
     paymentContext?.requestPayment()
+  }
+  
+  // MARK: - private
+  
+  private func loadProfile() {
+    apiTask?.cancel()
+    
+    showLoading()
+    
+    apiTask = UserService.getProfile({[weak self] (user, error) in
+      DispatchQueue.main.async {
+        guard error == nil else {
+          self?.alertError(error!)
+          return
+        }
+        
+        guard let user = user else {
+          self?.alertMessage(message: R.string.localizable.kOtherError())
+          return
+        }
+        
+        self?.dismissLoading()
+        self?.loadUserContent(user)
+      }
+    })
+  }
+  
+  private func loadUserContent(_ user: User) {
+    self.balanceLabel.text = user.balance.priceString
   }
   
   private func reloadPaymentButtonContent() {
