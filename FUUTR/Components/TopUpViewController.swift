@@ -13,29 +13,23 @@ class TopUpViewController: UIViewController {
   @IBOutlet weak var paymentMethodButton: UIButton!
   @IBOutlet weak var payButton: UIButton!
   
-  private let customerContext: STPCustomerContext
-  private let paymentContext: STPPaymentContext
-  
+  private var paymentContext: STPPaymentContext?
   private var apiTask: URLSessionTask?
   
-  // MARK: Init
-  
-  required init?(coder aDecoder: NSCoder) {
-    customerContext = STPCustomerContext(keyProvider: PaymentService())
-    paymentContext = STPPaymentContext(customerContext: customerContext)
-    paymentContext.configuration.canDeletePaymentMethods = true
-    paymentContext.paymentCurrency = "aud"
-    
-    super.init(coder: aDecoder)
-    
-    paymentContext.delegate = self
-    paymentContext.hostViewController = self
-  }
-  
+  // MARK: lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    let customerContext = STPCustomerContext(keyProvider: PaymentService())
+    paymentContext = STPPaymentContext(customerContext: customerContext)
+    paymentContext?.configuration.canDeletePaymentMethods = true
+    paymentContext?.paymentCurrency = "aud"
+    paymentContext?.delegate = self
+    paymentContext?.hostViewController = self
+    
+    
+    navigationController?.navigationBar.applyLightTheme(transparentBackground: false)
+    
     payButton.isEnabled = false
   }
   
@@ -43,7 +37,7 @@ class TopUpViewController: UIViewController {
   @IBAction func amountChoosed(_ sender: Any) {
     if let button = sender as? UIButton, let amountString = button.titleLabel?.text {
       if let amount = Int(amountString) {
-        paymentContext.paymentAmount = amount * 100
+        paymentContext?.paymentAmount = amount * 100
       }
       
       reloadPaymentButtonContent()
@@ -52,20 +46,20 @@ class TopUpViewController: UIViewController {
   
   @IBAction func paymentButtonTapped(_ sender: Any) {
     // present Stripe UI
-    paymentContext.presentPaymentMethodsViewController()
+    paymentContext?.presentPaymentMethodsViewController()
   }
   
   @IBAction func payButtonTapped(_ sender: Any) {
-    paymentContext.requestPayment()
+    paymentContext?.requestPayment()
   }
   
   private func reloadPaymentButtonContent() {
-    guard paymentContext.paymentAmount > 0 else {
+    guard let paymentAmount = paymentContext?.paymentAmount, paymentAmount > 0 else {
       payButton.isEnabled = false
       return
     }
     
-    guard let selectedPaymentMethod = paymentContext.selectedPaymentMethod else {
+    guard let selectedPaymentMethod = paymentContext?.selectedPaymentMethod else {
       // Show default image, text, and color
       paymentMethodButton.setTitle("Choose payment method", for: .normal)
       paymentMethodButton.setTitleColor(.primaryRedColor, for: .normal)

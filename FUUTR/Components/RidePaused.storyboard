@@ -28,7 +28,7 @@
                                 <rect key="frame" x="116" y="112" width="88" height="88"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ria-eb-BXT">
-                                <rect key="frame" x="117.5" y="224.5" width="53.5" height="71"/>
+                                <rect key="frame" x="133.5" y="224.5" width="53.5" height="71"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="5Cy-Rc-EJ8">
                                         <rect key="frame" x="0.0" y="0.0" width="53.5" height="24"/>
@@ -130,7 +130,7 @@
                             <constraint firstItem="Ly2-Gf-fFM" firstAttribute="top" secondItem="bv3-mp-AwY" secondAttribute="top" constant="16" id="Wpd-ic-MOq"/>
                             <constraint firstItem="Ly2-Gf-fFM" firstAttribute="leading" secondItem="bv3-mp-AwY" secondAttribute="leading" constant="16" id="avS-Hh-R1q"/>
                             <constraint firstItem="ria-eb-BXT" firstAttribute="centerY" secondItem="P2N-Bs-eQk" secondAttribute="centerY" constant="-24" id="jxx-kD-5JQ"/>
-                            <constraint firstItem="ria-eb-BXT" firstAttribute="centerX" secondItem="P2N-Bs-eQk" secondAttribute="centerX" constant="-16" id="kX9-KJ-ehg"/>
+                            <constraint firstItem="ria-eb-BXT" firstAttribute="centerX" secondItem="P2N-Bs-eQk" secondAttribute="centerX" id="kX9-KJ-ehg"/>
                             <constraint firstItem="Ly2-Gf-fFM" firstAttribute="centerX" secondItem="bv3-mp-AwY" secondAttribute="centerX" id="m9k-k1-Eju"/>
                             <constraint firstItem="Ff3-z5-Rb2" firstAttribute="centerX" secondItem="P2N-Bs-eQk" secondAttribute="centerX" id="oco-Za-AdS"/>
                             <constraint firstItem="NRn-5f-WIT" firstAttribute="centerX" secondItem="P2N-Bs-eQk" secondAttribute="centerX" id="vOT-Mf-faF"/>

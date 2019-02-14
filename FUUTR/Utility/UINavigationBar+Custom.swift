@@ -9,7 +9,7 @@
 import Foundation
 
 extension UINavigationBar {
-  func applyLightTheme() {
+  func applyLightTheme(transparentBackground: Bool = true) {
     tintColor = UIColor.primaryDarkColor
     titleTextAttributes = [
       NSAttributedString.Key.foregroundColor: UIColor.primaryDarkColor
@@ -17,11 +17,15 @@ extension UINavigationBar {
     largeTitleTextAttributes = [
       NSAttributedString.Key.foregroundColor: UIColor.primaryDarkColor
     ]
-    setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+    
+    if transparentBackground {
+      setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+    }
+    
     shadowImage = UIImage()
   }
   
-  func applyDarkTheme() {
+  func applyDarkTheme(transparentBackground: Bool = true) {
     tintColor = UIColor.white
     titleTextAttributes = [
       NSAttributedString.Key.foregroundColor: UIColor.white
@@ -29,7 +33,11 @@ extension UINavigationBar {
     largeTitleTextAttributes = [
       NSAttributedString.Key.foregroundColor: UIColor.white
     ]
-    setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+    
+    if transparentBackground {
+      setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+    }
+    
     shadowImage = UIImage()
   }
 }
