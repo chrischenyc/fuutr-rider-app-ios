@@ -13,7 +13,7 @@
         <!--Settings-->
         <scene sceneID="0Nf-Je-NMl">
             <objects>
-                <tableViewController id="5gN-v9-CsF" customClass="SettingsTableViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5gN-v9-CsF" customClass="SettingsTableViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wBz-Hz-bPO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,7 +178,7 @@
         <!--Edit Phone-->
         <scene sceneID="l94-1h-EYE">
             <objects>
-                <viewController title="Edit Phone" id="rAt-Gf-XnI" customClass="EditPhoneViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Phone" id="rAt-Gf-XnI" customClass="EditPhoneViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dV5-SU-AZH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,7 +230,7 @@
         <!--Edit Email-->
         <scene sceneID="81t-H6-Wyq">
             <objects>
-                <viewController title="Edit Email" id="uu8-qw-Ghd" customClass="EditEmailViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Email" id="uu8-qw-Ghd" customClass="EditEmailViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yms-8T-4QC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,7 +279,7 @@
         <!--Edit Name-->
         <scene sceneID="hoP-Cx-QDp">
             <objects>
-                <viewController title="Edit Name" id="w2x-cI-JY9" customClass="EditNameViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Name" id="w2x-cI-JY9" customClass="EditNameViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CCZ-DT-ZZO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

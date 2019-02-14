@@ -912,6 +912,8 @@ struct R: Rswift.Validatable {
     
     /// This struct is generated for `MainViewController`, and contains static references to 8 segues.
     struct mainViewController {
+      /// Segue identifier `showAccount`.
+      static let showAccount: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showAccount")
       /// Segue identifier `showHelp`.
       static let showHelp: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showHelp")
       /// Segue identifier `showHistory`.
@@ -922,12 +924,17 @@ struct R: Rswift.Validatable {
       static let showRideParkedPhoto: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showRideParkedPhoto")
       /// Segue identifier `showRidePaused`.
       static let showRidePaused: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showRidePaused")
-      /// Segue identifier `showSettings`.
-      static let showSettings: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showSettings")
       /// Segue identifier `showUnlock`.
       static let showUnlock: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showUnlock")
       /// Segue identifier `showWallet`.
       static let showWallet: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showWallet")
+      
+      /// Optionally returns a typed version of segue `showAccount`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showAccount(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showAccount, segue: segue)
+      }
       
       /// Optionally returns a typed version of segue `showHelp`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
@@ -962,13 +969,6 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showRidePaused(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showRidePaused, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showSettings`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showSettings(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showSettings, segue: segue)
       }
       
       /// Optionally returns a typed version of segue `showUnlock`.
@@ -1209,6 +1209,8 @@ struct R: Rswift.Validatable {
   
   /// This `R.storyboard` struct is generated, and contains static references to 17 storyboards.
   struct storyboard {
+    /// Storyboard `Account`.
+    static let account = _R.storyboard.account()
     /// Storyboard `EmailSignIn`.
     static let emailSignIn = _R.storyboard.emailSignIn()
     /// Storyboard `Help`.
@@ -1233,8 +1235,6 @@ struct R: Rswift.Validatable {
     static let rideParkedPhoto = _R.storyboard.rideParkedPhoto()
     /// Storyboard `RidePaused`.
     static let ridePaused = _R.storyboard.ridePaused()
-    /// Storyboard `Settings`.
-    static let settings = _R.storyboard.settings()
     /// Storyboard `SideMenu`.
     static let sideMenu = _R.storyboard.sideMenu()
     /// Storyboard `Unlock`.
@@ -1243,6 +1243,11 @@ struct R: Rswift.Validatable {
     static let wallet = _R.storyboard.wallet()
     /// Storyboard `Welcome`.
     static let welcome = _R.storyboard.welcome()
+    
+    /// `UIStoryboard(name: "Account", bundle: ...)`
+    static func account(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.account)
+    }
     
     /// `UIStoryboard(name: "EmailSignIn", bundle: ...)`
     static func emailSignIn(_: Void = ()) -> UIKit.UIStoryboard {
@@ -1302,11 +1307,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "RidePaused", bundle: ...)`
     static func ridePaused(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.ridePaused)
-    }
-    
-    /// `UIStoryboard(name: "Settings", bundle: ...)`
-    static func settings(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.settings)
     }
     
     /// `UIStoryboard(name: "SideMenu", bundle: ...)`
@@ -1493,6 +1493,7 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try account.validate()
       try emailSignIn.validate()
       try help.validate()
       try history.validate()
@@ -1505,11 +1506,24 @@ struct _R: Rswift.Validatable {
       try rideFinished.validate()
       try rideParkedPhoto.validate()
       try ridePaused.validate()
-      try settings.validate()
       try sideMenu.validate()
       try unlock.validate()
       try wallet.validate()
       try welcome.validate()
+    }
+    
+    struct account: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let bundle = R.hostingBundle
+      let name = "Account"
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
     }
     
     struct emailSignIn: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -1767,20 +1781,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.ridePaused().rideLocked() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'rideLocked' could not be loaded from storyboard 'RidePaused' as 'RidePausedViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct settings: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
-      
-      let bundle = R.hostingBundle
-      let name = "Settings"
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
       }
       
       fileprivate init() {}

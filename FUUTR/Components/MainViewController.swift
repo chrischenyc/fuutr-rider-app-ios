@@ -109,7 +109,7 @@ class MainViewController: UIViewController {
         case .wallet:
           self.performSegue(withIdentifier: R.segue.mainViewController.showWallet, sender: nil)
         case .account:
-          self.performSegue(withIdentifier: R.segue.mainViewController.showSettings, sender: nil)
+          self.performSegue(withIdentifier: R.segue.mainViewController.showAccount, sender: nil)
         case .help:
           if let url = URL(string: config.env.helpURL), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
