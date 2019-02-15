@@ -171,6 +171,7 @@ extension AppDelegate {
       }
       
       remoteConfig = config
+      NotificationCenter.default.post(name: NSNotification.Name.remoteConfigFetched, object: nil)
     }
   }
   

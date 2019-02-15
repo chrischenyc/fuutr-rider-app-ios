@@ -66,6 +66,8 @@ class MainViewController: UIViewController {
     getUser()
     
     NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(applyRemoteConfig), name: NSNotification.Name.remoteConfigFetched, object: nil)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -92,6 +94,10 @@ class MainViewController: UIViewController {
     if currentLocation != nil && deferredSearchTimer == nil {
       search()
     }
+  }
+  
+  @objc func applyRemoteConfig(_ notification: NSNotification) {
+    updateUnlockInfoViewContent()
   }
   
   // MARK: - user actions
@@ -432,9 +438,7 @@ extension MainViewController {
   }
   
   private func setupUI() {
-    if let remoteConfig = remoteConfig {
-      unlockInfoView.priceLabel.text = "\(remoteConfig.unlockCost.priceString) to unlock, \(remoteConfig.rideMinuteCost.priceString) per minute"
-    }
+    updateUnlockInfoViewContent()
     
     unlockInfoView.onFindMe = { [weak self] in
       if let location = currentLocation, let searchingZoomLevel = self?.searchingZoomLevel {
@@ -514,6 +518,12 @@ extension MainViewController {
     }
     
     updateUnlockView()
+  }
+  
+  private func updateUnlockInfoViewContent() {
+    if let remoteConfig = remoteConfig {
+      unlockInfoView.priceLabel.text = "\(remoteConfig.unlockCost.priceString) to unlock, \(remoteConfig.rideMinuteCost.priceString) per minute"
+    }
   }
   
   private func showHowToRide() {
