@@ -18,7 +18,7 @@ class AccountViewController: UIViewController {
   @IBOutlet weak var avatarEditButton: UIButton!
   @IBOutlet weak var nameTextField: UITextField!
   @IBOutlet weak var emailButton: UIButton!
-  @IBOutlet weak var phoneTextField: UITextField!
+  @IBOutlet weak var phoneButton: UIButton!
   @IBOutlet weak var passwordTextField: UITextField!
   
   private var apiTask: URLSessionTask?
@@ -126,13 +126,6 @@ class AccountViewController: UIViewController {
     NotificationCenter.default.post(name: .userSignedOut, object: nil)
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let editPhoneViewController = segue.destination as? EditPhoneViewController {
-      editPhoneViewController.countryCode = user?.countryCode
-      editPhoneViewController.phoneNumber = user?.phoneNumber
-    }
-  }
-  
   // MARK: - API
   private func loadProfile() {
     apiTask?.cancel()
@@ -171,7 +164,7 @@ class AccountViewController: UIViewController {
       
       nameTextField.isEnabled = true
       emailButton.isEnabled = true
-      phoneTextField.isEnabled = false
+      phoneButton.isEnabled = false
       passwordTextField.isEnabled = true
       
       avatarEditButton.isHidden = false
@@ -187,7 +180,7 @@ class AccountViewController: UIViewController {
       
       nameTextField.isEnabled = false
       emailButton.isEnabled = false
-      phoneTextField.isEnabled = false
+      phoneButton.isEnabled = false
       passwordTextField.isEnabled = false
       
       avatarEditButton.isHidden = true
@@ -199,24 +192,32 @@ class AccountViewController: UIViewController {
   }
   
   private func populateUserProfile(_ user: User, editing: Bool) {
+    if let email = user.email, email.count > 0 {
+      emailButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
+      emailButton.setTitle(email, for: .normal)
+      emailButton.isEnabled = editing
+    }
+    else {
+      emailButton.setTitleColor(UIColor.primaryRedColor, for: .normal)
+      emailButton.setTitle("+ Add an email", for: .normal)
+      emailButton.isEnabled = true
+    }
+    
+    if user.formattedPhoneNumber.count > 0 {
+      phoneButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
+      phoneButton.setTitle(user.formattedPhoneNumber, for: .normal)
+      phoneButton.isEnabled = editing
+    }
+    else {
+      phoneButton.setTitleColor(UIColor.primaryRedColor, for: .normal)
+      phoneButton.setTitle("+ Add a phone", for: .normal)
+      phoneButton.isEnabled = true
+    }
+    
     if editing {
       nameTextField.textColor = UIColor.primaryDarkColor
       nameTextField.placeholder = "e.g. Charlotte Johnston"
       nameTextField.text = user.displayName
-      
-      emailButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
-      if let email = user.email, email.count > 0 {
-        emailButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
-        emailButton.setTitle(email, for: .normal)
-      }
-      else {
-        emailButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
-        emailButton.setTitle("email", for: .normal)
-      }
-      
-      phoneTextField.textColor = UIColor.primaryDarkColor
-      phoneTextField.placeholder = "0412 345 678"
-      phoneTextField.text = user.formattedPhoneNumber
       
       passwordTextField.textColor = UIColor.primaryDarkColor
       passwordTextField.placeholder = "Current password"
@@ -229,24 +230,6 @@ class AccountViewController: UIViewController {
       else {
         nameTextField.textColor = UIColor.primaryRedColor
         nameTextField.text = "+ Add your name"
-      }
-      
-      if let email = user.email, email.count > 0 {
-        emailButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
-        emailButton.setTitle(email, for: .normal)
-      }
-      else {
-        emailButton.setTitleColor(UIColor.primaryRedColor, for: .normal)
-        emailButton.setTitle("+ Add an email", for: .normal)
-      }
-      
-      if let phone = user.phoneNumber, phone.count > 0 {
-        phoneTextField.textColor = UIColor.primaryGreyColor
-        phoneTextField.text = user.formattedPhoneNumber
-      }
-      else {
-        phoneTextField.textColor = UIColor.primaryRedColor
-        phoneTextField.text = "+ Add a phone"
       }
       
       if let hasPassword = user.hasPassword, hasPassword {

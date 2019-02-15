@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5lf-yO-pag">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A9q-Lc-jkk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,24 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="lwS-96-Whd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5lf-yO-pag" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="iN8-gm-N4p">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="A9q-Lc-jkk" kind="relationship" relationship="rootViewController" id="UwX-hN-frN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0gL-lx-jip" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="814" y="241"/>
-        </scene>
         <!--Permissions-->
         <scene sceneID="Xtn-1f-Aus">
             <objects>
@@ -53,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6-digit code we sent to your phone number" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5O-Rx-915">
-                                <rect key="frame" x="20" y="116" width="335" height="33.5"/>
+                                <rect key="frame" x="20" y="20" width="335" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -103,20 +85,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Ck-CL-bRu"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Verification Code" id="jgP-ce-6OK">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="dVM-iy-RVl">
-                            <connections>
-                                <action selector="onBack:" destination="A9q-Lc-jkk" id="aIf-j9-0w2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Verification Code" id="jgP-ce-6OK"/>
                     <connections>
                         <outlet property="pinCodeView" destination="vCO-nU-m79" id="4ch-BB-Ovp"/>
                         <outlet property="resendButton" destination="4Bm-Hx-5hq" id="bu7-Tz-FPC"/>
                         <outlet property="stackView" destination="fhn-pV-hhQ" id="FK6-jB-Qzg"/>
                         <segue destination="2UR-2U-tXq" kind="showDetail" identifier="showPermissions" id="Mbz-Qf-TZ5"/>
                         <segue destination="5iq-hc-MMP" kind="showDetail" identifier="showMain" id="CE4-cs-8Wf"/>
-                        <segue destination="Ais-DC-SNb" kind="unwind" identifier="unwindToSignInMobile" unwindAction="unwindToSignInMobile:" id="8wf-ff-nb3"/>
                         <segue destination="Ais-DC-SNb" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettings:" id="xRj-Mv-3Zd"/>
                     </connections>
                 </viewController>
@@ -126,7 +101,4 @@
             <point key="canvasLocation" x="1580" y="241"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ic-back-dark-gray-16" width="16" height="16"/>
-    </resources>
 </document>

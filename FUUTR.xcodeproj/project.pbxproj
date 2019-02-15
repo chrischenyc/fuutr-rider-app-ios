@@ -53,9 +53,9 @@
 		6B1D1E8B219A243200F72798 /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D1E8A219A243200F72798 /* VehicleService.swift */; };
 		6B1D1E8C219A243200F72798 /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D1E8A219A243200F72798 /* VehicleService.swift */; };
 		6B1D1E8D219A243200F72798 /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D1E8A219A243200F72798 /* VehicleService.swift */; };
-		6B214AE821958ED100553C3D /* EditPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AE721958ED100553C3D /* EditPhoneViewController.swift */; };
-		6B214AE921958ED100553C3D /* EditPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AE721958ED100553C3D /* EditPhoneViewController.swift */; };
-		6B214AEA21958ED100553C3D /* EditPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AE721958ED100553C3D /* EditPhoneViewController.swift */; };
+		6B214AE821958ED100553C3D /* UpdatePhoneRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AE721958ED100553C3D /* UpdatePhoneRequestViewController.swift */; };
+		6B214AE921958ED100553C3D /* UpdatePhoneRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AE721958ED100553C3D /* UpdatePhoneRequestViewController.swift */; };
+		6B214AEA21958ED100553C3D /* UpdatePhoneRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AE721958ED100553C3D /* UpdatePhoneRequestViewController.swift */; };
 		6B214AEC2195B66300553C3D /* Double+Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AEB2195B66300553C3D /* Double+Price.swift */; };
 		6B214AED2195B66300553C3D /* Double+Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AEB2195B66300553C3D /* Double+Price.swift */; };
 		6B214AEE2195B66300553C3D /* Double+Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B214AEB2195B66300553C3D /* Double+Price.swift */; };
@@ -490,7 +490,7 @@
 		6B14FA122198C9A100678FFF /* ResetPasswordSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSetViewController.swift; sourceTree = "<group>"; };
 		6B1D1E86219A232300F72798 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		6B1D1E8A219A243200F72798 /* VehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleService.swift; sourceTree = "<group>"; };
-		6B214AE721958ED100553C3D /* EditPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoneViewController.swift; sourceTree = "<group>"; };
+		6B214AE721958ED100553C3D /* UpdatePhoneRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePhoneRequestViewController.swift; sourceTree = "<group>"; };
 		6B214AEB2195B66300553C3D /* Double+Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Price.swift"; sourceTree = "<group>"; };
 		6B214AEF2195C77A00553C3D /* TopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpViewController.swift; sourceTree = "<group>"; };
 		6B2C9BAC21A0155E0042432D /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
@@ -881,7 +881,7 @@
 				6B873209218ACD6400CC2651 /* AccountViewController.swift */,
 				6BC9DB95221639D400F17B8F /* UpdateEmailRequestViewController.swift */,
 				6BC9DB9922163B8600F17B8F /* UpdateEmailVerifyViewController.swift */,
-				6B214AE721958ED100553C3D /* EditPhoneViewController.swift */,
+				6B214AE721958ED100553C3D /* UpdatePhoneRequestViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -1935,7 +1935,7 @@
 				6BDE9167218C8FBB003F976B /* UserService.swift in Sources */,
 				6BDE9125218C19DF003F976B /* AppDelegate.swift in Sources */,
 				914A6B7A21FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */,
-				6B214AEA21958ED100553C3D /* EditPhoneViewController.swift in Sources */,
+				6B214AEA21958ED100553C3D /* UpdatePhoneRequestViewController.swift in Sources */,
 				6BB50EE02211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD4726B219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
 				6BBE6C8C219BCF70002D639B /* Constants.swift in Sources */,
@@ -2067,7 +2067,7 @@
 				6BDE9165218C8FBB003F976B /* UserService.swift in Sources */,
 				A0CFE79B21747BF000BA3F6D /* AppDelegate.swift in Sources */,
 				914A6B7821FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */,
-				6B214AE821958ED100553C3D /* EditPhoneViewController.swift in Sources */,
+				6B214AE821958ED100553C3D /* UpdatePhoneRequestViewController.swift in Sources */,
 				6BB50EDE2211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD47269219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
 				6BBE6C8A219BCF70002D639B /* Constants.swift in Sources */,
@@ -2199,7 +2199,7 @@
 				6BDE9166218C8FBB003F976B /* UserService.swift in Sources */,
 				A0CFE7AF21747D2B00BA3F6D /* AppDelegate.swift in Sources */,
 				914A6B7921FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */,
-				6B214AE921958ED100553C3D /* EditPhoneViewController.swift in Sources */,
+				6B214AE921958ED100553C3D /* UpdatePhoneRequestViewController.swift in Sources */,
 				6BB50EDF2211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD4726A219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
 				6BBE6C8B219BCF70002D639B /* Constants.swift in Sources */,

@@ -51,16 +51,6 @@ class MobileVerifyViewController: UIViewController {
   
   // MARK: - user actions
   
-  @IBAction func onBack(_ sender: Any) {
-    switch nextStep {
-    case .signIn:
-      performSegue(withIdentifier: R.segue.mobileVerifyViewController.unwindToSignInMobile, sender: nil)
-      
-    case .updatePhone:
-      performSegue(withIdentifier: R.segue.mobileVerifyViewController.unwindToSettings, sender: nil)
-    }
-  }
-  
   @IBAction func resendButtonTapped(_ sender: Any) {
     guard let phoneNumber = phoneNumber else { return }
     guard let countryCode = countryCode else { return }
