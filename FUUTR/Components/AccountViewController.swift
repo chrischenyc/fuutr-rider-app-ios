@@ -127,10 +127,7 @@ class AccountViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let editEmailViewController = segue.destination as? EditEmailViewController {
-      editEmailViewController.email = user?.email
-    }
-    else if let editPhoneViewController = segue.destination as? EditPhoneViewController {
+    if let editPhoneViewController = segue.destination as? EditPhoneViewController {
       editPhoneViewController.countryCode = user?.countryCode
       editPhoneViewController.phoneNumber = user?.phoneNumber
     }

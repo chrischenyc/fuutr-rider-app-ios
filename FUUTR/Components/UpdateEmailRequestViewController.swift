@@ -1,5 +1,5 @@
 //
-//  EditEmailViewController.swift
+//  UpdateEmailRequestViewController.swift
 //  FUUTR
 //
 //  Created by Chris Chen on 9/11/18.
@@ -9,9 +9,7 @@
 import UIKit
 import IHKeyboardAvoiding
 
-class EditEmailViewController: UIViewController {
-  
-  var email: String?
+class UpdateEmailRequestViewController: UIViewController {
   
   @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var emailTextField: UITextField!
@@ -24,7 +22,6 @@ class EditEmailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    emailTextField.text = email
     emailTextField.delegate = self
     validate()
   }
@@ -58,7 +55,7 @@ class EditEmailViewController: UIViewController {
     
     authAPITask?.cancel()
     
-    authAPITask = AuthService.verify(email: email, completion: { [weak self] (displayName, error) in
+    authAPITask = AuthService.requestUpdateEmailCode(to: email, completion: { [weak self] (error) in
       
       DispatchQueue.main.async {
         
@@ -69,12 +66,14 @@ class EditEmailViewController: UIViewController {
           return
         }
         
-        if displayName != nil {
-          // email is taken
-        }
-        else {
-          
-        }
+        // TODO: image
+        self?.alertMessage(title: "Check your email!",
+                           message: "We sent you a verification code",
+                           image: nil, // R.image.icCheckDarkGray16(),
+          positiveActionButtonTitle: "Continue",
+          positiveActionButtonTapped: {
+            // TODO: segue
+        })
       }
     })
   }
@@ -92,7 +91,7 @@ class EditEmailViewController: UIViewController {
 }
 
 
-extension EditEmailViewController: UITextFieldDelegate {
+extension UpdateEmailRequestViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     nextTapped(textField)
     

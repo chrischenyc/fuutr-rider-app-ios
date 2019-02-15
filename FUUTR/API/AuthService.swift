@@ -208,7 +208,37 @@ final class AuthService {
     })
   }
   
+  static func requestUpdateEmailCode(to email: String,
+                                     completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+    
+    let params: JSON = [
+      "email": email
+    ]
+    
+    return APIClient.shared.load(path: "/auth/update-email",
+                                 method: .get,
+                                 params: params,
+                                 completion: { (result, error) in
+                                  completion(error)
+    })
+  }
   
+  static func updateEmail(to email: String,
+                          code: String,
+                          completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+    
+    let params: JSON = [
+      "email": email,
+      "code": code
+    ]
+    
+    return APIClient.shared.load(path: "/auth/update-email",
+                                 method: .post,
+                                 params: params,
+                                 completion: { (result, error) in
+                                  completion(error)
+    })
+  }
 }
 
 // MARK: - internal
