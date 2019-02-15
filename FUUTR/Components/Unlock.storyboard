@@ -13,11 +13,27 @@
         <!--Scan QR Code-->
         <scene sceneID="xae-p7-PuC">
             <objects>
-                <viewController storyboardIdentifier="ScanUnlock" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YkZ-jL-DlA" customClass="ScanUnlockViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScanUnlock" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YkZ-jL-DlA" customClass="ScanUnlockViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o0u-cA-zcg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8Y-SG-JlL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="227.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCP-1r-g3m">
+                                <rect key="frame" x="0.0" y="227.5" width="55.5" height="340.5"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0O-T6-Wdm">
+                                <rect key="frame" x="264.5" y="227.5" width="55.5" height="340.5"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PxH-vR-5KW">
+                                <rect key="frame" x="55.5" y="436.5" width="209" height="131.5"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the scooter’s QR Code that you can find located in the handle bar." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-Fb-1Vg">
                                 <rect key="frame" x="16" y="111" width="288" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -25,14 +41,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-qr-code" translatesAutoresizingMaskIntoConstraints="NO" id="7Ya-R4-XRA">
-                                <rect key="frame" x="116" y="125.5" width="88" height="110"/>
+                                <rect key="frame" x="116" y="134.5" width="88" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="Skh-9T-2Ar"/>
                                     <constraint firstAttribute="width" constant="88" id="WHp-Ad-boC"/>
                                 </constraints>
                             </imageView>
                             <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDa-Bf-9Db" userLabel="View - centre placeholder">
-                                <rect key="frame" x="55.5" y="259.5" width="209" height="209"/>
+                                <rect key="frame" x="55.5" y="227.5" width="209" height="209"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mDa-Bf-9Db" secondAttribute="height" multiplier="1:1" id="G6Z-2c-9ai"/>
@@ -40,13 +56,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can't scan?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prd-I5-8ef">
-                                <rect key="frame" x="124.5" y="492" width="71" height="16"/>
+                                <rect key="frame" x="124.5" y="508" width="71" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LI7-AO-IdY">
-                                <rect key="frame" x="89" y="508" width="142" height="44"/>
+                                <rect key="frame" x="89" y="524" width="142" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ipX-iO-SSm"/>
                                 </constraints>
@@ -58,20 +74,49 @@
                                     <segue destination="XZT-jc-hDl" kind="showDetail" id="wdy-lN-cM2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VW-dk-gb5">
+                                <rect key="frame" x="138" y="448.5" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0yI-UH-7hb"/>
+                                    <constraint firstAttribute="width" constant="44" id="5Vo-4F-wm3"/>
+                                </constraints>
+                                <state key="normal" image="ic-torch-on-white"/>
+                                <connections>
+                                    <action selector="toggleTorch:" destination="YkZ-jL-DlA" eventType="touchUpInside" id="UUV-8b-7Cv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hvy-Fb-1Vg" firstAttribute="top" secondItem="GcJ-tN-JPk" secondAttribute="top" id="4uX-7b-Il7"/>
+                            <constraint firstItem="Z0O-T6-Wdm" firstAttribute="leading" secondItem="mDa-Bf-9Db" secondAttribute="trailing" id="5vn-lE-0Wt"/>
+                            <constraint firstItem="cCP-1r-g3m" firstAttribute="top" secondItem="mDa-Bf-9Db" secondAttribute="top" id="6ww-Yp-w9U"/>
                             <constraint firstItem="LI7-AO-IdY" firstAttribute="top" secondItem="prd-I5-8ef" secondAttribute="bottom" id="Ci3-zH-yZh"/>
-                            <constraint firstItem="GcJ-tN-JPk" firstAttribute="bottom" secondItem="LI7-AO-IdY" secondAttribute="bottom" constant="16" id="HzK-Qo-bVM"/>
+                            <constraint firstItem="I8Y-SG-JlL" firstAttribute="trailing" secondItem="o0u-cA-zcg" secondAttribute="trailing" id="DSg-NX-3ld"/>
+                            <constraint firstItem="PxH-vR-5KW" firstAttribute="top" secondItem="mDa-Bf-9Db" secondAttribute="bottom" id="DX4-5a-Rsp"/>
+                            <constraint firstItem="PxH-vR-5KW" firstAttribute="bottom" secondItem="o0u-cA-zcg" secondAttribute="bottom" id="EMw-3d-9WR"/>
+                            <constraint firstItem="GcJ-tN-JPk" firstAttribute="bottom" secondItem="LI7-AO-IdY" secondAttribute="bottom" id="HzK-Qo-bVM"/>
+                            <constraint firstItem="I8Y-SG-JlL" firstAttribute="top" secondItem="o0u-cA-zcg" secondAttribute="top" id="L7G-xu-JP8"/>
                             <constraint firstItem="hvy-Fb-1Vg" firstAttribute="leading" secondItem="GcJ-tN-JPk" secondAttribute="leading" constant="16" id="QLK-Ah-ePy"/>
-                            <constraint firstItem="mDa-Bf-9Db" firstAttribute="top" secondItem="7Ya-R4-XRA" secondAttribute="bottom" constant="24" id="Xma-cP-zDk"/>
+                            <constraint firstItem="Z0O-T6-Wdm" firstAttribute="trailing" secondItem="o0u-cA-zcg" secondAttribute="trailing" id="RP9-Fs-EZ4"/>
+                            <constraint firstItem="7Ya-R4-XRA" firstAttribute="top" secondItem="hvy-Fb-1Vg" secondAttribute="bottom" constant="-8" id="Xqa-Bw-xC5"/>
+                            <constraint firstItem="Z0O-T6-Wdm" firstAttribute="top" secondItem="mDa-Bf-9Db" secondAttribute="top" id="YLf-kR-3BS"/>
                             <constraint firstItem="7Ya-R4-XRA" firstAttribute="centerX" secondItem="GcJ-tN-JPk" secondAttribute="centerX" id="Zsf-qE-FM0"/>
                             <constraint firstItem="prd-I5-8ef" firstAttribute="centerX" secondItem="o0u-cA-zcg" secondAttribute="centerX" id="aZa-uH-GV3"/>
+                            <constraint firstItem="PxH-vR-5KW" firstAttribute="trailing" secondItem="mDa-Bf-9Db" secondAttribute="trailing" id="ayY-sj-hm8"/>
                             <constraint firstItem="mDa-Bf-9Db" firstAttribute="centerX" secondItem="o0u-cA-zcg" secondAttribute="centerX" id="cJv-dU-PO1"/>
-                            <constraint firstItem="mDa-Bf-9Db" firstAttribute="centerY" secondItem="o0u-cA-zcg" secondAttribute="centerY" constant="80" id="hjj-da-WcW"/>
+                            <constraint firstItem="3VW-dk-gb5" firstAttribute="top" secondItem="mDa-Bf-9Db" secondAttribute="bottom" constant="12" id="cOe-yl-nuX"/>
+                            <constraint firstItem="Z0O-T6-Wdm" firstAttribute="bottom" secondItem="o0u-cA-zcg" secondAttribute="bottom" id="eOy-VK-DSH"/>
+                            <constraint firstItem="I8Y-SG-JlL" firstAttribute="leading" secondItem="o0u-cA-zcg" secondAttribute="leading" id="ef0-KA-5JU"/>
+                            <constraint firstItem="cCP-1r-g3m" firstAttribute="bottom" secondItem="o0u-cA-zcg" secondAttribute="bottom" id="fBl-Lo-b6a"/>
+                            <constraint firstItem="mDa-Bf-9Db" firstAttribute="centerY" secondItem="o0u-cA-zcg" secondAttribute="centerY" constant="48" id="hjj-da-WcW"/>
                             <constraint firstItem="LI7-AO-IdY" firstAttribute="centerX" secondItem="o0u-cA-zcg" secondAttribute="centerX" id="iUm-b1-XMw"/>
+                            <constraint firstItem="cCP-1r-g3m" firstAttribute="leading" secondItem="o0u-cA-zcg" secondAttribute="leading" id="lJb-HH-37D"/>
+                            <constraint firstItem="3VW-dk-gb5" firstAttribute="centerX" secondItem="o0u-cA-zcg" secondAttribute="centerX" id="nXc-aH-uXr"/>
+                            <constraint firstItem="mDa-Bf-9Db" firstAttribute="leading" secondItem="cCP-1r-g3m" secondAttribute="trailing" id="pfz-mf-jWq"/>
                             <constraint firstAttribute="trailing" secondItem="hvy-Fb-1Vg" secondAttribute="trailing" constant="16" id="ukn-B7-iu0"/>
+                            <constraint firstItem="PxH-vR-5KW" firstAttribute="leading" secondItem="mDa-Bf-9Db" secondAttribute="leading" id="wNo-os-G33"/>
+                            <constraint firstItem="mDa-Bf-9Db" firstAttribute="top" secondItem="I8Y-SG-JlL" secondAttribute="bottom" id="yTy-9g-crM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GcJ-tN-JPk"/>
                     </view>
@@ -84,23 +129,25 @@
                     </navigationItem>
                     <connections>
                         <outlet property="placeHolderView" destination="mDa-Bf-9Db" id="vev-5f-bB7"/>
-                        <segue destination="NOz-RB-Lhf" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="AUY-Pn-55a"/>
+                        <outlet property="qrCodeImageHeightContraint" destination="Skh-9T-2Ar" id="mhW-Il-lXp"/>
+                        <outlet property="torchButton" destination="3VW-dk-gb5" id="Xaj-q8-HWq"/>
+                        <segue destination="NOz-RB-Lhf" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="FUUTR" customModuleProvider="target" unwindAction="unwindToHome:" id="AUY-Pn-55a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7q-4L-qZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NOz-RB-Lhf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2169" y="752"/>
+            <point key="canvasLocation" x="2167.5" y="751.05633802816897"/>
         </scene>
         <!--Enter Code-->
         <scene sceneID="sKO-uT-bRR">
             <objects>
-                <viewController title="Enter Code" id="4Qi-V5-2tn" customClass="ManualUnlockViewController" customModule="OTGRider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Enter Code" id="4Qi-V5-2tn" customClass="ManualUnlockViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ChF-Cq-5DN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the scooter’s 6-digit code that you can find located in the handle bar." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAg-hd-iP8" userLabel="enterCodeLabel" customClass="FTLightLabel" customModule="OTGRider" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the scooter’s 6-digit code that you can find located in the handle bar." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAg-hd-iP8" userLabel="enterCodeLabel" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
                                 <rect key="frame" x="16" y="111" width="288" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
@@ -122,7 +169,7 @@
                                             <constraint firstAttribute="height" constant="40" id="tnd-qD-Ov6"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmb-Gg-z2q" customClass="FTRedBasicButton" customModule="OTGRider" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmb-Gg-z2q" customClass="FTRedBasicButton" customModule="FUUTR" customModuleProvider="target">
                                         <rect key="frame" x="63.5" y="169" width="161" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="pV1-0Q-vP5"/>
@@ -150,7 +197,7 @@
                     <navigationItem key="navigationItem" title="Enter Code" id="cpj-zp-ELl">
                         <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="duq-c0-JgC">
                             <connections>
-                                <segue destination="xP3-XS-LFZ" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="OTGRider" customModuleProvider="target" unwindAction="unwindToHome:" id="oWC-5i-Wt0"/>
+                                <segue destination="xP3-XS-LFZ" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="FUUTR" customModuleProvider="target" unwindAction="unwindToHome:" id="oWC-5i-Wt0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -204,6 +251,7 @@
     </scenes>
     <resources>
         <image name="ic-close-dark-gray-16" width="16" height="16"/>
+        <image name="ic-torch-on-white" width="42" height="42"/>
         <image name="scooter-enter-code" width="88" height="97"/>
         <image name="scooter-qr-code" width="88" height="110"/>
     </resources>
