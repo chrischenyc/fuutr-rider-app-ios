@@ -7,6 +7,7 @@ class VehicleInfoView: DesignableView {
   @IBOutlet weak var reserveButton: UIButton!
   @IBOutlet weak var waitToReserveAgainLabel: UILabel!
   @IBOutlet weak var batteryImageView: UIImageView!
+  @IBOutlet weak var vehicleCodeLabel: UILabel!
   
   override var nibName: String {
     get {
@@ -27,6 +28,7 @@ class VehicleInfoView: DesignableView {
     rangeLabel.text = vehicle.remainingRange?.distanceString
     priceLabel.attributedText = generatePriceText(for: vehicle)
     batteryImageView.image = generateBatteryImage(for: vehicle)
+    vehicleCodeLabel.text = vehicle.vehicleCode
     
     if let address = vehicle.address {
       parkedLabel.text = address

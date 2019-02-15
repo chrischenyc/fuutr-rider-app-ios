@@ -10,6 +10,7 @@ class RidingView: DesignableView {
   @IBOutlet weak var lockButton: UIButton!
   @IBOutlet weak var endRideButton: UIButton!
   @IBOutlet weak var scooterIsLockedLabel: UILabel!
+  @IBOutlet weak var vehicleCodeLabel: UILabel!
   
   var onPauseRide: (()->Void)?
   var onResumeRide: (()->Void)?
@@ -24,6 +25,7 @@ class RidingView: DesignableView {
     ridingDistanceLabel.text = ride.distance.distanceString
     remainingRangeLabel.text = ride.getRemainingRange().distanceString
     costLabel.text = ride.totalCost.priceString
+    vehicleCodeLabel.text = ride.vehicle
     
     if ride.paused {
       guard let pausedUntil = ride.pausedUntil else { return }

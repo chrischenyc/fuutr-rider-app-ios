@@ -17,6 +17,7 @@
                 <outlet property="priceLabel" destination="IW6-0n-AEu" id="GwU-3r-Sv6"/>
                 <outlet property="rangeLabel" destination="T9L-nv-MSx" id="fbj-g0-Puv"/>
                 <outlet property="reserveButton" destination="2Rr-wp-oxp" id="wV3-8y-uNf"/>
+                <outlet property="vehicleCodeLabel" destination="Qx7-zK-wcD" id="Za5-0G-bbP"/>
                 <outlet property="waitToReserveAgainLabel" destination="AM9-9e-6CP" id="L3R-rK-Wm8"/>
             </connections>
         </placeholder>
@@ -124,6 +125,12 @@
                         <constraint firstAttribute="width" constant="96" id="XvH-Kh-1cu"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qx7-zK-wcD" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                    <rect key="frame" x="255" y="156" width="96" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hjy-GO-ulf">
                     <rect key="frame" x="20" y="184" width="335" height="44"/>
                     <subviews>
@@ -169,7 +176,10 @@
                 <constraint firstItem="cQn-Q5-p1M" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="BEM-Sd-Lf7"/>
                 <constraint firstItem="agB-l3-5Xr" firstAttribute="leading" secondItem="cQn-Q5-p1M" secondAttribute="trailing" constant="8" id="Dtf-i5-zTt"/>
                 <constraint firstItem="LgO-K9-TPb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Fu8-AW-MRa"/>
+                <constraint firstItem="Qx7-zK-wcD" firstAttribute="trailing" secondItem="agB-l3-5Xr" secondAttribute="trailing" id="IGL-vq-JTF"/>
                 <constraint firstItem="agB-l3-5Xr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="56" id="Q4v-IN-Yr0"/>
+                <constraint firstItem="Qx7-zK-wcD" firstAttribute="leading" secondItem="agB-l3-5Xr" secondAttribute="leading" id="SCQ-yK-zVc"/>
+                <constraint firstItem="Qx7-zK-wcD" firstAttribute="top" secondItem="agB-l3-5Xr" secondAttribute="bottom" constant="4" id="Tok-I8-GwY"/>
                 <constraint firstItem="0F4-xC-bLI" firstAttribute="leading" secondItem="LgO-K9-TPb" secondAttribute="trailing" constant="16" id="Zgc-SD-vU1"/>
                 <constraint firstItem="Hjy-GO-ulf" firstAttribute="top" secondItem="agB-l3-5Xr" secondAttribute="bottom" constant="32" id="ZtN-vk-obw"/>
                 <constraint firstItem="LgO-K9-TPb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="gYW-64-5fq"/>
