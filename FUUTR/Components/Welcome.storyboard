@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MobileSignIn-->
+        <!--MobileVerify-->
         <scene sceneID="NJU-GR-xwR">
             <objects>
-                <viewControllerPlaceholder storyboardName="MobileSignIn" id="IUZ-yr-X5e" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MobileVerify" id="IUZ-yr-X5e" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hcb-lO-RQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="276" y="68"/>

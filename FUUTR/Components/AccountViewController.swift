@@ -64,6 +64,13 @@ class AccountViewController: UIViewController {
     avatarEditButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarEditButton.frame.size.width/2)
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let navigationController = segue.destination as? UINavigationController,
+      let mobileRequestCodeViewController = navigationController.topViewController as? MobileRequestCodeViewController {
+      mobileRequestCodeViewController.action = .updatePhone
+    }
+  }
+  
   // MARK: - user actions
   
   @IBAction func unwindToSettings(_ unwindSegue: UIStoryboardSegue) {

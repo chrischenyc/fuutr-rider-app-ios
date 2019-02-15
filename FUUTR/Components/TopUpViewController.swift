@@ -37,7 +37,7 @@ class TopUpViewController: UIViewController {
     paymentContext?.delegate = self
     paymentContext?.hostViewController = self
     
-    navigationController?.navigationBar.applyLightTheme(transparentBackground: false)
+    navigationController?.navigationBar.applyLightTheme()
     paymentMethodButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
     paymentMethodButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
     

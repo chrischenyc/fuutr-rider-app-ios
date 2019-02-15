@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="Odp-FJ-fqr" customClass="AccountViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xwi-ZY-STs" customClass="KeyboardDismissingView" customModule="IHKeyboardAvoiding">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s7Q-H4-XoZ">
-                                <rect key="frame" x="0.0" y="32" width="375" height="411.5"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="411.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftv-Uf-hrQ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
@@ -135,7 +135,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <connections>
-                                                            <segue destination="VRa-Pt-JgE" kind="show" id="ZdK-Hd-BD8"/>
+                                                            <segue destination="SUU-wA-EN3" kind="modal" id="ZdK-Hd-BD8"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -190,7 +190,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <connections>
-                                                            <segue destination="7Jq-8o-2Ye" kind="show" id="2ay-x1-pih"/>
+                                                            <segue destination="4jt-n3-tgF" kind="presentation" id="fHX-yn-j3T"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -268,7 +268,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fw8-vT-qzn" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="50" y="539" width="275" height="44"/>
+                                <rect key="frame" x="50" y="603" width="275" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Ycl-bK-zRK"/>
                                     <constraint firstAttribute="width" constant="275" id="pIo-B1-rPK"/>
@@ -311,7 +311,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TVF-4I-W2f" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="lDq-fM-sok">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lDq-fM-sok">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -330,18 +330,18 @@
                 <viewControllerPlaceholder storyboardName="MobileVerify" id="4jt-n3-tgF" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXC-Fv-S2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2304" y="177"/>
+            <point key="canvasLocation" x="1477" y="-111"/>
         </scene>
         <!--Enter Email-->
         <scene sceneID="9Br-sI-AEQ">
             <objects>
                 <viewController id="VRa-Pt-JgE" customClass="UpdateEmailRequestViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VH6-Ic-Wco">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5ze-2a-Zcb">
-                                <rect key="frame" x="16" y="209.5" width="343" height="184"/>
+                                <rect key="frame" x="16" y="241.5" width="343" height="184"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="934-mP-eHF">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
@@ -403,7 +403,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7sy-8c-lGl"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Enter Email" id="E8n-PP-vsv"/>
+                    <navigationItem key="navigationItem" title="Enter Email" id="E8n-PP-vsv">
+                        <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="pJn-6s-iMv">
+                            <connections>
+                                <segue destination="Jrc-It-at7" kind="unwind" unwindAction="unwindToSettings:" id="Gxy-cn-XEU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="Gf4-F1-JI2" id="bSG-iv-aep"/>
                         <outlet property="nextButton" destination="2la-pn-Fyv" id="Dn7-wW-L3r"/>
@@ -412,25 +418,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RfO-ef-oLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Jrc-It-at7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1738" y="-702"/>
+            <point key="canvasLocation" x="2567.1999999999998" y="-602.24887556221893"/>
         </scene>
         <!--Verification Code-->
         <scene sceneID="KWD-53-Td4">
             <objects>
                 <viewController id="4Ly-kK-Brp" customClass="UpdateEmailVerifyViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IRd-M7-UMN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6-digit code we sent to your email" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaA-TR-4fc" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="20" y="0.0" width="335" height="17"/>
+                                <rect key="frame" x="20" y="116" width="335" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rgP-gh-9XN">
-                                <rect key="frame" x="16" y="195.5" width="343" height="212"/>
+                                <rect key="frame" x="16" y="227.5" width="343" height="212"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrj-4O-xaU" customClass="PinCodeView" customModule="PinCodeView">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
@@ -486,101 +493,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgg-o7-sWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wUh-0G-Arv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2518" y="-702"/>
+            <point key="canvasLocation" x="3412" y="-602.24887556221893"/>
         </scene>
-        <!--Enter Phone Number-->
-        <scene sceneID="oRd-NZ-Fmm">
+        <!--Navigation Controller-->
+        <scene sceneID="ePs-us-IJq">
             <objects>
-                <viewController id="7Jq-8o-2Ye" customClass="UpdatePhoneRequestViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="acI-tP-Pyn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-XC-4La">
-                                <rect key="frame" x="16" y="209.5" width="343" height="184"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBC-gh-hdd">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="+61 0412 345 678" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nPG-SF-iY6" customClass="FPNTextField" customModule="FlagPhoneNumber">
-                                                <rect key="frame" x="48" y="0.0" width="279" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="kkM-US-hom"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
-                                            </textField>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="nPG-SF-iY6" firstAttribute="top" secondItem="OBC-gh-hdd" secondAttribute="top" id="B0A-id-UcU"/>
-                                            <constraint firstItem="nPG-SF-iY6" firstAttribute="leading" secondItem="OBC-gh-hdd" secondAttribute="leading" constant="48" id="Pch-VF-4fF"/>
-                                            <constraint firstAttribute="trailing" secondItem="nPG-SF-iY6" secondAttribute="trailing" constant="16" id="qDP-0E-fff"/>
-                                            <constraint firstAttribute="bottom" secondItem="nPG-SF-iY6" secondAttribute="bottom" id="sIn-Ii-XGQ"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEH-0o-5GP">
-                                        <rect key="frame" x="0.0" y="48" width="343" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="0nF-Si-Tr6"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4B-3s-Cpl">
-                                        <rect key="frame" x="0.0" y="57" width="343" height="127"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqD-nQ-OUr">
-                                                <rect key="frame" x="243" y="32" width="100" height="95"/>
-                                                <state key="normal" image="btn-arrow-next-red"/>
-                                                <connections>
-                                                    <action selector="nextTapped:" destination="7Jq-8o-2Ye" eventType="touchUpInside" id="631-zF-FML"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="JqD-nQ-OUr" firstAttribute="top" secondItem="P4B-3s-Cpl" secondAttribute="top" constant="32" id="NKz-wQ-dBt"/>
-                                            <constraint firstAttribute="bottom" secondItem="JqD-nQ-OUr" secondAttribute="bottom" id="oPd-Lc-pIg"/>
-                                            <constraint firstAttribute="trailing" secondItem="JqD-nQ-OUr" secondAttribute="trailing" id="zYh-5E-yiC"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll send you a verification code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AH-eV-6Vy" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="20" y="0.0" width="335" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="6hI-oR-XR6" firstAttribute="trailing" secondItem="Xeh-XC-4La" secondAttribute="trailing" constant="16" id="4W5-Zv-oHg"/>
-                            <constraint firstItem="3AH-eV-6Vy" firstAttribute="top" secondItem="6hI-oR-XR6" secondAttribute="top" id="6Zj-Zt-V7X"/>
-                            <constraint firstItem="Xeh-XC-4La" firstAttribute="centerY" secondItem="acI-tP-Pyn" secondAttribute="centerY" id="9f8-57-0Tr"/>
-                            <constraint firstItem="Xeh-XC-4La" firstAttribute="leading" secondItem="6hI-oR-XR6" secondAttribute="leading" constant="16" id="DAT-pm-j0f"/>
-                            <constraint firstItem="6hI-oR-XR6" firstAttribute="trailing" secondItem="3AH-eV-6Vy" secondAttribute="trailing" constant="20" id="X8M-ZV-lYw"/>
-                            <constraint firstItem="3AH-eV-6Vy" firstAttribute="leading" secondItem="6hI-oR-XR6" secondAttribute="leading" constant="20" id="fRc-TF-TS9"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6hI-oR-XR6"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Enter Phone Number" id="4qt-x6-XtD"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SUU-wA-EN3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="eGC-04-mcZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <outlet property="nextButton" destination="JqD-nQ-OUr" id="WCK-qy-bzr"/>
-                        <outlet property="phoneNumberTextField" destination="nPG-SF-iY6" id="hkv-Os-yxs"/>
-                        <outlet property="stackView" destination="Xeh-XC-4La" id="xDE-up-Qtn"/>
-                        <segue destination="4jt-n3-tgF" kind="show" identifier="showVerifyCode" id="H1F-Zo-eXZ"/>
+                        <segue destination="VRa-Pt-JgE" kind="relationship" relationship="rootViewController" id="sJH-yy-xpN"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fX8-bR-D2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OVG-pP-G0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="178"/>
+            <point key="canvasLocation" x="1628" y="-602.24887556221893"/>
         </scene>
     </scenes>
     <resources>
         <image name="boy-1" width="105" height="105"/>
         <image name="btn-arrow-next-red" width="100" height="95"/>
+        <image name="ic-close-dark-gray-16" width="16" height="16"/>
         <image name="ic-edit-white-16" width="16" height="16"/>
     </resources>
 </document>

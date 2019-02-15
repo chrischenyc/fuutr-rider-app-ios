@@ -22,6 +22,7 @@ class UpdateEmailRequestViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    navigationController?.navigationBar.applyLightTheme()
     emailTextField.delegate = self
     validate()
   }

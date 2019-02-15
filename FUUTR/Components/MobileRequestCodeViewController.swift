@@ -1,16 +1,21 @@
 //
-//  UpdatePhoneRequestViewController.swift
+//  MobileRequestCodeViewController.swift
 //  FUUTR
 //
-//  Created by Chris Chen on 9/11/18.
-//  Copyright © 2018 FUUTR. All rights reserved.
+//  Created by Chris Chen on 7/2/19.
+//  Copyright © 2019 FUUTR. All rights reserved.
 //
 
 import UIKit
 import IHKeyboardAvoiding
 import FlagPhoneNumber
 
-class UpdatePhoneRequestViewController: UIViewController {
+enum MobileVerifyAction {
+  case signIn       // this screen is segued from email sign in
+  case updatePhone  // this screen is segued fom change phone number
+}
+
+class MobileRequestCodeViewController: UIViewController {
   
   @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var phoneNumberTextField: FPNTextField!
@@ -19,6 +24,8 @@ class UpdatePhoneRequestViewController: UIViewController {
   private var authAPITask: URLSessionTask?
   private var countryCode: UInt64?
   private var phoneNumber: String?
+  
+  var action: MobileVerifyAction = .signIn
   
   // MARK: - lifecycle
   
@@ -33,17 +40,33 @@ class UpdatePhoneRequestViewController: UIViewController {
     phoneNumberTextField.becomeFirstResponder()
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(true)
+    
+    // needed to clear the text in the back navigation:
+    self.navigationItem.title = " "
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.navigationItem.title = "Phone Number"
+  }
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let mobileVerifyCodeViewController = segue.destination as? MobileVerifyViewController {
+    if let mobileVerifyCodeViewController = segue.destination as? MobileVerifyCodeViewController {
       guard let countryCode = countryCode, let phoneNumber = phoneNumber else { return }
       
-      mobileVerifyCodeViewController.nextStep = .updatePhone
+      mobileVerifyCodeViewController.action = action
       mobileVerifyCodeViewController.countryCode = countryCode
       mobileVerifyCodeViewController.phoneNumber = phoneNumber
     }
   }
   
   // MARK: - user actions
+  
+  @IBAction func closeTapped(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+  }
   
   @IBAction func nextTapped(_ sender: Any) {
     guard let phoneNumber = phoneNumber, let countryCode = countryCode else { return }
@@ -62,7 +85,7 @@ class UpdatePhoneRequestViewController: UIViewController {
           return
         }
         
-        self?.performSegue(withIdentifier: R.segue.updatePhoneRequestViewController.showVerifyCode, sender: nil)
+        self?.performSegue(withIdentifier: R.segue.mobileRequestCodeViewController.showVerifyCode, sender: nil)
       }
     })
   }
@@ -82,7 +105,7 @@ class UpdatePhoneRequestViewController: UIViewController {
   
 }
 
-extension UpdatePhoneRequestViewController: FPNTextFieldDelegate {
+extension MobileRequestCodeViewController: FPNTextFieldDelegate {
   func fpnDidSelectCountry(name: String, dialCode: String, code: String) {
     countryCode = UInt64(dialCode.replacingOccurrences(of: "+", with: ""))
   }

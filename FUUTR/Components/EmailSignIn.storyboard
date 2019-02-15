@@ -82,7 +82,7 @@
                         <viewLayoutGuide key="safeArea" id="XHs-x7-MIc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Enter Your Email" id="1Ro-3B-Ofd">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="Mz6-sT-evR">
+                        <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="Mz6-sT-evR">
                             <connections>
                                 <segue destination="pxR-nU-a5f" kind="unwind" unwindAction="unwindToWelcome:" id="AZy-w7-clF"/>
                             </connections>
@@ -549,6 +549,7 @@
     <resources>
         <image name="btn-arrow-next-red" width="100" height="95"/>
         <image name="ic-back-dark-gray-16" width="16" height="16"/>
+        <image name="ic-close-dark-gray-16" width="16" height="16"/>
         <image name="ic-show-dark-gray-16" width="16" height="16"/>
     </resources>
 </document>

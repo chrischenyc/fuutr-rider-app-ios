@@ -1,5 +1,5 @@
 //
-//  MobileVerifyViewController.swift
+//  MobileRequestCodeViewController.swift
 //  FUUTR
 //
 //  Created by Chris Chen on 31/10/18.
@@ -11,12 +11,7 @@ import SwiftyUserDefaults
 import IHKeyboardAvoiding
 import PinCodeView
 
-class MobileVerifyViewController: UIViewController {
-  
-  enum VerifyCodeViewControllerNextStep {
-    case signIn       // this screen is segued from email sign in
-    case updatePhone  // this screen is segued fom change phone number
-  }
+class MobileVerifyCodeViewController: UIViewController {
   
   @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var pinCodeView: PinCodeView! {
@@ -31,7 +26,7 @@ class MobileVerifyViewController: UIViewController {
   @IBOutlet weak var resendButton: UIButton!
   
   
-  var nextStep: VerifyCodeViewControllerNextStep = .signIn
+  var action: MobileVerifyAction = .signIn
   var countryCode: UInt64?
   var phoneNumber: String?
   var apiTask: URLSessionDataTask?
@@ -76,7 +71,7 @@ class MobileVerifyViewController: UIViewController {
   }
 }
 
-extension MobileVerifyViewController: PinCodeViewDelegate {
+extension MobileVerifyCodeViewController: PinCodeViewDelegate {
   func pinCodeView(_ view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool) -> Void) {
     
     guard let phoneNumber = phoneNumber else { return }
@@ -86,7 +81,7 @@ extension MobileVerifyViewController: PinCodeViewDelegate {
     
     showLoading()
     
-    switch nextStep {
+    switch action {
     case .signIn:
       apiTask = AuthService
         .signIn(withPhoneNumber: phoneNumber, countryCode: countryCode, verificationCode: code, completion: { [weak self] (error) in
@@ -101,10 +96,10 @@ extension MobileVerifyViewController: PinCodeViewDelegate {
             }
             
             if Defaults[.userOnboarded] {
-              self?.performSegue(withIdentifier: R.segue.mobileVerifyViewController.showMain, sender: nil)
+              self?.performSegue(withIdentifier: R.segue.mobileVerifyCodeViewController.showMain, sender: nil)
             }
             else {
-              self?.performSegue(withIdentifier: R.segue.mobileVerifyViewController.showPermissions, sender: nil)
+              self?.performSegue(withIdentifier: R.segue.mobileVerifyCodeViewController.showPermissions, sender: nil)
             }
           }
         })
@@ -121,7 +116,7 @@ extension MobileVerifyViewController: PinCodeViewDelegate {
             return
           }
           
-          self?.performSegue(withIdentifier: R.segue.mobileVerifyViewController.unwindToSettings, sender: nil)
+          self?.performSegue(withIdentifier: R.segue.mobileVerifyCodeViewController.unwindToSettings, sender: nil)
         }
       })
     }
