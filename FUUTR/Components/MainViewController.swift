@@ -732,7 +732,6 @@ extension MainViewController: CLLocationManagerDelegate {
     locationManager.startUpdatingLocation()
     
     mapView.isMyLocationEnabled = true
-    mapView.settings.myLocationButton = true
   }
   
   // Handle incoming location events.
