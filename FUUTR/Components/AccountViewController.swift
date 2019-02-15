@@ -216,7 +216,7 @@ class AccountViewController: UIViewController {
       
       phoneTextField.textColor = UIColor.primaryDarkColor
       phoneTextField.placeholder = "0412 345 678"
-      phoneTextField.text = user.phoneNumber
+      phoneTextField.text = user.formattedPhoneNumber
       
       passwordTextField.textColor = UIColor.primaryDarkColor
       passwordTextField.placeholder = "Current password"
@@ -242,7 +242,7 @@ class AccountViewController: UIViewController {
       
       if let phone = user.phoneNumber, phone.count > 0 {
         phoneTextField.textColor = UIColor.primaryGreyColor
-        phoneTextField.text = phone
+        phoneTextField.text = user.formattedPhoneNumber
       }
       else {
         phoneTextField.textColor = UIColor.primaryRedColor

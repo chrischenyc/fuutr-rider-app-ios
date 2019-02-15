@@ -34,3 +34,19 @@ struct User: Mappable {
     canReserveVehicleAfter  <- (map["canReserveVehicleAfter"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
   }
 }
+
+
+extension User {
+  var formattedPhoneNumber: String {
+    var result = ""
+    if let theCountryCode = countryCode {
+      result += "+\(theCountryCode) "
+    }
+    
+    if let thePhoneNumber = phoneNumber {
+      result += thePhoneNumber
+    }
+    
+    return result
+  }
+}
