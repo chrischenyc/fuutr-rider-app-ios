@@ -14,7 +14,7 @@ private var walkingRoutePolyline: GMSPolyline?
 
 extension GMSMapView {
   func drawWalkingRoute(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) {
-    clear()
+    walkingRoutePolyline?.map = nil
     
     googleMapsAPITask?.cancel()
     

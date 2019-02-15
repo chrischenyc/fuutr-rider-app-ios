@@ -13,7 +13,7 @@ private var rideRoutePolyline: GMSPolyline?
 
 extension GMSMapView {
   func drawRouteFor(ride: Ride) {
-    clear()
+    rideRoutePolyline?.map = nil
     
     if let encodedPath = ride.encodedPath,
       let path = GMSPath(fromEncodedPath: encodedPath),
