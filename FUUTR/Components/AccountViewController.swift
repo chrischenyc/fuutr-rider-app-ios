@@ -19,7 +19,7 @@ class AccountViewController: UIViewController {
   @IBOutlet weak var nameTextField: UITextField!
   @IBOutlet weak var emailButton: UIButton!
   @IBOutlet weak var phoneButton: UIButton!
-  @IBOutlet weak var passwordTextField: UITextField!
+  @IBOutlet weak var passwordButton: UIButton!
   
   private var apiTask: URLSessionTask?
   private var user: User? {
@@ -68,6 +68,12 @@ class AccountViewController: UIViewController {
     if let navigationController = segue.destination as? UINavigationController,
       let mobileRequestCodeViewController = navigationController.topViewController as? MobileRequestCodeViewController {
       mobileRequestCodeViewController.action = .updatePhone
+    }
+      
+    else if let navigationController = segue.destination as? UINavigationController,
+      let updatePasswordViewController = navigationController.topViewController as? UpdatePasswordViewController,
+      let hasPassword = user?.hasPassword {
+      updatePasswordViewController.hasPassword = hasPassword
     }
   }
   
@@ -172,7 +178,7 @@ class AccountViewController: UIViewController {
       nameTextField.isEnabled = true
       emailButton.isEnabled = true
       phoneButton.isEnabled = false
-      passwordTextField.isEnabled = true
+      passwordButton.isEnabled = true
       
       avatarEditButton.isHidden = false
     } else {
@@ -188,7 +194,7 @@ class AccountViewController: UIViewController {
       nameTextField.isEnabled = false
       emailButton.isEnabled = false
       phoneButton.isEnabled = false
-      passwordTextField.isEnabled = false
+      passwordButton.isEnabled = false
       
       avatarEditButton.isHidden = true
     }
@@ -199,6 +205,18 @@ class AccountViewController: UIViewController {
   }
   
   private func populateUserProfile(_ user: User, editing: Bool) {
+    if let displayName = user.displayName, displayName.count > 0 {
+      nameTextField.textColor = UIColor.primaryGreyColor
+      nameTextField.placeholder = "e.g. Charlotte Johnston"
+      nameTextField.text = displayName
+    }
+    else {
+      nameTextField.textColor = UIColor.primaryRedColor
+      nameTextField.placeholder = "e.g. Charlotte Johnston"
+      nameTextField.text = "+ Add your name"
+    }
+    nameTextField.isEnabled = editing
+    
     if let email = user.email, email.count > 0 {
       emailButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
       emailButton.setTitle(email, for: .normal)
@@ -221,34 +239,15 @@ class AccountViewController: UIViewController {
       phoneButton.isEnabled = true
     }
     
-    if editing {
-      nameTextField.textColor = UIColor.primaryDarkColor
-      nameTextField.placeholder = "e.g. Charlotte Johnston"
-      nameTextField.text = user.displayName
-      
-      passwordTextField.textColor = UIColor.primaryDarkColor
-      passwordTextField.placeholder = "Current password"
-      passwordTextField.text = ""
-    } else {
-      if let displayName = user.displayName, displayName.count > 0 {
-        nameTextField.textColor = UIColor.primaryGreyColor
-        nameTextField.text = displayName
-      }
-      else {
-        nameTextField.textColor = UIColor.primaryRedColor
-        nameTextField.text = "+ Add your name"
-      }
-      
-      if let hasPassword = user.hasPassword, hasPassword {
-        passwordTextField.textColor = UIColor.primaryGreyColor
-        passwordTextField.text = "password"
-        passwordTextField.isSecureTextEntry = true
-      }
-      else {
-        passwordTextField.textColor = UIColor.primaryRedColor
-        passwordTextField.text = "+ Add a password"
-        passwordTextField.isSecureTextEntry = false
-      }
+    if let hasPassword = user.hasPassword, hasPassword {
+      passwordButton.setTitleColor(UIColor.primaryGreyColor, for: .normal)
+      passwordButton.setTitle("∙∙∙∙∙∙∙∙", for: .normal)
+      passwordButton.isEnabled = editing
+    }
+    else {
+      passwordButton.setTitleColor(UIColor.primaryRedColor, for: .normal)
+      passwordButton.setTitle("+ Add a password", for: .normal)
+      passwordButton.isEnabled = true
     }
   }
 }

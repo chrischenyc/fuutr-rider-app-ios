@@ -746,7 +746,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 22 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 23 view controllers.
   struct segue {
     /// This struct is generated for `AccountViewController`, and contains static references to 1 segues.
     struct accountViewController {
@@ -1171,6 +1171,21 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    /// This struct is generated for `UpdatePasswordViewController`, and contains static references to 1 segues.
+    struct updatePasswordViewController {
+      /// Segue identifier `unwindToSettings`.
+      static let unwindToSettings: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, UpdatePasswordViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToSettings")
+      
+      /// Optionally returns a typed version of segue `unwindToSettings`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func unwindToSettings(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, UpdatePasswordViewController, UIKit.UIViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.updatePasswordViewController.unwindToSettings, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     /// This struct is generated for `WelcomeViewController`, and contains static references to 2 segues.
     struct welcomeViewController {
       /// Segue identifier `showMain`.
@@ -1506,6 +1521,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "btn-arrow-next-red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-arrow-next-red' is used in storyboard 'Account', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'Account', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-edit-white-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-edit-white-16' is used in storyboard 'Account', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-show-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-show-dark-gray-16' is used in storyboard 'Account', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

@@ -208,6 +208,26 @@ final class AuthService {
     })
   }
   
+  static func updatePassword(currentPassword: String?,
+                            newPassword: String,
+                            completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+    
+    var params: JSON = [
+      "newPassword": newPassword
+    ]
+    
+    if let currentPassword = currentPassword {
+      params["currentPassword"] = currentPassword
+    }
+    
+    return APIClient.shared.load(path: "/auth/update-password",
+                                 method: .post,
+                                 params: params,
+                                 completion: { (result, error) in
+                                  completion(error)
+    })
+  }
+  
   static func requestUpdateEmailCode(to email: String,
                                      completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
     
