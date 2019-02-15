@@ -392,7 +392,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5ze-2a-Zcb">
-                                <rect key="frame" x="16" y="145.5" width="343" height="184"/>
+                                <rect key="frame" x="16" y="209.5" width="343" height="184"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="934-mP-eHF">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
@@ -448,7 +448,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5ze-2a-Zcb" firstAttribute="centerY" secondItem="VH6-Ic-Wco" secondAttribute="centerY" constant="-64" id="4nS-t6-8Xf"/>
+                            <constraint firstItem="5ze-2a-Zcb" firstAttribute="centerY" secondItem="VH6-Ic-Wco" secondAttribute="centerY" id="4nS-t6-8Xf"/>
                             <constraint firstItem="7sy-8c-lGl" firstAttribute="trailing" secondItem="5ze-2a-Zcb" secondAttribute="trailing" constant="16" id="Qos-Xy-wiE"/>
                             <constraint firstItem="5ze-2a-Zcb" firstAttribute="leading" secondItem="7sy-8c-lGl" secondAttribute="leading" constant="16" id="ZvA-1j-HX3"/>
                         </constraints>
@@ -459,11 +459,85 @@
                         <outlet property="emailTextField" destination="Gf4-F1-JI2" id="bSG-iv-aep"/>
                         <outlet property="nextButton" destination="2la-pn-Fyv" id="Dn7-wW-L3r"/>
                         <outlet property="stackView" destination="5ze-2a-Zcb" id="IJd-OQ-lnp"/>
+                        <segue destination="4Ly-kK-Brp" kind="show" identifier="showVerifyCode" id="KHg-1D-UDs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RfO-ef-oLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1673" y="98"/>
+        </scene>
+        <!--Verification Code-->
+        <scene sceneID="KWD-53-Td4">
+            <objects>
+                <viewController id="4Ly-kK-Brp" customClass="UpdateEmailVerifyViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IRd-M7-UMN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the 6-digit code we sent to your email" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaA-TR-4fc" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="20" y="0.0" width="335" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rgP-gh-9XN">
+                                <rect key="frame" x="16" y="195.5" width="343" height="212"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrj-4O-xaU" customClass="PinCodeView" customModule="PinCodeView">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bzf-Xs-HJY"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5K-VA-4V0">
+                                        <rect key="frame" x="0.0" y="48" width="343" height="164"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCQ-NZ-BiI" customClass="FTRedBasicButton" customModule="FUUTR" customModuleProvider="target">
+                                                <rect key="frame" x="135.5" y="56" width="72" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="CAb-hC-S7P"/>
+                                                    <constraint firstAttribute="height" constant="44" id="zPx-Ix-gUC"/>
+                                                </constraints>
+                                                <state key="normal" title="Re-send"/>
+                                                <connections>
+                                                    <action selector="resendButtonTapped:" destination="4Ly-kK-Brp" eventType="touchUpInside" id="bt0-P7-YRC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="jCQ-NZ-BiI" secondAttribute="bottom" constant="64" id="Tc6-rg-vxh"/>
+                                            <constraint firstItem="jCQ-NZ-BiI" firstAttribute="top" secondItem="w5K-VA-4V0" secondAttribute="top" constant="56" id="nrg-lc-l48"/>
+                                            <constraint firstItem="jCQ-NZ-BiI" firstAttribute="centerX" secondItem="w5K-VA-4V0" secondAttribute="centerX" id="xw6-wp-vso"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aaA-TR-4fc" firstAttribute="top" secondItem="1df-Tj-v05" secondAttribute="top" id="Cn5-x6-alI"/>
+                            <constraint firstItem="aaA-TR-4fc" firstAttribute="leading" secondItem="IRd-M7-UMN" secondAttribute="leading" constant="20" id="L5T-s4-nLV"/>
+                            <constraint firstItem="rgP-gh-9XN" firstAttribute="leading" secondItem="1df-Tj-v05" secondAttribute="leading" constant="16" id="fZh-2m-Ul9"/>
+                            <constraint firstItem="1df-Tj-v05" firstAttribute="trailing" secondItem="rgP-gh-9XN" secondAttribute="trailing" constant="16" id="vz4-mj-ImJ"/>
+                            <constraint firstItem="rgP-gh-9XN" firstAttribute="centerY" secondItem="IRd-M7-UMN" secondAttribute="centerY" id="xP9-hS-wKU"/>
+                            <constraint firstItem="1df-Tj-v05" firstAttribute="trailing" secondItem="aaA-TR-4fc" secondAttribute="trailing" constant="20" id="zIn-7U-XBG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1df-Tj-v05"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Verification Code" id="8aa-Pk-YD9"/>
+                    <connections>
+                        <outlet property="pinCodeView" destination="Mrj-4O-xaU" id="4ak-IF-KmG"/>
+                        <outlet property="resendButton" destination="jCQ-NZ-BiI" id="iSg-CB-C7H"/>
+                        <outlet property="stackView" destination="rgP-gh-9XN" id="BdR-L5-omF"/>
+                        <segue destination="wUh-0G-Arv" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettings:" id="cRB-HJ-Kv1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgg-o7-sWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wUh-0G-Arv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2489" y="98"/>
         </scene>
     </scenes>
     <resources>

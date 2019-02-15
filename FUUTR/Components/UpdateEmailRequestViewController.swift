@@ -32,11 +32,8 @@ class UpdateEmailRequestViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let signInPasswordViewController = segue.destination as? EmailSignInPasswordViewController,
-      let displayName = sender as? String? {
-      
-      signInPasswordViewController.email = emailTextField.text
-      signInPasswordViewController.displayName = displayName
+    if let updateEmailVerifyViewController = segue.destination as? UpdateEmailVerifyViewController {
+      updateEmailVerifyViewController.email = emailTextField.text
     }
   }
   
@@ -72,7 +69,7 @@ class UpdateEmailRequestViewController: UIViewController {
                            image: nil, // R.image.icCheckDarkGray16(),
           positiveActionButtonTitle: "Continue",
           positiveActionButtonTapped: {
-            // TODO: segue
+            self?.performSegue(withIdentifier: R.segue.updateEmailRequestViewController.showVerifyCode, sender: nil)
         })
       }
     })
