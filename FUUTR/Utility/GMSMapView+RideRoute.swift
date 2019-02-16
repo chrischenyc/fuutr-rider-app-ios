@@ -13,7 +13,7 @@ private var rideRoutePolyline: GMSPolyline?
 
 extension GMSMapView {
   func drawRouteFor(ride: Ride) {
-    rideRoutePolyline?.map = nil
+    clear()
     
     if let encodedPath = ride.encodedPath,
       let path = GMSPath(fromEncodedPath: encodedPath),
@@ -24,10 +24,10 @@ extension GMSMapView {
       startMarker.icon = R.image.icLocationRed32()
       startMarker.map = self
       
-      let endCoordiante = path.coordinate(at: path.count() - 1)
-      let endMarker = GMSMarker(position: endCoordiante)
-      endMarker.icon = R.image.icLocationFinalRed32()
-      endMarker.map = self
+      let finishCoordiante = path.coordinate(at: path.count() - 1)
+      let finishMarker = GMSMarker(position: finishCoordiante)
+      finishMarker.icon = R.image.icLocationFinalRed32()
+      finishMarker.map = self
       
       // centre map
       var coordinates: [CLLocationCoordinate2D] = []
