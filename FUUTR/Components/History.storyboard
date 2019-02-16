@@ -147,6 +147,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ride History" id="axA-dL-Leo">
+                        <barButtonItem key="backBarButtonItem" title=" " id="DGx-G4-fPU"/>
                         <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="EoN-rJ-tah">
                             <connections>
                                 <segue destination="K0R-5X-WQs" kind="unwind" unwindAction="unwindToHome:" id="aaZ-5A-HLi"/>

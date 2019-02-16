@@ -82,6 +82,7 @@
                         <viewLayoutGuide key="safeArea" id="XHs-x7-MIc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Enter Your Email" id="1Ro-3B-Ofd">
+                        <barButtonItem key="backBarButtonItem" title=" " id="V6t-L0-RuX"/>
                         <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="Mz6-sT-evR">
                             <connections>
                                 <segue destination="pxR-nU-a5f" kind="unwind" unwindAction="unwindToWelcome:" id="AZy-w7-clF"/>
@@ -223,11 +224,7 @@
                         <viewLayoutGuide key="safeArea" id="pRZ-tE-XB9"/>
                     </view>
                     <navigationItem key="navigationItem" id="KcB-iy-eKr">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="RLQ-gQ-LGw">
-                            <connections>
-                                <segue destination="FoD-J2-AZQ" kind="unwind" unwindAction="unwindToSignInEmail:" id="XhL-hY-3sp"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title=" " id="9Cc-Z6-jHA"/>
                     </navigationItem>
                     <connections>
                         <outlet property="passwordTextField" destination="oBk-L1-qK0" id="3yo-cR-PmO"/>
@@ -239,7 +236,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqD-pf-gjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="FoD-J2-AZQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1711" y="241"/>
         </scene>
@@ -337,11 +333,7 @@
                         <viewLayoutGuide key="safeArea" id="naj-XB-C7e"/>
                     </view>
                     <navigationItem key="navigationItem" title="Forgot Password" id="6fq-ee-PLy">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="VPV-qX-B5H">
-                            <connections>
-                                <segue destination="OHq-IG-DIL" kind="unwind" unwindAction="unwindToSignInPassword:" id="who-Cz-qfg"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title=" " id="Tit-rb-2Fl"/>
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="tbH-CB-jgw" id="mqV-eo-YgV"/>
@@ -351,7 +343,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZn-sf-pTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="OHq-IG-DIL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1710" y="947"/>
         </scene>
@@ -416,11 +407,7 @@
                         <viewLayoutGuide key="safeArea" id="3Ck-CL-bRu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Verification Code" id="jgP-ce-6OK">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="dVM-iy-RVl">
-                            <connections>
-                                <segue destination="Ais-DC-SNb" kind="unwind" unwindAction="unwindToResetPasswordRequest:" id="Xex-YJ-GbY"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title=" " id="m1i-bb-4JD"/>
                     </navigationItem>
                     <connections>
                         <outlet property="pinCodeView" destination="vCO-nU-m79" id="1NT-1x-9Ob"/>
@@ -430,7 +417,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8go-fH-bDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Ais-DC-SNb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2574" y="947"/>
         </scene>
@@ -525,13 +511,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ltn-Xx-WDD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Set New Password" id="080-f1-V3g">
-                        <barButtonItem key="leftBarButtonItem" image="ic-back-dark-gray-16" id="Q9q-AC-hsu">
-                            <connections>
-                                <segue destination="z2K-FU-RV3" kind="unwind" unwindAction="unwindToResetPasswordVerify:" id="kya-pW-YZc"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Set New Password" id="080-f1-V3g"/>
                     <connections>
                         <outlet property="passwordTextField" destination="aGM-OX-Pqk" id="GDX-5p-vlp"/>
                         <outlet property="showPasswordButton" destination="srK-dg-fPO" id="8GB-EU-ubQ"/>
@@ -548,7 +528,6 @@
     </scenes>
     <resources>
         <image name="btn-arrow-next-red" width="100" height="95"/>
-        <image name="ic-back-dark-gray-16" width="16" height="16"/>
         <image name="ic-close-dark-gray-16" width="16" height="16"/>
         <image name="ic-show-dark-gray-16" width="16" height="16"/>
     </resources>

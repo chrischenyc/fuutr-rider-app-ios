@@ -40,18 +40,6 @@ class MobileRequestCodeViewController: UIViewController {
     phoneNumberTextField.becomeFirstResponder()
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(true)
-    
-    // needed to clear the text in the back navigation:
-    self.navigationItem.title = " "
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    self.navigationItem.title = "Phone Number"
-  }
-  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let mobileVerifyCodeViewController = segue.destination as? MobileVerifyCodeViewController {
       guard let countryCode = countryCode, let phoneNumber = phoneNumber else { return }

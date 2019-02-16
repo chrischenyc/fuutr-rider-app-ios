@@ -405,6 +405,7 @@
                         <viewLayoutGuide key="safeArea" id="7sy-8c-lGl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Enter Email" id="E8n-PP-vsv">
+                        <barButtonItem key="backBarButtonItem" title=" " id="1f6-pR-zjv"/>
                         <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="pJn-6s-iMv">
                             <connections>
                                 <segue destination="Jrc-It-at7" kind="unwind" unwindAction="unwindToSettings:" id="Gxy-cn-XEU"/>

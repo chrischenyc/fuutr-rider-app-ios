@@ -218,6 +218,7 @@
                         <viewLayoutGuide key="safeArea" id="cAl-fr-Sfd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wallet" id="2hA-tQ-BGy">
+                        <barButtonItem key="backBarButtonItem" title=" " id="En6-KE-M51"/>
                         <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="0il-1b-TfY">
                             <connections>
                                 <segue destination="N5g-Sj-Cck" kind="unwind" unwindAction="unwindToHome:" id="yJN-4E-IC6"/>

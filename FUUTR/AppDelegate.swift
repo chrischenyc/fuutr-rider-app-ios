@@ -154,6 +154,10 @@ extension AppDelegate {
 
 extension AppDelegate {
   private func globalStyling() {
+    // custom navi bar back button
+    UINavigationBar.appearance().backIndicatorImage = R.image.icBackDarkGray16()
+    UINavigationBar.appearance().backIndicatorTransitionMaskImage = R.image.icBackDarkGray16()
+    
     SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
     SideMenuManager.defaultManager.menuFadeStatusBar = false
     

@@ -25,18 +25,6 @@ class HistoryRidesTableViewController: UITableViewController {
     loadRides()
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(true)
-    
-    // needed to clear the text in the back navigation:
-    self.navigationItem.title = " "
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    self.navigationItem.title = "Ride History"
-  }
-  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let historyRideViewController = segue.destination as? HistoryRideViewController,
       let ride = sender as? Ride {

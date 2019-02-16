@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 93 images.
+  /// This `R.image` struct is generated, and contains static references to 91 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -181,10 +181,6 @@ struct R: Rswift.Validatable {
     static let icShareDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-share-dark-gray-16")
     /// Image `ic-show-dark-gray-16`.
     static let icShowDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-show-dark-gray-16")
-    /// Image `ic-thumbs-down-dark-gray-16`.
-    static let icThumbsDownDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-thumbs-down-dark-gray-16")
-    /// Image `ic-thumbs-up-dark-gray-16`.
-    static let icThumbsUpDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-thumbs-up-dark-gray-16")
     /// Image `ic-torch-off-white`.
     static let icTorchOffWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-torch-off-white")
     /// Image `ic-torch-on-white`.
@@ -576,16 +572,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic-show-dark-gray-16", bundle: ..., traitCollection: ...)`
     static func icShowDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icShowDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-thumbs-down-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icThumbsDownDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icThumbsDownDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-thumbs-up-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icThumbsUpDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icThumbsUpDarkGray16, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic-torch-off-white", bundle: ..., traitCollection: ...)`
@@ -1565,7 +1551,6 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "btn-arrow-next-red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-arrow-next-red' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic-back-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-back-dark-gray-16' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-show-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-show-dark-gray-16' is used in storyboard 'EmailSignIn', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {

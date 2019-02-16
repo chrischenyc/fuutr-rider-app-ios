@@ -46,18 +46,6 @@ class AccountViewController: UIViewController {
     KeyboardAvoiding.avoidingView = stackView
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(true)
-    
-    // needed to clear the text in the back navigation:
-    self.navigationItem.title = " "
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    self.navigationItem.title = "Account"
-  }
-  
   override func viewDidLayoutSubviews() {
     avatarImageView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarImageView.frame.size.width/2)
     

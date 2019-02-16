@@ -178,6 +178,7 @@
                         <viewLayoutGuide key="safeArea" id="JB9-zk-nrT"/>
                     </view>
                     <navigationItem key="navigationItem" title="Phone Number" id="mz1-Rr-9Rc">
+                        <barButtonItem key="backBarButtonItem" title=" " id="5hW-Sj-oDy"/>
                         <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="EFS-SJ-nVD">
                             <connections>
                                 <action selector="closeTapped:" destination="bLI-cW-3Kz" id="Crs-0y-3nU"/>
