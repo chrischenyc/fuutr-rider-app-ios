@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SwiftyUserDefaults
 
 class LocationPermissionViewController: UIViewController {
   
@@ -16,8 +17,6 @@ class LocationPermissionViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // TODO: check if permission has been granted, segue to next screen
-    
     // Do any additional setup after loading the view.
     locationManager.delegate = self
   }
@@ -25,6 +24,7 @@ class LocationPermissionViewController: UIViewController {
   
   @IBAction func enableLocationTapped(_ sender: Any) {
     locationManager.requestAlwaysAuthorization()
+    Defaults[.didRequestLocationPermission] = true
   }
   
 }

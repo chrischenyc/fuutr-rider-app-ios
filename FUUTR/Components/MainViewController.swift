@@ -690,8 +690,10 @@ extension MainViewController {
       break
     case .notDetermined:
       locationManager.requestAlwaysAuthorization()
-    default:
-      break   // delegate method didChangeAuthorization will be called if permission has been authorized
+      
+    case .authorizedAlways,
+         .authorizedWhenInUse:
+      locationManager.startUpdatingLocation()
     }
     
     NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
@@ -701,7 +703,8 @@ extension MainViewController {
   private func promptForLocationService() { 
     alertMessage(title: "Location Service Required",
                  message: "This app needs access to the location service so it can find scooters close to you and track your rides.",
-                 positiveActionButtonTitle: "Grant Access",
+                 image: R.image.imgLocationServices(),
+                 positiveActionButtonTitle: "Enable Location Services",
                  positiveActionButtonTapped: {
                   if !CLLocationManager.locationServicesEnabled() {
                     if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
