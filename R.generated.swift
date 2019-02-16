@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 91 images.
+  /// This `R.image` struct is generated, and contains static references to 58 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -89,114 +89,48 @@ struct R: Rswift.Validatable {
     static let icBattery50DarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-50-dark-gray-24")
     /// Image `ic-battery-75-dark-gray-24`.
     static let icBattery75DarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-75-dark-gray-24")
-    /// Image `ic-chat-dark-gray-16`.
-    static let icChatDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-chat-dark-gray-16")
-    /// Image `ic-check-dark-gray-16`.
-    static let icCheckDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-check-dark-gray-16")
-    /// Image `ic-clock-dark-gray-16`.
-    static let icClockDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-clock-dark-gray-16")
-    /// Image `ic-clock-dark-gray-20`.
-    static let icClockDarkGray20 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-clock-dark-gray-20")
     /// Image `ic-clock-dark-gray-24`.
     static let icClockDarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-clock-dark-gray-24")
-    /// Image `ic-clock-outline-dark-gray-16`.
-    static let icClockOutlineDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-clock-outline-dark-gray-16")
     /// Image `ic-close-dark-gray-16`.
     static let icCloseDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-close-dark-gray-16")
-    /// Image `ic-close-white-12`.
-    static let icCloseWhite12 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-close-white-12")
-    /// Image `ic-close-white-16`.
-    static let icCloseWhite16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-close-white-16")
-    /// Image `ic-credit-card-dark-gray-16`.
-    static let icCreditCardDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-credit-card-dark-gray-16")
-    /// Image `ic-dollar-dark-gray-16`.
-    static let icDollarDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-dollar-dark-gray-16")
-    /// Image `ic-dollar-dark-gray-20`.
-    static let icDollarDarkGray20 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-dollar-dark-gray-20")
     /// Image `ic-dollar-dark-gray-24`.
     static let icDollarDarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-dollar-dark-gray-24")
-    /// Image `ic-edit-dark-gray-16`.
-    static let icEditDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-edit-dark-gray-16")
     /// Image `ic-edit-white-16`.
     static let icEditWhite16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-edit-white-16")
-    /// Image `ic-email-dark-gray-16`.
-    static let icEmailDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-email-dark-gray-16")
-    /// Image `ic-enter-code-dark-gray-16`.
-    static let icEnterCodeDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-enter-code-dark-gray-16")
-    /// Image `ic-facebook-dark-gray-16`.
-    static let icFacebookDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-facebook-dark-gray-16")
-    /// Image `ic-help-dark-gray-16`.
-    static let icHelpDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-help-dark-gray-16")
     /// Image `ic-hide-dark-gray-16`.
     static let icHideDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-hide-dark-gray-16")
     /// Image `ic-history-dark-gray-16`.
     static let icHistoryDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-history-dark-gray-16")
     /// Image `ic-instagram-dark-gray-16`.
     static let icInstagramDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-instagram-dark-gray-16")
-    /// Image `ic-location-arrow-dark-gray-16`.
-    static let icLocationArrowDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-location-arrow-dark-gray-16")
-    /// Image `ic-location-dark-gray-16`.
-    static let icLocationDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-location-dark-gray-16")
-    /// Image `ic-location-dark-gray-20`.
-    static let icLocationDarkGray20 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-location-dark-gray-20")
     /// Image `ic-location-dark-gray-24`.
     static let icLocationDarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-location-dark-gray-24")
-    /// Image `ic-location-final-dark-gray-16`.
-    static let icLocationFinalDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-location-final-dark-gray-16")
     /// Image `ic-location-final-red-32`.
     static let icLocationFinalRed32 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-location-final-red-32")
     /// Image `ic-location-red-32`.
     static let icLocationRed32 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-location-red-32")
-    /// Image `ic-lock-dark-gray-16`.
-    static let icLockDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-lock-dark-gray-16")
     /// Image `ic-mastercard-dark-gray-16`.
     static let icMastercardDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-mastercard-dark-gray-16")
     /// Image `ic-mobile-dark-gray-16`.
     static let icMobileDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-mobile-dark-gray-16")
-    /// Image `ic-more-dark-gray-16`.
-    static let icMoreDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-more-dark-gray-16")
-    /// Image `ic-next-dark-gray-16`.
-    static let icNextDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-next-dark-gray-16")
-    /// Image `ic-parking-dark-gray-16`.
-    static let icParkingDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-parking-dark-gray-16")
     /// Image `ic-payment-history-dark-gray-16`.
     static let icPaymentHistoryDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-payment-history-dark-gray-16")
-    /// Image `ic-plus-dark-gray-16`.
-    static let icPlusDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-plus-dark-gray-16")
-    /// Image `ic-qr-code-dark-gray-16`.
-    static let icQrCodeDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-qr-code-dark-gray-16")
-    /// Image `ic-rating-dark-gray-16`.
-    static let icRatingDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-rating-dark-gray-16")
-    /// Image `ic-rating-empty-dark-gray-16`.
-    static let icRatingEmptyDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-rating-empty-dark-gray-16")
     /// Image `ic-rating-empty-red-32`.
     static let icRatingEmptyRed32 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-rating-empty-red-32")
     /// Image `ic-rating-red-32`.
     static let icRatingRed32 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-rating-red-32")
     /// Image `ic-report-issue-dark-gray-16`.
     static let icReportIssueDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-report-issue-dark-gray-16")
-    /// Image `ic-scooter-dark-gray-16`.
-    static let icScooterDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-scooter-dark-gray-16")
-    /// Image `ic-share-dark-gray-16`.
-    static let icShareDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-share-dark-gray-16")
     /// Image `ic-show-dark-gray-16`.
     static let icShowDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-show-dark-gray-16")
     /// Image `ic-torch-off-white`.
     static let icTorchOffWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-torch-off-white")
     /// Image `ic-torch-on-white`.
     static let icTorchOnWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-torch-on-white")
-    /// Image `ic-twitter-dark-gray-16`.
-    static let icTwitterDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-twitter-dark-gray-16")
     /// Image `ic-user-dark-gray-16`.
     static let icUserDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-user-dark-gray-16")
-    /// Image `ic-walking-dark-gray-16`.
-    static let icWalkingDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-walking-dark-gray-16")
     /// Image `ic-wallet-dark-gray-16`.
     static let icWalletDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-wallet-dark-gray-16")
-    /// Image `img-check-circle-red-115`.
-    static let imgCheckCircleRed115 = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-check-circle-red-115")
-    /// Image `report-issue-menu`.
-    static let reportIssueMenu = Rswift.ImageResource(bundle: R.hostingBundle, name: "report-issue-menu")
     /// Image `scooter-enter-code`.
     static let scooterEnterCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "scooter-enter-code")
     /// Image `scooter-model`.
@@ -344,34 +278,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icBattery75DarkGray24, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-chat-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icChatDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icChatDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-check-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icCheckDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icCheckDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-clock-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icClockDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icClockDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-clock-dark-gray-20", bundle: ..., traitCollection: ...)`
-    static func icClockDarkGray20(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icClockDarkGray20, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "ic-clock-dark-gray-24", bundle: ..., traitCollection: ...)`
     static func icClockDarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icClockDarkGray24, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-clock-outline-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icClockOutlineDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icClockOutlineDarkGray16, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic-close-dark-gray-16", bundle: ..., traitCollection: ...)`
@@ -379,64 +288,14 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icCloseDarkGray16, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-close-white-12", bundle: ..., traitCollection: ...)`
-    static func icCloseWhite12(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icCloseWhite12, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-close-white-16", bundle: ..., traitCollection: ...)`
-    static func icCloseWhite16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icCloseWhite16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-credit-card-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icCreditCardDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icCreditCardDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-dollar-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icDollarDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icDollarDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-dollar-dark-gray-20", bundle: ..., traitCollection: ...)`
-    static func icDollarDarkGray20(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icDollarDarkGray20, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "ic-dollar-dark-gray-24", bundle: ..., traitCollection: ...)`
     static func icDollarDarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icDollarDarkGray24, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-edit-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icEditDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icEditDarkGray16, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "ic-edit-white-16", bundle: ..., traitCollection: ...)`
     static func icEditWhite16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icEditWhite16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-email-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icEmailDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icEmailDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-enter-code-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icEnterCodeDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icEnterCodeDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-facebook-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icFacebookDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icFacebookDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-help-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icHelpDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icHelpDarkGray16, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic-hide-dark-gray-16", bundle: ..., traitCollection: ...)`
@@ -454,29 +313,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icInstagramDarkGray16, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-location-arrow-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icLocationArrowDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icLocationArrowDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-location-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icLocationDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icLocationDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-location-dark-gray-20", bundle: ..., traitCollection: ...)`
-    static func icLocationDarkGray20(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icLocationDarkGray20, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "ic-location-dark-gray-24", bundle: ..., traitCollection: ...)`
     static func icLocationDarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icLocationDarkGray24, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-location-final-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icLocationFinalDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icLocationFinalDarkGray16, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic-location-final-red-32", bundle: ..., traitCollection: ...)`
@@ -489,11 +328,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icLocationRed32, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-lock-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icLockDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icLockDarkGray16, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "ic-mastercard-dark-gray-16", bundle: ..., traitCollection: ...)`
     static func icMastercardDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icMastercardDarkGray16, compatibleWith: traitCollection)
@@ -504,44 +338,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icMobileDarkGray16, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-more-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icMoreDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icMoreDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-next-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icNextDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icNextDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-parking-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icParkingDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icParkingDarkGray16, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "ic-payment-history-dark-gray-16", bundle: ..., traitCollection: ...)`
     static func icPaymentHistoryDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icPaymentHistoryDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-plus-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icPlusDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icPlusDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-qr-code-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icQrCodeDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icQrCodeDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-rating-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icRatingDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icRatingDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-rating-empty-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icRatingEmptyDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icRatingEmptyDarkGray16, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic-rating-empty-red-32", bundle: ..., traitCollection: ...)`
@@ -559,16 +358,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icReportIssueDarkGray16, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-scooter-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icScooterDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icScooterDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "ic-share-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icShareDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icShareDarkGray16, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "ic-show-dark-gray-16", bundle: ..., traitCollection: ...)`
     static func icShowDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icShowDarkGray16, compatibleWith: traitCollection)
@@ -584,34 +373,14 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icTorchOnWhite, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-twitter-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icTwitterDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icTwitterDarkGray16, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "ic-user-dark-gray-16", bundle: ..., traitCollection: ...)`
     static func icUserDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icUserDarkGray16, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-walking-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icWalkingDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icWalkingDarkGray16, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "ic-wallet-dark-gray-16", bundle: ..., traitCollection: ...)`
     static func icWalletDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icWalletDarkGray16, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "img-check-circle-red-115", bundle: ..., traitCollection: ...)`
-    static func imgCheckCircleRed115(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.imgCheckCircleRed115, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "report-issue-menu", bundle: ..., traitCollection: ...)`
-    static func reportIssueMenu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.reportIssueMenu, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "scooter-enter-code", bundle: ..., traitCollection: ...)`
