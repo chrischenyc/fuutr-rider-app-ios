@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 58 images.
+  /// This `R.image` struct is generated, and contains static references to 63 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -131,10 +131,24 @@ struct R: Rswift.Validatable {
     static let icUserDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-user-dark-gray-16")
     /// Image `ic-wallet-dark-gray-16`.
     static let icWalletDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-wallet-dark-gray-16")
-    /// Image `scooter-enter-code`.
-    static let scooterEnterCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "scooter-enter-code")
-    /// Image `scooter-model`.
-    static let scooterModel = Rswift.ImageResource(bundle: R.hostingBundle, name: "scooter-model")
+    /// Image `img-location-services`.
+    static let imgLocationServices = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-location-services")
+    /// Image `img-scooter-enter-code`.
+    static let imgScooterEnterCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-scooter-enter-code")
+    /// Image `img-scooter-model`.
+    static let imgScooterModel = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-scooter-model")
+    /// Image `img-scooter-qr-code`.
+    static let imgScooterQrCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-scooter-qr-code")
+    /// Image `img-success-check`.
+    static let imgSuccessCheck = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-success-check")
+    /// Image `img-transparent`.
+    static let imgTransparent = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-transparent")
+    /// Image `img-unsafe-parking`.
+    static let imgUnsafeParking = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-unsafe-parking")
+    /// Image `man-1`.
+    static let man1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "man-1")
+    /// Image `man-2`.
+    static let man2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "man-2")
     /// Image `scooter-pin-green`.
     static let scooterPinGreen = Rswift.ImageResource(bundle: R.hostingBundle, name: "scooter-pin-green")
     /// Image `scooter-pin-locked-green`.
@@ -143,20 +157,16 @@ struct R: Rswift.Validatable {
     static let scooterPinRed = Rswift.ImageResource(bundle: R.hostingBundle, name: "scooter-pin-red")
     /// Image `scooter-pin-yellow`.
     static let scooterPinYellow = Rswift.ImageResource(bundle: R.hostingBundle, name: "scooter-pin-yellow")
-    /// Image `scooter-qr-code`.
-    static let scooterQrCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "scooter-qr-code")
     /// Image `social-facebook-dark-gray-35`.
     static let socialFacebookDarkGray35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "social-facebook-dark-gray-35")
     /// Image `social-instagram-dark-gray-35`.
     static let socialInstagramDarkGray35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "social-instagram-dark-gray-35")
     /// Image `social-twitter-dark-gray-35`.
     static let socialTwitterDarkGray35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "social-twitter-dark-gray-35")
-    /// Image `success-check`.
-    static let successCheck = Rswift.ImageResource(bundle: R.hostingBundle, name: "success-check")
-    /// Image `transparent`.
-    static let transparent = Rswift.ImageResource(bundle: R.hostingBundle, name: "transparent")
-    /// Image `unsafe-parking-popup`.
-    static let unsafeParkingPopup = Rswift.ImageResource(bundle: R.hostingBundle, name: "unsafe-parking-popup")
+    /// Image `woman-1`.
+    static let woman1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "woman-1")
+    /// Image `woman-2`.
+    static let woman2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "woman-2")
     
     /// `UIImage(named: "Launch", bundle: ..., traitCollection: ...)`
     static func launch(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -383,14 +393,49 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icWalletDarkGray16, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "scooter-enter-code", bundle: ..., traitCollection: ...)`
-    static func scooterEnterCode(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.scooterEnterCode, compatibleWith: traitCollection)
+    /// `UIImage(named: "img-location-services", bundle: ..., traitCollection: ...)`
+    static func imgLocationServices(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgLocationServices, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "scooter-model", bundle: ..., traitCollection: ...)`
-    static func scooterModel(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.scooterModel, compatibleWith: traitCollection)
+    /// `UIImage(named: "img-scooter-enter-code", bundle: ..., traitCollection: ...)`
+    static func imgScooterEnterCode(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgScooterEnterCode, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "img-scooter-model", bundle: ..., traitCollection: ...)`
+    static func imgScooterModel(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgScooterModel, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "img-scooter-qr-code", bundle: ..., traitCollection: ...)`
+    static func imgScooterQrCode(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgScooterQrCode, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "img-success-check", bundle: ..., traitCollection: ...)`
+    static func imgSuccessCheck(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgSuccessCheck, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "img-transparent", bundle: ..., traitCollection: ...)`
+    static func imgTransparent(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgTransparent, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "img-unsafe-parking", bundle: ..., traitCollection: ...)`
+    static func imgUnsafeParking(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgUnsafeParking, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "man-1", bundle: ..., traitCollection: ...)`
+    static func man1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.man1, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "man-2", bundle: ..., traitCollection: ...)`
+    static func man2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.man2, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "scooter-pin-green", bundle: ..., traitCollection: ...)`
@@ -413,11 +458,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.scooterPinYellow, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "scooter-qr-code", bundle: ..., traitCollection: ...)`
-    static func scooterQrCode(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.scooterQrCode, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "social-facebook-dark-gray-35", bundle: ..., traitCollection: ...)`
     static func socialFacebookDarkGray35(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.socialFacebookDarkGray35, compatibleWith: traitCollection)
@@ -433,19 +473,14 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.socialTwitterDarkGray35, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "success-check", bundle: ..., traitCollection: ...)`
-    static func successCheck(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.successCheck, compatibleWith: traitCollection)
+    /// `UIImage(named: "woman-1", bundle: ..., traitCollection: ...)`
+    static func woman1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.woman1, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "transparent", bundle: ..., traitCollection: ...)`
-    static func transparent(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.transparent, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "unsafe-parking-popup", bundle: ..., traitCollection: ...)`
-    static func unsafeParkingPopup(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.unsafeParkingPopup, compatibleWith: traitCollection)
+    /// `UIImage(named: "woman-2", bundle: ..., traitCollection: ...)`
+    static func woman2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.woman2, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -1207,7 +1242,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "ic-clock-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-clock-dark-gray-24' is used in nib 'RidingView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-location-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-location-dark-gray-24' is used in nib 'RidingView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-model' is used in nib 'RidingView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-scooter-model' is used in nib 'RidingView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -1224,7 +1259,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-model' is used in nib 'UnlockInfoView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-scooter-model' is used in nib 'UnlockInfoView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -1245,7 +1280,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-dollar-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-dollar-dark-gray-24' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-location-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-location-dark-gray-24' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-model' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-scooter-model' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -1262,7 +1297,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-model' is used in nib 'VehicleReservedInfoView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-scooter-model' is used in nib 'VehicleReservedInfoView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -1590,8 +1625,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'Unlock', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-torch-on-white", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-torch-on-white' is used in storyboard 'Unlock', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "scooter-enter-code", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-enter-code' is used in storyboard 'Unlock', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "scooter-qr-code", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scooter-qr-code' is used in storyboard 'Unlock', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-scooter-enter-code", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-scooter-enter-code' is used in storyboard 'Unlock', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-scooter-qr-code", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-scooter-qr-code' is used in storyboard 'Unlock', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.unlock().scanUnlock() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'scanUnlock' could not be loaded from storyboard 'Unlock' as 'ScanUnlockViewController'.") }

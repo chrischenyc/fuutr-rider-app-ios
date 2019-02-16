@@ -577,7 +577,7 @@ extension MainViewController {
   private func showNoParkingZoneError() {
     alertMessage(title: "You are attempting to park the vehicle in an unsafe area",
                  message: "The ride cannot end until it is parked upright in an accepted, safe areea.",
-                 image: R.image.unsafeParkingPopup(),
+                 image: R.image.imgUnsafeParking(),
                  positiveActionButtonTitle: "I will re-park the vehicle")
   }
 }
@@ -663,7 +663,7 @@ extension MainViewController {
       let locationMarker = GMSMarker(position: coordinate)
       locationMarker.map = mapView
       locationMarker.appearAnimation = .none
-      locationMarker.icon = R.image.transparent()
+      locationMarker.icon = R.image.imgTransparent()
       locationMarker.opacity = 0
       locationMarker.isFlat = true
       locationMarker.title = title

@@ -37,7 +37,7 @@
                         </label>
                     </subviews>
                 </stackView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-model" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-u5-Oiq">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-scooter-model" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-u5-Oiq">
                     <rect key="frame" x="255" y="56" width="96" height="96"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="96" id="OBM-Dk-pVK"/>
@@ -87,6 +87,6 @@
         </view>
     </objects>
     <resources>
-        <image name="scooter-model" width="96" height="96"/>
+        <image name="img-scooter-model" width="96" height="96"/>
     </resources>
 </document>

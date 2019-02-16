@@ -66,7 +66,7 @@ class UpdateEmailVerifyViewController: UIViewController {
         
         self?.alertMessage(title: "Check your email!",
                            message: "We sent a new verification code to \(email)",
-                           image: R.image.successCheck())
+                           image: R.image.imgSuccessCheck())
       }
     })
   }

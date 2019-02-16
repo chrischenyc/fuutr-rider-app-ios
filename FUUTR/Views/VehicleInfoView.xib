@@ -118,7 +118,7 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scooter-model" translatesAutoresizingMaskIntoConstraints="NO" id="agB-l3-5Xr">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-scooter-model" translatesAutoresizingMaskIntoConstraints="NO" id="agB-l3-5Xr">
                     <rect key="frame" x="255" y="56" width="96" height="96"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="96" id="3yT-Ao-pnp"/>
@@ -197,6 +197,6 @@
         <image name="ic-close-dark-gray-16" width="16" height="16"/>
         <image name="ic-dollar-dark-gray-24" width="24" height="24"/>
         <image name="ic-location-dark-gray-24" width="24" height="24"/>
-        <image name="scooter-model" width="96" height="96"/>
+        <image name="img-scooter-model" width="96" height="96"/>
     </resources>
 </document>
