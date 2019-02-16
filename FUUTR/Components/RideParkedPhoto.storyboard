@@ -22,6 +22,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izv-tW-lx8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="491"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TO2-86-6cz">
                                 <rect key="frame" x="0.0" y="491" width="375" height="112"/>
                                 <subviews>
@@ -79,9 +82,6 @@
                                     <constraint firstItem="ZrL-BI-6JT" firstAttribute="centerY" secondItem="U6h-Dq-SwW" secondAttribute="centerY" id="kf0-zy-rjV"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izv-tW-lx8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="491"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
