@@ -52,3 +52,25 @@ struct Vehicle: Mappable {
     return Mapper<Vehicle>().mapArray(JSONArray: jsonArray)
   }
 }
+
+
+extension Vehicle {
+  var batteryImage: UIImage? {
+    let powerPercent = self.powerPercent ?? 0
+    
+    if 0...20 ~= powerPercent {
+      return R.image.icBattery0DarkGray24()
+    }
+    else if 20...40 ~= powerPercent {
+      return R.image.icBattery25DarkGray24()
+    }
+    else if 40...60 ~= powerPercent {
+      return R.image.icBattery50DarkGray24()
+    }
+    else if 60...80 ~= powerPercent {
+      return R.image.icBattery75DarkGray24()
+    } else {
+      return R.image.icBattery100DarkGray24()
+    }
+  }
+}

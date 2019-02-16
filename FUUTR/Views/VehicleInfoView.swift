@@ -27,7 +27,7 @@ class VehicleInfoView: DesignableView {
     self.vehicle = vehicle
     rangeLabel.text = vehicle.remainingRange?.distanceString
     priceLabel.attributedText = generatePriceText(for: vehicle)
-    batteryImageView.image = generateBatteryImage(for: vehicle)
+    batteryImageView.image = vehicle.batteryImage
     vehicleCodeLabel.text = vehicle.vehicleCode
     
     if let address = vehicle.address {
@@ -62,16 +62,6 @@ class VehicleInfoView: DesignableView {
       reserveButton.setTitle("Reserve", for: .normal)
       reserveButton.isEnabled = true
       reserveButton.isEnabled = true
-    }
-  }
-  
-  private func generateBatteryImage(for vehicle: Vehicle) -> UIImage {
-    let powerPercent = vehicle.powerPercent ?? 0
-    
-    if 30...100 ~= powerPercent {
-      return R.image.icBatteryHalfDarkGray24()!
-    } else {
-      return R.image.icBatteryEmptyDarkGray24()!
     }
   }
   

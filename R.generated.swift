@@ -77,18 +77,18 @@ struct R: Rswift.Validatable {
     static let icArrowRightDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-arrow-right-dark-gray-16")
     /// Image `ic-back-dark-gray-16`.
     static let icBackDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-back-dark-gray-16")
-    /// Image `ic-backspace-dark-gray-16`.
-    static let icBackspaceDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-backspace-dark-gray-16")
     /// Image `ic-balance-dark-gray-16`.
     static let icBalanceDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-balance-dark-gray-16")
-    /// Image `ic-battery-empty-dark-gray-24`.
-    static let icBatteryEmptyDarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-empty-dark-gray-24")
-    /// Image `ic-battery-empty-dark-gray`.
-    static let icBatteryEmptyDarkGray = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-empty-dark-gray")
-    /// Image `ic-battery-half-dark-gray-24`.
-    static let icBatteryHalfDarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-half-dark-gray-24")
-    /// Image `ic-battery-half-dark-gray`.
-    static let icBatteryHalfDarkGray = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-half-dark-gray")
+    /// Image `ic-battery-0-dark-gray-24`.
+    static let icBattery0DarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-0-dark-gray-24")
+    /// Image `ic-battery-100-dark-gray-24`.
+    static let icBattery100DarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-100-dark-gray-24")
+    /// Image `ic-battery-25-dark-gray-24`.
+    static let icBattery25DarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-25-dark-gray-24")
+    /// Image `ic-battery-50-dark-gray-24`.
+    static let icBattery50DarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-50-dark-gray-24")
+    /// Image `ic-battery-75-dark-gray-24`.
+    static let icBattery75DarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-75-dark-gray-24")
     /// Image `ic-chat-dark-gray-16`.
     static let icChatDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-chat-dark-gray-16")
     /// Image `ic-check-dark-gray-16`.
@@ -314,34 +314,34 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icBackDarkGray16, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-backspace-dark-gray-16", bundle: ..., traitCollection: ...)`
-    static func icBackspaceDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icBackspaceDarkGray16, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "ic-balance-dark-gray-16", bundle: ..., traitCollection: ...)`
     static func icBalanceDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icBalanceDarkGray16, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-battery-empty-dark-gray", bundle: ..., traitCollection: ...)`
-    static func icBatteryEmptyDarkGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icBatteryEmptyDarkGray, compatibleWith: traitCollection)
+    /// `UIImage(named: "ic-battery-0-dark-gray-24", bundle: ..., traitCollection: ...)`
+    static func icBattery0DarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icBattery0DarkGray24, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-battery-empty-dark-gray-24", bundle: ..., traitCollection: ...)`
-    static func icBatteryEmptyDarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icBatteryEmptyDarkGray24, compatibleWith: traitCollection)
+    /// `UIImage(named: "ic-battery-100-dark-gray-24", bundle: ..., traitCollection: ...)`
+    static func icBattery100DarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icBattery100DarkGray24, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-battery-half-dark-gray", bundle: ..., traitCollection: ...)`
-    static func icBatteryHalfDarkGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icBatteryHalfDarkGray, compatibleWith: traitCollection)
+    /// `UIImage(named: "ic-battery-25-dark-gray-24", bundle: ..., traitCollection: ...)`
+    static func icBattery25DarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icBattery25DarkGray24, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "ic-battery-half-dark-gray-24", bundle: ..., traitCollection: ...)`
-    static func icBatteryHalfDarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icBatteryHalfDarkGray24, compatibleWith: traitCollection)
+    /// `UIImage(named: "ic-battery-50-dark-gray-24", bundle: ..., traitCollection: ...)`
+    static func icBattery50DarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icBattery50DarkGray24, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic-battery-75-dark-gray-24", bundle: ..., traitCollection: ...)`
+    static func icBattery75DarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icBattery75DarkGray24, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic-chat-dark-gray-16", bundle: ..., traitCollection: ...)`
@@ -1472,7 +1472,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "ic-battery-empty-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-battery-empty-dark-gray-24' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-battery-0-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-battery-0-dark-gray-24' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-dollar-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-dollar-dark-gray-24' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-location-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-location-dark-gray-24' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
