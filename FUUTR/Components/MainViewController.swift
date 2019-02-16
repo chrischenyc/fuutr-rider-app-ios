@@ -345,21 +345,26 @@ extension MainViewController {
     
     rideAPITask?.cancel()
     
+    ridingView.lockButton.setTitle("Locking ...", for: .normal)
+    ridingView.lockButton.isEnabled = false
+    
     rideAPITask = RideService.pause(rideId: rideId) { [weak self] (ride, error) in
-      if error != nil {
-        logger.error(error)
-        
-        if error!.localizedDescription == "no-parking" {
-          self?.showNoParkingZoneError()
-        }
-        else {
-          self?.alertError(error!)
-        }
-        
-        return
-      }
-      
       DispatchQueue.main.async {
+        self?.ridingView.lockButton.isEnabled = true
+        
+        if error != nil {
+          logger.error(error)
+          
+          if error!.localizedDescription == "no-parking" {
+            self?.showNoParkingZoneError()
+          }
+          else {
+            self?.alertError(error!)
+          }
+          
+          return
+        }
+        
         self?.ongoingRide = ride
         self?.updateRideLocally()
         if let ride = self?.ongoingRide {
@@ -375,14 +380,19 @@ extension MainViewController {
     
     rideAPITask?.cancel()
     
+    ridingView.lockButton.setTitle("Unlocking ...", for: .normal)
+    ridingView.lockButton.isEnabled = false
+    
     rideAPITask = RideService.resume(rideId: rideId) { [weak self] (ride, error) in
-      if error != nil {
-        logger.error(error)
-        self?.alertError(error!)
-        return
-      }
-      
       DispatchQueue.main.async {
+        self?.ridingView.lockButton.isEnabled = true
+        
+        if error != nil {
+          logger.error(error)
+          self?.alertError(error!)
+          return
+        }
+        
         self?.ongoingRide = ride
         self?.updateRideLocally()
         self?.clearMapMakers()
@@ -396,9 +406,15 @@ extension MainViewController {
     
     vehicleAPITask?.cancel()
     
+    vehicleInfoView.reserveButton.setTitle(reserve ? "Reserving ..." : "Canceling ...", for: .normal)
+    vehicleInfoView.reserveButton.isEnabled = false
+    
     vehicleAPITask = VehicleService.reserve(_id: id, reserve: reserve, completion: { [weak self] (vehicle, error) in
       
       DispatchQueue.main.async {
+        
+        self?.vehicleInfoView.reserveButton.isEnabled = true
+        
         guard error == nil else {
           self?.alertError(error!)
           return
