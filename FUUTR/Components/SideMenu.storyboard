@@ -81,7 +81,7 @@
                                                             <constraint firstAttribute="height" constant="44" id="7xg-Ek-iLD"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Ride History" image="ic-history-dark-gray-24">
+                                                        <state key="normal" title="Ride History" image="ic-history-dark-gray-16">
                                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -94,7 +94,7 @@
                                                             <constraint firstAttribute="height" constant="44" id="sUg-CV-t0L"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Wallet" image="ic-wallet-dark-gray-24">
+                                                        <state key="normal" title="Wallet" image="ic-wallet-dark-gray-16">
                                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -107,7 +107,7 @@
                                                             <constraint firstAttribute="height" constant="44" id="zOy-dL-EAK"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Account" image="ic-user-dark-gray-24">
+                                                        <state key="normal" title="Account" image="ic-user-dark-gray-16">
                                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -172,9 +172,9 @@
     </scenes>
     <resources>
         <image name="boy-1" width="105" height="105"/>
-        <image name="ic-history-dark-gray-24" width="24" height="24"/>
+        <image name="ic-history-dark-gray-16" width="16" height="16"/>
         <image name="ic-report-issue-dark-gray-16" width="16" height="16"/>
-        <image name="ic-user-dark-gray-24" width="24" height="24"/>
-        <image name="ic-wallet-dark-gray-24" width="24" height="24"/>
+        <image name="ic-user-dark-gray-16" width="16" height="16"/>
+        <image name="ic-wallet-dark-gray-16" width="16" height="16"/>
     </resources>
 </document>
