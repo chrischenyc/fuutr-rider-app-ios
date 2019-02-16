@@ -1,5 +1,5 @@
 //
-//  EnableLocationViewController.swift
+//  LocationPermissionViewController.swift
 //  FUUTR
 //
 //  Created by Chris Chen on 31/10/18.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class EnableLocationViewController: UIViewController {
+class LocationPermissionViewController: UIViewController {
   
   private let locationManager = CLLocationManager()
   
@@ -29,7 +29,7 @@ class EnableLocationViewController: UIViewController {
   
 }
 
-extension EnableLocationViewController: CLLocationManagerDelegate {
+extension LocationPermissionViewController: CLLocationManagerDelegate {
   
   // Handle authorization for the location manager.
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -38,11 +38,7 @@ extension EnableLocationViewController: CLLocationManagerDelegate {
       return
     }
     
-    if UIApplication.shared.isRegisteredForRemoteNotifications {
-      performSegue(withIdentifier: R.segue.enableLocationViewController.showMain, sender: nil)
-    } else {
-      performSegue(withIdentifier: R.segue.enableLocationViewController.showEnableNotification, sender: nil)
-    }
+    performSegue(withIdentifier: R.segue.locationPermissionViewController.showMain, sender: nil)
   }
   
 }

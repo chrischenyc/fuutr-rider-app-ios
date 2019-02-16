@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Permissions-->
+        <!--LocationPermission-->
         <scene sceneID="Xtn-1f-Aus">
             <objects>
-                <viewControllerPlaceholder storyboardName="Permissions" id="2UR-2U-tXq" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="LocationPermission" id="2UR-2U-tXq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvc-oP-QiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3238.4000000000001" y="188.90554722638683"/>

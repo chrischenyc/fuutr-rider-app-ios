@@ -239,10 +239,10 @@
             </objects>
             <point key="canvasLocation" x="1711" y="241"/>
         </scene>
-        <!--Permissions-->
+        <!--LocationPermission-->
         <scene sceneID="Xtn-1f-Aus">
             <objects>
-                <viewControllerPlaceholder storyboardName="Permissions" id="2UR-2U-tXq" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="LocationPermission" id="2UR-2U-tXq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvc-oP-QiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2300" y="189"/>

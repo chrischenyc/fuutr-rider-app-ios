@@ -11,7 +11,7 @@ import UserNotifications
 import FirebaseInstanceID
 import SwiftyUserDefaults
 
-class EnableNotificationViewController: UIViewController {
+class PushNotificationPermissionViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,14 +37,14 @@ class EnableNotificationViewController: UIViewController {
       }
       
       DispatchQueue.main.async {
-        Defaults[.userOnboarded] = true
-        self.performSegue(withIdentifier: R.segue.enableNotificationViewController.showMain, sender: nil)
+        Defaults[.didRequestPushNotificationPermission] = true
+        self.performSegue(withIdentifier: R.segue.pushNotificationPermissionViewController.showMain, sender: nil)
       }
     }
   }
   
   @IBAction func laterTapped(_ sender: Any) {
-    Defaults[.userOnboarded] = true
-    self.performSegue(withIdentifier: R.segue.enableNotificationViewController.showMain, sender: nil)
+    Defaults[.didRequestPushNotificationPermission] = true
+    self.performSegue(withIdentifier: R.segue.pushNotificationPermissionViewController.showMain, sender: nil)
   }
 }

@@ -96,7 +96,7 @@ extension MobileVerifyCodeViewController: PinCodeViewDelegate {
               return
             }
             
-            if Defaults[.userOnboarded] {
+            if Defaults[.didRequestLocationPermission] {
               self?.performSegue(withIdentifier: R.segue.mobileVerifyCodeViewController.showMain, sender: nil)
             }
             else {

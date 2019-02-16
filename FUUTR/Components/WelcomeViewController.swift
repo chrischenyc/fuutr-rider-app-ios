@@ -91,7 +91,7 @@ class WelcomeViewController: UIViewController {
           return
         }
         
-        if Defaults[.userOnboarded] {
+        if Defaults[.didRequestLocationPermission] {
           self?.dismissLoading()
           self?.performSegue(withIdentifier: R.segue.welcomeViewController.showMain, sender: self)
         }

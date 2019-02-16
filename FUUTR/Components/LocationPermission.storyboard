@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ive-ph-I79">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Location Permission View Controller-->
+        <scene sceneID="gaY-ZW-amW">
+            <objects>
+                <viewController id="ive-ph-I79" customClass="LocationPermissionViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bAP-Ab-FOh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-uP-0gR" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="50" y="591" width="275" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2gX-5s-seD"/>
+                                    <constraint firstAttribute="width" constant="275" id="Xdx-qA-taq"/>
+                                </constraints>
+                                <state key="normal" title="Enable Location Services">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="enableLocationTapped:" destination="ive-ph-I79" eventType="touchUpInside" id="Ew0-q2-6xt"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hdl-qy-EzQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="362"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-location-services" translatesAutoresizingMaskIntoConstraints="NO" id="n3p-05-liE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="n3p-05-liE" secondAttribute="height" multiplier="71:56" id="gdB-Pl-mRZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHt-Va-XWf">
+                                        <rect key="frame" x="0.0" y="312" width="375" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow us to access your location to find scooters close to you on the map." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHA-gQ-2tE" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="0.0" width="335" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zHA-gQ-2tE" secondAttribute="trailing" constant="20" id="KT6-Jm-NeR"/>
+                                            <constraint firstItem="zHA-gQ-2tE" firstAttribute="leading" secondItem="wHt-Va-XWf" secondAttribute="leading" constant="20" id="Px3-Rw-Xds"/>
+                                            <constraint firstItem="zHA-gQ-2tE" firstAttribute="top" secondItem="wHt-Va-XWf" secondAttribute="top" id="kDz-U6-e4j"/>
+                                            <constraint firstAttribute="bottom" secondItem="zHA-gQ-2tE" secondAttribute="bottom" id="oJu-6t-56n"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7bP-6v-NZI" firstAttribute="trailing" secondItem="hdl-qy-EzQ" secondAttribute="trailing" id="Dlc-J8-OL1"/>
+                            <constraint firstItem="9Ga-uP-0gR" firstAttribute="centerX" secondItem="bAP-Ab-FOh" secondAttribute="centerX" id="FZi-wD-HfQ"/>
+                            <constraint firstItem="7bP-6v-NZI" firstAttribute="bottom" secondItem="9Ga-uP-0gR" secondAttribute="bottom" constant="32" id="KIt-0I-EN2"/>
+                            <constraint firstItem="hdl-qy-EzQ" firstAttribute="top" secondItem="bAP-Ab-FOh" secondAttribute="top" id="UAk-Sw-GsR"/>
+                            <constraint firstItem="hdl-qy-EzQ" firstAttribute="leading" secondItem="7bP-6v-NZI" secondAttribute="leading" id="hfY-tB-8mR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7bP-6v-NZI"/>
+                    </view>
+                    <connections>
+                        <segue destination="sTK-FS-clb" kind="show" identifier="showMain" id="hcB-IM-1Z1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FCt-fc-crM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-273" y="163"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="xaB-0V-UDf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="sTK-FS-clb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lCc-Yk-g6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="162"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="img-location-services" width="355" height="280"/>
+    </resources>
+</document>

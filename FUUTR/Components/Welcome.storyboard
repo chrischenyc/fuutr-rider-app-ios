@@ -203,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="-374" y="173"/>
         </scene>
-        <!--Permissions-->
+        <!--LocationPermission-->
         <scene sceneID="ACV-qL-Ci8">
             <objects>
-                <viewControllerPlaceholder storyboardName="Permissions" id="KAD-4P-JWO" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="LocationPermission" id="KAD-4P-JWO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fud-lt-t0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="272" y="189"/>
