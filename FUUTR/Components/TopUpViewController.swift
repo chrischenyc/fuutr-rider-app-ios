@@ -134,6 +134,7 @@ extension TopUpViewController: STPPaymentContextDelegate {
     case .success:
       alertMessage(title: "Your wallet has been credited",
                    message: nil,
+                   image: R.image.successCheck(),
                    positiveActionButtonTapped: {
                     self.loadProfile()
       })

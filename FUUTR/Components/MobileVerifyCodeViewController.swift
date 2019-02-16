@@ -65,7 +65,8 @@ class MobileVerifyCodeViewController: UIViewController {
           return
         }
         
-        self?.alertMessage(message: "We sent you a new verification coee")
+        self?.alertMessage(message: "We sent you a new verification code",
+                           image: R.image.successCheck())
       }
     })
   }

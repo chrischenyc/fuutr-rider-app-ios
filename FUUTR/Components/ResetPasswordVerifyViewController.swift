@@ -73,7 +73,9 @@ class ResetPasswordVerifyViewController: UIViewController {
           return
         }
         
-        self?.alertMessage(message: "We sent you a new verification coee")
+        self?.alertMessage(title: "Check your email!",
+                           message: "We sent you a new password reset code",
+                           image: R.image.successCheck())
       }
     })
   }

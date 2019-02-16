@@ -64,8 +64,9 @@ class UpdateEmailVerifyViewController: UIViewController {
           return
         }
         
-        // TODO: image
-        self?.alertMessage(message: "We sent you a new verification coee")
+        self?.alertMessage(title: "Check your email!",
+                           message: "We sent a new verification code to \(email)",
+                           image: R.image.successCheck())
       }
     })
   }

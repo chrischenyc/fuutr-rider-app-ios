@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 91 images.
+  /// This `R.image` struct is generated, and contains static references to 93 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -197,6 +197,8 @@ struct R: Rswift.Validatable {
     static let icWalkingDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-walking-dark-gray-16")
     /// Image `ic-wallet-dark-gray-16`.
     static let icWalletDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-wallet-dark-gray-16")
+    /// Image `img-check-circle-red-115`.
+    static let imgCheckCircleRed115 = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-check-circle-red-115")
     /// Image `report-issue-menu`.
     static let reportIssueMenu = Rswift.ImageResource(bundle: R.hostingBundle, name: "report-issue-menu")
     /// Image `scooter-enter-code`.
@@ -219,6 +221,8 @@ struct R: Rswift.Validatable {
     static let socialInstagramDarkGray35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "social-instagram-dark-gray-35")
     /// Image `social-twitter-dark-gray-35`.
     static let socialTwitterDarkGray35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "social-twitter-dark-gray-35")
+    /// Image `success-check`.
+    static let successCheck = Rswift.ImageResource(bundle: R.hostingBundle, name: "success-check")
     /// Image `transparent`.
     static let transparent = Rswift.ImageResource(bundle: R.hostingBundle, name: "transparent")
     /// Image `unsafe-parking-popup`.
@@ -614,6 +618,11 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icWalletDarkGray16, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "img-check-circle-red-115", bundle: ..., traitCollection: ...)`
+    static func imgCheckCircleRed115(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgCheckCircleRed115, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "report-issue-menu", bundle: ..., traitCollection: ...)`
     static func reportIssueMenu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.reportIssueMenu, compatibleWith: traitCollection)
@@ -667,6 +676,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "social-twitter-dark-gray-35", bundle: ..., traitCollection: ...)`
     static func socialTwitterDarkGray35(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.socialTwitterDarkGray35, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "success-check", bundle: ..., traitCollection: ...)`
+    static func successCheck(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.successCheck, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "transparent", bundle: ..., traitCollection: ...)`

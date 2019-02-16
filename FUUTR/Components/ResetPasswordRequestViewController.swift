@@ -67,10 +67,9 @@ class ResetPasswordRequestViewController: UIViewController {
           return
         }
         
-        // TODO: image
         self?.alertMessage(title: "Check your email!",
                            message: "We sent you a password reset code",
-                           image: nil, // R.image.icCheckDarkGray16(),
+                           image: R.image.successCheck(),
                            positiveActionButtonTitle: "Continue",
                            positiveActionButtonTapped: {
                             self?.performSegue(withIdentifier: R.segue.resetPasswordRequestViewController.showVerifyCode, sender: nil)

@@ -64,10 +64,9 @@ class UpdateEmailRequestViewController: UIViewController {
           return
         }
         
-        // TODO: image
         self?.alertMessage(title: "Check your email!",
-                           message: "We sent you a verification code",
-                           image: nil, // R.image.icCheckDarkGray16(),
+                           message: "We sent a verification code to \(email)",
+                           image: R.image.successCheck(),
           positiveActionButtonTitle: "Continue",
           positiveActionButtonTapped: {
             self?.performSegue(withIdentifier: R.segue.updateEmailRequestViewController.showVerifyCode, sender: nil)
