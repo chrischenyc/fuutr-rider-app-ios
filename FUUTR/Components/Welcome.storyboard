@@ -16,7 +16,7 @@
                 <viewControllerPlaceholder storyboardName="MobileVerify" id="IUZ-yr-X5e" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hcb-lO-RQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="276" y="68"/>
+            <point key="canvasLocation" x="230" y="126"/>
         </scene>
         <!--EmailSignIn-->
         <scene sceneID="Nsm-9y-wQN">
@@ -24,7 +24,7 @@
                 <viewControllerPlaceholder storyboardName="EmailSignIn" id="BdC-KT-Nzr" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dil-8l-aBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="130"/>
+            <point key="canvasLocation" x="226" y="172"/>
         </scene>
         <!--Delegate-->
         <scene sceneID="QWo-Qz-k4l">
@@ -195,7 +195,6 @@
                     <connections>
                         <outlet property="backdropView" destination="P33-aW-EGI" id="ue7-Eq-hul"/>
                         <outlet property="facebookLoginButton" destination="M2D-h8-K4D" id="HB5-il-maV"/>
-                        <segue destination="KAD-4P-JWO" kind="show" identifier="showPermissions" id="NYh-wd-6MW"/>
                         <segue destination="7z4-bW-Wae" kind="show" identifier="showMain" id="uxi-sZ-NDa"/>
                     </connections>
                 </viewController>
@@ -203,21 +202,13 @@
             </objects>
             <point key="canvasLocation" x="-374" y="173"/>
         </scene>
-        <!--LocationPermission-->
-        <scene sceneID="ACV-qL-Ci8">
-            <objects>
-                <viewControllerPlaceholder storyboardName="LocationPermission" id="KAD-4P-JWO" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fud-lt-t0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="272" y="189"/>
-        </scene>
         <!--Main-->
         <scene sceneID="HTX-vP-WT2">
             <objects>
                 <viewControllerPlaceholder storyboardName="Main" id="7z4-bW-Wae" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQK-tf-mZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237" y="248"/>
+            <point key="canvasLocation" x="194" y="217"/>
         </scene>
     </scenes>
     <resources>

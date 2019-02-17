@@ -114,12 +114,7 @@ class EmailSignInPasswordViewController: UIViewController {
       return
     }
     
-    if Defaults[.didRequestLocationPermission] {
-      performSegue(withIdentifier: R.segue.emailSignInPasswordViewController.showMain, sender: nil)
-    }
-    else {
-      performSegue(withIdentifier: R.segue.emailSignInPasswordViewController.showPermissions, sender: nil)
-    }
+    performSegue(withIdentifier: R.segue.emailSignInPasswordViewController.showMain, sender: nil)
   }
 }
 

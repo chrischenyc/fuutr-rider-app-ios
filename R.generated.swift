@@ -564,7 +564,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 23 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 22 view controllers.
   struct segue {
     /// This struct is generated for `AccountViewController`, and contains static references to 1 segues.
     struct accountViewController {
@@ -581,25 +581,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `EmailSignInPasswordViewController`, and contains static references to 2 segues.
+    /// This struct is generated for `EmailSignInPasswordViewController`, and contains static references to 1 segues.
     struct emailSignInPasswordViewController {
       /// Segue identifier `showMain`.
       static let showMain: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, MainViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMain")
-      /// Segue identifier `showPermissions`.
-      static let showPermissions: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, LocationPermissionViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showPermissions")
       
       /// Optionally returns a typed version of segue `showMain`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showMain(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, MainViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.emailSignInPasswordViewController.showMain, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showPermissions`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showPermissions(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, EmailSignInPasswordViewController, LocationPermissionViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.emailSignInPasswordViewController.showPermissions, segue: segue)
       }
       
       fileprivate init() {}
@@ -654,21 +645,6 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HowToRideViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.howToRideViewController.unwindToHome, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
-    /// This struct is generated for `LocationPermissionViewController`, and contains static references to 1 segues.
-    struct locationPermissionViewController {
-      /// Segue identifier `showMain`.
-      static let showMain: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, LocationPermissionViewController, MainViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMain")
-      
-      /// Optionally returns a typed version of segue `showMain`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showMain(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, LocationPermissionViewController, MainViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.locationPermissionViewController.showMain, segue: segue)
       }
       
       fileprivate init() {}
@@ -782,12 +758,10 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `MobileVerifyCodeViewController`, and contains static references to 3 segues.
+    /// This struct is generated for `MobileVerifyCodeViewController`, and contains static references to 2 segues.
     struct mobileVerifyCodeViewController {
       /// Segue identifier `showMain`.
       static let showMain: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MobileVerifyCodeViewController, MainViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMain")
-      /// Segue identifier `showPermissions`.
-      static let showPermissions: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MobileVerifyCodeViewController, LocationPermissionViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showPermissions")
       /// Segue identifier `unwindToSettings`.
       static let unwindToSettings: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MobileVerifyCodeViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToSettings")
       
@@ -796,13 +770,6 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showMain(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MobileVerifyCodeViewController, MainViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mobileVerifyCodeViewController.showMain, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `showPermissions`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showPermissions(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MobileVerifyCodeViewController, LocationPermissionViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mobileVerifyCodeViewController.showPermissions, segue: segue)
       }
       
       /// Optionally returns a typed version of segue `unwindToSettings`.
@@ -995,12 +962,10 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `WelcomeViewController`, and contains static references to 2 segues.
+    /// This struct is generated for `WelcomeViewController`, and contains static references to 1 segues.
     struct welcomeViewController {
       /// Segue identifier `showMain`.
       static let showMain: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WelcomeViewController, MainViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMain")
-      /// Segue identifier `showPermissions`.
-      static let showPermissions: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WelcomeViewController, LocationPermissionViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showPermissions")
       
       /// Optionally returns a typed version of segue `showMain`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
@@ -1009,20 +974,13 @@ struct R: Rswift.Validatable {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.welcomeViewController.showMain, segue: segue)
       }
       
-      /// Optionally returns a typed version of segue `showPermissions`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showPermissions(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WelcomeViewController, LocationPermissionViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.welcomeViewController.showPermissions, segue: segue)
-      }
-      
       fileprivate init() {}
     }
     
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 17 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 16 storyboards.
   struct storyboard {
     /// Storyboard `Account`.
     static let account = _R.storyboard.account()
@@ -1036,8 +994,6 @@ struct R: Rswift.Validatable {
     static let howToRide = _R.storyboard.howToRide()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `LocationPermission`.
-    static let locationPermission = _R.storyboard.locationPermission()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
     /// Storyboard `MobileVerify`.
@@ -1087,11 +1043,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    
-    /// `UIStoryboard(name: "LocationPermission", bundle: ...)`
-    static func locationPermission(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.locationPermission)
     }
     
     /// `UIStoryboard(name: "Main", bundle: ...)`
@@ -1314,7 +1265,6 @@ struct _R: Rswift.Validatable {
       try history.validate()
       try howToRide.validate()
       try launchScreen.validate()
-      try locationPermission.validate()
       try main.validate()
       try mobileVerify.validate()
       try pushNotificationPermission.validate()
@@ -1486,21 +1436,6 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct locationPermission: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = LocationPermissionViewController
-      
-      let bundle = R.hostingBundle
-      let name = "LocationPermission"
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "img-location-services", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-location-services' is used in storyboard 'LocationPermission', but couldn't be loaded.") }
-        if #available(iOS 11.0, *) {
-        }
-      }
-      
-      fileprivate init() {}
-    }
-    
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = MainViewController
       
@@ -1532,7 +1467,9 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct pushNotificationPermission: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct pushNotificationPermission: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = PushNotificationPermissionViewController
+      
       let bundle = R.hostingBundle
       let name = "PushNotificationPermission"
       

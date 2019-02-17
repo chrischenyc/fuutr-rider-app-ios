@@ -231,7 +231,6 @@
                         <outlet property="showPasswordButton" destination="pTS-0u-Lhk" id="qS5-9P-prf"/>
                         <outlet property="stackView" destination="CP0-f7-xcj" id="aFu-4l-hoa"/>
                         <outlet property="submitButton" destination="pgv-e8-iyY" id="Zs7-nr-Nyj"/>
-                        <segue destination="2UR-2U-tXq" kind="showDetail" identifier="showPermissions" id="rfc-WD-BYw"/>
                         <segue destination="5iq-hc-MMP" kind="showDetail" identifier="showMain" id="fGc-eO-FUn"/>
                     </connections>
                 </viewController>
@@ -239,21 +238,13 @@
             </objects>
             <point key="canvasLocation" x="1711" y="241"/>
         </scene>
-        <!--LocationPermission-->
-        <scene sceneID="Xtn-1f-Aus">
-            <objects>
-                <viewControllerPlaceholder storyboardName="LocationPermission" id="2UR-2U-tXq" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lvc-oP-QiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2300" y="189"/>
-        </scene>
         <!--Main-->
         <scene sceneID="l1F-lj-rXX">
             <objects>
                 <viewControllerPlaceholder storyboardName="Main" id="5iq-hc-MMP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udK-Y5-CRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282" y="303"/>
+            <point key="canvasLocation" x="2222" y="240"/>
         </scene>
         <!--Forgot Password-->
         <scene sceneID="Fki-aF-GOB">

@@ -11,7 +11,6 @@ import SwiftyUserDefaults
 
 extension DefaultsKeys {
   static let userSignedIn = DefaultsKey<Bool>("co.fuutr.userSignedIn")
-  static let didRequestLocationPermission = DefaultsKey<Bool>("co.fuutr.didRequestLocationPermission")
   static let didRequestPushNotificationPermission = DefaultsKey<Bool>("co.fuutr.didRequestPushNotificationPermission")
   static let userTrainedHowToRide = DefaultsKey<Bool>("co.fuutr.userTrainedHowToRide")
   static let accessToken = DefaultsKey<String?>("co.fuutr.accessToken")

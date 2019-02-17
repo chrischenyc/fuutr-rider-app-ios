@@ -180,12 +180,10 @@ extension AppDelegate {
   }
   
   private func showInitialScreen() {
-    if !Defaults[.userSignedIn] {
-      self.window?.rootViewController = R.storyboard.welcome().instantiateInitialViewController()
-    } else if !Defaults[.didRequestLocationPermission] {
-      self.window?.rootViewController = R.storyboard.locationPermission().instantiateInitialViewController()
-    } else {
+    if Defaults[.userSignedIn] {
       self.window?.rootViewController = R.storyboard.main().instantiateInitialViewController()
+    } else {
+      self.window?.rootViewController = R.storyboard.welcome().instantiateInitialViewController()
     }
   }
 }

@@ -10,21 +10,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LocationPermission-->
-        <scene sceneID="Xtn-1f-Aus">
-            <objects>
-                <viewControllerPlaceholder storyboardName="LocationPermission" id="2UR-2U-tXq" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lvc-oP-QiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3238.4000000000001" y="188.90554722638683"/>
-        </scene>
         <!--Main-->
         <scene sceneID="l1F-lj-rXX">
             <objects>
                 <viewControllerPlaceholder storyboardName="Main" id="5iq-hc-MMP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udK-Y5-CRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3220.8000000000002" y="302.24887556221893"/>
+            <point key="canvasLocation" x="3064" y="240"/>
         </scene>
         <!--Verification Code-->
         <scene sceneID="aqG-On-dBE">
@@ -90,7 +82,6 @@
                         <outlet property="pinCodeView" destination="vCO-nU-m79" id="4ch-BB-Ovp"/>
                         <outlet property="resendButton" destination="4Bm-Hx-5hq" id="bu7-Tz-FPC"/>
                         <outlet property="stackView" destination="fhn-pV-hhQ" id="FK6-jB-Qzg"/>
-                        <segue destination="2UR-2U-tXq" kind="showDetail" identifier="showPermissions" id="Mbz-Qf-TZ5"/>
                         <segue destination="5iq-hc-MMP" kind="showDetail" identifier="showMain" id="CE4-cs-8Wf"/>
                         <segue destination="Ais-DC-SNb" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettings:" id="xRj-Mv-3Zd"/>
                     </connections>

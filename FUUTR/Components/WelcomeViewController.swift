@@ -86,19 +86,14 @@ class WelcomeViewController: UIViewController {
     apiTask = AuthService.login(withFacebookToken: result.token.tokenString, completion: { [weak self] (error) in
       
       DispatchQueue.main.async {
+        self?.dismissLoading()
+        
         guard error == nil else {
           self?.alertError(error!)
           return
         }
         
-        if Defaults[.didRequestLocationPermission] {
-          self?.dismissLoading()
-          self?.performSegue(withIdentifier: R.segue.welcomeViewController.showMain, sender: self)
-        }
-        else {
-          self?.dismissLoading()
-          self?.performSegue(withIdentifier: R.segue.welcomeViewController.showPermissions, sender: self)
-        }
+        self?.performSegue(withIdentifier: R.segue.welcomeViewController.showMain, sender: self)
       }
     })
   }

@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
   private var clusterManager: GMUClusterManager!
   private let searchingZoomLevel: Float = 15.0
   private let ridingZoomLevel: Float = 18.0
-  private let minDistanceFilter: CLLocationDistance = 1
+  private let minDistanceFilter: CLLocationDistance = 3
   private var zonePolygons: [(Zone, GMSPolygon)] = []
   private var ongoingRidePath: GMSMutablePath?    // to track travelled distance and to draw route
   private var ongoingRidePolyline: GMSPolyline?
@@ -67,6 +67,8 @@ class MainViewController: UIViewController {
     
     NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     
+    NotificationCenter.default.addObserver(self, selector: #selector(applicationWillResignActive), name: UIApplication.willResignActiveNotification, object: nil)
+    
     NotificationCenter.default.addObserver(self, selector: #selector(applyRemoteConfig), name: NSNotification.Name.remoteConfigFetched, object: nil)
   }
   
@@ -91,8 +93,20 @@ class MainViewController: UIViewController {
   }
   
   @objc func applicationDidBecomeActive(_ notification: NSNotification) {
-    if currentLocation != nil && deferredSearchTimer == nil {
-      search()
+    // refresh for user's latest location
+    let authorizationStatus = CLLocationManager.authorizationStatus()
+    if authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse {
+      locationManager.startUpdatingLocation()
+    }
+  }
+  
+  @objc private func applicationWillResignActive(_ notification: NSNotification) {
+    // pause GPS updating if user is not in a ride
+    if ongoingRide == nil || ongoingRide!.paused {
+      let authorizationStatus = CLLocationManager.authorizationStatus()
+      if authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse {
+        locationManager.stopUpdatingLocation()
+      }
     }
   }
   
@@ -457,6 +471,12 @@ extension MainViewController {
     updateUnlockInfoViewContent()
     
     unlockInfoView.onFindMe = { [weak self] in
+      let authorizationStatus = CLLocationManager.authorizationStatus()
+      guard authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse else {
+        self?.promptForLocationServicesPermission()
+        return
+      }
+      
       if let location = currentLocation, let searchingZoomLevel = self?.searchingZoomLevel {
         let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
         self?.mapView.animate(to: camera)
@@ -692,59 +712,42 @@ extension MainViewController {
 // MARK: - Location
 extension MainViewController {
   private func setupLocationManager() {
-    // request location permisison if needed
     locationManager.delegate = self
     locationManager.distanceFilter = minDistanceFilter
-    locationManager.activityType = .otherNavigation
-    
-    switch CLLocationManager.authorizationStatus() {
-    case .denied,
-         .restricted:
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-        self?.promptForLocationService()
-      }
-      break
-    case .notDetermined:
-      locationManager.requestAlwaysAuthorization()
-      
-    case .authorizedAlways,
-         .authorizedWhenInUse:
-      locationManager.startUpdatingLocation()
-    }
-    
-    NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(appBecameActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    locationManager.activityType = .fitness
   }
   
-  private func promptForLocationService() { 
-    alertMessage(title: "Location Service Required",
-                 message: "This app needs access to the location service so it can find scooters close to you and track your rides.",
+  private func promptForLocationServicesPermission() { 
+    alertMessage(title: "Enable Location Services",
+                 message: "Allow FUUTR to use your location to show you the closest scooters on the map.",
                  image: R.image.imgLocationServices(),
-                 positiveActionButtonTitle: "Enable Location Services",
+                 positiveActionButtonTitle: "OK",
                  positiveActionButtonTapped: {
-                  if !CLLocationManager.locationServicesEnabled() {
-                    if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
-                      // If general location settings are disabled then open general location settings
-                      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                  
+                  switch CLLocationManager.authorizationStatus() {
+                  case .notDetermined:
+                    self.locationManager.requestAlwaysAuthorization()
+                    
+                  case .denied,
+                       .restricted:
+                    if !CLLocationManager.locationServicesEnabled() {
+                      // open general location settings in system Settings
+                      if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                      }
                     }
-                  } else {
-                    if let url = URL(string: UIApplication.openSettingsURLString) {
-                      // If general location settings are enabled then open location settings for the app
-                      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    else {
+                      // open app specific location settings in system Settings
+                      if let url = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                      }
                     }
+                    
+                  default:
+                    break
                   }
-    })
-  }
-  
-  @objc private func appMovedToBackground() {
-    // pause GPS updating if user is not in a ride
-    if ongoingRide == nil || ongoingRide!.paused {
-      locationManager.stopUpdatingLocation()
-    }
-  }
-  
-  @objc private func appBecameActive() {
-    locationManager.startUpdatingLocation()
+    },
+                 negativeActionButtonTitle: "Not Now")
   }
 }
 
@@ -754,12 +757,11 @@ extension MainViewController: CLLocationManagerDelegate {
   // Handle authorization for the location manager.
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     guard status == .authorizedAlways || status == .authorizedWhenInUse else {
-      promptForLocationService()
+      promptForLocationServicesPermission()
       return
     }
     
     locationManager.startUpdatingLocation()
-    
     mapView.isMyLocationEnabled = true
   }
   
