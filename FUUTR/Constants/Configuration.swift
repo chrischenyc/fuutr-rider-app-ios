@@ -67,4 +67,8 @@ enum Environment: String {
   var helpURL: String {
     return "https://www.fuutr.co/legal-press-notice"
   }
+  
+  var contactURL: String {
+    return "https://www.fuutr.co/legal-press-notice"
+  }
 }

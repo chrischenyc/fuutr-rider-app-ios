@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 63 images.
+  /// This `R.image` struct is generated, and contains static references to 65 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -89,6 +89,8 @@ struct R: Rswift.Validatable {
     static let icBattery50DarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-50-dark-gray-24")
     /// Image `ic-battery-75-dark-gray-24`.
     static let icBattery75DarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-battery-75-dark-gray-24")
+    /// Image `ic-chat-dark-gray-16`.
+    static let icChatDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-chat-dark-gray-16")
     /// Image `ic-clock-dark-gray-24`.
     static let icClockDarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-clock-dark-gray-24")
     /// Image `ic-close-dark-gray-16`.
@@ -97,6 +99,8 @@ struct R: Rswift.Validatable {
     static let icDollarDarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-dollar-dark-gray-24")
     /// Image `ic-edit-white-16`.
     static let icEditWhite16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-edit-white-16")
+    /// Image `ic-help-dark-gray-16`.
+    static let icHelpDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-help-dark-gray-16")
     /// Image `ic-hide-dark-gray-16`.
     static let icHideDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-hide-dark-gray-16")
     /// Image `ic-history-dark-gray-16`.
@@ -288,6 +292,11 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icBattery75DarkGray24, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "ic-chat-dark-gray-16", bundle: ..., traitCollection: ...)`
+    static func icChatDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icChatDarkGray16, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "ic-clock-dark-gray-24", bundle: ..., traitCollection: ...)`
     static func icClockDarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icClockDarkGray24, compatibleWith: traitCollection)
@@ -306,6 +315,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic-edit-white-16", bundle: ..., traitCollection: ...)`
     static func icEditWhite16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icEditWhite16, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic-help-dark-gray-16", bundle: ..., traitCollection: ...)`
+    static func icHelpDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icHelpDarkGray16, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic-hide-dark-gray-16", bundle: ..., traitCollection: ...)`
@@ -1320,6 +1334,11 @@ struct _R: Rswift.Validatable {
       let name = "Help"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "ic-arrow-right-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-arrow-right-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-chat-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-chat-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-help-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-help-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-report-issue-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-report-issue-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

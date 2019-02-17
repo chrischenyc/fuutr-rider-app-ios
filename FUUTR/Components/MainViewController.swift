@@ -132,12 +132,7 @@ class MainViewController: UIViewController {
         case .account:
           self.performSegue(withIdentifier: R.segue.mainViewController.showAccount, sender: nil)
         case .help:
-          if let url = URL(string: config.env.helpURL), UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-          }
-          
-          // in case we need to integrate and present help desk page in app
-          // self.perform(segue: StoryboardSegue.Main.showHelp)
+         self.performSegue(withIdentifier: R.segue.mainViewController.showHelp, sender: nil)
         }
         
       }

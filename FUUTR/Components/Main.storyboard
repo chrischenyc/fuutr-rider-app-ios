@@ -32,7 +32,7 @@
                 <viewControllerPlaceholder storyboardName="Wallet" id="Fr2-ny-Lh9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZG0-Sq-K1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2057" y="1547"/>
+            <point key="canvasLocation" x="-2066" y="1548"/>
         </scene>
         <!--Account-->
         <scene sceneID="Wfj-cf-A23">
@@ -40,7 +40,7 @@
                 <viewControllerPlaceholder storyboardName="Account" id="ouw-MG-0Xz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSQ-CI-hcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2057" y="1592"/>
+            <point key="canvasLocation" x="-2055" y="1593"/>
         </scene>
         <!--Help-->
         <scene sceneID="oR6-cG-Oyt">
@@ -48,7 +48,7 @@
                 <viewControllerPlaceholder storyboardName="Help" id="46k-mg-UHB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zph-2Z-Qeg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2074" y="1636"/>
+            <point key="canvasLocation" x="-2077" y="1634"/>
         </scene>
         <!--RideParkedPhoto-->
         <scene sceneID="DMt-lo-LqC">

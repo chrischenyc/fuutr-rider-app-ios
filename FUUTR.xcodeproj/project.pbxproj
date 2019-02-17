@@ -188,6 +188,9 @@
 		6BBA8AD82218143A00B09A74 /* PushNotificationPermission.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BBA8AD72218143A00B09A74 /* PushNotificationPermission.storyboard */; };
 		6BBA8AD92218143A00B09A74 /* PushNotificationPermission.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BBA8AD72218143A00B09A74 /* PushNotificationPermission.storyboard */; };
 		6BBA8ADA2218143A00B09A74 /* PushNotificationPermission.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BBA8AD72218143A00B09A74 /* PushNotificationPermission.storyboard */; };
+		6BBA8ADD2218FF4D00B09A74 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8ADC2218FF4D00B09A74 /* HelpViewController.swift */; };
+		6BBA8ADE2218FF4D00B09A74 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8ADC2218FF4D00B09A74 /* HelpViewController.swift */; };
+		6BBA8ADF2218FF4D00B09A74 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8ADC2218FF4D00B09A74 /* HelpViewController.swift */; };
 		6BBC6A0521A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
 		6BBC6A0621A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
 		6BBC6A0721A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
@@ -535,6 +538,7 @@
 		6BB6CB6D2196563700B597B3 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		6BBA8AD72218143A00B09A74 /* PushNotificationPermission.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PushNotificationPermission.storyboard; sourceTree = "<group>"; };
+		6BBA8ADC2218FF4D00B09A74 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		6BBC6A0021A0DD27003C910B /* ride.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ride.gpx; sourceTree = "<group>"; };
 		6BBC6A0421A1090B003C910B /* Double+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Distance.swift"; sourceTree = "<group>"; };
 		6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapStyle.json; sourceTree = "<group>"; };
@@ -792,7 +796,6 @@
 			isa = PBXGroup;
 			children = (
 				6BDEEF74220C1C3800C0FBB8 /* LaunchScreen.storyboard */,
-				6BDEEF78220C1C3C00C0FBB8 /* Help.storyboard */,
 				6BB50EDC2211047700F8BBF4 /* UnlockInfoView.swift */,
 				6BB50EDD2211047700F8BBF4 /* UnlockInfoView.xib */,
 				9197553E21FC3A230069D25A /* VehicleInfoView.swift */,
@@ -887,6 +890,15 @@
 				6B2C9BBC21A020D60042432D /* TransactionsTableViewController.swift */,
 			);
 			name = Wallet;
+			sourceTree = "<group>";
+		};
+		6BBA8ADB2218FF0E00B09A74 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				6BDEEF78220C1C3C00C0FBB8 /* Help.storyboard */,
+				6BBA8ADC2218FF4D00B09A74 /* HelpViewController.swift */,
+			);
+			name = Help;
 			sourceTree = "<group>";
 		};
 		6BBE6C80219BC926002D639B /* Utility */ = {
@@ -1164,6 +1176,7 @@
 				6B8E30CA219FDE6600292B4E /* History */,
 				6BB6CB782196F89800B597B3 /* Wallet */,
 				6BB6CB772196F88A00B597B3 /* Account */,
+				6BBA8ADB2218FF0E00B09A74 /* Help */,
 				6BDEEFBC220DA15800C0FBB8 /* Shared */,
 			);
 			path = Components;
@@ -1925,6 +1938,7 @@
 				6BB50EE02211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD4726B219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
 				6BBE6C8C219BCF70002D639B /* Constants.swift in Sources */,
+				6BBA8ADF2218FF4D00B09A74 /* HelpViewController.swift in Sources */,
 				6BD472A7219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
 				6BDE916F218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6B8E30C9219FDD5000292B4E /* HistoryRideCell.swift in Sources */,
@@ -2056,6 +2070,7 @@
 				6BB50EDE2211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD47269219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
 				6BBE6C8A219BCF70002D639B /* Constants.swift in Sources */,
+				6BBA8ADD2218FF4D00B09A74 /* HelpViewController.swift in Sources */,
 				6BD472A5219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
 				6BDE916D218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6B8E30C7219FDD5000292B4E /* HistoryRideCell.swift in Sources */,
@@ -2187,6 +2202,7 @@
 				6BB50EDF2211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD4726A219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
 				6BBE6C8B219BCF70002D639B /* Constants.swift in Sources */,
+				6BBA8ADE2218FF4D00B09A74 /* HelpViewController.swift in Sources */,
 				6BD472A6219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
 				6BDE916E218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6B8E30C8219FDD5000292B4E /* HistoryRideCell.swift in Sources */,
