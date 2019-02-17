@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--ReportIssue-->
+        <scene sceneID="1ex-ri-QmB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReportIssue" id="RmQ-0j-2ZJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8pG-fr-NNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2040" y="1388"/>
+        </scene>
         <!--SideMenu-->
         <scene sceneID="XBb-yg-UA7">
             <objects>
@@ -122,6 +130,18 @@
                                     <segue destination="xVf-4u-b1H" kind="presentation" id="9mY-jt-ZDY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ5-QY-a10">
+                                <rect key="frame" x="315" y="20" width="44" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HSd-gb-mdt"/>
+                                    <constraint firstAttribute="width" constant="44" id="PTx-ns-5wb"/>
+                                </constraints>
+                                <state key="normal" image="report-issue-menu"/>
+                                <connections>
+                                    <segue destination="RmQ-0j-2ZJ" kind="presentation" id="5YB-7e-qeJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -132,6 +152,7 @@
                             <constraint firstAttribute="bottom" secondItem="zoP-Uq-ABq" secondAttribute="bottom" id="7bI-3u-4XO"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AnA-aF-8Me"/>
                             <constraint firstAttribute="bottom" secondItem="uh5-OG-jme" secondAttribute="bottom" id="BXm-qa-vSl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uQ5-QY-a10" secondAttribute="trailing" constant="16" id="EgZ-VM-yls"/>
                             <constraint firstAttribute="trailing" secondItem="uh5-OG-jme" secondAttribute="trailing" id="Ggw-EX-ZlA"/>
                             <constraint firstItem="FYW-nd-pNL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kaa-EU-zFb"/>
                             <constraint firstItem="uh5-OG-jme" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-256" id="NPg-Cg-nuw"/>
@@ -143,6 +164,7 @@
                             <constraint firstAttribute="bottom" secondItem="FYW-nd-pNL" secondAttribute="bottom" id="XZu-fg-cKm"/>
                             <constraint firstItem="zoP-Uq-ABq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-256" id="aDA-Mv-yhj"/>
                             <constraint firstItem="zoP-Uq-ABq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cfg-jG-IKO"/>
+                            <constraint firstItem="uQ5-QY-a10" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iKf-3J-My7"/>
                             <constraint firstItem="r9R-Fu-VmM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-256" id="lBf-t5-UJq"/>
                             <constraint firstItem="r9R-Fu-VmM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lzx-WN-QKS"/>
                             <constraint firstItem="FYW-nd-pNL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-256" id="wNH-hW-Ycg"/>
@@ -174,5 +196,6 @@
     </scenes>
     <resources>
         <image name="boy-1" width="105" height="105"/>
+        <image name="report-issue-menu" width="37" height="37"/>
     </resources>
 </document>

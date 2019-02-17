@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 69 images.
+  /// This `R.image` struct is generated, and contains static references to 70 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -161,6 +161,8 @@ struct R: Rswift.Validatable {
     static let man2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "man-2")
     /// Image `other-issue`.
     static let otherIssue = Rswift.ImageResource(bundle: R.hostingBundle, name: "other-issue")
+    /// Image `report-issue-menu`.
+    static let reportIssueMenu = Rswift.ImageResource(bundle: R.hostingBundle, name: "report-issue-menu")
     /// Image `scooter-pin-green`.
     static let scooterPinGreen = Rswift.ImageResource(bundle: R.hostingBundle, name: "scooter-pin-green")
     /// Image `scooter-pin-locked-green`.
@@ -478,6 +480,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "other-issue", bundle: ..., traitCollection: ...)`
     static func otherIssue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.otherIssue, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "report-issue-menu", bundle: ..., traitCollection: ...)`
+    static func reportIssueMenu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.reportIssueMenu, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "scooter-pin-green", bundle: ..., traitCollection: ...)`
@@ -1529,6 +1536,7 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "boy-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'boy-1' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "report-issue-menu", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'report-issue-menu' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
