@@ -36,4 +36,11 @@ class HistoryRideViewController: UIViewController {
       mapView.drawRouteFor(ride: ride)
     }
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let navigationController = segue.destination as? UINavigationController,
+      let reportIssueViewController = navigationController.topViewController as? ReportIssueViewController {
+      reportIssueViewController.ride = ride
+    }
+  }
 }

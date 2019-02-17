@@ -174,13 +174,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Add Photos" image="ic-plus-red-16"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5f-Sp-lsD" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5f-Sp-lsD" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
                                 <rect key="frame" x="50" y="591" width="275" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="RfB-Ct-qXL"/>
                                     <constraint firstAttribute="width" constant="275" id="TDc-CI-i4I"/>
                                 </constraints>
-                                <state key="normal" title="Continue"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="onSubmit:" destination="fOr-I6-C5p" eventType="touchUpInside" id="HpK-oJ-aHZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -197,10 +200,13 @@
                     </view>
                     <connections>
                         <outlet property="addPhotosButton" destination="SEl-II-AhM" id="3rH-Oy-0EL"/>
+                        <outlet property="submitButton" destination="g5f-Sp-lsD" id="cyz-Pd-bfJ"/>
                         <outlet property="textView" destination="nfc-h9-MZg" id="4NS-Z9-nRa"/>
+                        <segue destination="T5r-lC-k7a" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="GZv-d0-kXA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9c-fJ-gxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="T5r-lC-k7a" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2084" y="183.95802098950526"/>
         </scene>

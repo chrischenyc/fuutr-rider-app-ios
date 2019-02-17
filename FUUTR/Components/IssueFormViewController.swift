@@ -11,8 +11,13 @@ import UIKit
 class IssueFormViewController: UIViewController {
   
   var issueType: IssueType?
+  var ride: Ride?
+  var vehicle: Vehicle?
+  private var apiTask: URLSessionTask?
+  
   @IBOutlet weak var textView: UITextView!
   @IBOutlet weak var addPhotosButton: UIButton!
+  @IBOutlet weak var submitButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,11 +29,53 @@ class IssueFormViewController: UIViewController {
     textView.layer.borderWidth = 1.0
     textView.contentInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
     textView.textColor = UIColor.primaryDarkColor
+    textView.delegate = self
     
     addPhotosButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
   }
   
   override func viewDidLayoutSubviews() {
     textView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight])
+  }
+  
+  @IBAction func onSubmit(_ sender: Any) {
+    guard let issueType = issueType else { return }
+    guard let description = textView.text, description.count > 0 else { return }
+    guard let currentLocation = currentLocation else { return }
+    
+    apiTask?.cancel()
+    
+    showLoading()
+    
+    apiTask = IssueService.createIssue(type: issueType,
+                                       description: description,
+                                       coordinates: currentLocation.coordinate,
+                                       vehicle: vehicle,
+                                       ride: ride,
+                                       completion: { [weak self] (error) in
+                                        
+                                        DispatchQueue.main.async {
+                                          self?.dismissLoading()
+                                          
+                                          guard error == nil else {
+                                            self?.alertError(error!)
+                                            return
+                                          }
+                                          
+                                          self?.alertMessage(title: "Issue Lodged",
+                                                             message: "Thank you for letting us know about the issue.",
+                                                             image: R.image.imgSuccessCheck(),
+                                                             positiveActionButtonTitle: "Continue",
+                                                             positiveActionButtonTapped: {
+                                                              self?.performSegue(withIdentifier: R.segue.issueFormViewController.unwindToHome, sender: nil)
+                                          })
+                                        }
+    })
+  }
+}
+
+extension IssueFormViewController: UITextViewDelegate {
+  func textViewDidChange(_ textView: UITextView) {
+    submitButton.isEnabled = textView.text.count > 0
   }
 }

@@ -39,6 +39,13 @@ class RideFinishedViewController: UIViewController {
     }
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let navigationController = segue.destination as? UINavigationController,
+      let reportIssueViewController = navigationController.topViewController as? ReportIssueViewController {
+      reportIssueViewController.ride = ride
+    }
+  }
+  
   @IBAction func continueButtonTapped(_ sender: Any) {
     // TODO: submit ride review
     

@@ -200,6 +200,9 @@
 		6BBA8AEA22194A5800B09A74 /* IssueFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE922194A5800B09A74 /* IssueFormViewController.swift */; };
 		6BBA8AEB22194A5800B09A74 /* IssueFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE922194A5800B09A74 /* IssueFormViewController.swift */; };
 		6BBA8AEC22194A5800B09A74 /* IssueFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE922194A5800B09A74 /* IssueFormViewController.swift */; };
+		6BBA8AEE22195A7700B09A74 /* IssueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AED22195A7700B09A74 /* IssueService.swift */; };
+		6BBA8AEF22195A7700B09A74 /* IssueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AED22195A7700B09A74 /* IssueService.swift */; };
+		6BBA8AF022195A7700B09A74 /* IssueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AED22195A7700B09A74 /* IssueService.swift */; };
 		6BBC6A0521A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
 		6BBC6A0621A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
 		6BBC6A0721A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
@@ -551,6 +554,7 @@
 		6BBA8AE12219049800B09A74 /* ReportIssue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReportIssue.storyboard; sourceTree = "<group>"; };
 		6BBA8AE5221904A700B09A74 /* ReportIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueViewController.swift; sourceTree = "<group>"; };
 		6BBA8AE922194A5800B09A74 /* IssueFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueFormViewController.swift; sourceTree = "<group>"; };
+		6BBA8AED22195A7700B09A74 /* IssueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueService.swift; sourceTree = "<group>"; };
 		6BBC6A0021A0DD27003C910B /* ride.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ride.gpx; sourceTree = "<group>"; };
 		6BBC6A0421A1090B003C910B /* Double+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Distance.swift"; sourceTree = "<group>"; };
 		6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapStyle.json; sourceTree = "<group>"; };
@@ -1119,6 +1123,7 @@
 				6B1D1E8A219A243200F72798 /* VehicleService.swift */,
 				6BB2082C219F8AA3008E5EF1 /* RideService.swift */,
 				6B91D75D21FB1F2A00B84244 /* SearchService.swift */,
+				6BBA8AED22195A7700B09A74 /* IssueService.swift */,
 				6B473DB32202F3FF003FE160 /* GoogleMapsService.swift */,
 			);
 			path = API;
@@ -2002,6 +2007,7 @@
 				6B720FF8220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
 				6BC9DBA8221676D300F17B8F /* UpdatePasswordViewController.swift in Sources */,
 				6B2C9BBB21A0203B0042432D /* TransactionService.swift in Sources */,
+				6BBA8AF022195A7700B09A74 /* IssueService.swift in Sources */,
 				6BB2082F219F8AA3008E5EF1 /* RideService.swift in Sources */,
 				6B0128B1219D7EC600AC2439 /* QRCode.swift in Sources */,
 				6BD472A1219A4CAA00D36C3E /* GMUWrappingDictionaryKey.m in Sources */,
@@ -2136,6 +2142,7 @@
 				6B720FF6220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
 				6BC9DBA6221676D300F17B8F /* UpdatePasswordViewController.swift in Sources */,
 				6B2C9BB921A0203B0042432D /* TransactionService.swift in Sources */,
+				6BBA8AEE22195A7700B09A74 /* IssueService.swift in Sources */,
 				6BB2082D219F8AA3008E5EF1 /* RideService.swift in Sources */,
 				6B0128AF219D7EC600AC2439 /* QRCode.swift in Sources */,
 				6BD4729F219A4CAA00D36C3E /* GMUWrappingDictionaryKey.m in Sources */,
@@ -2270,6 +2277,7 @@
 				6B720FF7220ADDED0081BCF1 /* FTRedInverseButton.swift in Sources */,
 				6BC9DBA7221676D300F17B8F /* UpdatePasswordViewController.swift in Sources */,
 				6B2C9BBA21A0203B0042432D /* TransactionService.swift in Sources */,
+				6BBA8AEF22195A7700B09A74 /* IssueService.swift in Sources */,
 				6BB2082E219F8AA3008E5EF1 /* RideService.swift in Sources */,
 				6B0128B0219D7EC600AC2439 /* QRCode.swift in Sources */,
 				6BD472A0219A4CAA00D36C3E /* GMUWrappingDictionaryKey.m in Sources */,

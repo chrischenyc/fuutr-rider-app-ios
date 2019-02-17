@@ -487,7 +487,7 @@ extension MainViewController {
                          message: "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
                          positiveActionButtonTitle: "OK",
                          positiveActionButtonTapped: {
-                          self?.toggleVehicleReservation(id: vehicle._id, reserve: true)
+                          self?.toggleVehicleReservation(id: vehicle.id, reserve: true)
       },
                          negativeActionButtonTitle: "Cancel")
     }
@@ -511,7 +511,7 @@ extension MainViewController {
                          positiveActionButtonTapped: {},
                          negativeActionButtonTitle: "Cancel reservation",
                          negativeActionButtonTapped: {
-                          self?.toggleVehicleReservation(id: vehicle._id, reserve: false)
+                          self?.toggleVehicleReservation(id: vehicle.id, reserve: false)
       })
     }
     

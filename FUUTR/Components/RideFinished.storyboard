@@ -163,6 +163,9 @@
                                             <constraint firstAttribute="height" constant="44" id="eZ7-88-2Z0"/>
                                         </constraints>
                                         <state key="normal" title="Report an issue"/>
+                                        <connections>
+                                            <segue destination="LOV-Hm-xXj" kind="presentation" id="P9m-8T-4aD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnX-PS-CjK" userLabel="continueButton" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44" width="275" height="44"/>
@@ -212,6 +215,14 @@
                 <exit id="HLN-uQ-hrx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1076" y="116.49175412293854"/>
+        </scene>
+        <!--ReportIssue-->
+        <scene sceneID="qSm-ee-O6s">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReportIssue" id="LOV-Hm-xXj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q42-KV-4vb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1714" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R3O-GM-faX">

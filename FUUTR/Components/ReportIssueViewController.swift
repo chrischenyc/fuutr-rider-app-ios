@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum IssueType {
+enum IssueType: String {
   case unlock, damage, parking, other
   
   var title: String {
@@ -27,6 +27,9 @@ enum IssueType {
 
 class ReportIssueViewController: UIViewController {
   
+  var ride: Ride?
+  var vehicle: Vehicle?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -37,6 +40,8 @@ class ReportIssueViewController: UIViewController {
     if let formViewController = segue.destination as? IssueFormViewController,
       let issueType = sender as? IssueType {
       formViewController.issueType = issueType
+      formViewController.ride = ride
+      formViewController.vehicle = vehicle
     }
   }
   

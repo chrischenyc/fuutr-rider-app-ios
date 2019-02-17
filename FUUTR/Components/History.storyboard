@@ -335,6 +335,9 @@
                                             <constraint firstAttribute="width" constant="275" id="HBY-lc-64O"/>
                                         </constraints>
                                         <state key="normal" title="Report an issue"/>
+                                        <connections>
+                                            <segue destination="2w0-hh-Hqc" kind="presentation" id="C33-Al-moP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -370,6 +373,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agJ-Z6-VeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2308" y="152"/>
+        </scene>
+        <!--ReportIssue-->
+        <scene sceneID="Fve-lY-qO2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReportIssue" id="2w0-hh-Hqc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xgz-tb-Nf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2896" y="151"/>
         </scene>
     </scenes>
     <resources>
