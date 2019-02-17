@@ -34,6 +34,8 @@ class RideParkedPhotoViewController: UIViewController {
   }
   
   override func viewDidLayoutSubviews() {
+    fastCamera.view.frame = self.cameraView.frame
+    
     shootView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
     sendView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
     shootButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: shootButton.frame.size.width/2)
