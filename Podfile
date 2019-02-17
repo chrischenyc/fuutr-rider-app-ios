@@ -29,6 +29,7 @@ abstract_target 'Project' do
   pod 'IHKeyboardAvoiding'
   pod 'FlagPhoneNumber'
   pod 'Cosmos'
+  pod 'RSKPlaceholderTextView'
   
   # Networking
   pod 'ReachabilitySwift'

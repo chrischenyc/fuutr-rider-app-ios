@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6d2-uI-BsW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Report an Issue-->
+        <scene sceneID="9wS-uP-oOL">
+            <objects>
+                <viewController id="4mE-Wu-wsE" customClass="ReportIssueViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nh8-XI-eIk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="fXu-u5-w4w">
+                                <rect key="frame" x="58.5" y="112" width="258" height="308"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="V8W-zT-qpI">
+                                        <rect key="frame" x="0.0" y="0.0" width="258" height="130"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rWs-aK-iVw">
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="130"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5F2-Yv-Bsg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="105" id="Uz9-o0-30i"/>
+                                                            <constraint firstAttribute="width" constant="105" id="rif-Bx-jjZ"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="lock-unlock-issue"/>
+                                                        <connections>
+                                                            <action selector="unlockIssue:" destination="4mE-Wu-wsE" eventType="touchUpInside" id="Gen-Z1-7Rb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lock/Unlock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exW-j6-HA0" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="113" width="105" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9ia-No-OiM">
+                                                <rect key="frame" x="153" y="0.0" width="105" height="130"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGc-Rs-igd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="105" id="A32-j6-0iv"/>
+                                                            <constraint firstAttribute="height" constant="105" id="Kn3-xr-gGi"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="damageIssue:" destination="4mE-Wu-wsE" eventType="touchUpInside" id="VGf-oV-VmH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damaged" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2J5-Zd-a8b" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="113" width="105" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="pYO-4h-f2u">
+                                        <rect key="frame" x="0.0" y="178" width="258" height="130"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s0n-df-K4e">
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="130"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N16-UX-wLG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="105" id="5nq-EX-VfT"/>
+                                                            <constraint firstAttribute="width" constant="105" id="hpv-yb-r6u"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="illegal-parking-issue"/>
+                                                        <connections>
+                                                            <action selector="parkingIssue:" destination="4mE-Wu-wsE" eventType="touchUpInside" id="zX4-V8-QDP"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Illegal Parking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYa-kc-n3l" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="113" width="105" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ntc-50-T46">
+                                                <rect key="frame" x="153" y="0.0" width="105" height="130"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yix-aP-u20">
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="105" id="WOG-0Y-IlG"/>
+                                                            <constraint firstAttribute="height" constant="105" id="vAL-xL-Ndq"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="other-issue"/>
+                                                        <connections>
+                                                            <action selector="otherIssue:" destination="4mE-Wu-wsE" eventType="touchUpInside" id="ELb-cj-eEL"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEd-LB-qjP" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="113" width="105" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fXu-u5-w4w" firstAttribute="centerX" secondItem="nh8-XI-eIk" secondAttribute="centerX" id="Nyf-qe-iFO"/>
+                            <constraint firstItem="fXu-u5-w4w" firstAttribute="top" secondItem="bRK-8g-hHj" secondAttribute="top" constant="48" id="Yda-pw-ll6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bRK-8g-hHj"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Report an Issue" id="doD-nZ-3UG">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Fpb-VV-Svr"/>
+                        <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="faq-XY-SBY">
+                            <connections>
+                                <action selector="close:" destination="4mE-Wu-wsE" id="bGY-dA-uMK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="fOr-I6-C5p" kind="show" identifier="showForm" id="2LX-MS-97D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2SK-8W-mPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1224.8" y="183.95802098950526"/>
+        </scene>
+        <!--Issue Form View Controller-->
+        <scene sceneID="gKb-ad-tXD">
+            <objects>
+                <viewController id="fOr-I6-C5p" customClass="IssueFormViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GlR-dn-4w2" customClass="KeyboardDismissingView" customModule="IHKeyboardAvoiding">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nfc-h9-MZg" customClass="RSKPlaceholderTextView" customModule="RSKPlaceholderTextView">
+                                <rect key="frame" x="20" y="84" width="335" height="175"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="A9O-kS-ujk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Describe the problem ..."/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEl-II-AhM" customClass="FTRedBasicButton" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="107.5" y="299" width="160" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="aqN-kp-5Zu"/>
+                                    <constraint firstAttribute="width" constant="160" id="cQS-F3-xOG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Add Photos" image="ic-plus-red-16"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5f-Sp-lsD" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="50" y="591" width="275" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="RfB-Ct-qXL"/>
+                                    <constraint firstAttribute="width" constant="275" id="TDc-CI-i4I"/>
+                                </constraints>
+                                <state key="normal" title="Continue"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SEl-II-AhM" firstAttribute="centerX" secondItem="GlR-dn-4w2" secondAttribute="centerX" id="K49-pP-5ia"/>
+                            <constraint firstItem="nfc-h9-MZg" firstAttribute="leading" secondItem="oKW-xW-8Hd" secondAttribute="leading" constant="20" id="Me6-bm-7KC"/>
+                            <constraint firstItem="oKW-xW-8Hd" firstAttribute="bottom" secondItem="g5f-Sp-lsD" secondAttribute="bottom" constant="32" id="QAA-bQ-lV3"/>
+                            <constraint firstItem="SEl-II-AhM" firstAttribute="top" secondItem="nfc-h9-MZg" secondAttribute="bottom" constant="40" id="VH5-Ma-AK4"/>
+                            <constraint firstItem="oKW-xW-8Hd" firstAttribute="trailing" secondItem="nfc-h9-MZg" secondAttribute="trailing" constant="20" id="eop-py-tJL"/>
+                            <constraint firstItem="nfc-h9-MZg" firstAttribute="top" secondItem="oKW-xW-8Hd" secondAttribute="top" constant="20" id="kja-u3-Mwa"/>
+                            <constraint firstItem="g5f-Sp-lsD" firstAttribute="centerX" secondItem="GlR-dn-4w2" secondAttribute="centerX" id="tTG-gk-k5k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oKW-xW-8Hd"/>
+                    </view>
+                    <connections>
+                        <outlet property="addPhotosButton" destination="SEl-II-AhM" id="3rH-Oy-0EL"/>
+                        <outlet property="textView" destination="nfc-h9-MZg" id="4NS-Z9-nRa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A9c-fJ-gxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2084" y="183.95802098950526"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UJZ-lv-TMg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6d2-uI-BsW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xqt-ut-Agj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4mE-Wu-wsE" kind="relationship" relationship="rootViewController" id="SkY-DI-CXk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJh-kO-T8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285.60000000000002" y="183.95802098950526"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic-close-dark-gray-16" width="16" height="16"/>
+        <image name="ic-plus-red-16" width="16" height="16"/>
+        <image name="illegal-parking-issue" width="105" height="105"/>
+        <image name="lock-unlock-issue" width="105" height="105"/>
+        <image name="other-issue" width="105" height="105"/>
+    </resources>
+</document>

@@ -47,6 +47,9 @@
                                                 <state key="normal" title="Report an issue" image="ic-report-issue-dark-gray-16">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="AXV-Yl-zLV" kind="presentation" id="9D2-44-0J4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -204,6 +207,14 @@
                 <exit id="N5g-Sj-Cck" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="664.79999999999995" y="154.27286356821591"/>
+        </scene>
+        <!--ReportIssue-->
+        <scene sceneID="pWE-vn-Sf3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReportIssue" id="AXV-Yl-zLV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aja-7e-ERp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1294" y="154"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MgH-7g-SXE">

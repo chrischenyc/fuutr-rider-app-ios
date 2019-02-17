@@ -191,6 +191,15 @@
 		6BBA8ADD2218FF4D00B09A74 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8ADC2218FF4D00B09A74 /* HelpViewController.swift */; };
 		6BBA8ADE2218FF4D00B09A74 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8ADC2218FF4D00B09A74 /* HelpViewController.swift */; };
 		6BBA8ADF2218FF4D00B09A74 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8ADC2218FF4D00B09A74 /* HelpViewController.swift */; };
+		6BBA8AE22219049800B09A74 /* ReportIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE12219049800B09A74 /* ReportIssue.storyboard */; };
+		6BBA8AE32219049800B09A74 /* ReportIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE12219049800B09A74 /* ReportIssue.storyboard */; };
+		6BBA8AE42219049800B09A74 /* ReportIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE12219049800B09A74 /* ReportIssue.storyboard */; };
+		6BBA8AE6221904A700B09A74 /* ReportIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE5221904A700B09A74 /* ReportIssueViewController.swift */; };
+		6BBA8AE7221904A700B09A74 /* ReportIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE5221904A700B09A74 /* ReportIssueViewController.swift */; };
+		6BBA8AE8221904A700B09A74 /* ReportIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE5221904A700B09A74 /* ReportIssueViewController.swift */; };
+		6BBA8AEA22194A5800B09A74 /* IssueFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE922194A5800B09A74 /* IssueFormViewController.swift */; };
+		6BBA8AEB22194A5800B09A74 /* IssueFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE922194A5800B09A74 /* IssueFormViewController.swift */; };
+		6BBA8AEC22194A5800B09A74 /* IssueFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA8AE922194A5800B09A74 /* IssueFormViewController.swift */; };
 		6BBC6A0521A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
 		6BBC6A0621A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
 		6BBC6A0721A1090B003C910B /* Double+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC6A0421A1090B003C910B /* Double+Distance.swift */; };
@@ -539,6 +548,9 @@
 		6BB6CB712196591D00B597B3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		6BBA8AD72218143A00B09A74 /* PushNotificationPermission.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PushNotificationPermission.storyboard; sourceTree = "<group>"; };
 		6BBA8ADC2218FF4D00B09A74 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		6BBA8AE12219049800B09A74 /* ReportIssue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReportIssue.storyboard; sourceTree = "<group>"; };
+		6BBA8AE5221904A700B09A74 /* ReportIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueViewController.swift; sourceTree = "<group>"; };
+		6BBA8AE922194A5800B09A74 /* IssueFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueFormViewController.swift; sourceTree = "<group>"; };
 		6BBC6A0021A0DD27003C910B /* ride.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ride.gpx; sourceTree = "<group>"; };
 		6BBC6A0421A1090B003C910B /* Double+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Distance.swift"; sourceTree = "<group>"; };
 		6BBE6C7C219AE6CA002D639B /* GoogleMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapStyle.json; sourceTree = "<group>"; };
@@ -901,6 +913,16 @@
 			name = Help;
 			sourceTree = "<group>";
 		};
+		6BBA8AE02219047B00B09A74 /* ReportIssue */ = {
+			isa = PBXGroup;
+			children = (
+				6BBA8AE12219049800B09A74 /* ReportIssue.storyboard */,
+				6BBA8AE5221904A700B09A74 /* ReportIssueViewController.swift */,
+				6BBA8AE922194A5800B09A74 /* IssueFormViewController.swift */,
+			);
+			name = ReportIssue;
+			sourceTree = "<group>";
+		};
 		6BBE6C80219BC926002D639B /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -1176,6 +1198,7 @@
 				6B8E30CA219FDE6600292B4E /* History */,
 				6BB6CB782196F89800B597B3 /* Wallet */,
 				6BB6CB772196F88A00B597B3 /* Account */,
+				6BBA8AE02219047B00B09A74 /* ReportIssue */,
 				6BBA8ADB2218FF0E00B09A74 /* Help */,
 				6BDEEFBC220DA15800C0FBB8 /* Shared */,
 			);
@@ -1359,6 +1382,7 @@
 				91FA7F8C21FDCF1C00581BB5 /* RidingView.xib in Resources */,
 				6BDEEF7B220C1C3C00C0FBB8 /* Help.storyboard in Resources */,
 				6BDEEF53220C1B1800C0FBB8 /* HowToRide.storyboard in Resources */,
+				6BBA8AE42219049800B09A74 /* ReportIssue.storyboard in Resources */,
 				6BDEEF43220C1A3C00C0FBB8 /* Welcome.storyboard in Resources */,
 				6BDEEF77220C1C3800C0FBB8 /* LaunchScreen.storyboard in Resources */,
 				6BB50EE32211047700F8BBF4 /* UnlockInfoView.xib in Resources */,
@@ -1397,6 +1421,7 @@
 				A0CFE7A221747BF500BA3F6D /* Assets.xcassets in Resources */,
 				9191983721FDC96200CF5F2D /* RidingView.xib in Resources */,
 				6B0D921A21FD32D100A9B38E /* DialogViewController.xib in Resources */,
+				6BBA8AE22219049800B09A74 /* ReportIssue.storyboard in Resources */,
 				6BDEEF71220C1C0900C0FBB8 /* RideFinished.storyboard in Resources */,
 				6BDEEF45220C1A7800C0FBB8 /* RideParkedPhoto.storyboard in Resources */,
 				6BDEEFAA220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */,
@@ -1430,6 +1455,7 @@
 				A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */,
 				91FA7F8B21FDCF1B00581BB5 /* RidingView.xib in Resources */,
 				6B0D921B21FD32D100A9B38E /* DialogViewController.xib in Resources */,
+				6BBA8AE32219049800B09A74 /* ReportIssue.storyboard in Resources */,
 				6BDEEF72220C1C0900C0FBB8 /* RideFinished.storyboard in Resources */,
 				6BDEEF46220C1A7800C0FBB8 /* RideParkedPhoto.storyboard in Resources */,
 				6BDEEFAB220D366E00C0FBB8 /* MobileVerify.storyboard in Resources */,
@@ -1473,6 +1499,7 @@
 				"${BUILT_PRODUCTS_DIR}/PinCodeView/PinCodeView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKPlaceholderTextView/RSKPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Solar/Solar.framework",
@@ -1504,6 +1531,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinCodeView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Solar.framework",
@@ -1545,6 +1573,7 @@
 				"${BUILT_PRODUCTS_DIR}/PinCodeView/PinCodeView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKPlaceholderTextView/RSKPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Solar/Solar.framework",
@@ -1576,6 +1605,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinCodeView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Solar.framework",
@@ -1683,6 +1713,7 @@
 				"${BUILT_PRODUCTS_DIR}/PinCodeView/PinCodeView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKPlaceholderTextView/RSKPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Solar/Solar.framework",
@@ -1714,6 +1745,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinCodeView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Solar.framework",
@@ -1937,6 +1969,7 @@
 				914A6B7A21FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */,
 				6BB50EE02211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD4726B219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
+				6BBA8AEC22194A5800B09A74 /* IssueFormViewController.swift in Sources */,
 				6BBE6C8C219BCF70002D639B /* Constants.swift in Sources */,
 				6BBA8ADF2218FF4D00B09A74 /* HelpViewController.swift in Sources */,
 				6BD472A7219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
@@ -1945,6 +1978,7 @@
 				6BD472A4219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
 				6B0D921921FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47268219A4CAA00D36C3E /* GMUGradient.m in Sources */,
+				6BBA8AE8221904A700B09A74 /* ReportIssueViewController.swift in Sources */,
 				6B214AF22195C77A00553C3D /* TopUpViewController.swift in Sources */,
 				6BB50ED32210C95300F8BBF4 /* FTWhiteLabel.swift in Sources */,
 				91FA7FA021FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
@@ -2069,6 +2103,7 @@
 				914A6B7821FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */,
 				6BB50EDE2211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD47269219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
+				6BBA8AEA22194A5800B09A74 /* IssueFormViewController.swift in Sources */,
 				6BBE6C8A219BCF70002D639B /* Constants.swift in Sources */,
 				6BBA8ADD2218FF4D00B09A74 /* HelpViewController.swift in Sources */,
 				6BD472A5219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
@@ -2077,6 +2112,7 @@
 				6BD472A2219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
 				6B0D921721FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47266219A4CAA00D36C3E /* GMUGradient.m in Sources */,
+				6BBA8AE6221904A700B09A74 /* ReportIssueViewController.swift in Sources */,
 				6B214AF02195C77A00553C3D /* TopUpViewController.swift in Sources */,
 				6BB50ED12210C95300F8BBF4 /* FTWhiteLabel.swift in Sources */,
 				91FA7F9E21FE981E00581BB5 /* RidePausedViewController.swift in Sources */,
@@ -2201,6 +2237,7 @@
 				914A6B7921FD24CC00715879 /* VehicleReservedInfoView.swift in Sources */,
 				6BB50EDF2211047700F8BBF4 /* UnlockInfoView.swift in Sources */,
 				6BD4726A219A4CAA00D36C3E /* GMUHeatmapTileLayer.m in Sources */,
+				6BBA8AEB22194A5800B09A74 /* IssueFormViewController.swift in Sources */,
 				6BBE6C8B219BCF70002D639B /* Constants.swift in Sources */,
 				6BBA8ADE2218FF4D00B09A74 /* HelpViewController.swift in Sources */,
 				6BD472A6219A4CAA00D36C3E /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
@@ -2209,6 +2246,7 @@
 				6BD472A3219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
 				6B0D921821FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47267219A4CAA00D36C3E /* GMUGradient.m in Sources */,
+				6BBA8AE7221904A700B09A74 /* ReportIssueViewController.swift in Sources */,
 				6B214AF12195C77A00553C3D /* TopUpViewController.swift in Sources */,
 				6BB50ED22210C95300F8BBF4 /* FTWhiteLabel.swift in Sources */,
 				91FA7F9F21FE981E00581BB5 /* RidePausedViewController.swift in Sources */,

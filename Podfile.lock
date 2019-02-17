@@ -132,6 +132,7 @@ PODS:
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.0)
   - ReachabilitySwift (4.3.0)
+  - RSKPlaceholderTextView (4.0.0)
   - SideMenu (5.0.3)
   - Solar (2.1.0)
   - Stripe (14.0.0)
@@ -159,6 +160,7 @@ DEPENDENCIES:
   - PKHUD
   - R.swift
   - ReachabilitySwift
+  - RSKPlaceholderTextView
   - SideMenu
   - Solar
   - Stripe
@@ -202,6 +204,7 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - ReachabilitySwift
+    - RSKPlaceholderTextView
     - SideMenu
     - Solar
     - Stripe
@@ -244,12 +247,13 @@ SPEC CHECKSUMS:
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  RSKPlaceholderTextView: 15f1dc1883e103ea605874b863f19ff6b08496d5
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
   Stripe: db29ad197c74aca6fb981e4e8355cf7ebd0fca5a
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 68e23587bd90790c5981774e34b5fceda314a1d6
+PODFILE CHECKSUM: a454345c3028490689bb0ce1c358db0ae354be02
 
 COCOAPODS: 1.6.0

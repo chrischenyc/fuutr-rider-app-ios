@@ -13,6 +13,7 @@ class FTRedBasicButton: FTButton {
   override func commonInit() {
     backgroundColor = .clear
     setTitleColor(UIColor.primaryRedColor, for: .normal)
+    tintColor = UIColor.primaryRedColor
     
     alpha = isEnabled ? 1.0 : 0.5
   }
