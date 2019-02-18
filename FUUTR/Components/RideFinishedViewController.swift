@@ -18,6 +18,7 @@ class RideFinishedViewController: UIViewController {
   @IBOutlet weak var socialAndButtonVerticalSpacing: NSLayoutConstraint!
   
   var ride: Ride?
+  var rating: Int = 5
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,6 +38,10 @@ class RideFinishedViewController: UIViewController {
       title = ride.lockTime?.dateTimeString
       mapView.drawRouteFor(ride: ride)
     }
+    
+    ratingView.didFinishTouchingCosmos = { rating in
+      self.rating = Int(rating)
+    }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,7 +52,15 @@ class RideFinishedViewController: UIViewController {
   }
   
   @IBAction func continueButtonTapped(_ sender: Any) {
-    // TODO: submit ride review
+    if let ride = ride, let id = ride.id {
+      _ = RideService.rate(id: id, rating: rating, completion: {
+        error in
+        
+        if error != nil {
+          logger.error("Couldn't submit ride rating: \(error!.localizedDescription)")
+        }
+      })
+    }
     
     performSegue(withIdentifier: R.segue.rideFinishedViewController.unwindToHome, sender: nil)
   }

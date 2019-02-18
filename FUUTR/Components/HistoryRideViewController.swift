@@ -33,6 +33,10 @@ class HistoryRideViewController: UIViewController {
       durationLabel.text = ride.duration.hhmmssString
       distanceLabel.text = ride.distance.distanceString
       title = ride.lockTime?.dateTimeString
+      if let rating = ride.rating {
+        ratingView.rating = Double(rating)
+      }
+      
       mapView.drawRouteFor(ride: ride)
     }
   }
