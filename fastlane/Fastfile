@@ -29,7 +29,8 @@ platform :ios do
     build_app(workspace: "FUUTR.xcworkspace", scheme: "FUUTR-staging")
     upload_to_testflight(
       skip_waiting_for_build_processing: true,
-      beta_app_description: "fastlane auto build"
+      beta_app_description: "fastlane auto build",
+      changelog: changelog
     )
   end
 
