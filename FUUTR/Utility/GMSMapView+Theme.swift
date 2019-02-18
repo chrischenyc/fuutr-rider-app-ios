@@ -16,7 +16,7 @@ extension GMSMapView {
       var themeJSON = "GoogleMapStyle"
       
       if let currentLocation = currentLocation,
-        let solar = Solar(coordinate: currentLocation.coordinate),
+        let solar = Solar(for: Date(), coordinate: currentLocation.coordinate),
         solar.isNighttime {
         themeJSON = "GoogleMapStyle.night"
       }
