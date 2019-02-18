@@ -40,7 +40,7 @@ abstract_target 'Project' do
   pod 'XCGLogger'
   pod 'ObjectMapper'
   pod 'FastttCamera'
-  pod 'Solar'
+  pod 'EDSunriseSet'
 
   target 'FUUTR' do
 

@@ -8,7 +8,7 @@
 
 import Foundation
 import GoogleMaps
-import Solar
+import EDSunriseSet
 
 extension GMSMapView {
   func applyTheme() {
@@ -16,9 +16,14 @@ extension GMSMapView {
       var themeJSON = "GoogleMapStyle"
       
       if let currentLocation = currentLocation,
-        let solar = Solar(for: Date(), coordinate: currentLocation.coordinate),
-        solar.isNighttime {
-        themeJSON = "GoogleMapStyle.night"
+        let sunInfo = EDSunriseSet.sunriseset(withTimezone: TimeZone.current, latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude) {
+        let now = Date()
+        sunInfo.calculateSunriseSunset(now)
+        
+        if let sunrise = sunInfo.sunrise, let sunset = sunInfo.sunset,
+          now <= sunrise || now >= sunset {
+          themeJSON = "GoogleMapStyle.night"
+        }
       }
       
       if let styleURL = Bundle.main.url(forResource: themeJSON, withExtension: "json") {
