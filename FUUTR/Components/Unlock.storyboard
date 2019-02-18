@@ -132,6 +132,7 @@
                         <outlet property="qrCodeImageHeightContraint" destination="Skh-9T-2Ar" id="mhW-Il-lXp"/>
                         <outlet property="torchButton" destination="3VW-dk-gb5" id="Xaj-q8-HWq"/>
                         <segue destination="NOz-RB-Lhf" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="FUUTR" customModuleProvider="target" unwindAction="unwindToHome:" id="AUY-Pn-55a"/>
+                        <segue destination="dcl-iD-9fC" kind="presentation" identifier="showTopUp" id="6B1-0f-oty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7q-4L-qZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,6 +206,7 @@
                         <outlet property="pincodeView" destination="sYh-Wp-2br" id="R7f-Ru-Tmq"/>
                         <outlet property="stackView" destination="a3B-2w-N3k" id="cOA-PU-48Y"/>
                         <segue destination="xP3-XS-LFZ" kind="unwind" unwindAction="unwindToHome:" id="glc-zf-TsI"/>
+                        <segue destination="dcl-iD-9fC" kind="presentation" identifier="showTopUp" id="ATb-Hm-e4O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tri-lh-IXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,6 +250,14 @@
             </objects>
             <point key="canvasLocation" x="3010" y="752"/>
         </scene>
+        <!--TopUp-->
+        <scene sceneID="7wq-aO-YzP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TopUp" id="dcl-iD-9fC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wd6-7K-C3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3009" y="1213"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic-close-dark-gray-16" width="16" height="16"/>
@@ -255,4 +265,7 @@
         <image name="img-scooter-enter-code" width="88" height="97"/>
         <image name="img-scooter-qr-code" width="88" height="110"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ATb-Hm-e4O"/>
+    </inferredMetricsTieBreakers>
 </document>

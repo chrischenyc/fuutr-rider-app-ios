@@ -9,6 +9,10 @@
 import UIKit
 import Stripe
 
+protocol TopUpViewControllerDelegate {
+  func didTopUp(topUpViewController: UIViewController)
+}
+
 class TopUpViewController: UIViewController {
   @IBOutlet weak var insufficientFundLabel: UILabel!
   @IBOutlet weak var balanceLabel: UILabel!
@@ -16,6 +20,8 @@ class TopUpViewController: UIViewController {
   @IBOutlet weak var paymentMethodButton: UIButton!
   @IBOutlet weak var payButton: UIButton!
   
+  var insufficientFund: Bool = false
+  var delegate: TopUpViewControllerDelegate?
   private var paymentContext: STPPaymentContext?
   private var apiTask: URLSessionTask?
   private var amount : Int = 0 {
@@ -38,6 +44,7 @@ class TopUpViewController: UIViewController {
     paymentContext?.hostViewController = self
     
     navigationController?.navigationBar.applyLightTheme()
+    insufficientFundLabel.isHidden = !insufficientFund
     paymentMethodButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
     paymentMethodButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
     
@@ -137,6 +144,7 @@ extension TopUpViewController: STPPaymentContextDelegate {
                    image: R.image.imgSuccessCheck(),
                    positiveActionButtonTapped: {
                     self.loadProfile()
+                    self.delegate?.didTopUp(topUpViewController: self)
       })
       
       

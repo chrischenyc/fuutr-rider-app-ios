@@ -89,6 +89,9 @@
 		6B44FE2A221A8BD8008E502A /* UIViewController+CameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B44FE29221A8BD7008E502A /* UIViewController+CameraPermission.swift */; };
 		6B44FE2B221A8BD8008E502A /* UIViewController+CameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B44FE29221A8BD7008E502A /* UIViewController+CameraPermission.swift */; };
 		6B44FE2C221A8BD8008E502A /* UIViewController+CameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B44FE29221A8BD7008E502A /* UIViewController+CameraPermission.swift */; };
+		6B44FE2E221A9054008E502A /* TopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B44FE2D221A9054008E502A /* TopUp.storyboard */; };
+		6B44FE2F221A9054008E502A /* TopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B44FE2D221A9054008E502A /* TopUp.storyboard */; };
+		6B44FE30221A9054008E502A /* TopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B44FE2D221A9054008E502A /* TopUp.storyboard */; };
 		6B473DB022029530003FE160 /* GMSPolygon+Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DAF2202952F003FE160 /* GMSPolygon+Zone.swift */; };
 		6B473DB122029530003FE160 /* GMSPolygon+Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DAF2202952F003FE160 /* GMSPolygon+Zone.swift */; };
 		6B473DB222029530003FE160 /* GMSPolygon+Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B473DAF2202952F003FE160 /* GMSPolygon+Zone.swift */; };
@@ -514,6 +517,7 @@
 		6B31E1F22197F44E00CB424E /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		6B31E1F62198141B00CB424E /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		6B44FE29221A8BD7008E502A /* UIViewController+CameraPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CameraPermission.swift"; sourceTree = "<group>"; };
+		6B44FE2D221A9054008E502A /* TopUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TopUp.storyboard; sourceTree = "<group>"; };
 		6B473DAF2202952F003FE160 /* GMSPolygon+Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSPolygon+Zone.swift"; sourceTree = "<group>"; };
 		6B473DB32202F3FF003FE160 /* GoogleMapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsService.swift; sourceTree = "<group>"; };
 		6B473DB72202F80A003FE160 /* GMSMapView+WalkingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+WalkingRoute.swift"; sourceTree = "<group>"; };
@@ -905,9 +909,10 @@
 				6B31E1EA2197F34F00CB424E /* PaymentCell.swift */,
 				6B2C9BB021A01BE80042432D /* TransactionCell.swift */,
 				6B8731F7218AA4AF00CC2651 /* WalletViewController.swift */,
-				6B214AEF2195C77A00553C3D /* TopUpViewController.swift */,
 				6B31E1EE2197F3FC00CB424E /* PaymentsTableViewController.swift */,
 				6B2C9BBC21A020D60042432D /* TransactionsTableViewController.swift */,
+				6B44FE2D221A9054008E502A /* TopUp.storyboard */,
+				6B214AEF2195C77A00553C3D /* TopUpViewController.swift */,
 			);
 			name = Wallet;
 			sourceTree = "<group>";
@@ -1398,6 +1403,7 @@
 				6BB50EE32211047700F8BBF4 /* UnlockInfoView.xib in Resources */,
 				6BDEEF5B220C1B5800C0FBB8 /* History.storyboard in Resources */,
 				6BDEEF57220C1B3900C0FBB8 /* SideMenu.storyboard in Resources */,
+				6B44FE30221A9054008E502A /* TopUp.storyboard in Resources */,
 				6BDE913A218C19DF003F976B /* Localizable.strings in Resources */,
 				6B0D921C21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BDE913B218C19DF003F976B /* Assets.xcassets in Resources */,
@@ -1430,6 +1436,7 @@
 				6B8731AB2189B9A500CC2651 /* Localizable.strings in Resources */,
 				A0CFE7A221747BF500BA3F6D /* Assets.xcassets in Resources */,
 				9191983721FDC96200CF5F2D /* RidingView.xib in Resources */,
+				6B44FE2E221A9054008E502A /* TopUp.storyboard in Resources */,
 				6B0D921A21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BBA8AE22219049800B09A74 /* ReportIssue.storyboard in Resources */,
 				6BDEEF71220C1C0900C0FBB8 /* RideFinished.storyboard in Resources */,
@@ -1464,6 +1471,7 @@
 				6B8731AC2189B9A500CC2651 /* Localizable.strings in Resources */,
 				A0CFE7B321747D2B00BA3F6D /* Assets.xcassets in Resources */,
 				91FA7F8B21FDCF1B00581BB5 /* RidingView.xib in Resources */,
+				6B44FE2F221A9054008E502A /* TopUp.storyboard in Resources */,
 				6B0D921B21FD32D100A9B38E /* DialogViewController.xib in Resources */,
 				6BBA8AE32219049800B09A74 /* ReportIssue.storyboard in Resources */,
 				6BDEEF72220C1C0900C0FBB8 /* RideFinished.storyboard in Resources */,

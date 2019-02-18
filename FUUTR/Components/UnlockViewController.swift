@@ -15,6 +15,14 @@ class UnlockViewController: UIViewController {
   var unlockCode: String?
   var ride: Ride? // has value after successfully unlocked, will be assessed by MapViewController during segue unwind
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let navigationController = segue.destination as? UINavigationController,
+      let topUpViewController = navigationController.topViewController as? TopUpViewController {
+      topUpViewController.insufficientFund = true
+      topUpViewController.delegate = self
+    }
+  }
+  
   func unlockVehicle(unlockCode: String, onGeneralError: ((Error) -> Void)? = nil) {
     self.unlockCode = unlockCode
     apiTask?.cancel()
@@ -30,14 +38,23 @@ class UnlockViewController: UIViewController {
                                       logger.error(error.localizedDescription)
                                       
                                       if error.localizedDescription == "insufficient balance" {
-                                        self?.alertMessage(title: nil,
-                                                           message: "You account balance is not enough for a new ride",
-                                                           positiveActionButtonTitle: "Top up balance",
-                                                           positiveActionButtonTapped: {
-                                                            // TODO: segue to AccountViewController for topup, after successful top up, return back to re-try unlock
-                                        })
+                                        if let scanUnlock = self?.isKind(of: ScanUnlockViewController.self) {
+                                          if scanUnlock {
+                                            self?.performSegue(withIdentifier: R.segue.scanUnlockViewController.showTopUp.identifier, sender: nil)
+                                          }
+                                          else {
+                                            self?.performSegue(withIdentifier: R.segue.manualUnlockViewController.showTopUp.identifier, sender: nil)
+                                          }
+                                        }
+                                        
                                       } else {
-                                        onGeneralError?(error)
+                                        if let onGeneralError = onGeneralError {
+                                          onGeneralError(error)
+                                        }
+                                        else {
+                                          self?.alertError(error)
+                                        }
+                                        
                                       }
                                       return
                                     }
@@ -63,3 +80,12 @@ class UnlockViewController: UIViewController {
   }
 }
 
+extension UnlockViewController: TopUpViewControllerDelegate {
+  func didTopUp(topUpViewController: UIViewController) {
+    topUpViewController.dismiss(animated: true) { [weak self] in
+      guard let unlockCode = self?.unlockCode else { return }
+      
+      self?.unlockVehicle(unlockCode: unlockCode)
+    }
+  }
+}

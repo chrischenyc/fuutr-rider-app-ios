@@ -792,10 +792,19 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `ManualUnlockViewController`, and contains static references to 1 segues.
+    /// This struct is generated for `ManualUnlockViewController`, and contains static references to 2 segues.
     struct manualUnlockViewController {
+      /// Segue identifier `showTopUp`.
+      static let showTopUp: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ManualUnlockViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showTopUp")
       /// Segue identifier `unwindToHome`.
       static let unwindToHome: Rswift.StoryboardSegueIdentifier<UIStoryboardSegueWithCompletion, ManualUnlockViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToHome")
+      
+      /// Optionally returns a typed version of segue `showTopUp`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showTopUp(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ManualUnlockViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.manualUnlockViewController.showTopUp, segue: segue)
+      }
       
       /// Optionally returns a typed version of segue `unwindToHome`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
@@ -966,10 +975,19 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `ScanUnlockViewController`, and contains static references to 1 segues.
+    /// This struct is generated for `ScanUnlockViewController`, and contains static references to 2 segues.
     struct scanUnlockViewController {
+      /// Segue identifier `showTopUp`.
+      static let showTopUp: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ScanUnlockViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showTopUp")
       /// Segue identifier `unwindToHome`.
       static let unwindToHome: Rswift.StoryboardSegueIdentifier<UIStoryboardSegueWithCompletion, ScanUnlockViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToHome")
+      
+      /// Optionally returns a typed version of segue `showTopUp`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showTopUp(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ScanUnlockViewController, UIKit.UINavigationController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.scanUnlockViewController.showTopUp, segue: segue)
+      }
       
       /// Optionally returns a typed version of segue `unwindToHome`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
@@ -1059,7 +1077,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 17 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 18 storyboards.
   struct storyboard {
     /// Storyboard `Account`.
     static let account = _R.storyboard.account()
@@ -1089,6 +1107,8 @@ struct R: Rswift.Validatable {
     static let ridePaused = _R.storyboard.ridePaused()
     /// Storyboard `SideMenu`.
     static let sideMenu = _R.storyboard.sideMenu()
+    /// Storyboard `TopUp`.
+    static let topUp = _R.storyboard.topUp()
     /// Storyboard `Unlock`.
     static let unlock = _R.storyboard.unlock()
     /// Storyboard `Wallet`.
@@ -1164,6 +1184,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SideMenu", bundle: ...)`
     static func sideMenu(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.sideMenu)
+    }
+    
+    /// `UIStoryboard(name: "TopUp", bundle: ...)`
+    static func topUp(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.topUp)
     }
     
     /// `UIStoryboard(name: "Unlock", bundle: ...)`
@@ -1359,6 +1384,7 @@ struct _R: Rswift.Validatable {
       try rideParkedPhoto.validate()
       try ridePaused.validate()
       try sideMenu.validate()
+      try topUp.validate()
       try unlock.validate()
       try wallet.validate()
       try welcome.validate()
@@ -1672,6 +1698,23 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct topUp: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let bundle = R.hostingBundle
+      let name = "TopUp"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "btn-backspace-outline-red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-backspace-outline-red' is used in storyboard 'TopUp', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'TopUp', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-mastercard-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-mastercard-dark-gray-16' is used in storyboard 'TopUp', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct unlock: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
@@ -1703,7 +1746,6 @@ struct _R: Rswift.Validatable {
       let name = "Wallet"
       
       static func validate() throws {
-        if UIKit.UIImage(named: "btn-backspace-outline-red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-backspace-outline-red' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-arrow-right-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-arrow-right-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-balance-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-balance-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }

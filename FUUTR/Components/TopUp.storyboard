@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zb8-2E-qsg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Top Up Balance-->
+        <scene sceneID="eJ4-rU-9Q6">
+            <objects>
+                <viewController id="mgC-tv-cdf" customClass="TopUpViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gzD-Vw-kXV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don’t have sufficient funds to ride. Top up balance to continue." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e98-61-qkW" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="20" y="116" width="335" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-he-esD">
+                                <rect key="frame" x="0.0" y="181.5" width="375" height="292"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLJ-TI-aJS">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jcD-cT-3MI">
+                                                <rect key="frame" x="16" y="0.0" width="343" height="87"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ggD-OC-Pj1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="87"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT BALANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ku7-w3-4IC" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                                                                <rect key="frame" x="32" y="0.0" width="107.5" height="28"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="E3N-mD-ciq" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                                                                <rect key="frame" x="43.5" y="44" width="85" height="43"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="U2A-tB-jvK">
+                                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="87"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP UP BALANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGe-dZ-xx3" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                                                                <rect key="frame" x="38" y="0.0" width="95.5" height="28"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ul7-Vh-0xv" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                                                <rect key="frame" x="52.5" y="44" width="67" height="43"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="jcD-cT-3MI" firstAttribute="leading" secondItem="WLJ-TI-aJS" secondAttribute="leading" constant="16" id="0Fz-MX-8T9"/>
+                                            <constraint firstItem="jcD-cT-3MI" firstAttribute="top" secondItem="WLJ-TI-aJS" secondAttribute="top" id="54R-eT-8N0"/>
+                                            <constraint firstAttribute="bottom" secondItem="jcD-cT-3MI" secondAttribute="bottom" id="ath-fx-UOm"/>
+                                            <constraint firstAttribute="trailing" secondItem="jcD-cT-3MI" secondAttribute="trailing" constant="16" id="ddg-ym-Fz3"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTi-LU-Xxb">
+                                        <rect key="frame" x="0.0" y="111" width="375" height="112"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="6Ww-fX-hRY">
+                                                <rect key="frame" x="32" y="0.0" width="311" height="112"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="YMQ-54-Hbz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOR-1i-vBH" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="77" height="44"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="77" id="qPU-Bu-d2Y"/>
+                                                                </constraints>
+                                                                <state key="normal" title="+ $2"/>
+                                                                <connections>
+                                                                    <action selector="amountChoosed:" destination="mgC-tv-cdf" eventType="touchUpInside" id="t2A-FM-oEP"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1Z-nk-DiC" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                                                                <rect key="frame" x="117" y="0.0" width="77" height="44"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="77" id="wgG-GD-sgE"/>
+                                                                </constraints>
+                                                                <state key="normal" title="+ $5"/>
+                                                                <connections>
+                                                                    <action selector="amountChoosed:" destination="mgC-tv-cdf" eventType="touchUpInside" id="R4y-Dh-x93"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYT-c7-dJp" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                                                                <rect key="frame" x="234" y="0.0" width="77" height="44"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="77" id="Jsj-MX-y9H"/>
+                                                                </constraints>
+                                                                <state key="normal" title="+ $10"/>
+                                                                <connections>
+                                                                    <action selector="amountChoosed:" destination="mgC-tv-cdf" eventType="touchUpInside" id="02i-1g-rI5"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="Yur-MB-QPE"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="iBT-cS-qxJ">
+                                                        <rect key="frame" x="0.0" y="68" width="311" height="44"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-YU-amv" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="77" height="44"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="77" id="s44-9o-HFD"/>
+                                                                </constraints>
+                                                                <state key="normal" title="+ $20"/>
+                                                                <connections>
+                                                                    <action selector="amountChoosed:" destination="mgC-tv-cdf" eventType="touchUpInside" id="Ksa-Zg-2SP"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55y-cJ-jIM" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                                                                <rect key="frame" x="117" y="0.0" width="77" height="44"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="77" id="gxk-dL-a7o"/>
+                                                                </constraints>
+                                                                <state key="normal" title="+ $50"/>
+                                                                <connections>
+                                                                    <action selector="amountChoosed:" destination="mgC-tv-cdf" eventType="touchUpInside" id="pWE-sv-8C8"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYd-dP-WX9">
+                                                                <rect key="frame" x="234" y="0.0" width="77" height="44"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="77" id="9AW-Zf-kgw"/>
+                                                                </constraints>
+                                                                <state key="normal" image="btn-backspace-outline-red"/>
+                                                                <connections>
+                                                                    <action selector="amountChoosed:" destination="mgC-tv-cdf" eventType="touchUpInside" id="WGw-qQ-dya"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="Lnp-pk-R17"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="6Ww-fX-hRY" secondAttribute="trailing" constant="32" id="BMS-n7-VCI"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Ww-fX-hRY" secondAttribute="bottom" id="aNZ-bR-FGz"/>
+                                            <constraint firstItem="6Ww-fX-hRY" firstAttribute="top" secondItem="HTi-LU-Xxb" secondAttribute="top" id="fqo-ye-ko8"/>
+                                            <constraint firstItem="6Ww-fX-hRY" firstAttribute="leading" secondItem="HTi-LU-Xxb" secondAttribute="leading" constant="32" id="miU-2I-oPh"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Ih-iC-14H">
+                                        <rect key="frame" x="0.0" y="247" width="375" height="45"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrP-gx-lWZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="0.5" id="Ywf-7h-ghc"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XkN-qQ-NGL">
+                                                <rect key="frame" x="0.0" y="0.5" width="375" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFj-9Y-w7e" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="dx7-xs-p0P"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <state key="normal" title="Payment Method" image="ic-mastercard-dark-gray-16">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="paymentButtonTapped:" destination="mgC-tv-cdf" eventType="touchUpInside" id="QFl-9g-A8v"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xM-Zg-PfS" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
+                                                        <rect key="frame" x="302" y="13" width="53" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="aFj-9Y-w7e" secondAttribute="bottom" id="NUk-Ne-It9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7xM-Zg-PfS" secondAttribute="trailing" constant="20" id="WeO-Mi-NUi"/>
+                                                    <constraint firstItem="7xM-Zg-PfS" firstAttribute="centerY" secondItem="XkN-qQ-NGL" secondAttribute="centerY" id="gxU-VT-M0l"/>
+                                                    <constraint firstItem="aFj-9Y-w7e" firstAttribute="top" secondItem="XkN-qQ-NGL" secondAttribute="top" id="pkq-hH-QRr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aFj-9Y-w7e" secondAttribute="trailing" id="sUV-p6-adG"/>
+                                                    <constraint firstItem="aFj-9Y-w7e" firstAttribute="leading" secondItem="XkN-qQ-NGL" secondAttribute="leading" id="ueX-Ut-cJe"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N51-pT-BKH">
+                                                <rect key="frame" x="0.0" y="44.5" width="375" height="0.5"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="0.5" id="Jnt-qr-iOD"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1d-nn-t61" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="50" y="591" width="275" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="0jd-Je-MK0"/>
+                                    <constraint firstAttribute="height" constant="44" id="Lb0-Cs-J26"/>
+                                </constraints>
+                                <state key="normal" title="Top Up"/>
+                                <connections>
+                                    <action selector="payButtonTapped:" destination="mgC-tv-cdf" eventType="touchUpInside" id="Sfu-Tz-eLZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Cu-he-esD" firstAttribute="leading" secondItem="UbR-PK-i1D" secondAttribute="leading" id="2ve-my-vnP"/>
+                            <constraint firstItem="1Cu-he-esD" firstAttribute="top" secondItem="e98-61-qkW" secondAttribute="bottom" constant="32" id="630-9N-MLM"/>
+                            <constraint firstItem="UbR-PK-i1D" firstAttribute="trailing" secondItem="1Cu-he-esD" secondAttribute="trailing" id="NIl-nj-Zbk"/>
+                            <constraint firstItem="UbR-PK-i1D" firstAttribute="bottom" secondItem="y1d-nn-t61" secondAttribute="bottom" constant="32" id="p8G-F7-Zqb"/>
+                            <constraint firstItem="e98-61-qkW" firstAttribute="top" secondItem="UbR-PK-i1D" secondAttribute="top" id="rrr-fO-uP1"/>
+                            <constraint firstItem="y1d-nn-t61" firstAttribute="centerX" secondItem="gzD-Vw-kXV" secondAttribute="centerX" id="wN5-9V-NN4"/>
+                            <constraint firstItem="UbR-PK-i1D" firstAttribute="trailing" secondItem="e98-61-qkW" secondAttribute="trailing" constant="20" id="xip-lm-eGS"/>
+                            <constraint firstItem="e98-61-qkW" firstAttribute="leading" secondItem="gzD-Vw-kXV" secondAttribute="leading" constant="20" id="zPe-eo-O4b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UbR-PK-i1D"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Top Up Balance" id="7gX-fD-o2R">
+                        <barButtonItem key="leftBarButtonItem" image="ic-close-dark-gray-16" id="Gyu-yt-WFU">
+                            <connections>
+                                <segue destination="ayk-st-og7" kind="unwind" unwindAction="unwindToWallet:" id="ZJ0-N2-Hi8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amountLabel" destination="Ul7-Vh-0xv" id="Iva-1a-aZ5"/>
+                        <outlet property="balanceLabel" destination="E3N-mD-ciq" id="lro-4P-Ute"/>
+                        <outlet property="insufficientFundLabel" destination="e98-61-qkW" id="zgJ-Lq-G0z"/>
+                        <outlet property="payButton" destination="y1d-nn-t61" id="eKz-8X-C8e"/>
+                        <outlet property="paymentMethodButton" destination="aFj-9Y-w7e" id="smC-aW-yGr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Edv-bb-WPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ayk-st-og7" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2393" y="716"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ozF-hY-1lu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zb8-2E-qsg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="9go-GV-Ds0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mgC-tv-cdf" kind="relationship" relationship="rootViewController" id="kZy-Qg-By5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="re1-VD-xDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="716"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn-backspace-outline-red" width="77" height="45"/>
+        <image name="ic-close-dark-gray-16" width="16" height="16"/>
+        <image name="ic-mastercard-dark-gray-16" width="16" height="16"/>
+    </resources>
+</document>
