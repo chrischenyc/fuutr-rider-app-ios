@@ -28,10 +28,16 @@ final class VehicleService {
     })
   }
   
-  static func toot(id: String, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+  static func toot(coordinates: CLLocationCoordinate2D, id: String, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+    
+    let params: JSON = [
+      "latitude": coordinates.latitude,
+      "longitude": coordinates.longitude,
+      ]
+    
     return APIClient.shared.load(path: "/vehicles/\(id)/toot",
       method: .post,
-      params: nil,
+      params: params,
       completion: { (result, error) in
         completion(error)
     })

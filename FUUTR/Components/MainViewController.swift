@@ -441,9 +441,10 @@ extension MainViewController {
   }
   
   private func tootVehicle(id: String) {
-    vehicleAPITask?.cancel()
+    guard let currentLocation = currentLocation else { return }
     
-    vehicleAPITask = VehicleService.toot(id: id, completion: { [weak self] (error) in
+    vehicleAPITask?.cancel()
+    vehicleAPITask = VehicleService.toot(coordinates:currentLocation.coordinate, id: id, completion: { [weak self] (error) in
       
       DispatchQueue.main.async {
         
