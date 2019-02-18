@@ -16,7 +16,8 @@ class MainViewController: UIViewController {
   private var clusterManager: GMUClusterManager!
   private let searchingZoomLevel: Float = 15.0
   private let ridingZoomLevel: Float = 18.0
-  private let minDistanceFilter: CLLocationDistance = 3
+  private let ridingViewingAngle: Double = 60.0
+  private let minDistanceFilter: CLLocationDistance = 1
   private var zonePolygons: [(Zone, GMSPolygon)] = []
   private var ongoingRidePath: GMSMutablePath?    // to track travelled distance and to draw route
   private var ongoingRidePolyline: GMSPolyline?
@@ -46,6 +47,8 @@ class MainViewController: UIViewController {
       }
     }
   }
+  
+  var ridingDirection: CLLocationDirection = 0 // up north
   
   // ---------- IBOutlet ----------
   @IBOutlet weak var mapView: GMSMapView!
@@ -97,6 +100,11 @@ class MainViewController: UIViewController {
     let authorizationStatus = CLLocationManager.authorizationStatus()
     if authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse {
       locationManager.startUpdatingLocation()
+      
+      if ongoingRide != nil {
+        locationManager.startUpdatingHeading()
+      }
+      
     }
   }
   
@@ -106,6 +114,7 @@ class MainViewController: UIViewController {
       let authorizationStatus = CLLocationManager.authorizationStatus()
       if authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse {
         locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingHeading()
       }
     }
   }
@@ -132,7 +141,7 @@ class MainViewController: UIViewController {
         case .account:
           self.performSegue(withIdentifier: R.segue.mainViewController.showAccount, sender: nil)
         case .help:
-         self.performSegue(withIdentifier: R.segue.mainViewController.showHelp, sender: nil)
+          self.performSegue(withIdentifier: R.segue.mainViewController.showHelp, sender: nil)
         }
         
       }
@@ -200,6 +209,7 @@ extension MainViewController {
     
     locationManager.allowsBackgroundLocationUpdates = true
     locationManager.pausesLocationUpdatesAutomatically = false
+    locationManager.startUpdatingHeading()
     
     // do not show vehicles during riding
     clearMapMakers()
@@ -222,6 +232,9 @@ extension MainViewController {
     
     locationManager.allowsBackgroundLocationUpdates = false
     locationManager.pausesLocationUpdatesAutomatically = true
+    locationManager.stopUpdatingHeading()
+    ridingDirection = 0
+    mapView.animate(toBearing: 0)
     
     // zoom out map after ride
     if let currentLocation = currentLocation {
@@ -769,7 +782,6 @@ extension MainViewController {
 // MARK: - CLLocationManagerDelegate
 extension MainViewController: CLLocationManagerDelegate {
   
-  // Handle authorization for the location manager.
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     guard status == .authorizedAlways || status == .authorizedWhenInUse else {
       promptForLocationServicesPermission()
@@ -777,10 +789,18 @@ extension MainViewController: CLLocationManagerDelegate {
     }
     
     locationManager.startUpdatingLocation()
+    if ongoingRide != nil {
+      locationManager.startUpdatingHeading()
+    }
+    
     mapView.isMyLocationEnabled = true
   }
   
-  // Handle incoming location events.
+  func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+    ridingDirection = newHeading.magneticHeading
+    mapView.animate(toBearing: ridingDirection)
+  }
+  
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     guard let location = locations.first else { return }
     
@@ -800,8 +820,10 @@ extension MainViewController: CLLocationManagerDelegate {
     // during a ride, update map view and ride path
     if let ongoingRide = ongoingRide, !ongoingRide.paused {
       // keep centring user during an active ride
-      // TODO: sync map heading direction with user's
-      let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: ridingZoomLevel)
+      let camera = GMSCameraPosition.camera(withTarget: location.coordinate,
+                                            zoom: ridingZoomLevel,
+                                            bearing: ridingDirection,
+                                            viewingAngle: ridingViewingAngle)
       mapView.animate(to: camera)
       
       if let currentPath = ongoingRidePath {
