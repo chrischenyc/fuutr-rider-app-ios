@@ -9,13 +9,13 @@
 import Foundation
 
 final class VehicleService {
-  static func reserve(_id: String, reserve: Bool, completion: @escaping (Vehicle?, Error?) -> Void) -> URLSessionDataTask? {
+  static func reserve(id: String, reserve: Bool, completion: @escaping (Vehicle?, Error?) -> Void) -> URLSessionDataTask? {
     
     let params: JSON = [
       "reserve": reserve,
       ]
     
-    return APIClient.shared.load(path: "/vehicles/\(_id)/reserve",
+    return APIClient.shared.load(path: "/vehicles/\(id)/reserve",
       method: .patch,
       params: params,
       completion: { (result, error) in
@@ -25,6 +25,15 @@ final class VehicleService {
         }
         
         completion(nil, error)
+    })
+  }
+  
+  static func toot(id: String, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+    return APIClient.shared.load(path: "/vehicles/\(id)/toot",
+      method: .post,
+      params: nil,
+      completion: { (result, error) in
+        completion(error)
     })
   }
 }

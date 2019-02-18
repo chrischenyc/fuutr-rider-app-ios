@@ -418,7 +418,7 @@ extension MainViewController {
     vehicleInfoView.reserveButton.setTitle(reserve ? "Reserving ..." : "Canceling ...", for: .normal)
     vehicleInfoView.reserveButton.isEnabled = false
     
-    vehicleAPITask = VehicleService.reserve(_id: id, reserve: reserve, completion: { [weak self] (vehicle, error) in
+    vehicleAPITask = VehicleService.reserve(id: id, reserve: reserve, completion: { [weak self] (vehicle, error) in
       
       DispatchQueue.main.async {
         
@@ -436,6 +436,21 @@ extension MainViewController {
           self?.search()
         }
         
+      }
+    })
+  }
+  
+  private func tootVehicle(id: String) {
+    vehicleAPITask?.cancel()
+    
+    vehicleAPITask = VehicleService.toot(id: id, completion: { [weak self] (error) in
+      
+      DispatchQueue.main.async {
+        
+        guard error == nil else {
+          self?.alertError(error!)
+          return
+        }
       }
     })
   }
@@ -490,6 +505,10 @@ extension MainViewController {
                           self?.toggleVehicleReservation(id: vehicle.id, reserve: true)
       },
                          negativeActionButtonTitle: "Cancel")
+    }
+    
+    vehicleInfoView.onRing = { [weak self] (vehicle) in
+      self?.tootVehicle(id: vehicle.id)
     }
     
     vehicleInfoView.onClose = { [weak self] in

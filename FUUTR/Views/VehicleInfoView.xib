@@ -17,6 +17,7 @@
                 <outlet property="priceLabel" destination="IW6-0n-AEu" id="GwU-3r-Sv6"/>
                 <outlet property="rangeLabel" destination="T9L-nv-MSx" id="fbj-g0-Puv"/>
                 <outlet property="reserveButton" destination="2Rr-wp-oxp" id="wV3-8y-uNf"/>
+                <outlet property="ringButton" destination="iZZ-9q-z2J" id="5G5-wP-be8"/>
                 <outlet property="vehicleCodeLabel" destination="Qx7-zK-wcD" id="Za5-0G-bbP"/>
                 <outlet property="waitToReserveAgainLabel" destination="AM9-9e-6CP" id="L3R-rK-Wm8"/>
             </connections>
@@ -131,14 +132,14 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hjy-GO-ulf">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hjy-GO-ulf">
                     <rect key="frame" x="20" y="184" width="335" height="44"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-aY-ka5">
-                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="106.5" height="44"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rr-wp-oxp" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="159.5" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="ZJT-Fi-r4W"/>
                                     </constraints>
@@ -148,21 +149,31 @@
                                     </connections>
                                 </button>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wait to reserve again" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AM9-9e-6CP" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="159.5" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZZ-9q-z2J" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
-                            <rect key="frame" x="175.5" y="0.0" width="159.5" height="44"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZZ-9q-z2J" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                            <rect key="frame" x="114.5" y="0.0" width="106" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="pgz-mY-XWK"/>
                             </constraints>
+                            <state key="normal" title="Ring"/>
+                            <connections>
+                                <action selector="ringButtonTapped:" destination="-1" eventType="touchUpInside" id="PoA-Dv-JCz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1w-vr-04J" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
+                            <rect key="frame" x="228.5" y="0.0" width="106.5" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="DJI-vW-r7K"/>
+                            </constraints>
                             <state key="normal" title="Scan"/>
                             <connections>
-                                <action selector="scanButtonTapped" destination="-1" eventType="touchUpInside" id="jLE-PV-cYv"/>
+                                <action selector="scanButtonTapped" destination="-1" eventType="touchUpInside" id="4fn-7p-lDs"/>
                             </connections>
                         </button>
                     </subviews>

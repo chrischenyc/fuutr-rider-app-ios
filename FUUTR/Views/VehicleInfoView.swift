@@ -5,6 +5,7 @@ class VehicleInfoView: DesignableView {
   @IBOutlet weak var parkedLabel: UILabel!
   @IBOutlet weak var rangeLabel: UILabel!
   @IBOutlet weak var reserveButton: UIButton!
+  @IBOutlet weak var ringButton: UIButton!
   @IBOutlet weak var waitToReserveAgainLabel: UILabel!
   @IBOutlet weak var batteryImageView: UIImageView!
   @IBOutlet weak var vehicleCodeLabel: UILabel!
@@ -22,6 +23,7 @@ class VehicleInfoView: DesignableView {
   var onReserve: ((Vehicle)-> Void)?
   var onClose: (() -> Void)?
   var onScan: (() -> Void)?
+  var onRing: ((Vehicle) -> Void)?
   
   func updateContentWith(_ vehicle: Vehicle) {
     self.vehicle = vehicle
@@ -85,6 +87,12 @@ class VehicleInfoView: DesignableView {
       return
     }
     onReserve?(vehicle)
+  }
+  
+  @IBAction func ringButtonTapped(_ sender: Any) {
+    guard let vehicle = vehicle else { return }
+    
+    onRing?(vehicle)
   }
   
   private func canReserveVehicle() -> Bool {
