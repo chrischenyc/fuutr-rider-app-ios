@@ -59,6 +59,10 @@ class RideParkedPhotoViewController: UIViewController {
     
     // bypass camera setup on Simulator
     if !Platform.isSimulator {
+      guard checkScanPermissions(actionAfterFailure: { [weak self] in
+        self?.performSegue(withIdentifier: R.segue.rideParkedPhotoViewController.showRideSummary, sender: self?.ride)
+      }) else { return }
+      
       fastttAddChildViewController(fastCamera)
       fastCamera.view.frame = self.cameraView.frame
     }
