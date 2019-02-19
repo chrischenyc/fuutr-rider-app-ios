@@ -17,7 +17,7 @@ extension UIViewController {
       switch error.code {
       case -11852:
         alertMessage(title: nil,
-                     message: "This app is not authorized to use Back Camera. Please grant permission in Settings",
+                     message: "FUUTR needs camera access to scan the scooter's QR Code and take photos of your parked scooter.",
                      positiveActionButtonTitle: "Go to Settings",
                      positiveActionButtonTapped: {
                       if let settingsURL = URL(string: UIApplication.openSettingsURLString) {

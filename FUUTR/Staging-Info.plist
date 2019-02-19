@@ -47,11 +47,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>FUUTR app will use your camera to scan QRCode on our scooters</string>
+	<string>FUUTR needs camera access to scan the scooter&apos;s QR code and take photos of your parked scooter.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>FUUTR app will use your location to look for scooters near you and track your ride</string>
+	<string>FUUTR app will use your location to look for scooters near you and track your ride.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>FUUTR app will use your location to look for scooters near you and track your ride</string>
+	<string>FUUTR app will use your location to look for scooters near you and track your ride.</string>
 	<key>UIApplicationExitsOnSuspend</key>
 	<false/>
 	<key>UIBackgroundModes</key>
