@@ -33,7 +33,7 @@
                                                             <constraint firstAttribute="height" constant="105" id="Uz9-o0-30i"/>
                                                             <constraint firstAttribute="width" constant="105" id="rif-Bx-jjZ"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button" image="lock-unlock-issue"/>
+                                                        <state key="normal" title="Button" image="img-lock-unlock-issue"/>
                                                         <connections>
                                                             <action selector="unlockIssue:" destination="4mE-Wu-wsE" eventType="touchUpInside" id="Gen-Z1-7Rb"/>
                                                         </connections>
@@ -55,7 +55,7 @@
                                                             <constraint firstAttribute="width" constant="105" id="A32-j6-0iv"/>
                                                             <constraint firstAttribute="height" constant="105" id="Kn3-xr-gGi"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" title="Button" image="img-damaged"/>
                                                         <connections>
                                                             <action selector="damageIssue:" destination="4mE-Wu-wsE" eventType="touchUpInside" id="VGf-oV-VmH"/>
                                                         </connections>
@@ -104,7 +104,7 @@
                                                             <constraint firstAttribute="width" constant="105" id="WOG-0Y-IlG"/>
                                                             <constraint firstAttribute="height" constant="105" id="vAL-xL-Ndq"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button" image="other-issue"/>
+                                                        <state key="normal" title="Button" image="img-other-issue"/>
                                                         <connections>
                                                             <action selector="otherIssue:" destination="4mE-Wu-wsE" eventType="touchUpInside" id="ELb-cj-eEL"/>
                                                         </connections>
@@ -233,7 +233,8 @@
         <image name="ic-close-dark-gray-16" width="16" height="16"/>
         <image name="ic-plus-red-16" width="16" height="16"/>
         <image name="illegal-parking-issue" width="105" height="105"/>
-        <image name="lock-unlock-issue" width="105" height="105"/>
-        <image name="other-issue" width="105" height="105"/>
+        <image name="img-damaged" width="105" height="105"/>
+        <image name="img-lock-unlock-issue" width="105" height="105"/>
+        <image name="img-other-issue" width="105" height="105"/>
     </resources>
 </document>
