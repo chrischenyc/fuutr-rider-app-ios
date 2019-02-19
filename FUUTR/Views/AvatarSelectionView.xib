@@ -55,6 +55,9 @@
                                                 <constraint firstAttribute="height" constant="72" id="dLp-v8-EI9"/>
                                             </constraints>
                                             <state key="normal" image="upload-profile-photo"/>
+                                            <connections>
+                                                <action selector="camera:" destination="-1" eventType="touchUpInside" id="f4d-yI-Pet"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUU-TD-y6b">
                                             <rect key="frame" x="96" y="0.0" width="72" height="72"/>
@@ -63,72 +66,96 @@
                                                 <constraint firstAttribute="height" constant="72" id="IlX-Ri-AzL"/>
                                             </constraints>
                                             <state key="normal" image="boy-1"/>
+                                            <connections>
+                                                <action selector="avatarSelected:" destination="-1" eventType="touchUpInside" id="8GN-xe-IJD"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6V-aX-sBb">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6V-aX-sBb">
                                             <rect key="frame" x="192" y="0.0" width="72" height="72"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="72" id="J3t-Jh-VOi"/>
                                                 <constraint firstAttribute="width" constant="72" id="gGq-EJ-2gf"/>
                                             </constraints>
                                             <state key="normal" image="boy-2"/>
+                                            <connections>
+                                                <action selector="avatarSelected:" destination="-1" eventType="touchUpInside" id="HJG-P5-dtl"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="o06-E8-goF">
                                     <rect key="frame" x="0.0" y="124" width="264" height="72"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-U4-96L">
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-U4-96L">
                                             <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="72" id="OZm-61-Eql"/>
                                                 <constraint firstAttribute="width" constant="72" id="lnq-xi-ZNy"/>
                                             </constraints>
                                             <state key="normal" image="girl-1"/>
+                                            <connections>
+                                                <action selector="avatarSelected:" destination="-1" eventType="touchUpInside" id="arV-lD-Srf"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJK-QX-tco">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJK-QX-tco">
                                             <rect key="frame" x="96" y="0.0" width="72" height="72"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="72" id="Ltm-nv-4db"/>
                                                 <constraint firstAttribute="width" constant="72" id="X6c-pY-TxO"/>
                                             </constraints>
                                             <state key="normal" image="girl-2"/>
+                                            <connections>
+                                                <action selector="avatarSelected:" destination="-1" eventType="touchUpInside" id="Hfv-M0-Uqv"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWx-Eu-aj7">
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWx-Eu-aj7">
                                             <rect key="frame" x="192" y="0.0" width="72" height="72"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="72" id="4eT-f7-ZPw"/>
                                                 <constraint firstAttribute="width" constant="72" id="ibD-79-FoB"/>
                                             </constraints>
                                             <state key="normal" image="man-1"/>
+                                            <connections>
+                                                <action selector="avatarSelected:" destination="-1" eventType="touchUpInside" id="yll-ZB-uMa"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="U4M-zg-Kfg">
                                     <rect key="frame" x="0.0" y="220" width="264" height="72"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8Z-ev-k2I">
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8Z-ev-k2I">
                                             <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="72" id="K99-bK-fdU"/>
                                                 <constraint firstAttribute="height" constant="72" id="vHy-MF-eeB"/>
                                             </constraints>
                                             <state key="normal" image="man-2"/>
+                                            <connections>
+                                                <action selector="avatarSelected:" destination="-1" eventType="touchUpInside" id="TfD-bl-eZ8"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbs-Z2-0nY">
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbs-Z2-0nY">
                                             <rect key="frame" x="96" y="0.0" width="72" height="72"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="72" id="IHx-Dv-L5E"/>
                                                 <constraint firstAttribute="width" constant="72" id="e5V-We-Q9h"/>
                                             </constraints>
                                             <state key="normal" image="woman-1"/>
+                                            <connections>
+                                                <action selector="avatarSelected:" destination="-1" eventType="touchUpInside" id="5in-Fe-vBd"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-OI-ZD7">
+                                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-OI-ZD7">
                                             <rect key="frame" x="192" y="0.0" width="72" height="72"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="72" id="uFV-5T-vZG"/>
                                                 <constraint firstAttribute="height" constant="72" id="yFM-pt-egd"/>
                                             </constraints>
                                             <state key="normal" image="woman-2"/>
+                                            <connections>
+                                                <action selector="avatarSelected:" destination="-1" eventType="touchUpInside" id="eWT-8H-M5d"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -141,6 +168,9 @@
                                                 <constraint firstAttribute="height" constant="44" id="Anp-23-cYt"/>
                                             </constraints>
                                             <state key="normal" title="Cancel"/>
+                                            <connections>
+                                                <action selector="cancel:" destination="-1" eventType="touchUpInside" id="UvS-XZ-RNN"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

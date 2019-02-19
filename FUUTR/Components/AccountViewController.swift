@@ -25,6 +25,11 @@ class AccountViewController: UIViewController {
       avatarSelectionView.onDismiss = {
         self.toggleAvatarSelectionView(on: false)
       }
+      
+      avatarSelectionView.onSelectPresetAvatar = { presetAvatar in
+        self.avatarImageView.image = presetAvatar
+        self.toggleAvatarSelectionView(on: false)
+      }
     }
   }
   @IBOutlet weak var avatarSelectionViewHeightContraint: NSLayoutConstraint!
