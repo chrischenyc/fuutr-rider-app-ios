@@ -20,8 +20,11 @@ extension GMSMapView {
         let now = Date()
         sunInfo.calculateSunriseSunset(now)
         
-        if let sunrise = sunInfo.sunrise, let sunset = sunInfo.sunset,
-          now <= sunrise || now >= sunset {
+        if let sunrise = sunInfo.sunrise,
+          let sunset = sunInfo.sunset,
+          let halfHourAfterSunrise = Calendar.current.date(byAdding: .minute, value: 30, to: sunrise),
+          let halfHourBeforeSunset = Calendar.current.date(byAdding: .minute, value: -30, to: sunset),
+          now <=  halfHourAfterSunrise || now >= halfHourBeforeSunset {
           themeJSON = "GoogleMapStyle.night"
         }
       }
