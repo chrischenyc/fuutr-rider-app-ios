@@ -47,7 +47,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kcr-3b-4xH">
                     <rect key="frame" x="20" y="184" width="335" height="44"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKB-eH-GGP" userLabel="Cancel" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKB-eH-GGP" userLabel="Cancel" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="159.5" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="lHW-Dy-8JU"/>
@@ -57,7 +57,7 @@
                                 <action selector="scanButtonTapped:" destination="-1" eventType="touchUpInside" id="gPU-n1-6MR"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W16-Gm-Exg" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W16-Gm-Exg" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
                             <rect key="frame" x="175.5" y="0.0" width="159.5" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="Loi-oy-dTr"/>
