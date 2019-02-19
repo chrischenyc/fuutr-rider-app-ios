@@ -29,14 +29,14 @@ extension GMSMapView {
       finishMarker.icon = R.image.icLocationFinalRed32()
       finishMarker.map = self
       
-      // centre map
+      // adjust map centre and zoom level
       var coordinates: [CLLocationCoordinate2D] = []
+      var bounds = GMSCoordinateBounds()
       for index in 0..<path.count() {
         coordinates.append(path.coordinate(at: index))
+        bounds = bounds.includingCoordinate(path.coordinate(at: index))
       }
-      let centerCoordinate = CLLocationCoordinate2D.middlePointOfListMarkers(listCoords: coordinates)
-      let camera = GMSCameraPosition.camera(withTarget: centerCoordinate, zoom: streetZoomLevel)
-      animate(to: camera)
+      animate(with: GMSCameraUpdate.fit(bounds))
       
       // draw route
       rideRoutePolyline = GMSPolyline(path: path)
