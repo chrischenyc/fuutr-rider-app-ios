@@ -28,6 +28,7 @@ class AccountViewController: UIViewController {
       
       avatarSelectionView.onSelectPresetAvatar = { presetAvatar in
         self.avatarImageView.image = presetAvatar
+        self.avatarChanged = true
         self.toggleAvatarSelectionView(on: false)
       }
     }
@@ -45,6 +46,7 @@ class AccountViewController: UIViewController {
       }
     }
   }
+  private var avatarChanged: Bool = false
   
   // MARK: - lifecycle
   override func viewDidLoad() {
@@ -105,6 +107,10 @@ class AccountViewController: UIViewController {
     
     var profile: JSON = [:]
     profile["displayName"] = nameTextField.text
+    
+    if avatarChanged {
+      // TODO: attache new avatar image in the request
+    }
     
     apiTask?.cancel()
     
