@@ -62,10 +62,10 @@ class IssueFormViewController: UIViewController {
                                             return
                                           }
                                           
-                                          self?.alertMessage(title: "Issue Lodged",
-                                                             message: "Thank you for letting us know about the issue.",
+                                          self?.alertMessage(title: "Issue Report Sent!",
+                                                             message: "Thank you for helping make FUUTR better.",
                                                              image: R.image.imgSuccessCheck(),
-                                                             positiveActionButtonTitle: "Continue",
+                                                             positiveActionButtonTitle: "Done",
                                                              positiveActionButtonTapped: {
                                                               self?.performSegue(withIdentifier: R.segue.issueFormViewController.unwindToHome, sender: nil)
                                           })
