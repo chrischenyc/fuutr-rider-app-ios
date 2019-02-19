@@ -143,6 +143,8 @@ class AccountViewController: UIViewController {
       }
     }
     
+    currentUser = nil
+    currentLocation = nil
     Defaults[.userSignedIn] = false
     Defaults[.accessToken] = ""
     Defaults[.refreshToken] = ""

@@ -666,6 +666,11 @@ extension MainViewController {
     renderer.delegate = self
     clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
     clusterManager.setDelegate(self, mapDelegate: self)
+    
+    if let location = currentLocation {
+      let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
+      mapView.animate(to: camera)
+    }
   }
   
   private func addMapPolygonsFor(_ zones: [Zone]) {
