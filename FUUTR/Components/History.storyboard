@@ -44,13 +44,13 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIK-yh-nfx">
-                                            <rect key="frame" x="20" y="218.5" width="335" height="60"/>
+                                            <rect key="frame" x="20" y="218.5" width="335" height="56"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hMb-bA-BNt">
-                                                    <rect key="frame" x="16" y="0.0" width="303" height="60"/>
+                                                    <rect key="frame" x="16" y="0.0" width="303" height="56"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mp9-oP-kUI">
-                                                            <rect key="frame" x="0.0" y="18" width="72" height="24"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Mp9-oP-kUI">
+                                                            <rect key="frame" x="0.0" y="16" width="68" height="24"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-dollar-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="q2p-YM-boj">
                                                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -60,15 +60,15 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ka-ff-3vH" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                                    <rect key="frame" x="32" y="0.0" width="40" height="24"/>
+                                                                    <rect key="frame" x="28" y="0.0" width="40" height="24"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-YM-cwr">
-                                                            <rect key="frame" x="115.5" y="18" width="72" height="24"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-YM-cwr">
+                                                            <rect key="frame" x="117.5" y="16" width="68" height="24"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-clock-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="I1K-kG-3dF">
                                                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -78,15 +78,15 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSA-Jt-R5x" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                                    <rect key="frame" x="32" y="0.0" width="40" height="24"/>
+                                                                    <rect key="frame" x="28" y="0.0" width="40" height="24"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-Ut-mgd">
-                                                            <rect key="frame" x="231" y="18" width="72" height="24"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-Ut-mgd">
+                                                            <rect key="frame" x="235" y="16" width="68" height="24"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-location-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="H1w-zL-vpc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -96,7 +96,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJN-GX-Bdo" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                                    <rect key="frame" x="32" y="0.0" width="40" height="24"/>
+                                                                    <rect key="frame" x="28" y="0.0" width="40" height="24"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="hMb-bA-BNt" secondAttribute="bottom" id="04C-GL-ci6"/>
-                                                <constraint firstAttribute="height" constant="60" id="10N-VE-fMp"/>
+                                                <constraint firstAttribute="height" constant="56" id="10N-VE-fMp"/>
                                                 <constraint firstItem="hMb-bA-BNt" firstAttribute="leading" secondItem="tIK-yh-nfx" secondAttribute="leading" constant="16" id="47B-Yj-Slx"/>
                                                 <constraint firstItem="hMb-bA-BNt" firstAttribute="top" secondItem="tIK-yh-nfx" secondAttribute="top" id="GUa-Yo-8CM"/>
                                                 <constraint firstAttribute="trailing" secondItem="hMb-bA-BNt" secondAttribute="trailing" constant="16" id="U1j-Uw-0Gw"/>
@@ -123,7 +123,7 @@
                                         <constraint firstItem="tIK-yh-nfx" firstAttribute="leading" secondItem="XVt-eo-1PB" secondAttribute="leading" constant="20" id="8J6-uz-fOG"/>
                                         <constraint firstItem="P3V-qh-s2d" firstAttribute="leading" secondItem="JRh-PF-BMP" secondAttribute="trailing" constant="16" id="DuT-7w-0ME"/>
                                         <constraint firstItem="P3V-qh-s2d" firstAttribute="centerY" secondItem="JRh-PF-BMP" secondAttribute="centerY" id="E6g-G1-4XX"/>
-                                        <constraint firstAttribute="bottom" secondItem="tIK-yh-nfx" secondAttribute="bottom" constant="16" id="WKC-0d-p7g"/>
+                                        <constraint firstAttribute="bottom" secondItem="tIK-yh-nfx" secondAttribute="bottom" constant="20" id="WKC-0d-p7g"/>
                                         <constraint firstItem="JRh-PF-BMP" firstAttribute="leading" secondItem="XVt-eo-1PB" secondAttribute="leading" constant="20" id="YkB-0f-Xwc"/>
                                         <constraint firstAttribute="trailing" secondItem="nfU-MQ-FV0" secondAttribute="trailing" id="ZSk-Xh-coz"/>
                                         <constraint firstItem="JRh-PF-BMP" firstAttribute="top" secondItem="XVt-eo-1PB" secondAttribute="top" constant="12" id="ha5-xG-fyF"/>
@@ -206,7 +206,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p47-b8-IbF">
                                 <rect key="frame" x="16" y="360" width="343" height="24"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qgY-B8-V0Q">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qgY-B8-V0Q">
                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="24"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-dollar-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="JkS-zw-NaN" userLabel="dollarImage">
@@ -217,14 +217,14 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOs-mS-XiC" userLabel="ridingCostLabel" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                <rect key="frame" x="36" y="0.5" width="67.5" height="23"/>
+                                                <rect key="frame" x="28" y="0.5" width="75.5" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="1HR-6Q-cEd">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="1HR-6Q-cEd">
                                         <rect key="frame" x="119.5" y="0.0" width="104" height="24"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-clock-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="Rkm-eg-4uT" userLabel="clockImage">
@@ -235,14 +235,14 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wew-GQ-Na0" userLabel="ridingTimeLabel" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                <rect key="frame" x="36" y="0.5" width="68" height="23"/>
+                                                <rect key="frame" x="28" y="0.5" width="76" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="shs-R6-Y4S">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="shs-R6-Y4S">
                                         <rect key="frame" x="239.5" y="0.0" width="103.5" height="24"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-location-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="hfx-ER-Vn5">
@@ -253,7 +253,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7g-WT-yHS" userLabel="rideDistance" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                <rect key="frame" x="36" y="0.5" width="67.5" height="23"/>
+                                                <rect key="frame" x="28" y="0.5" width="75.5" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

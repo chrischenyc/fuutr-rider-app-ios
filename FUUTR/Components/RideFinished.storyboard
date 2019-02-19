@@ -34,7 +34,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zGV-m6-IgS">
                                 <rect key="frame" x="16" y="358" width="343" height="24"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="iFE-N4-1Xk">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iFE-N4-1Xk">
                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="24"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-dollar-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="AEc-pa-5qU" userLabel="dollarImage">
@@ -45,14 +45,14 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpi-j4-CaF" userLabel="ridingCostLabel" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                <rect key="frame" x="36" y="0.5" width="67.5" height="23"/>
+                                                <rect key="frame" x="28" y="0.5" width="75.5" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fvs-nB-ivU">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fvs-nB-ivU">
                                         <rect key="frame" x="119.5" y="0.0" width="104" height="24"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-clock-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="2x7-Lj-Hbe" userLabel="clockImage">
@@ -63,14 +63,14 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Kg-d4-yo8" userLabel="ridingTimeLabel" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                <rect key="frame" x="36" y="0.5" width="68" height="23"/>
+                                                <rect key="frame" x="28" y="0.5" width="76" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="lpU-Xk-ycQ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lpU-Xk-ycQ">
                                         <rect key="frame" x="239.5" y="0.0" width="103.5" height="24"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-location-dark-gray-24" translatesAutoresizingMaskIntoConstraints="NO" id="x5v-ep-8ny">
@@ -81,7 +81,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkU-2V-MmU" userLabel="rideDistance" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                <rect key="frame" x="36" y="0.5" width="67.5" height="23"/>
+                                                <rect key="frame" x="28" y="0.5" width="75.5" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
