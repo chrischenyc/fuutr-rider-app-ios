@@ -126,6 +126,17 @@
                         <constraint firstAttribute="width" constant="96" id="XvH-Kh-1cu"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZZ-9q-z2J">
+                    <rect key="frame" x="323" y="120" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="pgz-mY-XWK"/>
+                        <constraint firstAttribute="width" constant="44" id="zVz-ab-KaI"/>
+                    </constraints>
+                    <state key="normal" image="report-issue-menu"/>
+                    <connections>
+                        <action selector="ringButtonTapped:" destination="-1" eventType="touchUpInside" id="PoA-Dv-JCz"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qx7-zK-wcD" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
                     <rect key="frame" x="255" y="156" width="96" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -136,10 +147,10 @@
                     <rect key="frame" x="20" y="184" width="335" height="44"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-aY-ka5">
-                            <rect key="frame" x="0.0" y="0.0" width="106.5" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="163.5" height="44"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rr-wp-oxp" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="163.5" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="ZJT-Fi-r4W"/>
                                     </constraints>
@@ -149,25 +160,15 @@
                                     </connections>
                                 </button>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wait to reserve again" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AM9-9e-6CP" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="163.5" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZZ-9q-z2J" customClass="FTRedInverseButton" customModule="FUUTR" customModuleProvider="target">
-                            <rect key="frame" x="114.5" y="0.0" width="106" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="pgz-mY-XWK"/>
-                            </constraints>
-                            <state key="normal" title="Ring"/>
-                            <connections>
-                                <action selector="ringButtonTapped:" destination="-1" eventType="touchUpInside" id="PoA-Dv-JCz"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1w-vr-04J" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
-                            <rect key="frame" x="228.5" y="0.0" width="106.5" height="44"/>
+                            <rect key="frame" x="171.5" y="0.0" width="163.5" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="DJI-vW-r7K"/>
                             </constraints>
@@ -181,6 +182,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="iZZ-9q-z2J" firstAttribute="bottom" secondItem="agB-l3-5Xr" secondAttribute="bottom" constant="12" id="0R1-ja-Wwd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="agB-l3-5Xr" secondAttribute="trailing" constant="24" id="2b7-rh-OvG"/>
                 <constraint firstItem="0F4-xC-bLI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="36a-Dh-Tcb"/>
                 <constraint firstItem="cQn-Q5-p1M" firstAttribute="top" secondItem="LgO-K9-TPb" secondAttribute="bottom" constant="12" id="39d-6f-bIo"/>
@@ -196,6 +198,7 @@
                 <constraint firstItem="LgO-K9-TPb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="gYW-64-5fq"/>
                 <constraint firstItem="Hjy-GO-ulf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="okW-sA-idt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hjy-GO-ulf" secondAttribute="trailing" constant="20" id="rhJ-kp-3XT"/>
+                <constraint firstItem="iZZ-9q-z2J" firstAttribute="trailing" secondItem="agB-l3-5Xr" secondAttribute="trailing" constant="16" id="t0u-uh-MbV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0F4-xC-bLI" secondAttribute="trailing" constant="6" id="y7I-1L-qPU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -209,5 +212,6 @@
         <image name="ic-dollar-dark-gray-24" width="24" height="24"/>
         <image name="ic-location-dark-gray-24" width="24" height="24"/>
         <image name="img-scooter-model" width="96" height="96"/>
+        <image name="report-issue-menu" width="37" height="37"/>
     </resources>
 </document>

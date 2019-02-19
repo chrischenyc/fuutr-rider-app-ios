@@ -57,7 +57,7 @@ enum Environment: String {
   }
   
   var termsURL: String {
-    return "https://www.fuutr.co"
+    return "https://www.fuutr.co/terms"
   }
   
   var privacyURL: String {
@@ -65,10 +65,10 @@ enum Environment: String {
   }
   
   var helpURL: String {
-    return "https://www.fuutr.co/legal-press-notice"
+    return "https://www.fuutr.co/help"
   }
   
   var contactURL: String {
-    return "https://www.fuutr.co/legal-press-notice"
+    return "https://www.fuutr.co/contact"
   }
 }

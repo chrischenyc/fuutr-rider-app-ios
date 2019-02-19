@@ -12,6 +12,8 @@ class HelpViewController: UIViewController {
   @IBOutlet weak var reportButton: UIButton!
   @IBOutlet weak var faqButton: UIButton!
   @IBOutlet weak var contactButton: UIButton!
+  @IBOutlet weak var termsButton: UIButton!
+  @IBOutlet weak var privacyButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,6 +26,10 @@ class HelpViewController: UIViewController {
     faqButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
     contactButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
     contactButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
+    termsButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    termsButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
+    privacyButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    privacyButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
   }
   
   @IBAction func faq(_ sender: Any) {
@@ -34,6 +40,18 @@ class HelpViewController: UIViewController {
   
   @IBAction func contact(_ sender: Any) {
     if let url = URL(string: config.env.contactURL), UIApplication.shared.canOpenURL(url) {
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+  }
+  
+  @IBAction func terms(_ sender: Any) {
+    if let url = URL(string: config.env.termsURL), UIApplication.shared.canOpenURL(url) {
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+  }
+  
+  @IBAction func privacy(_ sender: Any) {
+    if let url = URL(string: config.env.privacyURL), UIApplication.shared.canOpenURL(url) {
       UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
   }

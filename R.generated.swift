@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 70 images.
+  /// This `R.image` struct is generated, and contains static references to 73 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -99,6 +99,8 @@ struct R: Rswift.Validatable {
     static let icDollarDarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-dollar-dark-gray-24")
     /// Image `ic-edit-white-16`.
     static let icEditWhite16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-edit-white-16")
+    /// Image `ic-hand-dark-gray-16`.
+    static let icHandDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-hand-dark-gray-16")
     /// Image `ic-help-dark-gray-16`.
     static let icHelpDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-help-dark-gray-16")
     /// Image `ic-hide-dark-gray-16`.
@@ -129,6 +131,8 @@ struct R: Rswift.Validatable {
     static let icReportIssueDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-report-issue-dark-gray-16")
     /// Image `ic-show-dark-gray-16`.
     static let icShowDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-show-dark-gray-16")
+    /// Image `ic-terms-dark-gray-16`.
+    static let icTermsDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-terms-dark-gray-16")
     /// Image `ic-torch-off-white`.
     static let icTorchOffWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-torch-off-white")
     /// Image `ic-torch-on-white`.
@@ -139,8 +143,14 @@ struct R: Rswift.Validatable {
     static let icWalletDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-wallet-dark-gray-16")
     /// Image `illegal-parking-issue`.
     static let illegalParkingIssue = Rswift.ImageResource(bundle: R.hostingBundle, name: "illegal-parking-issue")
+    /// Image `img-damaged`.
+    static let imgDamaged = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-damaged")
     /// Image `img-location-services`.
     static let imgLocationServices = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-location-services")
+    /// Image `img-lock-unlock-issue`.
+    static let imgLockUnlockIssue = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-lock-unlock-issue")
+    /// Image `img-other-issue`.
+    static let imgOtherIssue = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-other-issue")
     /// Image `img-scooter-enter-code`.
     static let imgScooterEnterCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-scooter-enter-code")
     /// Image `img-scooter-model`.
@@ -153,14 +163,10 @@ struct R: Rswift.Validatable {
     static let imgTransparent = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-transparent")
     /// Image `img-unsafe-parking`.
     static let imgUnsafeParking = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-unsafe-parking")
-    /// Image `lock-unlock-issue`.
-    static let lockUnlockIssue = Rswift.ImageResource(bundle: R.hostingBundle, name: "lock-unlock-issue")
     /// Image `man-1`.
     static let man1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "man-1")
     /// Image `man-2`.
     static let man2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "man-2")
-    /// Image `other-issue`.
-    static let otherIssue = Rswift.ImageResource(bundle: R.hostingBundle, name: "other-issue")
     /// Image `report-issue-menu`.
     static let reportIssueMenu = Rswift.ImageResource(bundle: R.hostingBundle, name: "report-issue-menu")
     /// Image `scooter-pin-green`.
@@ -327,6 +333,11 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icEditWhite16, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "ic-hand-dark-gray-16", bundle: ..., traitCollection: ...)`
+    static func icHandDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icHandDarkGray16, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "ic-help-dark-gray-16", bundle: ..., traitCollection: ...)`
     static func icHelpDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icHelpDarkGray16, compatibleWith: traitCollection)
@@ -402,6 +413,11 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icShowDarkGray16, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "ic-terms-dark-gray-16", bundle: ..., traitCollection: ...)`
+    static func icTermsDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icTermsDarkGray16, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "ic-torch-off-white", bundle: ..., traitCollection: ...)`
     static func icTorchOffWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icTorchOffWhite, compatibleWith: traitCollection)
@@ -427,9 +443,24 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.illegalParkingIssue, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "img-damaged", bundle: ..., traitCollection: ...)`
+    static func imgDamaged(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgDamaged, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "img-location-services", bundle: ..., traitCollection: ...)`
     static func imgLocationServices(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.imgLocationServices, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "img-lock-unlock-issue", bundle: ..., traitCollection: ...)`
+    static func imgLockUnlockIssue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgLockUnlockIssue, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "img-other-issue", bundle: ..., traitCollection: ...)`
+    static func imgOtherIssue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgOtherIssue, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "img-scooter-enter-code", bundle: ..., traitCollection: ...)`
@@ -462,11 +493,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.imgUnsafeParking, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "lock-unlock-issue", bundle: ..., traitCollection: ...)`
-    static func lockUnlockIssue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.lockUnlockIssue, compatibleWith: traitCollection)
-    }
-    
     /// `UIImage(named: "man-1", bundle: ..., traitCollection: ...)`
     static func man1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.man1, compatibleWith: traitCollection)
@@ -475,11 +501,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "man-2", bundle: ..., traitCollection: ...)`
     static func man2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.man2, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "other-issue", bundle: ..., traitCollection: ...)`
-    static func otherIssue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.otherIssue, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "report-issue-menu", bundle: ..., traitCollection: ...)`
@@ -1341,6 +1362,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic-dollar-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-dollar-dark-gray-24' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-location-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-location-dark-gray-24' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "img-scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-scooter-model' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "report-issue-menu", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'report-issue-menu' is used in nib 'VehicleInfoView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -1436,8 +1458,10 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic-arrow-right-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-arrow-right-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-chat-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-chat-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-hand-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-hand-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-help-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-help-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-report-issue-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-report-issue-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-terms-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-terms-dark-gray-16' is used in storyboard 'Help', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -1610,8 +1634,9 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'ReportIssue', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-plus-red-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-plus-red-16' is used in storyboard 'ReportIssue', but couldn't be loaded.") }
         if UIKit.UIImage(named: "illegal-parking-issue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'illegal-parking-issue' is used in storyboard 'ReportIssue', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "lock-unlock-issue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'lock-unlock-issue' is used in storyboard 'ReportIssue', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "other-issue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'other-issue' is used in storyboard 'ReportIssue', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-damaged", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-damaged' is used in storyboard 'ReportIssue', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-lock-unlock-issue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-lock-unlock-issue' is used in storyboard 'ReportIssue', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-other-issue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-other-issue' is used in storyboard 'ReportIssue', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
