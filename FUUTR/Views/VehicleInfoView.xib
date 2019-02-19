@@ -128,11 +128,12 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZZ-9q-z2J">
                     <rect key="frame" x="323" y="120" width="44" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="pgz-mY-XWK"/>
                         <constraint firstAttribute="width" constant="44" id="zVz-ab-KaI"/>
                     </constraints>
-                    <state key="normal" image="report-issue-menu"/>
+                    <state key="normal" image="btn-ring"/>
                     <connections>
                         <action selector="ringButtonTapped:" destination="-1" eventType="touchUpInside" id="PoA-Dv-JCz"/>
                     </connections>
@@ -207,11 +208,11 @@
         </view>
     </objects>
     <resources>
+        <image name="btn-ring" width="37" height="37"/>
         <image name="ic-battery-0-dark-gray-24" width="24" height="24"/>
         <image name="ic-close-dark-gray-16" width="16" height="16"/>
         <image name="ic-dollar-dark-gray-24" width="24" height="24"/>
         <image name="ic-location-dark-gray-24" width="24" height="24"/>
         <image name="img-scooter-model" width="96" height="96"/>
-        <image name="report-issue-menu" width="37" height="37"/>
     </resources>
 </document>

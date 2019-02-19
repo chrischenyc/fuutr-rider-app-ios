@@ -82,7 +82,7 @@
                                                             <constraint firstAttribute="height" constant="105" id="5nq-EX-VfT"/>
                                                             <constraint firstAttribute="width" constant="105" id="hpv-yb-r6u"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button" image="illegal-parking-issue"/>
+                                                        <state key="normal" title="Button" image="img-illegal-parking-issue"/>
                                                         <connections>
                                                             <action selector="parkingIssue:" destination="4mE-Wu-wsE" eventType="touchUpInside" id="zX4-V8-QDP"/>
                                                         </connections>
@@ -232,8 +232,8 @@
     <resources>
         <image name="ic-close-dark-gray-16" width="16" height="16"/>
         <image name="ic-plus-red-16" width="16" height="16"/>
-        <image name="illegal-parking-issue" width="105" height="105"/>
         <image name="img-damaged" width="105" height="105"/>
+        <image name="img-illegal-parking-issue" width="105" height="105"/>
         <image name="img-lock-unlock-issue" width="105" height="105"/>
         <image name="img-other-issue" width="105" height="105"/>
     </resources>

@@ -137,7 +137,7 @@
                                     <constraint firstAttribute="height" constant="44" id="HSd-gb-mdt"/>
                                     <constraint firstAttribute="width" constant="44" id="PTx-ns-5wb"/>
                                 </constraints>
-                                <state key="normal" image="report-issue-menu"/>
+                                <state key="normal" image="btn-report-issue"/>
                                 <connections>
                                     <segue destination="RmQ-0j-2ZJ" kind="presentation" id="5YB-7e-qeJ"/>
                                 </connections>
@@ -196,6 +196,6 @@
     </scenes>
     <resources>
         <image name="boy-1" width="105" height="105"/>
-        <image name="report-issue-menu" width="37" height="37"/>
+        <image name="btn-report-issue" width="37" height="37"/>
     </resources>
 </document>

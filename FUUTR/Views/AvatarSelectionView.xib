@@ -54,7 +54,7 @@
                                                 <constraint firstAttribute="width" constant="72" id="MBI-bO-LDU"/>
                                                 <constraint firstAttribute="height" constant="72" id="dLp-v8-EI9"/>
                                             </constraints>
-                                            <state key="normal" image="upload-profile-photo"/>
+                                            <state key="normal" image="img-upload-photo"/>
                                             <connections>
                                                 <action selector="camera:" destination="-1" eventType="touchUpInside" id="f4d-yI-Pet"/>
                                             </connections>
@@ -209,9 +209,9 @@
         <image name="boy-2" width="105" height="105"/>
         <image name="girl-1" width="105" height="105"/>
         <image name="girl-2" width="105" height="105"/>
+        <image name="img-upload-photo" width="75" height="75"/>
         <image name="man-1" width="105" height="105"/>
         <image name="man-2" width="105" height="105"/>
-        <image name="upload-profile-photo" width="75" height="75"/>
         <image name="woman-1" width="105" height="105"/>
         <image name="woman-2" width="105" height="105"/>
     </resources>
