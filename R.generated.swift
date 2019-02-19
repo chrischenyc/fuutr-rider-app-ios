@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 73 images.
+  /// This `R.image` struct is generated, and contains static references to 74 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -183,6 +183,8 @@ struct R: Rswift.Validatable {
     static let socialInstagramDarkGray35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "social-instagram-dark-gray-35")
     /// Image `social-twitter-dark-gray-35`.
     static let socialTwitterDarkGray35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "social-twitter-dark-gray-35")
+    /// Image `upload-profile-photo`.
+    static let uploadProfilePhoto = Rswift.ImageResource(bundle: R.hostingBundle, name: "upload-profile-photo")
     /// Image `woman-1`.
     static let woman1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "woman-1")
     /// Image `woman-2`.
@@ -543,6 +545,11 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.socialTwitterDarkGray35, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "upload-profile-photo", bundle: ..., traitCollection: ...)`
+    static func uploadProfilePhoto(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.uploadProfilePhoto, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "woman-1", bundle: ..., traitCollection: ...)`
     static func woman1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.woman1, compatibleWith: traitCollection)
@@ -556,8 +563,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
+    /// Nib `AvatarSelectionView`.
+    static let avatarSelectionView = _R.nib._AvatarSelectionView()
     /// Nib `DialogViewController`.
     static let dialogViewController = _R.nib._DialogViewController()
     /// Nib `RidingView`.
@@ -568,6 +577,12 @@ struct R: Rswift.Validatable {
     static let vehicleInfoView = _R.nib._VehicleInfoView()
     /// Nib `VehicleReservedInfoView`.
     static let vehicleReservedInfoView = _R.nib._VehicleReservedInfoView()
+    
+    /// `UINib(name: "AvatarSelectionView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.avatarSelectionView) instead")
+    static func avatarSelectionView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.avatarSelectionView)
+    }
     
     /// `UINib(name: "DialogViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.dialogViewController) instead")
@@ -597,6 +612,10 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.vehicleReservedInfoView) instead")
     static func vehicleReservedInfoView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.vehicleReservedInfoView)
+    }
+    
+    static func avatarSelectionView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.avatarSelectionView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func dialogViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1295,10 +1314,36 @@ struct _R: Rswift.Validatable {
   
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _AvatarSelectionView.validate()
       try _RidingView.validate()
       try _UnlockInfoView.validate()
       try _VehicleInfoView.validate()
       try _VehicleReservedInfoView.validate()
+    }
+    
+    struct _AvatarSelectionView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AvatarSelectionView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "boy-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'boy-1' is used in nib 'AvatarSelectionView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "boy-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'boy-2' is used in nib 'AvatarSelectionView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "girl-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'girl-1' is used in nib 'AvatarSelectionView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "girl-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'girl-2' is used in nib 'AvatarSelectionView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "man-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'man-1' is used in nib 'AvatarSelectionView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "man-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'man-2' is used in nib 'AvatarSelectionView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "upload-profile-photo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'upload-profile-photo' is used in nib 'AvatarSelectionView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "woman-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'woman-1' is used in nib 'AvatarSelectionView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "woman-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'woman-2' is used in nib 'AvatarSelectionView', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
     }
     
     struct _DialogViewController: Rswift.NibResourceType {

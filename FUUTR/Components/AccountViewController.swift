@@ -20,6 +20,15 @@ class AccountViewController: UIViewController {
   @IBOutlet weak var emailButton: UIButton!
   @IBOutlet weak var phoneButton: UIButton!
   @IBOutlet weak var passwordButton: UIButton!
+  @IBOutlet weak var avatarSelectionView: AvatarSelectionView! {
+    didSet {
+      avatarSelectionView.onDismiss = {
+        self.toggleAvatarSelectionView(on: false)
+      }
+    }
+  }
+  @IBOutlet weak var avatarSelectionViewHeightContraint: NSLayoutConstraint!
+  @IBOutlet weak var avatarSelectionViewTopConstraint: NSLayoutConstraint!
   
   private var apiTask: URLSessionTask?
   private var user: User? {
@@ -50,6 +59,8 @@ class AccountViewController: UIViewController {
     avatarImageView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarImageView.frame.size.width/2)
     
     avatarEditButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarEditButton.frame.size.width/2)
+    
+    avatarSelectionViewHeightContraint.constant = view.bounds.size.height
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,6 +88,7 @@ class AccountViewController: UIViewController {
   
   @objc func cancelEditing() {
     toggleEditing(false)
+    toggleAvatarSelectionView(on: false)
   }
   
   @objc func startEditing() {
@@ -84,6 +96,8 @@ class AccountViewController: UIViewController {
   }
   
   @objc func saveEditing() {
+    toggleAvatarSelectionView(on: false)
+    
     var profile: JSON = [:]
     profile["displayName"] = nameTextField.text
     
@@ -107,6 +121,7 @@ class AccountViewController: UIViewController {
   }
   
   @IBAction func editAvatar(_ sender: Any) {
+    toggleAvatarSelectionView(on: true)
   }
   
   @IBAction func signOut() {
@@ -236,6 +251,18 @@ class AccountViewController: UIViewController {
       passwordButton.setTitleColor(UIColor.primaryRedColor, for: .normal)
       passwordButton.setTitle("+ Add a password", for: .normal)
       passwordButton.isEnabled = true
+    }
+  }
+  
+  private func toggleAvatarSelectionView(on: Bool) {
+    if on {
+      avatarSelectionViewTopConstraint.constant = avatarSelectionView.bounds.size.height
+    } else {
+      avatarSelectionViewTopConstraint.constant = 0
+    }
+    
+    UIView.animate(withDuration: 0.25) {
+      self.view.layoutIfNeeded()
     }
   }
 }
