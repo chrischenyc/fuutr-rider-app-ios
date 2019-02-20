@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IHKeyboardAvoiding
 
 class IssueFormViewController: UIViewController {
   
@@ -18,6 +19,7 @@ class IssueFormViewController: UIViewController {
   @IBOutlet weak var textView: UITextView!
   @IBOutlet weak var addPhotosButton: UIButton!
   @IBOutlet weak var submitButton: UIButton!
+  @IBOutlet weak var submitButtonContainerView: UIView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,8 +36,9 @@ class IssueFormViewController: UIViewController {
     addPhotosButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
   }
   
-  override func viewDidLayoutSubviews() {
-    textView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight])
+  override func viewDidAppear(_ animated: Bool) {
+    KeyboardAvoiding.avoidingView = submitButtonContainerView
+    textView.becomeFirstResponder()
   }
   
   @IBAction func onSubmit(_ sender: Any) {

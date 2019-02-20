@@ -174,33 +174,46 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Add Photos" image="ic-plus-red-16"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5f-Sp-lsD" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="50" y="591" width="275" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdN-Ha-qyg">
+                                <rect key="frame" x="50" y="591" width="275" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5f-Sp-lsD" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="RfB-Ct-qXL"/>
+                                            <constraint firstAttribute="width" constant="275" id="TDc-CI-i4I"/>
+                                        </constraints>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="onSubmit:" destination="fOr-I6-C5p" eventType="touchUpInside" id="HpK-oJ-aHZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="RfB-Ct-qXL"/>
-                                    <constraint firstAttribute="width" constant="275" id="TDc-CI-i4I"/>
+                                    <constraint firstItem="g5f-Sp-lsD" firstAttribute="leading" secondItem="wdN-Ha-qyg" secondAttribute="leading" id="Iyk-e3-fQN"/>
+                                    <constraint firstAttribute="trailing" secondItem="g5f-Sp-lsD" secondAttribute="trailing" id="KDw-yI-BD5"/>
+                                    <constraint firstAttribute="bottom" secondItem="g5f-Sp-lsD" secondAttribute="bottom" constant="32" id="P7L-Kr-3ij"/>
+                                    <constraint firstItem="g5f-Sp-lsD" firstAttribute="top" secondItem="wdN-Ha-qyg" secondAttribute="top" id="xEV-NQ-1BP"/>
                                 </constraints>
-                                <state key="normal" title="Send"/>
-                                <connections>
-                                    <action selector="onSubmit:" destination="fOr-I6-C5p" eventType="touchUpInside" id="HpK-oJ-aHZ"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SEl-II-AhM" firstAttribute="centerX" secondItem="GlR-dn-4w2" secondAttribute="centerX" id="K49-pP-5ia"/>
+                            <constraint firstItem="wdN-Ha-qyg" firstAttribute="centerX" secondItem="GlR-dn-4w2" secondAttribute="centerX" id="MEm-p4-4dN"/>
                             <constraint firstItem="nfc-h9-MZg" firstAttribute="leading" secondItem="oKW-xW-8Hd" secondAttribute="leading" constant="20" id="Me6-bm-7KC"/>
-                            <constraint firstItem="oKW-xW-8Hd" firstAttribute="bottom" secondItem="g5f-Sp-lsD" secondAttribute="bottom" constant="32" id="QAA-bQ-lV3"/>
                             <constraint firstItem="SEl-II-AhM" firstAttribute="top" secondItem="nfc-h9-MZg" secondAttribute="bottom" constant="40" id="VH5-Ma-AK4"/>
+                            <constraint firstItem="oKW-xW-8Hd" firstAttribute="bottom" secondItem="wdN-Ha-qyg" secondAttribute="bottom" id="YaB-zh-lM7"/>
                             <constraint firstItem="oKW-xW-8Hd" firstAttribute="trailing" secondItem="nfc-h9-MZg" secondAttribute="trailing" constant="20" id="eop-py-tJL"/>
                             <constraint firstItem="nfc-h9-MZg" firstAttribute="top" secondItem="oKW-xW-8Hd" secondAttribute="top" constant="20" id="kja-u3-Mwa"/>
-                            <constraint firstItem="g5f-Sp-lsD" firstAttribute="centerX" secondItem="GlR-dn-4w2" secondAttribute="centerX" id="tTG-gk-k5k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oKW-xW-8Hd"/>
                     </view>
                     <connections>
                         <outlet property="addPhotosButton" destination="SEl-II-AhM" id="3rH-Oy-0EL"/>
                         <outlet property="submitButton" destination="g5f-Sp-lsD" id="cyz-Pd-bfJ"/>
+                        <outlet property="submitButtonContainerView" destination="wdN-Ha-qyg" id="6w5-MB-pgc"/>
                         <outlet property="textView" destination="nfc-h9-MZg" id="4NS-Z9-nRa"/>
                         <segue destination="T5r-lC-k7a" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="GZv-d0-kXA"/>
                     </connections>
