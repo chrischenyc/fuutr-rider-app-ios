@@ -45,6 +45,10 @@ class HowToRideViewController: UIViewController {
     }
   }
   
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+  
   // MARK: - user actions
   @IBAction func nextTapped(_ sender: Any) {
     let currentPageIndex = pageControl.currentPage

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Parked Scooter Photo-->
+        <!--Photo Shoot View Controller-->
         <scene sceneID="eCn-Nv-i46">
             <objects>
-                <viewController id="Q8C-ax-Kal" customClass="RideParkedPhotoViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q8C-ax-Kal" customClass="PhotoShootViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="82h-Ur-4bR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhi-Qc-6zD" customClass="FTRedPrimaryButton" customModule="FUUTR" customModuleProvider="target">
                                                 <rect key="frame" x="147.5" y="0.0" width="131.5" height="44"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Send"/>
+                                                <state key="normal" title="Next"/>
                                                 <connections>
                                                     <action selector="sendTapped:" destination="Q8C-ax-Kal" eventType="touchUpInside" id="kTL-9S-j5u"/>
                                                 </connections>
@@ -102,7 +102,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b5Q-JL-iOy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Parked Scooter Photo" id="hUh-Vc-Qlk"/>
+                    <navigationItem key="navigationItem" id="hUh-Vc-Qlk"/>
                     <connections>
                         <outlet property="cameraView" destination="Tv0-gH-zS0" id="QIJ-xF-fKx"/>
                         <outlet property="previewImageView" destination="izv-tW-lx8" id="Cg8-hO-SxQ"/>

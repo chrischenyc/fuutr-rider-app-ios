@@ -83,9 +83,12 @@ class MainViewController: UIViewController {
     }
     
     if let navigationController = segue.destination as? UINavigationController,
-      let rideParkedPhotoViewController = navigationController.topViewController as? RideParkedPhotoViewController,
+      let photoShootViewController = navigationController.topViewController as? PhotoShootViewController,
       let ride = sender as? Ride {
-      rideParkedPhotoViewController.ride = ride
+      photoShootViewController.ride = ride
+      photoShootViewController.action = .scooterParked
+      photoShootViewController.submitButtonTitle = "Send"
+      photoShootViewController.title = "Parked Scooter Photo"
     }
     
     if let navigationController = segue.destination as? UINavigationController,
@@ -358,7 +361,7 @@ extension MainViewController {
           return
         }
         
-        self?.performSegue(withIdentifier: R.segue.mainViewController.showRideParkedPhoto, sender: ride)
+        self?.performSegue(withIdentifier: R.segue.mainViewController.showPhotoShoot, sender: ride)
         
         self?.stopTrackingRide()
       }

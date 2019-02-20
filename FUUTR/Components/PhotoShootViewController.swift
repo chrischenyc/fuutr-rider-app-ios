@@ -1,5 +1,5 @@
 //
-//  RideParkedPhotoViewController.swift
+//  PhotoShootViewController.swift
 //  FUUTR
 //
 //  Created by Chris Chen on 27/1/19.
@@ -9,7 +9,11 @@
 import UIKit
 import FastttCamera
 
-class RideParkedPhotoViewController: UIViewController {
+enum PhotoShootViewControllerAction {
+  case scooterParked, userAvatar, reportIssue
+}
+
+class PhotoShootViewController: UIViewController {
   
   @IBOutlet weak var cameraView: UIView!
   @IBOutlet weak var previewImageView: UIImageView!
@@ -22,6 +26,9 @@ class RideParkedPhotoViewController: UIViewController {
   let fastCamera = FastttCamera()
   var ride: Ride!
   var photo: UIImage?
+  var submitButtonTitle: String = "Next"
+  var action: PhotoShootViewControllerAction?
+  var enableFrontCamera: Bool = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,6 +46,7 @@ class RideParkedPhotoViewController: UIViewController {
     shootView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
     sendView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
     shootButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: shootButton.frame.size.width/2)
+    sendButton.setTitle(submitButtonTitle, for: .normal)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,10 +67,6 @@ class RideParkedPhotoViewController: UIViewController {
     
     // bypass camera setup on Simulator
     if !Platform.isSimulator {
-      guard checkScanPermissions(actionAfterFailure: { [weak self] in
-        self?.performSegue(withIdentifier: R.segue.rideParkedPhotoViewController.showRideSummary, sender: self?.ride)
-      }) else { return }
-      
       fastttAddChildViewController(fastCamera)
       fastCamera.view.frame = self.cameraView.frame
     }
@@ -99,14 +103,24 @@ class RideParkedPhotoViewController: UIViewController {
   
   
   @IBAction func sendTapped(_ sender: Any) {
-    // TODO: invoke send photo API
-    
-    performSegue(withIdentifier: R.segue.rideParkedPhotoViewController.showRideSummary, sender: ride)
+    if let action = action {
+      switch action {
+      case .scooterParked:
+        // TODO: invoke send photo API
+        performSegue(withIdentifier: R.segue.photoShootViewController.showRideSummary, sender: ride)
+      case .userAvatar:
+        // TODO: rewind to account view controller
+        break
+      case .reportIssue:
+        // TODO: rewind to issue form view controller
+        break
+      }
+    }
   }
   
 }
 
-extension RideParkedPhotoViewController: FastttCameraDelegate {
+extension PhotoShootViewController: FastttCameraDelegate {
   func cameraController(_ cameraController: FastttCameraInterface!, didFinishNormalizing capturedImage: FastttCapturedImage!) {
     self.photo = capturedImage.scaledImage
     self.previewImageView.image = self.photo

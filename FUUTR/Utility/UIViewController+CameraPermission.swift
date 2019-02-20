@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 
 extension UIViewController {
-  func checkScanPermissions(actionAfterFailure: (()->Void)? = nil) -> Bool {
+  func checkCameraPermissions(actionAfterFailure: (()->Void)? = nil) -> Bool {
     do {
       return try supportsMetadataObjectTypes()
     } catch let error as NSError {

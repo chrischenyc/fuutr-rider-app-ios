@@ -49,7 +49,7 @@ class ScanUnlockViewController: UnlockViewController {
   
   
   override func viewDidAppear(_ animated: Bool) {
-    guard checkScanPermissions() else { return }
+    guard checkCameraPermissions() else { return }
     
     scanner.startScan()
   }
@@ -58,6 +58,10 @@ class ScanUnlockViewController: UnlockViewController {
     super.prepare(for: segue, sender: sender)
     
     scanner.stopScan()
+  }
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
   }
   
   // MARK: - user actions
