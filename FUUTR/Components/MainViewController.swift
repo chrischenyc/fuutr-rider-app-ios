@@ -104,6 +104,11 @@ class MainViewController: UIViewController {
     }
   }
   
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return Date().isDaylight() ? .default : .lightContent
+  }
+  
+  // MARK: - notification handling
   @objc func applicationDidBecomeActive(_ notification: NSNotification) {
     // refresh for user's latest location
     let authorizationStatus = CLLocationManager.authorizationStatus()
@@ -829,7 +834,9 @@ extension MainViewController: CLLocationManagerDelegate {
     guard let location = locations.first else { return }
     
     currentLocation = location
-    mapView.applyTheme()
+    
+    mapView.applyTheme()  // to apply dark mode if needed
+    setNeedsStatusBarAppearanceUpdate() // to apply light content style if needed
     
     // once GPS signal is settled, check if there's an ongoing ride
     if ongoingRide == nil && !didLoadOngoingRide {

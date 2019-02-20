@@ -261,11 +261,11 @@
     </scenes>
     <resources>
         <image name="ic-close-dark-gray-16" width="16" height="16"/>
-        <image name="ic-torch-on-white" width="42" height="42"/>
+        <image name="ic-torch-on-white" width="46" height="45"/>
         <image name="img-scooter-enter-code" width="88" height="97"/>
         <image name="img-scooter-qr-code" width="88" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ATb-Hm-e4O"/>
+        <segue reference="6B1-0f-oty"/>
     </inferredMetricsTieBreakers>
 </document>

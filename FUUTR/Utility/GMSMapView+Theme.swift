@@ -13,26 +13,12 @@ import EDSunriseSet
 extension GMSMapView {
   func applyTheme() {
     do {
-      var themeJSON = "GoogleMapStyle"
-      
-      if let currentLocation = currentLocation,
-        let sunInfo = EDSunriseSet.sunriseset(withTimezone: TimeZone.current, latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude) {
-        let now = Date()
-        sunInfo.calculateSunriseSunset(now)
-        
-        if let sunrise = sunInfo.sunrise,
-          let sunset = sunInfo.sunset,
-          let halfHourAfterSunrise = Calendar.current.date(byAdding: .minute, value: 30, to: sunrise),
-          let halfHourBeforeSunset = Calendar.current.date(byAdding: .minute, value: -30, to: sunset),
-          now <=  halfHourAfterSunrise || now >= halfHourBeforeSunset {
-          themeJSON = "GoogleMapStyle.night"
-        }
-      }
+      let themeJSON = Date().isDaylight() ? "GoogleMapStyle" : "GoogleMapStyle.night"
       
       if let styleURL = Bundle.main.url(forResource: themeJSON, withExtension: "json") {
         mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
       } else {
-        logger.error("Unable to find style.json")
+        logger.error("Unable to find \(themeJSON)")
       }
     }
     catch {

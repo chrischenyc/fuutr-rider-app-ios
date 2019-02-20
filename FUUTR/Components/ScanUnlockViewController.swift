@@ -60,10 +60,6 @@ class ScanUnlockViewController: UnlockViewController {
     scanner.stopScan()
   }
   
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    return .lightContent
-  }
-  
   // MARK: - user actions
   @IBAction func unwindToScanUnlock(_ segue: UIStoryboardSegue) {
   }

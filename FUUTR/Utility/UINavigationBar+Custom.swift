@@ -35,5 +35,7 @@ extension UINavigationBar {
     setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
     
     shadowImage = UIImage()
+    
+    barStyle = .black
   }
 }
