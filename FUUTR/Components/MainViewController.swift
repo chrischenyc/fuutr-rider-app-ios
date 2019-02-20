@@ -245,7 +245,10 @@ extension MainViewController {
     
     // zoom in map during ride
     if let currentLocation = currentLocation {
-      let camera = GMSCameraPosition.camera(withTarget: currentLocation.coordinate, zoom: ridingZoomLevel)
+      let camera = GMSCameraPosition.camera(withTarget: currentLocation.coordinate,
+                                            zoom: ridingZoomLevel,
+                                            bearing: ridingDirection,
+                                            viewingAngle: ridingViewingAngle)
       mapView.animate(to: camera)
     }
   }
@@ -826,6 +829,8 @@ extension MainViewController: CLLocationManagerDelegate {
   }
   
   func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+    guard ongoingRide != nil else { return }
+    
     ridingDirection = newHeading.magneticHeading
     mapView.animate(toBearing: ridingDirection)
   }
@@ -833,10 +838,16 @@ extension MainViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     guard let location = locations.first else { return }
     
-    currentLocation = location
+    // center map only after user location is acquired for the first time
+    if currentLocation == nil {
+      let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
+      mapView.animate(to: camera)
+    }
     
-    mapView.applyTheme()  // to apply dark mode if needed
-    setNeedsStatusBarAppearanceUpdate() // to apply light content style if needed
+    // update global var currentLocation, and refresh dark/light modes of map view and status bar
+    currentLocation = location
+    mapView.applyTheme()
+    setNeedsStatusBarAppearanceUpdate()
     
     // once GPS signal is settled, check if there's an ongoing ride
     if ongoingRide == nil && !didLoadOngoingRide {
@@ -856,12 +867,6 @@ extension MainViewController: CLLocationManagerDelegate {
         currentPath.add(location.coordinate)
         drawRoute(forPath: currentPath)
       }
-    }
-    
-    // center user once the location is captured for the first time
-    if currentLocation == nil {
-      let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
-      mapView.animate(to: camera)
     }
   }
   
