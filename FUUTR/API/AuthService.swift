@@ -283,5 +283,9 @@ extension AuthService {
     Defaults[.accessToken] = result["accessToken"] as? String
     Defaults[.refreshToken] = result["refreshToken"] as? String
     Defaults[.userSignedIn] = true
+    
+    // reset current location so the map will be re-centred once user brings back the app
+    currentLocation = nil
+
   }
 }

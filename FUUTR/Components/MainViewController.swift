@@ -99,6 +99,9 @@ class MainViewController: UIViewController {
     // refresh for user's latest location
     let authorizationStatus = CLLocationManager.authorizationStatus()
     if authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse {
+      // reset current location so the map will be re-centred once user brings back the app
+      currentLocation = nil
+      
       locationManager.startUpdatingLocation()
       
       if ongoingRide != nil {
@@ -666,11 +669,6 @@ extension MainViewController {
     renderer.delegate = self
     clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
     clusterManager.setDelegate(self, mapDelegate: self)
-    
-    if let location = currentLocation {
-      let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
-      mapView.animate(to: camera)
-    }
   }
   
   private func addMapPolygonsFor(_ zones: [Zone]) {
@@ -809,11 +807,6 @@ extension MainViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     guard let location = locations.first else { return }
     
-    // center user once the location is captured for the first time
-    if currentLocation == nil {
-      let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
-      mapView.animate(to: camera)
-    }
     currentLocation = location
     mapView.applyTheme()
     
@@ -835,6 +828,12 @@ extension MainViewController: CLLocationManagerDelegate {
         currentPath.add(location.coordinate)
         drawRoute(forPath: currentPath)
       }
+    }
+    
+    // center user once the location is captured for the first time
+    if currentLocation == nil {
+      let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
+      mapView.animate(to: camera)
     }
   }
   
