@@ -31,6 +31,10 @@ class AccountViewController: UIViewController {
         self.avatarChanged = true
         self.toggleAvatarSelectionView(on: false)
       }
+      
+      avatarSelectionView.onCamera = {
+        self.performSegue(withIdentifier: R.segue.accountViewController.showPhotoShoot, sender: nil)
+      }
     }
   }
   @IBOutlet weak var avatarSelectionViewHeightContraint: NSLayoutConstraint!
@@ -81,12 +85,28 @@ class AccountViewController: UIViewController {
       let hasPassword = user?.hasPassword {
       updatePasswordViewController.hasPassword = hasPassword
     }
+    
+    else if let navigationController = segue.destination as? UINavigationController,
+      let photoShootViewController = navigationController.topViewController as? PhotoShootViewController {
+      photoShootViewController.action = .userAvatar
+      photoShootViewController.title = "Account Avatar Photo"
+    }
   }
   
   // MARK: - user actions
   
   @IBAction func unwindToSettings(_ unwindSegue: UIStoryboardSegue) {
-    loadProfile()
+    let sourceViewController = unwindSegue.source
+    
+    if let photoShootViewController = sourceViewController as? PhotoShootViewController,
+      let photo = photoShootViewController.photo {
+      self.avatarImageView.image = photo
+      self.avatarChanged = true
+      self.toggleAvatarSelectionView(on: false)
+    }
+    else {
+      loadProfile()
+    }
   }
   
   @objc func unwindToHome() {

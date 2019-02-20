@@ -17,9 +17,11 @@ class IssueFormViewController: UIViewController {
   private var apiTask: URLSessionTask?
   
   @IBOutlet weak var textView: UITextView!
-  @IBOutlet weak var addPhotosButton: UIButton!
+  @IBOutlet weak var addPhotoButton: UIButton!
   @IBOutlet weak var submitButton: UIButton!
   @IBOutlet weak var submitButtonContainerView: UIView!
+  @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var imageStackView: UIStackView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,12 +35,37 @@ class IssueFormViewController: UIViewController {
     textView.textColor = UIColor.primaryDarkColor
     textView.delegate = self
     
-    addPhotosButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+    addPhotoButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
   }
   
   override func viewDidAppear(_ animated: Bool) {
     KeyboardAvoiding.avoidingView = submitButtonContainerView
     textView.becomeFirstResponder()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let navigationController = segue.destination as? UINavigationController,
+      let photoShootViewController = navigationController.topViewController as? PhotoShootViewController {
+      photoShootViewController.action = .reportIssue
+      photoShootViewController.title = "Photo about the issue"
+    }
+  }
+  
+  @IBAction func unwindToReportIssue(_ unwindSegue: UIStoryboardSegue) {
+    let sourceViewController = unwindSegue.source
+    
+    if let photoShootViewController = sourceViewController as? PhotoShootViewController,
+      let photo = photoShootViewController.photo {
+      imageView.image = photo
+      imageStackView.isHidden = false
+      addPhotoButton.isHidden = true
+    }
+  }
+  
+  @IBAction func deletePhoto(_ sender: Any) {
+    imageView.image = nil
+    imageStackView.isHidden = true
+    addPhotoButton.isHidden = false
   }
   
   @IBAction func onSubmit(_ sender: Any) {

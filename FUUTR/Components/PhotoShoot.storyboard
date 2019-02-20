@@ -111,20 +111,15 @@
                         <outlet property="shootButton" destination="Abw-pg-pT3" id="MYP-yc-Qhs"/>
                         <outlet property="shootView" destination="TO2-86-6cz" id="sr4-qM-xgs"/>
                         <outlet property="takeAnotherButton" destination="kIO-M1-ZPE" id="C6Z-oF-fU2"/>
-                        <segue destination="u8T-pP-OQq" kind="showDetail" identifier="showRideSummary" id="XxQ-Sf-awC"/>
+                        <segue destination="Y1x-FV-WVs" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="FUUTR" customModuleProvider="target" unwindAction="unwindToHome:" id="DUQ-Kw-Od1"/>
+                        <segue destination="Y1x-FV-WVs" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettings:" id="ak4-Xq-EXv"/>
+                        <segue destination="Y1x-FV-WVs" kind="unwind" identifier="unwindToReportIssue" unwindAction="unwindToReportIssue:" id="dvF-GH-R8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04p-aB-c9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Y1x-FV-WVs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="671.20000000000005" y="166.8665667166417"/>
-        </scene>
-        <!--RideFinished-->
-        <scene sceneID="BRL-9g-hF4">
-            <objects>
-                <viewControllerPlaceholder storyboardName="RideFinished" id="u8T-pP-OQq" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fb6-86-k2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1371.2" y="165.51724137931035"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hJF-JG-Ao9">

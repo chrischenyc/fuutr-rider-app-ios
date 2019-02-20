@@ -82,6 +82,14 @@
             </objects>
             <point key="canvasLocation" x="-2040" y="1807"/>
         </scene>
+        <!--RideFinished-->
+        <scene sceneID="c1d-jl-5vz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RideFinished" id="44S-Rt-EzA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQx-uJ-rz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2004" y="1875"/>
+        </scene>
         <!--Unlock-->
         <scene sceneID="lBZ-i9-OXa">
             <objects>
@@ -187,6 +195,7 @@
                         <segue destination="F6b-Fa-nWT" kind="presentation" identifier="showUnlock" id="HOx-pw-uNG"/>
                         <segue destination="FGs-8F-TV0" kind="presentation" identifier="showHowToRide" id="dw5-Yc-TVD"/>
                         <segue destination="ppe-bv-DTM" kind="presentation" identifier="showRidePaused" id="WgS-vD-LeP"/>
+                        <segue destination="44S-Rt-EzA" kind="presentation" identifier="showRideFinished" id="NXR-Bv-fSJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

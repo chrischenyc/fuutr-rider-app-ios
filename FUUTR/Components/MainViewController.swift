@@ -48,6 +48,8 @@ class MainViewController: UIViewController {
     }
   }
   
+  var finishedRide: Ride?
+  
   var ridingDirection: CLLocationDirection = 0 // up north
   
   // ---------- IBOutlet ----------
@@ -82,16 +84,20 @@ class MainViewController: UIViewController {
       ridePausedViewController.ride = ride
     }
     
-    if let navigationController = segue.destination as? UINavigationController,
-      let photoShootViewController = navigationController.topViewController as? PhotoShootViewController,
-      let ride = sender as? Ride {
-      photoShootViewController.ride = ride
+    else if let navigationController = segue.destination as? UINavigationController,
+      let photoShootViewController = navigationController.topViewController as? PhotoShootViewController {
       photoShootViewController.action = .scooterParked
       photoShootViewController.submitButtonTitle = "Send"
       photoShootViewController.title = "Parked Scooter Photo"
     }
     
-    if let navigationController = segue.destination as? UINavigationController,
+    else if let navigationController = segue.destination as? UINavigationController,
+      let rideFinishedViewController = navigationController.topViewController as? RideFinishedViewController,
+      let ride = sender as? Ride {
+      rideFinishedViewController.ride = ride
+    }
+    
+    else if let navigationController = segue.destination as? UINavigationController,
       let rideFinishedViewController = navigationController.topViewController as? RideFinishedViewController,
       let ride = sender as? Ride {
       rideFinishedViewController.ride = ride
@@ -178,6 +184,18 @@ class MainViewController: UIViewController {
         }
       }
       
+    }
+    
+    else if let photoShootViewController = sourceViewController as? PhotoShootViewController,
+      let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
+      
+      if let photo = photoShootViewController.photo {
+        // TODO: send parked photo to finished ride
+      }
+      
+      unwindSegueWithCompletion.completion = {
+        self.performSegue(withIdentifier: R.segue.mainViewController.showRideFinished, sender: self.finishedRide)
+      }
     }
     
   }
@@ -361,9 +379,9 @@ extension MainViewController {
           return
         }
         
-        self?.performSegue(withIdentifier: R.segue.mainViewController.showPhotoShoot, sender: ride)
-        
+        self?.performSegue(withIdentifier: R.segue.mainViewController.showPhotoShoot, sender: nil)
         self?.stopTrackingRide()
+        self?.finishedRide = ride
       }
     })
   }

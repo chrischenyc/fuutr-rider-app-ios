@@ -24,7 +24,6 @@ class PhotoShootViewController: UIViewController {
   @IBOutlet weak var sendButton: UIButton!
   
   let fastCamera = FastttCamera()
-  var ride: Ride!
   var photo: UIImage?
   var submitButtonTitle: String = "Next"
   var action: PhotoShootViewControllerAction?
@@ -47,14 +46,6 @@ class PhotoShootViewController: UIViewController {
     sendView.layoutCornerRadiusMask(corners: [.topRight, .topLeft])
     shootButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: shootButton.frame.size.width/2)
     sendButton.setTitle(submitButtonTitle, for: .normal)
-  }
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let navigationController = segue.destination as? UINavigationController,
-      let rideFinishedViewController = navigationController.topViewController as? RideFinishedViewController,
-      let ride = sender as? Ride {
-      rideFinishedViewController.ride = ride
-    }
   }
   
   private func setupUI() {
@@ -103,17 +94,16 @@ class PhotoShootViewController: UIViewController {
   
   
   @IBAction func sendTapped(_ sender: Any) {
+    guard let photo = photo else { return }
+    
     if let action = action {
       switch action {
       case .scooterParked:
-        // TODO: invoke send photo API
-        performSegue(withIdentifier: R.segue.photoShootViewController.showRideSummary, sender: ride)
+        performSegue(withIdentifier: R.segue.photoShootViewController.unwindToHome, sender: photo)
       case .userAvatar:
-        // TODO: rewind to account view controller
-        break
+        performSegue(withIdentifier: R.segue.photoShootViewController.unwindToSettings, sender: photo)
       case .reportIssue:
-        // TODO: rewind to issue form view controller
-        break
+        performSegue(withIdentifier: R.segue.photoShootViewController.unwindToReportIssue, sender: photo)
       }
     }
   }
