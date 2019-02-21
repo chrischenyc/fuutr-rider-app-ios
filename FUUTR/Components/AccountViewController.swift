@@ -243,13 +243,7 @@ class AccountViewController: UIViewController {
   
   private func populateUserProfile(_ user: User, editing: Bool) {
     if let photo = user.photo, let avatarURL = URL(string: photo) {
-      let size = avatarImageView.bounds.size.width
-      
-      avatarImageView.kf.setImage(with: avatarURL, options: [
-        .processor(DownsamplingImageProcessor(size: CGSize(width: size, height: size))),
-        .processor(RoundCornerImageProcessor(cornerRadius: size)),
-        .scaleFactor(UIScreen.main.scale),
-        .cacheSerializer(FormatIndicatedCacheSerializer.png)])
+      avatarImageView.kf.setImage(with: avatarURL)
     }
     
     if let displayName = user.displayName, displayName.count > 0 {

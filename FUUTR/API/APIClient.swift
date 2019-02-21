@@ -74,7 +74,8 @@ final class APIClient {
       requestData.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
       requestData.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
       requestData.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
-      requestData.append(image.jpegData(compressionQuality: 1.0)!)
+      // requestData.append(image.jpegData(compressionQuality: 1.0)!)
+      requestData.append(image.jpegDataWithSizeLimit(config.env.maxUploadSize)!)
       
       // End the raw http request data, note that there is 2 extra dash ("-") at the end, this is to indicate the end of the data
       // According to the HTTP 1.1 specification https://tools.ietf.org/html/rfc7230

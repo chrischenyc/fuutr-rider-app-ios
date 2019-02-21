@@ -77,7 +77,7 @@ class PhotoShootViewController: UIViewController {
   @IBAction func shootTapped(_ sender: Any) {
     // on Simulator, skip to next
     if Platform.isSimulator {
-      self.photo = R.image.howToRide1()
+      self.photo = R.image.launch()
       self.previewImageView.image = self.photo
       switchToPreview()
       

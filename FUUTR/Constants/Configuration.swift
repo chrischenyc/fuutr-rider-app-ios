@@ -71,4 +71,8 @@ enum Environment: String {
   var contactURL: String {
     return "https://www.fuutr.co/contact"
   }
+  
+  var maxUploadSize: Int {
+    return 1
+  }
 }

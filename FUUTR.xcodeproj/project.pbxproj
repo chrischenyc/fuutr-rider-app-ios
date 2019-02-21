@@ -110,6 +110,9 @@
 		6B4F87CE221D5D520045425A /* Date+Daylight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F87CD221D5D520045425A /* Date+Daylight.swift */; };
 		6B4F87CF221D5D520045425A /* Date+Daylight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F87CD221D5D520045425A /* Date+Daylight.swift */; };
 		6B4F87D0221D5D520045425A /* Date+Daylight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F87CD221D5D520045425A /* Date+Daylight.swift */; };
+		6B4F87D6221EA7850045425A /* UIImage+Compress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F87D5221EA7850045425A /* UIImage+Compress.swift */; };
+		6B4F87D7221EA7850045425A /* UIImage+Compress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F87D5221EA7850045425A /* UIImage+Compress.swift */; };
+		6B4F87D8221EA7850045425A /* UIImage+Compress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4F87D5221EA7850045425A /* UIImage+Compress.swift */; };
 		6B556FAB219ED63C00FA3238 /* TimeInterval+hhmmss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */; };
 		6B556FAC219ED63C00FA3238 /* TimeInterval+hhmmss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */; };
 		6B556FAD219ED63C00FA3238 /* TimeInterval+hhmmss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */; };
@@ -533,6 +536,7 @@
 		6B473DB32202F3FF003FE160 /* GoogleMapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsService.swift; sourceTree = "<group>"; };
 		6B473DB72202F80A003FE160 /* GMSMapView+WalkingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+WalkingRoute.swift"; sourceTree = "<group>"; };
 		6B4F87CD221D5D520045425A /* Date+Daylight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Daylight.swift"; sourceTree = "<group>"; };
+		6B4F87D5221EA7850045425A /* UIImage+Compress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Compress.swift"; sourceTree = "<group>"; };
 		6B556FAA219ED63C00FA3238 /* TimeInterval+hhmmss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+hhmmss.swift"; sourceTree = "<group>"; };
 		6B6C6AE62197CE3300D956DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6B720FEC220AD96A0081BCF1 /* FTRedBasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTRedBasicButton.swift; sourceTree = "<group>"; };
@@ -974,6 +978,7 @@
 				6BDEEF03220BAD3B00C0FBB8 /* UINavigationBar+Custom.swift */,
 				6BFEA0952213F05200DDB398 /* CLLocationCoordinate2D+MiddlePoint.swift */,
 				6B4F87CD221D5D520045425A /* Date+Daylight.swift */,
+				6B4F87D5221EA7850045425A /* UIImage+Compress.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -2067,6 +2072,7 @@
 				6BD4728C219A4CAA00D36C3E /* GMUPair.m in Sources */,
 				6BDE912D218C19DF003F976B /* UnlockViewController.swift in Sources */,
 				6BD47292219A4CAA00D36C3E /* GMUGeoJSONParser.m in Sources */,
+				6B4F87D8221EA7850045425A /* UIImage+Compress.swift in Sources */,
 				6BD47274219A4CAA00D36C3E /* GMUGeometryCollection.m in Sources */,
 				6BDE9163218C833E003F976B /* Aliases.swift in Sources */,
 				6BDEEFD0220E7D0E00C0FBB8 /* FTLightLabel.swift in Sources */,
@@ -2205,6 +2211,7 @@
 				6BD4728A219A4CAA00D36C3E /* GMUPair.m in Sources */,
 				6B873201218AA9F400CC2651 /* UnlockViewController.swift in Sources */,
 				6BD47290219A4CAA00D36C3E /* GMUGeoJSONParser.m in Sources */,
+				6B4F87D6221EA7850045425A /* UIImage+Compress.swift in Sources */,
 				6BD47272219A4CAA00D36C3E /* GMUGeometryCollection.m in Sources */,
 				6BDE9161218C833E003F976B /* Aliases.swift in Sources */,
 				6BDEEFCE220E7D0E00C0FBB8 /* FTLightLabel.swift in Sources */,
@@ -2343,6 +2350,7 @@
 				6BD4728B219A4CAA00D36C3E /* GMUPair.m in Sources */,
 				6B873202218AA9F400CC2651 /* UnlockViewController.swift in Sources */,
 				6BD47291219A4CAA00D36C3E /* GMUGeoJSONParser.m in Sources */,
+				6B4F87D7221EA7850045425A /* UIImage+Compress.swift in Sources */,
 				6BD47273219A4CAA00D36C3E /* GMUGeometryCollection.m in Sources */,
 				6BDE9162218C833E003F976B /* Aliases.swift in Sources */,
 				6BDEEFCF220E7D0E00C0FBB8 /* FTLightLabel.swift in Sources */,

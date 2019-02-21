@@ -527,6 +527,7 @@ extension MainViewController {
 // MARK: - UI
 extension MainViewController {
   override func viewDidLayoutSubviews() {
+    sideMenuButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: sideMenuButton.frame.size.width/2)
     unlockInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
     vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
@@ -534,6 +535,8 @@ extension MainViewController {
   }
   
   private func setupUI() {
+    sideMenuButton.imageView?.contentMode = .scaleAspectFill
+    
     updateUnlockInfoViewContent()
     
     unlockInfoView.onFindMe = { [weak self] in
@@ -690,16 +693,7 @@ extension MainViewController {
   @objc func updateMenuIcon() {
     DispatchQueue.main.async {
       if let user = currentUser, let photo = user.photo, let avatarURL = URL(string: photo) {
-        let size = self.sideMenuButton.bounds.size.width
-        
-        self.sideMenuButton.kf.setImage(with: avatarURL,
-                                        for: .normal,
-                                        placeholder: nil,
-                                        options: [
-                                          .processor(DownsamplingImageProcessor(size: CGSize(width: size, height: size))),
-                                          .processor(RoundCornerImageProcessor(cornerRadius: size)),
-                                          .scaleFactor(UIScreen.main.scale),
-                                          .cacheSerializer(FormatIndicatedCacheSerializer.png)])
+        self.sideMenuButton.kf.setImage(with: avatarURL, for: .normal)
       }
     }
   }
