@@ -53,7 +53,7 @@ class RideFinishedViewController: UIViewController {
   
   @IBAction func continueButtonTapped(_ sender: Any) {
     if let ride = ride, let id = ride.id {
-      _ = RideService.rate(id: id, rating: rating, completion: {
+      _ = RideService.rate(rideId: id, rating: rating, completion: {
         error in
         
         if error != nil {

@@ -69,12 +69,12 @@ final class RideService {
     })
   }
   
-  static func rate(id: String, rating: Int, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+  static func rate(rideId: String, rating: Int, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
     let params: JSON = [
       "rating": rating,
       ]
     
-    return APIClient.shared.load(path: "/rides/\(id)/rate",
+    return APIClient.shared.load(path: "/rides/\(rideId)/rate",
       method: .post,
       params: params,
       completion: { (result, error) in
