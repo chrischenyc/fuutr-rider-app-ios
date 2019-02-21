@@ -82,6 +82,7 @@ class IssueFormViewController: UIViewController {
                                        coordinates: currentLocation.coordinate,
                                        vehicle: vehicle,
                                        ride: ride,
+                                       image: imageView.image,
                                        completion: { [weak self] (error) in
                                         
                                         DispatchQueue.main.async {

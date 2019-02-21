@@ -14,6 +14,7 @@ final class IssueService {
                           coordinates: CLLocationCoordinate2D,
                           vehicle: Vehicle? = nil,
                           ride: Ride? = nil,
+                          image: UIImage? = nil,
                           completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
     
     var params: JSON = [
@@ -31,7 +32,7 @@ final class IssueService {
       params["ride"] = rideId
     }
     
-    return APIClient.shared.load(path: "/issues", method: .post, params: params, completion: { (result, error) in
+    return APIClient.shared.load(path: "/issues", method: .post, params: params, image: image, completion: { (result, error) in
       completion(error)
       
     })
