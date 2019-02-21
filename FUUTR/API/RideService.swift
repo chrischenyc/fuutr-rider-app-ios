@@ -69,6 +69,16 @@ final class RideService {
     })
   }
   
+  static func parkedPhoto(rideId: String, image: UIImage, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+    return APIClient.shared.load(path: "/rides/\(rideId)/parked",
+      method: .post,
+      params: nil,
+      image: image,
+      completion: { (result, error) in
+        completion(error)
+    })
+  }
+  
   static func rate(rideId: String, rating: Int, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
     let params: JSON = [
       "rating": rating,

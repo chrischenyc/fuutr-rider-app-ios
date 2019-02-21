@@ -197,12 +197,19 @@ class MainViewController: UIViewController {
     else if let photoShootViewController = sourceViewController as? PhotoShootViewController,
       let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
       
+      guard let finishedRide = self.finishedRide else { return }
+      guard let id = finishedRide.id else { return }
+      
       if let photo = photoShootViewController.photo {
-        // TODO: send parked photo to finished ride
+        _ = RideService.parkedPhoto(rideId: id, image: photo) { (error) in
+          if error != nil {
+            logger.error("cannot send parked photo \(error!.localizedDescription)")
+          }
+        }
       }
       
       unwindSegueWithCompletion.completion = {
-        self.performSegue(withIdentifier: R.segue.mainViewController.showRideFinished, sender: self.finishedRide)
+        self.performSegue(withIdentifier: R.segue.mainViewController.showRideFinished, sender: finishedRide)
       }
     }
     
