@@ -111,6 +111,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
   - IHKeyboardAvoiding (4.6)
+  - Kingfisher (5.1.1)
   - libPhoneNumber-iOS (0.9.13)
   - MZAppearance (1.1.6)
   - MZFormSheetPresentationController (2.4.3):
@@ -155,6 +156,7 @@ DEPENDENCIES:
   - FlagPhoneNumber
   - GoogleMaps
   - IHKeyboardAvoiding
+  - Kingfisher
   - MZFormSheetPresentationController
   - ObjectMapper
   - PinCodeView
@@ -193,6 +195,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - IHKeyboardAvoiding
+    - Kingfisher
     - libPhoneNumber-iOS
     - MZAppearance
     - MZFormSheetPresentationController
@@ -236,6 +239,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   IHKeyboardAvoiding: 2a664fdb5f964359fa7ec8fc5c9aebb447583ff8
+  Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
   libPhoneNumber-iOS: e444379ac18bbfbdefad571da735b2cd7e096caa
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetPresentationController: fbfdbad31884f16fac17fbe3c44c168306cc1095
@@ -254,6 +258,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 22cf97bdf94e7707e4010251f6c554edff676d3a
+PODFILE CHECKSUM: 94da4eac6b709f7f9f35b8a71c1b662d28185e3f
 
 COCOAPODS: 1.6.0

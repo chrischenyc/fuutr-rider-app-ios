@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 // arrange enums according to the order of static cells in SideMenu.storyboard
 enum SideMenuItem: Int {
@@ -32,6 +33,10 @@ class SideMenuViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    if let photo = currentUser?.photo, let avatarURL = URL(string: photo) {
+      avatarImageView.kf.setImage(with: avatarURL)
+    }
     
     greetingBackdropView.backgroundColor = UIColor.primaryRedColor
     if let displayName = currentUser?.displayName, displayName.count > 0 {

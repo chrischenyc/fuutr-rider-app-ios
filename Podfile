@@ -33,6 +33,7 @@ abstract_target 'Project' do
   
   # Networking
   pod 'ReachabilitySwift'
+  pod 'Kingfisher'
   
   # helpers
   pod 'SwiftyUserDefaults', '4.0.0-alpha.1'

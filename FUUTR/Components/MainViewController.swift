@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Kingfisher
 
 class MainViewController: UIViewController {
   
@@ -83,20 +84,20 @@ class MainViewController: UIViewController {
       let ride = sender as? Ride {
       ridePausedViewController.ride = ride
     }
-    
+      
     else if let navigationController = segue.destination as? UINavigationController,
       let photoShootViewController = navigationController.topViewController as? PhotoShootViewController {
       photoShootViewController.action = .scooterParked
       photoShootViewController.submitButtonTitle = "Send"
       photoShootViewController.title = "Parked Scooter Photo"
     }
-    
+      
     else if let navigationController = segue.destination as? UINavigationController,
       let rideFinishedViewController = navigationController.topViewController as? RideFinishedViewController,
       let ride = sender as? Ride {
       rideFinishedViewController.ride = ride
     }
-    
+      
     else if let navigationController = segue.destination as? UINavigationController,
       let rideFinishedViewController = navigationController.topViewController as? RideFinishedViewController,
       let ride = sender as? Ride {
@@ -190,7 +191,7 @@ class MainViewController: UIViewController {
       }
       
     }
-    
+      
     else if let photoShootViewController = sourceViewController as? PhotoShootViewController,
       let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
       
@@ -508,6 +509,20 @@ extension MainViewController {
       guard error == nil else {
         logger.error("Couldn't get user profile: \(error!.localizedDescription)")
         return
+      }
+      
+      DispatchQueue.main.async {
+        if let user = user, let photo = user.photo, let avatarURL = URL(string: photo) {
+          let size = self.sideMenuButton.bounds.size.width
+          
+          self.sideMenuButton.kf.setImage(with: avatarURL,
+                                          for: .normal,
+                                          placeholder: nil,
+                                          options: [
+                                            .processor(DownsamplingImageProcessor(size: CGSize(width: size, height: size))),
+                                            .processor(RoundCornerImageProcessor(cornerRadius: size)),
+                                            .scaleFactor(UIScreen.main.scale)])
+        }
       }
     })
   }

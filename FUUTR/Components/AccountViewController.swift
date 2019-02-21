@@ -10,6 +10,7 @@ import UIKit
 import SwiftyUserDefaults
 import FBSDKLoginKit
 import IHKeyboardAvoiding
+import Kingfisher
 
 class AccountViewController: UIViewController {
   
@@ -85,7 +86,7 @@ class AccountViewController: UIViewController {
       let hasPassword = user?.hasPassword {
       updatePasswordViewController.hasPassword = hasPassword
     }
-    
+      
     else if let navigationController = segue.destination as? UINavigationController,
       let photoShootViewController = navigationController.topViewController as? PhotoShootViewController {
       photoShootViewController.action = .userAvatar
@@ -128,26 +129,26 @@ class AccountViewController: UIViewController {
     var profile: JSON = [:]
     profile["displayName"] = nameTextField.text
     
-    if avatarChanged {
-      // TODO: attache new avatar image in the request
-    }
-    
     apiTask?.cancel()
     
     showLoading()
     
-    apiTask = UserService.updateProfile(profile, completion: { [weak self] (error) in
-      DispatchQueue.main.async {
-        
-        self?.dismissLoading()
-        
-        guard error == nil else {
-          self?.alertError(error!)
-          return
-        }
-        
-        self?.loadProfile()
-      }
+    apiTask = UserService.updateProfile(profile,
+                                        avatar: avatarChanged ? avatarImageView.image : nil,
+                                        completion: { [weak self] (error) in
+                                          DispatchQueue.main.async {
+                                            
+                                            self?.dismissLoading()
+                                            
+                                            guard error == nil else {
+                                              self?.alertError(error!)
+                                              return
+                                            }
+                                            
+                                            self?.avatarChanged = false
+                                            
+                                            self?.loadProfile()
+                                          }
     })
   }
   
@@ -241,6 +242,10 @@ class AccountViewController: UIViewController {
   }
   
   private func populateUserProfile(_ user: User, editing: Bool) {
+    if let photo = user.photo, let avatarURL = URL(string: photo) {
+      avatarImageView.kf.setImage(with: avatarURL)
+    }
+    
     if let displayName = user.displayName, displayName.count > 0 {
       nameTextField.textColor = UIColor.primaryGreyColor
       nameTextField.placeholder = "e.g. Charlotte Johnston"

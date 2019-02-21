@@ -37,6 +37,7 @@ final class APIClient {
   func load(path: String,
             method: RequestMethod,
             params: JSON?,
+            image: UIImage? = nil,
             completion: @escaping (Any?, Error?) -> Void) -> URLSessionDataTask? {
     
     // Checking internet connection availability
@@ -46,54 +47,109 @@ final class APIClient {
       return nil
     }
     
-    
     // Creating the URLRequest object
-    let request = URLRequest(baseUrl: baseURL, path: path, method: method, params: params)
-    logger.debug("\(method) \(request.url?.absoluteString ?? "INVALID URL")")
+    var request = URLRequest(baseUrl: baseURL, path: path, method: method, params: params)
     
-    // Sending request to the server.
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-      guard error == nil else {
-        logger.error(error!.localizedDescription)
-        completion(nil, error)
-        return
+    // create multi-form data
+    var requestData: Data?
+    
+    if let image = image {
+      // generate boundary string using a unique per-app string
+      let boundary = UUID().uuidString
+      
+      // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
+      // And the boundary is also set here
+      request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+      
+      requestData = Data()
+      
+      // Add the image data to the raw http request data
+      requestData?.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+      requestData?.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+      requestData?.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+      requestData?.append(image.jpegData(compressionQuality: 1.0)!)
+      
+      // End the raw http request data, note that there is 2 extra dash ("-") at the end, this is to indicate the end of the data
+      // According to the HTTP 1.1 specification https://tools.ietf.org/html/rfc7230
+      requestData?.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+      
+      // Sending request to the server.
+      let task = URLSession.shared.uploadTask(with: request, from: requestData) { (data, response, error) in
+        self.requestCompletionHandler(data: data,
+                                      response: response,
+                                      error: error,
+                                      completion: completion,
+                                      path: path,
+                                      method: method,
+                                      params: params)
       }
       
-      guard let data = data else {
-        logger.error("missing payload")
-        completion(nil, ServiceError.other)
-        return
+      task.resume()
+      
+      return task
+    }
+    else {
+      // Sending request to the server.
+      let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        self.requestCompletionHandler(data: data,
+                                      response: response,
+                                      error: error,
+                                      completion: completion,
+                                      path: path,
+                                      method: method,
+                                      params: params)
       }
       
-      // Parsing incoming data
-      let json = try? JSONSerialization.jsonObject(with: data, options: [])
+      task.resume()
       
-      if let response = response as? HTTPURLResponse {
-        if 200..<300 ~= response.statusCode {
-          completion(json, nil)
-        }
-        else {
-          let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
-          
-          if error.errorDescription == "access token expired" {
-            logger.warning("expired access token")
-            AuthService.refreshAccessToken(retryPath: path, retryMethod: method, retryParams: params, retryCompletion: completion)
-          }
-          else {
-            logger.error(error)
-            completion(nil, error)
-          }
-        }
-      } else {
-        let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
-        logger.error(error)
-        completion(nil, error)
-      }
+      return task
     }
     
-    task.resume()
+  }
+  
+  private func requestCompletionHandler(data: Data?,
+                                        response: URLResponse?,
+                                        error: Error?,
+                                        completion: @escaping (Any?, Error?) -> Void,
+                                        path: String,
+                                        method: RequestMethod,
+                                        params: JSON?) {
+    guard error == nil else {
+      logger.error(error!.localizedDescription)
+      completion(nil, error)
+      return
+    }
     
-    return task
+    guard let data = data else {
+      logger.error("missing payload")
+      completion(nil, ServiceError.other)
+      return
+    }
+    
+    // Parsing incoming data
+    let json = try? JSONSerialization.jsonObject(with: data, options: [])
+    
+    if let response = response as? HTTPURLResponse {
+      if 200..<300 ~= response.statusCode {
+        completion(json, nil)
+      }
+      else {
+        let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
+        
+        if error.errorDescription == "access token expired" {
+          logger.warning("expired access token")
+          AuthService.refreshAccessToken(retryPath: path, retryMethod: method, retryParams: params, retryCompletion: completion)
+        }
+        else {
+          logger.error(error)
+          completion(nil, error)
+        }
+      }
+    } else {
+      let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
+      logger.error(error)
+      completion(nil, error)
+    }
   }
 }
 
