@@ -35,7 +35,13 @@ class SideMenuViewController: UIViewController {
     super.viewDidLoad()
     
     if let photo = currentUser?.photo, let avatarURL = URL(string: photo) {
-      avatarImageView.kf.setImage(with: avatarURL)
+      let size = avatarImageView.bounds.size.width
+      
+      avatarImageView.kf.setImage(with: avatarURL, options: [
+        .processor(DownsamplingImageProcessor(size: CGSize(width: size, height: size))),
+        .processor(RoundCornerImageProcessor(cornerRadius: size)),
+        .scaleFactor(UIScreen.main.scale),
+        .cacheSerializer(FormatIndicatedCacheSerializer.png)])
     }
     
     greetingBackdropView.backgroundColor = UIColor.primaryRedColor

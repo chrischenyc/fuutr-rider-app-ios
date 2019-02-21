@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name {
   static let userSignedOut = Notification.Name("co.fuutr.userSignedOut")
   static let remoteConfigFetched = Notification.Name("co.fuutr.remoteConfigFetched")
+  static let userAvatarUpdated = Notification.Name("co.fuutr.userAvatarUpdated")
 }

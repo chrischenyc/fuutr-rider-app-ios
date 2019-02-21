@@ -23,7 +23,13 @@ let logger = XCGLogger.default
 var remoteConfig: RemoteConfig?
 var config = Configuration()
 var currentLocation: CLLocation?
-var currentUser: User?
+var currentUser: User? {
+  didSet {
+    if oldValue?.photo != currentUser?.photo {
+      NotificationCenter.default.post(name: NSNotification.Name.userAvatarUpdated, object: nil)
+    }
+  }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

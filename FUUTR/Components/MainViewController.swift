@@ -76,6 +76,8 @@ class MainViewController: UIViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(applicationWillResignActive), name: UIApplication.willResignActiveNotification, object: nil)
     
     NotificationCenter.default.addObserver(self, selector: #selector(applyRemoteConfig), name: NSNotification.Name.remoteConfigFetched, object: nil)
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(updateMenuIcon), name: NSNotification.Name.userAvatarUpdated, object: nil)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -510,20 +512,6 @@ extension MainViewController {
         logger.error("Couldn't get user profile: \(error!.localizedDescription)")
         return
       }
-      
-      DispatchQueue.main.async {
-        if let user = user, let photo = user.photo, let avatarURL = URL(string: photo) {
-          let size = self.sideMenuButton.bounds.size.width
-          
-          self.sideMenuButton.kf.setImage(with: avatarURL,
-                                          for: .normal,
-                                          placeholder: nil,
-                                          options: [
-                                            .processor(DownsamplingImageProcessor(size: CGSize(width: size, height: size))),
-                                            .processor(RoundCornerImageProcessor(cornerRadius: size)),
-                                            .scaleFactor(UIScreen.main.scale)])
-        }
-      }
     })
   }
   
@@ -690,6 +678,23 @@ extension MainViewController {
                  message: "The ride cannot end until it is parked upright in an accepted, safe areea.",
                  image: R.image.imgUnsafeParking(),
                  positiveActionButtonTitle: "I will re-park the vehicle")
+  }
+  
+  @objc func updateMenuIcon() {
+    DispatchQueue.main.async {
+      if let user = currentUser, let photo = user.photo, let avatarURL = URL(string: photo) {
+        let size = self.sideMenuButton.bounds.size.width
+        
+        self.sideMenuButton.kf.setImage(with: avatarURL,
+                                        for: .normal,
+                                        placeholder: nil,
+                                        options: [
+                                          .processor(DownsamplingImageProcessor(size: CGSize(width: size, height: size))),
+                                          .processor(RoundCornerImageProcessor(cornerRadius: size)),
+                                          .scaleFactor(UIScreen.main.scale),
+                                          .cacheSerializer(FormatIndicatedCacheSerializer.png)])
+      }
+    }
   }
 }
 
@@ -945,9 +950,9 @@ extension MainViewController: GMUClusterRendererDelegate {
     if (ongoingRide?.paused ?? false) {
       marker.icon = R.image.scooterPinLockedGreen()
     } else {
-      if 80...100 ~= powerPercent {
+      if 50...100 ~= powerPercent {
         marker.icon = R.image.scooterPinGreen()
-      } else if 30..<80 ~= powerPercent {
+      } else if 25..<50 ~= powerPercent {
         marker.icon = R.image.scooterPinYellow()
       } else {
         marker.icon = R.image.scooterPinRed()
