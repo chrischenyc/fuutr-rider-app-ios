@@ -28,7 +28,7 @@ platform :ios do
     increment_build_number_in_plist(target: 'FUUTR-staging')
     build_app(workspace: "FUUTR.xcworkspace", scheme: "FUUTR-staging")
     upload_to_testflight(
-      skip_waiting_for_build_processing: true,
+      skip_waiting_for_build_processing: false,
       beta_app_description: "fastlane auto build",
       changelog: changelog
     )
