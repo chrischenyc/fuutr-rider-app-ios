@@ -50,9 +50,6 @@ final class APIClient {
     // Creating the URLRequest object
     var request = URLRequest(baseUrl: baseURL, path: path, method: method, params: params)
     
-    // create multi-form data
-    var requestData: Data?
-    
     if let image = image {
       // generate boundary string using a unique per-app string
       let boundary = UUID().uuidString
@@ -61,17 +58,27 @@ final class APIClient {
       // And the boundary is also set here
       request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
       
-      requestData = Data()
+      // create multi-form data
+      var requestData = Data()
+      
+      // Convert other params into multi-form data
+      if let params = params {
+        params.forEach { (fieldName, fieldValue) in
+          requestData.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+          requestData.append("Content-Disposition: form-data; name=\"\(fieldName)\"\r\n\r\n".data(using: .utf8)!)
+          requestData.append("\(fieldValue)".data(using: .utf8)!)
+        }
+      }
       
       // Add the image data to the raw http request data
-      requestData?.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
-      requestData?.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
-      requestData?.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
-      requestData?.append(image.jpegData(compressionQuality: 1.0)!)
+      requestData.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+      requestData.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+      requestData.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+      requestData.append(image.jpegData(compressionQuality: 1.0)!)
       
       // End the raw http request data, note that there is 2 extra dash ("-") at the end, this is to indicate the end of the data
       // According to the HTTP 1.1 specification https://tools.ietf.org/html/rfc7230
-      requestData?.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+      requestData.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
       
       // Sending request to the server.
       let task = URLSession.shared.uploadTask(with: request, from: requestData) { (data, response, error) in
