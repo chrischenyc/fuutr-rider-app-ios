@@ -301,6 +301,7 @@ class AccountViewController: UIViewController {
   private func toggleAvatarSelectionView(on: Bool) {
     if on {
       avatarSelectionViewTopConstraint.constant = avatarSelectionView.bounds.size.height
+      nameTextField.resignFirstResponder()
     } else {
       avatarSelectionViewTopConstraint.constant = 0
     }
