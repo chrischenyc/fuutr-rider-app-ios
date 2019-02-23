@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnlockInfoView" customModule="FUUTR" customModuleProvider="target">
             <connections>
                 <outlet property="priceLabel" destination="Eeq-0W-dpg" id="O9u-7M-27b"/>
+                <outlet property="pricingLabelsTopContraint" destination="I8l-G1-u7G" id="l8k-gH-VLt"/>
+                <outlet property="scooterImageView" destination="NDi-u5-Oiq" id="76l-eV-z3V"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -30,7 +32,7 @@
                     <viewLayoutGuide key="safeArea" id="ejk-yR-esI"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WxV-JY-l8h">
-                    <rect key="frame" x="20" y="44.5" width="219" height="39"/>
+                    <rect key="frame" x="20" y="44" width="219" height="39"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride a scooter" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4m-Mj-K5i" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="219" height="23"/>
@@ -81,10 +83,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="WxV-JY-l8h" firstAttribute="centerY" secondItem="NDi-u5-Oiq" secondAttribute="centerY" id="79B-cj-SRQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kcr-3b-4xH" secondAttribute="bottom" constant="16" id="7dv-C3-jfQ"/>
                 <constraint firstItem="DOm-UK-gGo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Bhr-ni-aC8"/>
                 <constraint firstItem="kcr-3b-4xH" firstAttribute="top" secondItem="NDi-u5-Oiq" secondAttribute="bottom" constant="32" id="Cmu-vC-m6z"/>
+                <constraint firstItem="WxV-JY-l8h" firstAttribute="top" secondItem="DOm-UK-gGo" secondAttribute="bottom" constant="32" id="I8l-G1-u7G"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NDi-u5-Oiq" secondAttribute="trailing" constant="24" id="Knj-sl-0Ji"/>
                 <constraint firstItem="NDi-u5-Oiq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="OZ4-gE-03O"/>
                 <constraint firstItem="NDi-u5-Oiq" firstAttribute="leading" secondItem="WxV-JY-l8h" secondAttribute="trailing" constant="16" id="RfA-6d-dR2"/>

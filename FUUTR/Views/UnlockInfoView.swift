@@ -9,7 +9,9 @@
 @IBDesignable
 class UnlockInfoView: DesignableView {
   
+  @IBOutlet weak var pricingLabelsTopContraint: NSLayoutConstraint!
   @IBOutlet weak var priceLabel: UILabel!
+  @IBOutlet weak var scooterImageView: UIImageView!
   
   override var nibName: String {
     get {
@@ -34,6 +36,8 @@ class UnlockInfoView: DesignableView {
     let swipeDownRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
     swipeDownRecognizer.direction = .down
     addGestureRecognizer(swipeDownRecognizer)
+    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap))
+    addGestureRecognizer(tapRecognizer)
   }
   
   @IBAction func scanButtonTapped(_ sender: Any) {
@@ -48,6 +52,12 @@ class UnlockInfoView: DesignableView {
     if !didSwipUp {
       didSwipUp = true
       
+      pricingLabelsTopContraint.constant = 32
+      UIView.animate(withDuration: 0.25) {
+        self.scooterImageView.alpha = 1
+        self.layoutIfNeeded()
+      }
+      
       onSwipeUp?()
     }
   }
@@ -56,7 +66,21 @@ class UnlockInfoView: DesignableView {
     if didSwipUp {
       didSwipUp = false
       
+      pricingLabelsTopContraint.constant = 8
+      UIView.animate(withDuration: 0.25) {
+        self.scooterImageView.alpha = 0
+        self.layoutIfNeeded()
+      }
+      
       onSwipeDown?()
+    }
+  }
+  
+  @objc func tap() {
+    if didSwipUp {
+      swipeDown()
+    } else {
+      swipeUp()
     }
   }
 }

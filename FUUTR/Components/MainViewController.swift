@@ -68,7 +68,7 @@ class MainViewController: UIViewController {
       }
       
       unlockInfoView.onSwipeDown = {
-        self.unlockInfoViewBottomContraint.constant = -100
+        self.unlockInfoViewBottomContraint.constant = -140
         UIView.animate(withDuration: 0.25, animations: {
           self.view.layoutIfNeeded()
         })
