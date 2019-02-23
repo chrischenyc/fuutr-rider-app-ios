@@ -107,23 +107,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfL-KJ-ZTo" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="468"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-OG-jme" userLabel="unlockView" customClass="UnlockInfoView" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="411" width="375" height="256"/>
+                                <rect key="frame" x="0.0" y="463" width="375" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-nd-pNL" userLabel="vehicleInfoView" customClass="VehicleInfoView" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="411" width="375" height="256"/>
+                                <rect key="frame" x="0.0" y="431" width="375" height="236"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9R-Fu-VmM" userLabel="vehicleReservedInfoView" customClass="VehicleReservedInfoView" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="411" width="375" height="256"/>
+                                <rect key="frame" x="0.0" y="431" width="375" height="236"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-Uq-ABq" userLabel="ridingView" customClass="RidingView" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="411" width="375" height="256"/>
+                                <rect key="frame" x="0.0" y="431" width="375" height="236"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-gN-jng">
@@ -163,19 +163,19 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uQ5-QY-a10" secondAttribute="trailing" constant="16" id="EgZ-VM-yls"/>
                             <constraint firstAttribute="trailing" secondItem="uh5-OG-jme" secondAttribute="trailing" id="Ggw-EX-ZlA"/>
                             <constraint firstItem="FYW-nd-pNL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kaa-EU-zFb"/>
-                            <constraint firstItem="uh5-OG-jme" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-256" id="NPg-Cg-nuw"/>
+                            <constraint firstItem="uh5-OG-jme" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-204" id="NPg-Cg-nuw"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6i-Mk-ptg"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQh-9I-Jzz"/>
                             <constraint firstAttribute="bottom" secondItem="r9R-Fu-VmM" secondAttribute="bottom" id="Sha-BV-22t"/>
                             <constraint firstAttribute="trailing" secondItem="FYW-nd-pNL" secondAttribute="trailing" id="Tg5-ee-1kV"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf3-O6-CJt"/>
                             <constraint firstAttribute="bottom" secondItem="FYW-nd-pNL" secondAttribute="bottom" id="XZu-fg-cKm"/>
-                            <constraint firstItem="zoP-Uq-ABq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-256" id="aDA-Mv-yhj"/>
+                            <constraint firstItem="zoP-Uq-ABq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-236" id="aDA-Mv-yhj"/>
                             <constraint firstItem="zoP-Uq-ABq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cfg-jG-IKO"/>
                             <constraint firstItem="uQ5-QY-a10" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iKf-3J-My7"/>
-                            <constraint firstItem="r9R-Fu-VmM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-256" id="lBf-t5-UJq"/>
+                            <constraint firstItem="r9R-Fu-VmM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-236" id="lBf-t5-UJq"/>
                             <constraint firstItem="r9R-Fu-VmM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lzx-WN-QKS"/>
-                            <constraint firstItem="FYW-nd-pNL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-256" id="wNH-hW-Ycg"/>
+                            <constraint firstItem="FYW-nd-pNL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-236" id="wNH-hW-Ycg"/>
                             <constraint firstAttribute="trailing" secondItem="r9R-Fu-VmM" secondAttribute="trailing" id="x6I-z2-YGR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
