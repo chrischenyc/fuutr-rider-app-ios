@@ -23,6 +23,7 @@ extension UIColor {
   static let stripeAccentColor = UIColor("#ED1B24")
   
   // MARK: - Zone
+  static let noRidingZoneFillColor = UIColor("#88FF0000")
   static let noParkingZoneFillColor = UIColor("#4DFF0000")
   static let noParkingZoneStrokeColor = UIColor("#CCFF0000")
   static let lowSpeedZoneFillColor = UIColor("#4DEE6F2D")

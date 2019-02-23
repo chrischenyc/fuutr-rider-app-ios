@@ -21,7 +21,11 @@ extension GMSPolygon {
     var fillColor: UIColor = .clear
     var strokeColor: UIColor = .clear
     
-    if !zone.parking {
+    if !zone.riding {
+      fillColor = UIColor.noRidingZoneFillColor
+      strokeColor = UIColor.noRidingZoneFillColor
+    }
+    else if !zone.parking {
       fillColor = UIColor.noParkingZoneFillColor
       strokeColor = UIColor.noParkingZoneStrokeColor
     }

@@ -11,6 +11,7 @@ import ObjectMapper
 
 struct Zone: Mappable {
   var polygon: [[Double]] = []
+  var riding: Bool = true
   var parking: Bool = true
   var speedMode: Int = 0
   var title: String?
@@ -22,6 +23,7 @@ struct Zone: Mappable {
   
   mutating func mapping(map: Map) {
     polygon    <- map["polygon"]
+    riding      <- map["riding"]
     parking    <- map["parking"]
     speedMode  <- map["speedMode"]
     title      <- map["title"]
