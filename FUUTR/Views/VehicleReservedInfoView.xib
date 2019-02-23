@@ -20,7 +20,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="236"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scooter reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rR9-M5-K4p" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
@@ -106,12 +106,13 @@
                 <constraint firstItem="WxV-JY-l8h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="fLG-pJ-gn8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="c7d-wV-K2n" secondAttribute="trailing" constant="20" id="h4Y-Ao-XcL"/>
                 <constraint firstItem="hrs-3A-DbC" firstAttribute="trailing" secondItem="NDi-u5-Oiq" secondAttribute="trailing" id="k6J-gN-PoZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kcr-3b-4xH" secondAttribute="bottom" constant="16" id="mnM-Ks-N8Z"/>
                 <constraint firstItem="rR9-M5-K4p" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="oYy-d4-xJr"/>
                 <constraint firstItem="rR9-M5-K4p" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="tS8-NZ-hxi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-50.399999999999999" y="228.03598200899552"/>
+            <point key="canvasLocation" x="-50.399999999999999" y="223.98800599700152"/>
         </view>
     </objects>
     <resources>

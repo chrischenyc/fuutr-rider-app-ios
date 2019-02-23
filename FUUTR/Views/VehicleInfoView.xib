@@ -145,7 +145,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hjy-GO-ulf">
-                    <rect key="frame" x="20" y="176" width="335" height="44"/>
+                    <rect key="frame" x="20" y="176" width="335" height="64"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-aY-ka5">
                             <rect key="frame" x="0.0" y="0.0" width="163.5" height="44"/>
@@ -200,6 +200,7 @@
                 <constraint firstItem="Hjy-GO-ulf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="okW-sA-idt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hjy-GO-ulf" secondAttribute="trailing" constant="20" id="rhJ-kp-3XT"/>
                 <constraint firstItem="iZZ-9q-z2J" firstAttribute="trailing" secondItem="agB-l3-5Xr" secondAttribute="trailing" constant="16" id="t0u-uh-MbV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hjy-GO-ulf" secondAttribute="bottom" constant="8" id="vtq-rd-UGI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0F4-xC-bLI" secondAttribute="trailing" constant="6" id="y7I-1L-qPU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

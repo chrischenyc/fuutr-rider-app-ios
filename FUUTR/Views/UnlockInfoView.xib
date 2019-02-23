@@ -20,6 +20,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOm-UK-gGo">
+                    <rect key="frame" x="170" y="8" width="35" height="4"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="Q96-qN-5nP"/>
+                        <constraint firstAttribute="height" constant="4" id="UYC-1q-dUp"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="ejk-yR-esI"/>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WxV-JY-l8h">
                     <rect key="frame" x="20" y="44.5" width="219" height="39"/>
                     <subviews>
@@ -73,12 +82,15 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="WxV-JY-l8h" firstAttribute="centerY" secondItem="NDi-u5-Oiq" secondAttribute="centerY" id="79B-cj-SRQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kcr-3b-4xH" secondAttribute="bottom" constant="16" id="7dv-C3-jfQ"/>
+                <constraint firstItem="DOm-UK-gGo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Bhr-ni-aC8"/>
                 <constraint firstItem="kcr-3b-4xH" firstAttribute="top" secondItem="NDi-u5-Oiq" secondAttribute="bottom" constant="32" id="Cmu-vC-m6z"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NDi-u5-Oiq" secondAttribute="trailing" constant="24" id="Knj-sl-0Ji"/>
                 <constraint firstItem="NDi-u5-Oiq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="OZ4-gE-03O"/>
                 <constraint firstItem="NDi-u5-Oiq" firstAttribute="leading" secondItem="WxV-JY-l8h" secondAttribute="trailing" constant="16" id="RfA-6d-dR2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kcr-3b-4xH" secondAttribute="trailing" constant="20" id="Sxy-QJ-PmR"/>
                 <constraint firstItem="kcr-3b-4xH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="VWS-9J-3D2"/>
+                <constraint firstItem="DOm-UK-gGo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="daL-av-a45"/>
                 <constraint firstItem="WxV-JY-l8h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="fLG-pJ-gn8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

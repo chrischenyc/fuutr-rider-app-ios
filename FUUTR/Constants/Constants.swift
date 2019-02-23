@@ -9,4 +9,3 @@
 import Foundation
 
 let defaultCornerRadius: CGFloat = 5.0
-let streetZoomLevel: Float = 14.0

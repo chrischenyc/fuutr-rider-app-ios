@@ -44,7 +44,8 @@ class MainViewController: UIViewController {
       }
       
       if ongoingRide != oldValue {
-        updateUnlockView()
+        ridingView.isHidden = ongoingRide == nil
+        unlockInfoView.isHidden = ongoingRide != nil
       }
     }
   }
@@ -57,16 +58,125 @@ class MainViewController: UIViewController {
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var sideMenuButton: UIButton!
   
-  @IBOutlet weak var unlockInfoView: UnlockInfoView!
-  @IBOutlet weak var vehicleInfoView: VehicleInfoView!
-  @IBOutlet weak var vehicleReservedInfoView: VehicleReservedInfoView!
-  @IBOutlet weak var ridingView: RidingView!
+  @IBOutlet weak var unlockInfoView: UnlockInfoView! {
+    didSet {
+      unlockInfoView.onSwipeUp = {
+        self.unlockInfoViewBottomContraint.constant = 0
+        UIView.animate(withDuration: 0.25, animations: {
+          self.view.layoutIfNeeded()
+        })
+      }
+      
+      unlockInfoView.onSwipeDown = {
+        self.unlockInfoViewBottomContraint.constant = -100
+        UIView.animate(withDuration: 0.25, animations: {
+          self.view.layoutIfNeeded()
+        })
+      }
+      
+      unlockInfoView.onFindMe = {
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        guard authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse else {
+          self.promptForLocationServicesPermission()
+          return
+        }
+        
+        if let location = currentLocation {
+          let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: self.searchingZoomLevel)
+          self.mapView.animate(to: camera)
+        }
+      }
+      
+      unlockInfoView.onScan = {
+        self.unlock()
+      }
+    }
+  }
+  @IBOutlet weak var unlockInfoViewBottomContraint: NSLayoutConstraint!
+  @IBOutlet weak var vehicleInfoView: VehicleInfoView! {
+    didSet {
+      vehicleInfoView.onReserve = { (vehicle) in
+        self.alertMessage(title: "Reserve Scooter",
+                           message: "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
+                           positiveActionButtonTitle: "OK",
+                           positiveActionButtonTapped: {
+                            self.toggleVehicleReservation(id: vehicle.id, reserve: true)
+        },
+                           negativeActionButtonTitle: "Cancel")
+      }
+      
+      vehicleInfoView.onRing = { (vehicle) in
+        self.tootVehicle(id: vehicle.id)
+      }
+      
+      vehicleInfoView.onClose = {
+        self.hideVehicleInfo()
+      }
+      
+      vehicleInfoView.onScan = {
+        self.unlock()
+      }
+    }
+  }
+  @IBOutlet weak var vehicleReservedInfoView: VehicleReservedInfoView! {
+    didSet {
+      vehicleReservedInfoView.onScan = {
+        self.unlock()
+      }
+      
+      vehicleReservedInfoView.onCancel = { (vehicle) in
+        self.alertMessage(title: "Are you sure you want to cancel the reservation?",
+                           message: "You won't be able to reserve again for 15 minutes.",
+                           positiveActionButtonTitle: "Keep reservation",
+                           positiveActionButtonTapped: {},
+                           negativeActionButtonTitle: "Cancel reservation",
+                           negativeActionButtonTapped: {
+                            self.toggleVehicleReservation(id: vehicle.id, reserve: false)
+        })
+      }
+      
+      vehicleReservedInfoView.onReserveTimeUp = {
+          self.search()
+      }
+    }
+  }
+  @IBOutlet weak var ridingView: RidingView! {
+    didSet {
+      ridingView.onPauseRide = {
+        self.alertMessage(title: "Are you sure you want to lock the scooter?",
+                           message: "You'll be charged $0.15c per minute when scooter is locked.",
+                           positiveActionButtonTitle: "Yes, lock it",
+                           positiveActionButtonTapped: {
+                            self.pauseRide()
+        },
+                           negativeActionButtonTitle: "No, keep riding")
+      }
+      
+      ridingView.onResumeRide = {
+        self.resumeRide()
+      }
+      
+      ridingView.onEndRide = {
+        self.alertMessage(title: "Are you sure you want to end the ride?",
+                           message: "",
+                           positiveActionButtonTitle: "Yes, end ride",
+                           positiveActionButtonTapped: {
+                            self.endRide()
+        },
+                           negativeActionButtonTitle: "No, keep riding")
+      }
+      ridingView.onPauseTimeUp = {
+        self.refreshOngoingRide()
+      }
+    }
+  }
   
   // MARK: - lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    setupUI()
+    sideMenuButton.imageView?.contentMode = .scaleAspectFill
+    updatePricing()
     setupMapView()
     setupLocationManager()
     getUser()
@@ -140,7 +250,7 @@ class MainViewController: UIViewController {
   }
   
   @objc func applyRemoteConfig(_ notification: NSNotification) {
-    updateUnlockInfoViewContent()
+    updatePricing()
   }
   
   // MARK: - user actions
@@ -534,102 +644,7 @@ extension MainViewController {
     ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
   }
   
-  private func setupUI() {
-    sideMenuButton.imageView?.contentMode = .scaleAspectFill
-    
-    updateUnlockInfoViewContent()
-    
-    unlockInfoView.onFindMe = { [weak self] in
-      let authorizationStatus = CLLocationManager.authorizationStatus()
-      guard authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse else {
-        self?.promptForLocationServicesPermission()
-        return
-      }
-      
-      if let location = currentLocation, let searchingZoomLevel = self?.searchingZoomLevel {
-        let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: searchingZoomLevel)
-        self?.mapView.animate(to: camera)
-      }
-    }
-    
-    unlockInfoView.onScan = { [weak self] in
-      self?.unlock()
-    }
-    
-    vehicleInfoView.onReserve = { [weak self] (vehicle) in
-      self?.alertMessage(title: "Reserve Scooter",
-                         message: "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
-                         positiveActionButtonTitle: "OK",
-                         positiveActionButtonTapped: {
-                          self?.toggleVehicleReservation(id: vehicle.id, reserve: true)
-      },
-                         negativeActionButtonTitle: "Cancel")
-    }
-    
-    vehicleInfoView.onRing = { [weak self] (vehicle) in
-      self?.tootVehicle(id: vehicle.id)
-    }
-    
-    vehicleInfoView.onClose = { [weak self] in
-      self?.hideVehicleInfo()
-    }
-    
-    vehicleInfoView.onScan = { [weak self] in
-      self?.unlock()
-    }
-    
-    vehicleReservedInfoView.onScan = { [weak self] in
-      self?.unlock()
-    }
-    
-    vehicleReservedInfoView.onCancel = { [weak self] (vehicle) in
-      self?.alertMessage(title: "Are you sure you want to cancel the reservation?",
-                         message: "You won't be able to reserve again for 15 minutes.",
-                         positiveActionButtonTitle: "Keep reservation",
-                         positiveActionButtonTapped: {},
-                         negativeActionButtonTitle: "Cancel reservation",
-                         negativeActionButtonTapped: {
-                          self?.toggleVehicleReservation(id: vehicle.id, reserve: false)
-      })
-    }
-    
-    vehicleReservedInfoView.onReserveTimeUp = { [weak self] in
-      DispatchQueue.main.async {
-        self?.search()
-      }
-    }
-    
-    ridingView.onPauseRide = { [weak self] in
-      self?.alertMessage(title: "Are you sure you want to lock the scooter?",
-                         message: "You'll be charged $0.15c per minute when scooter is locked.",
-                         positiveActionButtonTitle: "Yes, lock it",
-                         positiveActionButtonTapped: {
-                          self?.pauseRide()
-      },
-                         negativeActionButtonTitle: "No, keep riding")
-    }
-    
-    ridingView.onResumeRide = { [weak self] in
-      self?.resumeRide()
-    }
-    
-    ridingView.onEndRide = { [weak self] in
-      self?.alertMessage(title: "Are you sure you want to end the ride?",
-                         message: "",
-                         positiveActionButtonTitle: "Yes, end ride",
-                         positiveActionButtonTapped: {
-                          self?.endRide()
-      },
-                         negativeActionButtonTitle: "No, keep riding")
-    }
-    ridingView.onPauseTimeUp = { [weak self] in
-      self?.refreshOngoingRide()
-    }
-    
-    updateUnlockView()
-  }
-  
-  private func updateUnlockInfoViewContent() {
+  private func updatePricing() {
     if let remoteConfig = remoteConfig {
       unlockInfoView.priceLabel.text = "\(remoteConfig.unlockCost.priceString) to unlock, \(remoteConfig.rideMinuteCost.priceString) per minute"
     }
@@ -640,7 +655,6 @@ extension MainViewController {
   }
   
   private func showVehicleInfo(_ vehicle: Vehicle) {
-    // TODO: add show/hide transition animation
     updateVehicleInfo(vehicle)
     unlockInfoView.isHidden = true
     
@@ -651,7 +665,6 @@ extension MainViewController {
   }
   
   private func hideVehicleInfo() {
-    // TODO: show/hide transition animation
     vehicleInfoView.isHidden = true
     vehicleReservedInfoView.isHidden = true
     unlockInfoView.isHidden = false
@@ -668,18 +681,6 @@ extension MainViewController {
       vehicleInfoView.updateContentWith(vehicle)
       vehicleInfoView.isHidden = false
       vehicleReservedInfoView.isHidden = true
-    }
-  }
-  
-  private func updateUnlockView() {
-    if ongoingRide != nil {
-      ridingView.isHidden = false
-      unlockInfoView.isHidden = true
-      vehicleInfoView.isHidden = true
-      vehicleReservedInfoView.isHidden = true
-    } else {
-      ridingView.isHidden = true
-      unlockInfoView.isHidden = false
     }
   }
   
