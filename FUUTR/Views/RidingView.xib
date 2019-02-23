@@ -25,7 +25,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="DdU-Bf-0x9">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="236"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride in progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xE2-54-qNl" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
@@ -106,7 +106,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kfr-YS-q9P">
-                    <rect key="frame" x="20" y="168" width="335" height="64"/>
+                    <rect key="frame" x="20" y="176" width="335" height="64"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="73p-TE-s0w">
                             <rect key="frame" x="0.0" y="0.0" width="159.5" height="64"/>
@@ -154,7 +154,7 @@
                 <constraint firstItem="okt-ab-Bjy" firstAttribute="leading" secondItem="RbN-T8-4In" secondAttribute="leading" id="WcH-MY-8kr"/>
                 <constraint firstItem="okt-ab-Bjy" firstAttribute="top" secondItem="RbN-T8-4In" secondAttribute="bottom" constant="4" id="hjI-sg-Yqj"/>
                 <constraint firstItem="4s8-uV-HhH" firstAttribute="trailing" secondItem="RbN-T8-4In" secondAttribute="trailing" constant="24" id="hkL-gR-0wd"/>
-                <constraint firstItem="Kfr-YS-q9P" firstAttribute="top" secondItem="RbN-T8-4In" secondAttribute="bottom" constant="24" id="ivP-b1-IUe"/>
+                <constraint firstItem="Kfr-YS-q9P" firstAttribute="top" secondItem="RbN-T8-4In" secondAttribute="bottom" constant="32" id="ivP-b1-IUe"/>
                 <constraint firstItem="okt-ab-Bjy" firstAttribute="trailing" secondItem="RbN-T8-4In" secondAttribute="trailing" id="kez-Dq-kJ2"/>
                 <constraint firstItem="RbN-T8-4In" firstAttribute="top" secondItem="DdU-Bf-0x9" secondAttribute="top" constant="48" id="kna-wS-YKj"/>
                 <constraint firstItem="wt7-WR-4DW" firstAttribute="top" secondItem="4s8-uV-HhH" secondAttribute="top" constant="16" id="t4y-OP-KIj"/>

@@ -115,15 +115,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-nd-pNL" userLabel="vehicleInfoView" customClass="VehicleInfoView" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="431" width="375" height="236"/>
+                                <rect key="frame" x="0.0" y="419" width="375" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9R-Fu-VmM" userLabel="vehicleReservedInfoView" customClass="VehicleReservedInfoView" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="431" width="375" height="236"/>
+                                <rect key="frame" x="0.0" y="419" width="375" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-Uq-ABq" userLabel="ridingView" customClass="RidingView" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="431" width="375" height="236"/>
+                                <rect key="frame" x="0.0" y="419" width="375" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-gN-jng">
@@ -170,12 +170,12 @@
                             <constraint firstAttribute="trailing" secondItem="FYW-nd-pNL" secondAttribute="trailing" id="Tg5-ee-1kV"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf3-O6-CJt"/>
                             <constraint firstAttribute="bottom" secondItem="FYW-nd-pNL" secondAttribute="bottom" id="XZu-fg-cKm"/>
-                            <constraint firstItem="zoP-Uq-ABq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-236" id="aDA-Mv-yhj"/>
+                            <constraint firstItem="zoP-Uq-ABq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-248" id="aDA-Mv-yhj"/>
                             <constraint firstItem="zoP-Uq-ABq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cfg-jG-IKO"/>
                             <constraint firstItem="uQ5-QY-a10" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iKf-3J-My7"/>
-                            <constraint firstItem="r9R-Fu-VmM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-236" id="lBf-t5-UJq"/>
+                            <constraint firstItem="r9R-Fu-VmM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-248" id="lBf-t5-UJq"/>
                             <constraint firstItem="r9R-Fu-VmM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lzx-WN-QKS"/>
-                            <constraint firstItem="FYW-nd-pNL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-236" id="wNH-hW-Ycg"/>
+                            <constraint firstItem="FYW-nd-pNL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-248" id="wNH-hW-Ycg"/>
                             <constraint firstAttribute="trailing" secondItem="r9R-Fu-VmM" secondAttribute="trailing" id="x6I-z2-YGR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
