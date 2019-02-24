@@ -328,6 +328,10 @@ class MainViewController: UIViewController {
   private func unlock() {
     performSegue(withIdentifier: R.segue.mainViewController.showUnlock, sender: nil)
   }
+  
+  @IBAction func refresh(_ sender: Any) {
+    search()
+  }
 }
 
 // MARK: - Ride Tracking

@@ -110,6 +110,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="468"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPf-t1-Jvg">
+                                <rect key="frame" x="323" y="315" width="44" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="YYJ-Zc-nLj"/>
+                                    <constraint firstAttribute="height" constant="44" id="a9Z-hI-0wi"/>
+                                </constraints>
+                                <state key="normal" image="btn-refresh"/>
+                                <connections>
+                                    <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gig-D1-MCH"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-OG-jme" userLabel="unlockView" customClass="UnlockInfoView" customModule="FUUTR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="463" width="375" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -169,9 +180,11 @@
                             <constraint firstAttribute="trailing" secondItem="FYW-nd-pNL" secondAttribute="trailing" id="Tg5-ee-1kV"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf3-O6-CJt"/>
                             <constraint firstAttribute="bottom" secondItem="FYW-nd-pNL" secondAttribute="bottom" id="XZu-fg-cKm"/>
+                            <constraint firstItem="SPf-t1-Jvg" firstAttribute="trailing" secondItem="lfL-KJ-ZTo" secondAttribute="trailing" constant="-8" id="bQ2-KS-5f2"/>
                             <constraint firstItem="zoP-Uq-ABq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cfg-jG-IKO"/>
                             <constraint firstItem="uQ5-QY-a10" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iKf-3J-My7"/>
                             <constraint firstItem="r9R-Fu-VmM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lzx-WN-QKS"/>
+                            <constraint firstItem="SPf-t1-Jvg" firstAttribute="bottom" secondItem="lfL-KJ-ZTo" secondAttribute="bottom" constant="-8" id="rq1-rJ-iak"/>
                             <constraint firstAttribute="trailing" secondItem="r9R-Fu-VmM" secondAttribute="trailing" id="x6I-z2-YGR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -202,6 +215,7 @@
     </scenes>
     <resources>
         <image name="boy-1" width="105" height="105"/>
+        <image name="btn-refresh" width="37" height="37"/>
         <image name="btn-report-issue" width="37" height="37"/>
     </resources>
 </document>
