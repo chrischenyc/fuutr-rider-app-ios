@@ -715,10 +715,10 @@ extension MainViewController {
     
     // TODO: need to generate cluster images
     let iconGenerator = GMUDefaultClusterIconGenerator(buckets: [10, 20, 50, 100],
-                                                       backgroundImages: [R.image.clusterPin()!,
-                                                                          R.image.clusterPin()!,
-                                                                          R.image.clusterPin()!,
-                                                                          R.image.clusterPin()!])
+                                                       backgroundImages: [R.image.clusterPin10()!,
+                                                                          R.image.clusterPin20()!,
+                                                                          R.image.clusterPin50()!,
+                                                                          R.image.clusterPin100()!])
     let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
     let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
     renderer.delegate = self

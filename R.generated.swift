@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 76 images.
+  /// This `R.image` struct is generated, and contains static references to 79 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -59,8 +59,14 @@ struct R: Rswift.Validatable {
     static let btnReportIssue = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn-report-issue")
     /// Image `btn-ring`.
     static let btnRing = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn-ring")
-    /// Image `cluster-pin`.
-    static let clusterPin = Rswift.ImageResource(bundle: R.hostingBundle, name: "cluster-pin")
+    /// Image `cluster-pin-100`.
+    static let clusterPin100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cluster-pin-100")
+    /// Image `cluster-pin-10`.
+    static let clusterPin10 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cluster-pin-10")
+    /// Image `cluster-pin-20`.
+    static let clusterPin20 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cluster-pin-20")
+    /// Image `cluster-pin-50`.
+    static let clusterPin50 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cluster-pin-50")
     /// Image `girl-1`.
     static let girl1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "girl-1")
     /// Image `girl-2`.
@@ -239,9 +245,24 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.btnRing, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "cluster-pin", bundle: ..., traitCollection: ...)`
-    static func clusterPin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.clusterPin, compatibleWith: traitCollection)
+    /// `UIImage(named: "cluster-pin-10", bundle: ..., traitCollection: ...)`
+    static func clusterPin10(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.clusterPin10, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "cluster-pin-100", bundle: ..., traitCollection: ...)`
+    static func clusterPin100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.clusterPin100, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "cluster-pin-20", bundle: ..., traitCollection: ...)`
+    static func clusterPin20(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.clusterPin20, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "cluster-pin-50", bundle: ..., traitCollection: ...)`
+    static func clusterPin50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.clusterPin50, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "girl-1", bundle: ..., traitCollection: ...)`
