@@ -523,7 +523,7 @@ extension MainViewController {
     
     rideAPITask?.cancel()
     
-    ridingView.lockButton.setTitle("Locking ...", for: .normal)
+    ridingView.lockButton.setTitle("Locking ...", for: .disabled)
     ridingView.lockButton.isEnabled = false
     
     rideAPITask = RideService.pause(rideId: rideId) { [weak self] (ride, error) in
@@ -558,7 +558,7 @@ extension MainViewController {
     
     rideAPITask?.cancel()
     
-    ridingView.lockButton.setTitle("Unlocking ...", for: .normal)
+    ridingView.lockButton.setTitle("Unlocking ...", for: .disabled)
     ridingView.lockButton.isEnabled = false
     
     rideAPITask = RideService.resume(rideId: rideId) { [weak self] (ride, error) in
@@ -584,7 +584,7 @@ extension MainViewController {
     
     vehicleAPITask?.cancel()
     
-    vehicleInfoView.reserveButton.setTitle(reserve ? "Reserving ..." : "Canceling ...", for: .normal)
+    vehicleInfoView.reserveButton.setTitle(reserve ? "Reserving ..." : "Canceling ...", for: .disabled)
     vehicleInfoView.reserveButton.isEnabled = false
     
     vehicleAPITask = VehicleService.reserve(id: id, reserve: reserve, completion: { [weak self] (vehicle, error) in
