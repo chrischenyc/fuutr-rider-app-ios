@@ -702,7 +702,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 24 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 25 view controllers.
   struct segue {
     /// This struct is generated for `AccountViewController`, and contains static references to 2 segues.
     struct accountViewController {
@@ -812,7 +812,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This struct is generated for `MainViewController`, and contains static references to 9 segues.
+    /// This struct is generated for `MainViewController`, and contains static references to 10 segues.
     struct mainViewController {
       /// Segue identifier `showAccount`.
       static let showAccount: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showAccount")
@@ -822,6 +822,8 @@ struct R: Rswift.Validatable {
       static let showHistory: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showHistory")
       /// Segue identifier `showHowToRide`.
       static let showHowToRide: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, HowToRideViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHowToRide")
+      /// Segue identifier `showNZLandTransportAct`.
+      static let showNZLandTransportAct: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, NZLandTransportActViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showNZLandTransportAct")
       /// Segue identifier `showPhotoShoot`.
       static let showPhotoShoot: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showPhotoShoot")
       /// Segue identifier `showRideFinished`.
@@ -859,6 +861,13 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showHowToRide(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, HowToRideViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showHowToRide, segue: segue)
+      }
+      
+      /// Optionally returns a typed version of segue `showNZLandTransportAct`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showNZLandTransportAct(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, NZLandTransportActViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.showNZLandTransportAct, segue: segue)
       }
       
       /// Optionally returns a typed version of segue `showPhotoShoot`.
@@ -957,6 +966,21 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToSettings(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MobileVerifyCodeViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mobileVerifyCodeViewController.unwindToSettings, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `NZLandTransportActViewController`, and contains static references to 1 segues.
+    struct nzLandTransportActViewController {
+      /// Segue identifier `showHowToRide`.
+      static let showHowToRide: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, NZLandTransportActViewController, HowToRideViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showHowToRide")
+      
+      /// Optionally returns a typed version of segue `showHowToRide`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showHowToRide(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, NZLandTransportActViewController, HowToRideViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.nzLandTransportActViewController.showHowToRide, segue: segue)
       }
       
       fileprivate init() {}
@@ -1202,7 +1226,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 18 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 19 storyboards.
   struct storyboard {
     /// Storyboard `Account`.
     static let account = _R.storyboard.account()
@@ -1220,6 +1244,8 @@ struct R: Rswift.Validatable {
     static let main = _R.storyboard.main()
     /// Storyboard `MobileVerify`.
     static let mobileVerify = _R.storyboard.mobileVerify()
+    /// Storyboard `NZLandTransportAct`.
+    static let nzLandTransportAct = _R.storyboard.nzLandTransportAct()
     /// Storyboard `PhotoShoot`.
     static let photoShoot = _R.storyboard.photoShoot()
     /// Storyboard `PushNotificationPermission`.
@@ -1279,6 +1305,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "MobileVerify", bundle: ...)`
     static func mobileVerify(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.mobileVerify)
+    }
+    
+    /// `UIStoryboard(name: "NZLandTransportAct", bundle: ...)`
+    static func nzLandTransportAct(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.nzLandTransportAct)
     }
     
     /// `UIStoryboard(name: "PhotoShoot", bundle: ...)`
@@ -1530,6 +1561,7 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       try main.validate()
       try mobileVerify.validate()
+      try nzLandTransportAct.validate()
       try photoShoot.validate()
       try pushNotificationPermission.validate()
       try reportIssue.validate()
@@ -1736,6 +1768,26 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'MobileVerify', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct nzLandTransportAct: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = NZLandTransportActViewController
+      
+      let bundle = R.hostingBundle
+      let name = "NZLandTransportAct"
+      let nzRule2004 = StoryboardViewControllerResource<NZLandTransportActViewController>(identifier: "NZ-Rule 2004")
+      
+      func nzRule2004(_: Void = ()) -> NZLandTransportActViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: nzRule2004)
+      }
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.nzLandTransportAct().nzRule2004() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'nzRule2004' could not be loaded from storyboard 'NZLandTransportAct' as 'NZLandTransportActViewController'.") }
       }
       
       fileprivate init() {}

@@ -66,6 +66,14 @@
             </objects>
             <point key="canvasLocation" x="-2015" y="1726"/>
         </scene>
+        <!--NZLandTransportAct-->
+        <scene sceneID="834-8G-9SK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NZLandTransportAct" id="Q5v-Jg-Puf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S1m-NY-rt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1710" y="1760"/>
+        </scene>
         <!--HowToRide-->
         <scene sceneID="sKB-px-qHp">
             <objects>
@@ -206,6 +214,7 @@
                         <segue destination="FGs-8F-TV0" kind="presentation" identifier="showHowToRide" id="dw5-Yc-TVD"/>
                         <segue destination="ppe-bv-DTM" kind="presentation" identifier="showRidePaused" id="WgS-vD-LeP"/>
                         <segue destination="44S-Rt-EzA" kind="presentation" identifier="showRideFinished" id="NXR-Bv-fSJ"/>
+                        <segue destination="Q5v-Jg-Puf" kind="presentation" identifier="showNZLandTransportAct" id="eof-yY-D34"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

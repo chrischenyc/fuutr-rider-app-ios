@@ -283,7 +283,10 @@ class MainViewController: UIViewController {
       
       unwindSegueWithCompletion.completion = {
         self.startTrackingRide(ride)
-        self.showHowToRide()
+        
+        // TODO: check user defaults see if user has agreed
+        // TODO: display how to ride directly
+        self.performSegue(withIdentifier: R.segue.mainViewController.showNZLandTransportAct, sender: nil)
       }
       
     }
@@ -652,10 +655,6 @@ extension MainViewController {
     if let remoteConfig = remoteConfig {
       unlockInfoView.priceLabel.text = "\(remoteConfig.unlockCost.priceString) to unlock, \(remoteConfig.rideMinuteCost.priceString) per minute"
     }
-  }
-  
-  private func showHowToRide() {
-    performSegue(withIdentifier: R.segue.mainViewController.showHowToRide, sender: nil)
   }
   
   private func showVehicleInfo(_ vehicle: Vehicle) {
