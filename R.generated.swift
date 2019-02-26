@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 79 images.
+  /// This `R.image` struct is generated, and contains static references to 81 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -107,10 +107,14 @@ struct R: Rswift.Validatable {
     static let icClockDarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-clock-dark-gray-24")
     /// Image `ic-close-dark-gray-16`.
     static let icCloseDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-close-dark-gray-16")
+    /// Image `ic-dollar-dark-gray-16`.
+    static let icDollarDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-dollar-dark-gray-16")
     /// Image `ic-dollar-dark-gray-24`.
     static let icDollarDarkGray24 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-dollar-dark-gray-24")
     /// Image `ic-edit-white-16`.
     static let icEditWhite16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-edit-white-16")
+    /// Image `ic-guide-dark-gray-16`.
+    static let icGuideDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-guide-dark-gray-16")
     /// Image `ic-hand-dark-gray-16`.
     static let icHandDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-hand-dark-gray-16")
     /// Image `ic-help-dark-gray-16`.
@@ -365,6 +369,11 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.icCloseDarkGray16, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "ic-dollar-dark-gray-16", bundle: ..., traitCollection: ...)`
+    static func icDollarDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icDollarDarkGray16, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "ic-dollar-dark-gray-24", bundle: ..., traitCollection: ...)`
     static func icDollarDarkGray24(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icDollarDarkGray24, compatibleWith: traitCollection)
@@ -373,6 +382,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic-edit-white-16", bundle: ..., traitCollection: ...)`
     static func icEditWhite16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icEditWhite16, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic-guide-dark-gray-16", bundle: ..., traitCollection: ...)`
+    static func icGuideDarkGray16(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icGuideDarkGray16, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic-hand-dark-gray-16", bundle: ..., traitCollection: ...)`
@@ -1829,6 +1843,8 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "boy-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'boy-1' is used in storyboard 'SideMenu', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-dollar-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-dollar-dark-gray-16' is used in storyboard 'SideMenu', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-guide-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-guide-dark-gray-16' is used in storyboard 'SideMenu', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-history-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-history-dark-gray-16' is used in storyboard 'SideMenu', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-report-issue-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-report-issue-dark-gray-16' is used in storyboard 'SideMenu', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-user-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-user-dark-gray-16' is used in storyboard 'SideMenu', but couldn't be loaded.") }

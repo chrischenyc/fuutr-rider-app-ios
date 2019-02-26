@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pHh-ve-860">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="408"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybs-wV-1aU">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
@@ -70,10 +70,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgz-mo-Pus">
-                                        <rect key="frame" x="0.0" y="124" width="375" height="180"/>
+                                        <rect key="frame" x="0.0" y="124" width="375" height="284"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gaj-qZ-UOl">
-                                                <rect key="frame" x="0.0" y="32" width="375" height="148"/>
+                                                <rect key="frame" x="0.0" y="32" width="375" height="252"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WF-Me-9rz" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -114,6 +114,29 @@
                                                             <action selector="menuItemSelected:" destination="Bre-70-fjq" eventType="touchUpInside" id="geD-Jh-y2b"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67m-p5-WMp" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="156" width="375" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="OeG-8G-x8X"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <state key="normal" title="How To Ride" image="ic-guide-dark-gray-16">
+                                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="8QO-PR-tzp" kind="presentation" id="Ajt-gI-Rjt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sov-ei-If6" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="208" width="375" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="b34-C8-aFj"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <state key="normal" title="FUUTR+ Points" image="ic-dollar-dark-gray-16">
+                                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -127,27 +150,32 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCv-6e-TsG" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zGt-7B-k6L">
                                 <rect key="frame" x="0.0" y="591" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="ys9-dy-hwZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Help" image="ic-report-issue-dark-gray-16">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="menuItemSelected:" destination="Bre-70-fjq" eventType="touchUpInside" id="sc5-eI-Rrr"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCv-6e-TsG" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ys9-dy-hwZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Help" image="ic-report-issue-dark-gray-16">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="menuItemSelected:" destination="Bre-70-fjq" eventType="touchUpInside" id="sc5-eI-Rrr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pHh-ve-860" firstAttribute="leading" secondItem="bUb-ym-jiF" secondAttribute="leading" id="6Wc-dQ-3Br"/>
-                            <constraint firstItem="kCv-6e-TsG" firstAttribute="leading" secondItem="bUb-ym-jiF" secondAttribute="leading" id="FYO-ed-zNX"/>
+                            <constraint firstItem="bUb-ym-jiF" firstAttribute="trailing" secondItem="zGt-7B-k6L" secondAttribute="trailing" id="I5o-Kn-PCN"/>
                             <constraint firstItem="pHh-ve-860" firstAttribute="top" secondItem="ZME-DJ-FJv" secondAttribute="top" id="LSU-P1-Yz4"/>
-                            <constraint firstItem="bUb-ym-jiF" firstAttribute="bottom" secondItem="kCv-6e-TsG" secondAttribute="bottom" constant="32" id="Vzc-i2-HkE"/>
-                            <constraint firstItem="kCv-6e-TsG" firstAttribute="trailing" secondItem="bUb-ym-jiF" secondAttribute="trailing" id="qS5-2A-1B0"/>
+                            <constraint firstItem="bUb-ym-jiF" firstAttribute="bottom" secondItem="zGt-7B-k6L" secondAttribute="bottom" constant="32" id="M4d-zj-8uy"/>
+                            <constraint firstItem="zGt-7B-k6L" firstAttribute="leading" secondItem="bUb-ym-jiF" secondAttribute="leading" id="XG8-Yg-zNE"/>
                             <constraint firstItem="bUb-ym-jiF" firstAttribute="trailing" secondItem="pHh-ve-860" secondAttribute="trailing" id="qhs-Sa-rRI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bUb-ym-jiF"/>
@@ -159,6 +187,8 @@
                         <outlet property="greetingBackdropView" destination="ybs-wV-1aU" id="S8p-Hu-HG7"/>
                         <outlet property="greetingLabel" destination="cou-WS-zv8" id="8Ve-OF-9nG"/>
                         <outlet property="helpButton" destination="kCv-6e-TsG" id="tYu-ss-Ild"/>
+                        <outlet property="howToRideButton" destination="67m-p5-WMp" id="d92-LW-r85"/>
+                        <outlet property="pointsButton" destination="Sov-ei-If6" id="Nfo-EY-W9H"/>
                         <outlet property="rideHistoryButton" destination="9WF-Me-9rz" id="pFK-h3-2D0"/>
                         <outlet property="walletButton" destination="RbD-YT-AfJ" id="6wT-Dx-l5y"/>
                         <segue destination="luP-3R-yfX" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="FUUTR" customModuleProvider="target" unwindAction="unwindToHome:" id="Ktx-Qt-fTh"/>
@@ -169,9 +199,19 @@
             </objects>
             <point key="canvasLocation" x="970" y="-619"/>
         </scene>
+        <!--HowToRide-->
+        <scene sceneID="Xus-3x-FnH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HowToRide" id="8QO-PR-tzp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXl-K2-nVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="-572"/>
+        </scene>
     </scenes>
     <resources>
         <image name="boy-1" width="105" height="105"/>
+        <image name="ic-dollar-dark-gray-16" width="16" height="16"/>
+        <image name="ic-guide-dark-gray-16" width="16" height="16"/>
         <image name="ic-history-dark-gray-16" width="16" height="16"/>
         <image name="ic-report-issue-dark-gray-16" width="16" height="16"/>
         <image name="ic-user-dark-gray-16" width="16" height="16"/>

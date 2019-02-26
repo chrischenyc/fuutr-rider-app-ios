@@ -694,6 +694,7 @@
 		6BDEEFC5220E7C6D00C0FBB8 /* FTLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTLabel.swift; sourceTree = "<group>"; };
 		6BDEEFC9220E7CBA00C0FBB8 /* FTDarkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTDarkLabel.swift; sourceTree = "<group>"; };
 		6BDEEFCD220E7D0E00C0FBB8 /* FTLightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTLightLabel.swift; sourceTree = "<group>"; };
+		6BF493972224B48200DF9A1E /* wellinton_botanic.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = wellinton_botanic.gpx; sourceTree = "<group>"; };
 		6BFEA08122123F3B00DDB398 /* RemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
 		6BFEA0892212405600DDB398 /* RemoteConfigService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 		6BFEA0912213EA4100DDB398 /* GMSMapView+RideRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+RideRoute.swift"; sourceTree = "<group>"; };
@@ -872,6 +873,7 @@
 				6B87319E2189643800CC2651 /* Staging-Info.plist */,
 				6BDE9148218C1A30003F976B /* Dev-Info.plist */,
 				6B8731A0218968E000CC2651 /* unlock.gpx */,
+				6BF493972224B48200DF9A1E /* wellinton_botanic.gpx */,
 				6BBC6A0021A0DD27003C910B /* ride.gpx */,
 				6B8731D5218A816000CC2651 /* FUUTR.entitlements */,
 				6BDE911A218C1983003F976B /* FUUTR-staging.entitlements */,
@@ -1843,7 +1845,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1863,7 +1865,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1883,7 +1885,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
