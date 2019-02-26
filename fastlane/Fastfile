@@ -24,7 +24,7 @@ platform :ios do
       text: "Changelog: ",
       multi_line_end_keyword: "END"
     )
-    set_info_plist_value(path: "./FUUTR/Staging-Info.plist", key: "CFBundleVersion", value: (latest_testflight_build_number + 2).to_s)
+    set_info_plist_value(path: "./FUUTR/Staging-Info.plist", key: "CFBundleVersion", value: (latest_testflight_build_number + 1).to_s)
     increment_build_number_in_plist(target: 'FUUTR-staging')
     build_app(workspace: "FUUTR.xcworkspace", scheme: "FUUTR-staging")
     upload_to_testflight(
