@@ -15,7 +15,7 @@
                 <outlet property="parkLabel" destination="Eeq-0W-dpg" id="O9u-7M-27b"/>
                 <outlet property="scooterReserved" destination="rR9-M5-K4p" id="Qrq-mh-lxR"/>
                 <outlet property="timerLabel" destination="c7d-wV-K2n" id="fRl-MC-Eei"/>
-                <outlet property="vehicleCodeLabel" destination="hrs-3A-DbC" id="ZV7-Ta-PmK"/>
+                <outlet property="unlockCodeLabel" destination="hrs-3A-DbC" id="ZV7-Ta-PmK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

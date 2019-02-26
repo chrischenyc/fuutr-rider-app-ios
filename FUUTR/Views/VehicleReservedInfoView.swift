@@ -5,7 +5,7 @@ class VehicleReservedInfoView: DesignableView {
   
   @IBOutlet weak var parkLabel: UILabel!
   @IBOutlet weak var timerLabel: UILabel!
-  @IBOutlet weak var vehicleCodeLabel: UILabel!
+  @IBOutlet weak var unlockCodeLabel: UILabel!
   
   override var nibName: String {
     get {
@@ -24,7 +24,7 @@ class VehicleReservedInfoView: DesignableView {
   func updateContentWith(_ vehicle: Vehicle) {
     self.vehicle = vehicle
     
-    vehicleCodeLabel.text = vehicle.vehicleCode
+    unlockCodeLabel.text = vehicle.unlockCode
     
     if let address = vehicle.address {
       parkLabel.text = address

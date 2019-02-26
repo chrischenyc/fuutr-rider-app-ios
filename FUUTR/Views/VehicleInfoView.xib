@@ -18,7 +18,7 @@
                 <outlet property="rangeLabel" destination="T9L-nv-MSx" id="fbj-g0-Puv"/>
                 <outlet property="reserveButton" destination="2Rr-wp-oxp" id="wV3-8y-uNf"/>
                 <outlet property="ringButton" destination="iZZ-9q-z2J" id="5G5-wP-be8"/>
-                <outlet property="vehicleCodeLabel" destination="Qx7-zK-wcD" id="Za5-0G-bbP"/>
+                <outlet property="unlockCodeLabel" destination="Qx7-zK-wcD" id="Za5-0G-bbP"/>
                 <outlet property="waitToReserveAgainLabel" destination="AM9-9e-6CP" id="L3R-rK-Wm8"/>
             </connections>
         </placeholder>

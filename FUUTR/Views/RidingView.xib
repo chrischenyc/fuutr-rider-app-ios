@@ -20,7 +20,7 @@
                 <outlet property="ridingDistanceLabel" destination="zrq-5d-Jfb" id="W3T-BI-92u"/>
                 <outlet property="ridingTimeLabel" destination="Cpi-2u-j57" id="bCw-Bn-lDS"/>
                 <outlet property="scooterIsLockedLabel" destination="uWE-6T-TRT" id="H77-y8-Ggs"/>
-                <outlet property="vehicleCodeLabel" destination="okt-ab-Bjy" id="k9U-ec-XWs"/>
+                <outlet property="unlockCodeLabel" destination="okt-ab-Bjy" id="k9U-ec-XWs"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

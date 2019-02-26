@@ -16,7 +16,7 @@ struct Vehicle: Mappable {
   var latitude: Double?
   var longitude: Double?
   var address: String?
-  var vehicleCode: String?
+  var unlockCode: String?
   var reserved: Bool = false
   var reservedUntil: Date?
   var canReserveAfter: Date?
@@ -31,13 +31,13 @@ struct Vehicle: Mappable {
   }
   
   mutating func mapping(map: Map) {
-    id             <- map["_id"]
+    id              <- map["_id"]
     powerPercent    <- map["powerPercent"]
     remainingRange  <- map["remainingRange"]
     latitude        <- map["latitude"]
     longitude       <- map["longitude"]
     address         <- map["address"]
-    vehicleCode     <- map["vehicleCode"]
+    unlockCode      <- map["unlockCode"]
     reserved        <- map["reserved"]
     reservedUntil   <- (map["reservedUntil"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
     canReserveAfter <- (map["canReserveAfter"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
