@@ -81,5 +81,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>FUUTR may need to access your photo library, so you can send us photo while chatting with support consultant</string>
 </dict>
 </plist>
