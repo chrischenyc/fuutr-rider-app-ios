@@ -56,6 +56,18 @@ enum Environment: String {
     }
   }
   
+  var zenDeskAppId: String {
+    return "cd71e79001a33b1bff46c423cd1531e3eff31f2a9c0074f5"
+  }
+  
+  var zenDeskClientId: String {
+    return "mobile_sdk_client_76f4e318c219d99d4389"
+  }
+  
+  var zenDeskUrl: String {
+    return "https://fuutr.zendesk.com"
+  }
+  
   var termsURL: String {
     return "https://www.fuutr.co/terms"
   }

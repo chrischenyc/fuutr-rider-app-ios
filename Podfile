@@ -20,6 +20,7 @@ abstract_target 'Project' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Stripe'
+  pod 'ZendeskSDK'
   
   # UI
   pod 'SideMenu'

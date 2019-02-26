@@ -142,6 +142,15 @@ PODS:
     - XCGLogger/Core (= 6.1.0)
   - XCGLogger/Core (6.1.0):
     - ObjcExceptionBridging
+  - ZendeskSDK (2.3.0):
+    - ZendeskSDK/Providers (= 2.3.0)
+    - ZendeskSDK/UI (= 2.3.0)
+  - ZendeskSDK/Core (2.3.0)
+  - ZendeskSDK/Providers (2.3.0):
+    - ZendeskSDK/Core
+  - ZendeskSDK/UI (2.3.0):
+    - ZendeskSDK/Core
+    - ZendeskSDK/Providers
 
 DEPENDENCIES:
   - Cosmos
@@ -168,6 +177,7 @@ DEPENDENCIES:
   - Stripe
   - SwiftyUserDefaults (= 4.0.0-alpha.1)
   - XCGLogger
+  - ZendeskSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -213,6 +223,7 @@ SPEC REPOS:
     - Stripe
     - SwiftyUserDefaults
     - XCGLogger
+    - ZendeskSDK
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -257,7 +268,8 @@ SPEC CHECKSUMS:
   Stripe: db29ad197c74aca6fb981e4e8355cf7ebd0fca5a
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
+  ZendeskSDK: af6509ad7968d367f95b2645713802712152f879
 
-PODFILE CHECKSUM: 94da4eac6b709f7f9f35b8a71c1b662d28185e3f
+PODFILE CHECKSUM: 262e75606b39205109eb1c09f3d4c86514b5ac57
 
 COCOAPODS: 1.6.0

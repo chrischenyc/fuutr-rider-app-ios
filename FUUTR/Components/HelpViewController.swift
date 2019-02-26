@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZendeskSDK
 
 class HelpViewController: UIViewController {
   @IBOutlet weak var reportButton: UIButton!
@@ -33,15 +34,13 @@ class HelpViewController: UIViewController {
   }
   
   @IBAction func faq(_ sender: Any) {
-    if let url = URL(string: config.env.helpURL), UIApplication.shared.canOpenURL(url) {
-      UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    }
+    let viewController = ZDKHelpCenterUi.buildHelpCenterOverviewUi(withConfigs: [])
+    self.navigationController?.pushViewController(viewController, animated: true)
   }
   
   @IBAction func contact(_ sender: Any) {
-    if let url = URL(string: config.env.contactURL), UIApplication.shared.canOpenURL(url) {
-      UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    }
+    let viewController = RequestUi.buildRequestUi()
+    self.navigationController?.pushViewController(viewController, animated: true)
   }
   
   @IBAction func terms(_ sender: Any) {

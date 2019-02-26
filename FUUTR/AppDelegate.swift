@@ -17,6 +17,8 @@ import SideMenu
 import XCGLogger
 import SwiftyUserDefaults
 import Stripe
+import ZendeskSDK
+import ZendeskCoreSDK
 
 // global variables
 let logger = XCGLogger.default
@@ -27,6 +29,11 @@ var currentUser: User? {
   didSet {
     if oldValue?.photo != currentUser?.photo {
       NotificationCenter.default.post(name: NSNotification.Name.userAvatarUpdated, object: nil)
+      
+      if let currentUser = currentUser {
+        Zendesk.instance?.setIdentity(Identity.createAnonymous(name: currentUser.displayName, email: currentUser.email))
+      }
+      
     }
   }
 }
@@ -65,6 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     GMSServices.provideAPIKey(config.env.googleMapKey)
     FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
     configStripe()
+    Zendesk.initialize(appId: config.env.zenDeskAppId, clientId: config.env.zenDeskClientId, zendeskUrl: config.env.zenDeskUrl)
+    Support.initialize(withZendesk: Zendesk.instance)
+    Zendesk.instance?.setIdentity(Identity.createAnonymous())
     
     getRemoteConfig()
     globalStyling()
