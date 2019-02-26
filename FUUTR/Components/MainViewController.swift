@@ -44,8 +44,14 @@ class MainViewController: UIViewController {
       }
       
       if ongoingRide != oldValue {
-        ridingView.isHidden = ongoingRide == nil
-        unlockInfoView.isHidden = ongoingRide != nil
+        if ongoingRide != nil {
+          ridingView.isHidden = false
+          unlockInfoView.isHidden = true
+          vehicleInfoView.isHidden = true
+          vehicleReservedInfoView.isHidden = false
+        } else {
+          ridingView.isHidden = true
+        }
       }
     }
   }
