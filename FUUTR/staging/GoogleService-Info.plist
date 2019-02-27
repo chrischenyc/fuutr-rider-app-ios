@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>56551719511-a01cht396qniuu8btte0tb02fk53abl5.apps.googleusercontent.com</string>
+	<string>194301115437-clto2d7monqg4811v5dupbd64695edpk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.56551719511-a01cht396qniuu8btte0tb02fk53abl5</string>
+	<string>com.googleusercontent.apps.194301115437-clto2d7monqg4811v5dupbd64695edpk</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDdqOi6s9iKGbYL1zCCqjQ3HO4F0yWusso</string>
+	<string>AIzaSyAt-Un7T60AMWkS2E3tiEu57D2c-4cF9DE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>56551719511</string>
+	<string>194301115437</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.otgride.ios.rider.staging</string>
 	<key>PROJECT_ID</key>
-	<string>otg-ride-1540958541959</string>
+	<string>fuutr-rider</string>
 	<key>STORAGE_BUCKET</key>
-	<string>otg-ride-1540958541959.appspot.com</string>
+	<string>fuutr-rider.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:56551719511:ios:5bb541fa01950314</string>
+	<string>1:194301115437:ios:5bb541fa01950314</string>
 	<key>DATABASE_URL</key>
-	<string>https://otg-ride-1540958541959.firebaseio.com</string>
+	<string>https://fuutr-rider.firebaseio.com</string>
 </dict>
 </plist>
