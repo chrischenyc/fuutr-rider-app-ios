@@ -872,6 +872,17 @@
 			name = History;
 			sourceTree = "<group>";
 		};
+		6B9E13D322261B9000092316 /* Guides */ = {
+			isa = PBXGroup;
+			children = (
+				6BDEEF50220C1B1800C0FBB8 /* HowToRide.storyboard */,
+				9197552E21FBE3460069D25A /* HowToRideViewController.swift */,
+				6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */,
+				6BF493A02224E04100DF9A1E /* NZLandTransportActViewController.swift */,
+			);
+			name = Guides;
+			sourceTree = "<group>";
+		};
 		6BB6CB6C2196501C00B597B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,10 +1009,6 @@
 			children = (
 				6BDEEF9C220D32C800C0FBB8 /* Main.storyboard */,
 				6BB50EE422112C9500F8BBF4 /* MainViewController.swift */,
-				6BDEEF50220C1B1800C0FBB8 /* HowToRide.storyboard */,
-				9197552E21FBE3460069D25A /* HowToRideViewController.swift */,
-				6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */,
-				6BF493A02224E04100DF9A1E /* NZLandTransportActViewController.swift */,
 				6BDEEF6C220C1BF800C0FBB8 /* RidePaused.storyboard */,
 				91FA7F9D21FE981E00581BB5 /* RidePausedViewController.swift */,
 				6BDEEF70220C1C0900C0FBB8 /* RideFinished.storyboard */,
@@ -1238,6 +1245,7 @@
 				6B8731BF2189C7FA00CC2651 /* WelcomeViewController.swift */,
 				6BDEEF54220C1B3900C0FBB8 /* SideMenu.storyboard */,
 				A0CFE7BB21773C0200BA3F6D /* SideMenuViewController.swift */,
+				6B9E13D322261B9000092316 /* Guides */,
 				6BB6CB752196F86400B597B3 /* Auth */,
 				6BB6CB762196F87E00B597B3 /* Permissions */,
 				6BDEEFD1220EB6D000C0FBB8 /* Unlock */,
@@ -1880,7 +1888,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1900,7 +1908,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1920,7 +1928,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

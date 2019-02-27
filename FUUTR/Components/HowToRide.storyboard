@@ -228,8 +228,9 @@ Push down left hand throttle to brake or use back wheel brake.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Always use shared paths or bike lanes and always ride to the left." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5i-zs-1er" userLabel="description" customClass="FTWhiteLabel" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="20" y="108" width="374" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5i-zs-1er" userLabel="description" customClass="FTWhiteLabel" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="20" y="108" width="374" height="71.666666666666686"/>
+                                <string key="text">Always follow the required riding rules for the area you are in. Always ride in shared paths where available, safely on the footpath and reliably in the cycle lanes. Always give way to pedestrians and keep to the left.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -265,8 +266,9 @@ Push down left hand throttle to brake or use back wheel brake.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO NOT ride FUUTR vehicles on the sidewalk. Follow all road rules." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnG-d7-na7" userLabel="description" customClass="FTWhiteLabel" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="20" y="108" width="374" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnG-d7-na7" userLabel="description" customClass="FTWhiteLabel" customModule="FUUTR" customModuleProvider="target">
+                                <rect key="frame" x="20" y="108" width="374" height="54"/>
+                                <string key="text">Do not ride FUUTR vehicles in a way that can put pedestrians in danger. Ride safely the way you would hope riders rode around you!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

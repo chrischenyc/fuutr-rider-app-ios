@@ -19,7 +19,17 @@ class NZLandTransportActViewController: UIViewController {
     
     let termsLinkText = "Rider Agreement"
     let act2004LinkText = "Land Transport Act 2004"
-    let contentText = "By riding one of our vehicles, you are accepting and adhering to our \(termsLinkText) and following guidelines set in the \(act2004LinkText)"
+    let contentText = """
+    Overview of Terms to be followed:
+    
+    ∙ Rider must ALWAYS give way to pedestrians and ride responsibly.
+    ∙ Rider must always follow local signage and speed limits.
+    ∙ Rider must be 16 years of age + to ride our vehicles.
+    ∙ Rider must follow the guidelines presented to them throughout the service or will be at risk of account ramifications.
+    ∙ Rider must where available park in a FUUTR Parking Hub or on the side of the sidewalk out of the way of pedestrians.
+    
+    By riding one of our vehicles, you are accepting and adhering to our \(termsLinkText) and following guidelines set in the \(act2004LinkText)
+    """
     
     let attributedString = NSMutableAttributedString(string: contentText)
     
@@ -32,10 +42,10 @@ class NZLandTransportActViewController: UIViewController {
     }
     
     attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.primaryWhiteColor, range: NSRange(location: 0, length: contentText.count))
-    attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 16), range: NSRange(location: 0, length: contentText.count))
+    attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15), range: NSRange(location: 0, length: contentText.count))
     
     let paragraph = NSMutableParagraphStyle()
-    paragraph.alignment = .center
+    paragraph.alignment = .left
     attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraph, range: NSRange(location: 0, length: contentText.count))
     
     descriptionTextView.attributedText = attributedString
