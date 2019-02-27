@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 81 images.
+  /// This `R.image` struct is generated, and contains static references to 82 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -85,6 +85,8 @@ struct R: Rswift.Validatable {
     static let howToRide6 = Rswift.ImageResource(bundle: R.hostingBundle, name: "how-to-ride-6")
     /// Image `how-to-ride-7`.
     static let howToRide7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "how-to-ride-7")
+    /// Image `how-to-ride-8`.
+    static let howToRide8 = Rswift.ImageResource(bundle: R.hostingBundle, name: "how-to-ride-8")
     /// Image `ic-arrow-right-dark-gray-16`.
     static let icArrowRightDarkGray16 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-arrow-right-dark-gray-16")
     /// Image `ic-back-dark-gray-16`.
@@ -312,6 +314,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "how-to-ride-7", bundle: ..., traitCollection: ...)`
     static func howToRide7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.howToRide7, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "how-to-ride-8", bundle: ..., traitCollection: ...)`
+    static func howToRide8(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.howToRide8, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic-arrow-right-dark-gray-16", bundle: ..., traitCollection: ...)`
@@ -1715,6 +1722,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "how-to-ride-5", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-5' is used in storyboard 'HowToRide', but couldn't be loaded.") }
         if UIKit.UIImage(named: "how-to-ride-6", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-6' is used in storyboard 'HowToRide', but couldn't be loaded.") }
         if UIKit.UIImage(named: "how-to-ride-7", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-7' is used in storyboard 'HowToRide', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "how-to-ride-8", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-8' is used in storyboard 'HowToRide', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.howToRide().howToRide() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'howToRide' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIPageViewController'.") }
