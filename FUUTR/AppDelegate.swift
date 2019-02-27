@@ -65,8 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                  fileLevel: nil)
     
     // third-party services init
-    FirebaseApp.configure()
-    Messaging.messaging().delegate = self
+    if config.env != .Development {
+      FirebaseApp.configure()
+      Messaging.messaging().delegate = self
+    }
+    
     GMSServices.provideAPIKey(config.env.googleMapKey)
     FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
     configStripe()
