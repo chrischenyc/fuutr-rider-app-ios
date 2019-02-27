@@ -1668,6 +1668,7 @@ struct _R: Rswift.Validatable {
       let page5 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page5")
       let page6 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page6")
       let page7 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page7")
+      let page8 = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "Page8")
       
       func howToRide(_: Void = ()) -> UIKit.UIPageViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: howToRide)
@@ -1701,6 +1702,10 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: page7)
       }
       
+      func page8(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: page8)
+      }
+      
       static func validate() throws {
         if UIKit.UIImage(named: "btn-arrow-next", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-arrow-next' is used in storyboard 'HowToRide', but couldn't be loaded.") }
         if UIKit.UIImage(named: "how-to-ride-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'how-to-ride-1' is used in storyboard 'HowToRide', but couldn't be loaded.") }
@@ -1720,6 +1725,7 @@ struct _R: Rswift.Validatable {
         if _R.storyboard.howToRide().page5() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page5' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
         if _R.storyboard.howToRide().page6() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page6' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
         if _R.storyboard.howToRide().page7() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page7' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
+        if _R.storyboard.howToRide().page8() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'page8' could not be loaded from storyboard 'HowToRide' as 'UIKit.UIViewController'.") }
       }
       
       fileprivate init() {}

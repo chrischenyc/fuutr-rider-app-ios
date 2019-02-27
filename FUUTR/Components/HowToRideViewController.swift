@@ -73,6 +73,7 @@ class HowToRideViewController: UIViewController {
       R.storyboard.howToRide.page5()!,
       R.storyboard.howToRide.page6()!,
       R.storyboard.howToRide.page7()!,
+      R.storyboard.howToRide.page8()!,
     ]
   }()
 }
