@@ -27,13 +27,17 @@ var config = Configuration()
 var currentLocation: CLLocation?
 var currentUser: User? {
   didSet {
-    if oldValue?.photo != currentUser?.photo {
-      NotificationCenter.default.post(name: NSNotification.Name.userAvatarUpdated, object: nil)
-      
-      if let currentUser = currentUser {
-        Zendesk.instance?.setIdentity(Identity.createAnonymous(name: currentUser.displayName, email: currentUser.email))
+    if oldValue == nil && currentUser != nil {
+      NotificationCenter.default.post(name: NSNotification.Name.userSignedIn, object: nil)
+    }
+    else if oldValue != nil && currentUser == nil {
+      NotificationCenter.default.post(name: NSNotification.Name.userSignedOut, object: nil)
+    }
+    else {
+      // user profile gets updated
+      if oldValue?.photo != currentUser?.photo {
+        NotificationCenter.default.post(name: NSNotification.Name.userAvatarUpdated, object: nil)
       }
-      
     }
   }
 }
@@ -68,22 +72,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       FirebaseApp.configure()
       
       if let oneSignalAppId = config.env.oneSignalAppId {
+        // https://documentation.onesignal.com/docs/ios-native-sdk
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
-        
         OneSignal.initWithLaunchOptions(launchOptions,
                                         appId: oneSignalAppId,
                                         handleNotificationAction: nil,
                                         settings: onesignalInitSettings)
-        
         OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification
-        
         OneSignal.add(self as OSSubscriptionObserver)
+        
+        refreshPushNotificationSubscriptionStatus()
       }
     }
     
     GMSServices.provideAPIKey(config.env.googleMapKey)
     FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
-    configStripe()
     Zendesk.initialize(appId: config.env.zenDeskAppId, clientId: config.env.zenDeskClientId, zendeskUrl: config.env.zenDeskUrl)
     Support.initialize(withZendesk: Zendesk.instance)
     Zendesk.instance?.setIdentity(Identity.createAnonymous())
@@ -92,6 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     globalStyling()
     showInitialScreen()
     
+    NotificationCenter.default.addObserver(self, selector: #selector(handleUserSignedIn), name: .userSignedIn, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(handleUserSignedOut), name: .userSignedOut, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(requestPushNotification), name: .requestPushNotification, object: nil)
     
@@ -149,33 +153,55 @@ extension AppDelegate: OSSubscriptionObserver {
     })
   }
   
-  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-    if currentUser != nil {
-      _ = UserService.updateProfile(["applePushDeviceToken": token]) { (error) in
-        if let error = error {
-          logger.error("Couldn't update user applePushDeviceToken: \(error.localizedDescription)")
-        }
-      }
+  func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
+    handlePushNotificationSubscriptionState(stateChanges.to)
+  }
+  
+  private func refreshPushNotificationSubscriptionStatus() {
+    if let status = OneSignal.getPermissionSubscriptionState(), status.permissionStatus.hasPrompted {
+      handlePushNotificationSubscriptionState(status.subscriptionStatus)
     }
   }
   
-  func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
-    if stateChanges.to.subscribed, let userId = stateChanges.to.userId, currentUser != nil {
-      _ = UserService.updateProfile(["oneSignalPlayerId": userId]) { (error) in
-        if let error = error {
-          logger.error("Couldn't update user oneSignalPlayerId: \(error.localizedDescription)")
-        }
+  private func handlePushNotificationSubscriptionState(_ state: OSSubscriptionState) {
+    guard currentUser != nil else { return }
+    
+    var payload: JSON = [:]
+    
+    if state.subscribed {
+      if let userId = state.userId {
+        payload["oneSignalPlayerId"] = userId
+      }
+      if let token = state.pushToken {
+        payload["applePushDeviceToken"] = token
       }
     }
-    else if !stateChanges.to.subscribed, currentUser != nil {
-      
+    else if !state.subscribed && Defaults[.didRequestPushNotificationPermission] {
+      // previously opted-in user now opted out, clearn up server record
+      payload["oneSignalPlayerId"] = ""
+      payload["applePushDeviceToken"] = ""
+    }
+    
+    if payload.count > 0 {
+      _ = UserService.updateProfile(payload) { (error) in
+        if let error = error {
+          logger.error("Couldn't update user push data: \(error.localizedDescription)")
+        }
+      }
     }
   }
 }
 
 // MARK: - private
 extension AppDelegate {
+  @objc func handleUserSignedIn(notification: Notification) {
+    if let currentUser = currentUser {
+      Zendesk.instance?.setIdentity(Identity.createAnonymous(name: currentUser.displayName, email: currentUser.email))
+    }
+    
+    refreshPushNotificationSubscriptionStatus()
+  }
+  
   @objc func handleUserSignedOut(notification: Notification) {
     guard let welcomeViewController = R.storyboard.welcome().instantiateInitialViewController() as? WelcomeViewController else { return }
     
@@ -190,7 +216,19 @@ extension AppDelegate {
     }
   }
   
-  private func configStripe() {
+  private func globalStyling() {
+    // custom navi bar back button
+    UINavigationBar.appearance().backIndicatorImage = R.image.icBackDarkGray16()
+    UINavigationBar.appearance().backIndicatorTransitionMaskImage = R.image.icBackDarkGray16()
+    
+    SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
+    SideMenuManager.defaultManager.menuFadeStatusBar = false
+    
+    // TODO: custom facebook button
+    // https://developers.facebook.com/docs/facebook-login/ios/advanced#custom-login-button
+    // Override point for customization after application launch.
+    // [FBSDKLoginButton class];
+    
     // Stripe payment configuration
     STPPaymentConfiguration.shared().companyName = R.string.localizable.kCompanyName()
     
@@ -204,20 +242,6 @@ extension AppDelegate {
     
     // Stripe theme configuration
     STPTheme.default().accentColor = .stripeAccentColor
-  }
-  
-  private func globalStyling() {
-    // custom navi bar back button
-    UINavigationBar.appearance().backIndicatorImage = R.image.icBackDarkGray16()
-    UINavigationBar.appearance().backIndicatorTransitionMaskImage = R.image.icBackDarkGray16()
-    
-    SideMenuManager.defaultManager.menuPresentMode = .menuSlideIn
-    SideMenuManager.defaultManager.menuFadeStatusBar = false
-    
-    // TODO: custom facebook button
-    // https://developers.facebook.com/docs/facebook-login/ios/advanced#custom-login-button
-    // Override point for customization after application launch.
-    // [FBSDKLoginButton class];
   }
   
   private func getRemoteConfig() {

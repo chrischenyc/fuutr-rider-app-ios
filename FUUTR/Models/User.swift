@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 struct User: Mappable {
+  var id: String?
   var displayName: String?
   var email: String?
   var countryCode: UInt64?
@@ -24,6 +25,7 @@ struct User: Mappable {
   }
   
   mutating func mapping(map: Map) {
+    id                      <- map["_id"]
     displayName             <- map["displayName"]
     email                   <- map["email"]
     countryCode             <- map["countryCode"]

@@ -119,6 +119,8 @@ final class AuthService {
   static func logout(_ completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
     guard let refreshToken = Defaults[.refreshToken] else { return nil }
     
+    cleanUpUserState()
+    
     let params: JSON = ["refreshToken": refreshToken]
     
     return APIClient.shared.load(path: "/auth/logout",
@@ -135,7 +137,7 @@ final class AuthService {
                                  retryCompletion: @escaping (Any?, Error?) -> Void ) {
     
     guard let refreshToken = Defaults[.refreshToken] else {
-      AuthService.forceSignIn()
+      cleanUpUserState()
       return
     }
     
@@ -152,7 +154,7 @@ final class AuthService {
                                 }
                                 else {
                                   // couldn't refresh access token, force log out
-                                  AuthService.forceSignIn()
+                                  AuthService.cleanUpUserState()
                                 }
     }
   }
@@ -261,9 +263,12 @@ final class AuthService {
   }
 }
 
-// MARK: - internal
+// MARK: - helper
 extension AuthService {
-  private static func forceSignIn() {
+  private static func cleanUpUserState() {
+    currentUser = nil
+    currentLocation = nil
+    
     Defaults[.userSignedIn] = false
     Defaults[.accessToken] = ""
     Defaults[.refreshToken] = ""
@@ -273,8 +278,6 @@ extension AuthService {
         FBSDKLoginManager().logOut()
       }
     }
-    
-    NotificationCenter.default.post(name: .userSignedOut, object: nil)
   }
   
   private static func handleAuthenticationResult(result: Any) {
@@ -286,6 +289,5 @@ extension AuthService {
     
     // reset current location so the map will be re-centred once user brings back the app
     currentLocation = nil
-
   }
 }

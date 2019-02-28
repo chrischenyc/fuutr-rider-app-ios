@@ -257,7 +257,9 @@ class MainViewController: UIViewController {
   }
   
   @objc func applyRemoteConfig(_ notification: NSNotification) {
-    updatePricing()
+    DispatchQueue.main.async {
+      self.updatePricing()
+    }
   }
   
   // MARK: - user actions

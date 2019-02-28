@@ -163,17 +163,6 @@ class AccountViewController: UIViewController {
         return
       }
     }
-    
-    currentUser = nil
-    currentLocation = nil
-    Defaults[.userSignedIn] = false
-    Defaults[.accessToken] = ""
-    Defaults[.refreshToken] = ""
-    if FBSDKAccessToken.current() != nil {
-      FBSDKLoginManager().logOut()
-    }
-    
-    NotificationCenter.default.post(name: .userSignedOut, object: nil)
   }
   
   // MARK: - API
