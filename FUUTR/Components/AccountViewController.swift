@@ -127,34 +127,51 @@ class AccountViewController: UIViewController {
     toggleAvatarSelectionView(on: false)
     
     var profile: JSON = [:]
-    profile["displayName"] = nameTextField.text
     
-    apiTask?.cancel()
+    if let name =  nameTextField.text, name.count > 0 && name != "+ Add your name" {
+      profile["displayName"] = name
+    }
     
-    showLoading()
-    
-    apiTask = UserService.updateProfile(profile,
-                                        avatar: avatarChanged ? avatarImageView.image : nil,
-                                        completion: { [weak self] (error) in
-                                          DispatchQueue.main.async {
-                                            
-                                            self?.dismissLoading()
-                                            
-                                            guard error == nil else {
-                                              self?.alertError(error!)
-                                              return
+    if profile.count > 0 {
+      apiTask?.cancel()
+      
+      showLoading()
+      
+      apiTask = UserService.updateProfile(profile,
+                                          avatar: avatarChanged ? avatarImageView.image : nil,
+                                          completion: { [weak self] (error) in
+                                            DispatchQueue.main.async {
+                                              
+                                              self?.dismissLoading()
+                                              
+                                              guard error == nil else {
+                                                self?.alertError(error!)
+                                                return
+                                              }
+                                              
+                                              self?.avatarChanged = false
+                                              
+                                              self?.loadProfile()
                                             }
-                                            
-                                            self?.avatarChanged = false
-                                            
-                                            self?.loadProfile()
-                                          }
-    })
+      })
+    }
+    else {
+      toggleEditing(false)
+    }
   }
   
   @IBAction func editAvatar(_ sender: Any) {
     toggleAvatarSelectionView(on: true)
   }
+  
+  @IBAction func editingNameDidBegin(_ sender: Any) {
+    nameTextField.textColor = UIColor.primaryGreyColor
+    
+    if nameTextField.text == "+ Add your name" {
+      nameTextField.text = ""
+    }
+  }
+  
   
   @IBAction func signOut() {
     _ = AuthService.logout { (error) in

@@ -82,6 +82,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="name"/>
+                                                        <connections>
+                                                            <action selector="editingNameDidBegin:" destination="Odp-FJ-fqr" eventType="editingDidBegin" id="MCH-yN-M3c"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -554,11 +557,11 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ewb-LM-ice" userLabel="View - current password">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hzq-J5-lu0">
-                                                        <rect key="frame" x="16" y="0.0" width="0.0" height="128"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hzq-J5-lu0">
+                                                        <rect key="frame" x="16" y="0.0" width="311" height="128"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="current password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgb-1n-EYD">
-                                                                <rect key="frame" x="0.0" y="44" width="0.0" height="40"/>
+                                                                <rect key="frame" x="0.0" y="44" width="267" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="zSx-5r-fjS"/>
                                                                 </constraints>
@@ -570,7 +573,7 @@
                                                                 </connections>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrE-IF-d8h">
-                                                                <rect key="frame" x="0.0" y="42" width="44" height="44"/>
+                                                                <rect key="frame" x="267" y="42" width="44" height="44"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="44" id="2b1-bq-2hF"/>
                                                                     <constraint firstAttribute="width" constant="44" id="W3b-g9-aId"/>
