@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import Kingfisher
+import SwiftyUserDefaults
 
 class MainViewController: UIViewController {
   
@@ -103,12 +104,12 @@ class MainViewController: UIViewController {
     didSet {
       vehicleInfoView.onReserve = { (vehicle) in
         self.alertMessage(title: "Reserve Scooter",
-                           message: "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
-                           positiveActionButtonTitle: "OK",
-                           positiveActionButtonTapped: {
+                          message: "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
+                          positiveActionButtonTitle: "OK",
+                          positiveActionButtonTapped: {
                             self.toggleVehicleReservation(id: vehicle.id, reserve: true)
         },
-                           negativeActionButtonTitle: "Cancel")
+                          negativeActionButtonTitle: "Cancel")
       }
       
       vehicleInfoView.onRing = { (vehicle) in
@@ -132,17 +133,17 @@ class MainViewController: UIViewController {
       
       vehicleReservedInfoView.onCancel = { (vehicle) in
         self.alertMessage(title: "Are you sure you want to cancel the reservation?",
-                           message: "You won't be able to reserve again for 15 minutes.",
-                           positiveActionButtonTitle: "Keep reservation",
-                           positiveActionButtonTapped: {},
-                           negativeActionButtonTitle: "Cancel reservation",
-                           negativeActionButtonTapped: {
+                          message: "You won't be able to reserve again for 15 minutes.",
+                          positiveActionButtonTitle: "Keep reservation",
+                          positiveActionButtonTapped: {},
+                          negativeActionButtonTitle: "Cancel reservation",
+                          negativeActionButtonTapped: {
                             self.toggleVehicleReservation(id: vehicle.id, reserve: false)
         })
       }
       
       vehicleReservedInfoView.onReserveTimeUp = {
-          self.search()
+        self.search()
       }
     }
   }
@@ -150,12 +151,12 @@ class MainViewController: UIViewController {
     didSet {
       ridingView.onPauseRide = {
         self.alertMessage(title: "Are you sure you want to lock the scooter?",
-                           message: "You'll be charged $0.15c per minute when scooter is locked.",
-                           positiveActionButtonTitle: "Yes, lock it",
-                           positiveActionButtonTapped: {
+                          message: "You'll be charged $0.15c per minute when scooter is locked.",
+                          positiveActionButtonTitle: "Yes, lock it",
+                          positiveActionButtonTapped: {
                             self.pauseRide()
         },
-                           negativeActionButtonTitle: "No, keep riding")
+                          negativeActionButtonTitle: "No, keep riding")
       }
       
       ridingView.onResumeRide = {
@@ -164,12 +165,12 @@ class MainViewController: UIViewController {
       
       ridingView.onEndRide = {
         self.alertMessage(title: "Are you sure you want to end the ride?",
-                           message: "",
-                           positiveActionButtonTitle: "Yes, end ride",
-                           positiveActionButtonTapped: {
+                          message: "",
+                          positiveActionButtonTitle: "Yes, end ride",
+                          positiveActionButtonTapped: {
                             self.endRide()
         },
-                           negativeActionButtonTitle: "No, keep riding")
+                          negativeActionButtonTitle: "No, keep riding")
       }
       ridingView.onPauseTimeUp = {
         self.refreshOngoingRide()
@@ -707,6 +708,20 @@ extension MainViewController {
       }
     }
   }
+  
+  private func requestPushNotification() {
+    alertMessage(title: "Receive Push Notification?",
+                 message: "To help you have a safe FUUTR ride, we'll ocasionally send you notifications to remind you about safety issues...",
+                 image: nil,
+                 positiveActionButtonTitle: "Yes",
+                 positiveActionButtonTapped: {
+                  Defaults[.didRequestPushNotificationPermission] = true
+                  NotificationCenter.default.post(name: NSNotification.Name.requestPushNotification, object: nil)
+    },
+                 negativeActionButtonTitle: "Cancel") {
+                  Defaults[.didRequestPushNotificationPermission] = true
+    }
+  }
 }
 
 // MARK: - Map
@@ -857,6 +872,12 @@ extension MainViewController: CLLocationManagerDelegate {
     }
     
     mapView.isMyLocationEnabled = true
+    
+    if !Defaults[.didRequestPushNotificationPermission] {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        self.requestPushNotification()
+      }
+    }
   }
   
   func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {

@@ -12,13 +12,13 @@ import GoogleMaps
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
-import FirebaseMessaging
 import SideMenu
 import XCGLogger
 import SwiftyUserDefaults
 import Stripe
 import ZendeskSDK
 import ZendeskCoreSDK
+import OneSignal
 
 // global variables
 let logger = XCGLogger.default
@@ -43,7 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
-  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
     // helpers init
@@ -67,7 +66,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // third-party services init
     if config.env != .Development {
       FirebaseApp.configure()
-      Messaging.messaging().delegate = self
+      
+      if let oneSignalAppId = config.env.oneSignalAppId {
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+        
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: oneSignalAppId,
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification
+        
+        OneSignal.add(self as OSSubscriptionObserver)
+      }
     }
     
     GMSServices.provideAPIKey(config.env.googleMapKey)
@@ -81,7 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     globalStyling()
     showInitialScreen()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(self.handleUserSignedOut), name: .userSignedOut, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(handleUserSignedOut), name: .userSignedOut, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(requestPushNotification), name: .requestPushNotification, object: nil)
     
     return true
   }
@@ -124,16 +136,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 }
 
-extension AppDelegate: MessagingDelegate {
+// MARK: - Push Notification
+extension AppDelegate: OSSubscriptionObserver {
+  @objc func requestPushNotification(notif: Notification) {
+    OneSignal.promptForPushNotifications(userResponse: { accepted in
+      if accepted {
+        logger.debug("Push granted")
+      }
+      else {
+        logger.debug("Push denied")
+      }
+    })
+  }
   
-  func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-    logger.debug("Firebase registration token: \(fcmToken)")
-    
-    // TODO: If necessary send token to application server.
-    // Note: This callback is fired at each app startup and whenever a new token is generated.
+  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+    if currentUser != nil {
+      _ = UserService.updateProfile(["applePushDeviceToken": token]) { (error) in
+        if let error = error {
+          logger.error("Couldn't update user applePushDeviceToken: \(error.localizedDescription)")
+        }
+      }
+    }
+  }
+  
+  func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
+    if stateChanges.to.subscribed, let userId = stateChanges.to.userId, currentUser != nil {
+      _ = UserService.updateProfile(["oneSignalPlayerId": userId]) { (error) in
+        if let error = error {
+          logger.error("Couldn't update user oneSignalPlayerId: \(error.localizedDescription)")
+        }
+      }
+    }
+    else if !stateChanges.to.subscribed, currentUser != nil {
+      
+    }
   }
 }
 
+// MARK: - private
 extension AppDelegate {
   @objc func handleUserSignedOut(notification: Notification) {
     guard let welcomeViewController = R.storyboard.welcome().instantiateInitialViewController() as? WelcomeViewController else { return }
@@ -148,9 +189,7 @@ extension AppDelegate {
       }
     }
   }
-}
-
-extension AppDelegate {
+  
   private func configStripe() {
     // Stripe payment configuration
     STPPaymentConfiguration.shared().companyName = R.string.localizable.kCompanyName()
@@ -166,10 +205,7 @@ extension AppDelegate {
     // Stripe theme configuration
     STPTheme.default().accentColor = .stripeAccentColor
   }
-}
-
-
-extension AppDelegate {
+  
   private func globalStyling() {
     // custom navi bar back button
     UINavigationBar.appearance().backIndicatorImage = R.image.icBackDarkGray16()

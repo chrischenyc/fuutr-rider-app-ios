@@ -22,9 +22,6 @@ PODS:
     - FirebaseAnalytics (= 5.5.0)
   - Firebase/CoreOnly (5.16.0):
     - FirebaseCore (= 5.2.0)
-  - Firebase/Messaging (5.16.0):
-    - Firebase/CoreOnly
-    - FirebaseMessaging (= 3.3.0)
   - Firebase/Performance (5.16.0):
     - Firebase/Core
     - FirebasePerformance (= 2.2.2)
@@ -40,20 +37,12 @@ PODS:
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
-  - FirebaseAnalyticsInterop (1.1.0)
   - FirebaseCore (5.2.0):
     - GoogleUtilities/Logger (~> 5.2)
   - FirebaseInstanceID (3.4.0):
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.3)
     - GoogleUtilities/UserDefaults (~> 5.3)
-  - FirebaseMessaging (3.3.0):
-    - FirebaseAnalyticsInterop (~> 1.1)
-    - FirebaseCore (~> 5.2)
-    - FirebaseInstanceID (~> 3.4)
-    - GoogleUtilities/Environment (~> 5.2)
-    - GoogleUtilities/Reachability (~> 5.2)
-    - Protobuf (~> 3.1)
   - FirebasePerformance (2.2.2):
     - FirebaseAnalytics (~> 5.4)
     - FirebaseInstanceID (~> 3.3)
@@ -125,6 +114,7 @@ PODS:
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - ObjectMapper (3.4.2)
+  - OneSignal (2.9.5)
   - PinCodeView (0.3.0):
     - PinCodeView/Core (= 0.3.0)
   - PinCodeView/Core (0.3.0)
@@ -160,7 +150,6 @@ DEPENDENCIES:
   - FastttCamera
   - FBSDKLoginKit
   - Firebase/Core
-  - Firebase/Messaging
   - Firebase/Performance
   - FlagPhoneNumber
   - GoogleMaps
@@ -168,6 +157,7 @@ DEPENDENCIES:
   - Kingfisher
   - MZFormSheetPresentationController
   - ObjectMapper
+  - OneSignal
   - PinCodeView
   - PKHUD
   - R.swift
@@ -192,10 +182,8 @@ SPEC REPOS:
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
-    - FirebaseAnalyticsInterop
     - FirebaseCore
     - FirebaseInstanceID
-    - FirebaseMessaging
     - FirebasePerformance
     - FirebaseRemoteConfig
     - FlagPhoneNumber
@@ -212,6 +200,7 @@ SPEC REPOS:
     - nanopb
     - ObjcExceptionBridging
     - ObjectMapper
+    - OneSignal
     - PinCodeView
     - PKHUD
     - Protobuf
@@ -237,10 +226,8 @@ SPEC CHECKSUMS:
   Firebase: 749a8ff4962f9d8c79dda1966de20f6f77583d67
   FirebaseABTesting: 1f50b8d50f5e3469eea54e7463a7b7fe221d1f5e
   FirebaseAnalytics: d35d47c03c50c73c14a7fd31463c5775843e78a9
-  FirebaseAnalyticsInterop: e5f21be9af6548372e2f0815834ff909bff395a2
   FirebaseCore: ea2d1816723ef21492b8e9113303e1350db5e08c
   FirebaseInstanceID: 97ea7a5dca9afd72c79bfcdddb7a44aa1cbb42a1
-  FirebaseMessaging: acbd51fe1a172bf29abaaa6e93a60f98bbf8e4f9
   FirebasePerformance: 6f77b930f982a54ad487d3de5523ce641db9dcc9
   FirebaseRemoteConfig: 7e11c65f0769c09bff6947997c209515058c5318
   FlagPhoneNumber: 86194d414c7e3b2f38c16136c4f8a5d34e3ee8b7
@@ -257,6 +244,7 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  OneSignal: ccdeb961882f8668305e5b694e2cb7cb325fc907
   PinCodeView: d95d927c930d4c200c9af84958948f3ab80c944a
   PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
@@ -270,6 +258,6 @@ SPEC CHECKSUMS:
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
   ZendeskSDK: af6509ad7968d367f95b2645713802712152f879
 
-PODFILE CHECKSUM: 262e75606b39205109eb1c09f3d4c86514b5ac57
+PODFILE CHECKSUM: e9ca1c5e4c9555b1bf4aed978362f9558d8bfe65
 
 COCOAPODS: 1.6.0

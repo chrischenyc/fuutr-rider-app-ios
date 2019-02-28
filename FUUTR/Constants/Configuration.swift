@@ -56,6 +56,17 @@ enum Environment: String {
     }
   }
   
+  var oneSignalAppId: String? {
+    switch self {
+    case .Development:
+      return nil
+    case .Staging:
+      return "0d63e4e1-1468-4d3d-8e65-d12452351d8e"
+    case .Production:
+      return nil
+    }
+  }
+  
   var zenDeskAppId: String {
     return "cd71e79001a33b1bff46c423cd1531e3eff31f2a9c0074f5"
   }

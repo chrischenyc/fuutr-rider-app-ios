@@ -25,7 +25,7 @@ final class UserService {
     })
   }
   
-  static func updateProfile(_ profile: JSON, avatar: UIImage?, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
+  static func updateProfile(_ profile: JSON, avatar: UIImage? = nil, completion: @escaping (Error?) -> Void) -> URLSessionDataTask? {
     return APIClient.shared.load(path: "/users/me",
                                  method: .patch,
                                  params: profile,
