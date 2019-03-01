@@ -21,7 +21,7 @@ class HistoryRideCell: UITableViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
     
-    backdropView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight])
+    backdropView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner])
     mapView.applyTheme()
   }
   

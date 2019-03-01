@@ -11,13 +11,13 @@ import Foundation
 extension UIView {
   
   // Apply clipping mask on certain corners with corner radius
-  func layoutCornerRadiusMask(corners: UIRectCorner, cornerRadius: CGFloat = defaultCornerRadius) {
-    let cornerRadii = CGSize(width: cornerRadius, height: cornerRadius)
-    let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: cornerRadii)
-    
-    let mask = CAShapeLayer()
-    mask.path = path.cgPath
-    
-    layer.mask = mask
+  func layoutCornerRadiusMask(corners: CACornerMask, cornerRadius: CGFloat = defaultCornerRadius) {
+    layer.cornerRadius = CGFloat(cornerRadius)
+    clipsToBounds = true
+    layer.maskedCorners = corners
+  }
+  
+  func layoutCircularMask() {
+    layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner], cornerRadius: frame.size.width/2)
   }
 }

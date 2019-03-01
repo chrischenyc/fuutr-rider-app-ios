@@ -49,9 +49,10 @@ class MainViewController: UIViewController {
           ridingView.isHidden = false
           unlockInfoView.isHidden = true
           vehicleInfoView.isHidden = true
-          vehicleReservedInfoView.isHidden = false
+          vehicleReservedInfoView.isHidden = true
         } else {
           ridingView.isHidden = true
+          unlockInfoView.isHidden = false
         }
       }
     }
@@ -226,6 +227,15 @@ class MainViewController: UIViewController {
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return Date().isDaylight() ? .default : .lightContent
+  }
+  
+  override func viewDidLayoutSubviews() {
+    sideMenuButton.layoutCircularMask()
+    
+    unlockInfoView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+    vehicleInfoView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+    vehicleReservedInfoView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+    ridingView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
   }
   
   // MARK: - notification handling
@@ -652,14 +662,6 @@ extension MainViewController {
 
 // MARK: - UI
 extension MainViewController {
-  override func viewDidLayoutSubviews() {
-    sideMenuButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: sideMenuButton.frame.size.width/2)
-    unlockInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
-    vehicleInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
-    vehicleReservedInfoView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
-    ridingView.layoutCornerRadiusMask(corners: [UIRectCorner.topLeft, UIRectCorner.topRight])
-  }
-  
   private func updatePricing() {
     if let remoteConfig = remoteConfig {
       unlockInfoView.priceLabel.text = "\(remoteConfig.unlockCost.priceString) to unlock, \(remoteConfig.rideMinuteCost.priceString) per minute"

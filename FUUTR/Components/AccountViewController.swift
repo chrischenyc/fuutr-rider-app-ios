@@ -68,9 +68,9 @@ class AccountViewController: UIViewController {
   }
   
   override func viewDidLayoutSubviews() {
-    avatarImageView.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarImageView.frame.size.width/2)
+    avatarImageView.layoutCircularMask()
     
-    avatarEditButton.layoutCornerRadiusMask(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadius: avatarEditButton.frame.size.width/2)
+    avatarEditButton.layoutCircularMask()
     
     avatarSelectionViewHeightContraint.constant = view.bounds.size.height
   }
