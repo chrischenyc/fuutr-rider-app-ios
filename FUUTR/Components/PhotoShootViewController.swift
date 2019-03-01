@@ -28,11 +28,16 @@ class PhotoShootViewController: UIViewController {
   var submitButtonTitle: String = "Next"
   var action: PhotoShootViewControllerAction?
   var enableFrontCamera: Bool = false
+  var dismissable: Bool = true
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    setupUI()
+    shootButton.backgroundColor = UIColor.primaryRedColor
+    if dismissable {
+      navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(image: R.image.icCloseDarkGray16(), style: .plain, target: self, action: #selector(closeTapped))
+    }
+    navigationController?.navigationBar.applyLightTheme()
     
     fastCamera.delegate = self
     
@@ -46,10 +51,6 @@ class PhotoShootViewController: UIViewController {
     sendView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
     shootButton.layoutCircularMask()
     sendButton.setTitle(submitButtonTitle, for: .normal)
-  }
-  
-  private func setupUI() {
-    shootButton.backgroundColor = UIColor.primaryRedColor
   }
   
   private func switchToCamera() {
@@ -72,6 +73,10 @@ class PhotoShootViewController: UIViewController {
     fastttRemoveChildViewController(fastCamera)
     
     view.bringSubviewToFront(sendView)
+  }
+  
+  @objc func closeTapped(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
   }
   
   @IBAction func shootTapped(_ sender: Any) {

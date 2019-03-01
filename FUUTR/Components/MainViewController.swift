@@ -241,6 +241,7 @@ class MainViewController: UIViewController {
       photoShootViewController.action = .scooterParked
       photoShootViewController.submitButtonTitle = "Send"
       photoShootViewController.title = "Parked Scooter Photo"
+      photoShootViewController.dismissable = false
     }
       
     else if let navigationController = segue.destination as? UINavigationController,
