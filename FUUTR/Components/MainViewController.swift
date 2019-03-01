@@ -665,10 +665,12 @@ extension MainViewController {
   private func tootVehicle(id: String) {
     guard let currentLocation = currentLocation else { return }
     
+    vehicleInfoView.ringButton.isEnabled = false
     vehicleAPITask?.cancel()
     vehicleAPITask = VehicleService.toot(coordinates:currentLocation.coordinate, id: id, completion: { [weak self] (error) in
       
       DispatchQueue.main.async {
+        self?.vehicleInfoView.ringButton.isEnabled = true
         
         guard error == nil else {
           self?.alertError(error!)
