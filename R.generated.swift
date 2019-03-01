@@ -625,8 +625,8 @@ struct R: Rswift.Validatable {
     static let avatarSelectionView = _R.nib._AvatarSelectionView()
     /// Nib `DialogViewController`.
     static let dialogViewController = _R.nib._DialogViewController()
-    /// Nib `RidingView`.
-    static let ridingView = _R.nib._RidingView()
+    /// Nib `RidingInfoView`.
+    static let ridingInfoView = _R.nib._RidingInfoView()
     /// Nib `UnlockInfoView`.
     static let unlockInfoView = _R.nib._UnlockInfoView()
     /// Nib `VehicleInfoView`.
@@ -646,10 +646,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.dialogViewController)
     }
     
-    /// `UINib(name: "RidingView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.ridingView) instead")
-    static func ridingView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.ridingView)
+    /// `UINib(name: "RidingInfoView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.ridingInfoView) instead")
+    static func ridingInfoView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.ridingInfoView)
     }
     
     /// `UINib(name: "UnlockInfoView", in: bundle)`
@@ -678,8 +678,8 @@ struct R: Rswift.Validatable {
       return R.nib.dialogViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
-    static func ridingView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.ridingView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func ridingInfoView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.ridingInfoView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func unlockInfoView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1438,7 +1438,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _AvatarSelectionView.validate()
-      try _RidingView.validate()
+      try _RidingInfoView.validate()
       try _UnlockInfoView.validate()
       try _VehicleInfoView.validate()
       try _VehicleReservedInfoView.validate()
@@ -1480,18 +1480,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _RidingView: Rswift.NibResourceType, Rswift.Validatable {
+    struct _RidingInfoView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let name = "RidingView"
+      let name = "RidingInfoView"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "ic-clock-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-clock-dark-gray-24' is used in nib 'RidingView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic-location-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-location-dark-gray-24' is used in nib 'RidingView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "img-scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-scooter-model' is used in nib 'RidingView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-clock-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-clock-dark-gray-24' is used in nib 'RidingInfoView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-location-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-location-dark-gray-24' is used in nib 'RidingInfoView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-scooter-model", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-scooter-model' is used in nib 'RidingInfoView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

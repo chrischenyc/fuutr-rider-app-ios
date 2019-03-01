@@ -143,7 +143,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-Uq-ABq" userLabel="ridingView" customClass="RidingView" customModule="FUUTR" customModuleProvider="target">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-Uq-ABq" userLabel="ridingView" customClass="RidingInfoView" customModule="FUUTR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
@@ -209,7 +209,7 @@
                         <outlet property="infoViewBottomContraint" destination="Ahz-z7-4tC" id="etP-WU-gup"/>
                         <outlet property="infoViewsBackdrop" destination="EUZ-iL-pDp" id="YYC-0Y-HmB"/>
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
-                        <outlet property="ridingView" destination="zoP-Uq-ABq" id="OGQ-0R-yrQ"/>
+                        <outlet property="ridingInfoView" destination="zoP-Uq-ABq" id="OGQ-0R-yrQ"/>
                         <outlet property="sideMenuButton" destination="wXu-gN-jng" id="Szo-TM-gWK"/>
                         <outlet property="unlockInfoView" destination="uh5-OG-jme" id="ejk-zq-8Qb"/>
                         <outlet property="vehicleInfoView" destination="FYW-nd-pNL" id="6DX-ay-ise"/>

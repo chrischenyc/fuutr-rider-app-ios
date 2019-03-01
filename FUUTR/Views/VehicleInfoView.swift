@@ -1,5 +1,5 @@
 @IBDesignable
-class VehicleInfoView: DesignableView {
+class VehicleInfoView: DesignableView, InfoView {
   
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var parkedLabel: UILabel!
@@ -15,6 +15,10 @@ class VehicleInfoView: DesignableView {
       return "VehicleInfoView"
     }
     set {}
+  }
+  
+  var bottomToSuperViewSpace: CGFloat {
+    return 0
   }
   
   private var reserveTimer: Timer?

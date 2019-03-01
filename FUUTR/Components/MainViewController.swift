@@ -41,28 +41,53 @@ class MainViewController: UIViewController {
   var ongoingRide: Ride? {
     didSet {
       if let ongoingRide = ongoingRide {
-        ridingView.updateContent(withRide: ongoingRide)
+        ridingInfoView.updateContent(withRide: ongoingRide)
       }
       
       if ongoingRide != oldValue {
         if ongoingRide != nil {
-          ridingView.isHidden = false
-          unlockInfoView.isHidden = true
-          vehicleInfoView.isHidden = true
-          vehicleReservedInfoView.isHidden = true
+          visibleInfoView = ridingInfoView
         } else {
-          ridingView.isHidden = true
-          unlockInfoView.isHidden = false
+          visibleInfoView = unlockInfoView
         }
       }
     }
   }
   
   var finishedRide: Ride?
-  
   var ridingDirection: CLLocationDirection = 0 // up north
   
-  // ---------- IBOutlet ----------
+  private lazy var infoViews: [InfoView] = {
+    return [unlockInfoView, vehicleInfoView, vehicleReservedInfoView, ridingInfoView]
+  }()
+  
+  private var visibleInfoView: InfoView? {
+    didSet {
+      if (oldValue as? UIView) != (visibleInfoView as? UIView) {
+        if let visibleInfoView = visibleInfoView {
+          for infoView in infoViews {
+            if (infoView as! UIView) != (visibleInfoView as! UIView) {
+              (infoView as! UIView).isHidden = true
+            }
+            else {
+              (infoView as! UIView).isHidden = false
+            }
+          }
+          
+          infoViewBottomContraint.constant = visibleInfoView.bottomToSuperViewSpace
+        }
+        else {
+          for infoView in infoViews {
+            (infoView as! UIView).isHidden = true
+          }
+          
+          infoViewBottomContraint.constant = 0
+        }
+      }
+    }
+  }
+  
+  // MARK: - IBOutlet
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var sideMenuButton: UIButton!
   @IBOutlet weak var infoViewsBackdrop: UIView!
@@ -148,11 +173,16 @@ class MainViewController: UIViewController {
       }
     }
   }
-  @IBOutlet weak var ridingView: RidingView! {
+  @IBOutlet weak var ridingInfoView: RidingInfoView! {
     didSet {
-      ridingView.onPauseRide = {
+      ridingInfoView.onPauseRide = {
+        var pausedPricing = "$0.15"
+        if let pauseMinuteCost = remoteConfig?.pauseMinuteCost {
+          pausedPricing = pauseMinuteCost.priceString
+        }
+        
         self.alertMessage(title: "Are you sure you want to lock the scooter?",
-                          message: "You'll be charged $0.15c per minute when scooter is locked.",
+                          message: "You'll be charged \(pausedPricing) per minute when scooter is locked.",
                           positiveActionButtonTitle: "Yes, lock it",
                           positiveActionButtonTapped: {
                             self.pauseRide()
@@ -160,11 +190,11 @@ class MainViewController: UIViewController {
                           negativeActionButtonTitle: "No, keep riding")
       }
       
-      ridingView.onResumeRide = {
+      ridingInfoView.onResumeRide = {
         self.resumeRide()
       }
       
-      ridingView.onEndRide = {
+      ridingInfoView.onEndRide = {
         self.alertMessage(title: "Are you sure you want to end the ride?",
                           message: "",
                           positiveActionButtonTitle: "Yes, end ride",
@@ -173,7 +203,7 @@ class MainViewController: UIViewController {
         },
                           negativeActionButtonTitle: "No, keep riding")
       }
-      ridingView.onPauseTimeUp = {
+      ridingInfoView.onPauseTimeUp = {
         self.refreshOngoingRide()
       }
     }
@@ -184,6 +214,7 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     
     sideMenuButton.imageView?.contentMode = .scaleAspectFill
+    visibleInfoView = unlockInfoView
     updatePricing()
     setupMapView()
     setupLocationManager()
@@ -542,12 +573,12 @@ extension MainViewController {
     
     rideAPITask?.cancel()
     
-    ridingView.lockButton.setTitle("Locking ...", for: .disabled)
-    ridingView.lockButton.isEnabled = false
+    ridingInfoView.lockButton.setTitle("Locking ...", for: .disabled)
+    ridingInfoView.lockButton.isEnabled = false
     
     rideAPITask = RideService.pause(rideId: rideId) { [weak self] (ride, error) in
       DispatchQueue.main.async {
-        self?.ridingView.lockButton.isEnabled = true
+        self?.ridingInfoView.lockButton.isEnabled = true
         
         if error != nil {
           logger.error(error)
@@ -577,12 +608,12 @@ extension MainViewController {
     
     rideAPITask?.cancel()
     
-    ridingView.lockButton.setTitle("Unlocking ...", for: .disabled)
-    ridingView.lockButton.isEnabled = false
+    ridingInfoView.lockButton.setTitle("Unlocking ...", for: .disabled)
+    ridingInfoView.lockButton.isEnabled = false
     
     rideAPITask = RideService.resume(rideId: rideId) { [weak self] (ride, error) in
       DispatchQueue.main.async {
-        self?.ridingView.lockButton.isEnabled = true
+        self?.ridingInfoView.lockButton.isEnabled = true
         
         if error != nil {
           logger.error(error)
@@ -618,7 +649,7 @@ extension MainViewController {
         }
         
         if let vehicle = vehicle {
-          self?.updateVehicleInfo(vehicle)
+          self?.showVehicleInfo(vehicle)
           
           // refresh map search
           self?.search()
@@ -666,8 +697,13 @@ extension MainViewController {
   }
   
   private func showVehicleInfo(_ vehicle: Vehicle) {
-    updateVehicleInfo(vehicle)
-    unlockInfoView.isHidden = true
+    if vehicle.reserved {
+      vehicleReservedInfoView.updateContentWith(vehicle)
+      visibleInfoView = vehicleReservedInfoView
+    } else {
+      vehicleInfoView.updateContentWith(vehicle)
+      visibleInfoView = vehicleInfoView
+    }
     
     if let currentLocation = currentLocation, let latitude = vehicle.latitude, let longitude = vehicle.longitude {
       mapView.drawWalkingRoute(from: currentLocation.coordinate,
@@ -676,23 +712,9 @@ extension MainViewController {
   }
   
   private func hideVehicleInfo() {
-    vehicleInfoView.isHidden = true
-    vehicleReservedInfoView.isHidden = true
-    unlockInfoView.isHidden = false
+    visibleInfoView = unlockInfoView
     
     mapView.clearWalkingRoute()
-  }
-  
-  private func updateVehicleInfo(_ vehicle: Vehicle) {
-    if vehicle.reserved {
-      vehicleReservedInfoView.updateContentWith(vehicle)
-      vehicleReservedInfoView.isHidden = false
-      vehicleInfoView.isHidden = true
-    } else {
-      vehicleInfoView.updateContentWith(vehicle)
-      vehicleInfoView.isHidden = false
-      vehicleReservedInfoView.isHidden = true
-    }
   }
   
   private func showNoParkingZoneError() {

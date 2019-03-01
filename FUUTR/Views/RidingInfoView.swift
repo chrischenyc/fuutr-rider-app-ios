@@ -1,6 +1,6 @@
 @IBDesignable
 
-class RidingView: DesignableView {
+class RidingInfoView: DesignableView, InfoView {
   @IBOutlet weak var rideInProgressLabel: UILabel!
   @IBOutlet weak var ridingTimeLabel: UILabel!
   @IBOutlet weak var ridingDistanceLabel: UILabel!
@@ -47,9 +47,13 @@ class RidingView: DesignableView {
   
   override var nibName: String {
     get {
-      return "RidingView"
+      return "RidingInfoView"
     }
     set {}
+  }
+  
+  var bottomToSuperViewSpace: CGFloat {
+    return 0
   }
   
   @IBAction func lock(_ sender: Any) {

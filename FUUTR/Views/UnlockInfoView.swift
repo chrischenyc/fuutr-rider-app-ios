@@ -7,7 +7,7 @@
 //
 
 @IBDesignable
-class UnlockInfoView: DesignableView {
+class UnlockInfoView: DesignableView, InfoView {
   
   @IBOutlet weak var pricingLabelsTopContraint: NSLayoutConstraint!
   @IBOutlet weak var priceLabel: UILabel!
@@ -24,8 +24,10 @@ class UnlockInfoView: DesignableView {
   var onScan: (() -> Void)?
   var onSwipeUp: (() -> Void)?
   var onSwipeDown: (() -> Void)?
-  
   var didSwipUp = true
+  var bottomToSuperViewSpace: CGFloat {
+    return didSwipUp ? 0 : 140
+  }
   
   override func commonInit() {
     super.commonInit()
