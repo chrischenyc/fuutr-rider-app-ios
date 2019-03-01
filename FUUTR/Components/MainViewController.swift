@@ -981,6 +981,11 @@ extension MainViewController: GMSMapViewDelegate {
     return false
   }
   
+  func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String, name: String, location: CLLocationCoordinate2D) {
+    hideVehicleInfo()
+    toggleZoneInfo(location)
+  }
+  
   func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
     hideVehicleInfo()
     toggleZoneInfo(coordinate)
