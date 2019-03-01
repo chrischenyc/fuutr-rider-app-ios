@@ -42,8 +42,8 @@ class PhotoShootViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     fastCamera.view.frame = self.cameraView.frame
     
-    shootView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
-    sendView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+    shootView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+    sendView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
     shootButton.layoutCircularMask()
     sendButton.setTitle(submitButtonTitle, for: .normal)
   }

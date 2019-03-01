@@ -63,7 +63,7 @@ class AvatarSelectionView: DesignableView {
   override func layoutSubviews() {
     super.layoutSubviews()
     
-    avtarsBackdropView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+    avtarsBackdropView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
   }
   
   @objc func dismiss() {

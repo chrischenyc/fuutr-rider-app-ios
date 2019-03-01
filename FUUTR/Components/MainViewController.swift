@@ -65,18 +65,18 @@ class MainViewController: UIViewController {
   // ---------- IBOutlet ----------
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var sideMenuButton: UIButton!
-  
+  @IBOutlet weak var infoViewsBackdrop: UIView!
   @IBOutlet weak var unlockInfoView: UnlockInfoView! {
     didSet {
       unlockInfoView.onSwipeUp = {
-        self.unlockInfoViewBottomContraint.constant = 0
+        self.infoViewBottomContraint.constant = 0
         UIView.animate(withDuration: 0.25, animations: {
           self.view.layoutIfNeeded()
         })
       }
       
       unlockInfoView.onSwipeDown = {
-        self.unlockInfoViewBottomContraint.constant = -140
+        self.infoViewBottomContraint.constant = 140
         UIView.animate(withDuration: 0.25, animations: {
           self.view.layoutIfNeeded()
         })
@@ -100,7 +100,7 @@ class MainViewController: UIViewController {
       }
     }
   }
-  @IBOutlet weak var unlockInfoViewBottomContraint: NSLayoutConstraint!
+  @IBOutlet weak var infoViewBottomContraint: NSLayoutConstraint!
   @IBOutlet weak var vehicleInfoView: VehicleInfoView! {
     didSet {
       vehicleInfoView.onReserve = { (vehicle) in
@@ -232,10 +232,7 @@ class MainViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     sideMenuButton.layoutCircularMask()
     
-    unlockInfoView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
-    vehicleInfoView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
-    vehicleReservedInfoView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
-    ridingView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+    infoViewsBackdrop.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
   }
   
   // MARK: - notification handling

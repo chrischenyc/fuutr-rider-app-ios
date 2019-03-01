@@ -129,27 +129,40 @@
                                     <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gig-D1-MCH"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YW6-P3-Zzq">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUZ-iL-pDp">
                                 <rect key="frame" x="0.0" y="463" width="375" height="204"/>
                                 <subviews>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-nd-pNL" userLabel="vehicleInfoView" customClass="VehicleInfoView" customModule="FUUTR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9R-Fu-VmM" userLabel="vehicleReservedInfoView" customClass="VehicleReservedInfoView" customModule="FUUTR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-Uq-ABq" userLabel="ridingView" customClass="RidingView" customModule="FUUTR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-OG-jme" userLabel="unlockView" customClass="UnlockInfoView" customModule="FUUTR" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YW6-P3-Zzq">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
+                                        <subviews>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-nd-pNL" userLabel="vehicleInfoView" customClass="VehicleInfoView" customModule="FUUTR" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9R-Fu-VmM" userLabel="vehicleReservedInfoView" customClass="VehicleReservedInfoView" customModule="FUUTR" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-Uq-ABq" userLabel="ridingView" customClass="RidingView" customModule="FUUTR" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-OG-jme" userLabel="unlockView" customClass="UnlockInfoView" customModule="FUUTR" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="YW6-P3-Zzq" secondAttribute="bottom" id="Qga-9m-WNq"/>
+                                    <constraint firstItem="YW6-P3-Zzq" firstAttribute="leading" secondItem="EUZ-iL-pDp" secondAttribute="leading" id="XFq-eM-e7D"/>
+                                    <constraint firstItem="YW6-P3-Zzq" firstAttribute="top" secondItem="EUZ-iL-pDp" secondAttribute="top" id="e9d-Bk-tkj"/>
+                                    <constraint firstAttribute="trailing" secondItem="YW6-P3-Zzq" secondAttribute="trailing" id="oqP-5P-snt"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-gN-jng">
                                 <rect key="frame" x="16" y="20" width="44" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,25 +188,26 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="YW6-P3-Zzq" secondAttribute="bottom" id="3JC-T4-4nv"/>
-                            <constraint firstItem="YW6-P3-Zzq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4kG-i4-cAj"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6X2-wB-VND"/>
+                            <constraint firstItem="EUZ-iL-pDp" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Ahz-z7-4tC"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AnA-aF-8Me"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uQ5-QY-a10" secondAttribute="trailing" constant="16" id="EgZ-VM-yls"/>
+                            <constraint firstItem="EUZ-iL-pDp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OyE-wQ-hbK"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6i-Mk-ptg"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQh-9I-Jzz"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf3-O6-CJt"/>
                             <constraint firstItem="SPf-t1-Jvg" firstAttribute="trailing" secondItem="lfL-KJ-ZTo" secondAttribute="trailing" constant="-8" id="bQ2-KS-5f2"/>
-                            <constraint firstItem="YW6-P3-Zzq" firstAttribute="top" secondItem="lfL-KJ-ZTo" secondAttribute="bottom" id="cAz-yA-U2N"/>
                             <constraint firstItem="uQ5-QY-a10" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iKf-3J-My7"/>
+                            <constraint firstItem="EUZ-iL-pDp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="l7L-6Z-qfZ"/>
                             <constraint firstItem="SPf-t1-Jvg" firstAttribute="bottom" secondItem="lfL-KJ-ZTo" secondAttribute="bottom" constant="-8" id="qda-9U-5Gi"/>
-                            <constraint firstItem="YW6-P3-Zzq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tuc-Yf-SGw"/>
+                            <constraint firstItem="EUZ-iL-pDp" firstAttribute="top" secondItem="lfL-KJ-ZTo" secondAttribute="bottom" constant="-5" id="rWZ-2M-KUH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="infoViewBottomContraint" destination="Ahz-z7-4tC" id="etP-WU-gup"/>
+                        <outlet property="infoViewsBackdrop" destination="EUZ-iL-pDp" id="YYC-0Y-HmB"/>
                         <outlet property="mapView" destination="lfL-KJ-ZTo" id="jOc-Wg-7Sw"/>
                         <outlet property="ridingView" destination="zoP-Uq-ABq" id="OGQ-0R-yrQ"/>
                         <outlet property="sideMenuButton" destination="wXu-gN-jng" id="Szo-TM-gWK"/>

@@ -74,7 +74,7 @@ class WelcomeViewController: UIViewController {
   }
   
   override func viewDidLayoutSubviews() {
-    backdropView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+    backdropView.layoutCornerRadiusMask(corners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
   }
   
   private func authenticateWithFacebook(result: FBSDKLoginManagerLoginResult) {
