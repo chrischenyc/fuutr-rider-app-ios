@@ -424,6 +424,7 @@ extension MainViewController {
                                             bearing: ridingDirection,
                                             viewingAngle: ridingViewingAngle)
       mapView.animate(to: camera)
+      mapView.isTrafficEnabled = true
     }
   }
   
@@ -441,6 +442,7 @@ extension MainViewController {
     locationManager.stopUpdatingHeading()
     ridingDirection = 0
     mapView.animate(toBearing: 0)
+    mapView.isTrafficEnabled = false
     
     // zoom out map after ride
     if let currentLocation = currentLocation {
