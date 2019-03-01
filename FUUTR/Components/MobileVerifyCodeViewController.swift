@@ -66,7 +66,8 @@ class MobileVerifyCodeViewController: UIViewController {
         }
         
         self?.alertMessage(message: "We sent you a new verification code",
-                           image: R.image.imgSuccessCheck())
+                           image: R.image.imgSuccessCheck(),
+                           hapticFeedbackType: .success)
       }
     })
   }

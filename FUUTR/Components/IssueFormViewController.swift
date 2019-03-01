@@ -96,6 +96,7 @@ class IssueFormViewController: UIViewController {
                                           self?.alertMessage(title: "Issue Report Sent!",
                                                              message: "Thank you for helping make FUUTR better.",
                                                              image: R.image.imgSuccessCheck(),
+                                                             hapticFeedbackType: .success,
                                                              positiveActionButtonTitle: "Done",
                                                              positiveActionButtonTapped: {
                                                               self?.performSegue(withIdentifier: R.segue.issueFormViewController.unwindToHome, sender: nil)

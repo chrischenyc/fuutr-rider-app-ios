@@ -66,7 +66,8 @@ class UpdateEmailVerifyViewController: UIViewController {
         
         self?.alertMessage(title: "Check your email!",
                            message: "We sent a new verification code to \(email)",
-                           image: R.image.imgSuccessCheck())
+          image: R.image.imgSuccessCheck(),
+          hapticFeedbackType: .success)
       }
     })
   }
@@ -94,6 +95,7 @@ extension UpdateEmailVerifyViewController: PinCodeViewDelegate {
         self?.alertMessage(title: "Email has been updated to \(email)",
           message: nil,
           image: nil,
+          hapticFeedbackType: .success,
           positiveActionButtonTapped: {
             self?.performSegue(withIdentifier: R.segue.updateEmailVerifyViewController.unwindToSettings, sender: nil)
         })

@@ -139,6 +139,7 @@ extension TopUpViewController: STPPaymentContextDelegate {
       alertMessage(title: "Your wallet has been credited",
                    message: nil,
                    image: R.image.imgSuccessCheck(),
+                   hapticFeedbackType: .success,
                    positiveActionButtonTapped: {
                     self.loadProfile()
                     self.delegate?.didTopUp(topUpViewController: self)

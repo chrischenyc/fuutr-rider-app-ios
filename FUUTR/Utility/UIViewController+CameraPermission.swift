@@ -18,6 +18,7 @@ extension UIViewController {
       case -11852:
         alertMessage(title: nil,
                      message: "FUUTR needs camera access to scan the scooter's QR Code and take photos of your parked scooter.",
+                     hapticFeedbackType: .error,
                      positiveActionButtonTitle: "Go to Settings",
                      positiveActionButtonTapped: {
                       if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
@@ -30,7 +31,7 @@ extension UIViewController {
         } )
         
       default:
-        alertMessage(message: "Cannot open camera on this device.")
+        alertMessage(message: "Cannot open camera on this device.", hapticFeedbackType: .error)
       }
       
       return false

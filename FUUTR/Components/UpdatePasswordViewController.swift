@@ -110,6 +110,7 @@ class UpdatePasswordViewController: UIViewController {
                                             self?.alertMessage(title: "Done!",
                                                                message: nil,
                                                                image: nil,
+                                                               hapticFeedbackType: .success,
                                                                positiveActionButtonTapped: {
                                                                 self?.performSegue(withIdentifier: R.segue.updatePasswordViewController.unwindToSettings, sender: nil)
                                             })

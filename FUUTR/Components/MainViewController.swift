@@ -131,6 +131,7 @@ class MainViewController: UIViewController {
       vehicleInfoView.onReserve = { (vehicle) in
         self.alertMessage(title: "Reserve Scooter",
                           message: "You'll have 15 minutes to scan/enter code the scooter. After that, you'll lose the reservation.",
+                          hapticFeedbackType: .warning,
                           positiveActionButtonTitle: "OK",
                           positiveActionButtonTapped: {
                             self.toggleVehicleReservation(id: vehicle.id, reserve: true)
@@ -160,6 +161,7 @@ class MainViewController: UIViewController {
       vehicleReservedInfoView.onCancel = { (vehicle) in
         self.alertMessage(title: "Are you sure you want to cancel the reservation?",
                           message: "You won't be able to reserve again for 15 minutes.",
+                          hapticFeedbackType: .warning,
                           positiveActionButtonTitle: "Keep reservation",
                           positiveActionButtonTapped: {},
                           negativeActionButtonTitle: "Cancel reservation",
@@ -183,6 +185,7 @@ class MainViewController: UIViewController {
         
         self.alertMessage(title: "Are you sure you want to lock the scooter?",
                           message: "You'll be charged \(pausedPricing) per minute when scooter is locked.",
+          hapticFeedbackType: .warning,
                           positiveActionButtonTitle: "Yes, lock it",
                           positiveActionButtonTapped: {
                             self.pauseRide()
@@ -197,6 +200,7 @@ class MainViewController: UIViewController {
       ridingInfoView.onEndRide = {
         self.alertMessage(title: "Are you sure you want to end the ride?",
                           message: "",
+                          hapticFeedbackType: .warning,
                           positiveActionButtonTitle: "Yes, end ride",
                           positiveActionButtonTapped: {
                             self.endRide()
@@ -744,6 +748,7 @@ extension MainViewController {
     alertMessage(title: "Receive Push Notification?",
                  message: "To help you have a safe FUUTR ride, we'll ocasionally send you notifications to remind you about safety issues...",
                  image: nil,
+                 hapticFeedbackType: .warning,
                  positiveActionButtonTitle: "Yes",
                  positiveActionButtonTapped: {
                   Defaults[.didRequestPushNotificationPermission] = true
@@ -858,6 +863,7 @@ extension MainViewController {
     alertMessage(title: "Enable Location Services",
                  message: "Allow FUUTR to use your location to show you the closest scooters on the map.",
                  image: R.image.imgLocationServices(),
+                 hapticFeedbackType: .warning,
                  positiveActionButtonTitle: "OK",
                  positiveActionButtonTapped: {
                   
