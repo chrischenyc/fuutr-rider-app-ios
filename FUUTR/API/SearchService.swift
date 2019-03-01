@@ -9,7 +9,7 @@
 import Foundation
 
 final class SearchService {
-  static func search(coordinates: CLLocationCoordinate2D, radius: Double, completion: @escaping ([Vehicle], [Zone], Error?) -> Void) -> URLSessionDataTask? {
+  static func search(coordinates: CLLocationCoordinate2D, radius: Double, completion: @escaping ([Vehicle]?, [Zone]?, Error?) -> Void) -> URLSessionDataTask? {
     
     let params: JSON = [
       "latitude": coordinates.latitude,
@@ -19,10 +19,16 @@ final class SearchService {
     
     return APIClient.shared.load(path: "/search", method: .get, params: params, completion: { (result, error) in
       
-      var vehiclesResult = [Vehicle]()
-      var zonesResult = [Zone]()
+      guard error == nil else {
+        completion(nil, nil, error)
+        return
+      }
+      
       
       if let json = result as? JSON {
+        var vehiclesResult = [Vehicle]()
+        var zonesResult = [Zone]()
+        
         if let jsonArray = json["vehicles"] as? [JSON], let vehicles = Vehicle.fromJSONArray(jsonArray) {
           vehiclesResult = vehicles
         }
@@ -30,9 +36,12 @@ final class SearchService {
         if let jsonArray = json["zones"] as? [JSON], let zones = Zone.fromJSONArray(jsonArray) {
           zonesResult = zones
         }
+        
+        completion(vehiclesResult, zonesResult, error)
       }
-      
-      completion(vehiclesResult, zonesResult, error)
+      else {
+        completion(nil, nil, NetworkError.other)
+      }
       
     })
   }

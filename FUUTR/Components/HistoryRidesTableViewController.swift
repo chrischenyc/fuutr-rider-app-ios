@@ -67,10 +67,7 @@ class HistoryRidesTableViewController: UITableViewController {
           return
         }
         
-        guard let rides = rides else {
-          self?.alertMessage(message: R.string.localizable.kOtherError())
-          return
-        }
+        guard let rides = rides else { return }
         
         self?.rides = rides
         self?.loadRidesContent()

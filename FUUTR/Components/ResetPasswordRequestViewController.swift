@@ -70,6 +70,7 @@ class ResetPasswordRequestViewController: UIViewController {
         self?.alertMessage(title: "Check your email!",
                            message: "We sent you a password reset code",
                            image: R.image.imgSuccessCheck(),
+                           hapticFeedbackType: .success,
                            positiveActionButtonTitle: "Continue",
                            positiveActionButtonTapped: {
                             self?.performSegue(withIdentifier: R.segue.resetPasswordRequestViewController.showVerifyCode, sender: nil)

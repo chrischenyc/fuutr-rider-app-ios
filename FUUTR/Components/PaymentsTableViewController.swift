@@ -49,10 +49,7 @@ class PaymentsTableViewController: UITableViewController {
           return
         }
         
-        guard let payments = payments else {
-          self?.alertMessage(message: R.string.localizable.kOtherError())
-          return
-        }
+        guard let payments = payments else { return }
         
         self?.dismissLoading()
         self?.payments = payments

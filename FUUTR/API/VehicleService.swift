@@ -19,12 +19,18 @@ final class VehicleService {
       method: .patch,
       params: params,
       completion: { (result, error) in
-        if let json = result as? JSON, let vehicle = Vehicle(JSON: json) {
-          completion(vehicle, nil)
+        
+        guard error == nil else {
+          completion(nil, error)
           return
         }
         
-        completion(nil, error)
+        if let json = result as? JSON, let vehicle = Vehicle(JSON: json) {
+          completion(vehicle, nil)
+        }
+        else {
+          completion(nil, NetworkError.other)
+        }
     })
   }
   

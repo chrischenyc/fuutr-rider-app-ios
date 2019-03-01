@@ -91,10 +91,7 @@ class TopUpViewController: UIViewController {
           return
         }
         
-        guard let user = user else {
-          self?.alertMessage(message: R.string.localizable.kOtherError())
-          return
-        }
+        guard let user = user else { return }
         
         self?.balanceLabel.text = user.balance.priceString
       }

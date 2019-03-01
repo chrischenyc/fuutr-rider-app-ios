@@ -34,6 +34,9 @@ final class GoogleMapsService {
         let routes = Route.fromJSONArray(jsonArray) {
         completion(routes.first, nil)
       }
+      else {
+        completion(nil, NetworkError.other)
+      }
     })
   }
 }

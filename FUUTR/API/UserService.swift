@@ -15,13 +15,19 @@ final class UserService {
                                  method: .get,
                                  params: nil,
                                  completion: { (result, error) in
-                                  if let json = result as? JSON, let user = User(JSON: json) {
-                                    completion(user, nil)
-                                    currentUser = user
+                                  
+                                  guard error == nil else {
+                                    completion(nil, error)
                                     return
                                   }
                                   
-                                  completion(nil, error)
+                                  if let json = result as? JSON, let user = User(JSON: json) {
+                                    completion(user, nil)
+                                    currentUser = user
+                                  }
+                                  else {
+                                    completion(nil, NetworkError.other)
+                                  }
     })
   }
   

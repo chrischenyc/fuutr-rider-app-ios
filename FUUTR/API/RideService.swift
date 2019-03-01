@@ -18,12 +18,23 @@ final class RideService {
                                  method: .post,
                                  params: params,
                                  completion: { (result, error) in
-                                  if let json = result as? JSON {
-                                    completion(Ride(JSON: json), nil)
+                                  
+                                  guard error == nil else {
+                                    if error!.localizedDescription == "insufficient balance" {
+                                      completion(nil, AppError.lowBalance)
+                                      return
+                                    }
+                                    
+                                    completion(nil, error)
                                     return
                                   }
                                   
-                                  completion(nil, error)
+                                  if let json = result as? JSON {
+                                    completion(Ride(JSON: json), nil)
+                                  }
+                                  else {
+                                    completion(nil, NetworkError.other)
+                                  }
     })
   }
   
@@ -97,12 +108,18 @@ final class RideService {
                                  method: .get,
                                  params: nil,
                                  completion: { (result, error) in
-                                  if let jsonArray = result as? [JSON] {
-                                    completion(Ride.fromJSONArray(jsonArray), nil)
+                                  
+                                  guard error == nil else {
+                                    completion(nil, error)
                                     return
                                   }
                                   
-                                  completion(nil, error)
+                                  if let jsonArray = result as? [JSON] {
+                                    completion(Ride.fromJSONArray(jsonArray), nil)
+                                  }
+                                  else {
+                                    completion(nil, NetworkError.other)
+                                  }
     })
   }
   
@@ -111,12 +128,18 @@ final class RideService {
                                  method: .get,
                                  params: nil,
                                  completion: { (result, error) in
-                                  if let json = result as? JSON, let ride = Ride(JSON: json) {
-                                    completion(ride, nil)
+                                  
+                                  guard error == nil else {
+                                    completion(nil, error)
                                     return
                                   }
                                   
-                                  completion(nil, error)
+                                  if let json = result as? JSON, let ride = Ride(JSON: json) {
+                                    completion(ride, nil)
+                                  }
+                                  else {
+                                    completion(nil, NetworkError.other)
+                                  }
     })
   }
   
@@ -125,12 +148,18 @@ final class RideService {
       method: .get,
       params: nil,
       completion: { (result, error) in
-        if let json = result as? JSON, let ride = Ride(JSON: json) {
-          completion(ride, nil)
+        
+        guard error == nil else {
+          completion(nil, error)
           return
         }
         
-        completion(nil, error)
+        if let json = result as? JSON, let ride = Ride(JSON: json) {
+          completion(ride, nil)
+        }
+        else {
+          completion(nil, NetworkError.other)
+        }
     })
   }
 }

@@ -32,12 +32,18 @@ final class PaymentService: NSObject {
                                  method: .get,
                                  params: nil,
                                  completion: { (result, error) in
-                                  if let jsonArray = result as? [JSON] {
-                                    completion(Payment.fromJSONArray(jsonArray), nil)
+                                  
+                                  guard error == nil else {
+                                    completion(nil, error)
                                     return
                                   }
                                   
-                                  completion(nil, error)
+                                  if let jsonArray = result as? [JSON] {
+                                    completion(Payment.fromJSONArray(jsonArray), nil)
+                                  }
+                                  else {
+                                    completion(nil, NetworkError.other)
+                                  }
     })
   }
 }

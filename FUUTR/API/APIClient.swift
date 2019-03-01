@@ -42,8 +42,8 @@ final class APIClient {
     
     // Checking internet connection availability
     guard let reachablity = Reachability(hostname: baseURL), reachablity.connection != .none else {
-      logger.warning(ServiceError.noInternetConnection)
-      completion(nil, ServiceError.noInternetConnection)
+      logger.warning(NetworkError.noInternetConnection)
+      completion(nil, NetworkError.noInternetConnection)
       return nil
     }
     
@@ -130,7 +130,7 @@ final class APIClient {
     
     guard let data = data else {
       logger.error("missing payload")
-      completion(nil, ServiceError.other)
+      completion(nil, NetworkError.other)
       return
     }
     
@@ -142,7 +142,7 @@ final class APIClient {
         completion(json, nil)
       }
       else {
-        let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
+        let error = (json as? JSON).flatMap(NetworkError.init) ?? NetworkError.other
         
         if error.errorDescription == "access token expired" {
           logger.warning("expired access token")
@@ -154,7 +154,7 @@ final class APIClient {
         }
       }
     } else {
-      let error = (json as? JSON).flatMap(ServiceError.init) ?? ServiceError.other
+      let error = (json as? JSON).flatMap(NetworkError.init) ?? NetworkError.other
       logger.error(error)
       completion(nil, error)
     }

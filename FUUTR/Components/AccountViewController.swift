@@ -197,10 +197,7 @@ class AccountViewController: UIViewController {
           return
         }
         
-        guard let user = user else {
-          self?.alertMessage(message: R.string.localizable.kOtherError())
-          return
-        }
+        guard let user = user else { return }
         
         self?.user = user
       }

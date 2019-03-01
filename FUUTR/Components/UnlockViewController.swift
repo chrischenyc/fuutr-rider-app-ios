@@ -37,7 +37,7 @@ class UnlockViewController: UIViewController {
                                     if let error = error {
                                       logger.error(error.localizedDescription)
                                       
-                                      if error.localizedDescription == "insufficient balance" {
+                                      if let appError = error as? AppError, appError == .lowBalance {
                                         if let scanUnlock = self?.isKind(of: ScanUnlockViewController.self) {
                                           if scanUnlock {
                                             self?.performSegue(withIdentifier: R.segue.scanUnlockViewController.showTopUp.identifier, sender: nil)
@@ -59,10 +59,7 @@ class UnlockViewController: UIViewController {
                                       return
                                     }
                                     
-                                    guard let ride = ride else {
-                                      self?.alertMessage(message: R.string.localizable.kOtherError())
-                                      return
-                                    }
+                                    guard let ride = ride else { return }
                                     
                                     self?.ride = ride
                                     

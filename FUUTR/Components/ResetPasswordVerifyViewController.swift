@@ -75,7 +75,8 @@ class ResetPasswordVerifyViewController: UIViewController {
         
         self?.alertMessage(title: "Check your email!",
                            message: "We sent you a new password reset code",
-                           image: R.image.imgSuccessCheck())
+                           image: R.image.imgSuccessCheck(),
+                           hapticFeedbackType: .success)
       }
     })
   }

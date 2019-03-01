@@ -73,6 +73,7 @@ class ResetPasswordSetViewController: UIViewController {
         self?.alertMessage(title: "Done!",
                            message: "Please log in with the new password",
                            image: nil,
+                           hapticFeedbackType: .success,
                            positiveActionButtonTitle: "Log in",
                            positiveActionButtonTapped: {
                             self?.performSegue(withIdentifier: R.segue.resetPasswordSetViewController.unwindToSignInPassword, sender: nil)

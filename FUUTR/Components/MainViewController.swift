@@ -483,6 +483,8 @@ extension MainViewController {
                                               return
                                             }
                                             
+                                            guard let vehicles = vehicles, let zones = zones else { return }
+                                            
                                             self?.addMapMakersFor(vehicles)
                                             self?.addMapPolygonsFor(zones)
                                           }
@@ -528,10 +530,7 @@ extension MainViewController {
           return
         }
         
-        guard let ride = ride else {
-          logger.debug("No open ride found")
-          return
-        }
+        guard let ride = ride else { return }
         
         // resume tracking an ongoing ride
         self?.startTrackingRide(ride)
@@ -561,7 +560,7 @@ extension MainViewController {
         }
         
         guard let ride = ride else {
-          self?.alertMessage(message: R.string.localizable.kOtherError())
+          self?.alertError(NetworkError.other)
           return
         }
         
@@ -729,6 +728,7 @@ extension MainViewController {
     alertMessage(title: "You are attempting to park the vehicle in an unsafe area",
                  message: "The ride cannot end until it is parked upright in an accepted, safe areea.",
                  image: R.image.imgUnsafeParking(),
+                 hapticFeedbackType: .error,
                  positiveActionButtonTitle: "I will re-park the vehicle")
   }
   

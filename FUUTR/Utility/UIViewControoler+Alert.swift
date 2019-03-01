@@ -19,6 +19,7 @@ extension UIViewController {
                   actionButtonTapped: (()->Void)? = nil) {
     alertMessage(title: nil,
                  message: error.localizedDescription,
+                 hapticFeedbackType: .error,
                  positiveActionButtonTitle: "OK",
                  positiveActionButtonTapped: {
                   actionButtonTapped?()
@@ -28,6 +29,7 @@ extension UIViewController {
   func alertMessage(title: String? = nil,
                     message: String?,
                     image: UIImage? = nil,
+                    hapticFeedbackType: UINotificationFeedbackGenerator.FeedbackType? = nil,
                     positiveActionButtonTitle: String? = nil,
                     positiveActionButtonTapped: (()->Void)? = nil,
                     negativeActionButtonTitle: String? = nil,
@@ -57,5 +59,9 @@ extension UIViewController {
     formSheetController.presentationController?.contentViewSize = UIView.layoutFittingCompressedSize
     
     present(formSheetController, animated: true, completion: nil)
+    
+    if let hapticFeedbackType = hapticFeedbackType {
+      UINotificationFeedbackGenerator().notificationOccurred(hapticFeedbackType)
+    }
   }
 }
