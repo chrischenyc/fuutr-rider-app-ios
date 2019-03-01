@@ -43,10 +43,12 @@ class UnlockInfoView: DesignableView, InfoView {
   }
   
   @IBAction func scanButtonTapped(_ sender: Any) {
+    UISelectionFeedbackGenerator().selectionChanged()
     onScan?()
   }
   
   @IBAction func findMeButtonTapped(_ sender: Any) {
+    UISelectionFeedbackGenerator().selectionChanged()
     onFindMe?()
   }
   
@@ -61,6 +63,8 @@ class UnlockInfoView: DesignableView, InfoView {
       }
       
       onSwipeUp?()
+      
+      UISelectionFeedbackGenerator().selectionChanged()
     }
   }
   
@@ -75,6 +79,8 @@ class UnlockInfoView: DesignableView, InfoView {
       }
       
       onSwipeDown?()
+      
+      UISelectionFeedbackGenerator().selectionChanged()
     }
   }
   

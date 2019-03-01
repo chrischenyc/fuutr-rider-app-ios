@@ -70,11 +70,14 @@ class VehicleReservedInfoView: DesignableView, InfoView {
   }
   
   @IBAction func scanButtonTapped(_ sender: Any) {
+    UISelectionFeedbackGenerator().selectionChanged()
     onScan?()
   }
   
   @IBAction func cancelButtonTapped(_ sender: Any) {
     guard let vehicle = vehicle else { return }
+    
+    UISelectionFeedbackGenerator().selectionChanged()
     onCancel?(vehicle)
   }
 }

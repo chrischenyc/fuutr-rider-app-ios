@@ -381,6 +381,7 @@ class MainViewController: UIViewController {
   }
   
   @IBAction func refresh(_ sender: Any) {
+    UISelectionFeedbackGenerator().selectionChanged()
     search()
   }
 }
@@ -714,6 +715,8 @@ extension MainViewController {
       mapView.drawWalkingRoute(from: currentLocation.coordinate,
                                to: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
     }
+    
+    UISelectionFeedbackGenerator().selectionChanged()
   }
   
   private func hideVehicleInfo() {

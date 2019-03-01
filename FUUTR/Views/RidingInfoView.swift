@@ -58,6 +58,9 @@ class RidingInfoView: DesignableView, InfoView {
   
   @IBAction func lock(_ sender: Any) {
     guard let ride = self.ride else { return }
+    
+    UISelectionFeedbackGenerator().selectionChanged()
+    
     if ride.paused {
       onResumeRide?()
     } else {
@@ -66,6 +69,8 @@ class RidingInfoView: DesignableView, InfoView {
   }
   
   @IBAction func endRide(_ sender: Any) {
+    UISelectionFeedbackGenerator().selectionChanged()
+    
     onEndRide?();
   }
 }

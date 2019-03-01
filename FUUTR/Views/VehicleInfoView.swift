@@ -87,6 +87,9 @@ class VehicleInfoView: DesignableView, InfoView {
   
   @IBAction func reserveButtonTapped() {
     guard let vehicle = vehicle else { return }
+    
+    UISelectionFeedbackGenerator().selectionChanged()
+    
     if vehicle.reserved {
       return
     }
@@ -95,6 +98,8 @@ class VehicleInfoView: DesignableView, InfoView {
   
   @IBAction func ringButtonTapped(_ sender: Any) {
     guard let vehicle = vehicle else { return }
+    
+    UISelectionFeedbackGenerator().selectionChanged()
     
     onRing?(vehicle)
   }
@@ -109,6 +114,7 @@ class VehicleInfoView: DesignableView, InfoView {
   }
   
   @IBAction func scanButtonTapped() {
+    UISelectionFeedbackGenerator().selectionChanged()
     onScan?()
   }
   
