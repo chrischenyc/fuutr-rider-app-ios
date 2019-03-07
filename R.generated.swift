@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 82 images.
+  /// This `R.image` struct is generated, and contains static references to 83 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -175,6 +175,8 @@ struct R: Rswift.Validatable {
     static let imgScooterModel = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-scooter-model")
     /// Image `img-scooter-qr-code`.
     static let imgScooterQrCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-scooter-qr-code")
+    /// Image `img-sign-in-city`.
+    static let imgSignInCity = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-sign-in-city")
     /// Image `img-success-check`.
     static let imgSuccessCheck = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-success-check")
     /// Image `img-transparent`.
@@ -539,6 +541,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "img-scooter-qr-code", bundle: ..., traitCollection: ...)`
     static func imgScooterQrCode(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.imgScooterQrCode, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "img-sign-in-city", bundle: ..., traitCollection: ...)`
+    static func imgSignInCity(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgSignInCity, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "img-success-check", bundle: ..., traitCollection: ...)`
@@ -1990,6 +1997,7 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "ic-mobile-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-mobile-dark-gray-16' is used in storyboard 'Welcome', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-sign-in-city", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-sign-in-city' is used in storyboard 'Welcome', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

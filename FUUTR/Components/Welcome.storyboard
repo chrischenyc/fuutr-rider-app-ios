@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Yg-X6-IMj">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -31,20 +31,23 @@
             <objects>
                 <viewController id="9Yg-X6-IMj" customClass="WelcomeViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oh0-Wf-n3X">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-sign-in-city" translatesAutoresizingMaskIntoConstraints="NO" id="o9e-pW-XXr">
+                                <rect key="frame" x="0.0" y="-129.5" width="320" height="236"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P33-aW-EGI">
-                                <rect key="frame" x="0.0" y="158.5" width="375" height="508.5"/>
+                                <rect key="frame" x="0.0" y="91.5" width="320" height="476.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GuM-uk-yrt">
-                                        <rect key="frame" x="56" y="48" width="263" height="117"/>
+                                        <rect key="frame" x="56" y="40" width="208" height="117"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXz-o0-Elm">
-                                                <rect key="frame" x="0.0" y="0.0" width="263" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="208" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with your phone number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGx-Om-xx5" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="263" height="42"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="208" height="42"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -59,16 +62,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-Ia-gUL">
-                                                <rect key="frame" x="0.0" y="58" width="263" height="50"/>
+                                                <rect key="frame" x="0.0" y="58" width="208" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2cV-fA-g6D">
-                                                        <rect key="frame" x="20" y="0.0" width="223" height="50"/>
+                                                        <rect key="frame" x="20" y="0.0" width="168" height="50"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-mobile-dark-gray-16" translatesAutoresizingMaskIntoConstraints="NO" id="Opb-ZL-QbN">
-                                                                <rect key="frame" x="0.0" y="17" width="17.5" height="16"/>
+                                                                <rect key="frame" x="0.0" y="17" width="13" height="16"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgb-fY-7xK">
-                                                                <rect key="frame" x="17.5" y="10" width="205.5" height="30"/>
+                                                                <rect key="frame" x="13" y="10" width="155" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <state key="normal" title="+61 412 345 678">
                                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,7 +92,7 @@
                                                 </constraints>
                                             </view>
                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7u-Cd-rPL">
-                                                <rect key="frame" x="0.0" y="116" width="263" height="1"/>
+                                                <rect key="frame" x="0.0" y="116" width="208" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Pop-bG-Dtq"/>
@@ -98,10 +101,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rwv-LZ-6qb">
-                                        <rect key="frame" x="56" y="221" width="263" height="100"/>
+                                        <rect key="frame" x="56" y="205" width="208" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMB-Ei-3Pu" customClass="FTRedBasicButton" customModule="FUUTR" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="263" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="208" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Sign in with email"/>
                                                 <connections>
@@ -109,13 +112,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuF-1m-Vvq" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="42" width="263" height="16"/>
+                                                <rect key="frame" x="0.0" y="42" width="208" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2D-h8-K4D" customClass="FBSDKLoginButton">
-                                                <rect key="frame" x="0.0" y="70" width="263" height="30"/>
+                                                <rect key="frame" x="0.0" y="70" width="208" height="30"/>
                                                 <state key="normal" title="facebook"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="9Yg-X6-IMj" id="148-Wh-M1S"/>
@@ -124,7 +127,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-6" translatesAutoresizingMaskIntoConstraints="NO" id="Acl-yw-BB6">
-                                        <rect key="frame" x="81" y="433" width="213" height="35.5"/>
+                                        <rect key="frame" x="53.5" y="409" width="213" height="35.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing in you agree with the" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWv-6k-oyv" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="213" height="14.5"/>
@@ -170,14 +173,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Acl-yw-BB6" secondAttribute="bottom" constant="40" id="1NB-O8-YSa"/>
+                                    <constraint firstAttribute="bottom" secondItem="Acl-yw-BB6" secondAttribute="bottom" constant="32" id="1NB-O8-YSa"/>
                                     <constraint firstItem="GuM-uk-yrt" firstAttribute="leading" secondItem="P33-aW-EGI" secondAttribute="leading" constant="56" id="F0v-uj-1kh"/>
                                     <constraint firstItem="GuM-uk-yrt" firstAttribute="centerX" secondItem="P33-aW-EGI" secondAttribute="centerX" id="ME0-rH-qCf"/>
                                     <constraint firstItem="Acl-yw-BB6" firstAttribute="centerX" secondItem="P33-aW-EGI" secondAttribute="centerX" id="X6z-Px-B37"/>
-                                    <constraint firstItem="GuM-uk-yrt" firstAttribute="top" secondItem="P33-aW-EGI" secondAttribute="top" constant="48" id="dd4-GP-99j"/>
+                                    <constraint firstItem="GuM-uk-yrt" firstAttribute="top" secondItem="P33-aW-EGI" secondAttribute="top" constant="40" id="dd4-GP-99j"/>
                                     <constraint firstAttribute="trailing" secondItem="rwv-LZ-6qb" secondAttribute="trailing" constant="56" id="dl0-ex-awn"/>
-                                    <constraint firstItem="Acl-yw-BB6" firstAttribute="top" secondItem="rwv-LZ-6qb" secondAttribute="bottom" constant="112" id="hCr-D8-TzV"/>
-                                    <constraint firstItem="rwv-LZ-6qb" firstAttribute="top" secondItem="GuM-uk-yrt" secondAttribute="bottom" constant="56" id="kU4-4P-QCL"/>
+                                    <constraint firstItem="Acl-yw-BB6" firstAttribute="top" secondItem="rwv-LZ-6qb" secondAttribute="bottom" constant="104" id="hCr-D8-TzV"/>
+                                    <constraint firstItem="rwv-LZ-6qb" firstAttribute="top" secondItem="GuM-uk-yrt" secondAttribute="bottom" constant="48" id="kU4-4P-QCL"/>
                                     <constraint firstAttribute="trailing" secondItem="GuM-uk-yrt" secondAttribute="trailing" constant="56" id="kvm-HH-sff"/>
                                     <constraint firstItem="rwv-LZ-6qb" firstAttribute="centerX" secondItem="P33-aW-EGI" secondAttribute="centerX" id="m48-Wa-bQe"/>
                                     <constraint firstItem="rwv-LZ-6qb" firstAttribute="leading" secondItem="P33-aW-EGI" secondAttribute="leading" constant="56" id="oOB-1g-OuC"/>
@@ -188,7 +191,10 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="P33-aW-EGI" secondAttribute="trailing" id="5Fa-YX-PBP"/>
                             <constraint firstAttribute="bottom" secondItem="P33-aW-EGI" secondAttribute="bottom" id="68E-T8-kfz"/>
+                            <constraint firstItem="P33-aW-EGI" firstAttribute="top" secondItem="o9e-pW-XXr" secondAttribute="bottom" constant="-15" id="KAH-fX-WIt"/>
+                            <constraint firstAttribute="trailing" secondItem="o9e-pW-XXr" secondAttribute="trailing" id="Ob6-By-w0l"/>
                             <constraint firstItem="P33-aW-EGI" firstAttribute="leading" secondItem="oh0-Wf-n3X" secondAttribute="leading" id="RTD-wh-Sj8"/>
+                            <constraint firstItem="o9e-pW-XXr" firstAttribute="leading" secondItem="oh0-Wf-n3X" secondAttribute="leading" id="cJB-o6-x9N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NGA-pj-TOa"/>
                     </view>
@@ -213,5 +219,6 @@
     </scenes>
     <resources>
         <image name="ic-mobile-dark-gray-16" width="10" height="16"/>
+        <image name="img-sign-in-city" width="375" height="236"/>
     </resources>
 </document>
