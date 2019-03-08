@@ -745,16 +745,16 @@ extension MainViewController {
   }
   
   private func requestPushNotification() {
-    alertMessage(title: "Receive Push Notification?",
-                 message: "To help you have a safe FUUTR ride, we'll ocasionally send you notifications to remind you about safety issues...",
-                 image: nil,
+    alertMessage(title: "Enable Notifications",
+                 message: "Allow FUUTR to send you notifications.",
+                 image: R.image.imgNotifications(),
                  hapticFeedbackType: .warning,
-                 positiveActionButtonTitle: "Yes",
+                 positiveActionButtonTitle: "Ok",
                  positiveActionButtonTapped: {
                   Defaults[.didRequestPushNotificationPermission] = true
                   NotificationCenter.default.post(name: NSNotification.Name.requestPushNotification, object: nil)
     },
-                 negativeActionButtonTitle: "Cancel") {
+                 negativeActionButtonTitle: "Not Now") {
                   Defaults[.didRequestPushNotificationPermission] = true
     }
   }
