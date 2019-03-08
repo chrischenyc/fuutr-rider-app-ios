@@ -42,6 +42,15 @@ class PhotoShootViewController: UIViewController {
     fastCamera.delegate = self
     
     switchToCamera()
+    
+    if let action = action, action == .scooterParked {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.alertMessage(title: "Take a picture of the parked scooter",
+                              message: "To finish your ride, you need to send FUUTR a picture of the parked scooter",
+                              image: R.image.imgParkedScooterPhoto(),
+                              hapticFeedbackType: .warning)
+        }
+    }
   }
   
   override func viewDidLayoutSubviews() {
