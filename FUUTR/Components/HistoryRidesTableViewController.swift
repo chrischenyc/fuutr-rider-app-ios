@@ -11,6 +11,7 @@ import UIKit
 class HistoryRidesTableViewController: UITableViewController {
   
   private var rides: [Ride] = []
+  private var didLoadRides = false
   
   private var apiTask: URLSessionTask?
   
@@ -19,8 +20,6 @@ class HistoryRidesTableViewController: UITableViewController {
     super.viewDidLoad()
     
     navigationController?.navigationBar.applyLightTheme()
-    
-    tableView.tableFooterView = UIView(frame: .zero)
     
     loadRides()
   }
@@ -35,21 +34,38 @@ class HistoryRidesTableViewController: UITableViewController {
   // MARK: - Table view data source and delegate
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return rides.count
+    guard didLoadRides else { return 0 }
+    return rides.count > 0 ? rides.count : 1
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryRideCell", for: indexPath) as! HistoryRideCell
-    
-    let ride = rides[indexPath.row]
-    cell.updateContent(withRide: ride)
-    
-    return cell
+    if rides.count > 0 {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryRideCell", for: indexPath) as! HistoryRideCell
+        
+        let ride = rides[indexPath.row]
+        cell.updateContent(withRide: ride)
+        
+        return cell
+    } else {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoRideCell", for: indexPath)
+        
+        return cell
+    }
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard rides.count > 0 else { return }
+    
     performSegue(withIdentifier: R.segue.historyRidesTableViewController.showHistoryRide, sender:rides[indexPath.row])
   }
+  
+//  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//    if rides.count > 0 {
+//      return 295.0
+//    } else {
+//      return 365.0
+//    }
+//  }
   
   // MARK: - private
   
@@ -61,6 +77,8 @@ class HistoryRidesTableViewController: UITableViewController {
     apiTask = RideService.getHistoryRides({ [weak self] (rides, error) in
       DispatchQueue.main.async {
         self?.dismissLoading()
+        
+        self?.didLoadRides = true
         
         guard error == nil else {
           self?.alertError(error!)

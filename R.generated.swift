@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 85 images.
+  /// This `R.image` struct is generated, and contains static references to 86 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -173,6 +173,8 @@ struct R: Rswift.Validatable {
     static let imgOtherIssue = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-other-issue")
     /// Image `img-parked-scooter-photo`.
     static let imgParkedScooterPhoto = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-parked-scooter-photo")
+    /// Image `img-ride-history-empty`.
+    static let imgRideHistoryEmpty = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-ride-history-empty")
     /// Image `img-scooter-enter-code`.
     static let imgScooterEnterCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "img-scooter-enter-code")
     /// Image `img-scooter-model`.
@@ -542,6 +544,11 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.imgParkedScooterPhoto, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "img-ride-history-empty", bundle: ..., traitCollection: ...)`
+    static func imgRideHistoryEmpty(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imgRideHistoryEmpty, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "img-scooter-enter-code", bundle: ..., traitCollection: ...)`
     static func imgScooterEnterCode(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.imgScooterEnterCode, compatibleWith: traitCollection)
@@ -718,10 +725,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `HistoryRideCell`.
     static let historyRideCell: Rswift.ReuseIdentifier<HistoryRideCell> = Rswift.ReuseIdentifier(identifier: "HistoryRideCell")
+    /// Reuse identifier `NoRideCell`.
+    static let noRideCell: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "NoRideCell")
     /// Reuse identifier `PaymentCell`.
     static let paymentCell: Rswift.ReuseIdentifier<PaymentCell> = Rswift.ReuseIdentifier(identifier: "PaymentCell")
     /// Reuse identifier `TransactionCell`.
@@ -1673,6 +1682,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic-location-dark-gray-24", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-location-dark-gray-24' is used in storyboard 'History', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-rating-empty-red-32", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-rating-empty-red-32' is used in storyboard 'History', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-rating-red-32", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-rating-red-32' is used in storyboard 'History', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-ride-history-empty", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-ride-history-empty' is used in storyboard 'History', but couldn't be loaded.") }
         if UIKit.UIImage(named: "social-facebook-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-facebook-dark-gray-35' is used in storyboard 'History', but couldn't be loaded.") }
         if UIKit.UIImage(named: "social-instagram-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-instagram-dark-gray-35' is used in storyboard 'History', but couldn't be loaded.") }
         if UIKit.UIImage(named: "social-twitter-dark-gray-35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'social-twitter-dark-gray-35' is used in storyboard 'History', but couldn't be loaded.") }
