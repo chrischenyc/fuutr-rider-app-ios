@@ -388,6 +388,21 @@ class MainViewController: UIViewController {
     UISelectionFeedbackGenerator().selectionChanged()
     search()
   }
+  
+  @IBAction func center(_ sender: Any) {
+    UISelectionFeedbackGenerator().selectionChanged()
+    
+    let authorizationStatus = CLLocationManager.authorizationStatus()
+    guard authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse else {
+      self.promptForLocationServicesPermission()
+      return
+    }
+    
+    if let location = currentLocation {
+      let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: self.searchingZoomLevel)
+      self.mapView.animate(to: camera)
+    }
+  }
 }
 
 // MARK: - Ride Tracking

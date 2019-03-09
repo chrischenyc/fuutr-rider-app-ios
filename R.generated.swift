@@ -39,7 +39,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 86 images.
+  /// This `R.image` struct is generated, and contains static references to 87 images.
   struct image {
     /// Image `Launch`.
     static let launch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Launch")
@@ -53,6 +53,8 @@ struct R: Rswift.Validatable {
     static let btnArrowNext = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn-arrow-next")
     /// Image `btn-backspace-outline-red`.
     static let btnBackspaceOutlineRed = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn-backspace-outline-red")
+    /// Image `btn-center`.
+    static let btnCenter = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn-center")
     /// Image `btn-refresh`.
     static let btnRefresh = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn-refresh")
     /// Image `btn-report-issue`.
@@ -242,6 +244,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "btn-backspace-outline-red", bundle: ..., traitCollection: ...)`
     static func btnBackspaceOutlineRed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.btnBackspaceOutlineRed, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "btn-center", bundle: ..., traitCollection: ...)`
+    static func btnCenter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.btnCenter, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "btn-refresh", bundle: ..., traitCollection: ...)`
@@ -1797,6 +1804,7 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "boy-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'boy-1' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "btn-center", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-center' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "btn-refresh", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-refresh' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "btn-report-issue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-report-issue' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {

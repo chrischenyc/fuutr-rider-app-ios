@@ -129,6 +129,17 @@
                                     <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gig-D1-MCH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N7-fo-vNa">
+                                <rect key="frame" x="323" y="359" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="TXl-Gw-tdJ"/>
+                                    <constraint firstAttribute="width" constant="44" id="gXG-Ag-2iX"/>
+                                </constraints>
+                                <state key="normal" image="btn-center"/>
+                                <connections>
+                                    <action selector="center:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wYs-hJ-6AC"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUZ-iL-pDp">
                                 <rect key="frame" x="0.0" y="463" width="375" height="204"/>
                                 <subviews>
@@ -193,12 +204,14 @@
                             <constraint firstItem="EUZ-iL-pDp" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Ahz-z7-4tC"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AnA-aF-8Me"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uQ5-QY-a10" secondAttribute="trailing" constant="16" id="EgZ-VM-yls"/>
+                            <constraint firstItem="9N7-fo-vNa" firstAttribute="trailing" secondItem="SPf-t1-Jvg" secondAttribute="trailing" id="OCc-YU-EQF"/>
                             <constraint firstItem="EUZ-iL-pDp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OyE-wQ-hbK"/>
                             <constraint firstItem="wXu-gN-jng" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6i-Mk-ptg"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQh-9I-Jzz"/>
                             <constraint firstItem="lfL-KJ-ZTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf3-O6-CJt"/>
                             <constraint firstItem="SPf-t1-Jvg" firstAttribute="trailing" secondItem="lfL-KJ-ZTo" secondAttribute="trailing" constant="-8" id="bQ2-KS-5f2"/>
                             <constraint firstItem="uQ5-QY-a10" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iKf-3J-My7"/>
+                            <constraint firstItem="SPf-t1-Jvg" firstAttribute="top" secondItem="9N7-fo-vNa" secondAttribute="bottom" constant="8" id="jew-Ea-ESG"/>
                             <constraint firstItem="EUZ-iL-pDp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="l7L-6Z-qfZ"/>
                             <constraint firstItem="SPf-t1-Jvg" firstAttribute="bottom" secondItem="lfL-KJ-ZTo" secondAttribute="bottom" constant="-8" id="qda-9U-5Gi"/>
                             <constraint firstItem="EUZ-iL-pDp" firstAttribute="top" secondItem="lfL-KJ-ZTo" secondAttribute="bottom" constant="-5" id="rWZ-2M-KUH"/>
@@ -233,7 +246,8 @@
     </scenes>
     <resources>
         <image name="boy-1" width="105" height="105"/>
-        <image name="btn-refresh" width="37" height="37"/>
+        <image name="btn-center" width="47" height="47"/>
+        <image name="btn-refresh" width="46" height="47"/>
         <image name="btn-report-issue" width="37" height="37"/>
     </resources>
 </document>
