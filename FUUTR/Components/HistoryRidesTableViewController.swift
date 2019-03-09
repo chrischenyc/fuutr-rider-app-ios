@@ -59,14 +59,6 @@ class HistoryRidesTableViewController: UITableViewController {
     performSegue(withIdentifier: R.segue.historyRidesTableViewController.showHistoryRide, sender:rides[indexPath.row])
   }
   
-//  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//    if rides.count > 0 {
-//      return 295.0
-//    } else {
-//      return 365.0
-//    }
-//  }
-  
   // MARK: - private
   
   private func loadRides() {
@@ -88,14 +80,8 @@ class HistoryRidesTableViewController: UITableViewController {
         guard let rides = rides else { return }
         
         self?.rides = rides
-        self?.loadRidesContent()
+        self?.tableView.reloadData()
       }
     })
-  }
-  
-  private func loadRidesContent() {
-    tableView.reloadData()
-    
-    // TODO: add call for action UI in case of zero records
   }
 }
