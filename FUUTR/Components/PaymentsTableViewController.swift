@@ -19,7 +19,6 @@ class PaymentsTableViewController: UITableViewController {
     super.viewDidLoad()
     
     tableView.tableFooterView = UIView(frame: .zero)
-    
     loadPayments()
   }
   
@@ -56,14 +55,12 @@ class PaymentsTableViewController: UITableViewController {
         
         self?.didLoadPayments = true
         
-        
         guard error == nil else {
           self?.alertError(error!)
           return
         }
         
         guard let payments = payments else { return }
-        
         
         self?.payments = payments
         self?.tableView.separatorStyle = payments.count > 0 ? .singleLine : .none

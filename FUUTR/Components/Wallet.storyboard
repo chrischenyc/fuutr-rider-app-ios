@@ -241,7 +241,7 @@
         <scene sceneID="0L2-S4-DMs">
             <objects>
                 <tableViewController title="Balance History" id="gLu-9k-a0X" customClass="TransactionsTableViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7h5-ge-KAf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="7h5-ge-KAf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -323,6 +323,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43.5" id="ZRa-JS-DoF"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -338,12 +341,47 @@
                                     <outlet property="dateLabel" destination="gq0-QN-u5P" id="7Af-ou-8CN"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoTransactionCell" rowHeight="265" id="jcB-dL-I5g">
+                                <rect key="frame" x="0.0" y="116" width="375" height="265"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jcB-dL-I5g" id="fZj-yS-hMf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="264.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="img-ride-history-empty" translatesAutoresizingMaskIntoConstraints="NO" id="Ql7-sQ-gZC">
+                                            <rect key="frame" x="60" y="32" width="255" height="158"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="158" id="I4g-Az-68r"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="You don't have any past transactions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fah-vI-CUz" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                            <rect key="frame" x="62" y="222" width="251.5" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="iOL-AA-IWf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Fah-vI-CUz" firstAttribute="centerX" secondItem="fZj-yS-hMf" secondAttribute="centerX" id="JCS-l7-V24"/>
+                                        <constraint firstItem="Ql7-sQ-gZC" firstAttribute="centerX" secondItem="fZj-yS-hMf" secondAttribute="centerX" id="YhZ-KO-MXX"/>
+                                        <constraint firstItem="Fah-vI-CUz" firstAttribute="top" secondItem="Ql7-sQ-gZC" secondAttribute="bottom" constant="32" id="eM3-IQ-V5L"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Fah-vI-CUz" secondAttribute="bottom" constant="16" id="hw7-3h-UZu"/>
+                                        <constraint firstItem="Ql7-sQ-gZC" firstAttribute="top" secondItem="fZj-yS-hMf" secondAttribute="top" constant="32" id="zGG-7b-Ika"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="gLu-9k-a0X" id="TDi-Bt-eLe"/>
                             <outlet property="delegate" destination="gLu-9k-a0X" id="CkZ-PP-8Cd"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableHeaderView" destination="K1v-pZ-qRe" id="wB0-cN-dUc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wwv-xk-PkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -353,7 +391,7 @@
         <scene sceneID="a78-U3-ADj">
             <objects>
                 <tableViewController title="Payment History" id="Wy3-7P-GmG" customClass="PaymentsTableViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AQC-1W-fRT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="AQC-1W-fRT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -398,23 +436,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KBT-oZ-cnQ">
-                                            <rect key="frame" x="20" y="0.0" width="321" height="44"/>
+                                            <rect key="frame" x="20" y="0.0" width="321" height="43.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpd-EC-9Cu" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="285.5" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="285.5" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZU8-xD-xfe" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
-                                                    <rect key="frame" x="285.5" y="0.0" width="35.5" height="44"/>
+                                                    <rect key="frame" x="285.5" y="0.0" width="35.5" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="AS5-Y6-8lO"/>
+                                                <constraint firstAttribute="height" constant="43.5" id="AS5-Y6-8lO"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
