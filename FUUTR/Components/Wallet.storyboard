@@ -353,34 +353,69 @@
         <scene sceneID="a78-U3-ADj">
             <objects>
                 <tableViewController title="Payment History" id="Wy3-7P-GmG" customClass="PaymentsTableViewController" customModule="FUUTR" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AQC-1W-fRT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AQC-1W-fRT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoPaymentCell" rowHeight="265" id="Nfh-91-SME">
+                                <rect key="frame" x="0.0" y="28" width="375" height="265"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nfh-91-SME" id="MSR-OB-3X0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="264.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="img-ride-history-empty" translatesAutoresizingMaskIntoConstraints="NO" id="gla-F6-Hss">
+                                            <rect key="frame" x="60" y="32" width="255" height="158"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="158" id="eUk-YD-y8o"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="You don't have any past payments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bus-mo-0me" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
+                                            <rect key="frame" x="70.5" y="222" width="234" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="L1U-7e-ptn"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Bus-mo-0me" firstAttribute="centerX" secondItem="MSR-OB-3X0" secondAttribute="centerX" id="Tws-jV-r1L"/>
+                                        <constraint firstItem="gla-F6-Hss" firstAttribute="top" secondItem="MSR-OB-3X0" secondAttribute="top" constant="32" id="jgG-92-zG4"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Bus-mo-0me" secondAttribute="bottom" constant="16" id="p33-mv-F95"/>
+                                        <constraint firstItem="Bus-mo-0me" firstAttribute="top" secondItem="gla-F6-Hss" secondAttribute="bottom" constant="32" id="pAx-p5-oEU"/>
+                                        <constraint firstItem="gla-F6-Hss" firstAttribute="centerX" secondItem="MSR-OB-3X0" secondAttribute="centerX" id="zdD-oP-ugt"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PaymentCell" rowHeight="44" id="xeX-xf-NoT" customClass="PaymentCell" customModule="FUUTR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="293" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xeX-xf-NoT" id="GHL-KL-Lih">
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KBT-oZ-cnQ">
-                                            <rect key="frame" x="20" y="0.0" width="321" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="321" height="44"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpd-EC-9Cu" customClass="FTDarkLabel" customModule="FUUTR" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="285.5" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="285.5" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZU8-xD-xfe" customClass="FTLightLabel" customModule="FUUTR" customModuleProvider="target">
-                                                    <rect key="frame" x="285.5" y="0.0" width="35.5" height="43.5"/>
+                                                    <rect key="frame" x="285.5" y="0.0" width="35.5" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="AS5-Y6-8lO"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -439,5 +474,6 @@
         <image name="ic-close-dark-gray-16" width="16" height="16"/>
         <image name="ic-mastercard-dark-gray-16" width="16" height="16"/>
         <image name="ic-payment-history-dark-gray-16" width="16" height="16"/>
+        <image name="img-ride-history-empty" width="255" height="158"/>
     </resources>
 </document>

@@ -725,10 +725,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `HistoryRideCell`.
     static let historyRideCell: Rswift.ReuseIdentifier<HistoryRideCell> = Rswift.ReuseIdentifier(identifier: "HistoryRideCell")
+    /// Reuse identifier `NoPaymentCell`.
+    static let noPaymentCell: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "NoPaymentCell")
     /// Reuse identifier `NoRideCell`.
     static let noRideCell: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "NoRideCell")
     /// Reuse identifier `PaymentCell`.
@@ -2006,6 +2008,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic-close-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-close-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-mastercard-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-mastercard-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic-payment-history-dark-gray-16", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic-payment-history-dark-gray-16' is used in storyboard 'Wallet', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "img-ride-history-empty", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'img-ride-history-empty' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

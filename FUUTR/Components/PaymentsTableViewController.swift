@@ -11,6 +11,7 @@ import UIKit
 class PaymentsTableViewController: UITableViewController {
   
   private var payments: [Payment] = []
+  private var didLoadPayments = false
   
   private var apiTask: URLSessionTask?
   
@@ -25,16 +26,23 @@ class PaymentsTableViewController: UITableViewController {
   // MARK: - Table view data source
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return payments.count
+    guard didLoadPayments else { return 0 }
+    return payments.count > 0 ? payments.count : 1
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell", for: indexPath) as! PaymentCell
-    
-    let payment = payments[indexPath.row]
-    cell.loadPayment(payment)
-    
-    return cell
+    if payments.count > 0 {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell", for: indexPath) as! PaymentCell
+      
+      let payment = payments[indexPath.row]
+      cell.loadPayment(payment)
+      
+      return cell
+    } else {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "NoPaymentCell", for: indexPath)
+      
+      return cell
+    }
   }
   
   private func loadPayments() {
@@ -44,6 +52,11 @@ class PaymentsTableViewController: UITableViewController {
     
     apiTask = PaymentService.getHistoryPayments(completion: { [weak self] (payments, error) in
       DispatchQueue.main.async {
+        self?.dismissLoading()
+        
+        self?.didLoadPayments = true
+        
+        
         guard error == nil else {
           self?.alertError(error!)
           return
@@ -51,17 +64,11 @@ class PaymentsTableViewController: UITableViewController {
         
         guard let payments = payments else { return }
         
-        self?.dismissLoading()
+        
         self?.payments = payments
-        self?.loadPaymentsContent()
+        self?.tableView.separatorStyle = payments.count > 0 ? .singleLine : .none
+        self?.tableView.reloadData()
       }
     })
   }
-  
-  private func loadPaymentsContent() {
-    tableView.reloadData()
-    
-    // TODO: add call for action UI in case of zero records
-  }
-  
 }
