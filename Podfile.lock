@@ -132,13 +132,13 @@ PODS:
     - XCGLogger/Core (= 6.1.0)
   - XCGLogger/Core (6.1.0):
     - ObjcExceptionBridging
-  - ZendeskSDK (2.3.0):
-    - ZendeskSDK/Providers (= 2.3.0)
-    - ZendeskSDK/UI (= 2.3.0)
-  - ZendeskSDK/Core (2.3.0)
-  - ZendeskSDK/Providers (2.3.0):
+  - ZendeskSDK (2.3.1):
+    - ZendeskSDK/Providers (= 2.3.1)
+    - ZendeskSDK/UI (= 2.3.1)
+  - ZendeskSDK/Core (2.3.1)
+  - ZendeskSDK/Providers (2.3.1):
     - ZendeskSDK/Core
-  - ZendeskSDK/UI (2.3.0):
+  - ZendeskSDK/UI (2.3.1):
     - ZendeskSDK/Core
     - ZendeskSDK/Providers
 
@@ -256,7 +256,7 @@ SPEC CHECKSUMS:
   Stripe: db29ad197c74aca6fb981e4e8355cf7ebd0fca5a
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
-  ZendeskSDK: af6509ad7968d367f95b2645713802712152f879
+  ZendeskSDK: cbd49d65efb2f2cdbdcaac84e618896ae87b861e
 
 PODFILE CHECKSUM: e9ca1c5e4c9555b1bf4aed978362f9558d8bfe65
 
