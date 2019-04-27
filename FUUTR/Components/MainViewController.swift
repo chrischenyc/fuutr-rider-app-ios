@@ -278,11 +278,6 @@ class MainViewController: UIViewController, Coordinatable {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
     // MARK: - notification handling
     @objc func applicationDidBecomeActive(_ notification: NSNotification) {
         // refresh for user's latest location
@@ -414,6 +409,11 @@ class MainViewController: UIViewController, Coordinatable {
             let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: self.searchingZoomLevel)
             self.mapView.animate(to: camera)
         }
+    }
+    
+    @IBAction func sideMenuTapped(_ sender: Any) {
+        guard let mainCoordinator = cooridnator as? MainCoordinator else { return }
+        mainCoordinator.showSideMenu()
     }
 }
 
