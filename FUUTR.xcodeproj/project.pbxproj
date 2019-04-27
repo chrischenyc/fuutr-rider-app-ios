@@ -436,6 +436,15 @@
 		6BDEEFCE220E7D0E00C0FBB8 /* FTLightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFCD220E7D0E00C0FBB8 /* FTLightLabel.swift */; };
 		6BDEEFCF220E7D0E00C0FBB8 /* FTLightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFCD220E7D0E00C0FBB8 /* FTLightLabel.swift */; };
 		6BDEEFD0220E7D0E00C0FBB8 /* FTLightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDEEFCD220E7D0E00C0FBB8 /* FTLightLabel.swift */; };
+		6BE51FA12273C8A3008AC05F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FA02273C8A3008AC05F /* Coordinator.swift */; };
+		6BE51FA22273C8A3008AC05F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FA02273C8A3008AC05F /* Coordinator.swift */; };
+		6BE51FA32273C8A3008AC05F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FA02273C8A3008AC05F /* Coordinator.swift */; };
+		6BE51FA92273CD88008AC05F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FA82273CD88008AC05F /* MainCoordinator.swift */; };
+		6BE51FAA2273CD88008AC05F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FA82273CD88008AC05F /* MainCoordinator.swift */; };
+		6BE51FAB2273CD88008AC05F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FA82273CD88008AC05F /* MainCoordinator.swift */; };
+		6BE51FAD2273D2B4008AC05F /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */; };
+		6BE51FAE2273D2B4008AC05F /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */; };
+		6BE51FAF2273D2B4008AC05F /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */; };
 		6BF4939D2224DF9100DF9A1E /* NZLandTransportAct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */; };
 		6BF4939E2224DF9100DF9A1E /* NZLandTransportAct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */; };
 		6BF4939F2224DF9100DF9A1E /* NZLandTransportAct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */; };
@@ -704,6 +713,9 @@
 		6BDEEFC5220E7C6D00C0FBB8 /* FTLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTLabel.swift; sourceTree = "<group>"; };
 		6BDEEFC9220E7CBA00C0FBB8 /* FTDarkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTDarkLabel.swift; sourceTree = "<group>"; };
 		6BDEEFCD220E7D0E00C0FBB8 /* FTLightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTLightLabel.swift; sourceTree = "<group>"; };
+		6BE51FA02273C8A3008AC05F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6BE51FA82273CD88008AC05F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		6BF493972224B48200DF9A1E /* wellinton_botanic.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = wellinton_botanic.gpx; sourceTree = "<group>"; };
 		6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NZLandTransportAct.storyboard; sourceTree = "<group>"; };
 		6BF493A02224E04100DF9A1E /* NZLandTransportActViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NZLandTransportActViewController.swift; sourceTree = "<group>"; };
@@ -1206,6 +1218,16 @@
 			name = Unlock;
 			sourceTree = "<group>";
 		};
+		6BE51F9F2273C889008AC05F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				6BE51FA02273C8A3008AC05F /* Coordinator.swift */,
+				6BE51FA82273CD88008AC05F /* MainCoordinator.swift */,
+				6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		A0CFE78E21747BF000BA3F6D = {
 			isa = PBXGroup;
 			children = (
@@ -1231,6 +1253,7 @@
 			children = (
 				A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */,
 				6B8731A62189A70600CC2651 /* UserDefaults.swift */,
+				6BE51F9F2273C889008AC05F /* Coordinators */,
 				6B6C6AE52197CE0700D956DC /* Models */,
 				6B8731DB218A957400CC2651 /* Views */,
 				A0CFE7BA21773B7B00BA3F6D /* Components */,
@@ -1893,7 +1916,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1913,7 +1936,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1933,7 +1956,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2074,6 +2097,7 @@
 				6BDE916F218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6B8E30C9219FDD5000292B4E /* HistoryRideCell.swift in Sources */,
 				6BD472A4219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
+				6BE51FAB2273CD88008AC05F /* MainCoordinator.swift in Sources */,
 				6B0D921921FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47268219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6BBA8AE8221904A700B09A74 /* ReportIssueViewController.swift in Sources */,
@@ -2092,6 +2116,7 @@
 				6BDE9128218C19DF003F976B /* AccountViewController.swift in Sources */,
 				6B04D29A22294582008DC6F1 /* Errors.swift in Sources */,
 				6BBE6C84219BC9D3002D639B /* UIView+CornerRadius.swift in Sources */,
+				6BE51FA32273C8A3008AC05F /* Coordinator.swift in Sources */,
 				6B8DC68622005B5400831B03 /* GMSMapView+Theme.swift in Sources */,
 				6B31E1F52197F44E00CB424E /* Payment.swift in Sources */,
 				6BC9DB9C22163B8600F17B8F /* UpdateEmailVerifyViewController.swift in Sources */,
@@ -2115,6 +2140,7 @@
 				6BDE912A218C19DF003F976B /* WalletViewController.swift in Sources */,
 				91FA7FA421FEB20100581BB5 /* RideFinishedViewController.swift in Sources */,
 				6BD47289219A4CAA00D36C3E /* GMUPoint.m in Sources */,
+				6BE51FAF2273D2B4008AC05F /* Coordinatable.swift in Sources */,
 				6BD472AA219A4CAA00D36C3E /* GMUDefaultClusterRenderer.m in Sources */,
 				6BC9DBA0221667A800F17B8F /* MobileRequestCodeViewController.swift in Sources */,
 				6BDE914E218C1DBB003F976B /* Configuration.swift in Sources */,
@@ -2215,6 +2241,7 @@
 				6BDE916D218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6B8E30C7219FDD5000292B4E /* HistoryRideCell.swift in Sources */,
 				6BD472A2219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
+				6BE51FA92273CD88008AC05F /* MainCoordinator.swift in Sources */,
 				6B0D921721FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47266219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6BBA8AE6221904A700B09A74 /* ReportIssueViewController.swift in Sources */,
@@ -2233,6 +2260,7 @@
 				6B87320A218ACD6400CC2651 /* AccountViewController.swift in Sources */,
 				6B04D29822294582008DC6F1 /* Errors.swift in Sources */,
 				6BBE6C82219BC9D3002D639B /* UIView+CornerRadius.swift in Sources */,
+				6BE51FA12273C8A3008AC05F /* Coordinator.swift in Sources */,
 				6B8DC68422005B5400831B03 /* GMSMapView+Theme.swift in Sources */,
 				6B31E1F32197F44E00CB424E /* Payment.swift in Sources */,
 				6BC9DB9A22163B8600F17B8F /* UpdateEmailVerifyViewController.swift in Sources */,
@@ -2256,6 +2284,7 @@
 				6B8731F8218AA4AF00CC2651 /* WalletViewController.swift in Sources */,
 				91FA7FA221FEB20100581BB5 /* RideFinishedViewController.swift in Sources */,
 				6BD47287219A4CAA00D36C3E /* GMUPoint.m in Sources */,
+				6BE51FAD2273D2B4008AC05F /* Coordinatable.swift in Sources */,
 				6BD472A8219A4CAA00D36C3E /* GMUDefaultClusterRenderer.m in Sources */,
 				6BC9DB9E221667A800F17B8F /* MobileRequestCodeViewController.swift in Sources */,
 				6BDE914C218C1DBB003F976B /* Configuration.swift in Sources */,
@@ -2356,6 +2385,7 @@
 				6BDE916E218CFBF9003F976B /* UIViewControoler+Alert.swift in Sources */,
 				6B8E30C8219FDD5000292B4E /* HistoryRideCell.swift in Sources */,
 				6BD472A3219A4CAA00D36C3E /* GMUSimpleClusterAlgorithm.m in Sources */,
+				6BE51FAA2273CD88008AC05F /* MainCoordinator.swift in Sources */,
 				6B0D921821FD32D100A9B38E /* DialogViewController.swift in Sources */,
 				6BD47267219A4CAA00D36C3E /* GMUGradient.m in Sources */,
 				6BBA8AE7221904A700B09A74 /* ReportIssueViewController.swift in Sources */,
@@ -2374,6 +2404,7 @@
 				6B87320B218ACD6400CC2651 /* AccountViewController.swift in Sources */,
 				6B04D29922294582008DC6F1 /* Errors.swift in Sources */,
 				6BBE6C83219BC9D3002D639B /* UIView+CornerRadius.swift in Sources */,
+				6BE51FA22273C8A3008AC05F /* Coordinator.swift in Sources */,
 				6B8DC68522005B5400831B03 /* GMSMapView+Theme.swift in Sources */,
 				6B31E1F42197F44E00CB424E /* Payment.swift in Sources */,
 				6BC9DB9B22163B8600F17B8F /* UpdateEmailVerifyViewController.swift in Sources */,
@@ -2397,6 +2428,7 @@
 				6B8731F9218AA4AF00CC2651 /* WalletViewController.swift in Sources */,
 				91FA7FA321FEB20100581BB5 /* RideFinishedViewController.swift in Sources */,
 				6BD47288219A4CAA00D36C3E /* GMUPoint.m in Sources */,
+				6BE51FAE2273D2B4008AC05F /* Coordinatable.swift in Sources */,
 				6BD472A9219A4CAA00D36C3E /* GMUDefaultClusterRenderer.m in Sources */,
 				6BC9DB9F221667A800F17B8F /* MobileRequestCodeViewController.swift in Sources */,
 				6BDE914D218C1DBB003F976B /* Configuration.swift in Sources */,

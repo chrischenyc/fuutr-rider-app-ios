@@ -52,11 +52,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>FUUTR needs camera access to scan the scooter&apos;s QR code and take photos of your parked scooter.</string>
+	<string>FUUTR needs camera access to scan the scooter's QR code and take photos of your parked scooter.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>FUUTR app will use your location to look for scooters near you and track your ride.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>FUUTR app will use your location to look for scooters near you and track your ride.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>FUUTR may need to access your photo library, so you can send us photo while chatting with support consultant</string>
 	<key>UIApplicationExitsOnSuspend</key>
 	<false/>
 	<key>UIBackgroundModes</key>
@@ -65,8 +67,6 @@
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -86,7 +86,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>FUUTR may need to access your photo library, so you can send us photo while chatting with support consultant</string>
 </dict>
 </plist>
