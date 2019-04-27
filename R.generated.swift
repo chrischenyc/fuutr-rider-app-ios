@@ -750,7 +750,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 24 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 23 view controllers.
   struct segue {
     /// This struct is generated for `AccountViewController`, and contains static references to 2 segues.
     struct accountViewController {
@@ -1191,21 +1191,6 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIStoryboardSegueWithCompletion, ScanUnlockViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.scanUnlockViewController.unwindToHome, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
-    /// This struct is generated for `SideMenuViewController`, and contains static references to 1 segues.
-    struct sideMenuViewController {
-      /// Segue identifier `unwindToHome`.
-      static let unwindToHome: Rswift.StoryboardSegueIdentifier<UIStoryboardSegueWithCompletion, SideMenuViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToHome")
-      
-      /// Optionally returns a typed version of segue `unwindToHome`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func unwindToHome(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIStoryboardSegueWithCompletion, SideMenuViewController, UIKit.UIViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.sideMenuViewController.unwindToHome, segue: segue)
       }
       
       fileprivate init() {}

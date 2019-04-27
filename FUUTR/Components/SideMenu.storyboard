@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RAk-lZ-65u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RAk-lZ-65u">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -124,7 +124,7 @@
                                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="8QO-PR-tzp" kind="presentation" id="Ajt-gI-Rjt"/>
+                                                            <action selector="menuItemSelected:" destination="Bre-70-fjq" eventType="touchUpInside" id="8Hp-JS-7M0"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sov-ei-If6" customClass="FTDarkBasicButton" customModule="FUUTR" customModuleProvider="target">
@@ -136,6 +136,9 @@
                                                         <state key="normal" title="FUUTR+ Points" image="ic-dollar-dark-gray-16">
                                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="menuItemSelected:" destination="Bre-70-fjq" eventType="touchUpInside" id="Lmt-8H-6tt"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -191,21 +194,11 @@
                         <outlet property="pointsButton" destination="Sov-ei-If6" id="Nfo-EY-W9H"/>
                         <outlet property="rideHistoryButton" destination="9WF-Me-9rz" id="pFK-h3-2D0"/>
                         <outlet property="walletButton" destination="RbD-YT-AfJ" id="6wT-Dx-l5y"/>
-                        <segue destination="luP-3R-yfX" kind="unwind" identifier="unwindToHome" customClass="UIStoryboardSegueWithCompletion" customModule="FUUTR" customModuleProvider="target" unwindAction="unwindToHome:" id="Ktx-Qt-fTh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S21-Fo-Y62" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="luP-3R-yfX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="970" y="-619"/>
-        </scene>
-        <!--HowToRide-->
-        <scene sceneID="Xus-3x-FnH">
-            <objects>
-                <viewControllerPlaceholder storyboardName="HowToRide" id="8QO-PR-tzp" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VXl-K2-nVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1658" y="-572"/>
         </scene>
     </scenes>
     <resources>

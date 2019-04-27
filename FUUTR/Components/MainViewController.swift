@@ -317,26 +317,7 @@ class MainViewController: UIViewController, Coordinatable {
         let sourceViewController = unwindSegue.source
         
         // unwind from side menu
-        if let sideMenuViewController = sourceViewController as? SideMenuViewController,
-            let selectedMenuItem = sideMenuViewController.selectedMenuItem,
-            let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion {
-            
-            unwindSegueWithCompletion.completion = {
-                switch selectedMenuItem {
-                case .history:
-                    self.performSegue(withIdentifier: R.segue.mainViewController.showHistory, sender: nil)
-                case .wallet:
-                    self.performSegue(withIdentifier: R.segue.mainViewController.showWallet, sender: nil)
-                case .account:
-                    self.performSegue(withIdentifier: R.segue.mainViewController.showAccount, sender: nil)
-                case .help:
-                    self.performSegue(withIdentifier: R.segue.mainViewController.showHelp, sender: nil)
-                }
-                
-            }
-        }
-            // unwind from unlock
-        else if let unlockViewController = sourceViewController as? UnlockViewController,
+        if let unlockViewController = sourceViewController as? UnlockViewController,
             let unwindSegueWithCompletion = unwindSegue as? UIStoryboardSegueWithCompletion,
             let ride = unlockViewController.ride {
             

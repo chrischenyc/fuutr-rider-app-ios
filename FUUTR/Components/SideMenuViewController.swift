@@ -9,14 +9,6 @@
 import UIKit
 import Kingfisher
 
-// arrange enums according to the order of static cells in SideMenu.storyboard
-enum SideMenuItem: Int {
-    case history
-    case wallet
-    case account
-    case help
-}
-
 class SideMenuViewController: UIViewController, Coordinatable {
     var cooridnator: Coordinator?
     
@@ -30,8 +22,6 @@ class SideMenuViewController: UIViewController, Coordinatable {
     @IBOutlet weak var howToRideButton: UIButton!
     @IBOutlet weak var pointsButton: UIButton!
     @IBOutlet weak var helpButton: UIButton!
-    
-    var selectedMenuItem: SideMenuItem?
     
     // MARK: - lifecycle
     
@@ -81,20 +71,25 @@ class SideMenuViewController: UIViewController, Coordinatable {
     
     @IBAction func menuItemSelected(_ sender: Any) {
         if let button = sender as? UIButton {
-            switch button {
-            case rideHistoryButton:
-                selectedMenuItem = .history
-            case walletButton:
-                selectedMenuItem = .wallet
-            case accountButton:
-                selectedMenuItem = .account
-            case helpButton:
-                selectedMenuItem = .help
-            default:
-                break
+            dismiss(animated: true) {
+                guard let mainCoordinator = self.cooridnator as? MainCoordinator else { return }
+                
+                switch button {
+                case self.rideHistoryButton:
+                    mainCoordinator.showHistory()
+                case self.walletButton:
+                    mainCoordinator.showWallet()
+                case self.accountButton:
+                    mainCoordinator.showAccount()
+                case self.howToRideButton:
+                    mainCoordinator.showHowToRide()
+                case self.helpButton:
+                    mainCoordinator.showHelp()
+                default:
+                    break
+                }
             }
             
-            performSegue(withIdentifier: R.segue.sideMenuViewController.unwindToHome, sender: nil)
         }
     }
 }
