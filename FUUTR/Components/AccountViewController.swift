@@ -177,9 +177,16 @@ class AccountViewController: UIViewController, Coordinatable {
     
     @IBAction func signOut() {
         _ = AuthService.logout { (error) in
-            guard error == nil else {
+            if error != nil {
                 logger.error(error?.localizedDescription)
-                return
+            }
+            
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: {
+                    if let mainCoodinator = self.cooridnator as? MainCoordinator {
+                        mainCoodinator.userDidSignOut()
+                    }
+                })
             }
         }
     }

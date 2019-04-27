@@ -448,6 +448,9 @@
 		6BE51FB12274171E008AC05F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FB02274171E008AC05F /* AuthCoordinator.swift */; };
 		6BE51FB22274171E008AC05F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FB02274171E008AC05F /* AuthCoordinator.swift */; };
 		6BE51FB32274171E008AC05F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FB02274171E008AC05F /* AuthCoordinator.swift */; };
+		6BE51FB6227476F3008AC05F /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FB5227476F3008AC05F /* PushNotificationManager.swift */; };
+		6BE51FB7227476F3008AC05F /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FB5227476F3008AC05F /* PushNotificationManager.swift */; };
+		6BE51FB8227476F3008AC05F /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FB5227476F3008AC05F /* PushNotificationManager.swift */; };
 		6BF4939D2224DF9100DF9A1E /* NZLandTransportAct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */; };
 		6BF4939E2224DF9100DF9A1E /* NZLandTransportAct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */; };
 		6BF4939F2224DF9100DF9A1E /* NZLandTransportAct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */; };
@@ -720,6 +723,7 @@
 		6BE51FA82273CD88008AC05F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		6BE51FB02274171E008AC05F /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		6BE51FB5227476F3008AC05F /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		6BF493972224B48200DF9A1E /* wellinton_botanic.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = wellinton_botanic.gpx; sourceTree = "<group>"; };
 		6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NZLandTransportAct.storyboard; sourceTree = "<group>"; };
 		6BF493A02224E04100DF9A1E /* NZLandTransportActViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NZLandTransportActViewController.swift; sourceTree = "<group>"; };
@@ -1233,6 +1237,14 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		6BE51FB4227476DD008AC05F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6BE51FB5227476F3008AC05F /* PushNotificationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		A0CFE78E21747BF000BA3F6D = {
 			isa = PBXGroup;
 			children = (
@@ -1258,6 +1270,7 @@
 			children = (
 				A0CFE79A21747BF000BA3F6D /* AppDelegate.swift */,
 				6B8731A62189A70600CC2651 /* UserDefaults.swift */,
+				6BE51FB4227476DD008AC05F /* Managers */,
 				6BE51F9F2273C889008AC05F /* Coordinators */,
 				6B6C6AE52197CE0700D956DC /* Models */,
 				6B8731DB218A957400CC2651 /* Views */,
@@ -2140,6 +2153,7 @@
 				6B44FE2C221A8BD8008E502A /* UIViewController+CameraPermission.swift in Sources */,
 				6B31E1F92198141B00CB424E /* Date+Format.swift in Sources */,
 				6BB50ED72210C99C00F8BBF4 /* FTWhiteBasicButton.swift in Sources */,
+				6BE51FB8227476F3008AC05F /* PushNotificationManager.swift in Sources */,
 				6B2C9BB321A01BE80042432D /* TransactionCell.swift in Sources */,
 				6B2C9BB721A01D7F0042432D /* Transaction.swift in Sources */,
 				9181CB9721FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */,
@@ -2285,6 +2299,7 @@
 				6B44FE2A221A8BD8008E502A /* UIViewController+CameraPermission.swift in Sources */,
 				6B31E1F72198141B00CB424E /* Date+Format.swift in Sources */,
 				6BB50ED52210C99C00F8BBF4 /* FTWhiteBasicButton.swift in Sources */,
+				6BE51FB6227476F3008AC05F /* PushNotificationManager.swift in Sources */,
 				6B2C9BB121A01BE80042432D /* TransactionCell.swift in Sources */,
 				6B2C9BB521A01D7F0042432D /* Transaction.swift in Sources */,
 				9181CB9521FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */,
@@ -2430,6 +2445,7 @@
 				6B44FE2B221A8BD8008E502A /* UIViewController+CameraPermission.swift in Sources */,
 				6B31E1F82198141B00CB424E /* Date+Format.swift in Sources */,
 				6BB50ED62210C99C00F8BBF4 /* FTWhiteBasicButton.swift in Sources */,
+				6BE51FB7227476F3008AC05F /* PushNotificationManager.swift in Sources */,
 				6B2C9BB221A01BE80042432D /* TransactionCell.swift in Sources */,
 				6B2C9BB621A01D7F0042432D /* Transaction.swift in Sources */,
 				9181CB9621FD71ED00D8D8F1 /* PinCodeDigitSquareView.swift in Sources */,

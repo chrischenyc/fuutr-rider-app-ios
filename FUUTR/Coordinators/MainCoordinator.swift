@@ -111,7 +111,7 @@ extension MainCoordinator {
     }
     
     func userDidSignOut() {
-        navigationController.popToRootViewController(animated: true)
+        navigationController.popToRootViewController(animated: false)
         showGuestWelcome()
     }
 }

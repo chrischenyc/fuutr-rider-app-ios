@@ -28,16 +28,16 @@ var currentLocation: CLLocation?
 var currentUser: User? {
     didSet {
         if oldValue == nil && currentUser != nil {
-            NotificationCenter.default.post(name: NSNotification.Name.userSignedIn, object: nil)
-        }
-        else if oldValue != nil && currentUser == nil {
-            NotificationCenter.default.post(name: NSNotification.Name.userSignedOut, object: nil)
-        }
-        else {
-            // user profile gets updated
-            if oldValue?.photo != currentUser?.photo {
-                NotificationCenter.default.post(name: NSNotification.Name.userAvatarUpdated, object: nil)
+            if let currentUser = currentUser {
+                Zendesk.instance?.setIdentity(Identity.createAnonymous(name: currentUser.displayName, email: currentUser.email))
             }
+            
+            PushNotificationManager.shared.refreshPushNotificationSubscriptionStatus()
+        }
+        
+        // user profile gets updated
+        if oldValue?.photo != currentUser?.photo {
+            NotificationCenter.default.post(name: NSNotification.Name.userAvatarUpdated, object: nil)
         }
     }
 }
@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification
                 OneSignal.add(self as OSSubscriptionObserver)
                 
-                refreshPushNotificationSubscriptionStatus()
+                PushNotificationManager.shared.refreshPushNotificationSubscriptionStatus()
             }
         }
         
@@ -95,8 +95,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         getRemoteConfig()
         globalStyling()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUserSignedIn), name: .userSignedIn, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUserSignedOut), name: .userSignedOut, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(requestPushNotification), name: .requestPushNotification, object: nil)
         
         let navigationController = UINavigationController()
@@ -162,68 +160,13 @@ extension AppDelegate: OSSubscriptionObserver {
     }
     
     func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
-        handlePushNotificationSubscriptionState(stateChanges.to)
+        PushNotificationManager.shared.handlePushNotificationSubscriptionState(stateChanges.to)
     }
     
-    private func refreshPushNotificationSubscriptionStatus() {
-        if let status = OneSignal.getPermissionSubscriptionState(), status.permissionStatus.hasPrompted {
-            handlePushNotificationSubscriptionState(status.subscriptionStatus)
-        }
-    }
-    
-    private func handlePushNotificationSubscriptionState(_ state: OSSubscriptionState) {
-        guard currentUser != nil else { return }
-        
-        var payload: JSON = [:]
-        
-        if state.subscribed {
-            if let userId = state.userId {
-                payload["oneSignalPlayerId"] = userId
-            }
-            if let token = state.pushToken {
-                payload["applePushDeviceToken"] = token
-            }
-        }
-        else if !state.subscribed && Defaults[.didRequestPushNotificationPermission] {
-            // previously opted-in user now opted out, clearn up server record
-            payload["oneSignalPlayerId"] = ""
-            payload["applePushDeviceToken"] = ""
-        }
-        
-        if payload.count > 0 {
-            _ = UserService.updateProfile(payload) { (error) in
-                if let error = error {
-                    logger.error("Couldn't update user push data: \(error.localizedDescription)")
-                }
-            }
-        }
-    }
 }
 
 // MARK: - private
 extension AppDelegate {
-    @objc func handleUserSignedIn(notification: Notification) {
-        if let currentUser = currentUser {
-            Zendesk.instance?.setIdentity(Identity.createAnonymous(name: currentUser.displayName, email: currentUser.email))
-        }
-        
-        refreshPushNotificationSubscriptionStatus()
-    }
-    
-    @objc func handleUserSignedOut(notification: Notification) {
-        guard let welcomeViewController = R.storyboard.welcome().instantiateInitialViewController() as? WelcomeViewController else { return }
-        
-        DispatchQueue.main.async {
-            if let window = self.window, let rootViewController = window.rootViewController {
-                var currentController = rootViewController
-                while let presentedController = currentController.presentedViewController {
-                    currentController = presentedController
-                }
-                currentController.present(welcomeViewController, animated: true, completion: nil)
-            }
-        }
-    }
-    
     private func globalStyling() {
         // custom navi bar back button
         UINavigationBar.appearance().backIndicatorImage = R.image.icBackDarkGray16()
