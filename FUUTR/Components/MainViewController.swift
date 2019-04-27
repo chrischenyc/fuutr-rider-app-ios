@@ -12,7 +12,7 @@ import Kingfisher
 import SwiftyUserDefaults
 
 class MainViewController: UIViewController, Coordinatable {
-    var cooridnator: MainCoordinator?
+    var cooridnator: Coordinator?
     
     
     // ---------- Google Maps ----------

@@ -11,7 +11,7 @@ import SwiftyUserDefaults
 
 // main coordinator to take control over the app as soon as it launches
 class MainCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
+    var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -19,21 +19,18 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        var viewController: UIViewController?
         if Defaults[.userSignedIn] {
-            viewController = R.storyboard.main().instantiateInitialViewController()
+            guard let mainViewController = R.storyboard.main().instantiateInitialViewController() as? MainViewController else {
+                fatalError("Cannot instantiate the initial view controller")
+            }
+            
+            mainViewController.cooridnator = self
+            navigationController.pushViewController(mainViewController, animated: false)
         } else {
-            viewController = R.storyboard.welcome().instantiateInitialViewController()
+            let authCoordinator = AuthCoordinator(navigationController: navigationController)
+            authCoordinator.parentCoordinator = self
+            childCoordinators.append(authCoordinator)
+            authCoordinator.start()
         }
-        
-        guard viewController != nil else {
-            fatalError("Cannot instantiate the initial view controller")
-        }
-        
-        if var coordinatable = viewController as? Coordinatable {
-            coordinatable.cooridnator = self
-        }
-        
-        navigationController.pushViewController(viewController!, animated: false)
     }
 }

@@ -8,8 +8,8 @@
 
 import Foundation
 
-// all coordinators need to conform to this protocol
-protocol Coordinator {
+// all coordinators need to conform to this protocol and need to be a class
+protocol Coordinator: AnyObject {
     // use subcoordinators to carve off part of the navigation of the app
     var childCoordinators: [Coordinator] { get set }
     
@@ -18,4 +18,18 @@ protocol Coordinator {
     
     // create a coordinator fully and activate it only when we’re ready
     func start()
+    
+    func childDidFinish(_ child: Coordinator)
+}
+
+// default implementation of the optional protocol method
+extension Coordinator {
+    func childDidFinish(_ child: Coordinator) {
+        for (index, childCoordinator) in childCoordinators.enumerated() {
+            if childCoordinator === child {
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
+    }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Coordinatable {
-    var cooridnator: MainCoordinator? { get set }
+    var cooridnator: Coordinator? { get set }
 }

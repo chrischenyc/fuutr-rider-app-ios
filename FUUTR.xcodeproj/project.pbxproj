@@ -445,6 +445,9 @@
 		6BE51FAD2273D2B4008AC05F /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */; };
 		6BE51FAE2273D2B4008AC05F /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */; };
 		6BE51FAF2273D2B4008AC05F /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */; };
+		6BE51FB12274171E008AC05F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FB02274171E008AC05F /* AuthCoordinator.swift */; };
+		6BE51FB22274171E008AC05F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FB02274171E008AC05F /* AuthCoordinator.swift */; };
+		6BE51FB32274171E008AC05F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE51FB02274171E008AC05F /* AuthCoordinator.swift */; };
 		6BF4939D2224DF9100DF9A1E /* NZLandTransportAct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */; };
 		6BF4939E2224DF9100DF9A1E /* NZLandTransportAct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */; };
 		6BF4939F2224DF9100DF9A1E /* NZLandTransportAct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */; };
@@ -716,6 +719,7 @@
 		6BE51FA02273C8A3008AC05F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6BE51FA82273CD88008AC05F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		6BE51FB02274171E008AC05F /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		6BF493972224B48200DF9A1E /* wellinton_botanic.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = wellinton_botanic.gpx; sourceTree = "<group>"; };
 		6BF4939C2224DF9100DF9A1E /* NZLandTransportAct.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NZLandTransportAct.storyboard; sourceTree = "<group>"; };
 		6BF493A02224E04100DF9A1E /* NZLandTransportActViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NZLandTransportActViewController.swift; sourceTree = "<group>"; };
@@ -1223,6 +1227,7 @@
 			children = (
 				6BE51FA02273C8A3008AC05F /* Coordinator.swift */,
 				6BE51FA82273CD88008AC05F /* MainCoordinator.swift */,
+				6BE51FB02274171E008AC05F /* AuthCoordinator.swift */,
 				6BE51FAC2273D2B4008AC05F /* Coordinatable.swift */,
 			);
 			path = Coordinators;
@@ -2063,6 +2068,7 @@
 				6BDE9122218C19DF003F976B /* String+Validate.swift in Sources */,
 				6BDEEFC8220E7C6D00C0FBB8 /* FTLabel.swift in Sources */,
 				6BC9DBA422166A1200F17B8F /* MobileVerifyCodeViewController.swift in Sources */,
+				6BE51FB32274171E008AC05F /* AuthCoordinator.swift in Sources */,
 				6BBE6C88219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA112198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6BDEEF06220BAD3C00C0FBB8 /* UINavigationBar+Custom.swift in Sources */,
@@ -2207,6 +2213,7 @@
 				6B8731C32189CA0400CC2651 /* String+Validate.swift in Sources */,
 				6BDEEFC6220E7C6D00C0FBB8 /* FTLabel.swift in Sources */,
 				6BC9DBA222166A1200F17B8F /* MobileVerifyCodeViewController.swift in Sources */,
+				6BE51FB12274171E008AC05F /* AuthCoordinator.swift in Sources */,
 				6BBE6C86219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA0F2198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6BDEEF04220BAD3C00C0FBB8 /* UINavigationBar+Custom.swift in Sources */,
@@ -2351,6 +2358,7 @@
 				6B8731C42189CA0400CC2651 /* String+Validate.swift in Sources */,
 				6BDEEFC7220E7C6D00C0FBB8 /* FTLabel.swift in Sources */,
 				6BC9DBA322166A1200F17B8F /* MobileVerifyCodeViewController.swift in Sources */,
+				6BE51FB22274171E008AC05F /* AuthCoordinator.swift in Sources */,
 				6BBE6C87219BCA7B002D639B /* UIViewController+HUD.swift in Sources */,
 				6B14FA102198C97E00678FFF /* ResetPasswordVerifyViewController.swift in Sources */,
 				6BDEEF05220BAD3C00C0FBB8 /* UINavigationBar+Custom.swift in Sources */,

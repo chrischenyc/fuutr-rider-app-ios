@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import SwiftyUserDefaults
 
 class WelcomeViewController: UIViewController, Coordinatable {
-    var cooridnator: MainCoordinator?
+    var cooridnator: Coordinator?
     
     @IBOutlet weak var backdropView: UIView!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
