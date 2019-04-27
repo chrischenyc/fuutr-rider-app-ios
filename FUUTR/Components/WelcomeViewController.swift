@@ -98,7 +98,8 @@ class WelcomeViewController: UIViewController, Coordinatable {
                     return
                 }
                 
-                self?.performSegue(withIdentifier: R.segue.welcomeViewController.showMain, sender: self)
+                guard let authCoordinator = self?.cooridnator as? AuthCoordinator else { return }
+                authCoordinator.facebookDidSignIn()
             }
         })
     }

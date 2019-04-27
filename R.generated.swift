@@ -750,7 +750,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 25 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 24 view controllers.
   struct segue {
     /// This struct is generated for `AccountViewController`, and contains static references to 2 segues.
     struct accountViewController {
@@ -1251,21 +1251,6 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func unwindToSettings(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, UpdatePasswordViewController, UIKit.UIViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.updatePasswordViewController.unwindToSettings, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
-    /// This struct is generated for `WelcomeViewController`, and contains static references to 1 segues.
-    struct welcomeViewController {
-      /// Segue identifier `showMain`.
-      static let showMain: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WelcomeViewController, MainViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showMain")
-      
-      /// Optionally returns a typed version of segue `showMain`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showMain(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WelcomeViewController, MainViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.welcomeViewController.showMain, segue: segue)
       }
       
       fileprivate init() {}

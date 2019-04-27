@@ -10,7 +10,7 @@ import Foundation
 
 class AuthCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    weak var parentCoordinator: Coordinator?
+    weak var parentCoordinator: MainCoordinator?
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -23,7 +23,10 @@ class AuthCoordinator: Coordinator {
         }
         
         welcomeViewController.cooridnator = self
-        
         navigationController.pushViewController(welcomeViewController, animated: false)
+    }
+    
+    func facebookDidSignIn() {
+        parentCoordinator?.userDidSignIn(authCoordinator: self)
     }
 }

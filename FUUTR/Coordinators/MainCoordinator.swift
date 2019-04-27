@@ -20,17 +20,28 @@ class MainCoordinator: Coordinator {
     
     func start() {
         if Defaults[.userSignedIn] {
-            guard let mainViewController = R.storyboard.main().instantiateInitialViewController() as? MainViewController else {
-                fatalError("Cannot instantiate the initial view controller")
-            }
-            
-            mainViewController.cooridnator = self
-            navigationController.pushViewController(mainViewController, animated: false)
+            showHome(animated: false)
         } else {
             let authCoordinator = AuthCoordinator(navigationController: navigationController)
             authCoordinator.parentCoordinator = self
             childCoordinators.append(authCoordinator)
             authCoordinator.start()
         }
+    }
+}
+
+extension MainCoordinator {
+    func showHome(animated: Bool) {
+        guard let mainViewController = R.storyboard.main().instantiateInitialViewController() as? MainViewController else {
+            fatalError("Cannot instantiate the initial view controller")
+        }
+        
+        mainViewController.cooridnator = self
+        navigationController.pushViewController(mainViewController, animated: animated)
+    }
+    
+    func userDidSignIn(authCoordinator: AuthCoordinator) {
+        childDidFinish(authCoordinator)
+        showHome(animated: true)
     }
 }
