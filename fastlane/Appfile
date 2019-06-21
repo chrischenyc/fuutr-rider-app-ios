@@ -1,8 +1,0 @@
-app_identifier("com.otgride.ios.rider.staging") # The bundle identifier of your app
-apple_id("chris@capturedlabs.com") # Your Apple email address
-
-itc_team_id("118377697") # App Store Connect Team ID
-team_id("VQXKH8T8SZ") # Developer Portal Team ID
-
-# For more information about the Appfile, see:
-#     https://docs.fastlane.tools/advanced/#appfile
