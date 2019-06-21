@@ -1,5 +1,9 @@
-# FUUTR Rider iOS App
+# About
 
-## Xcode
+- Node.js back-end: https://github.com/chrischenyc/fuutr-server
+- React admin portal: https://github.com/chrischenyc/fuutr-admin-web
+- iOS rider app: https://github.com/chrischenyc/fuutr-rider-app-ios
 
-- This project uses 2 spaces indentation, please adjust the Xcode editor setting accordingly
+## System Architecture
+
+![System Architecture](https://www.capturedlabs.com/fuutr-architecture.png)
